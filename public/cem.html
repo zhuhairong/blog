@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>化学元素闯关大冒险</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0e17;
+            --bg-secondary: #111827;
+            --bg-card: rgba(17, 24, 39, 0.8);
+            --bg-card-hover: rgba(30, 41, 59, 0.9);
+            --text-primary: #f0f4f8;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-cyan: #06b6d4;
+            --accent-cyan-glow: rgba(6, 182, 212, 0.4);
+            --accent-emerald: #10b981;
+            --accent-emerald-glow: rgba(16, 185, 129, 0.4);
+            --accent-rose: #f43f5e;
+            --accent-rose-glow: rgba(244, 63, 94, 0.4);
+            --accent-amber: #f59e0b;
+            --accent-violet: #8b5cf6;
+            --accent-violet-glow: rgba(139, 92, 246, 0.4);
+            --border-color: rgba(148, 163, 184, 0.1);
+            --border-glow: rgba(6, 182, 212, 0.3);
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 40px var(--accent-cyan-glow);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --font-display: 'Orbitron', sans-serif;
+            --font-body: 'Noto Sans SC', sans-serif;
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            min-height: 100vh;
+            color: var(--text-primary);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse 80% 50% at 20% 20%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 80% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse 40% 30% at 50% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--accent-cyan);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .particle:nth-child(2n) { background: var(--accent-violet); animation-delay: -2s; }
+        .particle:nth-child(3n) { background: var(--accent-emerald); animation-delay: -4s; }
+        .particle:nth-child(4n) { background: var(--accent-amber); animation-delay: -6s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border: none;
+            border-radius: var(--radius-lg);
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.5px;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-violet) 100%);
+            color: white;
+            box-shadow: 0 4px 20px var(--accent-cyan-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px var(--accent-cyan-glow);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, var(--accent-emerald) 0%, #059669 100%);
+            color: white;
+            box-shadow: 0 4px 20px var(--accent-emerald-glow);
+        }
+
+        .btn-success:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px var(--accent-emerald-glow);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, var(--accent-rose) 0%, #dc2626 100%);
+            color: white;
+            box-shadow: 0 4px 20px var(--accent-rose-glow);
+        }
+
+        .btn-danger:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px var(--accent-rose-glow);
+        }
+
+        .btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+
+        .page {
+            display: none;
+            animation: pageIn 0.6s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes pageIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px) scale(0.98); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
+            }
+        }
+
+        .home-hero {
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        .home-hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-cyan-glow) 0%, transparent 70%);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .logo-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: clamp(32px, 8vw, 56px);
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-violet) 50%, var(--accent-emerald) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            letter-spacing: 2px;
+        }
+
+        .logo-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            -webkit-background-clip: text;
+            background-clip: text;
+            filter: blur(20px);
+            opacity: 0.5;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .home-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 50px;
+            letter-spacing: 1px;
+        }
+
+        .home-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px 30px;
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+            min-width: 120px;
+        }
+
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .home-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            padding: 20px;
+        }
+
+        .home-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            padding: 40px 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .home-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-violet));
+            transform: scaleX(0);
+            transition: transform var(--transition-normal);
+        }
+
+        .home-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .home-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--border-glow);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .home-card-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+            filter: drop-shadow(0 0 20px currentColor);
+        }
+
+        .home-card-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .home-card-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .home-card.game { --card-accent: var(--accent-cyan); }
+        .home-card.knowledge { --card-accent: var(--accent-emerald); }
+        .home-card.wrong { --card-accent: var(--accent-rose); }
+        .home-card.achievement { --card-accent: var(--accent-amber); }
+
+        .home-card:hover .home-card-icon {
+            animation: bounce 0.6s ease;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .page-header {
+            text-align: center;
+            padding: 40px 20px 30px;
+        }
+
+        .page-title {
+            font-family: var(--font-display);
+            font-size: clamp(24px, 5vw, 36px);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-violet) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+        }
+
+        .page-desc {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .level-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .level-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            padding: 30px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .level-card.unlock {
+            cursor: pointer;
+        }
+
+        .level-card.unlock:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 30px var(--accent-cyan-glow);
+        }
+
+        .level-card.lock {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .level-card.lock::after {
+            content: '🔒';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 40px;
+            opacity: 0.8;
+        }
+
+        .level-card.lock .level-content {
+            filter: blur(3px);
+        }
+
+        .level-number {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            margin-bottom: 8px;
+        }
+
+        .level-name {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .level-stars {
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+
+        .star-filled { color: var(--accent-amber); text-shadow: 0 0 10px var(--accent-amber); }
+        .star-empty { color: var(--text-muted); opacity: 0.3; }
+
+        .game-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px;
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .game-info {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent-cyan);
+        }
+
+        .life-container {
+            display: flex;
+            gap: 8px;
+            font-size: 28px;
+        }
+
+        .life-heart {
+            transition: all var(--transition-fast);
+        }
+
+        .life-heart.lost {
+            opacity: 0.2;
+            transform: scale(0.8);
+        }
+
+        .question-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            padding: 40px 30px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .question-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-violet), var(--accent-emerald));
+        }
+
+        .question-number {
+            font-family: var(--font-display);
+            font-size: 14px;
+            color: var(--accent-cyan);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .question-text {
+            font-size: clamp(18px, 4vw, 24px);
+            font-weight: 500;
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+
+        .option-btn {
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 24px 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            backdrop-filter: blur(10px);
+            font-family: var(--font-body);
+        }
+
+        .option-btn:hover:not(.disabled) {
+            border-color: var(--accent-cyan);
+            background: var(--bg-card-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .option-btn.correct {
+            background: linear-gradient(135deg, var(--accent-emerald) 0%, #059669 100%);
+            border-color: var(--accent-emerald);
+            color: white;
+            animation: correctPulse 0.5s ease;
+        }
+
+        @keyframes correctPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .option-btn.wrong {
+            background: linear-gradient(135deg, var(--accent-rose) 0%, #dc2626 100%);
+            border-color: var(--accent-rose);
+            color: white;
+            animation: wrongShake 0.5s ease;
+        }
+
+        @keyframes wrongShake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-10px); }
+            40%, 80% { transform: translateX(10px); }
+        }
+
+        .option-btn.disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .game-controls {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .timer-bar {
+            width: 100%;
+            height: 6px;
+            background: var(--bg-secondary);
+            border-radius: 3px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .timer-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-violet));
+            border-radius: 3px;
+            transition: width 1s linear;
+        }
+
+        .timer-progress.warning {
+            background: linear-gradient(90deg, var(--accent-amber), var(--accent-rose));
+        }
+
+        .result-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .result-modal.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .result-card {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-xl);
+            padding: 50px 40px;
+            text-align: center;
+            max-width: 480px;
+            width: 90%;
+            border: 1px solid var(--border-color);
+            animation: scaleIn 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .result-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-violet), var(--accent-emerald));
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .result-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            animation: bounce 1s ease infinite;
+        }
+
+        .result-title {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .result-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .result-stat {
+            text-align: center;
+        }
+
+        .result-stat-value {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent-cyan);
+        }
+
+        .result-stat-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .result-stars {
+            font-size: 40px;
+            margin-bottom: 30px;
+            letter-spacing: 5px;
+        }
+
+        .result-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .knowledge-section {
+            padding: 20px;
+        }
+
+        .knowledge-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            padding: 30px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+            transition: all var(--transition-normal);
+        }
+
+        .knowledge-card:hover {
+            border-color: var(--border-glow);
+            box-shadow: 0 0 30px rgba(6, 182, 212, 0.1);
+        }
+
+        .knowledge-title {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .knowledge-title::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(180deg, var(--accent-cyan), var(--accent-violet));
+            border-radius: 2px;
+        }
+
+        .knowledge-content {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 2;
+        }
+
+        .knowledge-content p {
+            margin-bottom: 8px;
+        }
+
+        .wrong-list {
+            padding: 20px;
+        }
+
+        .wrong-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-rose);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+        }
+
+        .wrong-level {
+            font-family: var(--font-display);
+            font-size: 12px;
+            color: var(--accent-rose);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .wrong-question {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .wrong-answers {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .wrong-answer-item {
+            font-size: 14px;
+        }
+
+        .wrong-answer-item span {
+            font-weight: 600;
+        }
+
+        .wrong-answer-item .your-answer {
+            color: var(--accent-rose);
+        }
+
+        .wrong-answer-item .correct-answer {
+            color: var(--accent-emerald);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-muted);
+        }
+
+        .empty-icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        .empty-text {
+            font-size: 18px;
+        }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .achievement-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-card.unlock {
+            border-color: var(--accent-amber);
+            box-shadow: 0 0 30px rgba(245, 158, 11, 0.2);
+        }
+
+        .achievement-card.lock {
+            opacity: 0.5;
+        }
+
+        .achievement-card.lock::after {
+            content: '🔒';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 20px;
+        }
+
+        .achievement-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .achievement-card.unlock .achievement-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .achievement-name {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .achievement-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .back-btn-container {
+            text-align: center;
+            padding: 30px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .progress-ring {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--bg-card);
+            border-radius: 50%;
+            padding: 8px;
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        .progress-ring circle {
+            fill: none;
+            stroke-width: 4;
+        }
+
+        .progress-ring .bg {
+            stroke: var(--bg-secondary);
+        }
+
+        .progress-ring .progress {
+            stroke: var(--accent-cyan);
+            stroke-linecap: round;
+            transform: rotate(-90deg);
+            transform-origin: center;
+            transition: stroke-dashoffset 0.5s ease;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 16px 24px;
+            color: var(--text-primary);
+            font-size: 14px;
+            z-index: 2000;
+            opacity: 0;
+            transition: all var(--transition-normal);
+            backdrop-filter: blur(10px);
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .toast.success {
+            border-color: var(--accent-emerald);
+            box-shadow: 0 0 20px var(--accent-emerald-glow);
+        }
+
+        .toast.error {
+            border-color: var(--accent-rose);
+            box-shadow: 0 0 20px var(--accent-rose-glow);
+        }
+
+        @media (max-width: 768px) {
+            .home-stats {
+                gap: 20px;
+            }
+
+            .stat-item {
+                min-width: 100px;
+                padding: 15px 20px;
+            }
+
+            .game-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .game-info {
+                justify-content: center;
+            }
+
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .result-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <div id="homePage" class="page active">
+            <div class="home-hero">
+                <div class="logo-container">
+                    <h1 class="logo">化学元素闯关大冒险</h1>
+                    <div class="logo-glow"></div>
+                </div>
+                <p class="home-subtitle">初中化学8关知识点 · 边玩边记 · 轻松掌握</p>
+                
+                <div class="home-stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalStars">0</div>
+                        <div class="stat-label">总星数</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="unlockedLevels">1</div>
+                        <div class="stat-label">已解锁</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="achievementCount">0</div>
+                        <div class="stat-label">成就</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home-cards">
+                <div class="home-card game" onclick="changePage('levelPage')">
+                    <span class="home-card-icon">🎮</span>
+                    <h3 class="home-card-title">开始闯关</h3>
+                    <p class="home-card-desc">挑战8关化学知识</p>
+                </div>
+                <div class="home-card knowledge" onclick="changePage('knowledgePage')">
+                    <span class="home-card-icon">📚</span>
+                    <h3 class="home-card-title">知识点仓库</h3>
+                    <p class="home-card-desc">随时复习巩固</p>
+                </div>
+                <div class="home-card wrong" onclick="changePage('wrongPage')">
+                    <span class="home-card-icon">📝</span>
+                    <h3 class="home-card-title">错题本</h3>
+                    <p class="home-card-desc">针对性练习</p>
+                </div>
+                <div class="home-card achievement" onclick="changePage('achievementPage')">
+                    <span class="home-card-icon">🏆</span>
+                    <h3 class="home-card-title">成就墙</h3>
+                    <p class="home-card-desc">记录成长之路</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="levelPage" class="page">
+            <div class="page-header">
+                <h2 class="page-title">选择关卡</h2>
+                <p class="page-desc">通关前一关即可解锁下一关，全3星通关解锁终极成就！</p>
+            </div>
+            <div class="level-grid" id="levelGrid"></div>
+            <div class="back-btn-container">
+                <button class="btn btn-primary" onclick="changePage('homePage')">返回首页</button>
+            </div>
+        </div>
+
+        <div id="gamePage" class="page">
+            <div class="game-container">
+                <div class="game-header">
+                    <div class="game-info">
+                        <div class="info-item">
+                            <div class="info-label">当前关卡</div>
+                            <div class="info-value" id="currentLevel">第1关</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">题目进度</div>
+                            <div class="info-value" id="questionProgress">1/10</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">当前积分</div>
+                            <div class="info-value" id="currentScore">0</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">剩余时间</div>
+                            <div class="info-value" id="countDown">0s</div>
+                        </div>
+                    </div>
+                    <div class="life-container" id="lifeBox">
+                        <span class="life-heart">❤️</span>
+                        <span class="life-heart">❤️</span>
+                        <span class="life-heart">❤️</span>
+                    </div>
+                </div>
+
+                <div class="timer-bar">
+                    <div class="timer-progress" id="timerProgress"></div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-number" id="questionNumber">QUESTION 01</div>
+                    <div class="question-text" id="questionTitle"></div>
+                </div>
+
+                <div class="options-grid" id="optionsBox"></div>
+
+                <div class="game-controls">
+                    <button class="btn btn-primary" id="tipBtn" onclick="useTip()">💡 提示（3次）</button>
+                    <button class="btn btn-danger" onclick="exitGame()">🚪 退出关卡</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="knowledgePage" class="page">
+            <div class="page-header">
+                <h2 class="page-title">知识点仓库</h2>
+                <p class="page-desc">8关核心知识点汇总，随时查看，随时记忆</p>
+            </div>
+
+            <div class="knowledge-section">
+                <div class="knowledge-card">
+                    <h3 class="knowledge-title">第1-2关：1-36号常见元素名称&符号</h3>
+                    <div class="knowledge-content">
+                        <p>1氢H 2氦He 3锂Li 4铍Be 5硼B 6碳C 7氮N 8氧O 9氟F 10氖Ne</p>
+                        <p>11钠Na 12镁Mg 13铝Al 14硅Si 15磷P 16硫S 17氯Cl 18氩Ar</p>
+                        <p>25锰Mn 26铁Fe 29铜Cu 30锌Zn 47银Ag 53碘I 56钡Ba 79金Au 80汞Hg 78铂Pt 35溴Br 82铅Pb</p>
+                    </div>
+                </div>
+
+                <div class="knowledge-card">
+                    <h3 class="knowledge-title">第3关：常见离子符号</h3>
+                    <div class="knowledge-content">
+                        <p>阳离子：H⁺、Na⁺、Mg²⁺、Al³⁺、K⁺、Ca²⁺、Fe³⁺、Fe²⁺、Cu²⁺、Zn²⁺、Ag⁺、Ba²⁺、NH₄⁺</p>
+                        <p>阴离子：OH⁻、NO₃⁻、SO₄²⁻、CO₃²⁻、HCO₃⁻、O²⁻、F⁻、Cl⁻</p>
+                    </div>
+                </div>
+
+                <div class="knowledge-card">
+                    <h3 class="knowledge-title">第4关：化合价口诀</h3>
+                    <div class="knowledge-content">
+                        <p>钾钠银氢正一价；钙镁钡锌正二价；</p>
+                        <p>金属铝为正三价；铜一二，铁二三；</p>
+                        <p>氟氯溴碘负一价；二四六硫二四碳；</p>
+                        <p>氮磷负三和正五；单质化合价为0。</p>
+                    </div>
+                </div>
+
+                <div class="knowledge-card">
+                    <h3 class="knowledge-title">第5-7关：化学式书写规则</h3>
+                    <div class="knowledge-content">
+                        <p>1. 单质：稀有气体、金属、固态非金属（石字旁）直接用元素符号表示；双原子分子：H₂、N₂、O₂、F₂、Cl₂、Br₂、I₂；臭氧O₃</p>
+                        <p>2. 化合物：正价在前，负价在后，化合价交叉约简，原子团多个加括号</p>
+                        <p>3. 氧化物：氧元素在后，读作"几氧化几某"，如H₂O、CO₂、Fe₂O₃</p>
+                        <p>4. 氯化物：氯元素在后，读作"氯化某"，如NaCl、FeCl₃、FeCl₂</p>
+                        <p>5. 酸：氢元素在前，酸根在后，读作"某酸"，如H₂SO₄、HNO₃、HCl</p>
+                        <p>6. 碱：金属元素在前，氢氧根在后，读作"氢氧化某"，如NaOH、Ca(OH)₂</p>
+                        <p>7. 盐：金属/铵根在前，酸根在后，读作"某酸某"，如Na₂SO₄、Cu(NO₃)₂</p>
+                    </div>
+                </div>
+
+                <div class="knowledge-card">
+                    <h3 class="knowledge-title">第8关：化学符号中数字的意义</h3>
+                    <div class="knowledge-content">
+                        <p>1. 符号前面的数字：表示粒子的个数，如2H：2个氢原子；2H₂O：2个水分子</p>
+                        <p>2. 符号右下角的数字：表示1个分子中该原子的个数，如H₂：1个氢分子含2个氢原子</p>
+                        <p>3. 符号右上角的数字：表示1个离子带的电荷数，如Ca²⁺：1个钙离子带2个单位正电荷</p>
+                        <p>4. 符号正上方的数字：表示该元素的化合价，如Cu(+2)：铜元素的化合价为+2价</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="back-btn-container">
+                <button class="btn btn-primary" onclick="changePage('homePage')">返回首页</button>
+            </div>
+        </div>
+
+        <div id="wrongPage" class="page">
+            <div class="page-header">
+                <h2 class="page-title">错题本</h2>
+                <p class="page-desc">自动记录所有答错的题目，针对性巩固练习</p>
+            </div>
+            <div class="wrong-list" id="wrongList"></div>
+            <div class="back-btn-container">
+                <button class="btn btn-primary" onclick="changePage('homePage')">返回首页</button>
+                <button class="btn btn-danger" onclick="clearWrong()">🗑️ 清空错题本</button>
+            </div>
+        </div>
+
+        <div id="achievementPage" class="page">
+            <div class="page-header">
+                <h2 class="page-title">成就墙</h2>
+                <p class="page-desc">记录你的化学学习成长之路</p>
+            </div>
+            <div class="achievement-grid" id="achievementGrid"></div>
+            <div class="back-btn-container">
+                <button class="btn btn-primary" onclick="changePage('homePage')">返回首页</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="result-modal" id="resultModal">
+        <div class="result-card">
+            <div class="result-icon" id="resultIcon">🎉</div>
+            <h2 class="result-title" id="resultTitle">闯关成功！</h2>
+            <div class="result-stats">
+                <div class="result-stat">
+                    <div class="result-stat-value" id="resultScore">0</div>
+                    <div class="result-stat-label">得分</div>
+                </div>
+                <div class="result-stat">
+                    <div class="result-stat-value" id="resultCorrect">0%</div>
+                    <div class="result-stat-label">正确率</div>
+                </div>
+            </div>
+            <div class="result-stars" id="resultStar"></div>
+            <div class="result-buttons">
+                <button class="btn btn-success" onclick="closeResult()">确定</button>
+                <button class="btn btn-primary" id="nextLevelBtn" onclick="nextLevel()">下一关</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        const STORAGE_KEY = 'cem_game_progress';
+        
+        const defaultData = {
+            unlockLevel: 1,
+            score: 0,
+            totalScore: 0,
+            life: 3,
+            currentLevel: 1,
+            currentQuestion: 0,
+            tipCount: 3,
+            timeLeft: 0,
+            timer: null,
+            totalTime: 0,
+            wrongList: [],
+            levelStar: [0, 0, 0, 0, 0, 0, 0, 0],
+            achievement: [
+                { id: 1, name: '元素入门者', desc: '通关第1关', icon: '🌱', unlock: false },
+                { id: 2, name: '符号能手', desc: '通关第3关', icon: '⚡', unlock: false },
+                { id: 3, name: '化合价大师', desc: '通关第4关', icon: '🎯', unlock: false },
+                { id: 4, name: '化学式王者', desc: '通关第7关', icon: '👑', unlock: false },
+                { id: 5, name: '化学全能王', desc: '通关全部8关', icon: '🏆', unlock: false },
+                { id: 6, name: '满分学霸', desc: '任意关卡全对通关', icon: '💯', unlock: false },
+                { id: 7, name: '三星传奇', desc: '全部关卡3星通关', icon: '⭐', unlock: false },
+            ],
+            questionBank: [
+                [
+                    { title: '氢元素的元素符号是？', options: ['H', 'He', 'O', 'N'], answer: 'H' },
+                    { title: '元素符号O对应的元素名称是？', options: ['氢', '氧', '碳', '氮'], answer: '氧' },
+                    { title: '11号元素的名称和符号是？', options: ['氖 Ne', '钠 Na', '镁 Mg', '铝 Al'], answer: '钠 Na' },
+                    { title: '下列元素符号书写正确的是？', options: ['氯 cl', '碳 C', '铝 AL', '钠 na'], answer: '碳 C' },
+                    { title: '17号元素的元素符号是？', options: ['S', 'Cl', 'Ar', 'P'], answer: 'Cl' },
+                    { title: '元素符号He对应的元素名称是？', options: ['氢', '氦', '锂', '铍'], answer: '氦' },
+                    { title: '6号碳元素的元素符号是？', options: ['C', 'Ca', 'Cu', 'Cl'], answer: 'C' },
+                    { title: '13号铝元素的元素符号是？', options: ['Al', 'Si', 'P', 'Mg'], answer: 'Al' },
+                    { title: '下列元素属于第二周期的是？', options: ['Na', 'O', 'S', 'Cl'], answer: 'O' },
+                    { title: '18号氩元素的元素符号是？', options: ['Ar', 'Ne', 'He', 'Kr'], answer: 'Ar' },
+                ],
+                [
+                    { title: '铁元素的元素符号是？', options: ['Fe', 'F', 'Cu', 'Zn'], answer: 'Fe' },
+                    { title: '铜元素的元素符号是？', options: ['Co', 'Cu', 'Ca', 'Cl'], answer: 'Cu' },
+                    { title: '元素符号Mn对应的元素名称是？', options: ['镁', '锰', '锌', '银'], answer: '锰' },
+                    { title: '金元素的元素符号是？', options: ['Au', 'Ag', 'Cu', 'Pt'], answer: 'Au' },
+                    { title: '元素符号Ag对应的元素名称是？', options: ['金', '银', '铜', '锌'], answer: '银' },
+                    { title: '碘元素的元素符号是？', options: ['I', 'Br', 'Cl', 'F'], answer: 'I' },
+                    { title: '元素符号Ba对应的元素名称是？', options: ['钡', '钙', '镁', '锌'], answer: '钡' },
+                    { title: '汞元素（水银）的元素符号是？', options: ['Hg', 'Ag', 'Mg', 'H'], answer: 'Hg' },
+                    { title: '溴元素的元素符号是？', options: ['Br', 'I', 'Cl', 'S'], answer: 'Br' },
+                    { title: '锌元素的元素符号是？', options: ['Zn', 'Cu', 'Fe', 'Mn'], answer: 'Zn' },
+                ],
+                [
+                    { title: '氢氧根离子的正确符号是？', options: ['OH⁻', 'HO⁻', 'OH⁺', 'OH²⁻'], answer: 'OH⁻' },
+                    { title: '硫酸根离子的正确符号是？', options: ['SO₄²⁻', 'SO₃²⁻', 'SO₄⁻', 'S²⁻'], answer: 'SO₄²⁻' },
+                    { title: '硝酸根离子的正确符号是？', options: ['NO₃⁻', 'NO₂⁻', 'NO₃²⁻', 'NH₄⁺'], answer: 'NO₃⁻' },
+                    { title: '碳酸根离子的正确符号是？', options: ['CO₃²⁻', 'HCO₃⁻', 'CO₃⁻', 'CO²⁻'], answer: 'CO₃²⁻' },
+                    { title: '铵根离子的正确符号是？', options: ['NH₄⁺', 'NH₃⁺', 'NH₄⁻', 'NO₃⁻'], answer: 'NH₄⁺' },
+                    { title: '钠离子的正确符号是？', options: ['Na⁺', 'Na²⁺', 'Na⁻', 'Na'], answer: 'Na⁺' },
+                    { title: '铁离子的正确符号是？', options: ['Fe³⁺', 'Fe²⁺', 'Fe⁺', 'Fe'], answer: 'Fe³⁺' },
+                    { title: '铝离子的正确符号是？', options: ['Al³⁺', 'Al²⁺', 'Al⁺', 'Al³⁻'], answer: 'Al³⁺' },
+                    { title: '氯离子的正确符号是？', options: ['Cl⁻', 'Cl⁺', 'Cl²⁻', 'Cl'], answer: 'Cl⁻' },
+                    { title: '钙离子的正确符号是？', options: ['Ca²⁺', 'Ca⁺', 'Ca²⁻', 'Ca'], answer: 'Ca²⁺' },
+                ],
+                [
+                    { title: '钾元素的常见化合价是？', options: ['+1', '+2', '-1', '0'], answer: '+1' },
+                    { title: '氧元素的常见化合价是？', options: ['-2', '-1', '+2', '0'], answer: '-2' },
+                    { title: '单质中元素的化合价是？', options: ['0', '+1', '-1', '根据物质定'], answer: '0' },
+                    { title: '铁元素有+2和+3价，+2价的铁读作？', options: ['亚铁', '铁', '高铁', '亚铜'], answer: '亚铁' },
+                    { title: '铝元素的常见化合价是？', options: ['+3', '+2', '+1', '-3'], answer: '+3' },
+                    { title: '氯元素在氯化物中的常见化合价是？', options: ['-1', '+1', '+5', '+7'], answer: '-1' },
+                    { title: '钙镁钡锌元素的常见化合价是？', options: ['+2', '+1', '+3', '-2'], answer: '+2' },
+                    { title: '二氧化硫SO₂中硫元素的化合价是？', options: ['+4', '+2', '+6', '-2'], answer: '+4' },
+                    { title: '下列元素化合价为+2价的是？', options: ['Mg', 'Na', 'Al', 'O'], answer: 'Mg' },
+                    { title: '水中H₂O氢元素的化合价是？', options: ['+1', '-1', '+2', '0'], answer: '+1' },
+                ],
+                [
+                    { title: '氦气的正确化学式是？', options: ['He', 'He₂', 'H', 'H₂'], answer: 'He' },
+                    { title: '氢气的正确化学式是？', options: ['H₂', 'H', 'He', 'H₃'], answer: 'H₂' },
+                    { title: '金属铁的正确化学式是？', options: ['Fe', 'Fe₂', 'F', 'Fe₃'], answer: 'Fe' },
+                    { title: '氧气的正确化学式是？', options: ['O₂', 'O', 'O₃', 'O₄'], answer: 'O₂' },
+                    { title: '金刚石的正确化学式是？', options: ['C', 'C₂', 'CO', 'CO₂'], answer: 'C' },
+                    { title: '臭氧的正确化学式是？', options: ['O₃', 'O₂', 'O', 'O₄'], answer: 'O₃' },
+                    { title: '金属铜的正确化学式是？', options: ['Cu', 'Cu₂', 'Co', 'Ca'], answer: 'Cu' },
+                    { title: '氯气的正确化学式是？', options: ['Cl₂', 'Cl', 'Cl₃', 'C'], answer: 'Cl₂' },
+                    { title: '氩气的正确化学式是？', options: ['Ar', 'Ar₂', 'Al', 'A'], answer: 'Ar' },
+                    { title: '水银（汞）的正确化学式是？', options: ['Hg', 'Ag', 'Mg', 'H'], answer: 'Hg' },
+                ],
+                [
+                    { title: '水的正确化学式是？', options: ['H₂O', 'HO', 'H₂O₂', 'HO₂'], answer: 'H₂O' },
+                    { title: '二氧化碳的正确化学式是？', options: ['CO₂', 'CO', 'C₂O', 'CO₃'], answer: 'CO₂' },
+                    { title: '氯化钠的正确化学式是？', options: ['NaCl', 'Na₂Cl', 'NaCl₂', 'Na Cl'], answer: 'NaCl' },
+                    { title: '氧化铁（三氧化二铁）的正确化学式是？', options: ['Fe₂O₃', 'FeO', 'Fe₃O₄', 'FeO₂'], answer: 'Fe₂O₃' },
+                    { title: '氧化镁的正确化学式是？', options: ['MgO', 'Mg₂O', 'MgO₂', 'Mg'], answer: 'MgO' },
+                    { title: '五氧化二磷的正确化学式是？', options: ['P₂O₅', 'PO₅', 'P₅O₂', 'PO'], answer: 'P₂O₅' },
+                    { title: '氯化铁的正确化学式是？', options: ['FeCl₃', 'FeCl₂', 'FeCl', 'Fe₃Cl'], answer: 'FeCl₃' },
+                    { title: '二氧化硫的正确化学式是？', options: ['SO₂', 'SO₃', 'S₂O', 'SO'], answer: 'SO₂' },
+                    { title: '氧化铝的正确化学式是？', options: ['Al₂O₃', 'AlO', 'AlO₂', 'Al₃O₂'], answer: 'Al₂O₃' },
+                    { title: '氯化镁的正确化学式是？', options: ['MgCl₂', 'MgCl', 'Mg₂Cl', 'MgCl₃'], answer: 'MgCl₂' },
+                ],
+                [
+                    { title: '硫酸钠的正确化学式是？', options: ['Na₂SO₄', 'NaSO₄', 'Na₂SO₃', 'NaSO₃'], answer: 'Na₂SO₄' },
+                    { title: '硝酸钾的正确化学式是？', options: ['KNO₃', 'KNO₂', 'K₂NO₃', 'KNO'], answer: 'KNO₃' },
+                    { title: '氢氧化钠的正确化学式是？', options: ['NaOH', 'Na₂OH', 'NaOH₂', 'NaHO'], answer: 'NaOH' },
+                    { title: '硫酸的正确化学式是？', options: ['H₂SO₄', 'HSO₄', 'H₂SO₃', 'HSO₃'], answer: 'H₂SO₄' },
+                    { title: '碳酸钙的正确化学式是？', options: ['CaCO₃', 'CaHCO₃', 'Ca₂CO₃', 'CaCO₂'], answer: 'CaCO₃' },
+                    { title: '氢氧化钙的正确化学式是？', options: ['Ca(OH)₂', 'CaOH', 'CaOH₂', 'Ca(OH)'], answer: 'Ca(OH)₂' },
+                    { title: '硝酸铜的正确化学式是？', options: ['Cu(NO₃)₂', 'CuNO₃', 'Cu(NO₃)', 'CuNO₂'], answer: 'Cu(NO₃)₂' },
+                    { title: '盐酸的正确化学式是？', options: ['HCl', 'H₂Cl', 'HClO', 'HClO₃'], answer: 'HCl' },
+                    { title: '硫酸亚铁的正确化学式是？', options: ['FeSO₄', 'Fe₂(SO₄)₃', 'FeSO₃', 'Fe₂(SO₃)₃'], answer: 'FeSO₄' },
+                    { title: '碳酸钠的正确化学式是？', options: ['Na₂CO₃', 'NaHCO₃', 'NaCO₃', 'Na₂HCO₃'], answer: 'Na₂CO₃' },
+                ],
+                [
+                    { title: 'Cl₂中数字2的意义是？', options: ['1个氯分子含2个氯原子', '2个氯原子', '2个氯分子', '氯元素化合价为-2'], answer: '1个氯分子含2个氯原子' },
+                    { title: '2H中数字2的意义是？', options: ['2个氢原子', '1个氢分子含2个氢原子', '2个氢分子', '氢元素化合价为+2'], answer: '2个氢原子' },
+                    { title: 'Ca²⁺中数字2的意义是？', options: ['1个钙离子带2个单位正电荷', '2个钙原子', '钙元素化合价为+2', '2个钙离子'], answer: '1个钙离子带2个单位正电荷' },
+                    { title: '氮气N₂中氮元素的化合价是？', options: ['0', '-3', '+2', '+5'], answer: '0' },
+                    { title: '硝酸HNO₃中氮元素的化合价是？', options: ['+5', '+3', '-3', '+2'], answer: '+5' },
+                    { title: '2SO₃中前面的数字2的意义是？', options: ['2个三氧化硫分子', '1个三氧化硫分子含2个硫原子', '2个硫原子', '硫元素化合价为+2'], answer: '2个三氧化硫分子' },
+                    { title: '二氧化硫SO₂中硫元素的化合价是？', options: ['+4', '+2', '+6', '-2'], answer: '+4' },
+                    { title: 'Cu(+2)中数字2的意义是？', options: ['铜元素的化合价为+2价', '1个铜离子带2个单位正电荷', '2个铜原子', '2个铜分子'], answer: '铜元素的化合价为+2价' },
+                    { title: '氯化氢HCl中氯元素的化合价是？', options: ['-1', '+1', '+5', '+7'], answer: '-1' },
+                    { title: 'NH₄NO₃中铵根里的氮元素化合价是？', options: ['-3', '+5', '+3', '0'], answer: '-3' },
+                ],
+            ],
+            levelTime: [90, 60, 80, 90, 70, 100, 120, 100],
+            levelName: [
+                '1-18号元素启蒙',
+                '拓展元素符号',
+                '常见离子符号',
+                '元素化合价',
+                '单质化学式',
+                '氧化物&氯化物',
+                '酸碱盐化学式',
+                '化学符号综合应用'
+            ]
+        };
+
+        let gameData = loadProgress();
+
+        function loadProgress() {
+            try {
+                const saved = localStorage.getItem(STORAGE_KEY);
+                if (saved) {
+                    const parsed = JSON.parse(saved);
+                    return { ...defaultData, ...parsed, timer: null };
+                }
+            } catch (e) {
+                console.error('Failed to load progress:', e);
+            }
+            return { ...defaultData };
+        }
+
+        function saveProgress() {
+            try {
+                const toSave = {
+                    unlockLevel: gameData.unlockLevel,
+                    levelStar: gameData.levelStar,
+                    wrongList: gameData.wrongList,
+                    achievement: gameData.achievement,
+                    totalScore: gameData.totalScore
+                };
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
+            } catch (e) {
+                console.error('Failed to save progress:', e);
+            }
+        }
+
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = 'toast ' + type;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        function updateHomeStats() {
+            const totalStars = gameData.levelStar.reduce((a, b) => a + b, 0);
+            document.getElementById('totalStars').textContent = totalStars;
+            document.getElementById('unlockedLevels').textContent = gameData.unlockLevel;
+            const achievementCount = gameData.achievement.filter(a => a.unlock).length;
+            document.getElementById('achievementCount').textContent = achievementCount;
+        }
+
+        function changePage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+            
+            if (pageId === 'levelPage') renderLevelGrid();
+            if (pageId === 'wrongPage') renderWrongList();
+            if (pageId === 'achievementPage') renderAchievement();
+            if (pageId === 'homePage') updateHomeStats();
+        }
+
+        function renderLevelGrid() {
+            const grid = document.getElementById('levelGrid');
+            grid.innerHTML = '';
+            
+            for (let i = 0; i < 8; i++) {
+                const levelNum = i + 1;
+                const isUnlock = levelNum <= gameData.unlockLevel;
+                const star = gameData.levelStar[i];
+                
+                const card = document.createElement('div');
+                card.className = 'level-card ' + (isUnlock ? 'unlock' : 'lock');
+                
+                let starsHtml = '';
+                for (let j = 0; j < 3; j++) {
+                    starsHtml += j < star 
+                        ? '<span class="star-filled">★</span>' 
+                        : '<span class="star-empty">☆</span>';
+                }
+                
+                card.innerHTML = `
+                    <div class="level-content">
+                        <div class="level-number">第${levelNum}关</div>
+                        <div class="level-name">${gameData.levelName[i]}</div>
+                        <div class="level-stars">${starsHtml}</div>
+                    </div>
+                `;
+                
+                if (isUnlock) {
+                    card.addEventListener('click', () => startGame(levelNum));
+                }
+                
+                grid.appendChild(card);
+            }
+        }
+
+        function startGame(levelNum) {
+            gameData.currentLevel = levelNum;
+            gameData.currentQuestion = 0;
+            gameData.score = 0;
+            gameData.life = 3;
+            gameData.tipCount = 3;
+            gameData.totalTime = gameData.levelTime[levelNum - 1];
+            gameData.timeLeft = gameData.totalTime;
+            
+            if (gameData.timer) clearInterval(gameData.timer);
+            
+            renderQuestion();
+            startTimer();
+            changePage('gamePage');
+            
+            document.getElementById('currentLevel').textContent = '第' + levelNum + '关';
+            document.getElementById('tipBtn').textContent = '💡 提示（' + gameData.tipCount + '次）';
+            updateLife();
+            updateScore();
+            updateProgress();
+            updateTimerBar();
+        }
+
+        function renderQuestion() {
+            const currentQ = gameData.questionBank[gameData.currentLevel - 1][gameData.currentQuestion];
+            document.getElementById('questionTitle').textContent = currentQ.title;
+            document.getElementById('questionNumber').textContent = 'QUESTION ' + String(gameData.currentQuestion + 1).padStart(2, '0');
+            
+            const shuffledOptions = [...currentQ.options].sort(() => Math.random() - 0.5);
+            const optionsBox = document.getElementById('optionsBox');
+            optionsBox.innerHTML = '';
+            
+            shuffledOptions.forEach(option => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn';
+                btn.textContent = option;
+                btn.addEventListener('click', function() {
+                    checkAnswer(this, option, currentQ.answer);
+                });
+                optionsBox.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(elem, selected, answer) {
+            const options = document.querySelectorAll('.option-btn');
+            options.forEach(opt => {
+                opt.classList.add('disabled');
+            });
+            
+            const isCorrect = selected === answer;
+            
+            if (isCorrect) {
+                elem.classList.add('correct');
+                gameData.score += 10;
+            } else {
+                elem.classList.add('wrong');
+                
+                options.forEach(opt => {
+                    if (opt.textContent === answer) {
+                        opt.classList.add('correct');
+                    }
+                });
+                
+                gameData.life -= 1;
+                updateLife();
+                
+                const currentQ = gameData.questionBank[gameData.currentLevel - 1][gameData.currentQuestion];
+                gameData.wrongList.push({
+                    level: gameData.currentLevel,
+                    title: currentQ.title,
+                    wrongAnswer: selected,
+                    correctAnswer: answer
+                });
+            }
+            
+            updateScore();
+            
+            setTimeout(() => {
+                nextQuestion();
+            }, 1500);
+        }
+
+        function nextQuestion() {
+            gameData.currentQuestion += 1;
+            const totalQuestion = gameData.questionBank[gameData.currentLevel - 1].length;
+            
+            if (gameData.currentQuestion >= totalQuestion || gameData.life <= 0) {
+                endGame();
+                return;
+            }
+            
+            renderQuestion();
+            updateProgress();
+        }
+
+        function startTimer() {
+            if (gameData.timer) clearInterval(gameData.timer);
+            
+            gameData.timer = setInterval(() => {
+                gameData.timeLeft -= 1;
+                document.getElementById('countDown').textContent = gameData.timeLeft + 's';
+                updateTimerBar();
+                
+                if (gameData.timeLeft <= 0) {
+                    endGame();
+                }
+            }, 1000);
+        }
+
+        function updateTimerBar() {
+            const progress = document.getElementById('timerProgress');
+            const percent = (gameData.timeLeft / gameData.totalTime) * 100;
+            progress.style.width = percent + '%';
+            
+            if (percent < 30) {
+                progress.classList.add('warning');
+            } else {
+                progress.classList.remove('warning');
+            }
+        }
+
+        function updateLife() {
+            const hearts = document.querySelectorAll('.life-heart');
+            hearts.forEach((heart, index) => {
+                if (index < gameData.life) {
+                    heart.classList.remove('lost');
+                } else {
+                    heart.classList.add('lost');
+                }
+            });
+        }
+
+        function updateScore() {
+            document.getElementById('currentScore').textContent = gameData.score;
+        }
+
+        function updateProgress() {
+            const total = gameData.questionBank[gameData.currentLevel - 1].length;
+            document.getElementById('questionProgress').textContent = (gameData.currentQuestion + 1) + '/' + total;
+        }
+
+        function useTip() {
+            if (gameData.tipCount <= 0) {
+                showToast('提示次数已用完！', 'error');
+                return;
+            }
+            
+            const currentQ = gameData.questionBank[gameData.currentLevel - 1][gameData.currentQuestion];
+            const wrongOptions = currentQ.options.filter(opt => opt !== currentQ.answer);
+            
+            if (wrongOptions.length > 0) {
+                const options = document.querySelectorAll('.option-btn');
+                const toRemove = wrongOptions.slice(0, 1)[0];
+                
+                options.forEach(opt => {
+                    if (opt.textContent === toRemove) {
+                        opt.classList.add('disabled');
+                        opt.style.opacity = '0.3';
+                    }
+                });
+                
+                gameData.tipCount -= 1;
+                document.getElementById('tipBtn').textContent = '💡 提示（' + gameData.tipCount + '次）';
+                showToast('已排除一个错误选项！', 'success');
+            }
+        }
+
+        function exitGame() {
+            if (gameData.timer) clearInterval(gameData.timer);
+            saveProgress();
+            changePage('homePage');
+        }
+
+        function endGame() {
+            if (gameData.timer) clearInterval(gameData.timer);
+            
+            const totalQuestion = gameData.questionBank[gameData.currentLevel - 1].length;
+            const correctCount = gameData.score / 10;
+            const correctRate = Math.round((correctCount / totalQuestion) * 100);
+            
+            let star = 0;
+            if (correctRate >= 100) star = 3;
+            else if (correctRate >= 80) star = 2;
+            else if (correctRate >= 60) star = 1;
+            
+            const isPass = gameData.life > 0 && correctRate >= 60;
+            
+            if (isPass) {
+                if (gameData.currentLevel >= gameData.unlockLevel) {
+                    gameData.unlockLevel = Math.min(gameData.currentLevel + 1, 8);
+                }
+                
+                if (star > gameData.levelStar[gameData.currentLevel - 1]) {
+                    gameData.levelStar[gameData.currentLevel - 1] = star;
+                }
+                
+                if (gameData.currentLevel === 1) gameData.achievement.find(item => item.id === 1).unlock = true;
+                if (gameData.currentLevel === 3) gameData.achievement.find(item => item.id === 2).unlock = true;
+                if (gameData.currentLevel === 4) gameData.achievement.find(item => item.id === 3).unlock = true;
+                if (gameData.currentLevel === 7) gameData.achievement.find(item => item.id === 4).unlock = true;
+                if (gameData.unlockLevel > 8) gameData.achievement.find(item => item.id === 5).unlock = true;
+                if (gameData.levelStar.every(s => s === 3)) gameData.achievement.find(item => item.id === 7).unlock = true;
+            }
+            
+            if (correctRate === 100 && gameData.life === 3) {
+                gameData.achievement.find(item => item.id === 6).unlock = true;
+            }
+            
+            saveProgress();
+            
+            let starsHtml = '';
+            for (let i = 0; i < 3; i++) {
+                starsHtml += i < star ? '<span class="star-filled">★</span>' : '<span class="star-empty">☆</span>';
+            }
+            
+            document.getElementById('resultIcon').textContent = isPass ? '🎉' : '😢';
+            document.getElementById('resultTitle').textContent = isPass 
+                ? '第' + gameData.currentLevel + '关 闯关成功！' 
+                : '第' + gameData.currentLevel + '关 挑战失败';
+            document.getElementById('resultScore').textContent = gameData.score;
+            document.getElementById('resultCorrect').textContent = correctRate + '%';
+            document.getElementById('resultStar').innerHTML = starsHtml;
+            
+            const nextBtn = document.getElementById('nextLevelBtn');
+            nextBtn.style.display = isPass && gameData.currentLevel < 8 ? 'inline-block' : 'none';
+            
+            document.getElementById('resultModal').classList.add('active');
+        }
+
+        function closeResult() {
+            document.getElementById('resultModal').classList.remove('active');
+            changePage('homePage');
+        }
+
+        function nextLevel() {
+            document.getElementById('resultModal').classList.remove('active');
+            if (gameData.currentLevel < 8) {
+                startGame(gameData.currentLevel + 1);
+            }
+        }
+
+        function renderWrongList() {
+            const container = document.getElementById('wrongList');
+            
+            if (gameData.wrongList.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-icon">📝</div>
+                        <div class="empty-text">暂无错题记录，继续加油！</div>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = '';
+            
+            gameData.wrongList.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'wrong-card';
+                card.innerHTML = `
+                    <div class="wrong-level">第${item.level}关</div>
+                    <div class="wrong-question">${item.title}</div>
+                    <div class="wrong-answers">
+                        <div class="wrong-answer-item">
+                            你的答案：<span class="your-answer">${item.wrongAnswer}</span>
+                        </div>
+                        <div class="wrong-answer-item">
+                            正确答案：<span class="correct-answer">${item.correctAnswer}</span>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function clearWrong() {
+            if (confirm('确定要清空错题本吗？')) {
+                gameData.wrongList = [];
+                saveProgress();
+                renderWrongList();
+                showToast('错题本已清空！', 'success');
+            }
+        }
+
+        function renderAchievement() {
+            const grid = document.getElementById('achievementGrid');
+            grid.innerHTML = '';
+            
+            gameData.achievement.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'achievement-card ' + (item.unlock ? 'unlock' : 'lock');
+                card.innerHTML = `
+                    <span class="achievement-icon">${item.icon}</span>
+                    <div class="achievement-name">${item.name}</div>
+                    <div class="achievement-desc">${item.desc}</div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            updateHomeStats();
+        });
+    </script>
+</body>
+</html>
