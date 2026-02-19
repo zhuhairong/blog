@@ -627,26 +627,6 @@
             flex-wrap: wrap;
         }
 
-        .timer-bar {
-            width: 100%;
-            height: 6px;
-            background: var(--bg-secondary);
-            border-radius: 3px;
-            margin-bottom: 30px;
-            overflow: hidden;
-        }
-
-        .timer-progress {
-            height: 100%;
-            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-violet));
-            border-radius: 3px;
-            transition: width 1s linear;
-        }
-
-        .timer-progress.warning {
-            background: linear-gradient(90deg, var(--accent-amber), var(--accent-rose));
-        }
-
         .result-modal {
             position: fixed;
             top: 0;
@@ -1130,10 +1110,6 @@
                     </div>
                 </div>
 
-                <div class="timer-bar">
-                    <div class="timer-progress" id="timerProgress"></div>
-                </div>
-
                 <div class="question-card">
                     <div class="question-number" id="questionNumber">QUESTION 01</div>
                     <div class="question-text" id="questionTitle"></div>
@@ -1270,9 +1246,7 @@
             currentLevel: 1,
             currentQuestion: 0,
             tipCount: 3,
-            timeLeft: 0,
-            timer: null,
-            totalTime: 0,
+            shuffledQuestions: [],
             wrongList: [],
             levelStar: [0, 0, 0, 0, 0, 0, 0, 0],
             achievement: [
@@ -1974,7 +1948,6 @@
                     { title: '下列说法正确的是？', options: ['SO₄²⁻表示硫酸根离子带2个单位负电荷', 'SO₄²⁻表示2个硫酸根离子', 'SO₄²⁻表示硫元素化合价为+2', 'SO₄²⁻表示2个硫原子'], answer: 'SO₄²⁻表示硫酸根离子带2个单位负电荷' },
                 ],
             ],
-            levelTime: [90, 60, 80, 90, 70, 100, 120, 100],
             levelName: [
                 '1-18号元素启蒙',
                 '拓展元素符号',
@@ -1994,7 +1967,7 @@
                 const saved = localStorage.getItem(STORAGE_KEY);
                 if (saved) {
                     const parsed = JSON.parse(saved);
-                    return { ...defaultData, ...parsed, timer: null };
+                    return { ...defaultData, ...parsed, shuffledQuestions: [] };
                 }
             } catch (e) {
                 console.error('Failed to load progress:', e);
@@ -2100,13 +2073,11 @@
             gameData.score = 0;
             gameData.life = 3;
             gameData.tipCount = 3;
-            gameData.totalTime = gameData.levelTime[levelNum - 1];
-            gameData.timeLeft = gameData.totalTime;
             
-            if (gameData.timer) clearInterval(gameData.timer);
+            const allQuestions = [...gameData.questionBank[levelNum - 1]];
+            gameData.shuffledQuestions = shuffleArray(allQuestions).slice(0, Math.min(20, allQuestions.length));
             
             renderQuestion();
-            startTimer();
             changePage('gamePage');
             
             document.getElementById('currentLevel').textContent = '第' + levelNum + '关';
@@ -2114,11 +2085,19 @@
             updateLife();
             updateScore();
             updateProgress();
-            updateTimerBar();
+        }
+
+        function shuffleArray(array) {
+            const arr = [...array];
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
         }
 
         function renderQuestion() {
-            const currentQ = gameData.questionBank[gameData.currentLevel - 1][gameData.currentQuestion];
+            const currentQ = gameData.shuffledQuestions[gameData.currentQuestion];
             document.getElementById('questionTitle').textContent = currentQ.title;
             document.getElementById('questionNumber').textContent = 'QUESTION ' + String(gameData.currentQuestion + 1).padStart(2, '0');
             
@@ -2160,7 +2139,7 @@
                 gameData.life -= 1;
                 updateLife();
                 
-                const currentQ = gameData.questionBank[gameData.currentLevel - 1][gameData.currentQuestion];
+                const currentQ = gameData.shuffledQuestions[gameData.currentQuestion];
                 gameData.wrongList.push({
                     level: gameData.currentLevel,
                     title: currentQ.title,
@@ -2178,7 +2157,7 @@
 
         function nextQuestion() {
             gameData.currentQuestion += 1;
-            const totalQuestion = gameData.questionBank[gameData.currentLevel - 1].length;
+            const totalQuestion = gameData.shuffledQuestions.length;
             
             if (gameData.currentQuestion >= totalQuestion || gameData.life <= 0) {
                 endGame();
@@ -2187,32 +2166,6 @@
             
             renderQuestion();
             updateProgress();
-        }
-
-        function startTimer() {
-            if (gameData.timer) clearInterval(gameData.timer);
-            
-            gameData.timer = setInterval(() => {
-                gameData.timeLeft -= 1;
-                document.getElementById('countDown').textContent = gameData.timeLeft + 's';
-                updateTimerBar();
-                
-                if (gameData.timeLeft <= 0) {
-                    endGame();
-                }
-            }, 1000);
-        }
-
-        function updateTimerBar() {
-            const progress = document.getElementById('timerProgress');
-            const percent = (gameData.timeLeft / gameData.totalTime) * 100;
-            progress.style.width = percent + '%';
-            
-            if (percent < 30) {
-                progress.classList.add('warning');
-            } else {
-                progress.classList.remove('warning');
-            }
         }
 
         function updateLife() {
@@ -2231,7 +2184,7 @@
         }
 
         function updateProgress() {
-            const total = gameData.questionBank[gameData.currentLevel - 1].length;
+            const total = gameData.shuffledQuestions.length;
             document.getElementById('questionProgress').textContent = (gameData.currentQuestion + 1) + '/' + total;
         }
 
@@ -2241,7 +2194,7 @@
                 return;
             }
             
-            const currentQ = gameData.questionBank[gameData.currentLevel - 1][gameData.currentQuestion];
+            const currentQ = gameData.shuffledQuestions[gameData.currentQuestion];
             const wrongOptions = currentQ.options.filter(opt => opt !== currentQ.answer);
             
             if (wrongOptions.length > 0) {
@@ -2262,15 +2215,12 @@
         }
 
         function exitGame() {
-            if (gameData.timer) clearInterval(gameData.timer);
             saveProgress();
             changePage('homePage');
         }
 
         function endGame() {
-            if (gameData.timer) clearInterval(gameData.timer);
-            
-            const totalQuestion = gameData.questionBank[gameData.currentLevel - 1].length;
+            const totalQuestion = gameData.shuffledQuestions.length;
             const correctCount = gameData.score / 10;
             const correctRate = Math.round((correctCount / totalQuestion) * 100);
             
