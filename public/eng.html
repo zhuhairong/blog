@@ -1493,6 +1493,8 @@
         
         let spellRecognition = null;
         let isSpellListening = false;
+        let fillRecognition = null;
+        let isFillListening = false;
         
         function initSpellRecognition() {
             if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
@@ -1588,6 +1590,7 @@
             html += '</div>';
             html += '<div style="text-align: center;">';
             html += '<button class="action-btn btn-primary" onclick="checkFill()">提交答案</button>';
+            html += '<button id="fillMicBtn" class="action-btn" onclick="startFillListening()" title="语音输入" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">🎤 语音输入</button>';
             html += '<button class="action-btn btn-success" onclick="loadGameMode()">下一个</button>';
             html += '</div>';
             html += `<input type="hidden" id="correctAnswer" value="${randomWord.english}">`;
@@ -1602,6 +1605,83 @@
                 const input = document.getElementById('fillInput');
                 if (input) input.focus();
             }, 100);
+        }
+        
+        function initFillRecognition() {
+            if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                fillRecognition = new SpeechRecognition();
+                fillRecognition.lang = 'en-US';
+                fillRecognition.continuous = false;
+                fillRecognition.interimResults = false;
+                fillRecognition.maxAlternatives = 1;
+
+                fillRecognition.onstart = () => {
+                    isFillListening = true;
+                    updateFillMicButton(true);
+                    showFeedback('🎤 请说出英文单词...', 'info');
+                };
+
+                fillRecognition.onend = () => {
+                    isFillListening = false;
+                    updateFillMicButton(false);
+                };
+
+                fillRecognition.onerror = (event) => {
+                    isFillListening = false;
+                    updateFillMicButton(false);
+                    if (event.error === 'no-speech') {
+                        showFeedback('🎤 未检测到语音，请重试', 'wrong');
+                    } else if (event.error === 'not-allowed') {
+                        showFeedback('🎤 请允许麦克风权限', 'wrong');
+                    }
+                };
+
+                fillRecognition.onresult = (event) => {
+                    const spokenWord = event.results[0][0].transcript.trim();
+                    const input = document.getElementById('fillInput');
+                    if (input) {
+                        input.value = spokenWord;
+                        showFeedback(`🎤 识别结果: "${spokenWord}"`, 'info');
+                        setTimeout(() => checkFill(), 500);
+                    }
+                };
+            }
+        }
+        
+        function startFillListening() {
+            if (!fillRecognition) {
+                initFillRecognition();
+            }
+            
+            if (!fillRecognition) {
+                showFeedback('🎤 您的浏览器不支持语音识别', 'wrong');
+                return;
+            }
+
+            if (isFillListening) {
+                fillRecognition.stop();
+                return;
+            }
+
+            try {
+                fillRecognition.start();
+            } catch (e) {
+                console.log('语音识别启动失败:', e);
+            }
+        }
+        
+        function updateFillMicButton(listening) {
+            const micBtn = document.getElementById('fillMicBtn');
+            if (micBtn) {
+                if (listening) {
+                    micBtn.innerHTML = '🔴 录音中...';
+                    micBtn.classList.add('recording');
+                } else {
+                    micBtn.innerHTML = '🎤 语音输入';
+                    micBtn.classList.remove('recording');
+                }
+            }
         }
 
         // 生成例句
