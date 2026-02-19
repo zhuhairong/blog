@@ -61,6 +61,28 @@ export default function Home() {
               </div>
             </div>
           </Link>
+
+          <Link href="/tang-poems.html" style={{ textDecoration: 'none' }}>
+            <div className="tool-card" style={{
+              background: 'linear-gradient(135deg, #8B4513 0%, #D2691E 100%)',
+              borderRadius: '16px',
+              padding: '2rem',
+              color: 'white',
+              cursor: 'pointer',
+              boxShadow: '0 4px 20px rgba(139, 69, 19, 0.3)',
+            }}>
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📜</div>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem', fontWeight: 'bold' }}>唐诗三百首 · 墨韵</h3>
+              <p style={{ opacity: 0.9, lineHeight: 1.6 }}>
+                精选30首经典唐诗，涵盖李白、杜甫、白居易等名家名作。支持搜索、分类浏览，水墨风格沉浸式阅读，感受千年诗词之美！
+              </p>
+              <div style={{ marginTop: '1rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                <span style={{ background: 'rgba(255,255,255,0.2)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.875rem' }}>30首经典</span>
+                <span style={{ background: 'rgba(255,255,255,0.2)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.875rem' }}>分类浏览</span>
+                <span style={{ background: 'rgba(255,255,255,0.2)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.875rem' }}>水墨风格</span>
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
 
