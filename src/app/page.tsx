@@ -7,9 +7,9 @@ export default function Home() {
   return (
     <section>
       <div style={{ padding: '4rem 0', textAlign: 'center', marginBottom: '4rem' }}>
-        <h1 style={{ fontSize: '4rem', marginBottom: '1.5rem' }}>Welcome to ZHR's Blog</h1>
+        <h1 style={{ fontSize: '4rem', marginBottom: '1.5rem' }}>Welcome to ZHR's AI Blog</h1>
         <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto 2.5rem auto' }}>
-          客至寒舍，共探技术之奥，同赴成长之途.
+          朋友来了有好酒。
         </p>
       </div>
 
