@@ -1,0 +1,2127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英语单词大冒险 - 人教版八年级下册(2024版)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .stats-bar {
+            background: white;
+            border-radius: 15px;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .game-section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .level-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .level-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            font-size: 1em;
+        }
+
+        .level-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .level-card.locked {
+            background: #ccc;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .level-card.completed {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+
+        .level-card.current {
+            box-shadow: 0 0 0 4px #ffd700;
+        }
+
+        .level-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .level-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .level-sections {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .section-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+        }
+
+        .level-wordcount {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .mode-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .mode-btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #667eea;
+            color: white;
+        }
+
+        .mode-btn:hover {
+            background: #5568d3;
+            transform: scale(1.05);
+        }
+
+        .mode-btn.active {
+            background: #11998e;
+            box-shadow: 0 5px 15px rgba(17, 153, 142, 0.4);
+        }
+
+        .game-area {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            min-height: 400px;
+        }
+
+        .unit-title {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .word-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .word-english {
+            font-size: 3em;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .word-chinese {
+            font-size: 1.5em;
+            color: #666;
+        }
+
+        .word-pronunciation {
+            color: #999;
+            font-style: italic;
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+        .input-area {
+            margin: 20px 0;
+        }
+
+        .input-area input {
+            width: 100%;
+            max-width: 400px;
+            padding: 15px 20px;
+            font-size: 1.2em;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .input-area input:focus {
+            border-color: #667eea;
+        }
+
+        .input-area input.correct {
+            border-color: #11998e;
+            background: #e8f5e9;
+        }
+
+        .input-area input.wrong {
+            border-color: #e74c3c;
+            background: #ffebee;
+        }
+
+        .action-btn {
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+        }
+
+        .btn-success {
+            background: #11998e;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #0d7d74;
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+        }
+
+        .match-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .match-card {
+            background: white;
+            padding: 20px 15px;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            border: 3px solid #ddd;
+            transition: all 0.3s;
+            font-size: 1em;
+            user-select: none;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .match-card:hover {
+            border-color: #667eea;
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .match-card.selected {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #e8eaf6 0%, #c5cae9 100%);
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.5);
+        }
+
+        .match-card.matched {
+            border-color: #11998e;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            opacity: 0.6;
+            pointer-events: none;
+            cursor: default;
+        }
+
+        .match-card.wrong {
+            border-color: #e74c3c;
+            background: #ffebee;
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .action-btn.recording {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%) !important;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .feedback {
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.2em;
+            display: none;
+            font-weight: bold;
+        }
+
+        .feedback.correct {
+            background: #e8f5e9;
+            color: #0d7d74;
+            display: block;
+            border: 2px solid #11998e;
+        }
+
+        .feedback.wrong {
+            background: #ffebee;
+            color: #c0392b;
+            display: block;
+            border: 2px solid #e74c3c;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 0 0 10px 0;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        .action-btn:focus,
+        .mode-btn:focus,
+        .level-card:focus,
+        .match-card:focus {
+            outline: 3px solid #ffd700;
+            outline-offset: 2px;
+        }
+
+        input:focus-visible {
+            outline: 3px solid #667eea;
+            outline-offset: 2px;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.5s;
+        }
+
+        .timer {
+            font-size: 2em;
+            text-align: center;
+            color: #e74c3c;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .achievement {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #ddd;
+        }
+
+        .achievement.unlocked {
+            border-color: #ffd700;
+            background: linear-gradient(135deg, #fff9e6 0%, #fff 100%);
+        }
+
+        .achievement-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .match-info {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        .match-info span {
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .card-front, .card-back {
+            transition: all 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .stats-bar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .match-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .mode-buttons {
+                flex-direction: column;
+            }
+            
+            .unit-title {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .level-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">跳转到主要内容</a>
+    <div class="container">
+        <header class="header">
+            <h1>🎮 英语单词大冒险</h1>
+            <p>人教版八年级下册（2024新版）| 8单元完整词库</p>
+        </header>
+
+        <nav class="stats-bar" aria-label="学习统计">
+            <div class="stat-item">
+                <div class="stat-value" id="totalScore" aria-live="polite">0</div>
+                <div class="stat-label">总积分</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="completedLevels" aria-live="polite">0/4</div>
+                <div class="stat-label">完成单元</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="correctWords" aria-live="polite">0</div>
+                <div class="stat-label">掌握单词</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="streak" aria-live="polite">0</div>
+                <div class="stat-label">连续正确</div>
+            </div>
+        </nav>
+
+        <section class="game-section" aria-labelledby="level-title">
+            <h2 class="section-title" id="level-title">📚 选择单元关卡</h2>
+            <div class="level-grid" id="levelGrid" role="list" aria-label="单元关卡列表">
+                <!-- 关卡卡片由JS生成 -->
+            </div>
+        </section>
+
+        <section class="game-section" id="main-content" aria-labelledby="game-title" tabindex="-1">
+            <h2 class="section-title" id="game-title">🎯 游戏模式</h2>
+            <nav class="mode-buttons" aria-label="游戏模式选择">
+                <button class="mode-btn active" data-mode="card" aria-pressed="true">� 单词卡片</button>
+                <button class="mode-btn" data-mode="match" aria-pressed="false">🔗 单词配对</button>
+                <button class="mode-btn" data-mode="spell" aria-pressed="false">✍️ 拼写挑战</button>
+                <button class="mode-btn" data-mode="fill" aria-pressed="false">� 情景填空</button>
+            </nav>
+
+            <div class="game-area" id="gameArea" role="region" aria-live="polite" aria-label="游戏内容区域">
+                <!-- 游戏内容区域 -->
+            </div>
+
+            <div class="feedback" id="feedback" role="alert" aria-live="assertive"></div>
+
+            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="学习进度">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </section>
+
+        <section class="game-section" aria-labelledby="achievement-title">
+            <h2 class="section-title" id="achievement-title">🏅 成就系统</h2>
+            <div class="achievements" id="achievements" role="list" aria-label="成就列表">
+                <!-- 成就由JS生成 -->
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // ============================================
+        // 人教版八年级下册（2024新版）完整单词表
+        // 共8个单元
+        // ============================================
+        const wordData = {
+            unit1: [
+                { english: 'relax', chinese: '放松；休息', pronunciation: '/rɪˈlæks/' },
+                { english: 'relaxed', chinese: '放松的；自在的', pronunciation: '/rɪˈlækst/' },
+                { english: 'relaxing', chinese: '令人放松的', pronunciation: '/rɪˈlæksɪŋ/' },
+                { english: 'stress', chinese: '压力；紧张', pronunciation: '/stres/' },
+                { english: 'tired', chinese: '疲倦的；累的', pronunciation: '/ˈtaɪərd/' },
+                { english: 'balanced', chinese: '平衡的；均衡的', pronunciation: '/ˈbælənst/' },
+                { english: 'calligraphy', chinese: '书法', pronunciation: '/kəˈlɪɡrəfi/' },
+                { english: 'ski', chinese: '滑雪', pronunciation: '/skiː/' },
+                { english: 'program', chinese: '程序；节目', pronunciation: '/ˈproʊɡræm/' },
+                { english: 'instructor', chinese: '教练；指导者', pronunciation: '/ɪnˈstrʌktər/' },
+                { english: 'fear', chinese: '害怕；恐惧', pronunciation: '/fɪr/' },
+                { english: 'poem', chinese: '诗', pronunciation: '/ˈpoʊəm/' },
+                { english: 'stroke', chinese: '笔画；击球', pronunciation: '/stroʊk/' },
+                { english: 'ink', chinese: '墨水', pronunciation: '/ɪŋk/' },
+                { english: 'flute', chinese: '长笛', pronunciation: '/fluːt/' },
+                { english: 'hiking', chinese: '徒步旅行', pronunciation: '/ˈhaɪkɪŋ/' },
+                { english: 'painting', chinese: '绘画', pronunciation: '/ˈpeɪntɪŋ/' },
+                { english: 'programming', chinese: '编程', pronunciation: '/ˈproʊɡræmɪŋ/' },
+                { english: 'activity', chinese: '活动', pronunciation: '/ækˈtɪvəti/' },
+                { english: 'free-time', chinese: '空闲时间', pronunciation: '/friː taɪm/' },
+                { english: 'hobby', chinese: '爱好', pronunciation: '/ˈhɑːbi/' },
+                { english: 'collect', chinese: '收集', pronunciation: '/kəˈlekt/' },
+                { english: 'stamp', chinese: '邮票', pronunciation: '/stæmp/' },
+                { english: 'coin', chinese: '硬币', pronunciation: '/kɔɪn/' },
+                { english: 'interest', chinese: '兴趣', pronunciation: '/ˈɪntrəst/' },
+                { english: 'skill', chinese: '技能；技巧', pronunciation: '/skɪl/' },
+                { english: 'improve', chinese: '改善；提高', pronunciation: '/ɪmˈpruːv/' },
+                { english: 'confidence', chinese: '信心', pronunciation: '/ˈkɑːnfɪdəns/' },
+                { english: 'creative', chinese: '有创造力的', pronunciation: '/kriˈeɪtɪv/' },
+                { english: 'enjoyable', chinese: '令人愉快的', pronunciation: '/ɪnˈdʒɔɪəbl/' }
+            ],
+            unit2: [
+                { english: 'healthy', chinese: '健康的', pronunciation: '/ˈhelθi/' },
+                { english: 'health', chinese: '健康', pronunciation: '/helθ/' },
+                { english: 'diet', chinese: '饮食', pronunciation: '/ˈdaɪət/' },
+                { english: 'exercise', chinese: '锻炼；运动', pronunciation: '/ˈeksərsaɪz/' },
+                { english: 'sleep', chinese: '睡眠', pronunciation: '/sliːp/' },
+                { english: 'energy', chinese: '能量；精力', pronunciation: '/ˈenərdʒi/' },
+                { english: 'sore', chinese: '疼痛的', pronunciation: '/sɔːr/' },
+                { english: 'throat', chinese: '喉咙', pronunciation: '/θroʊt/' },
+                { english: 'stomachache', chinese: '胃痛', pronunciation: '/ˈstʌməkeɪk/' },
+                { english: 'fever', chinese: '发烧', pronunciation: '/ˈfiːvər/' },
+                { english: 'cough', chinese: '咳嗽', pronunciation: '/kɔːf/' },
+                { english: 'toothache', chinese: '牙痛', pronunciation: '/ˈtuːθeɪk/' },
+                { english: 'headache', chinese: '头痛', pronunciation: '/ˈhedeɪk/' },
+                { english: 'test', chinese: '检测；测试', pronunciation: '/test/' },
+                { english: 'flu', chinese: '流感', pronunciation: '/fluː/' },
+                { english: 'medicine', chinese: '药', pronunciation: '/ˈmedsn/' },
+                { english: 'mask', chinese: '口罩', pronunciation: '/mæsk/' },
+                { english: 'virus', chinese: '病毒', pronunciation: '/ˈvaɪrəs/' },
+                { english: 'patient', chinese: '病人', pronunciation: '/ˈpeɪʃnt/' },
+                { english: 'injury', chinese: '伤害；受伤', pronunciation: '/ˈɪndʒəri/' },
+                { english: 'illness', chinese: '疾病', pronunciation: '/ˈɪlnəs/' },
+                { english: 'pain', chinese: '疼痛', pronunciation: '/peɪn/' },
+                { english: 'safety', chinese: '安全', pronunciation: '/ˈseɪfti/' },
+                { english: 'fry', chinese: '油炸', pronunciation: '/fraɪ/' },
+                { english: 'stove', chinese: '炉子', pronunciation: '/stoʊv/' },
+                { english: 'flame', chinese: '火焰', pronunciation: '/fleɪm/' },
+                { english: 'panic', chinese: '恐慌', pronunciation: '/ˈpænɪk/' },
+                { english: 'roll', chinese: '翻滚；滚动', pronunciation: '/roʊl/' },
+                { english: 'aid', chinese: '帮助；援助', pronunciation: '/eɪd/' },
+                { english: 'extinguisher', chinese: '灭火器', pronunciation: '/ɪkˈstɪŋɡwɪʃər/' },
+                { english: 'smoke', chinese: '烟；吸烟', pronunciation: '/smoʊk/' },
+                { english: 'balanced diet', chinese: '均衡饮食', pronunciation: '/ˈbælənst daɪət/' },
+                { english: 'stay up', chinese: '熬夜', pronunciation: '/steɪ ʌp/' },
+                { english: 'physical', chinese: '身体的', pronunciation: '/ˈfɪzɪkl/' },
+                { english: 'mental', chinese: '精神的；心理的', pronunciation: '/ˈmentl/' }
+            ],
+            unit3: [
+                { english: 'grow', chinese: '成长；生长', pronunciation: '/ɡroʊ/' },
+                { english: 'growth', chinese: '成长；增长', pronunciation: '/ɡroʊθ/' },
+                { english: 'emotion', chinese: '情感；情绪', pronunciation: '/ɪˈmoʊʃn/' },
+                { english: 'emotional', chinese: '情绪的；情感的', pronunciation: '/ɪˈmoʊʃənl/' },
+                { english: 'upset', chinese: '难过的；沮丧的', pronunciation: '/ʌpˈset/' },
+                { english: 'lonely', chinese: '孤独的；寂寞的', pronunciation: '/ˈloʊnli/' },
+                { english: 'shocked', chinese: '震惊的', pronunciation: '/ʃɑːkt/' },
+                { english: 'alone', chinese: '独自；单独', pronunciation: '/əˈloʊn/' },
+                { english: 'control', chinese: '控制', pronunciation: '/kənˈtroʊl/' },
+                { english: 'anger', chinese: '怒火；愤怒', pronunciation: '/ˈæŋɡər/' },
+                { english: 'angry', chinese: '生气的', pronunciation: '/ˈæŋɡri/' },
+                { english: 'advise', chinese: '建议；劝告', pronunciation: '/ədˈvaɪz/' },
+                { english: 'advice', chinese: '建议', pronunciation: '/ədˈvaɪs/' },
+                { english: 'hurtful', chinese: '伤感情的', pronunciation: '/ˈhɜːrtfl/' },
+                { english: 'forgive', chinese: '原谅；宽恕', pronunciation: '/fərˈɡɪv/' },
+                { english: 'friendship', chinese: '友谊', pronunciation: '/ˈfrendʃɪp/' },
+                { english: 'relationship', chinese: '关系', pronunciation: '/rɪˈleɪʃnʃɪp/' },
+                { english: 'communicate', chinese: '交流；沟通', pronunciation: '/kəˈmjuːnɪkeɪt/' },
+                { english: 'communication', chinese: '交流；沟通', pronunciation: '/kəˌmjuːnɪˈkeɪʃn/' },
+                { english: 'understand', chinese: '理解', pronunciation: '/ˌʌndərˈstænd/' },
+                { english: 'misunderstand', chinese: '误解', pronunciation: '/ˌmɪsʌndərˈstænd/' },
+                { english: 'apologize', chinese: '道歉', pronunciation: '/əˈpɑːlədʒaɪz/' },
+                { english: 'apology', chinese: '道歉', pronunciation: '/əˈpɑːlədʒi/' },
+                { english: 'trust', chinese: '信任', pronunciation: '/trʌst/' },
+                { english: 'respect', chinese: '尊重', pronunciation: '/rɪˈspekt/' },
+                { english: 'support', chinese: '支持', pronunciation: '/səˈpɔːrt/' },
+                { english: 'encourage', chinese: '鼓励', pronunciation: '/ɪnˈkɜːrɪdʒ/' },
+                { english: 'confidence', chinese: '信心', pronunciation: '/ˈkɑːnfɪdəns/' },
+                { english: 'deal with', chinese: '处理；对付', pronunciation: '/diːl wɪð/' },
+                { english: 'problem', chinese: '问题', pronunciation: '/ˈprɑːbləm/' },
+                { english: 'solve', chinese: '解决', pronunciation: '/sɑːlv/' },
+                { english: 'solution', chinese: '解决方案', pronunciation: '/səˈluːʃn/' },
+                { english: 'challenge', chinese: '挑战', pronunciation: '/ˈtʃælɪndʒ/' },
+                { english: 'experience', chinese: '经历；经验', pronunciation: '/ɪkˈspɪriəns/' },
+                { english: 'teenager', chinese: '青少年', pronunciation: '/ˈtiːneɪdʒər/' }
+            ],
+            unit4: [
+                { english: 'wonder', chinese: '奇观；奇迹；想知道', pronunciation: '/ˈwʌndər/' },
+                { english: 'nature', chinese: '自然', pronunciation: '/ˈneɪtʃər/' },
+                { english: 'natural', chinese: '自然的', pronunciation: '/ˈnætʃrəl/' },
+                { english: 'measurement', chinese: '测量；尺寸', pronunciation: '/ˈmeʒərmənt/' },
+                { english: 'measure', chinese: '测量', pronunciation: '/ˈmeʒər/' },
+                { english: 'deep', chinese: '深的', pronunciation: '/diːp/' },
+                { english: 'depth', chinese: '深度', pronunciation: '/depθ/' },
+                { english: 'high', chinese: '高的', pronunciation: '/haɪ/' },
+                { english: 'height', chinese: '高度', pronunciation: '/haɪt/' },
+                { english: 'long', chinese: '长的', pronunciation: '/lɔːŋ/' },
+                { english: 'length', chinese: '长度', pronunciation: '/leŋθ/' },
+                { english: 'wide', chinese: '宽的', pronunciation: '/waɪd/' },
+                { english: 'width', chinese: '宽度', pronunciation: '/wɪdθ/' },
+                { english: 'size', chinese: '大小；尺寸', pronunciation: '/saɪz/' },
+                { english: 'area', chinese: '面积；地区', pronunciation: '/ˈeriə/' },
+                { english: 'population', chinese: '人口', pronunciation: '/ˌpɑːpjuˈleɪʃn/' },
+                { english: 'mountain', chinese: '山', pronunciation: '/ˈmaʊntn/' },
+                { english: 'desert', chinese: '沙漠', pronunciation: '/ˈdezərt/' },
+                { english: 'ocean', chinese: '海洋', pronunciation: '/ˈoʊʃn/' },
+                { english: 'river', chinese: '河流', pronunciation: '/ˈrɪvər/' },
+                { english: 'lake', chinese: '湖泊', pronunciation: '/leɪk/' },
+                { english: 'waterfall', chinese: '瀑布', pronunciation: '/ˈwɔːtərfɔːl/' },
+                { english: 'forest', chinese: '森林', pronunciation: '/ˈfɔːrɪst/' },
+                { english: 'amazing', chinese: '令人惊奇的', pronunciation: '/əˈmeɪzɪŋ/' },
+                { english: 'fantastic', chinese: '极好的', pronunciation: '/fænˈtæstɪk/' },
+                { english: 'spectacular', chinese: '壮观的', pronunciation: '/spekˈtækjələr/' },
+                { english: 'explore', chinese: '探索', pronunciation: '/ɪkˈsplɔːr/' },
+                { english: 'exploration', chinese: '探索', pronunciation: '/ˌekspləˈreɪʃn/' },
+                { english: 'discover', chinese: '发现', pronunciation: '/dɪˈskʌvər/' },
+                { english: 'discovery', chinese: '发现', pronunciation: '/dɪˈskʌvəri/' },
+                { english: 'protect', chinese: '保护', pronunciation: '/prəˈtekt/' },
+                { english: 'protection', chinese: '保护', pronunciation: '/prəˈtekʃn/' },
+                { english: 'environment', chinese: '环境', pronunciation: '/ɪnˈvaɪrənmənt/' },
+                { english: 'climate', chinese: '气候', pronunciation: '/ˈklaɪmət/' },
+                { english: 'temperature', chinese: '温度', pronunciation: '/ˈtemprətʃər/' },
+                { english: 'level', chinese: '水平；级别', pronunciation: '/ˈlevl/' },
+                { english: 'surface', chinese: '表面', pronunciation: '/ˈsɜːrfɪs/' },
+                { english: 'below', chinese: '在…下面', pronunciation: '/bɪˈloʊ/' },
+                { english: 'above', chinese: '在…上面', pronunciation: '/əˈbʌv/' },
+                { english: 'earth', chinese: '地球', pronunciation: '/ɜːrθ/' }
+            ],
+            unit5: [
+                { english: 'temper', chinese: '脾气；怒气', pronunciation: '/ˈtempər/' },
+                { english: 'earthquake', chinese: '地震', pronunciation: '/ˈɜːrθkweɪk/' },
+                { english: 'typhoon', chinese: '台风', pronunciation: '/taɪˈfuːn/' },
+                { english: 'wildfire', chinese: '野火', pronunciation: '/ˈwaɪldfaɪər/' },
+                { english: 'snowstorm', chinese: '暴风雪', pronunciation: '/ˈsnoʊstɔːrm/' },
+                { english: 'flood', chinese: '洪水；水灾', pronunciation: '/flʌd/' },
+                { english: 'drought', chinese: '旱灾', pronunciation: '/draʊt/' },
+                { english: 'warn', chinese: '警告', pronunciation: '/wɔːrn/' },
+                { english: 'wave', chinese: '波浪；挥手', pronunciation: '/weɪv/' },
+                { english: 'tsunami', chinese: '海啸', pronunciation: '/tsuːˈnɑːmi/' },
+                { english: 'interview', chinese: '采访；面试', pronunciation: '/ˈɪntərvjuː/' },
+                { english: 'possibly', chinese: '可能；或许', pronunciation: '/ˈpɑːsəbli/' },
+                { english: 'report', chinese: '报告；报道', pronunciation: '/rɪˈpɔːrt/' },
+                { english: 'neighbourhood', chinese: '街区；社区', pronunciation: '/ˈneɪbərhʊd/' },
+                { english: 'roof', chinese: '屋顶', pronunciation: '/ruːf/' },
+                { english: 'nearly', chinese: '几乎；差不多', pronunciation: '/ˈnɪrli/' },
+                { english: 'trouble', chinese: '麻烦；困难', pronunciation: '/ˈtrʌbl/' },
+                { english: 'relative', chinese: '亲戚', pronunciation: '/ˈrelətɪv/' },
+                { english: 'truck', chinese: '卡车', pronunciation: '/trʌk/' },
+                { english: 'supply', chinese: '供应；补给', pronunciation: '/səˈplaɪ/' },
+                { english: 'preparation', chinese: '准备', pronunciation: '/ˌprepəˈreɪʃn/' },
+                { english: 'power', chinese: '电力；力量', pronunciation: '/ˈpaʊər/' },
+                { english: 'thick', chinese: '厚的；浓密的', pronunciation: '/θɪk/' },
+                { english: 'beat', chinese: '敲打；跳动', pronunciation: '/biːt/' },
+                { english: 'hide', chinese: '躲藏', pronunciation: '/haɪd/' },
+                { english: 'tornado', chinese: '龙卷风', pronunciation: '/tɔːrˈneɪdoʊ/' },
+                { english: 'worst', chinese: '最坏的', pronunciation: '/wɜːrst/' },
+                { english: 'refuse', chinese: '拒绝', pronunciation: '/rɪˈfjuːz/' },
+                { english: 'security', chinese: '安全；保安', pronunciation: '/sɪˈkjʊrəti/' },
+                { english: 'guard', chinese: '卫兵；保卫', pronunciation: '/ɡɑːrd/' },
+                { english: 'nearby', chinese: '附近的', pronunciation: '/ˈnɪrbaɪ/' },
+                { english: 'scream', chinese: '尖叫', pronunciation: '/skriːm/' },
+                { english: 'thankfully', chinese: '幸亏；感激地', pronunciation: '/ˈθæŋkfəli/' },
+                { english: 'knowledge', chinese: '知识', pronunciation: '/ˈnɑːlɪdʒ/' },
+                { english: 'except for', chinese: '除…之外', pronunciation: '/ɪkˈsept fɔːr/' },
+                { english: 'hero', chinese: '英雄', pronunciation: '/ˈhɪəroʊ/' },
+                { english: 'landslide', chinese: '滑坡；塌方', pronunciation: '/ˈlændslaɪd/' },
+                { english: 'safeguard', chinese: '保护；捍卫', pronunciation: '/ˈseɪfɡɑːrd/' },
+                { english: 'rescue', chinese: '救援', pronunciation: '/ˈreskjuː/' },
+                { english: 'heatwave', chinese: '热浪', pronunciation: '/ˈhiːtweɪv/' },
+                { english: 'firefighter', chinese: '消防员', pronunciation: '/ˈfaɪərfaɪtər/' },
+                { english: 'volunteer', chinese: '志愿者', pronunciation: '/ˌvɑːlənˈtɪr/' },
+                { english: 'alarm', chinese: '警报；闹钟', pronunciation: '/əˈlɑːrm/' },
+                { english: 'sudden', chinese: '突然的', pronunciation: '/ˈsʌdn/' },
+                { english: 'thunder', chinese: '雷；雷声', pronunciation: '/ˈθʌndər/' },
+                { english: 'rainstorm', chinese: '暴风雨', pronunciation: '/ˈreɪnstɔːrm/' },
+                { english: 'unlucky', chinese: '不幸的', pronunciation: '/ʌnˈlʌki/' }
+            ],
+            unit6: [
+                { english: 'shake', chinese: '握手；摇动', pronunciation: '/ʃeɪk/' },
+                { english: 'bow', chinese: '鞠躬', pronunciation: '/baʊ/' },
+                { english: 'bump', chinese: '碰；撞', pronunciation: '/bʌmp/' },
+                { english: 'fist', chinese: '拳头', pronunciation: '/fɪst/' },
+                { english: 'rub', chinese: '摩擦；揉', pronunciation: '/rʌb/' },
+                { english: 'kiss', chinese: '亲吻', pronunciation: '/kɪs/' },
+                { english: 'cheek', chinese: '脸颊', pronunciation: '/tʃiːk/' },
+                { english: 'hug', chinese: '拥抱', pronunciation: '/hʌɡ/' },
+                { english: 'embarrassed', chinese: '尴尬的', pronunciation: '/ɪmˈbærəst/' },
+                { english: 'confused', chinese: '困惑的', pronunciation: '/kənˈfjuːzd/' },
+                { english: 'formal', chinese: '正式的', pronunciation: '/ˈfɔːrml/' },
+                { english: 'curry', chinese: '咖喱菜', pronunciation: '/ˈkʌri/' },
+                { english: 'rude', chinese: '粗鲁的', pronunciation: '/ruːd/' },
+                { english: 'uncommon', chinese: '罕见的', pronunciation: '/ʌnˈkɑːmən/' },
+                { english: 'palm', chinese: '手掌', pronunciation: '/pɑːm/' },
+                { english: 'fork', chinese: '叉子', pronunciation: '/fɔːrk/' },
+                { english: 'manner', chinese: '方式；礼仪', pronunciation: '/ˈmænər/' },
+                { english: 'confusing', chinese: '令人困惑的', pronunciation: '/kənˈfjuːzɪŋ/' },
+                { english: 'unless', chinese: '除非', pronunciation: '/ənˈles/' },
+                { english: 'proper', chinese: '恰当的', pronunciation: '/ˈprɑːpər/' },
+                { english: 'elbow', chinese: '手肘', pronunciation: '/ˈelboʊ/' },
+                { english: 'chopstick', chinese: '筷子', pronunciation: '/ˈtʃɑːpstɪk/' },
+                { english: 'embarrassing', chinese: '使人难堪的', pronunciation: '/ɪmˈbærəsɪŋ/' },
+                { english: 'cultural', chinese: '文化的', pronunciation: '/ˈkʌltʃərəl/' },
+                { english: 'custom', chinese: '习俗', pronunciation: '/ˈkʌstəm/' },
+                { english: 'occasion', chinese: '场合', pronunciation: '/əˈkeɪʒn/' },
+                { english: 'blouse', chinese: '女式衬衫', pronunciation: '/blaʊs/' },
+                { english: 'private', chinese: '私人的', pronunciation: '/ˈpraɪvət/' },
+                { english: 'whether', chinese: '是否', pronunciation: '/ˈweðər/' },
+                { english: 'married', chinese: '已婚的', pronunciation: '/ˈmerid/' },
+                { english: 'unsafe', chinese: '不安全的', pronunciation: '/ʌnˈseɪf/' },
+                { english: 'improper', chinese: '不合适的', pronunciation: '/ɪmˈprɑːpər/' },
+                { english: 'informal', chinese: '非正式的', pronunciation: '/ɪnˈfɔːrml/' },
+                { english: 'jeans', chinese: '牛仔裤', pronunciation: '/dʒiːnz/' },
+                { english: 'marry', chinese: '结婚', pronunciation: '/ˈmeri/' },
+                { english: 'congratulate', chinese: '祝贺', pronunciation: '/kənˈɡrætʃuleɪt/' },
+                { english: 'Asian', chinese: '亚洲的；亚洲人', pronunciation: '/ˈeɪʃn/' },
+                { english: 'tradition', chinese: '传统', pronunciation: '/trəˈdɪʃn/' },
+                { english: 'correctly', chinese: '正确地', pronunciation: '/kəˈrektli/' },
+                { english: 'receive', chinese: '收到', pronunciation: '/rɪˈsiːv/' },
+                { english: 'impression', chinese: '印象', pronunciation: '/ɪmˈpreʃn/' },
+                { english: 'cheer', chinese: '欢呼', pronunciation: '/tʃɪr/' }
+            ],
+            unit7: [
+                { english: 'adventure', chinese: '冒险；冒险经历', pronunciation: '/ədˈventʃər/' },
+                { english: 'fantasy', chinese: '幻想；幻想作品', pronunciation: '/ˈfæntəsi/' },
+                { english: 'mystery', chinese: '悬疑小说；奥秘', pronunciation: '/ˈmɪstri/' },
+                { english: 'fiction', chinese: '小说', pronunciation: '/ˈfɪkʃn/' },
+                { english: 'science fiction', chinese: '科幻小说', pronunciation: '/ˈsaɪəns ˈfɪkʃn/' },
+                { english: 'detective', chinese: '侦探', pronunciation: '/dɪˈtektɪv/' },
+                { english: 'alien', chinese: '外星人', pronunciation: '/ˈeɪliən/' },
+                { english: 'attack', chinese: '攻击；进攻', pronunciation: '/əˈtæk/' },
+                { english: 'historical', chinese: '历史的', pronunciation: '/hɪˈstɔːrɪkl/' },
+                { english: 'force', chinese: '强迫；力量', pronunciation: '/fɔːrs/' },
+                { english: 'steal', chinese: '偷；窃取', pronunciation: '/stiːl/' },
+                { english: 'punish', chinese: '惩罚', pronunciation: '/ˈpʌnɪʃ/' },
+                { english: 'idiom', chinese: '习语；成语', pronunciation: '/ˈɪdiəm/' },
+                { english: 'recently', chinese: '最近', pronunciation: '/ˈriːsntli/' },
+                { english: 'lost', chinese: '迷路的；丢失的', pronunciation: '/lɔːst/' },
+                { english: 'recommend', chinese: '推荐', pronunciation: '/ˌrekəˈmend/' },
+                { english: 'society', chinese: '社会', pronunciation: '/səˈsaɪəti/' },
+                { english: 'literary', chinese: '文学的', pronunciation: '/ˈlɪtəreri/' },
+                { english: 'base', chinese: '以…为基础；基础', pronunciation: '/beɪs/' },
+                { english: 'summary', chinese: '总结；概要', pronunciation: '/ˈsʌməri/' },
+                { english: 'spoiled', chinese: '宠坏的', pronunciation: '/spɔɪld/' },
+                { english: 'selfish', chinese: '自私的', pronunciation: '/ˈselfɪʃ/' },
+                { english: 'lock', chinese: '锁', pronunciation: '/lɑːk/' },
+                { english: 'unlock', chinese: '开锁', pronunciation: '/ʌnˈlɑːk/' },
+                { english: 'secret', chinese: '秘密', pronunciation: '/ˈsiːkrət/' },
+                { english: 'key', chinese: '钥匙；关键', pronunciation: '/kiː/' },
+                { english: 'discover', chinese: '发现', pronunciation: '/dɪˈskʌvər/' },
+                { english: 'garden', chinese: '花园', pronunciation: '/ˈɡɑːrdn/' },
+                { english: 'wall', chinese: '墙', pronunciation: '/wɔːl/' },
+                { english: 'surprise', chinese: '惊喜；惊讶', pronunciation: '/sərˈpraɪz/' },
+                { english: 'lonely', chinese: '孤独的', pronunciation: '/ˈloʊnli/' },
+                { english: 'friend', chinese: '朋友', pronunciation: '/frend/' },
+                { english: 'magic', chinese: '魔法', pronunciation: '/ˈmædʒɪk/' },
+                { english: 'character', chinese: '角色；人物', pronunciation: '/ˈkærəktər/' },
+                { english: 'plot', chinese: '情节', pronunciation: '/plɑːt/' },
+                { english: 'ending', chinese: '结局', pronunciation: '/ˈendɪŋ/' },
+                { english: 'author', chinese: '作者', pronunciation: '/ˈɔːθər/' },
+                { english: 'reader', chinese: '读者', pronunciation: '/ˈriːdər/' },
+                { english: 'classic', chinese: '经典作品', pronunciation: '/ˈklæsɪk/' },
+                { english: 'novel', chinese: '长篇小说', pronunciation: '/ˈnɑːvl/' }
+            ],
+            unit8: [
+                { english: 'treasure', chinese: '财富；珍宝', pronunciation: '/ˈtreʒər/' },
+                { english: 'island', chinese: '岛', pronunciation: '/ˈaɪlənd/' },
+                { english: 'classic', chinese: '经典作品', pronunciation: '/ˈklæsɪk/' },
+                { english: 'page', chinese: '页', pronunciation: '/peɪdʒ/' },
+                { english: 'hurry', chinese: '匆忙；赶快', pronunciation: '/ˈhɜːri/' },
+                { english: 'due', chinese: '预期的；到期的', pronunciation: '/duː/' },
+                { english: 'ship', chinese: '船', pronunciation: '/ʃɪp/' },
+                { english: 'tool', chinese: '工具', pronunciation: '/tuːl/' },
+                { english: 'gun', chinese: '枪', pronunciation: '/ɡʌn/' },
+                { english: 'mark', chinese: '记号；标记', pronunciation: '/mɑːrk/' },
+                { english: 'sand', chinese: '沙子', pronunciation: '/sænd/' },
+                { english: 'cannibal', chinese: '食人肉者', pronunciation: '/ˈkænɪbl/' },
+                { english: 'towards', chinese: '朝向', pronunciation: '/təˈwɔːrdz/' },
+                { english: 'land', chinese: '陆地', pronunciation: '/lænd/' },
+                { english: 'fiction', chinese: '小说', pronunciation: '/ˈfɪkʃn/' },
+                { english: 'technology', chinese: '科技', pronunciation: '/tekˈnɑːlədʒi/' },
+                { english: 'French', chinese: '法语；法国的', pronunciation: '/frentʃ/' },
+                { english: 'pop', chinese: '流行音乐', pronunciation: '/pɑːp/' },
+                { english: 'rock', chinese: '摇滚乐', pronunciation: '/rɑːk/' },
+                { english: 'band', chinese: '乐队', pronunciation: '/bænd/' },
+                { english: 'forever', chinese: '永远', pronunciation: '/fərˈevər/' },
+                { english: 'abroad', chinese: '在国外', pronunciation: '/əˈbrɔːd/' },
+                { english: 'fan', chinese: '迷；粉丝', pronunciation: '/fæn/' },
+                { english: 'southern', chinese: '南方的', pronunciation: '/ˈsʌðərn/' },
+                { english: 'modern', chinese: '现代的', pronunciation: '/ˈmɑːdərn/' },
+                { english: 'success', chinese: '成功', pronunciation: '/səkˈses/' },
+                { english: 'belong', chinese: '属于', pronunciation: '/bɪˈlɔːŋ/' },
+                { english: 'laughter', chinese: '笑声', pronunciation: '/ˈlæftər/' },
+                { english: 'beauty', chinese: '美；美丽', pronunciation: '/ˈbjuːti/' },
+                { english: 'record', chinese: '记录；唱片', pronunciation: '/ˈrekərd/' },
+                { english: 'introduce', chinese: '介绍', pronunciation: '/ˌɪntrəˈduːs/' },
+                { english: 'line', chinese: '行；线', pronunciation: '/laɪn/' },
+                { english: 'actually', chinese: '事实上', pronunciation: '/ˈæktʃuəli/' },
+                { english: 'million', chinese: '百万', pronunciation: '/ˈmɪljən/' },
+                { english: 'abroad', chinese: '在国外', pronunciation: '/əˈbrɔːd/' },
+                { english: 'study', chinese: '学习；研究', pronunciation: '/ˈstʌdi/' }
+            ]
+        };
+
+        const levelInfo = [
+            { id: 1, unit: 'unit1', name: 'Unit 1 Time to Relax', icon: '🎨', wordCount: 30, sectionA: '休闲活动', sectionB: '爱好与技能' },
+            { id: 2, unit: 'unit2', name: 'Unit 2 Stay Healthy', icon: '🏥', wordCount: 35, sectionA: '健康问题', sectionB: '安全与急救' },
+            { id: 3, unit: 'unit3', name: 'Unit 3 Growing Up', icon: '🌱', wordCount: 35, sectionA: '情绪表达', sectionB: '人际交往' },
+            { id: 4, unit: 'unit4', name: 'Unit 4 The Wonders of Nature', icon: '🏔️', wordCount: 40, sectionA: '自然奇观', sectionB: '探索自然' },
+            { id: 5, unit: 'unit5', name: 'Unit 5 Nature\'s Temper', icon: '🌪️', wordCount: 47, sectionA: '自然灾害', sectionB: '安全防范' },
+            { id: 6, unit: 'unit6', name: 'Unit 6 Crossing Cultures', icon: '🌏', wordCount: 42, sectionA: '文化礼仪', sectionB: '跨文化交流' },
+            { id: 7, unit: 'unit7', name: 'Unit 7 A Good Read', icon: '📚', wordCount: 40, sectionA: '文学类型', sectionB: '阅读推荐' },
+            { id: 8, unit: 'unit8', name: 'Unit 8', icon: '📖', wordCount: 36, sectionA: '经典文学', sectionB: '音乐文化' }
+        ];
+
+        const achievements = [
+            { id: 1, name: '新手勇士', icon: '🌟', condition: '完成第1单元' },
+            { id: 2, name: '连击达人', icon: '🔥', condition: '连续正确20个' },
+            { id: 3, name: '拼写大师', icon: '✍️', condition: '拼写模式全对10次' },
+            { id: 4, name: '单元王者', icon: '👑', condition: '完成全部8单元' },
+            { id: 5, name: '词汇达人', icon: '📖', condition: '掌握100个单词' },
+            { id: 6, name: '完美通关', icon: '🏆', condition: '全部单元满分' }
+        ];
+
+        // 游戏状态
+        let gameState = {
+            currentLevel: 1,
+            currentMode: 'card',
+            score: 0,
+            completedLevels: [],
+            correctWords: 0,
+            streak: 0,
+            maxStreak: 0,
+            unlockedAchievements: [],
+            spellCorrectCount: 0,
+            masteredWords: []
+        };
+
+        // 配对游戏状态
+        let matchState = {
+            selectedCards: [],
+            matchedPairs: 0,
+            totalPairs: 0
+        };
+
+        // 语音朗读功能
+        let speechSynthesis = window.speechSynthesis;
+        let currentUtterance = null;
+        let speechRate = 0.8;
+
+        function speakWord(word, rate = speechRate) {
+            if (speechSynthesis.speaking) {
+                speechSynthesis.cancel();
+            }
+            
+            currentUtterance = new SpeechSynthesisUtterance(word);
+            currentUtterance.lang = 'en-US';
+            currentUtterance.rate = rate;
+            currentUtterance.pitch = 1;
+            
+            const voices = speechSynthesis.getVoices();
+            const englishVoice = voices.find(voice => voice.lang.includes('en'));
+            if (englishVoice) {
+                currentUtterance.voice = englishVoice;
+            }
+            
+            speechSynthesis.speak(currentUtterance);
+        }
+
+        function speakWordSlowly(word) {
+            speakWord(word, 0.5);
+        }
+
+        function stopSpeaking() {
+            if (speechSynthesis.speaking) {
+                speechSynthesis.cancel();
+            }
+        }
+
+        // 语音识别功能
+        let recognition = null;
+        let isListening = false;
+        let currentMatchCard = null;
+
+        function initSpeechRecognition() {
+            if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                recognition = new SpeechRecognition();
+                recognition.lang = 'en-US';
+                recognition.continuous = false;
+                recognition.interimResults = false;
+                recognition.maxAlternatives = 3;
+
+                recognition.onstart = () => {
+                    isListening = true;
+                    updateMicButton(true);
+                };
+
+                recognition.onend = () => {
+                    isListening = false;
+                    updateMicButton(false);
+                };
+
+                recognition.onerror = (event) => {
+                    isListening = false;
+                    updateMicButton(false);
+                    console.log('语音识别错误:', event.error);
+                    if (event.error === 'no-speech') {
+                        showFeedback('🎤 未检测到语音，请重试', 'wrong');
+                    } else if (event.error === 'not-allowed') {
+                        showFeedback('🎤 请允许麦克风权限', 'wrong');
+                    }
+                };
+
+                recognition.onresult = (event) => {
+                    const results = event.results[0];
+                    let spokenWord = '';
+                    for (let i = 0; i < results.length; i++) {
+                        spokenWord += results[i].transcript + ' ';
+                    }
+                    spokenWord = spokenWord.trim().toLowerCase();
+                    checkSpokenWord(spokenWord);
+                };
+            }
+        }
+
+        function startListening() {
+            if (!recognition) {
+                initSpeechRecognition();
+            }
+            
+            if (!recognition) {
+                showFeedback('🎤 您的浏览器不支持语音识别', 'wrong');
+                return;
+            }
+
+            if (isListening) {
+                recognition.stop();
+                return;
+            }
+
+            try {
+                recognition.start();
+                showFeedback('🎤 请说出英文单词...', 'info');
+            } catch (e) {
+                console.log('语音识别启动失败:', e);
+            }
+        }
+
+        function updateMicButton(listening) {
+            const micBtn = document.getElementById('micBtn');
+            if (micBtn) {
+                if (listening) {
+                    micBtn.innerHTML = '🔴 录音中...';
+                    micBtn.classList.add('recording');
+                } else {
+                    micBtn.innerHTML = '🎤 语音匹配';
+                    micBtn.classList.remove('recording');
+                }
+            }
+        }
+
+        function checkSpokenWord(spokenWord) {
+            const currentWord = document.getElementById('currentMatchWord');
+            if (!currentWord) return;
+            
+            const targetWord = currentWord.value.toLowerCase();
+            const spokenWords = spokenWord.split(' ');
+            
+            let matched = false;
+            for (let word of spokenWords) {
+                if (word === targetWord || 
+                    word === targetWord + 's' || 
+                    word === targetWord + 'es' ||
+                    word === targetWord + 'ed' ||
+                    word === targetWord + 'ing' ||
+                    targetWord.indexOf(word) === 0) {
+                    matched = true;
+                    break;
+                }
+            }
+
+            if (matched) {
+                showFeedback(`✓ 正确！你说了 "${spokenWord}" +10分`, 'correct');
+                speakWord(targetWord);
+                updateScore(10);
+                updateStreak(true);
+                updateProgress();
+                if (currentMatchCard) {
+                    autoMatchCard(currentMatchCard);
+                }
+            } else {
+                showFeedback(`✗ 你说的是 "${spokenWord}"，正确答案是 "${targetWord}"`, 'wrong');
+                speakWord(targetWord);
+                updateStreak(false);
+            }
+        }
+
+        function autoMatchCard(card) {
+            const cardId = card.dataset.id;
+            const matchGrid = document.getElementById('matchGrid');
+            const allCards = matchGrid.querySelectorAll('.match-card');
+            
+            allCards.forEach(c => {
+                if (c.dataset.id === cardId && !c.classList.contains('matched')) {
+                    c.classList.add('selected');
+                    matchState.selectedCards.push(c);
+                }
+            });
+
+            if (matchState.selectedCards.length >= 2) {
+                setTimeout(() => checkMatch(), 300);
+            }
+        }
+
+        // 加权随机选择单词（已掌握的单词出现概率降低）
+        function getWeightedRandomWord(words) {
+            const weights = words.map(word => {
+                if (gameState.masteredWords.includes(word.english)) {
+                    return 0.2;
+                }
+                return 1;
+            });
+            
+            const totalWeight = weights.reduce((sum, w) => sum + w, 0);
+            let random = Math.random() * totalWeight;
+            
+            for (let i = 0; i < words.length; i++) {
+                random -= weights[i];
+                if (random <= 0) {
+                    return words[i];
+                }
+            }
+            
+            return words[words.length - 1];
+        }
+
+        // 加权随机选择多个单词
+        function getWeightedRandomWords(words, count) {
+            const availableWords = [...words];
+            const selected = [];
+            
+            for (let i = 0; i < Math.min(count, availableWords.length); i++) {
+                const word = getWeightedRandomWord(availableWords);
+                selected.push(word);
+                const index = availableWords.indexOf(word);
+                if (index > -1) {
+                    availableWords.splice(index, 1);
+                }
+            }
+            
+            return selected;
+        }
+
+        // 初始化游戏
+        function initGame() {
+            renderLevels();
+            renderAchievements();
+            loadGameMode();
+            updateStats();
+            loadProgress();
+        }
+
+        // 保存进度
+        function saveProgress() {
+            localStorage.setItem('wordGameProgress2024', JSON.stringify(gameState));
+        }
+
+        // 加载进度
+        function loadProgress() {
+            const saved = localStorage.getItem('wordGameProgress2024');
+            if (saved) {
+                const data = JSON.parse(saved);
+                gameState = { ...gameState, ...data };
+                updateStats();
+                renderLevels();
+                renderAchievements();
+            }
+        }
+
+        // 渲染关卡
+        function renderLevels() {
+            const levelGrid = document.getElementById('levelGrid');
+            levelGrid.innerHTML = '';
+
+            levelInfo.forEach(level => {
+                const card = document.createElement('button');
+                card.className = 'level-card';
+                card.setAttribute('role', 'listitem');
+                card.setAttribute('aria-label', `${level.name}, ${level.wordCount}个单词${gameState.completedLevels.includes(level.id) ? ', 已完成' : ''}`);
+                
+                if (gameState.completedLevels.includes(level.id)) {
+                    card.classList.add('completed');
+                    card.setAttribute('aria-disabled', 'false');
+                }
+                
+                if (gameState.currentLevel === level.id) {
+                    card.classList.add('current');
+                    card.setAttribute('aria-current', 'true');
+                }
+                
+                if (level.id > 1 && !gameState.completedLevels.includes(level.id - 1) && !gameState.completedLevels.includes(level.id)) {
+                    card.classList.add('locked');
+                    card.disabled = true;
+                    card.setAttribute('aria-disabled', 'true');
+                }
+
+                card.innerHTML = `
+                    <div class="level-icon" aria-hidden="true">${level.icon}</div>
+                    <div class="level-name">${level.name}</div>
+                    <div class="level-sections">
+                        <span class="section-badge">Section A</span>
+                        <span class="section-badge">Section B</span>
+                    </div>
+                    <div class="level-wordcount">${level.wordCount}词</div>
+                `;
+
+                card.onclick = () => selectLevel(level.id);
+                levelGrid.appendChild(card);
+            });
+        }
+
+        // 选择关卡
+        function selectLevel(levelId) {
+            gameState.currentLevel = levelId;
+            saveProgress();
+            loadGameMode();
+            
+            document.getElementById('gameArea').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // 渲染成就
+        function renderAchievements() {
+            const achievementsDiv = document.getElementById('achievements');
+            achievementsDiv.innerHTML = '';
+
+            achievements.forEach(achievement => {
+                const div = document.createElement('div');
+                div.className = 'achievement';
+                div.setAttribute('role', 'listitem');
+                
+                const isUnlocked = gameState.unlockedAchievements.includes(achievement.id);
+                if (isUnlocked) {
+                    div.classList.add('unlocked');
+                }
+                div.setAttribute('aria-label', `${achievement.name}: ${achievement.condition}${isUnlocked ? ', 已解锁' : ', 未解锁'}`);
+
+                div.innerHTML = `
+                    <div class="achievement-icon" aria-hidden="true">${achievement.icon}</div>
+                    <div><strong>${achievement.name}</strong></div>
+                    <div style="color: #555; font-size: 0.9em;">${achievement.condition}</div>
+                `;
+
+                achievementsDiv.appendChild(div);
+            });
+        }
+
+        // 加载游戏模式
+        function loadGameMode() {
+            const gameArea = document.getElementById('gameArea');
+            const currentUnit = levelInfo[gameState.currentLevel - 1].unit;
+            const words = wordData[currentUnit];
+            const levelName = levelInfo[gameState.currentLevel - 1].name;
+
+            // 重置配对状态
+            matchState = {
+                selectedCards: [],
+                matchedPairs: 0,
+                totalPairs: Math.min(8, words.length)
+            };
+
+            switch(gameState.currentMode) {
+                case 'match':
+                    renderMatchGame(words, gameArea, levelName);
+                    break;
+                case 'spell':
+                    renderSpellGame(words, gameArea, levelName);
+                    break;
+                case 'fill':
+                    renderFillGame(words, gameArea, levelName);
+                    break;
+                case 'card':
+                    renderCardGame(words, gameArea, levelName);
+                    break;
+            }
+        }
+
+        // 配对游戏
+        function renderMatchGame(words, container, levelName) {
+            const selectedWords = getWeightedRandomWords(words, matchState.totalPairs);
+            
+            let html = `<div class="unit-title">
+                <span>${levelName} - 🔗 单词配对赛</span>
+                <span class="level-wordcount">共${selectedWords.length}对</span>
+            </div>`;
+            html += '<div class="match-info" aria-live="polite">已配对：<span id="matchedCount">0</span> / <span id="totalCount">' + selectedWords.length + '</span></div>';
+            
+            html += '<div style="text-align: center; margin-bottom: 15px;">';
+            html += '<button id="micBtn" class="action-btn" onclick="startListening()" title="点击后说出英文单词进行匹配" style="font-size: 1.1em; padding: 10px 25px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">🎤 语音匹配</button>';
+            html += '<span id="voiceHint" style="margin-left: 10px; color: #666; font-size: 0.9em;">点击后说出英文单词</span>';
+            html += '</div>';
+            
+            html += '<div class="match-grid" id="matchGrid" role="grid" aria-label="单词配对卡片区域">';
+
+            let cards = [];
+            selectedWords.forEach((word, index) => {
+                cards.push({ type: 'en', text: word.english, id: index, english: word.english });
+                cards.push({ type: 'zh', text: word.chinese, id: index, english: word.english });
+            });
+
+            cards.sort(() => Math.random() - 0.5);
+
+            cards.forEach((card, index) => {
+                const cardType = card.type === 'en' ? '英文' : '中文';
+                html += `<div class="match-card" role="gridcell" tabindex="0" data-type="${card.type}" data-id="${card.id}" data-english="${card.english}" data-index="${index}" aria-label="${cardType}: ${card.text}" onclick="selectMatchCard(this)" onkeydown="handleCardKeydown(event, this)">
+                    ${card.text}
+                </div>`;
+            });
+
+            html += '</div>';
+            html += '<div style="text-align: center; margin-top: 20px;">';
+            html += '<button class="action-btn btn-success" onclick="loadGameMode()">🔄 重新开始</button>';
+            html += '<button class="action-btn btn-primary" onclick="changeMode(\'spell\')">➡️ 切换模式</button>';
+            html += '</div>';
+            html += '<input type="hidden" id="currentMatchWord" value="">';
+
+            container.innerHTML = html;
+
+            document.getElementById('matchedCount').textContent = '0';
+            document.getElementById('totalCount').textContent = selectedWords.length;
+            
+            if (!recognition) {
+                initSpeechRecognition();
+            }
+        }
+
+        // 处理卡片键盘事件
+        function handleCardKeydown(event, card) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                selectMatchCard(card);
+            }
+        }
+
+        // 选择配对卡片
+        function selectMatchCard(card) {
+            if (card.classList.contains('matched')) return;
+            if (matchState.selectedCards.length >= 2) return;
+
+            if (matchState.selectedCards.includes(card)) {
+                card.classList.remove('selected');
+                matchState.selectedCards = matchState.selectedCards.filter(c => c !== card);
+                return;
+            }
+
+            card.classList.add('selected');
+            matchState.selectedCards.push(card);
+            
+            if (card.dataset.type === 'en') {
+                speakWord(card.textContent.trim());
+            } else {
+                const currentWordInput = document.getElementById('currentMatchWord');
+                if (currentWordInput) {
+                    currentWordInput.value = card.dataset.english;
+                    currentMatchCard = card;
+                }
+            }
+
+            if (matchState.selectedCards.length === 2) {
+                setTimeout(() => checkMatch(), 300);
+            }
+        }
+
+        // 检查配对
+        function checkMatch() {
+            const cards = matchState.selectedCards;
+            if (cards.length !== 2) return;
+
+            const type1 = cards[0].dataset.type;
+            const type2 = cards[1].dataset.type;
+            const id1 = cards[0].dataset.id;
+            const id2 = cards[1].dataset.id;
+
+            if (type1 !== type2 && id1 === id2) {
+                cards.forEach(card => {
+                    card.classList.remove('selected');
+                    card.classList.add('matched');
+                });
+                
+                matchState.matchedPairs++;
+                const matchedEl = document.getElementById('matchedCount');
+                if (matchedEl) matchedEl.textContent = matchState.matchedPairs;
+                
+                showFeedback('✓ 配对正确！+10分', 'correct');
+                updateScore(10);
+                updateStreak(true);
+                
+                if (matchState.matchedPairs >= matchState.totalPairs) {
+                    setTimeout(() => {
+                        showFeedback('🎉 恭喜！全部配对完成！+50分', 'correct');
+                        updateScore(50);
+                        completeLevel();
+                    }, 500);
+                }
+            } else {
+                cards.forEach(card => {
+                    card.classList.add('wrong');
+                    setTimeout(() => {
+                        card.classList.remove('wrong', 'selected');
+                    }, 500);
+                });
+                
+                showFeedback('✗ 配对错误，再试一次', 'wrong');
+                updateStreak(false);
+            }
+
+            matchState.selectedCards = [];
+            updateProgress();
+        }
+
+        // 完成关卡
+        function completeLevel() {
+            if (!gameState.completedLevels.includes(gameState.currentLevel)) {
+                gameState.completedLevels.push(gameState.currentLevel);
+                saveProgress();
+                renderLevels();
+                updateStats();
+                checkAchievements();
+            }
+        }
+
+        // 拼写游戏
+        function renderSpellGame(words, container, levelName) {
+            const randomWord = getWeightedRandomWord(words);
+            
+            let html = `<div class="unit-title">
+                <span>${levelName} - ✍️ 拼写挑战</span>
+                <span class="level-wordcount">已正确${gameState.spellCorrectCount}次</span>
+            </div>`;
+            html += '<p style="text-align: center; color: #555; margin-bottom: 20px;">听语音拼写单词，或点击🎤按钮语音输入</p>';
+            html += '<div class="word-card" role="region" aria-label="单词提示">';
+            html += `<div class="word-chinese">${randomWord.chinese}</div>`;
+            html += `<div class="word-pronunciation">${randomWord.pronunciation}</div>`;
+            html += '</div>';
+            html += '<div style="text-align: center; margin-bottom: 15px;">';
+            html += `<button class="action-btn" onclick="speakWord('${randomWord.english}')" title="正常语速朗读" style="font-size: 1.2em; padding: 10px 20px;">🔊 朗读</button>`;
+            html += `<button class="action-btn" onclick="speakWordSlowly('${randomWord.english}')" title="慢速朗读" style="font-size: 1.2em; padding: 10px 20px;">🐢 慢读</button>`;
+            html += `<button id="spellMicBtn" class="action-btn" onclick="startSpellListening()" title="语音输入答案" style="font-size: 1.2em; padding: 10px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">🎤 语音输入</button>`;
+            html += '</div>';
+            html += '<div class="input-area">';
+            html += `<label for="spellInput" class="sr-only">输入英文单词</label>`;
+            html += `<input type="text" id="spellInput" placeholder="输入英文单词或点击🎤语音输入..." autocomplete="off" aria-describedby="spell-hint">`;
+            html += `<span id="spell-hint" class="sr-only">中文提示：${randomWord.chinese}，请拼写对应的英文单词</span>`;
+            html += '</div>';
+            html += '<div style="text-align: center;">';
+            html += '<button class="action-btn btn-primary" onclick="checkSpell()">提交答案</button>';
+            html += '<button class="action-btn btn-success" onclick="loadGameMode()">下一个</button>';
+            html += '<button class="action-btn btn-danger" onclick="showHint()">💡 提示</button>';
+            html += '</div>';
+            html += `<input type="hidden" id="correctAnswer" value="${randomWord.english}">`;
+            html += `<input type="hidden" id="currentWord" value="${randomWord.english}">`;
+
+            container.innerHTML = html;
+
+            document.getElementById('spellInput').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') checkSpell();
+            });
+            
+            setTimeout(() => {
+                const input = document.getElementById('spellInput');
+                if (input) input.focus();
+            }, 300);
+            
+            if (!recognition) {
+                initSpeechRecognition();
+            }
+        }
+        
+        let spellRecognition = null;
+        let isSpellListening = false;
+        
+        function initSpellRecognition() {
+            if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                spellRecognition = new SpeechRecognition();
+                spellRecognition.lang = 'en-US';
+                spellRecognition.continuous = false;
+                spellRecognition.interimResults = false;
+                spellRecognition.maxAlternatives = 1;
+
+                spellRecognition.onstart = () => {
+                    isSpellListening = true;
+                    updateSpellMicButton(true);
+                    showFeedback('🎤 请说出英文单词...', 'info');
+                };
+
+                spellRecognition.onend = () => {
+                    isSpellListening = false;
+                    updateSpellMicButton(false);
+                };
+
+                spellRecognition.onerror = (event) => {
+                    isSpellListening = false;
+                    updateSpellMicButton(false);
+                    if (event.error === 'no-speech') {
+                        showFeedback('🎤 未检测到语音，请重试', 'wrong');
+                    } else if (event.error === 'not-allowed') {
+                        showFeedback('🎤 请允许麦克风权限', 'wrong');
+                    }
+                };
+
+                spellRecognition.onresult = (event) => {
+                    const spokenWord = event.results[0][0].transcript.trim();
+                    const input = document.getElementById('spellInput');
+                    if (input) {
+                        input.value = spokenWord;
+                        showFeedback(`🎤 识别结果: "${spokenWord}"`, 'info');
+                        setTimeout(() => checkSpell(), 500);
+                    }
+                };
+            }
+        }
+        
+        function startSpellListening() {
+            if (!spellRecognition) {
+                initSpellRecognition();
+            }
+            
+            if (!spellRecognition) {
+                showFeedback('🎤 您的浏览器不支持语音识别', 'wrong');
+                return;
+            }
+
+            if (isSpellListening) {
+                spellRecognition.stop();
+                return;
+            }
+
+            try {
+                spellRecognition.start();
+            } catch (e) {
+                console.log('语音识别启动失败:', e);
+            }
+        }
+        
+        function updateSpellMicButton(listening) {
+            const micBtn = document.getElementById('spellMicBtn');
+            if (micBtn) {
+                if (listening) {
+                    micBtn.innerHTML = '🔴 录音中...';
+                    micBtn.classList.add('recording');
+                } else {
+                    micBtn.innerHTML = '🎤 语音输入';
+                    micBtn.classList.remove('recording');
+                }
+            }
+        }
+
+        // 填空游戏
+        function renderFillGame(words, container, levelName) {
+            const randomWord = getWeightedRandomWord(words);
+            
+            let html = `<div class="unit-title">
+                <span>${levelName} - 📝 情景填空</span>
+            </div>`;
+            html += '<p style="text-align: center; color: #555; margin-bottom: 20px;">将单词填入正确的句子中</p>';
+            html += '<div class="word-card" role="region" aria-label="填空句子">';
+            html += `<div class="word-chinese" style="font-size: 1.3em;">${generateSentence(randomWord.english)}</div>`;
+            html += '</div>';
+            html += '<div class="input-area">';
+            html += `<label for="fillInput" class="sr-only">输入单词</label>`;
+            html += `<input type="text" id="fillInput" placeholder="输入单词..." autocomplete="off">`;
+            html += '</div>';
+            html += '<div style="text-align: center;">';
+            html += '<button class="action-btn btn-primary" onclick="checkFill()">提交答案</button>';
+            html += '<button class="action-btn btn-success" onclick="loadGameMode()">下一个</button>';
+            html += '</div>';
+            html += `<input type="hidden" id="correctAnswer" value="${randomWord.english}">`;
+
+            container.innerHTML = html;
+
+            document.getElementById('fillInput').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') checkFill();
+            });
+            
+            setTimeout(() => {
+                const input = document.getElementById('fillInput');
+                if (input) input.focus();
+            }, 100);
+        }
+
+        // 生成例句
+        function generateSentence(word) {
+            const sentences = {
+                'relax': "It's important to ______ after a long day of work.",
+                'relaxed': "She felt very ______ after the vacation.",
+                'relaxing': "Listening to music is very ______ for me.",
+                'stress': "Too much ______ can be bad for your health.",
+                'tired': "I feel very ______ after running for an hour.",
+                'balanced': "A ______ diet is important for good health.",
+                'calligraphy': "Chinese ______ is a beautiful art form.",
+                'ski': "We plan to ______ in the mountains this winter.",
+                'program': "The computer ______ helps us work faster.",
+                'instructor': "The ______ taught us how to swim.",
+                'fear': "Don't let ______ stop you from trying new things.",
+                'poem': "She wrote a beautiful ______ about spring.",
+                'stroke': "Each ______ in Chinese writing is important.",
+                'ink': "Please put more ______ in the pen.",
+                'flute': "She plays the ______ very well.",
+                'hiking': "______ is a great way to enjoy nature.",
+                'painting': "This ______ was created by a famous artist.",
+                'programming': "Learning ______ can help you build apps.",
+                'activity': "What ______ do you like to do on weekends?",
+                'hobby': "Reading is my favorite ______.",
+                'collect': "I like to ______ stamps from different countries.",
+                'stamp': "This ______ is worth a lot of money.",
+                'coin': "He found an old ______ in the garden.",
+                'interest': "I have a strong ______ in music.",
+                'skill': "Learning a new ______ takes time and practice.",
+                'improve': "Practice helps you ______ your skills.",
+                'confidence': "She has great ______ in her abilities.",
+                'creative': "Artists are usually very ______ people.",
+                'enjoyable': "The trip was very ______ for everyone.",
+                'healthy': "Eating vegetables helps you stay ______.",
+                'health': "Exercise is good for your ______.",
+                'diet': "A balanced ______ is important for everyone.",
+                'exercise': "You should ______ for at least 30 minutes every day.",
+                'sleep': "Getting enough ______ is important for health.",
+                'energy': "Breakfast gives you ______ for the day.",
+                'sore': "My throat feels ______ after singing.",
+                'throat': "Drink warm water for a sore ______.",
+                'stomachache': "I have a ______ from eating too much.",
+                'fever': "She has a high ______ and needs to rest.",
+                'cough': "Cover your mouth when you ______.",
+                'toothache': "A ______ can be very painful.",
+                'headache': "I have a ______ from staring at the screen.",
+                'test': "We have a ______ tomorrow morning.",
+                'flu': "She caught the ______ and stayed home.",
+                'medicine': "Take this ______ three times a day.",
+                'mask': "Wear a ______ to protect yourself.",
+                'virus': "The ______ spreads quickly in winter.",
+                'patient': "The ______ is waiting for the doctor.",
+                'injury': "He suffered a serious ______ in the accident.",
+                'illness': "The ______ kept her in bed for a week.",
+                'pain': "The ______ in my leg is getting better.",
+                'safety': "______ is the most important thing.",
+                'fry': "Don't ______ the food for too long.",
+                'stove': "Turn off the ______ after cooking.",
+                'flame': "Keep away from the open ______.",
+                'panic': "Don't ______ in an emergency.",
+                'roll': "The ball began to ______ down the hill.",
+                'aid': "First ______ can save lives.",
+                'extinguisher': "Use a fire ______ to put out small fires.",
+                'smoke': "______ is dangerous to your health.",
+                'physical': "______ exercise keeps you fit.",
+                'mental': "______ health is as important as physical health.",
+                'grow': "Children ______ quickly in their early years.",
+                'growth': "The ______ of plants needs sunlight and water.",
+                'emotion': "Learning to control your ______ is part of growing up.",
+                'emotional': "She became very ______ during the movie.",
+                'upset': "Don't be ______ about the small mistake.",
+                'lonely': "He felt ______ after moving to a new city.",
+                'shocked': "I was ______ by the unexpected news.",
+                'alone': "She prefers to work ______.",
+                'control': "It's hard to ______ your anger sometimes.",
+                'anger': "He couldn't hide his ______.",
+                'angry': "Don't get ______ over small things.",
+                'advise': "I ______ you to study harder.",
+                'advice': "Thank you for your good ______.",
+                'hurtful': "His words were very ______ to me.",
+                'forgive': "It's important to ______ others' mistakes.",
+                'friendship': "A true ______ lasts forever.",
+                'relationship': "A good ______ needs trust and respect.",
+                'communicate': "We need to ______ more with each other.",
+                'communication': "Good ______ is key to understanding.",
+                'understand': "I ______ how you feel.",
+                'misunderstand': "Don't ______ what I said.",
+                'apologize': "You should ______ for being late.",
+                'apology': "Please accept my sincere ______.",
+                'trust': "______ is the foundation of friendship.",
+                'respect': "We should ______ everyone's opinions.",
+                'support': "Friends always ______ each other.",
+                'encourage': "Teachers ______ students to do their best.",
+                'deal with': "We need to ______ this problem carefully.",
+                'problem': "Every ______ has a solution.",
+                'solve': "Let's work together to ______ this puzzle.",
+                'solution': "We need to find a ______ to this problem.",
+                'challenge': "Learning a new language is a big ______.",
+                'experience': "This was a valuable ______ for me.",
+                'teenager': "Being a ______ can be challenging.",
+                'wonder': "The Great Wall is one of the greatest ______ of the world.",
+                'nature': "We should protect ______ and the environment.",
+                'natural': "This is a ______ phenomenon.",
+                'measurement': "The ______ of the room is important.",
+                'measure': "Please ______ the length of the table.",
+                'deep': "The ocean is very ______ in some places.",
+                'depth': "The ______ of this lake is 50 meters.",
+                'high': "Mount Qomolangma is very ______.",
+                'height': "What is the ______ of this building?",
+                'long': "The river is very ______.",
+                'length': "The ______ of the bridge is 500 meters.",
+                'wide': "This road is not ______ enough.",
+                'width': "The ______ of the door is 80 centimeters.",
+                'size': "What ______ do you need?",
+                'area': "The ______ of this park is very large.",
+                'population': "The ______ of China is over 1.4 billion.",
+                'mountain': "Mount Qomolangma is the highest ______ in the world.",
+                'desert': "The Sahara is the largest ______ in the world.",
+                'ocean': "The ______ covers about 71% of the earth's surface.",
+                'river': "The Yangtze is the longest ______ in China.",
+                'lake': "We went boating on the ______.",
+                'waterfall': "The ______ is beautiful after the rain.",
+                'forest': "Many animals live in the ______.",
+                'amazing': "The view from the top is ______.",
+                'fantastic': "We had a ______ time at the party.",
+                'spectacular': "The fireworks display was ______.",
+                'explore': "Scientists ______ the deep ocean.",
+                'exploration': "Space ______ has made great progress.",
+                'discover': "Columbus ______ America in 1492.",
+                'discovery': "The ______ of penicillin changed medicine.",
+                'protect': "We must ______ endangered animals.",
+                'protection': "Environmental ______ is everyone's responsibility.",
+                'environment': "We should protect our ______.",
+                'climate': "The ______ is changing due to global warming.",
+                'temperature': "The ______ today is 25 degrees.",
+                'level': "The water ______ is rising.",
+                'surface': "About 71% of the earth's ______ is water.",
+                'below': "The temperature fell ______ zero.",
+                'above': "The plane flew ______ the clouds.",
+                'earth': "The ______ is our only home."
+            };
+            return sentences[word] || `The word "${word}" fits in this sentence: ______.`;
+        }
+
+        // 单词卡片
+        function renderCardGame(words, container, levelName) {
+            const randomWord = getWeightedRandomWord(words);
+            const isMastered = gameState.masteredWords.includes(randomWord.english);
+            const showEnglishFirst = Math.random() < 0.5;
+            
+            let html = `<div class="unit-title">
+                <span>${levelName} - 📖 单词卡片</span>
+            </div>`;
+            
+            if (showEnglishFirst) {
+                html += '<p style="text-align: center; color: #555; margin-bottom: 20px;">点击卡片或按空格键翻转查看音标和中文</p>';
+                html += '<div class="word-card" onclick="flipCard(this)" onkeydown="handleCardFlipKeydown(event, this)" tabindex="0" role="button" aria-label="单词卡片，按空格键翻转" style="cursor: pointer;">';
+                html += `<div class="card-front">`;
+                html += `<div class="word-english">${randomWord.english}</div>`;
+                if (isMastered) {
+                    html += `<div style="color: #11998e; margin-top: 15px;">✓ 已掌握</div>`;
+                } else {
+                    html += `<div style="color: #666; margin-top: 15px;">👆 点击翻转</div>`;
+                }
+                html += `</div>`;
+                html += `<div class="card-back" style="display: none;">`;
+                html += `<div class="word-pronunciation">${randomWord.pronunciation}</div>`;
+                html += `<div class="word-chinese" style="margin-top: 10px;">${randomWord.chinese}</div>`;
+                html += `</div>`;
+            } else {
+                html += '<p style="text-align: center; color: #555; margin-bottom: 20px;">看中文说出英文，点击🎤语音验证或翻转查看答案</p>';
+                html += '<div class="word-card" onclick="flipCard(this)" onkeydown="handleCardFlipKeydown(event, this)" tabindex="0" role="button" aria-label="单词卡片，按空格键翻转" style="cursor: pointer;">';
+                html += `<div class="card-front">`;
+                html += `<div class="word-chinese">${randomWord.chinese}</div>`;
+                if (isMastered) {
+                    html += `<div style="color: #11998e; margin-top: 15px;">✓ 已掌握</div>`;
+                } else {
+                    html += `<div style="color: #666; margin-top: 15px;">👆 点击翻转</div>`;
+                }
+                html += `</div>`;
+                html += `<div class="card-back" style="display: none;">`;
+                html += `<div class="word-english">${randomWord.english}</div>`;
+                html += `<div class="word-pronunciation" style="margin-top: 10px;">${randomWord.pronunciation}</div>`;
+                html += `</div>`;
+            }
+            
+            html += '</div>';
+            html += '<div style="text-align: center; margin-top: 15px;">';
+            html += `<button class="action-btn" onclick="speakWord('${randomWord.english}')" title="朗读单词" style="font-size: 1.1em;">🔊 朗读</button>`;
+            if (!showEnglishFirst) {
+                html += `<button id="cardMicBtn" class="action-btn" onclick="startCardListening('${randomWord.english}')" title="语音验证" style="font-size: 1.1em; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">🎤 语音验证</button>`;
+            }
+            html += '</div>';
+            html += '<div style="text-align: center; margin-top: 10px;">';
+            html += '<button class="action-btn btn-primary" onclick="loadGameMode()">下一个单词</button>';
+            if (isMastered) {
+                html += '<button class="action-btn btn-success" disabled style="opacity: 0.6;">✓ 已掌握</button>';
+            } else {
+                html += '<button class="action-btn btn-success" onclick="markAsLearned()">✓ 标记为已掌握</button>';
+            }
+            html += '</div>';
+            html += `<input type="hidden" id="currentWord" value="${randomWord.english}">`;
+            html += `<input type="hidden" id="currentWordChinese" value="${randomWord.chinese}">`;
+
+            container.innerHTML = html;
+        }
+        
+        let cardRecognition = null;
+        let isCardListening = false;
+        let currentCardTargetWord = '';
+        
+        function startCardListening(targetWord) {
+            currentCardTargetWord = targetWord.toLowerCase();
+            
+            if (!cardRecognition) {
+                if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+                    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                    cardRecognition = new SpeechRecognition();
+                    cardRecognition.lang = 'en-US';
+                    cardRecognition.continuous = false;
+                    cardRecognition.interimResults = false;
+                    cardRecognition.maxAlternatives = 3;
+
+                    cardRecognition.onstart = () => {
+                        isCardListening = true;
+                        updateCardMicButton(true);
+                        showFeedback('🎤 请说出英文单词...', 'info');
+                    };
+
+                    cardRecognition.onend = () => {
+                        isCardListening = false;
+                        updateCardMicButton(false);
+                    };
+
+                    cardRecognition.onerror = (event) => {
+                        isCardListening = false;
+                        updateCardMicButton(false);
+                        if (event.error === 'no-speech') {
+                            showFeedback('🎤 未检测到语音，请重试', 'wrong');
+                        } else if (event.error === 'not-allowed') {
+                            showFeedback('🎤 请允许麦克风权限', 'wrong');
+                        }
+                    };
+
+                    cardRecognition.onresult = (event) => {
+                        const results = event.results[0];
+                        let spokenWord = '';
+                        for (let i = 0; i < results.length; i++) {
+                            spokenWord += results[i].transcript + ' ';
+                        }
+                        spokenWord = spokenWord.trim().toLowerCase();
+                        checkCardSpokenWord(spokenWord, currentCardTargetWord);
+                    };
+                }
+            }
+            
+            if (!cardRecognition) {
+                showFeedback('🎤 您的浏览器不支持语音识别', 'wrong');
+                return;
+            }
+
+            if (isCardListening) {
+                cardRecognition.stop();
+                return;
+            }
+
+            try {
+                cardRecognition.start();
+            } catch (e) {
+                console.log('语音识别启动失败:', e);
+            }
+        }
+        
+        function checkCardSpokenWord(spokenWord, targetWord) {
+            const spokenWords = spokenWord.split(' ');
+            
+            let matched = false;
+            for (let word of spokenWords) {
+                if (word === targetWord || 
+                    word === targetWord + 's' || 
+                    word === targetWord + 'es' ||
+                    word === targetWord + 'ed' ||
+                    word === targetWord + 'ing' ||
+                    targetWord.indexOf(word) === 0) {
+                    matched = true;
+                    break;
+                }
+            }
+
+            if (matched) {
+                showFeedback(`✓ 正确！你说了 "${spokenWord}" +10分`, 'correct');
+                speakWord(targetWord);
+                updateScore(10);
+                updateStreak(true);
+                updateProgress();
+            } else {
+                showFeedback(`✗ 你说的是 "${spokenWord}"，正确答案是 "${targetWord}"`, 'wrong');
+                speakWord(targetWord);
+                updateStreak(false);
+            }
+        }
+        
+        function updateCardMicButton(listening) {
+            const micBtn = document.getElementById('cardMicBtn');
+            if (micBtn) {
+                if (listening) {
+                    micBtn.innerHTML = '🔴 录音中...';
+                    micBtn.classList.add('recording');
+                } else {
+                    micBtn.innerHTML = '🎤 语音验证';
+                    micBtn.classList.remove('recording');
+                }
+            }
+        }
+
+        // 处理卡片翻转键盘事件
+        function handleCardFlipKeydown(event, card) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                flipCard(card);
+            }
+        }
+
+        // 翻转卡片
+        function flipCard(card) {
+            const front = card.querySelector('.card-front');
+            const back = card.querySelector('.card-back');
+            
+            if (front.style.display !== 'none') {
+                front.style.display = 'none';
+                back.style.display = 'block';
+            } else {
+                front.style.display = 'block';
+                back.style.display = 'none';
+            }
+        }
+
+        // 检查拼写
+        function checkSpell() {
+            const input = document.getElementById('spellInput');
+            const correct = document.getElementById('correctAnswer').value;
+            
+            if (input.value.toLowerCase().trim() === correct.toLowerCase()) {
+                input.classList.add('correct');
+                input.classList.remove('wrong');
+                gameState.spellCorrectCount++;
+                showFeedback(`✓ 正确！${correct} +15分`, 'correct');
+                speakWord(correct);
+                updateScore(15);
+                updateStreak(true);
+                saveProgress();
+            } else {
+                input.classList.add('wrong');
+                input.classList.remove('correct');
+                showFeedback(`✗ 错误！正确答案是：${correct}`, 'wrong');
+                speakWord(correct);
+                updateStreak(false);
+            }
+
+            updateProgress();
+        }
+
+        // 检查填空
+        function checkFill() {
+            const input = document.getElementById('fillInput');
+            const correct = document.getElementById('correctAnswer').value;
+            
+            if (input.value.toLowerCase().trim() === correct.toLowerCase()) {
+                input.classList.add('correct');
+                input.classList.remove('wrong');
+                showFeedback(`✓ 正确！+20分`, 'correct');
+                updateScore(20);
+                updateStreak(true);
+            } else {
+                input.classList.add('wrong');
+                input.classList.remove('correct');
+                showFeedback(`✗ 错误！正确答案是：${correct}`, 'wrong');
+                updateStreak(false);
+            }
+
+            updateProgress();
+        }
+
+        // 显示提示
+        function showHint() {
+            const correct = document.getElementById('correctAnswer').value;
+            const input = document.getElementById('spellInput');
+            if (input && input.value === '') {
+                input.value = correct.substring(0, 3);
+                input.focus();
+            }
+        }
+
+        // 标记为已掌握
+        function markAsLearned() {
+            const word = document.getElementById('currentWord').value;
+            const chinese = document.getElementById('currentWordChinese').value;
+            
+            if (!gameState.masteredWords.includes(word)) {
+                gameState.masteredWords.push(word);
+                gameState.correctWords++;
+                showFeedback(`✓ "${word}" 已标记为掌握！`, 'correct');
+            } else {
+                showFeedback(`"${word}" 已经掌握过了`, 'correct');
+            }
+            
+            updateStats();
+            checkAchievements();
+            saveProgress();
+        }
+
+        // 切换模式
+        function changeMode(mode) {
+            gameState.currentMode = mode;
+            document.querySelectorAll('.mode-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-pressed', 'false');
+                if (btn.dataset.mode === mode) {
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-pressed', 'true');
+                }
+            });
+            loadGameMode();
+        }
+
+        // 显示反馈
+        function showFeedback(message, type) {
+            const feedback = document.getElementById('feedback');
+            feedback.textContent = message;
+            feedback.className = `feedback ${type}`;
+            
+            setTimeout(() => {
+                feedback.className = 'feedback';
+            }, 3000);
+        }
+
+        // 更新分数
+        function updateScore(points) {
+            gameState.score += points;
+            updateStats();
+            saveProgress();
+        }
+
+        // 更新连击
+        function updateStreak(correct) {
+            if (correct) {
+                gameState.streak++;
+                if (gameState.streak > gameState.maxStreak) {
+                    gameState.maxStreak = gameState.streak;
+                }
+            } else {
+                gameState.streak = 0;
+            }
+            updateStats();
+            checkAchievements();
+        }
+
+        // 更新进度
+        function updateProgress() {
+            const progress = Math.min(100, (gameState.score / 1000) * 100);
+            const progressFill = document.getElementById('progressFill');
+            const progressBar = progressFill.parentElement;
+            progressFill.style.width = `${progress}%`;
+            progressBar.setAttribute('aria-valuenow', Math.round(progress));
+        }
+
+        // 更新统计
+        function updateStats() {
+            document.getElementById('totalScore').textContent = gameState.score;
+            document.getElementById('completedLevels').textContent = 
+                `${gameState.completedLevels.length}/8`;
+            document.getElementById('correctWords').textContent = gameState.correctWords;
+            document.getElementById('streak').textContent = gameState.streak;
+        }
+
+        // 检查成就
+        function checkAchievements() {
+            if (gameState.completedLevels.length >= 1 && !gameState.unlockedAchievements.includes(1)) {
+                unlockAchievement(1);
+            }
+            if (gameState.maxStreak >= 20 && !gameState.unlockedAchievements.includes(2)) {
+                unlockAchievement(2);
+            }
+            if (gameState.spellCorrectCount >= 10 && !gameState.unlockedAchievements.includes(3)) {
+                unlockAchievement(3);
+            }
+            if (gameState.completedLevels.length >= 8 && !gameState.unlockedAchievements.includes(4)) {
+                unlockAchievement(4);
+            }
+            if (gameState.correctWords >= 100 && !gameState.unlockedAchievements.includes(5)) {
+                unlockAchievement(5);
+            }
+        }
+
+        // 解锁成就
+        function unlockAchievement(id) {
+            gameState.unlockedAchievements.push(id);
+            const achievement = achievements.find(a => a.id === id);
+            showFeedback(`🏅 解锁成就：${achievement.name}！`, 'correct');
+            renderAchievements();
+            saveProgress();
+        }
+
+        // 模式切换
+        document.querySelectorAll('.mode-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.mode-btn').forEach(b => {
+                    b.classList.remove('active');
+                    b.setAttribute('aria-pressed', 'false');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-pressed', 'true');
+                gameState.currentMode = btn.dataset.mode;
+                loadGameMode();
+            });
+        });
+
+        // 初始化
+        initGame();
+    </script>
+</body>
+</html>
