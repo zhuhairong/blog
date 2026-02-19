@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>唐诗三百首 · 墨韵</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=ZCOOL+QingKe+HuangYou&family=Noto+Serif+SC:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #100d08;
+    --paper: #f5edd8;
+    --paper-dim: rgba(245,237,216,0.7);
+    --vermillion: #b83030;
+    --vermillion-light: #e04040;
+    --gold: #c9a227;
+    --mist: rgba(245,237,216,0.05);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Noto Serif SC', serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Atmospheric background */
+  .bg-canvas {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 80% 60% at 10% 10%, rgba(50,30,12,0.9) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 90% 80%, rgba(30,15,5,0.95) 0%, transparent 60%),
+      radial-gradient(ellipse 100% 100% at 50% 50%, rgba(184,48,48,0.04) 0%, transparent 70%);
+  }
+
+  /* Subtle ink lines */
+  .bg-lines {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+  }
+  .bg-lines::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 20%; width: 1px; height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(245,237,216,0.04) 30%, rgba(245,237,216,0.04) 70%, transparent);
+  }
+  .bg-lines::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 75%; width: 1px; height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(245,237,216,0.03) 30%, rgba(245,237,216,0.03) 70%, transparent);
+  }
+
+  /* ─── HEADER ─── */
+  .site-header {
+    position: relative; z-index: 10;
+    padding: 56px 40px 36px;
+    display: flex; flex-direction: column; align-items: center;
+    border-bottom: 1px solid rgba(245,237,216,0.08);
+  }
+  .site-header::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 50%; transform: translateX(-50%);
+    width: 80px; height: 2px;
+    background: var(--vermillion);
+    border-radius: 1px;
+  }
+
+  .logo-wrap {
+    display: flex; align-items: center; gap: 20px;
+    animation: fadeDown 1s ease both;
+  }
+  .logo-deco {
+    font-size: 1.2rem; color: var(--vermillion); opacity: 0.7;
+    animation: pulse 4s infinite ease-in-out;
+  }
+  @keyframes pulse { 0%,100%{opacity:0.4} 50%{opacity:0.9} }
+
+  .logo-text {
+    font-family: 'ZCOOL XiaoWei', serif;
+    font-size: clamp(2.6rem, 7vw, 5rem);
+    letter-spacing: 0.35em;
+    background: linear-gradient(160deg, #f5edd8 20%, #c9a227 55%, #f5edd8 90%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    text-shadow: none;
+    animation: fadeDown 1s 0.1s ease both;
+  }
+
+  .logo-en {
+    font-size: 0.72rem; letter-spacing: 0.45em; color: rgba(245,237,216,0.3);
+    margin-top: 10px; text-transform: uppercase;
+    animation: fadeDown 1s 0.25s ease both;
+  }
+
+  @keyframes fadeDown { from{opacity:0;transform:translateY(-16px)} to{opacity:1;transform:translateY(0)} }
+
+  /* Search */
+  .search-bar {
+    display: flex; margin-top: 28px; gap: 0;
+    animation: fadeDown 1s 0.4s ease both;
+    border: 1px solid rgba(245,237,216,0.12);
+  }
+  .search-bar input {
+    background: rgba(245,237,216,0.04); border: none;
+    color: var(--paper); padding: 11px 22px;
+    font-family: 'Noto Serif SC', serif; font-size: 0.88rem;
+    width: 300px; outline: none; letter-spacing: 0.05em;
+    transition: background 0.3s;
+  }
+  .search-bar input:focus { background: rgba(245,237,216,0.08); }
+  .search-bar input::placeholder { color: rgba(245,237,216,0.25); }
+  .search-bar button {
+    background: var(--vermillion); border: none;
+    color: var(--paper); padding: 11px 22px;
+    font-family: 'ZCOOL XiaoWei', serif; font-size: 0.9rem;
+    letter-spacing: 0.2em; cursor: pointer; transition: background 0.3s;
+  }
+  .search-bar button:hover { background: var(--vermillion-light); }
+
+  /* ─── NAV ─── */
+  .cat-nav {
+    position: relative; z-index: 10;
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 6px;
+    padding: 22px 30px;
+    animation: fadeIn 1s 0.6s ease both;
+  }
+  @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+  .cat-btn {
+    background: transparent;
+    border: 1px solid rgba(245,237,216,0.14);
+    color: rgba(245,237,216,0.5);
+    padding: 5px 18px; font-family: 'Noto Serif SC', serif;
+    font-size: 0.78rem; letter-spacing: 0.12em; cursor: pointer;
+    transition: all 0.28s; position: relative;
+  }
+  .cat-btn:hover { color: var(--paper); border-color: rgba(245,237,216,0.35); }
+  .cat-btn.on {
+    background: rgba(184,48,48,0.18);
+    border-color: var(--vermillion); color: var(--paper);
+  }
+
+  /* ─── HERO ─── */
+  .hero-section {
+    position: relative; z-index: 10;
+    max-width: 1300px; margin: 0 auto 50px;
+    padding: 0 30px;
+    animation: fadeIn 1s 0.7s ease both;
+  }
+
+  .hero-card {
+    position: relative; overflow: hidden;
+    border: 1px solid rgba(245,237,216,0.09);
+    background: rgba(245,237,216,0.025);
+    padding: 50px 56px;
+    cursor: pointer;
+    transition: background 0.35s;
+    display: grid; grid-template-columns: 1fr auto;
+    gap: 40px; align-items: center;
+  }
+  .hero-card:hover { background: rgba(245,237,216,0.05); }
+  .hero-card::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    background: linear-gradient(to bottom, transparent, var(--vermillion), transparent);
+  }
+
+  .hero-label {
+    font-size: 0.65rem; letter-spacing: 0.5em; color: var(--vermillion);
+    margin-bottom: 18px; opacity: 0.85;
+  }
+  .hero-title {
+    font-family: 'ZCOOL XiaoWei', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    letter-spacing: 0.22em; margin-bottom: 6px;
+  }
+  .hero-meta {
+    font-size: 0.8rem; color: rgba(245,237,216,0.38);
+    letter-spacing: 0.22em; margin-bottom: 32px;
+  }
+  .hero-meta b { color: var(--gold); font-weight: 400; }
+  .hero-lines {
+    font-size: clamp(0.98rem, 1.6vw, 1.25rem);
+    line-height: 3; letter-spacing: 0.14em;
+    color: rgba(245,237,216,0.82);
+  }
+  .hero-watermark {
+    font-family: 'ZCOOL XiaoWei', serif;
+    font-size: 7rem; color: rgba(245,237,216,0.025);
+    writing-mode: vertical-rl; letter-spacing: -0.05em;
+    user-select: none; white-space: nowrap;
+    line-height: 1;
+  }
+
+  /* ─── STATS ─── */
+  .stats-row {
+    position: relative; z-index: 10;
+    max-width: 1300px; margin: 0 auto 40px;
+    padding: 0 30px;
+    animation: fadeIn 1s 0.8s ease both;
+  }
+  .stats-inner {
+    display: flex; justify-content: center; gap: 0;
+    border: 1px solid rgba(245,237,216,0.07);
+  }
+  .stat-item {
+    flex: 1; text-align: center; padding: 20px 16px;
+    border-right: 1px solid rgba(245,237,216,0.07);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-n {
+    font-family: 'ZCOOL QingKe HuangYou', serif;
+    font-size: 1.9rem; color: var(--gold); line-height: 1; margin-bottom: 6px;
+  }
+  .stat-l { font-size: 0.66rem; letter-spacing: 0.22em; color: rgba(245,237,216,0.28); }
+
+  /* ─── GRID ─── */
+  .grid-section {
+    position: relative; z-index: 10;
+    max-width: 1300px; margin: 0 auto;
+    padding: 0 30px 80px;
+    animation: fadeIn 1s 0.9s ease both;
+  }
+
+  .sec-hd {
+    text-align: center; margin-bottom: 24px;
+    display: flex; align-items: center; gap: 18px;
+    font-family: 'ZCOOL XiaoWei', serif;
+    font-size: 0.9rem; letter-spacing: 0.4em;
+    color: rgba(245,237,216,0.32);
+  }
+  .sec-hd::before, .sec-hd::after {
+    content: ''; flex: 1; height: 1px;
+    background: rgba(245,237,216,0.07);
+  }
+
+  .poem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 2px;
+  }
+
+  .poem-card {
+    padding: 28px 26px; cursor: pointer;
+    border: 1px solid rgba(245,237,216,0.055);
+    background: rgba(245,237,216,0.02);
+    transition: all 0.35s; position: relative; overflow: hidden;
+  }
+  .poem-card:hover {
+    background: rgba(245,237,216,0.065);
+    border-color: rgba(245,237,216,0.12);
+    transform: translateY(-3px);
+  }
+  .poem-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--vermillion), transparent);
+    transform: scaleX(0); transition: transform 0.4s;
+  }
+  .poem-card:hover::after { transform: scaleX(1); }
+
+  .pc-id { font-size: 0.6rem; color: rgba(245,237,216,0.18); font-family: monospace; margin-bottom: 10px; }
+  .pc-title { font-family: 'ZCOOL XiaoWei', serif; font-size: 1.18rem; letter-spacing: 0.18em; margin-bottom: 5px; }
+  .pc-author { font-size: 0.72rem; letter-spacing: 0.18em; color: rgba(245,237,216,0.32); margin-bottom: 16px; }
+  .pc-author span { color: var(--gold); }
+  .pc-preview {
+    font-size: 0.82rem; line-height: 2.2; letter-spacing: 0.07em;
+    color: rgba(245,237,216,0.45);
+    overflow: hidden; display: -webkit-box;
+    -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  }
+  .pc-cat {
+    margin-top: 14px; display: inline-block; font-size: 0.62rem;
+    letter-spacing: 0.15em; color: var(--vermillion);
+    border: 1px solid rgba(184,48,48,0.35); padding: 2px 8px;
+  }
+
+  /* ─── MODAL ─── */
+  .modal-overlay {
+    position: fixed; inset: 0; z-index: 500;
+    background: rgba(5,4,2,0.88); backdrop-filter: blur(12px);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.4s;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+
+  .modal-panel {
+    background: linear-gradient(145deg, #17120a, #120e07);
+    border: 1px solid rgba(245,237,216,0.12);
+    width: min(660px, 92vw);
+    max-height: 88vh; overflow-y: auto;
+    padding: 56px 50px; position: relative;
+    transform: scale(0.94) translateY(20px); transition: transform 0.4s;
+    scrollbar-width: thin; scrollbar-color: rgba(245,237,216,0.1) transparent;
+  }
+  .modal-overlay.open .modal-panel { transform: scale(1) translateY(0); }
+
+  .modal-x {
+    position: absolute; top: 18px; right: 22px;
+    background: none; border: none; color: rgba(245,237,216,0.28);
+    font-size: 1.3rem; cursor: pointer; transition: color 0.3s; line-height: 1;
+  }
+  .modal-x:hover { color: var(--vermillion); }
+
+  .m-title { font-family: 'ZCOOL XiaoWei', serif; font-size: 2rem; letter-spacing: 0.24em; margin-bottom: 6px; }
+  .m-meta { font-size: 0.78rem; letter-spacing: 0.28em; color: rgba(245,237,216,0.33); margin-bottom: 32px; }
+  .m-meta span { color: var(--gold); }
+
+  .m-controls { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; }
+  .m-btn {
+    background: rgba(245,237,216,0.04); border: 1px solid rgba(245,237,216,0.12);
+    color: rgba(245,237,216,0.45); padding: 6px 16px;
+    font-family: 'Noto Serif SC', serif; font-size: 0.72rem;
+    letter-spacing: 0.12em; cursor: pointer; transition: all 0.28s;
+  }
+  .m-btn:hover, .m-btn.on { background: rgba(184,48,48,0.18); border-color: var(--vermillion); color: var(--paper); }
+
+  .m-poem {
+    font-size: 1.18rem; line-height: 3.2; letter-spacing: 0.18em;
+    color: rgba(245,237,216,0.88);
+    border-left: 2px solid rgba(184,48,48,0.3); padding-left: 22px;
+    margin-bottom: 36px; transition: all 0.3s;
+  }
+  .m-poem.vert {
+    writing-mode: vertical-rl;
+    border-left: none; border-top: 2px solid rgba(184,48,48,0.3);
+    padding-left: 0; padding-top: 18px;
+    max-height: 280px; line-height: 2.8;
+    letter-spacing: 0.3em;
+  }
+
+  .m-note {
+    font-size: 0.8rem; line-height: 2.1; letter-spacing: 0.04em;
+    color: rgba(245,237,216,0.36);
+    border-top: 1px solid rgba(245,237,216,0.07); padding-top: 22px;
+  }
+
+  /* ─── IMMERSIVE ─── */
+  .immersive {
+    position: fixed; inset: 0; z-index: 900;
+    background: #080604;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.5s;
+  }
+  .immersive.open { opacity: 1; pointer-events: all; }
+
+  .imm-inner {
+    display: flex; align-items: center; gap: 60px;
+    padding: 40px;
+  }
+  .imm-vert-title {
+    writing-mode: vertical-rl;
+    font-family: 'ZCOOL XiaoWei', serif;
+    font-size: 0.78rem; letter-spacing: 0.5em;
+    color: rgba(245,237,216,0.2);
+  }
+  .imm-poem {
+    writing-mode: vertical-rl;
+    font-family: 'ZCOOL XiaoWei', serif;
+    font-size: clamp(1.4rem, 3vw, 2.1rem);
+    letter-spacing: 0.4em; line-height: 2.6;
+    color: rgba(245,237,216,0.88);
+    max-height: 72vh;
+  }
+  .imm-sep {
+    width: 1px; height: 180px;
+    background: linear-gradient(to bottom, transparent, rgba(184,48,48,0.4), transparent);
+  }
+  .imm-exit {
+    position: fixed; top: 22px; right: 24px;
+    background: none; border: 1px solid rgba(245,237,216,0.15);
+    color: rgba(245,237,216,0.38); padding: 7px 18px;
+    font-family: 'Noto Serif SC', serif; font-size: 0.72rem;
+    letter-spacing: 0.2em; cursor: pointer; transition: all 0.3s;
+  }
+  .imm-exit:hover { color: var(--paper); border-color: rgba(245,237,216,0.4); }
+
+  /* Ink ripple */
+  .ripple {
+    position: fixed; pointer-events: none; z-index: 9999;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,48,48,0.35) 0%, transparent 70%);
+    transform: scale(0);
+    animation: rip 0.55s ease-out both;
+  }
+  @keyframes rip { 0%{transform:scale(0);opacity:1} 100%{transform:scale(4);opacity:0} }
+
+  .empty-msg { text-align:center; padding:70px; color:rgba(245,237,216,0.2); letter-spacing:0.3em; display:none; }
+
+  ::-webkit-scrollbar { width:3px; }
+  ::-webkit-scrollbar-thumb { background: rgba(245,237,216,0.08); }
+
+  @media(max-width:640px) {
+    .hero-card { grid-template-columns: 1fr; padding: 30px 24px; }
+    .hero-watermark { display:none; }
+    .modal-panel { padding: 36px 22px; }
+    .stats-inner { flex-wrap:wrap; }
+    .stat-item { min-width: 50%; border-bottom: 1px solid rgba(245,237,216,0.07); }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-canvas"></div>
+<div class="bg-lines"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="logo-wrap">
+    <span class="logo-deco">✦</span>
+    <div class="logo-text">唐诗三百首</div>
+    <span class="logo-deco">✦</span>
+  </div>
+  <div class="logo-en">Tang Three Hundred · Classic Poetry Collection</div>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="搜索诗题、诗人、诗句…" oninput="doSearch()">
+    <button onclick="doSearch()">搜 索</button>
+  </div>
+</header>
+
+<!-- CATEGORY NAV -->
+<nav class="cat-nav">
+  <button class="cat-btn on" onclick="filterCat('全部',this)">全 部</button>
+  <button class="cat-btn" onclick="filterCat('山水田园',this)">山水田园</button>
+  <button class="cat-btn" onclick="filterCat('边塞军旅',this)">边塞军旅</button>
+  <button class="cat-btn" onclick="filterCat('送别离情',this)">送别离情</button>
+  <button class="cat-btn" onclick="filterCat('怀古咏史',this)">怀古咏史</button>
+  <button class="cat-btn" onclick="filterCat('思乡羁旅',this)">思乡羁旅</button>
+  <button class="cat-btn" onclick="filterCat('咏物言志',this)">咏物言志</button>
+  <button class="cat-btn" onclick="filterCat('爱情闺怨',this)">爱情闺怨</button>
+  <button class="cat-btn" onclick="filterCat('哲理禅意',this)">哲理禅意</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero-section">
+  <div class="hero-card" id="heroCard">
+    <div>
+      <div class="hero-label">✦ 今 日 推 荐</div>
+      <div class="hero-title" id="hTitle"></div>
+      <div class="hero-meta" id="hMeta"></div>
+      <div class="hero-lines" id="hLines"></div>
+    </div>
+    <div class="hero-watermark" id="hWater"></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-row">
+  <div class="stats-inner">
+    <div class="stat-item"><div class="stat-n">310</div><div class="stat-l">收 录 诗 篇</div></div>
+    <div class="stat-item"><div class="stat-n">77</div><div class="stat-l">唐 代 诗 人</div></div>
+    <div class="stat-item"><div class="stat-n">8</div><div class="stat-l">题 材 类 别</div></div>
+    <div class="stat-item"><div class="stat-n" style="font-size:1.4rem;letter-spacing:0.1em">盛 唐</div><div class="stat-l">黄 金 时 代</div></div>
+  </div>
+</div>
+
+<!-- GRID -->
+<div class="grid-section">
+  <div class="sec-hd" id="secHd">经 典 名 篇</div>
+  <div class="poem-grid" id="poemGrid"></div>
+  <div class="empty-msg" id="emptyMsg">未 找 到 相 关 诗 词</div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="maybeClose(event)">
+  <div class="modal-panel">
+    <button class="modal-x" onclick="closeModal()">✕</button>
+    <div class="m-title" id="mTitle"></div>
+    <div class="m-meta" id="mMeta"></div>
+    <div class="m-controls">
+      <button class="m-btn on" id="btnH" onclick="setMode('h')">横 排 阅 读</button>
+      <button class="m-btn" id="btnV" onclick="setMode('v')">竖 排 阅 读</button>
+      <button class="m-btn" onclick="openImm()">沉 浸 阅 读</button>
+    </div>
+    <div class="m-poem" id="mPoem"></div>
+    <div class="m-note" id="mNote"></div>
+  </div>
+</div>
+
+<!-- IMMERSIVE -->
+<div class="immersive" id="immersive">
+  <div class="imm-inner">
+    <div class="imm-vert-title" id="immTitle"></div>
+    <div class="imm-sep"></div>
+    <div class="imm-poem" id="immPoem"></div>
+  </div>
+  <button class="imm-exit" onclick="closeImm()">退 出 阅 读</button>
+</div>
+
+<script>
+const DB = [
+  {id:1,title:'静夜思',author:'李白',dy:'唐',cat:'思乡羁旅',
+   lines:['床前明月光，','疑是地上霜。','举头望明月，','低头思故乡。'],
+   note:'此诗是李白的代表作，语言简洁，情感真挚，表达游子思乡之情，千百年来脍炙人口，被译成数十种语言广泛流传。'},
+  {id:2,title:'春晓',author:'孟浩然',dy:'唐',cat:'山水田园',
+   lines:['春眠不觉晓，','处处闻啼鸟。','夜来风雨声，','花落知多少。'],
+   note:'孟浩然的山水田园诗代表作，语言清新自然，将春天清晨特有的慵懒与感伤融为一体。'},
+  {id:3,title:'登鹳雀楼',author:'王之涣',dy:'唐',cat:'哲理禅意',
+   lines:['白日依山尽，','黄河入海流。','欲穷千里目，','更上一层楼。'],
+   note:'王之涣名篇，前两句写景壮阔，后两句发出哲理感慨，勉励人们积极进取，不断超越自我。'},
+  {id:4,title:'凉州词',author:'王之涣',dy:'唐',cat:'边塞军旅',
+   lines:['黄河远上白云间，','一片孤城万仞山。','羌笛何须怨杨柳，','春风不度玉门关。'],
+   note:'边塞诗中的千古绝唱，描写了戍边将士的苦楚，"春风不度玉门关"更成为历代传诵的名句。'},
+  {id:5,title:'出塞',author:'王昌龄',dy:'唐',cat:'边塞军旅',
+   lines:['秦时明月汉时关，','万里长征人未还。','但使龙城飞将在，','不教胡马度阴山。'],
+   note:'王昌龄边塞诗的压卷之作，以雄浑笔力展现边疆苍凉与战士悲壮，抒发了对良将的渴望。'},
+  {id:6,title:'送元二使安西',author:'王维',dy:'唐',cat:'送别离情',
+   lines:['渭城朝雨浥轻尘，','客舍青青柳色新。','劝君更尽一杯酒，','西出阳关无故人。'],
+   note:'王维送别诗中最脍炙人口的一首，后被谱成《阳关三叠》，成为古代送别的标志性乐曲。'},
+  {id:7,title:'鹿柴',author:'王维',dy:'唐',cat:'山水田园',
+   lines:['空山不见人，','但闻人语响。','返景入深林，','复照青苔上。'],
+   note:'王维"诗中有画，画中有诗"的代表，用极简语言营造出空灵寂静的禅意境界。'},
+  {id:8,title:'望岳',author:'杜甫',dy:'唐',cat:'山水田园',
+   lines:['岱宗夫如何？','齐鲁青未了。','造化钟神秀，','阴阳割昏晓。','荡胸生曾云，','决眦入归鸟。','会当凌绝顶，','一览众山小。'],
+   note:'杜甫年轻时的豪迈之作，充满积极向上的进取精神，"会当凌绝顶，一览众山小"已成千古名句。'},
+  {id:9,title:'春望',author:'杜甫',dy:'唐',cat:'怀古咏史',
+   lines:['国破山河在，','城春草木深。','感时花溅泪，','恨别鸟惊心。','烽火连三月，','家书抵万金。','白头搔更短，','浑欲不胜簪。'],
+   note:'安史之乱时杜甫的伤时之作，"烽火连三月，家书抵万金"道尽乱世思亲之苦，令人动容。'},
+  {id:10,title:'黄鹤楼送孟浩然之广陵',author:'李白',dy:'唐',cat:'送别离情',
+   lines:['故人西辞黄鹤楼，','烟花三月下扬州。','孤帆远影碧空尽，','唯见长江天际流。'],
+   note:'李白送别诗的杰作，景与情融为一体，以江水无尽象征依依惜别之情，意境开阔动人。'},
+  {id:11,title:'行路难·其一',author:'李白',dy:'唐',cat:'咏物言志',
+   lines:['金樽清酒斗十千，','玉盘珍羞直万钱。','停杯投箸不能食，','拔剑四顾心茫然。','长风破浪会有时，','直挂云帆济沧海。'],
+   note:'李白政治理想受挫时所作，充满矛盾与激情，结尾展现出昂扬豪情，千古激励人心。'},
+  {id:12,title:'枫桥夜泊',author:'张继',dy:'唐',cat:'思乡羁旅',
+   lines:['月落乌啼霜满天，','江枫渔火对愁眠。','姑苏城外寒山寺，','夜半钟声到客船。'],
+   note:'描绘秋夜水乡独特意境，寒山寺因此诗名扬天下，每年除夕吸引众多游人聆听钟声。'},
+  {id:13,title:'相思',author:'王维',dy:'唐',cat:'爱情闺怨',
+   lines:['红豆生南国，','春来发几枝。','愿君多采撷，','此物最相思。'],
+   note:'王维借红豆表达相思之情，语言朴素而情意深长，"红豆"因此诗成为相思的代名词。'},
+  {id:14,title:'游子吟',author:'孟郊',dy:'唐',cat:'思乡羁旅',
+   lines:['慈母手中线，','游子身上衣。','临行密密缝，','意恐迟迟归。','谁言寸草心，','报得三春晖。'],
+   note:'孟郊五十岁及第后所作，歌颂母爱的伟大，"谁言寸草心，报得三春晖"千古流传。'},
+  {id:15,title:'旅夜书怀',author:'杜甫',dy:'唐',cat:'思乡羁旅',
+   lines:['细草微风岸，','危樯独夜舟。','星垂平野阔，','月涌大江流。','名岂文章著，','官应老病休。','飘飘何所似，','天地一沙鸥。'],
+   note:'杜甫晚年漂泊时所作，宏阔景象中包含深沉孤独，是"诗圣"晚境凄凉的真实写照。'},
+  {id:16,title:'将进酒',author:'李白',dy:'唐',cat:'咏物言志',
+   lines:['君不见黄河之水天上来，','奔流到海不复回。','君不见高堂明镜悲白发，','朝如青丝暮成雪。','人生得意须尽欢，','莫使金樽空对月。','天生我材必有用，','千金散尽还复来。'],
+   note:'李白豪放派诗歌代表作，以夸张手法抒发人生苦短的感慨和豁达处世态度，气势磅礴。'},
+  {id:17,title:'无题',author:'李商隐',dy:'唐',cat:'爱情闺怨',
+   lines:['相见时难别亦难，','东风无力百花残。','春蚕到死丝方尽，','蜡炬成灰泪始干。','晓镜但愁云鬓改，','夜吟应觉月光寒。','蓬山此去无多路，','青鸟殷勤为探看。'],
+   note:'"春蚕到死丝方尽，蜡炬成灰泪始干"成为形容至死不渝爱情的千古名句，历久弥新。'},
+  {id:18,title:'泊秦淮',author:'杜牧',dy:'唐',cat:'怀古咏史',
+   lines:['烟笼寒水月笼沙，','夜泊秦淮近酒家。','商女不知亡国恨，','隔江犹唱后庭花。'],
+   note:'杜牧借秦淮河夜景，讽刺统治者的醉生梦死，借古讽今，忧国之情溢于言表。'},
+  {id:19,title:'山行',author:'杜牧',dy:'唐',cat:'山水田园',
+   lines:['远上寒山石径斜，','白云生处有人家。','停车坐爱枫林晚，','霜叶红于二月花。'],
+   note:'杜牧写秋景的绝唱，一改悲秋传统，以热烈笔调赞美秋日枫林的壮美，令人心旷神怡。'},
+  {id:20,title:'题都城南庄',author:'崔护',dy:'唐',cat:'爱情闺怨',
+   lines:['去年今日此门中，','人面桃花相映红。','人面不知何处去，','桃花依旧笑春风。'],
+   note:'"人面桃花"自此成为形容美丽女子或物是人非的成语，崔护凭此一首诗名垂千古。'},
+  {id:21,title:'春江花月夜（节选）',author:'张若虚',dy:'唐',cat:'山水田园',
+   lines:['春江潮水连海平，','海上明月共潮生。','滟滟随波千万里，','何处春江无月明。','江流宛转绕芳甸，','月照花林皆似霰。'],
+   note:'被誉为"诗中的诗，顶峰上的顶峰"，张若虚以此一首诗名垂千古，写尽宇宙人生的深邃思考。'},
+  {id:22,title:'琵琶行（节选）',author:'白居易',dy:'唐',cat:'咏物言志',
+   lines:['浔阳江头夜送客，','枫叶荻花秋瑟瑟。','千呼万唤始出来，','犹抱琵琶半遮面。','大弦嘈嘈如急雨，','小弦切切如私语。'],
+   note:'白居易以精湛笔墨描写琵琶女的高超技艺和悲惨命运，"同是天涯沦落人"道尽共鸣。'},
+  {id:23,title:'登高',author:'杜甫',dy:'唐',cat:'思乡羁旅',
+   lines:['风急天高猿啸哀，','渚清沙白鸟飞回。','无边落木萧萧下，','不尽长江滚滚来。','万里悲秋常作客，','百年多病独登台。','艰难苦恨繁霜鬓，','潦倒新停浊酒杯。'],
+   note:'被誉为"古今七言律第一"，八句俱是律联，对仗工整，意境悲壮，是杜甫晚年的巅峰之作。'},
+  {id:24,title:'江雪',author:'柳宗元',dy:'唐',cat:'山水田园',
+   lines:['千山鸟飞绝，','万径人踪灭。','孤舟蓑笠翁，','独钓寒江雪。'],
+   note:'极度简洁而意境深远，以大雪封山的空旷背景衬托孤独老翁，寄托了诗人政治失意的孤寂心境。'},
+  {id:25,title:'望月怀远',author:'张九龄',dy:'唐',cat:'思乡羁旅',
+   lines:['海上生明月，','天涯共此时。','情人怨遥夜，','竟夕起相思。','灭烛怜光满，','披衣觉露滋。','不堪盈手赠，','还寝梦佳期。'],
+   note:'"海上生明月，天涯共此时"早已成为中国人思念远方亲友时最常引用的诗句之一。'},
+  {id:26,title:'月下独酌',author:'李白',dy:'唐',cat:'咏物言志',
+   lines:['花间一壶酒，','独酌无相亲。','举杯邀明月，','对影成三人。','月既不解饮，','影徒随我身。','暂伴月将影，','行乐须及春。'],
+   note:'李白以月和影为伴，表现出孤独中自得其乐的旷达精神，是李白浪漫气质的独特展示。'},
+  {id:27,title:'酬乐天扬州初逢席上见赠',author:'刘禹锡',dy:'唐',cat:'哲理禅意',
+   lines:['巴山楚水凄凉地，','二十三年弃置身。','怀旧空吟闻笛赋，','到乡翻似烂柯人。','沉舟侧畔千帆过，','病树前头万木春。','今日听君歌一曲，','暂凭杯酒长精神。'],
+   note:'"沉舟侧畔千帆过，病树前头万木春"揭示新陈代谢哲理，体现了诗人豁达向上的精神。'},
+  {id:28,title:'锦瑟',author:'李商隐',dy:'唐',cat:'爱情闺怨',
+   lines:['锦瑟无端五十弦，','一弦一柱思华年。','庄生晓梦迷蝴蝶，','望帝春心托杜鹃。','沧海月明珠有泪，','蓝田日暖玉生烟。','此情可待成追忆，','只是当时已惘然。'],
+   note:'李商隐最具代表性的隐晦之诗，历来解读纷纭，意境朦胧，语言精美绝伦，令人叹为观止。'},
+  {id:29,title:'长恨歌（节选）',author:'白居易',dy:'唐',cat:'爱情闺怨',
+   lines:['汉皇重色思倾国，','御宇多年求不得。','天生丽质难自弃，','一朝选在君王侧。','回眸一笑百媚生，','六宫粉黛无颜色。','在天愿作比翼鸟，','在地愿为连理枝。'],
+   note:'白居易的长篇叙事诗，讲述唐玄宗与杨贵妃的爱情悲剧，情感缠绵悱恻，广为传诵千年。'},
+  {id:30,title:'秋夕',author:'杜牧',dy:'唐',cat:'爱情闺怨',
+   lines:['银烛秋光冷画屏，','轻罗小扇扑流萤。','天阶夜色凉如水，','坐看牵牛织女星。'],
+   note:'以宫女在秋夜扑流萤、仰望牛女星的情景，写出了深宫中女子寂寞孤独的处境，含蓄深沉。'},
+];
+
+let currentPoem = null;
+let readMode = 'h';
+let filtered = [...DB];
+
+function init() {
+  const day = new Date().getDate();
+  const heroP = DB[day % DB.length];
+  renderHero(heroP);
+  renderGrid(DB);
+}
+
+function renderHero(p) {
+  document.getElementById('hTitle').textContent = p.title;
+  document.getElementById('hMeta').innerHTML = `【${p.dy}】<b>${p.author}</b>&nbsp;·&nbsp;${p.cat}`;
+  document.getElementById('hLines').innerHTML = p.lines.slice(0,4).map(l=>`<div>${l}</div>`).join('');
+  document.getElementById('hWater').textContent = p.title;
+  document.getElementById('heroCard').onclick = () => openPoem(p);
+}
+
+function renderGrid(list) {
+  const grid = document.getElementById('poemGrid');
+  const empty = document.getElementById('emptyMsg');
+  if (!list.length) { grid.innerHTML=''; empty.style.display='block'; return; }
+  empty.style.display = 'none';
+  grid.innerHTML = list.map((p,i) => `
+    <div class="poem-card" style="animation:cardIn 0.5s ${(i%12)*0.04}s ease both" onclick='openPoem(${JSON.stringify(p)})'>
+      <div class="pc-id">${String(p.id).padStart(3,'0')}</div>
+      <div class="pc-title">${p.title}</div>
+      <div class="pc-author">【${p.dy}】<span>${p.author}</span></div>
+      <div class="pc-preview">${p.lines.join('')}</div>
+      <div class="pc-cat">${p.cat}</div>
+    </div>
+  `).join('');
+  // inject animation keyframe once
+  if (!document.getElementById('cardAnim')) {
+    const s = document.createElement('style');
+    s.id = 'cardAnim';
+    s.textContent = '@keyframes cardIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}';
+    document.head.appendChild(s);
+  }
+}
+
+function filterCat(cat, btn) {
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('searchInput').value = '';
+  filtered = cat === '全部' ? [...DB] : DB.filter(p => p.cat === cat);
+  document.getElementById('secHd').textContent = cat === '全部' ? '经 典 名 篇' : cat;
+  renderGrid(filtered);
+}
+
+function doSearch() {
+  const q = document.getElementById('searchInput').value.trim();
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('on'));
+  document.querySelector('.cat-btn').classList.add('on');
+  if (!q) { filtered = [...DB]; document.getElementById('secHd').textContent = '经 典 名 篇'; renderGrid(DB); return; }
+  filtered = DB.filter(p => p.title.includes(q) || p.author.includes(q) || p.lines.some(l=>l.includes(q)));
+  document.getElementById('secHd').textContent = `「${q}」搜索结果`;
+  renderGrid(filtered);
+}
+
+function openPoem(p) {
+  currentPoem = p;
+  document.getElementById('mTitle').textContent = p.title;
+  document.getElementById('mMeta').innerHTML = `【${p.dy}】<span>${p.author}</span>&ensp;·&ensp;${p.cat}`;
+  document.getElementById('mNote').textContent = p.note || '';
+  setMode(readMode, false);
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function setMode(m, fromBtn=true) {
+  readMode = m;
+  document.getElementById('btnH').classList.toggle('on', m==='h');
+  document.getElementById('btnV').classList.toggle('on', m==='v');
+  const el = document.getElementById('mPoem');
+  el.className = 'modal-panel-poem m-poem' + (m==='v' ? ' vert' : '');
+  el.innerHTML = currentPoem.lines.map(l=>`<div>${l}</div>`).join('');
+}
+
+function maybeClose(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function openImm() {
+  const p = currentPoem;
+  document.getElementById('immTitle').textContent = `${p.title} · ${p.author}`;
+  document.getElementById('immPoem').textContent = p.lines.join('');
+  document.getElementById('immersive').classList.add('open');
+}
+function closeImm() { document.getElementById('immersive').classList.remove('open'); }
+
+// Ink ripple on click
+document.addEventListener('click', e => {
+  const r = document.createElement('div');
+  r.className = 'ripple';
+  const size = 70;
+  r.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX-size/2}px;top:${e.clientY-size/2}px`;
+  document.body.appendChild(r);
+  setTimeout(() => r.remove(), 560);
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key==='Escape') { closeModal(); closeImm(); }
+});
+
+init();
+</script>
+</body>
+</html>
