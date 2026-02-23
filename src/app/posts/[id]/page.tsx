@@ -1,4 +1,5 @@
 import { getAllPostIds, getPostData } from "@/lib/api";
+import Header from "@/components/Header";
 
 type Params = {
     params: Promise<{
@@ -16,7 +17,9 @@ export default async function Post({ params }: Params) {
     const postData = await getPostData(id);
 
     return (
-        <article>
+        <>
+            <Header />
+            <article>
             <div style={{ marginBottom: '3rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '2rem' }}>
                 <h1 style={{ fontSize: '3rem', marginBottom: '1rem', lineHeight: '1.1' }}>{postData.title}</h1>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: 'var(--text-secondary)' }}>
@@ -46,5 +49,6 @@ export default async function Post({ params }: Params) {
                 style={{ fontSize: '1.1rem', lineHeight: '1.8' }}
             />
         </article>
+        </>
     );
 }
