@@ -14,6 +14,30 @@ export default function Home() {
       </div>
 
       <div style={{ marginBottom: '4rem' }}>
+        <Link href="/c-utils" style={{ textDecoration: 'none' }}>
+          <div className="tool-card" style={{
+            background: 'linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%)',
+            borderRadius: '16px',
+            padding: '2rem',
+            color: 'white',
+            cursor: 'pointer',
+            boxShadow: '0 4px 20px rgba(30, 58, 95, 0.3)',
+          }}>
+            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📦</div>
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem', fontWeight: 'bold' }}>C-Utils 代码库</h3>
+            <p style={{ opacity: 0.9, lineHeight: 1.6 }}>
+              149个轻量级C语言工具库，涵盖数据结构、算法、系统编程、网络协议、加密编码等领域。模块化设计，即插即用！
+            </p>
+            <div style={{ marginTop: '1rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+              <span style={{ background: 'rgba(255,255,255,0.2)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.875rem' }}>149模块</span>
+              <span style={{ background: 'rgba(255,255,255,0.2)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.875rem' }}>源码浏览</span>
+              <span style={{ background: 'rgba(255,255,255,0.2)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.875rem' }}>分类索引</span>
+            </div>
+          </div>
+        </Link>
+      </div>
+
+      <div style={{ marginBottom: '4rem' }}>
         <h2 style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           🎮 学习工具
         </h2>
