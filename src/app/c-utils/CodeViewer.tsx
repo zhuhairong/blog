@@ -125,11 +125,12 @@ export default function CodeViewer({ codeFiles, categories }: CodeViewerProps) {
         left: 0,
         right: 0,
         zIndex: 1000,
-        background: 'rgba(255, 255, 255, 0.95)',
-        backdropFilter: 'blur(10px)',
-        WebkitBackdropFilter: 'blur(10px)',
-        boxShadow: '0 2px 20px rgba(0, 0, 0, 0.1)',
+        background: 'rgba(10, 10, 15, 0.9)',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        boxShadow: '0 4px 30px rgba(0, 0, 0, 0.3)',
         padding: '0 20px',
+        borderBottom: '1px solid rgba(124, 58, 237, 0.2)',
       }}>
         <div style={{
           maxWidth: '1400px',
@@ -144,12 +145,12 @@ export default function CodeViewer({ codeFiles, categories }: CodeViewerProps) {
             alignItems: 'center',
             gap: '10px',
             textDecoration: 'none',
-            color: '#333',
+            color: '#f0f0f5',
           }}>
             <div style={{
               width: '32px',
               height: '32px',
-              background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
+              background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #ec4899 100%)',
               borderRadius: '8px',
               display: 'flex',
               alignItems: 'center',
@@ -162,7 +163,7 @@ export default function CodeViewer({ codeFiles, categories }: CodeViewerProps) {
             <span style={{
               fontWeight: 700,
               fontSize: '16px',
-              background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
+              background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #ec4899 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -178,8 +179,9 @@ export default function CodeViewer({ codeFiles, categories }: CodeViewerProps) {
               fontSize: '13px',
               fontWeight: 500,
               transition: 'all 0.2s ease',
-              color: '#666',
-              background: '#f5f5f5',
+              color: '#a0a0b0',
+              background: 'rgba(124, 58, 237, 0.1)',
+              border: '1px solid rgba(124, 58, 237, 0.2)',
             }}>首页</Link>
             <Link href="/eng.html" style={{
               padding: '6px 14px',
@@ -188,8 +190,9 @@ export default function CodeViewer({ codeFiles, categories }: CodeViewerProps) {
               fontSize: '13px',
               fontWeight: 500,
               transition: 'all 0.2s ease',
-              color: '#666',
-              background: '#f5f5f5',
+              color: '#a0a0b0',
+              background: 'rgba(124, 58, 237, 0.1)',
+              border: '1px solid rgba(124, 58, 237, 0.2)',
             }}>英语</Link>
             <Link href="/cem.html" style={{
               padding: '6px 14px',
@@ -198,8 +201,9 @@ export default function CodeViewer({ codeFiles, categories }: CodeViewerProps) {
               fontSize: '13px',
               fontWeight: 500,
               transition: 'all 0.2s ease',
-              color: '#666',
-              background: '#f5f5f5',
+              color: '#a0a0b0',
+              background: 'rgba(124, 58, 237, 0.1)',
+              border: '1px solid rgba(124, 58, 237, 0.2)',
             }}>化学</Link>
             <Link href="/tang-poems.html" style={{
               padding: '6px 14px',
@@ -208,8 +212,9 @@ export default function CodeViewer({ codeFiles, categories }: CodeViewerProps) {
               fontSize: '13px',
               fontWeight: 500,
               transition: 'all 0.2s ease',
-              color: '#666',
-              background: '#f5f5f5',
+              color: '#a0a0b0',
+              background: 'rgba(124, 58, 237, 0.1)',
+              border: '1px solid rgba(124, 58, 237, 0.2)',
             }}>唐诗</Link>
             <Link href="/c-utils" style={{
               padding: '6px 14px',
@@ -218,8 +223,9 @@ export default function CodeViewer({ codeFiles, categories }: CodeViewerProps) {
               fontSize: '13px',
               fontWeight: 500,
               transition: 'all 0.2s ease',
-              background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
+              background: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)',
               color: 'white',
+              border: 'none',
             }}>代码库</Link>
           </div>
         </div>
