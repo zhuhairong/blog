@@ -118,12 +118,112 @@ export default function CodeViewer({ codeFiles, categories }: CodeViewerProps) {
   };
 
   return (
-    <div className="min-h-screen" style={{ paddingTop: '2rem' }}>
-      <div style={{ marginBottom: '2rem' }}>
-        <Link href="/" style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}>
-          ← 返回首页
-        </Link>
-      </div>
+    <div className="min-h-screen" style={{ paddingTop: '70px' }}>
+      <nav style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+        background: 'rgba(255, 255, 255, 0.95)',
+        backdropFilter: 'blur(10px)',
+        WebkitBackdropFilter: 'blur(10px)',
+        boxShadow: '0 2px 20px rgba(0, 0, 0, 0.1)',
+        padding: '0 20px',
+      }}>
+        <div style={{
+          maxWidth: '1400px',
+          margin: '0 auto',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          height: '50px',
+        }}>
+          <Link href="/" style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px',
+            textDecoration: 'none',
+            color: '#333',
+          }}>
+            <div style={{
+              width: '32px',
+              height: '32px',
+              background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
+              borderRadius: '8px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: 'white',
+              fontSize: '16px',
+            }}>
+              📦
+            </div>
+            <span style={{
+              fontWeight: 700,
+              fontSize: '16px',
+              background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}>
+              ZHR Blog
+            </span>
+          </Link>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Link href="/" style={{
+              padding: '6px 14px',
+              borderRadius: '20px',
+              textDecoration: 'none',
+              fontSize: '13px',
+              fontWeight: 500,
+              transition: 'all 0.2s ease',
+              color: '#666',
+              background: '#f5f5f5',
+            }}>首页</Link>
+            <Link href="/eng.html" style={{
+              padding: '6px 14px',
+              borderRadius: '20px',
+              textDecoration: 'none',
+              fontSize: '13px',
+              fontWeight: 500,
+              transition: 'all 0.2s ease',
+              color: '#666',
+              background: '#f5f5f5',
+            }}>英语</Link>
+            <Link href="/cem.html" style={{
+              padding: '6px 14px',
+              borderRadius: '20px',
+              textDecoration: 'none',
+              fontSize: '13px',
+              fontWeight: 500,
+              transition: 'all 0.2s ease',
+              color: '#666',
+              background: '#f5f5f5',
+            }}>化学</Link>
+            <Link href="/tang-poems.html" style={{
+              padding: '6px 14px',
+              borderRadius: '20px',
+              textDecoration: 'none',
+              fontSize: '13px',
+              fontWeight: 500,
+              transition: 'all 0.2s ease',
+              color: '#666',
+              background: '#f5f5f5',
+            }}>唐诗</Link>
+            <Link href="/c-utils" style={{
+              padding: '6px 14px',
+              borderRadius: '20px',
+              textDecoration: 'none',
+              fontSize: '13px',
+              fontWeight: 500,
+              transition: 'all 0.2s ease',
+              background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
+              color: 'white',
+            }}>代码库</Link>
+          </div>
+        </div>
+      </nav>
 
       <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
         <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>📦 C-Utils 代码库</h1>

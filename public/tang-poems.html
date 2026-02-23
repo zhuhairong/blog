@@ -24,6 +24,88 @@
     font-family: 'Noto Serif SC', serif;
     min-height: 100vh;
     overflow-x: hidden;
+    padding-top: 50px;
+  }
+
+  .nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(16, 13, 8, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    padding: 0 20px;
+    border-bottom: 1px solid rgba(184, 48, 48, 0.3);
+  }
+
+  .nav-bar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--paper);
+  }
+
+  .nav-logo-icon {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--vermillion) 0%, var(--gold) 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+  }
+
+  .nav-logo-text {
+    font-weight: 700;
+    font-size: 16px;
+    background: linear-gradient(135deg, var(--vermillion) 0%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav-link {
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    color: var(--paper-dim);
+    background: rgba(245, 237, 216, 0.05);
+    border: 1px solid transparent;
+  }
+
+  .nav-link:hover {
+    background: rgba(184, 48, 48, 0.2);
+    color: var(--paper);
+    border-color: var(--vermillion);
+  }
+
+  .nav-link.active {
+    background: linear-gradient(135deg, var(--vermillion) 0%, var(--gold) 100%);
+    color: white;
   }
 
   /* Atmospheric background */
@@ -402,6 +484,22 @@
 </style>
 </head>
 <body>
+
+<nav class="nav-bar">
+  <div class="nav-bar-inner">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon">📜</div>
+      <span class="nav-logo-text">ZHR Blog</span>
+    </a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">首页</a>
+      <a href="/eng.html" class="nav-link">英语</a>
+      <a href="/cem.html" class="nav-link">化学</a>
+      <a href="/tang-poems.html" class="nav-link active">唐诗</a>
+      <a href="/c-utils" class="nav-link">代码库</a>
+    </div>
+  </div>
+</nav>
 
 <div class="bg-canvas"></div>
 <div class="bg-lines"></div>

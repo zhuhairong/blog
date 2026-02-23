@@ -1,11 +1,14 @@
 import { getSortedPostsData } from "@/lib/api";
 import PostCard from "@/components/PostCard";
 import Link from "next/link";
+import Header from "@/components/Header";
 
 export default function Home() {
   const allPostsData = getSortedPostsData();
   return (
-    <section>
+    <>
+      <Header />
+      <section>
       <div style={{ padding: '4rem 0', textAlign: 'center', marginBottom: '4rem' }}>
         <h1 style={{ fontSize: '4rem', marginBottom: '1.5rem' }}>Welcome to ZHR's AI Blog</h1>
         <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto 2.5rem auto' }}>
@@ -120,5 +123,6 @@ export default function Home() {
         ))}
       </div>
     </section>
+    </>
   );
 }
