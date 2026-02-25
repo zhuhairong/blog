@@ -1,10 +1,5 @@
 /**
  * 游程长度受限编码演示程序
- *
- * 功能：
- * - RLL 编码解码
- * - 磁盘存储优化
- * - 多种编码方案
  */
 
 #include <stdio.h>
@@ -12,159 +7,161 @@
 #include <string.h>
 #include "../c_utils/run_length_limited.h"
 
-// 演示 1: 基本概念
-static void demo_concept(void) {
-    printf("\n=== 演示 1: RLL 游程长度受限基本概念 ===\n");
-
-    printf("RLL (Run-Length Limited):\n\n");
-
-    printf("原理:\n");
-    printf("  - 限制连续 0 或 1 的最小/最大长度\n");
-    printf("  - 用于磁盘、磁带存储\n");
-    printf("  - 保证时钟同步\n\n");
-
-    printf("RLL(d,k) 表示:\n");
-    printf("  d: 最小连续长度\n");
-    printf("  k: 最大连续长度\n\n");
-
-    printf("常见方案:\n");
-    printf("  RLL(1,7): 软盘、硬盘\n");
-    printf("  RLL(2,7): 高密度存储\n");
+static void print_hex(const char *label, const unsigned char *data, size_t len) {
+    printf("%s: ", label);
+    for (size_t i = 0; i < len && i < 20; i++) {
+        printf("%02X ", data[i]);
+    }
+    if (len > 20) printf("...");
+    printf("\n");
 }
 
-// 演示 2: 基本编码
-static void demo_encode(void) {
-    printf("\n=== 演示 2: 基本编码 ===\n");
+static void demo_basic_encode_decode(void) {
+    printf("\n=== 演示 1: 基本编解码 ===\n");
 
-    printf("rll_encode 函数:\n");
-    printf("  功能: RLL 编码\n");
-    printf("  参数: in - 输入数据\n");
-    printf("        in_len - 输入长度\n");
-    printf("        out - 输出缓冲区\n");
-    printf("        out_size - 输出大小\n");
-    printf("        config - 配置\n");
-    printf("        result - 结果\n");
-    printf("        error - 错误码\n");
-    printf("  返回: 编码后长度\n\n");
+    unsigned char input[] = {
+        'A', 'A', 'A', 'A', 'A',
+        'B', 'B', 'B',
+        'C',
+        'D', 'D', 'D', 'D', 'D', 'D',
+        'E'
+    };
+    size_t input_len = sizeof(input);
 
-    printf("rll_encode_basic 函数:\n");
-    printf("  功能: 基础编码示例\n");
+    printf("原始数据:\n");
+    print_hex("  输入", input, input_len);
+    printf("  长度: %zu 字节\n", input_len);
+
+    unsigned char encoded[256];
+    rll_config_t config = rll_default_config();
+    rll_result_t result;
+    rll_error_t error;
+    size_t encoded_len = rll_encode(input, input_len, encoded, 256, &config, &result, &error);
+
+    printf("\n编码后:\n");
+    print_hex("  输出", encoded, encoded_len);
+    printf("  长度: %zu 字节\n", encoded_len);
+    printf("  压缩率: %.1f%%\n", (1.0 - result.compression_ratio) * 100);
+
+    unsigned char decoded[256];
+    rll_result_t decode_result;
+    size_t decoded_len = rll_decode(encoded, encoded_len, decoded, 256, &config, &decode_result, &error);
+
+    printf("\n解码后:\n");
+    print_hex("  输出", decoded, decoded_len);
+    printf("  长度: %zu 字节\n", decoded_len);
+
+    bool success = (decoded_len == input_len) &&
+                   (memcmp(input, decoded, input_len) == 0);
+    printf("\n验证: %s\n", success ? "成功" : "失败");
 }
 
-// 演示 3: 解码操作
-static void demo_decode(void) {
-    printf("\n=== 演示 3: 解码操作 ===\n");
+static void demo_rll_1_7(void) {
+    printf("\n=== 演示 2: RLL (1,7) 编码 ===\n");
 
-    printf("rll_decode 函数:\n");
-    printf("  功能: RLL 解码\n");
-    printf("  参数: in - 输入数据\n");
-    printf("        in_len - 输入长度\n");
-    printf("        out - 输出缓冲区\n");
-    printf("        out_size - 输出大小\n");
-    printf("        config - 配置\n");
-    printf("        result - 结果\n");
-    printf("        error - 错误码\n");
-    printf("  返回: 解码后长度\n");
+    unsigned char input[] = {
+        0x00, 0x00, 0x00, 0x00,
+        0xFF, 0xFF, 0xFF,
+        0x55, 0x55,
+        0xAA, 0xAA, 0xAA
+    };
+    size_t input_len = sizeof(input);
+
+    printf("原始数据:\n");
+    print_hex("  输入", input, input_len);
+
+    unsigned char encoded[256];
+    rll_config_t config = rll_1_7_default_config();
+    rll_result_t result;
+    rll_error_t error;
+    size_t encoded_len = rll_encode(input, input_len, encoded, 256, &config, &result, &error);
+
+    printf("\nRLL (1,7) 编码:\n");
+    print_hex("  输出", encoded, encoded_len);
+    printf("  长度: %zu 字节\n", encoded_len);
+
+    unsigned char decoded[256];
+    rll_result_t decode_result;
+    size_t decoded_len = rll_decode(encoded, encoded_len, decoded, 256, &config, &decode_result, &error);
+
+    printf("\n解码验证: %s\n",
+           (decoded_len == input_len && memcmp(input, decoded, input_len) == 0)
+           ? "成功" : "失败");
 }
 
-// 演示 4: RLL(1,7) 编码
-static void demo_rll17(void) {
-    printf("\n=== 演示 4: RLL(1,7) 编码 ===\n");
+static void demo_compression_ratio(void) {
+    printf("\n=== 演示 3: 压缩率分析 ===\n");
 
-    printf("rll_1_7_encode 函数:\n");
-    printf("  功能: RLL(1,7) 编码\n");
-    printf("  特点:\n");
-    printf("    - 最小 1 个连续\n");
-    printf("    - 最大 7 个连续\n");
-    printf("    - 编码率: 2/3\n\n");
+    struct {
+        const char *desc;
+        unsigned char data[32];
+        size_t len;
+    } tests[] = {
+        {"全相同", {0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA,
+                   0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA}, 16},
+        {"交替模式", {0xAB, 0xCD, 0xAB, 0xCD, 0xAB, 0xCD, 0xAB, 0xCD,
+                     0xAB, 0xCD, 0xAB, 0xCD, 0xAB, 0xCD, 0xAB, 0xCD}, 16},
+        {"随机数据", {0x12, 0x34, 0x56, 0x78, 0x9A, 0xBC, 0xDE, 0xF0,
+                     0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88}, 16},
+        {"短游程", {0x00, 0x00, 0x11, 0x11, 0x22, 0x22, 0x33, 0x33,
+                   0x44, 0x44, 0x55, 0x55, 0x66, 0x66, 0x77, 0x77}, 16}
+    };
 
-    printf("rll_1_7_decode 函数:\n");
-    printf("  功能: RLL(1,7) 解码\n\n");
+    rll_config_t config = rll_default_config();
 
-    printf("应用:\n");
-    printf("  - 软盘驱动器\n");
-    printf("  - 早期硬盘\n");
-    printf("  - 磁带存储\n");
+    printf("%-12s %10s %10s %10s\n", "类型", "原始", "编码后", "压缩率");
+    printf("----------------------------------------------\n");
+
+    for (int i = 0; i < 4; i++) {
+        unsigned char encoded[64];
+        rll_result_t result;
+        rll_error_t error;
+        size_t encoded_len = rll_encode(tests[i].data, tests[i].len, encoded, 64, &config, &result, &error);
+
+        double ratio = (1.0 - result.compression_ratio) * 100;
+        printf("%-12s %10zu %10zu %9.1f%%\n",
+               tests[i].desc, tests[i].len, encoded_len, ratio);
+    }
 }
 
-// 演示 5: 配置选项
-static void demo_config(void) {
-    printf("\n=== 演示 5: 配置选项 ===\n");
+static void demo_limits(void) {
+    printf("\n=== 演示 4: 游程限制 ===\n");
 
-    printf("rll_config_t 结构:\n");
-    printf("  min_run_length: 最小运行长度\n");
-    printf("  max_run_length: 最大运行长度\n");
-    printf("  use_optimized: 是否使用优化\n");
-    printf("  check_input: 是否检查输入\n");
-    printf("  check_output: 是否检查输出\n");
-    printf("  max_input_size: 最大输入大小\n");
-    printf("  max_output_size: 最大输出大小\n");
-    printf("  use_variable_length: 是否使用可变长度\n\n");
+    rll_config_t config = rll_default_config();
+    printf("默认配置:\n");
+    printf("  最小游程长度: %zu\n", config.min_run_length);
+    printf("  最大游程长度: %zu\n", config.max_run_length);
 
-    printf("rll_default_config:\n");
-    printf("  获取默认配置\n\n");
+    unsigned char long_run[150];
+    memset(long_run, 'X', 150);
 
-    printf("rll_1_7_default_config:\n");
-    printf("  获取 RLL(1,7) 配置\n");
-}
+    unsigned char encoded[256];
+    rll_result_t result;
+    rll_error_t error;
+    size_t encoded_len = rll_encode(long_run, 150, encoded, 256, &config, &result, &error);
 
-// 演示 6: 错误处理
-static void demo_errors(void) {
-    printf("\n=== 演示 6: 错误处理 ===\n");
+    printf("\n150 个相同字符的编码:\n");
+    printf("  编码长度: %zu 字节\n", encoded_len);
+    printf("  原始长度: 150 字节\n");
+    printf("  压缩率: %.1f%%\n", (1.0 - result.compression_ratio) * 100);
 
-    printf("可能的错误码:\n");
-    printf("  RLL_OK - 成功\n");
-    printf("  RLL_ERROR_NULL_PTR - 空指针\n");
-    printf("  RLL_ERROR_INVALID_ARGS - 无效参数\n");
-    printf("  RLL_ERROR_INPUT_TOO_LARGE - 输入过大\n");
-    printf("  RLL_ERROR_OUTPUT_TOO_SMALL - 输出过小\n");
-    printf("  RLL_ERROR_INVALID_RUN_LENGTH - 无效运行长度\n");
-    printf("  RLL_ERROR_ENCODING_FAILED - 编码失败\n");
-    printf("  RLL_ERROR_DECODING_FAILED - 解码失败\n");
-}
-
-// 演示 7: 应用场景
-static void demo_applications(void) {
-    printf("\n=== 演示 7: 应用场景 ===\n");
-
-    printf("1. 磁盘存储\n");
-    printf("   - 硬盘驱动器\n");
-    printf("   - 软盘驱动器\n");
-    printf("   - 光盘存储\n\n");
-
-    printf("2. 磁带存储\n");
-    printf("   - 数据备份\n");
-    printf("   - 归档存储\n");
-    printf("   - 流媒体\n\n");
-
-    printf("3. 通信系统\n");
-    printf("   - 时钟恢复\n");
-    printf("   - 信号同步\n");
-    printf("   - 数据传输\n\n");
-
-    printf("4. 存储优化\n");
-    printf("   - 提高存储密度\n");
-    printf("   - 改善信号质量\n");
-    printf("   - 降低误码率\n\n");
-
-    printf("5. 历史研究\n");
-    printf("   - 老式存储设备\n");
-    printf("   - 数据恢复\n");
-    printf("   - 技术考古\n");
+    unsigned char decoded[256];
+    rll_result_t decode_result;
+    size_t decoded_len = rll_decode(encoded, encoded_len, decoded, 256, &config, &decode_result, &error);
+    printf("  解码验证: %s\n",
+           (decoded_len == 150 && memcmp(long_run, decoded, 150) == 0)
+           ? "成功" : "失败");
 }
 
 int main(void) {
     printf("========================================\n");
-    printf("    RLL 游程长度受限编码演示\n");
+    printf("    游程长度受限编码演示\n");
     printf("========================================\n");
 
-    demo_concept();
-    demo_encode();
-    demo_decode();
-    demo_rll17();
-    demo_config();
-    demo_errors();
-    demo_applications();
+    demo_basic_encode_decode();
+    demo_rll_1_7();
+    demo_compression_ratio();
+    demo_limits();
 
     printf("\n========================================\n");
     printf("演示完成!\n");
