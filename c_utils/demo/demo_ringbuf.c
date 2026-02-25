@@ -1,10 +1,5 @@
 /**
  * 环形缓冲区演示程序
- *
- * 功能：
- * - 循环数据存储
- * - 读写操作
- * - 状态查询
  */
 
 #include <stdio.h>
@@ -12,149 +7,94 @@
 #include <string.h>
 #include "../c_utils/ringbuf.h"
 
-// 演示 1: 基本概念
-static void demo_concept(void) {
-    printf("\n=== 演示 1: 环形缓冲区基本概念 ===\n");
+static void demo_basic(void) {
+    printf("\n=== 演示 1: 基本创建和使用 ===\n");
 
-    printf("环形缓冲区:\n\n");
+    printf("创建环形缓冲区 (容量: 64 字节)...\n");
+    ringbuf_t *rb = ringbuf_create(64);
+    if (!rb) {
+        printf("创建失败\n");
+        return;
+    }
+    printf("创建成功!\n");
 
-    printf("工作原理:\n");
-    printf("  - 固定大小的缓冲区\n");
-    printf("  - 读写指针循环移动\n");
-    printf("  - 满了可以覆盖或阻塞\n\n");
+    printf("\n写入数据...\n");
+    const char *data = "Hello, Ring Buffer!";
+    size_t written = ringbuf_write(rb, (const uint8_t*)data, strlen(data));
+    printf("  写入: \"%s\" (%zu 字节)\n", data, written);
 
-    printf("优点:\n");
-    printf("  - 无需数据搬移\n");
-    printf("  - 内存效率高\n");
-    printf("  - 适合流式数据\n\n");
+    printf("\n读取数据...\n");
+    uint8_t buffer[64];
+    size_t read_len = ringbuf_read(rb, buffer, sizeof(buffer) - 1);
+    buffer[read_len] = '\0';
+    printf("  读取: \"%s\" (%zu 字节)\n", buffer, read_len);
 
-    printf("应用:\n");
-    printf("  - 串口通信\n");
-    printf("  - 音频处理\n");
-    printf("  - 日志缓冲\n");
+    printf("\n状态查询:\n");
+    printf("  大小: %zu\n", ringbuf_size(rb));
+    printf("  可用: %zu\n", ringbuf_avail(rb));
+    printf("  是否为空: %s\n", ringbuf_is_empty(rb) ? "是" : "否");
+    printf("  是否已满: %s\n", ringbuf_is_full(rb) ? "是" : "否");
+
+    ringbuf_free(rb);
+    printf("\n缓冲区已释放\n");
 }
 
-// 演示 2: 创建和销毁
-static void demo_creation(void) {
-    printf("\n=== 演示 2: 创建和销毁 ===\n");
+static void demo_overflow(void) {
+    printf("\n=== 演示 2: 写入超过容量 ===\n");
 
-    printf("ringbuf_create 函数:\n");
-    printf("  功能: 创建环形缓冲区\n");
-    printf("  参数: capacity - 缓冲区容量\n");
-    printf("  返回: 环形缓冲区指针\n\n");
+    printf("创建缓冲区 (容量: 16 字节)...\n");
+    ringbuf_t *rb = ringbuf_create(16);
+    if (!rb) {
+        printf("创建失败\n");
+        return;
+    }
 
-    printf("ringbuf_create_ex 函数:\n");
-    printf("  功能: 使用自定义配置创建\n");
-    printf("  参数: config - 配置选项\n");
-    printf("        error - 错误码输出\n\n");
+    printf("\n写入数据...\n");
+    const char *data1 = "12345678";
+    const char *data2 = "ABCDEFGH";
 
-    printf("ringbuf_free 函数:\n");
-    printf("  功能: 销毁环形缓冲区\n");
-    printf("  参数: rb - 环形缓冲区指针\n");
+    size_t w1 = ringbuf_write(rb, (const uint8_t*)data1, strlen(data1));
+    printf("  写入: \"%s\" (%zu 字节, 大小: %zu)\n", data1, w1, ringbuf_size(rb));
+
+    size_t w2 = ringbuf_write(rb, (const uint8_t*)data2, strlen(data2));
+    printf("  写入: \"%s\" (%zu 字节, 大小: %zu)\n", data2, w2, ringbuf_size(rb));
+
+    printf("\n缓冲区已满: %s\n", ringbuf_is_full(rb) ? "是" : "否");
+
+    printf("\n读取所有数据...\n");
+    uint8_t buffer[32];
+    size_t read_len = ringbuf_read(rb, buffer, sizeof(buffer) - 1);
+    buffer[read_len] = '\0';
+    printf("  读取: \"%s\" (%zu 字节)\n", buffer, read_len);
+
+    ringbuf_free(rb);
 }
 
-// 演示 3: 读写操作
-static void demo_io(void) {
-    printf("\n=== 演示 3: 读写操作 ===\n");
+static void demo_multiple_rw(void) {
+    printf("\n=== 演示 3: 多次读写 ===\n");
 
-    printf("ringbuf_write 函数:\n");
-    printf("  功能: 写入数据\n");
-    printf("  参数: rb - 环形缓冲区\n");
-    printf("        data - 数据指针\n");
-    printf("        len - 数据长度\n");
-    printf("  返回: 实际写入字节数\n\n");
+    ringbuf_t *rb = ringbuf_create(32);
+    if (!rb) {
+        printf("创建失败\n");
+        return;
+    }
 
-    printf("ringbuf_read 函数:\n");
-    printf("  功能: 读取数据\n");
-    printf("  参数: rb - 环形缓冲区\n");
-    printf("        data - 输出缓冲区\n");
-    printf("        len - 读取长度\n");
-    printf("  返回: 实际读取字节数\n\n");
+    printf("循环写入和读取:\n");
+    for (int round = 1; round <= 3; round++) {
+        char data[16];
+        snprintf(data, sizeof(data), "Round%d", round);
+        
+        size_t written = ringbuf_write(rb, (uint8_t*)data, strlen(data));
+        printf("  写入: \"%s\" (%zu 字节)\n", data, written);
+        
+        uint8_t buffer[16];
+        size_t read_len = ringbuf_read(rb, buffer, sizeof(buffer) - 1);
+        buffer[read_len] = '\0';
+        printf("  读取: \"%s\" (%zu 字节)\n", buffer, read_len);
+        printf("  大小: %zu\n\n", ringbuf_size(rb));
+    }
 
-    printf("ringbuf_peek 函数:\n");
-    printf("  功能: 预览数据（不移动读指针）\n");
-}
-
-// 演示 4: 状态查询
-static void demo_state(void) {
-    printf("\n=== 演示 4: 状态查询 ===\n");
-
-    printf("ringbuf_state_t 结构:\n");
-    printf("  capacity: 总容量\n");
-    printf("  size: 当前使用大小\n");
-    printf("  available: 可用空间\n");
-    printf("  read_pos: 读取位置\n");
-    printf("  write_pos: 写入位置\n");
-    printf("  is_full: 是否已满\n");
-    printf("  is_empty: 是否为空\n\n");
-
-    printf("ringbuf_get_state 函数:\n");
-    printf("  功能: 获取当前状态\n");
-}
-
-// 演示 5: 配置选项
-static void demo_config(void) {
-    printf("\n=== 演示 5: 配置选项 ===\n");
-
-    printf("ringbuf_config_t 结构:\n");
-    printf("  capacity: 缓冲区容量\n");
-    printf("  zero_initialize: 是否零初始化\n");
-    printf("  thread_safe: 是否线程安全\n");
-    printf("  overwrite: 是否覆盖模式\n");
-    printf("  alignment: 内存对齐要求\n\n");
-
-    printf("覆盖模式:\n");
-    printf("  - true: 满了覆盖旧数据\n");
-    printf("  - false: 满了返回错误\n");
-}
-
-// 演示 6: 错误处理
-static void demo_errors(void) {
-    printf("\n=== 演示 6: 错误处理 ===\n");
-
-    printf("可能的错误码:\n");
-    printf("  RINGBUF_OK - 成功\n");
-    printf("  RINGBUF_ERROR_NULL_PTR - 空指针\n");
-    printf("  RINGBUF_ERROR_INVALID_ARGS - 无效参数\n");
-    printf("  RINGBUF_ERROR_CAPACITY_TOO_SMALL - 容量过小\n");
-    printf("  RINGBUF_ERROR_OUT_OF_MEMORY - 内存不足\n");
-    printf("  RINGBUF_ERROR_BUFFER_FULL - 缓冲区已满\n");
-    printf("  RINGBUF_ERROR_BUFFER_EMPTY - 缓冲区为空\n");
-
-    printf("\n注意事项:\n");
-    printf("  - 检查返回值\n");
-    printf("  - 处理满/空情况\n");
-    printf("  - 注意线程安全\n");
-}
-
-// 演示 7: 应用场景
-static void demo_applications(void) {
-    printf("\n=== 演示 7: 应用场景 ===\n");
-
-    printf("1. 串口通信\n");
-    printf("   - 接收缓冲区\n");
-    printf("   - 发送缓冲区\n");
-    printf("   - 流控处理\n\n");
-
-    printf("2. 音频处理\n");
-    printf("   - 音频缓冲\n");
-    printf("   - 实时播放\n");
-    printf("   - 延迟控制\n\n");
-
-    printf("3. 日志系统\n");
-    printf("   - 异步日志\n");
-    printf("   - 批量写入\n");
-    printf("   - 性能优化\n\n");
-
-    printf("4. 网络编程\n");
-    printf("   - 数据包缓冲\n");
-    printf("   - 流量控制\n");
-    printf("   - 协议解析\n\n");
-
-    printf("5. 生产者-消费者\n");
-    printf("   - 解耦生产消费\n");
-    printf("   - 速率匹配\n");
-    printf("   - 缓冲峰值\n");
+    ringbuf_free(rb);
 }
 
 int main(void) {
@@ -162,13 +102,9 @@ int main(void) {
     printf("    环形缓冲区演示\n");
     printf("========================================\n");
 
-    demo_concept();
-    demo_creation();
-    demo_io();
-    demo_state();
-    demo_config();
-    demo_errors();
-    demo_applications();
+    demo_basic();
+    demo_overflow();
+    demo_multiple_rw();
 
     printf("\n========================================\n");
     printf("演示完成!\n");

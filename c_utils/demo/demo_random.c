@@ -95,7 +95,6 @@ static void demo_context(void) {
         printf("  random_u64_ctx(): %lu\n", random_u64_ctx(&ctx));
         printf("  random_u64_ctx(): %lu\n", random_u64_ctx(&ctx));
         printf("  random_double_ctx(): %.6f\n", random_double_ctx(&ctx));
-        random_destroy(&ctx);
     } else {
         printf("  初始化失败\n");
     }
@@ -108,7 +107,6 @@ static void demo_context(void) {
         printf("  成功!\n");
         printf("  random_u64_ctx(): %lu\n", random_u64_ctx(&ctx));
         printf("  random_u64_ctx(): %lu\n", random_u64_ctx(&ctx));
-        random_destroy(&ctx);
     }
 }
 
