@@ -66,6 +66,25 @@ if(BUILD_TESTS)
     endforeach()
 endif()
 
+# 构建演示程序
+option(BUILD_DEMOS "Build demo programs" ON)
+
+if(BUILD_DEMOS)
+    # 自动发现所有演示文件
+    file(GLOB DEMO_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/demo/demo_*.c")
+
+    foreach(demo_source ${DEMO_SOURCES})
+        # 获取演示名称 (去掉路径和扩展名)
+        get_filename_component(demo_name ${demo_source} NAME_WE)
+
+        # 创建演示可执行文件
+        add_executable(${demo_name} ${demo_source})
+
+        # 链接 c_utils 库
+        target_link_libraries(${demo_name} PRIVATE c_utils)
+    endforeach()
+endif()
+
 # 安装目标
 install(TARGETS c_utils
     ARCHIVE DESTINATION lib
