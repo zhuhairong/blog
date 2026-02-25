@@ -4,6 +4,7 @@ import CodeViewer from './CodeViewer';
 
 const C_UTILS_DIR = path.join(process.cwd(), 'c_utils', 'c_utils');
 const TESTS_DIR = path.join(process.cwd(), 'c_utils', 'tests');
+const DEMO_DIR = path.join(process.cwd(), 'c_utils', 'demo');
 
 interface CodeFile {
   name: string;
@@ -13,6 +14,7 @@ interface CodeFile {
   headerContent: string;
   sourceContent: string | null;
   testContent: string | null;
+  demoContent: string | null;
 }
 
 interface CodeFilesData {
@@ -29,6 +31,7 @@ function getCodeFiles(): CodeFilesData {
   
   const allFiles = fs.existsSync(C_UTILS_DIR) ? fs.readdirSync(C_UTILS_DIR) : [];
   const testFiles = fs.existsSync(TESTS_DIR) ? fs.readdirSync(TESTS_DIR) : [];
+  const demoFiles = fs.existsSync(DEMO_DIR) ? fs.readdirSync(DEMO_DIR) : [];
   const headers = allFiles.filter(f => f.endsWith('.h'));
   
   const categories: Record<string, string[]> = {
@@ -51,6 +54,8 @@ function getCodeFiles(): CodeFilesData {
     
     const hasSource = allFiles.includes(sourceFile);
     const hasTest = testFiles.includes(testFile);
+    const demoFile = 'demo_' + baseName + '.c';
+    const hasDemo = demoFiles.includes(demoFile);
     
     let category = '其他';
     for (const [cat, prefixes] of Object.entries(categories)) {
@@ -63,10 +68,12 @@ function getCodeFiles(): CodeFilesData {
     const headerPath = path.join(C_UTILS_DIR, header);
     const sourcePath = path.join(C_UTILS_DIR, sourceFile);
     const testPath = path.join(TESTS_DIR, testFile);
+    const demoPath = path.join(DEMO_DIR, demoFile);
     
     let headerContent = '';
     let sourceContent: string | null = null;
     let testContent: string | null = null;
+    let demoContent: string | null = null;
     
     try {
       headerContent = fs.readFileSync(headerPath, 'utf-8');
@@ -90,6 +97,14 @@ function getCodeFiles(): CodeFilesData {
       }
     }
     
+    if (hasDemo) {
+      try {
+        demoContent = fs.readFileSync(demoPath, 'utf-8');
+      } catch (e) {
+        demoContent = null;
+      }
+    }
+    
     files.push({
       name: baseName,
       type: 'header',
@@ -98,6 +113,7 @@ function getCodeFiles(): CodeFilesData {
       headerContent,
       sourceContent,
       testContent,
+      demoContent,
     });
   }
   

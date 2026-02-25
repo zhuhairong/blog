@@ -12,6 +12,7 @@ interface CodeFile {
   headerContent: string;
   sourceContent: string | null;
   testContent: string | null;
+  demoContent: string | null;
 }
 
 interface CodeViewerProps {
@@ -23,7 +24,7 @@ export default function CodeViewer({ codeFiles, categories }: CodeViewerProps) {
   const [selectedCategory, setSelectedCategory] = useState('全部');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedFile, setSelectedFile] = useState<CodeFile | null>(null);
-  const [activeTab, setActiveTab] = useState<'header' | 'source' | 'test'>('header');
+  const [activeTab, setActiveTab] = useState<'header' | 'source' | 'test' | 'demo'>('header');
   const [highlightLine, setHighlightLine] = useState<number | null>(null);
   const codeRef = useRef<HTMLPreElement>(null);
   const codeViewerRef = useRef<HTMLDivElement>(null);
@@ -60,7 +61,9 @@ export default function CodeViewer({ codeFiles, categories }: CodeViewerProps) {
       ? selectedFile.headerContent 
       : activeTab === 'source' 
         ? selectedFile.sourceContent 
-        : selectedFile.testContent;
+        : activeTab === 'test'
+          ? selectedFile.testContent
+          : selectedFile.demoContent;
     
     if (!content) return;
     
@@ -113,6 +116,7 @@ export default function CodeViewer({ codeFiles, categories }: CodeViewerProps) {
       case 'header': return selectedFile.headerContent;
       case 'source': return selectedFile.sourceContent || '';
       case 'test': return selectedFile.testContent || '';
+      case 'demo': return selectedFile.demoContent || '';
       default: return '';
     }
   };
@@ -409,6 +413,21 @@ export default function CodeViewer({ codeFiles, categories }: CodeViewerProps) {
                 }}
               >
                 🧪 test_{selectedFile.name}.c
+              </button>
+            )}
+            {selectedFile.demoContent && (
+              <button
+                onClick={() => { setActiveTab('demo'); setHighlightLine(null); }}
+                style={{
+                  padding: '0.75rem 1.5rem',
+                  border: 'none',
+                  background: activeTab === 'demo' ? '#f59e0b' : 'transparent',
+                  color: activeTab === 'demo' ? 'white' : 'var(--text-primary)',
+                  cursor: 'pointer',
+                  fontWeight: 500,
+                }}
+              >
+                🎬 demo_{selectedFile.name}.c
               </button>
             )}
           </div>
