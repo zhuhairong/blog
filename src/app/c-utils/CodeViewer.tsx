@@ -279,32 +279,33 @@ export default function CodeViewer({ codeFiles, categories }: CodeViewerProps) {
         </select>
       </div>
 
-      <div style={{ display: 'grid', gap: '0.75rem', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', marginBottom: '2rem' }}>
+      <div style={{ display: 'grid', gap: '0.75rem', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', marginBottom: '2rem' }}>
         {filteredFiles.map(file => (
           <div
             key={file.name}
             onClick={() => handleFileSelect(file)}
             style={{
-              padding: '0.75rem 1rem',
+              padding: '1rem',
               borderRadius: '8px',
               background: selectedFile?.name === file.name ? 'var(--bg-primary)' : 'var(--bg-secondary)',
               border: `1px solid ${selectedFile?.name === file.name ? 'var(--accent-primary)' : 'transparent'}`,
               cursor: 'pointer',
               transition: 'all 0.2s ease',
+              textAlign: 'center',
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', marginBottom: '0.25rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.25rem', marginBottom: '0.5rem' }}>
               <span style={{
-                padding: '0.125rem 0.25rem',
-                borderRadius: '3px',
-                fontSize: '0.625rem',
+                padding: '0.25rem 0.5rem',
+                borderRadius: '4px',
+                fontSize: '0.75rem',
                 background: categoryColors[file.category] || '#64748b',
                 color: 'white',
               }}>
                 {file.category}
               </span>
             </div>
-            <h3 style={{ fontSize: '1rem', marginBottom: '0', fontWeight: '600' }}>
+            <h3 style={{ fontSize: '1.25rem', marginBottom: '0', fontWeight: '600' }}>
               {file.name}
             </h3>
           </div>
