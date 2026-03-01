@@ -1,10 +1,5 @@
 /**
  * 线段树演示程序
- *
- * 功能：
- * - 区间查询
- * - 单点更新
- * - 延迟传播
  */
 
 #include <stdio.h>
@@ -12,150 +7,125 @@
 #include <string.h>
 #include "../c_utils/segment_tree.h"
 
-// 演示 1: 基本概念
-static void demo_concept(void) {
-    printf("\n=== 演示 1: 线段树基本概念 ===\n");
+static void demo_basic_sum(void) {
+    printf("\n=== 演示 1: 区间求和 ===\n");
 
-    printf("线段树:\n\n");
+    int arr[] = {1, 3, 5, 7, 9, 11};
+    size_t n = sizeof(arr) / sizeof(arr[0]);
 
-    printf("定义:\n");
-    printf("  - 二叉树结构\n");
-    printf("  - 每个节点表示一个区间\n");
-    printf("  - 支持区间查询和更新\n\n");
+    printf("原始数组: ");
+    for (size_t i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
 
-    printf("时间复杂度:\n");
-    printf("  建树: O(n)\n");
-    printf("  查询: O(log n)\n");
-    printf("  更新: O(log n)\n\n");
+    segment_tree_t st;
+    memset(&st, 0, sizeof(st));
+    segment_tree_init(&st, arr, n);
 
-    printf("应用:\n");
-    printf("  - 区间最值\n");
-    printf("  - 区间求和\n");
-    printf("  - 区间修改\n");
+    int sum = segment_tree_query(&st, 0, n - 1);
+    printf("区间 [0, %zu] 求和: %d\n", n - 1, sum);
+
+    sum = segment_tree_query(&st, 1, 3);
+    printf("区间 [1, 3] 求和: %d\n", sum);
+
+    segment_tree_free(&st);
 }
 
-// 演示 2: 初始化
-static void demo_init(void) {
-    printf("\n=== 演示 2: 初始化 ===\n");
-
-    printf("segment_tree_init 函数:\n");
-    printf("  功能: 初始化线段树\n");
-    printf("  参数: st - 线段树指针\n");
-    printf("        arr - 输入数组\n");
-    printf("        n - 数组大小\n\n");
-
-    printf("segment_tree_init_ex 函数:\n");
-    printf("  功能: 使用配置初始化\n");
-    printf("  参数: config - 配置选项\n");
-    printf("        error - 错误码\n");
-}
-
-// 演示 3: 查询操作
-static void demo_query(void) {
-    printf("\n=== 演示 3: 查询操作 ===\n");
-
-    printf("segment_tree_query 函数:\n");
-    printf("  功能: 区间查询\n");
-    printf("  参数: st - 线段树\n");
-    printf("        left - 左边界\n");
-    printf("        right - 右边界\n");
-    printf("  返回: 查询结果\n\n");
-
-    printf("支持的查询:\n");
-    printf("  - 最小值\n");
-    printf("  - 最大值\n");
-    printf("  - 区间和\n");
-}
-
-// 演示 4: 更新操作
 static void demo_update(void) {
-    printf("\n=== 演示 4: 更新操作 ===\n");
+    printf("\n=== 演示 2: 单点更新 ===\n");
 
-    printf("segment_tree_update 函数:\n");
-    printf("  功能: 单点更新\n");
-    printf("  参数: st - 线段树\n");
-    printf("        idx - 索引\n");
-    printf("        val - 新值\n\n");
+    int arr[] = {1, 2, 3, 4, 5};
+    size_t n = sizeof(arr) / sizeof(arr[0]);
 
-    printf("segment_tree_range_update 函数:\n");
-    printf("  功能: 区间更新\n");
-    printf("  参数: st - 线段树\n");
-    printf("        left - 左边界\n");
-    printf("        right - 右边界\n");
-    printf("        val - 更新值\n");
+    printf("原始数组: ");
+    for (size_t i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    segment_tree_t st;
+    memset(&st, 0, sizeof(st));
+    segment_tree_init(&st, arr, n);
+
+    int sum = segment_tree_query(&st, 0, n - 1);
+    printf("更新前区间 [0, 4] 求和: %d\n", sum);
+
+    printf("\n更新 arr[2] = 3 -> 10\n");
+    segment_tree_update(&st, 2, 10);
+
+    sum = segment_tree_query(&st, 0, n - 1);
+    printf("更新后区间 [0, 4] 求和: %d\n", sum);
+
+    segment_tree_free(&st);
 }
 
-// 演示 5: 延迟传播
-static void demo_lazy(void) {
-    printf("\n=== 演示 5: 延迟传播 ===\n");
+static void demo_state(void) {
+    printf("\n=== 演示 3: 线段树状态 ===\n");
 
-    printf("延迟传播:\n\n");
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8};
+    size_t n = sizeof(arr) / sizeof(arr[0]);
 
-    printf("原理:\n");
-    printf("  - 延迟执行更新操作\n");
-    printf("  - 需要时才下推\n");
-    printf("  - 提高效率\n\n");
+    segment_tree_t st;
+    memset(&st, 0, sizeof(st));
+    segment_tree_init(&st, arr, n);
 
-    printf("优点:\n");
-    printf("  - 区间更新: O(log n)\n");
-    printf("  - 避免重复更新\n");
-    printf("  - 减少操作次数\n\n");
+    segment_tree_state_t state;
+    segment_tree_error_t error;
+    if (segment_tree_get_state(&st, &state, &error)) {
+        printf("线段树状态:\n");
+        printf("  原始数组大小: %zu\n", state.size);
+        printf("  线段树大小: %zu\n", state.tree_size);
+        printf("  已初始化: %s\n", state.initialized ? "是" : "否");
+    }
 
-    printf("配置:\n");
-    printf("  use_lazy_propagation: 启用延迟传播\n");
+    segment_tree_free(&st);
 }
 
-// 演示 6: 配置选项
-static void demo_config(void) {
-    printf("\n=== 演示 6: 配置选项 ===\n");
+static void demo_error_handling(void) {
+    printf("\n=== 演示 4: 错误处理 ===\n");
 
-    printf("segment_tree_config_t 结构:\n");
-    printf("  operation: 操作类型\n");
-    printf("    - SEGMENT_TREE_OP_MIN\n");
-    printf("    - SEGMENT_TREE_OP_MAX_VAL\n");
-    printf("    - SEGMENT_TREE_OP_SUM\n");
-    printf("    - SEGMENT_TREE_OP_RANGE_UPDATE\n");
-    printf("  use_optimized: 是否优化\n");
-    printf("  check_bounds: 是否检查边界\n");
-    printf("  use_lazy_propagation: 是否延迟传播\n");
-    printf("  max_size: 最大大小\n");
-    printf("  default_value: 默认值\n\n");
+    segment_tree_t st;
+    segment_tree_error_t error;
 
-    printf("segment_tree_state_t 结构:\n");
-    printf("  size: 原始数组大小\n");
-    printf("  tree_size: 线段树大小\n");
-    printf("  operation: 当前操作\n");
-    printf("  initialized: 是否初始化\n");
+    printf("测试空指针初始化:\n");
+    if (!segment_tree_init_ex(NULL, NULL, 0, NULL, &error)) {
+        printf("  正确捕获错误: %d\n", error);
+    }
+
+    int arr[] = {1, 2, 3};
+    memset(&st, 0, sizeof(st));
+    segment_tree_init(&st, arr, 3);
+
+    printf("\n测试越界更新:\n");
+    if (!segment_tree_update_ex(&st, 100, 5, &error)) {
+        printf("  正确捕获越界错误: %d\n", error);
+    }
+
+    segment_tree_free(&st);
 }
 
-// 演示 7: 应用场景
-static void demo_applications(void) {
-    printf("\n=== 演示 7: 应用场景 ===\n");
+static void demo_reset(void) {
+    printf("\n=== 演示 5: 重置线段树 ===\n");
 
-    printf("1. 区间最值查询 (RMQ)\n");
-    printf("   - 最小值查询\n");
-    printf("   - 最大值查询\n");
-    printf("   - 区间统计\n\n");
+    int arr1[] = {1, 2, 3, 4, 5};
+    int arr2[] = {10, 20, 30};
 
-    printf("2. 区间求和\n");
-    printf("   - 前缀和\n");
-    printf("   - 区间和\n");
-    printf("   - 累积统计\n\n");
+    segment_tree_t st;
+    memset(&st, 0, sizeof(st));
+    segment_tree_init(&st, arr1, 5);
 
-    printf("3. 动态规划\n");
-    printf("   - 区间 DP\n");
-    printf("   - 状态转移\n");
-    printf("   - 优化计算\n\n");
+    int sum = segment_tree_query(&st, 0, 4);
+    printf("原数组求和: %d\n", sum);
 
-    printf("4. 在线算法\n");
-    printf("   - 实时查询\n");
-    printf("   - 动态更新\n");
-    printf("   - 流式处理\n\n");
+    printf("\n重置为新数组...\n");
+    segment_tree_error_t error;
+    segment_tree_reset(&st, arr2, 3, &error);
 
-    printf("5. 游戏开发\n");
-    printf("   - 范围伤害\n");
-    printf("   - 区域统计\n");
-    printf("   - 地图查询\n");
+    sum = segment_tree_query(&st, 0, 2);
+    printf("新数组求和: %d\n", sum);
+
+    segment_tree_free(&st);
 }
 
 int main(void) {
@@ -163,16 +133,15 @@ int main(void) {
     printf("    线段树演示\n");
     printf("========================================\n");
 
-    demo_concept();
-    demo_init();
-    demo_query();
+    demo_basic_sum();
     demo_update();
-    demo_lazy();
-    demo_config();
-    demo_applications();
+    demo_state();
+    demo_error_handling();
+    demo_reset();
 
     printf("\n========================================\n");
     printf("演示完成!\n");
+    printf("========================================\n");
 
     return 0;
 }

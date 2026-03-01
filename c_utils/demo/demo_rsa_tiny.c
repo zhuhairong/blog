@@ -1,10 +1,5 @@
 /**
  * RSA 精简版演示程序
- *
- * 功能：
- * - 模幂运算
- * - 基础 RSA 操作
- * - 适合学习和简单应用
  */
 
 #include <stdio.h>
@@ -13,170 +8,144 @@
 #include <string.h>
 #include "../c_utils/rsa_tiny.h"
 
-// 演示 1: 基本概念
-static void demo_concept(void) {
-    printf("\n=== 演示 1: RSA 精简版基本概念 ===\n");
+static void demo_modpow_basic(void) {
+    printf("\n=== 演示 1: 基本模幂运算 ===\n");
 
-    printf("RSA 精简版:\n\n");
+    uint64_t base = 3, exp = 5, mod = 7;
+    uint64_t result = rsa_tiny_modpow(base, exp, mod);
+    printf("计算: %lu^%lu mod %lu = %lu\n", 
+           (unsigned long)base, (unsigned long)exp, (unsigned long)mod, (unsigned long)result);
+    printf("验证: 3^5 = 243, 243 mod 7 = %u\n", 243 % 7);
 
-    printf("特点:\n");
-    printf("  - 使用 64 位整数\n");
-    printf("  - 适合学习和演示\n");
-    printf("  - 不适合生产环境\n\n");
+    result = rsa_tiny_modpow(2, 10, 1000);
+    printf("\n2^10 mod 1000 = %lu\n", (unsigned long)result);
 
-    printf("核心运算:\n");
-    printf("  - 模幂运算: (base^exp) %% mod\n");
-    printf("  - 快速幂算法\n");
-    printf("  - 蒙哥马利算法\n\n");
-
-    printf("注意:\n");
-    printf("  - 仅用于学习目的\n");
-    printf("  - 生产环境请使用专业库\n");
+    result = rsa_tiny_modpow(7, 3, 10);
+    printf("7^3 mod 10 = %lu\n", (unsigned long)result);
 }
 
-// 演示 2: 模幂运算
-static void demo_modpow(void) {
-    printf("\n=== 演示 2: 模幂运算 ===\n");
+static void demo_large_modpow(void) {
+    printf("\n=== 演示 2: 大数模幂运算 ===\n");
 
-    printf("rsa_tiny_modpow 函数:\n");
-    printf("  功能: 计算 (base^exp) %% mod\n");
-    printf("  参数: base - 底数\n");
-    printf("        exp - 指数\n");
-    printf("        mod - 模数\n");
-    printf("  返回: 计算结果\n\n");
+    uint64_t result = rsa_tiny_modpow(12345, 6789, 1000000007);
+    printf("12345^6789 mod 1000000007 = %lu\n", (unsigned long)result);
 
-    printf("示例:\n");
-    printf("  计算: 3^5 %% 7\n");
-    printf("  3^5 = 243\n");
-    printf("  243 %% 7 = 5\n\n");
-
-    printf("算法:\n");
-    printf("  使用快速幂算法\n");
-    printf("  时间复杂度: O(log exp)\n");
+    result = rsa_tiny_modpow(999999937, 1234567, 1000000007);
+    printf("999999937^1234567 mod 1000000007 = %lu\n", (unsigned long)result);
 }
 
-// 演示 3: 加密解密
-static void demo_crypto(void) {
-    printf("\n=== 演示 3: 加密解密 ===\n");
+static void demo_rsa_math(void) {
+    printf("\n=== 演示 3: RSA 数学原理 ===\n");
 
-    printf("rsa_key_t 结构:\n");
-    printf("  n: 模数 (p * q)\n");
-    printf("  e: 公钥指数\n");
-    printf("  d: 私钥指数\n");
-    printf("  p: 素数因子 p\n");
-    printf("  q: 素数因子 q\n\n");
+    uint64_t p = 7, q = 11;
+    uint64_t n = p * q;
+    uint64_t phi = (p - 1) * (q - 1);
+    uint64_t e = 7;
+    uint64_t d = rsa_tiny_modpow(e, phi - 1, phi);
 
-    printf("rsa_tiny_encrypt 函数:\n");
-    printf("  功能: RSA 加密\n");
-    printf("  公式: ciphertext = plaintext^e %% n\n\n");
+    printf("p=%lu, q=%lu, n=%lu, phi=%lu\n", 
+           (unsigned long)p, (unsigned long)q, (unsigned long)n, (unsigned long)phi);
+    printf("e=%lu (公钥), d=%lu (私钥)\n", (unsigned long)e, (unsigned long)d);
 
-    printf("rsa_tiny_decrypt 函数:\n");
-    printf("  功能: RSA 解密\n");
-    printf("  公式: plaintext = ciphertext^d %% n\n");
+    uint64_t msg = 9;
+    uint64_t enc = rsa_tiny_modpow(msg, e, n);
+    uint64_t dec = rsa_tiny_modpow(enc, d, n);
+
+    printf("\n明文: %lu -> 加密: %lu -> 解密: %lu\n", 
+           (unsigned long)msg, (unsigned long)enc, (unsigned long)dec);
+    printf("验证: %s\n", msg == dec ? "OK" : "FAIL");
 }
 
-// 演示 4: 算法变体
-static void demo_algorithms(void) {
-    printf("\n=== 演示 4: 算法变体 ===\n");
+static void demo_encrypt_decrypt(void) {
+    printf("\n=== 演示 4: 加密解密 ===\n");
 
-    printf("rsa_tiny_modpow_binary:\n");
-    printf("  二进制快速幂算法\n");
-    printf("  将指数转换为二进制\n");
-    printf("  通过平方和乘法计算\n\n");
+    uint64_t p = 61, q = 53;
+    uint64_t n = p * q;
+    uint64_t e = 17;
+    uint64_t phi = (p - 1) * (q - 1);
+    uint64_t d = rsa_tiny_modpow(e, phi - 1, phi);
 
-    printf("rsa_tiny_modpow_montgomery:\n");
-    printf("  蒙哥马利算法\n");
-    printf("  避免除法运算\n");
-    printf("  适合大数运算\n\n");
+    printf("密钥: p=%lu, q=%lu, n=%lu, e=%lu, d=%lu\n",
+           (unsigned long)p, (unsigned long)q, (unsigned long)n, (unsigned long)e, (unsigned long)d);
+    printf("最大明文: %lu\n", (unsigned long)n - 1);
 
-    printf("性能对比:\n");
-    printf("  二进制: 通用，实现简单\n");
-    printf("  蒙哥马利: 大数时更快\n");
+    uint64_t plaintext = 65;
+    uint64_t ciphertext = rsa_tiny_modpow(plaintext, e, n);
+    uint64_t decrypted = rsa_tiny_modpow(ciphertext, d, n);
+
+    printf("\n明文: %lu\n", (unsigned long)plaintext);
+    printf("加密: %lu\n", (unsigned long)ciphertext);
+    printf("解密: %lu\n", (unsigned long)decrypted);
+    printf("结果: %s\n", plaintext == decrypted ? "OK" : "FAIL");
 }
 
-// 演示 5: 配置选项
-static void demo_config(void) {
-    printf("\n=== 演示 5: 配置选项 ===\n");
+static void demo_classic_rsa(void) {
+    printf("\n=== 演示 5: 经典 RSA 示例 ===\n");
 
-    printf("rsa_config_t 结构:\n");
-    printf("  use_optimized: 是否使用优化算法\n");
-    printf("  check_inputs: 是否检查输入参数\n");
-    printf("  use_montgomery: 是否使用蒙哥马利算法\n");
-    printf("  max_bits: 最大位数\n");
-    printf("  max_iterations: 最大迭代次数\n\n");
+    uint64_t n = 3233;
+    uint64_t e = 17;
+    uint64_t d = 2753;
 
-    printf("rsa_default_config 函数:\n");
-    printf("  功能: 获取默认配置\n");
+    printf("经典示例: n=3233, e=17, d=2753\n");
+    printf("测试多个明文:\n");
+
+    int tests[] = {65, 100, 500, 1000, 2000};
+    for (int i = 0; i < 5; i++) {
+        uint64_t pt = tests[i];
+        uint64_t ct = rsa_tiny_modpow(pt, e, n);
+        uint64_t dt = rsa_tiny_modpow(ct, d, n);
+        printf("  %4d -> %4lu -> %4lu : %s\n", 
+               pt, (unsigned long)ct, (unsigned long)dt,
+               pt == dt ? "OK" : "FAIL");
+    }
 }
 
-// 演示 6: 错误处理
-static void demo_errors(void) {
-    printf("\n=== 演示 6: 错误处理 ===\n");
+static void demo_algorithm(void) {
+    printf("\n=== 演示 6: 算法说明 ===\n");
 
-    printf("可能的错误码:\n");
-    printf("  RSA_OK - 成功\n");
-    printf("  RSA_ERROR_NULL_PTR - 空指针\n");
-    printf("  RSA_ERROR_INVALID_ARGS - 无效参数\n");
-    printf("  RSA_ERROR_MODULUS_TOO_SMALL - 模数过小\n");
-    printf("  RSA_ERROR_EXPONENT_TOO_LARGE - 指数过大\n");
-    printf("  RSA_ERROR_BASE_TOO_LARGE - 底数过大\n");
-    printf("  RSA_ERROR_CALCULATION_FAILED - 计算失败\n");
-    printf("  RSA_ERROR_OVERFLOW - 溢出错误\n");
+    printf("rsa_tiny_modpow 使用快速幂算法 (二分幂)\n");
+    printf("复杂度: O(log exp)\n\n");
 
-    printf("\n安全提示:\n");
-    printf("  - 仅用于学习\n");
-    printf("  - 生产环境使用 OpenSSL\n");
-    printf("  - 注意整数溢出\n");
+    printf("示例: 计算 3^13 mod 100\n");
+    printf("  13 = 1101 (二进制)\n");
+    printf("  3^13 = 3^8 * 3^4 * 3^1\n");
+
+    uint64_t result = rsa_tiny_modpow(3, 13, 100);
+    printf("  结果: %lu\n", (unsigned long)result);
 }
 
-// 演示 7: 应用场景
-static void demo_applications(void) {
-    printf("\n=== 演示 7: 应用场景 ===\n");
+static void demo_security(void) {
+    printf("\n=== 演示 7: 安全性说明 ===\n");
 
-    printf("1. 学习目的\n");
-    printf("   - 理解 RSA 原理\n");
-    printf("   - 学习模幂运算\n");
-    printf("   - 算法实现练习\n\n");
+    printf("RSA 安全性基于大数分解困难性\n\n");
 
-    printf("2. 简单加密\n");
-    printf("   - 小数据加密\n");
-    printf("   - 演示程序\n");
-    printf("   - 原型验证\n\n");
+    printf("不安全的小模数:\n");
+    printf("  n=15 (3*5), n=21 (3*7), n=35 (5*7)\n\n");
 
-    printf("3. 嵌入式系统\n");
-    printf("   - 资源受限环境\n");
-    printf("   - 轻量级应用\n");
-    printf("   - 教育设备\n\n");
+    printf("推荐密钥长度:\n");
+    printf("  - 1024 位: 不推荐\n");
+    printf("  - 2048 位: 推荐\n");
+    printf("  - 4096 位: 高安全需求\n\n");
 
-    printf("4. 性能测试\n");
-    printf("   - 算法基准测试\n");
-    printf("   - 优化对比\n");
-    printf("   - 教学演示\n\n");
-
-    printf("5. 扩展开发\n");
-    printf("   - 大数库基础\n");
-    printf("  算法优化研究\n");
-    printf("   - 密码学学习\n");
+    printf("本库使用 64 位整数，仅供学习\n");
 }
 
 int main(void) {
     printf("========================================\n");
     printf("    RSA 精简版演示\n");
     printf("========================================\n");
-    printf("    注意: 仅用于学习目的!\n");
-    printf("========================================\n");
 
-    demo_concept();
-    demo_modpow();
-    demo_crypto();
-    demo_algorithms();
-    demo_config();
-    demo_errors();
-    demo_applications();
+    demo_modpow_basic();
+    demo_large_modpow();
+    demo_rsa_math();
+    demo_encrypt_decrypt();
+    demo_classic_rsa();
+    demo_algorithm();
+    demo_security();
 
     printf("\n========================================\n");
     printf("演示完成!\n");
-    printf("警告: 请勿用于生产环境!\n");
+    printf("========================================\n");
 
     return 0;
 }

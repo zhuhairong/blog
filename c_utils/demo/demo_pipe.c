@@ -11,13 +11,17 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <sys/wait.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <errno.h>
 #include "../c_utils/pipe.h"
 
-// 演示 1: 匿名管道
 static void demo_anonymous(void) {
     printf("\n=== 演示 1: 匿名管道 ===\n");
 
     pipe_t pipe;
+    pipe_error_t error;
 
     printf("创建匿名管道...\n");
 
@@ -26,17 +30,14 @@ static void demo_anonymous(void) {
         printf("  读端: %d\n", (int)pipe.read_fd);
         printf("  写端: %d\n", (int)pipe.write_fd);
 
-        // 写入数据
         const char *msg = "Hello from pipe!";
         printf("\n写入数据: \"%s\"\n", msg);
 
-        pipe_error_t error;
         size_t bytes_written;
         if (pipe_write(&pipe, msg, strlen(msg), &bytes_written, &error)) {
             printf("  写入 %zu 字节\n", bytes_written);
         }
 
-        // 读取数据
         char buffer[256];
         size_t bytes_read;
         if (pipe_read(&pipe, buffer, sizeof(buffer) - 1, &bytes_read, &error)) {
@@ -51,7 +52,6 @@ static void demo_anonymous(void) {
     }
 }
 
-// 演示 2: 管道配置
 static void demo_config(void) {
     printf("\n=== 演示 2: 管道配置 ===\n");
 
@@ -64,142 +64,319 @@ static void demo_config(void) {
     printf("  缓冲区大小: %zu\n", config.buffer_size);
     printf("  超时: %d ms\n", config.timeout_ms);
 
-    printf("\n配置说明:\n");
-    printf("  - 匿名管道: 用于父子进程通信\n");
-    printf("  - 命名管道: 用于无关进程通信\n");
-    printf("  - 非阻塞: 读写立即返回\n");
-    printf("  - 超时: 阻塞模式下的最大等待时间\n");
+    printf("\n自定义配置:\n");
+    config.non_blocking = true;
+    config.buffer_size = 8192;
+    config.timeout_ms = 5000;
+    printf("  非阻塞: %s\n", config.non_blocking ? "是" : "否");
+    printf("  缓冲区大小: %zu\n", config.buffer_size);
+    printf("  超时: %d ms\n", config.timeout_ms);
 }
 
-// 演示 3: 进程间通信示例
-static void demo_ipc(void) {
-    printf("\n=== 演示 3: 进程间通信示例 ===\n");
+static void demo_fork_ipc(void) {
+    printf("\n=== 演示 3: 父子进程通信 (fork) ===\n");
 
-    printf("父进程与子进程通信:\n\n");
+    int pipefd[2];
+    if (pipe(pipefd) == -1) {
+        perror("pipe");
+        return;
+    }
 
-    printf("父进程流程:\n");
-    printf("  1. 创建管道\n");
-    printf("  2. fork() 创建子进程\n");
-    printf("  3. 关闭不用的端\n");
-    printf("  4. 读写数据\n");
-    printf("  5. 等待子进程结束\n\n");
+    printf("创建管道成功! pipefd[0]=%d, pipefd[1]=%d\n", pipefd[0], pipefd[1]);
 
-    printf("子进程流程:\n");
-    printf("  1. 继承管道\n");
-    printf("  2. 关闭不用的端\n");
-    printf("  3. 读写数据\n");
-    printf("  4. 退出\n\n");
+    pid_t pid = fork();
+    if (pid == -1) {
+        perror("fork");
+        close(pipefd[0]);
+        close(pipefd[1]);
+        return;
+    }
 
-    printf("注意事项:\n");
-    printf("  - 及时关闭不用的端\n");
-    printf("  - 处理 EOF 情况\n");
-    printf("  - 注意缓冲区大小\n");
+    if (pid == 0) {
+        close(pipefd[0]);
+
+        const char *msg = "Hello from child process!";
+        write(pipefd[1], msg, strlen(msg));
+        printf("子进程: 发送数据 \"%s\"\n", msg);
+
+        close(pipefd[1]);
+        exit(0);
+    } else {
+        close(pipefd[1]);
+
+        char buffer[256];
+        ssize_t n = read(pipefd[0], buffer, sizeof(buffer) - 1);
+        if (n > 0) {
+            buffer[n] = '\0';
+            printf("父进程: 收到数据 \"%s\"\n", buffer);
+        }
+
+        close(pipefd[0]);
+        wait(NULL);
+        printf("父子进程通信完成!\n");
+    }
 }
 
-// 演示 4: 命名管道
-static void demo_named(void) {
-    printf("\n=== 演示 4: 命名管道 (FIFO) ===\n");
+static void demo_child_to_parent(void) {
+    printf("\n=== 演示 4: 子进程计算结果传回父进程 ===\n");
 
-    const char *pipename = "/tmp/demo_pipe";
+    int pipefd[2];
+    if (pipe(pipefd) == -1) {
+        perror("pipe");
+        return;
+    }
 
-    printf("命名管道特点:\n");
-    printf("  - 有文件系统路径\n");
-    printf("  - 无关进程可以通信\n");
-    printf("  - 持久存在直到删除\n\n");
+    pid_t pid = fork();
+    if (pid == -1) {
+        perror("fork");
+        close(pipefd[0]);
+        close(pipefd[1]);
+        return;
+    }
 
-    printf("创建命名管道: %s\n", pipename);
+    if (pid == 0) {
+        close(pipefd[0]);
+
+        int result = 0;
+        for (int i = 1; i <= 100; i++) {
+            result += i;
+        }
+
+        char buffer[128];
+        snprintf(buffer, sizeof(buffer), "1+2+3+...+100 = %d", result);
+        write(pipefd[1], buffer, strlen(buffer));
+        printf("子进程: 计算 1+2+3+...+100 = %d\n", result);
+
+        close(pipefd[1]);
+        exit(0);
+    } else {
+        close(pipefd[1]);
+
+        char buffer[256];
+        ssize_t n = read(pipefd[0], buffer, sizeof(buffer) - 1);
+        if (n > 0) {
+            buffer[n] = '\0';
+            printf("父进程: 收到结果 \"%s\"\n", buffer);
+        }
+
+        close(pipefd[0]);
+        wait(NULL);
+    }
+}
+
+static void demo_two_way(void) {
+    printf("\n=== 演示 5: 双向通信 (两个管道) ===\n");
+
+    int pipe_parent_to_child[2];
+    int pipe_child_to_parent[2];
+
+    if (pipe(pipe_parent_to_child) == -1 || pipe(pipe_child_to_parent) == -1) {
+        perror("pipe");
+        return;
+    }
+
+    printf("创建两个管道实现双向通信\n");
+
+    pid_t pid = fork();
+    if (pid == -1) {
+        perror("fork");
+        return;
+    }
+
+    if (pid == 0) {
+        close(pipe_parent_to_child[1]);
+        close(pipe_child_to_parent[0]);
+
+        char buffer[256];
+        ssize_t n = read(pipe_parent_to_child[0], buffer, sizeof(buffer) - 1);
+        if (n > 0) {
+            buffer[n] = '\0';
+            printf("子进程: 收到 \"%s\"\n", buffer);
+        }
+        close(pipe_parent_to_child[0]);
+
+        const char *reply = "Child received!";
+        write(pipe_child_to_parent[1], reply, strlen(reply));
+        printf("子进程: 回复 \"%s\"\n", reply);
+
+        close(pipe_child_to_parent[1]);
+        exit(0);
+    } else {
+        close(pipe_parent_to_child[0]);
+        close(pipe_child_to_parent[1]);
+
+        const char *msg = "Hello from parent!";
+        write(pipe_parent_to_child[1], msg, strlen(msg));
+        printf("父进程: 发送 \"%s\"\n", msg);
+        close(pipe_parent_to_child[1]);
+
+        char buffer[256];
+        ssize_t n = read(pipe_child_to_parent[0], buffer, sizeof(buffer) - 1);
+        if (n > 0) {
+            buffer[n] = '\0';
+            printf("父进程: 收到回复 \"%s\"\n", buffer);
+        }
+        close(pipe_child_to_parent[0]);
+
+        wait(NULL);
+        printf("双向通信完成!\n");
+    }
+}
+
+static void demo_named_pipe(void) {
+    printf("\n=== 演示 6: 命名管道 (FIFO) ===\n");
+
+    const char *fifo_path = "/tmp/demo_pipe_test";
+
+    unlink(fifo_path);
+
+    if (mkfifo(fifo_path, 0666) == -1) {
+        perror("mkfifo");
+        return;
+    }
+    printf("创建命名管道: %s\n", fifo_path);
+
+    pid_t pid = fork();
+    if (pid == 0) {
+        int fd = open(fifo_path, O_WRONLY);
+        if (fd >= 0) {
+            const char *msg = "Message via named pipe!";
+            write(fd, msg, strlen(msg));
+            printf("子进程: 通过命名管道发送 \"%s\"\n", msg);
+            close(fd);
+        }
+        exit(0);
+    } else {
+        int fd = open(fifo_path, O_RDONLY);
+        if (fd >= 0) {
+            char buffer[256];
+            ssize_t n = read(fd, buffer, sizeof(buffer) - 1);
+            if (n > 0) {
+                buffer[n] = '\0';
+                printf("父进程: 通过命名管道收到 \"%s\"\n", buffer);
+            }
+            close(fd);
+        }
+        wait(NULL);
+    }
+
+    unlink(fifo_path);
+    printf("命名管道通信完成，已清理\n");
+}
+
+static void demo_error_handling(void) {
+    printf("\n=== 演示 7: 错误处理 ===\n");
 
     pipe_t pipe;
     pipe_error_t error;
 
-    if (pipe_create_named(&pipe, pipename, &error)) {
-        printf("命名管道创建成功!\n");
-
-        // 写入数据
-        const char *msg = "Hello from named pipe!";
-        size_t bytes_written;
-        pipe_write(&pipe, msg, strlen(msg), &bytes_written, &error);
-
-        printf("数据已写入\n");
-
-        pipe_close(&pipe);
-
-        // 清理
-        unlink(pipename);
+    printf("测试 1: 空指针错误\n");
+    if (pipe_create(NULL)) {
+        printf("  意外成功\n");
     } else {
-        printf("创建失败: %d\n", error);
+        printf("  正确捕获空指针错误\n");
     }
+
+    printf("\n测试 2: 读取关闭的管道\n");
+    char buffer[64];
+    size_t bytes_read;
+
+    pipe_create(&pipe);
+    close(pipe.read_fd);
+
+    if (pipe_read(&pipe, buffer, sizeof(buffer), &bytes_read, &error)) {
+        printf("  意外成功\n");
+    } else {
+        printf("  正确捕获读取错误 (error=%d)\n", error);
+    }
+
+    pipe_close(&pipe);
+
+    printf("\n测试 3: 写入已关闭的写端\n");
+    pipe_create(&pipe);
+    close(pipe.write_fd);
+
+    if (pipe_write(&pipe, "test", 4, NULL, &error)) {
+        printf("  意外成功\n");
+    } else {
+        printf("  正确捕获写入错误 (error=%d)\n", error);
+    }
+
+    pipe_close(&pipe);
+
+    printf("\n错误处理演示完成!\n");
 }
 
-// 演示 5: 错误处理
-static void demo_errors(void) {
-    printf("\n=== 演示 5: 错误处理 ===\n");
+static void demo_pipe_buffer(void) {
+    printf("\n=== 演示 8: 管道缓冲区测试 ===\n");
 
-    printf("可能的错误码:\n");
-    printf("  PIPE_OK - 成功\n");
-    printf("  PIPE_ERROR_NULL_PTR - 空指针\n");
-    printf("  PIPE_ERROR_CREATE_FAILED - 创建失败\n");
-    printf("  PIPE_ERROR_READ_FAILED - 读取失败\n");
-    printf("  PIPE_ERROR_WRITE_FAILED - 写入失败\n");
-    printf("  PIPE_ERROR_CLOSE_FAILED - 关闭失败\n");
-    printf("  PIPE_ERROR_INVALID_HANDLE - 无效句柄\n");
-    printf("  PIPE_ERROR_TIMEOUT - 超时\n");
+    int pipefd[2];
+    if (pipe(pipefd) == -1) {
+        perror("pipe");
+        return;
+    }
 
-    printf("\n常见错误场景:\n");
-    printf("  - 读取端关闭后写入 -> SIGPIPE\n");
-    printf("  - 管道满时写入 -> 阻塞或失败\n");
-    printf("  - 空管道读取 -> 阻塞或返回 0\n");
+    int flags = fcntl(pipefd[1], F_GETFL, 0);
+    fcntl(pipefd[1], F_SETFL, flags | O_NONBLOCK);
+
+    printf("测试管道缓冲区大小 (非阻塞写入)...\n");
+
+    char buffer[4096];
+    memset(buffer, 'A', sizeof(buffer));
+
+    size_t total_written = 0;
+    ssize_t n;
+
+    while ((n = write(pipefd[1], buffer, sizeof(buffer))) > 0) {
+        total_written += n;
+    }
+
+    printf("管道已满，总写入: %zu 字节\n", total_written);
+
+    close(pipefd[0]);
+    close(pipefd[1]);
+    printf("缓冲区测试完成!\n");
 }
 
-// 演示 6: 应用场景
-static void demo_applications(void) {
-    printf("\n=== 演示 6: 应用场景 ===\n");
+static void demo_non_blocking(void) {
+    printf("\n=== 演示 9: 非阻塞模式 ===\n");
 
-    printf("1. Shell 管道\n");
-    printf("   - cmd1 | cmd2 | cmd3\n");
-    printf("   - 进程间数据传递\n\n");
+    int pipefd[2];
+    if (pipe(pipefd) == -1) {
+        perror("pipe");
+        return;
+    }
 
-    printf("2. 父子进程通信\n");
-    printf("   - 向子进程发送数据\n");
-    printf("   - 从子进程接收结果\n\n");
+    int flags = fcntl(pipefd[0], F_GETFL, 0);
+    fcntl(pipefd[0], F_SETFL, flags | O_NONBLOCK);
+    flags = fcntl(pipefd[1], F_GETFL, 0);
+    fcntl(pipefd[1], F_SETFL, flags | O_NONBLOCK);
 
-    printf("3. 生产者-消费者\n");
-    printf("   - 多生产者单消费者\n");
-    printf("   - 数据流处理\n\n");
+    printf("设置管道为非阻塞模式\n");
 
-    printf("4. 日志系统\n");
-    printf("   - 日志收集\n");
-    printf("   - 进程间日志传输\n\n");
+    char buffer[64];
+    ssize_t n = read(pipefd[0], buffer, sizeof(buffer));
+    if (n == -1) {
+        if (errno == EAGAIN || errno == EWOULDBLOCK) {
+            printf("读取空管道返回 EAGAIN (无数据)\n");
+        }
+    } else {
+        printf("读取: %zd\n", n);
+    }
 
-    printf("5. 进程池\n");
-    printf("   - 任务分发\n");
-    printf("   - 结果收集\n");
-}
+    const char *msg = "test";
+    n = write(pipefd[1], msg, strlen(msg));
+    printf("写入数据: %zd 字节\n", n);
 
-// 演示 7: 与消息队列对比
-static void demo_comparison(void) {
-    printf("\n=== 演示 7: 管道 vs 其他 IPC ===\n");
+    n = read(pipefd[0], buffer, sizeof(buffer));
+    if (n > 0) {
+        buffer[n] = '\0';
+        printf("读取数据: \"%s\"\n", buffer);
+    }
 
-    printf("管道特点:\n");
-    printf("  - 单向数据流\n");
-    printf("  - 字节流，无消息边界\n");
-    printf("  - 内核缓冲区\n");
-    printf("  - 简单高效\n\n");
-
-    printf("消息队列:\n");
-    printf("  - 保留消息边界\n");
-    printf("  - 可以双向\n");
-    printf("  - 更复杂的 API\n\n");
-
-    printf("共享内存:\n");
-    printf("  - 最快的 IPC\n");
-    printf("  - 需要同步机制\n");
-    printf("  - 更复杂\n\n");
-
-    printf("Socket:\n");
-    printf("  - 网络透明\n");
-    printf("  - 双向通信\n");
-    printf("  - 开销较大\n");
+    close(pipefd[0]);
+    close(pipefd[1]);
+    printf("非阻塞模式测试完成!\n");
 }
 
 int main(void) {
@@ -209,14 +386,17 @@ int main(void) {
 
     demo_anonymous();
     demo_config();
-    demo_ipc();
-    demo_named();
-    demo_errors();
-    demo_applications();
-    demo_comparison();
+    demo_fork_ipc();
+    demo_child_to_parent();
+    demo_two_way();
+    demo_named_pipe();
+    demo_error_handling();
+    demo_pipe_buffer();
+    demo_non_blocking();
 
     printf("\n========================================\n");
     printf("演示完成!\n");
+    printf("========================================\n");
 
     return 0;
 }

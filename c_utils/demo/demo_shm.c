@@ -1,161 +1,181 @@
 /**
  * 共享内存演示程序
- *
- * 功能：
- * - 进程间共享内存
- * - 快速数据交换
- * - 同步机制
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 #include "../c_utils/shm.h"
 
-// 演示 1: 基本概念
-static void demo_concept(void) {
-    printf("\n=== 演示 1: 共享内存基本概念 ===\n");
+static void demo_basic_create(void) {
+    printf("\n=== 演示 1: 创建共享内存 ===\n");
 
-    printf("共享内存:\n\n");
+    const char *name = "/test_shm";
+    size_t size = 1024;
 
-    printf("原理:\n");
-    printf("  - 多个进程访问同一块物理内存\n");
-    printf("  - 最快的 IPC 方式\n");
-    printf("  - 需要同步机制\n\n");
+    printf("创建共享内存: name=%s, size=%zu\n", name, size);
 
-    printf("优点:\n");
-    printf("  - 速度最快\n");
-    printf("  - 无需数据拷贝\n");
-    printf("  - 大容量传输\n\n");
+    void *ptr = shm_open_map(name, size);
+    if (!ptr) {
+        printf("创建失败\n");
+        return;
+    }
 
-    printf("注意:\n");
-    printf("  - 需要同步（信号量/互斥锁）\n");
-    printf("  - 生命周期管理\n");
-    printf("  - 权限控制\n");
+    printf("创建成功! ptr=%p\n", ptr);
+
+    memset(ptr, 0, size);
+    strcpy((char *)ptr, "Hello from shared memory!");
+    printf("写入数据: %s\n", (char *)ptr);
+
+    shm_close_unmap(ptr, name, size);
+    printf("已关闭并删除共享内存\n");
 }
 
-// 演示 2: 创建和打开
-static void demo_open(void) {
-    printf("\n=== 演示 2: 创建和打开 ===\n");
+static void demo_basic_open(void) {
+    printf("\n=== 演示 2: 打开共享内存 ===\n");
 
-    printf("shm_open_map 函数:\n");
-    printf("  功能: 创建或打开共享内存\n");
-    printf("  参数: name - 共享内存名称\n");
-    printf("        size - 大小\n");
-    printf("  返回: 内存指针\n\n");
+    const char *name = "/test_shm2";
+    size_t size = 512;
 
-    printf("shm_open_map_ex 函数:\n");
-    printf("  功能: 增强版创建/打开\n");
-    printf("  参数: config - 配置选项\n");
-    printf("        state - 状态输出\n\n");
+    printf("创建共享内存: name=%s, size=%zu\n", name, size);
 
-    printf("shm_create 函数:\n");
-    printf("  功能: 创建新的共享内存\n");
+    void *ptr = shm_open_map(name, size);
+    if (!ptr) {
+        printf("创建失败\n");
+        return;
+    }
+
+    memset(ptr, 0, size);
+    strcpy((char *)ptr, "Test data for sharing");
+    printf("写入数据: %s\n", (char *)ptr);
+
+    printf("\n模拟另一个进程打开...\n");
+    void *ptr2 = shm_open_map(name, size);
+    if (ptr2) {
+        printf("打开成功! ptr2=%p\n", ptr2);
+        printf("读取数据: %s\n", (char *)ptr2);
+        shm_close_unmap(ptr2, name, size);
+    }
+
+    shm_close_unmap(ptr, name, size);
+    printf("原进程已关闭\n");
 }
 
-// 演示 3: 关闭和删除
-static void demo_close(void) {
-    printf("\n=== 演示 3: 关闭和删除 ===\n");
-
-    printf("shm_close_unmap 函数:\n");
-    printf("  功能: 解除映射并关闭\n");
-    printf("  参数: ptr - 内存指针\n");
-    printf("        name - 共享内存名称\n");
-    printf("        size - 大小\n\n");
-
-    printf("shm_close_unmap_ex 函数:\n");
-    printf("  功能: 增强版关闭\n");
-    printf("  返回: 错误码\n\n");
-
-    printf("shm_unlink 函数:\n");
-    printf("  功能: 删除共享内存对象\n");
-}
-
-// 演示 4: 配置选项
 static void demo_config(void) {
-    printf("\n=== 演示 4: 配置选项 ===\n");
+    printf("\n=== 演示 3: 配置选项 ===\n");
 
-    printf("shm_config_t 结构:\n");
-    printf("  create_if_not_exists: 不存在则创建\n");
-    printf("  exclusive: 独占模式\n");
-    printf("  unlink_on_close: 关闭时删除\n");
-    printf("  read_only: 只读模式\n");
-    printf("  permissions: 权限模式\n");
-    printf("  min_size: 最小大小\n");
-    printf("  max_size: 最大大小\n\n");
+    const char *name = "/test_shm3";
+    size_t size = 256;
 
-    printf("权限模式:\n");
-    printf("  0644: 所有者可读写，其他只读\n");
-    printf("  0666: 所有用户可读写\n");
-    printf("  0600: 仅所有者可访问\n");
+    printf("使用配置创建共享内存...\n");
+
+    shm_config_t config = {
+        .create_if_not_exists = true,
+        .exclusive = false,
+        .unlink_on_close = true,
+        .read_only = false,
+        .permissions = 0644,
+        .min_size = 0,
+        .max_size = 0
+    };
+
+    printf("配置:\n");
+    printf("  create_if_not_exists: %s\n", config.create_if_not_exists ? "是" : "否");
+    printf("  exclusive: %s\n", config.exclusive ? "是" : "否");
+    printf("  unlink_on_close: %s\n", config.unlink_on_close ? "是" : "否");
+    printf("  permissions: 0%o\n", config.permissions);
+
+    void *ptr = shm_open_map_ex(name, size, &config, NULL);
+    if (!ptr) {
+        printf("创建失败\n");
+        return;
+    }
+
+    printf("创建成功! ptr=%p\n", ptr);
+
+    shm_close_unmap(ptr, name, size);
+    printf("已关闭\n");
 }
 
-// 演示 5: 状态查询
 static void demo_state(void) {
-    printf("\n=== 演示 5: 状态查询 ===\n");
+    printf("\n=== 演示 4: 状态查询 ===\n");
 
-    printf("shm_state_t 结构:\n");
-    printf("  last_error: 最后错误\n");
-    printf("  error_code: 系统错误码\n");
-    printf("  actual_size: 实际大小\n");
-    printf("  is_mapped: 是否已映射\n");
-    printf("  is_read_only: 是否只读\n");
-    printf("  is_created: 是否新创建\n\n");
+    const char *name = "/test_shm4";
+    size_t size = 128;
 
-    printf("shm_strerror 函数:\n");
-    printf("  功能: 获取错误描述\n");
+    printf("创建共享内存并查询状态...\n");
+
+    shm_state_t state;
+    memset(&state, 0, sizeof(state));
+
+    void *ptr = shm_open_map_ex(name, size, NULL, &state);
+    if (!ptr) {
+        printf("创建失败\n");
+        return;
+    }
+
+    printf("状态:\n");
+    printf("  last_error: %d\n", state.last_error);
+    printf("  error_code: %d\n", state.error_code);
+    printf("  actual_size: %zu\n", state.actual_size);
+    printf("  is_mapped: %s\n", state.is_mapped ? "是" : "否");
+    printf("  is_read_only: %s\n", state.is_read_only ? "是" : "否");
+    printf("  is_created: %s\n", state.is_created ? "是" : "否");
+
+    shm_close_unmap(ptr, name, size);
 }
 
-// 演示 6: 错误处理
-static void demo_errors(void) {
-    printf("\n=== 演示 6: 错误处理 ===\n");
+static void demo_error_handling(void) {
+    printf("\n=== 演示 5: 错误处理 ===\n");
 
-    printf("可能的错误码:\n");
-    printf("  SHM_OK - 成功\n");
-    printf("  SHM_ERROR_INVALID_PARAMS - 无效参数\n");
-    printf("  SHM_ERROR_NAME_NULL - 名称为空\n");
-    printf("  SHM_ERROR_SIZE_ZERO - 大小为零\n");
-    printf("  SHM_ERROR_OPEN - 打开失败\n");
-    printf("  SHM_ERROR_FTRUNCATE - 截断失败\n");
-    printf("  SHM_ERROR_MAP - 映射失败\n");
-    printf("  SHM_ERROR_PERMISSION - 权限错误\n");
-    printf("  SHM_ERROR_EXISTS - 已存在\n");
-    printf("  SHM_ERROR_NOT_FOUND - 未找到\n");
+    printf("测试无效参数:\n");
+    void *ptr = shm_open_map_ex(NULL, 100, NULL, NULL);
+    if (!ptr) {
+        printf("  正确捕获空名称错误\n");
+    }
 
-    printf("\n调试建议:\n");
-    printf("  - 检查 /dev/shm 目录\n");
-    printf("  - 验证权限设置\n");
-    printf("  - 查看系统限制\n");
+    ptr = shm_open_map_ex("/test", 0, NULL, NULL);
+    if (!ptr) {
+        printf("  正确捕获零大小错误\n");
+    }
+
+    printf("\n测试正常操作:\n");
+    shm_state_t state;
+    memset(&state, 0, sizeof(state));
+    void *ptr2 = shm_open_map_ex("/test_shm5", 64, NULL, &state);
+    if (ptr2) {
+        printf("  创建成功\n");
+        printf("  last_error: %d (0=成功)\n", state.last_error);
+        shm_close_unmap(ptr2, "/test_shm5", 64);
+    }
 }
 
-// 演示 7: 应用场景
-static void demo_applications(void) {
-    printf("\n=== 演示 7: 应用场景 ===\n");
+static void demo_data_exchange(void) {
+    printf("\n=== 演示 6: 数据交换 ===\n");
 
-    printf("1. 高速数据交换\n");
-    printf("   - 大容量数据传输\n");
-    printf("   - 实时数据共享\n");
-    printf("   - 零拷贝通信\n\n");
+    const char *name = "/test_shm6";
+    size_t size = 256;
 
-    printf("2. 进程池\n");
-    printf("   - 工作队列\n");
-    printf("   - 结果收集\n");
-    printf("   - 状态共享\n\n");
+    printf("模拟生产者写入数据...\n");
 
-    printf("3. 数据库缓存\n");
-    printf("   - 查询缓存\n");
-    printf("   - 连接池\n");
-    printf("   - 会话存储\n\n");
+    void *ptr = shm_open_map(name, size);
+    if (!ptr) {
+        printf("创建失败\n");
+        return;
+    }
 
-    printf("4. 多媒体处理\n");
-    printf("   - 视频帧共享\n");
-    printf("   - 音频缓冲\n");
-    printf("   - 图像处理\n\n");
+    int *counter = (int *)ptr;
+    *counter = 0;
 
-    printf("5. 系统监控\n");
-    printf("   - 性能统计\n");
-    printf("   - 日志共享\n");
-    printf("   - 配置同步\n");
+    for (int i = 0; i < 5; i++) {
+        (*counter)++;
+        printf("  写入: counter = %d\n", *counter);
+        sleep(1);
+    }
+
+    shm_close_unmap(ptr, name, size);
+    printf("生产者完成\n");
 }
 
 int main(void) {
@@ -163,16 +183,16 @@ int main(void) {
     printf("    共享内存演示\n");
     printf("========================================\n");
 
-    demo_concept();
-    demo_open();
-    demo_close();
+    demo_basic_create();
+    demo_basic_open();
     demo_config();
     demo_state();
-    demo_errors();
-    demo_applications();
+    demo_error_handling();
+    demo_data_exchange();
 
     printf("\n========================================\n");
     printf("演示完成!\n");
+    printf("========================================\n");
 
     return 0;
 }

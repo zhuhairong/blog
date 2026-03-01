@@ -1,156 +1,205 @@
 /**
  * 信号量演示程序
- *
- * 功能：
- * - 进程/线程同步
- * - 资源计数
- * - 互斥访问
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
+#include <sys/wait.h>
 #include "../c_utils/sem.h"
 
-// 演示 1: 基本概念
-static void demo_concept(void) {
-    printf("\n=== 演示 1: 信号量基本概念 ===\n");
+static void demo_basic_create(void) {
+    printf("\n=== 演示 1: 创建信号量 ===\n");
 
-    printf("信号量:\n\n");
+    const char *name = "/test_sem";
+    unsigned int value = 1;
 
-    printf("定义:\n");
-    printf("  - 用于进程/线程同步的计数器\n");
-    printf("  - 支持 P(等待) 和 V(信号) 操作\n");
-    printf("  - 可命名或匿名\n\n");
+    printf("创建信号量: name=%s, value=%u\n", name, value);
 
-    printf("类型:\n");
-    printf("  - 二进制信号量: 0 或 1\n");
-    printf("  - 计数信号量: 0 到 N\n\n");
+    sem_handle_t sem = sem_create(name, value);
+    if (!sem) {
+        printf("创建失败\n");
+        return;
+    }
 
-    printf("操作:\n");
-    printf("  P(wait): 等待，计数减 1\n");
-    printf("  V(post): 信号，计数加 1\n");
+    printf("创建成功! sem=%p\n", sem);
+
+    printf("P 操作 (等待)...\n");
+    sem_p(sem);
+    printf("P 操作成功\n");
+
+    printf("V 操作 (释放)...\n");
+    sem_v(sem);
+    printf("V 操作成功\n");
+
+    sem_close_delete(sem, name);
+    printf("已关闭并删除信号量\n");
 }
 
-// 演示 2: 创建和销毁
-static void demo_creation(void) {
-    printf("\n=== 演示 2: 创建和销毁 ===\n");
+static void demo_binary(void) {
+    printf("\n=== 演示 2: 二进制信号量 ===\n");
 
-    printf("sem_create 函数:\n");
-    printf("  功能: 创建信号量\n");
-    printf("  参数: name - 名称(NULL为匿名)\n");
-    printf("        value - 初始值\n");
-    printf("  返回: 信号量句柄\n\n");
+    const char *name = "/test_bin_sem";
+    unsigned int value = 1;
 
-    printf("sem_create_ex 函数:\n");
-    printf("  功能: 增强版创建\n");
-    printf("  参数: config - 配置选项\n");
-    printf("        state - 状态输出\n\n");
+    printf("创建二进制信号量 (初始值=1)...\n");
 
-    printf("sem_close_delete 函数:\n");
-    printf("  功能: 关闭并删除信号量\n");
+    sem_handle_t sem = sem_create(name, value);
+    if (!sem) {
+        printf("创建失败\n");
+        return;
+    }
+
+    printf("模拟互斥访问:\n");
+
+    pid_t pid = fork();
+    if (pid == 0) {
+        sem_handle_t child_sem = sem_open_ex(name, NULL);
+        if (child_sem) {
+            printf("子进程: 等待信号量...\n");
+            sem_p(child_sem);
+            printf("子进程: 获取信号量，开始工作...\n");
+            sleep(1);
+            printf("子进程: 完成工作，释放信号量\n");
+            sem_v(child_sem);
+            sem_close_delete(child_sem, name);
+            exit(0);
+        }
+    }
+
+    if (pid > 0) {
+        printf("父进程: 等待信号量...\n");
+        sem_p(sem);
+        printf("父进程: 获取信号量，开始工作...\n");
+        sleep(1);
+        printf("父进程: 完成工作，释放信号量\n");
+        sem_v(sem);
+        wait(NULL);
+    }
+
+    sem_close_delete(sem, name);
+    printf("演示完成\n");
 }
 
-// 演示 3: P/V 操作
-static void demo_pv(void) {
-    printf("\n=== 演示 3: P/V 操作 ===\n");
+static void demo_counting(void) {
+    printf("\n=== 演示 3: 计数信号量 ===\n");
 
-    printf("sem_p 函数 (P操作/等待):\n");
-    printf("  功能: 等待信号量\n");
-    printf("  行为: 计数 > 0 时减 1 继续\n");
-    printf("        计数 = 0 时阻塞等待\n\n");
+    const char *name = "/test_count_sem";
+    unsigned int value = 3;
 
-    printf("sem_v 函数 (V操作/信号):\n");
-    printf("  功能: 释放信号量\n");
-    printf("  行为: 计数加 1\n");
-    printf("        唤醒等待的进程\n\n");
+    printf("创建计数信号量 (初始值=3)...\n");
 
-    printf("sem_trywait 函数:\n");
-    printf("  功能: 非阻塞尝试等待\n");
-    printf("  返回: 成功或立即返回错误\n");
+    sem_handle_t sem = sem_create(name, value);
+    if (!sem) {
+        printf("创建失败\n");
+        return;
+    }
+
+    printf("模拟资源池 (3个资源):\n");
+
+    for (int i = 0; i < 5; i++) {
+        printf("  线程 %d: 等待资源...\n", i);
+        sem_p(sem);
+        printf("  线程 %d: 获取资源，使用中...\n", i);
+        sleep(1);
+        sem_v(sem);
+        printf("  线程 %d: 释放资源\n", i);
+    }
+
+    sem_close_delete(sem, name);
+    printf("演示完成\n");
 }
 
-// 演示 4: 超时等待
-static void demo_timed(void) {
-    printf("\n=== 演示 4: 超时等待 ===\n");
-
-    printf("sem_timedwait 函数:\n");
-    printf("  功能: 带超时的等待\n");
-    printf("  参数: sem - 信号量\n");
-    printf("        timeout_ms - 超时毫秒\n");
-    printf("        state - 状态输出\n\n");
-
-    printf("返回值:\n");
-    printf("  SEM_OK: 成功获取\n");
-    printf("  SEM_ERROR_TIMEDWAIT: 超时\n");
-}
-
-// 演示 5: 配置选项
 static void demo_config(void) {
-    printf("\n=== 演示 5: 配置选项 ===\n");
+    printf("\n=== 演示 4: 配置选项 ===\n");
 
-    printf("sem_config_t 结构:\n");
-    printf("  create_if_not_exists: 不存在则创建\n");
-    printf("  exclusive: 独占模式\n");
-    printf("  unlink_on_close: 关闭时删除\n");
-    printf("  max_value: 最大值(0无限制)\n\n");
+    const char *name = "/test_config_sem";
+    unsigned int value = 1;
 
-    printf("sem_state_t 结构:\n");
-    printf("  last_error: 最后错误\n");
-    printf("  error_code: 系统错误码\n");
-    printf("  current_value: 当前值\n");
-    printf("  is_initialized: 是否初始化\n");
-    printf("  is_named: 是否命名信号量\n");
+    printf("使用配置创建信号量...\n");
+
+    sem_config_t config = {
+        .create_if_not_exists = true,
+        .exclusive = false,
+        .unlink_on_close = true,
+        .max_value = 0
+    };
+
+    printf("配置:\n");
+    printf("  create_if_not_exists: %s\n", config.create_if_not_exists ? "是" : "否");
+    printf("  exclusive: %s\n", config.exclusive ? "是" : "否");
+    printf("  unlink_on_close: %s\n", config.unlink_on_close ? "是" : "否");
+    printf("  max_value: %u (0=无限制)\n", config.max_value);
+
+    sem_state_t state;
+    memset(&state, 0, sizeof(state));
+
+    sem_handle_t sem = sem_create_ex(name, value, &config, &state);
+    if (!sem) {
+        printf("创建失败\n");
+        return;
+    }
+
+    printf("状态:\n");
+    printf("  last_error: %d\n", state.last_error);
+    printf("  current_value: %u\n", state.current_value);
+    printf("  is_initialized: %s\n", state.is_initialized ? "是" : "否");
+    printf("  is_named: %s\n", state.is_named ? "是" : "否");
+
+    sem_close_delete(sem, name);
+    printf("演示完成\n");
 }
 
-// 演示 6: 错误处理
-static void demo_errors(void) {
-    printf("\n=== 演示 6: 错误处理 ===\n");
+static void demo_error_handling(void) {
+    printf("\n=== 演示 5: 错误处理 ===\n");
 
-    printf("可能的错误码:\n");
-    printf("  SEM_OK - 成功\n");
-    printf("  SEM_ERROR_INVALID_PARAMS - 无效参数\n");
-    printf("  SEM_ERROR_CREATE - 创建失败\n");
-    printf("  SEM_ERROR_OPEN - 打开失败\n");
-    printf("  SEM_ERROR_WAIT - 等待失败\n");
-    printf("  SEM_ERROR_POST - 信号失败\n");
-    printf("  SEM_ERROR_TRYWAIT - 尝试等待失败\n");
-    printf("  SEM_ERROR_TIMEDWAIT - 超时\n");
+    printf("测试正常操作:\n");
+    sem_state_t state;
+    memset(&state, 0, sizeof(state));
 
-    printf("\n注意事项:\n");
-    printf("  - 检查返回值\n");
-    printf("  - 正确处理超时\n");
-    printf("  - 避免死锁\n");
+    sem_handle_t sem = sem_create_ex("/test_sem_err", 1, NULL, &state);
+    if (sem) {
+        printf("  创建成功\n");
+        printf("  last_error: %d (0=成功)\n", state.last_error);
+        printf("  current_value: %u\n", state.current_value);
+        sem_close_delete(sem, "/test_sem_err");
+    }
 }
 
-// 演示 7: 应用场景
-static void demo_applications(void) {
-    printf("\n=== 演示 7: 应用场景 ===\n");
+static void demo_state_query(void) {
+    printf("\n=== 演示 6: 状态查询 ===\n");
 
-    printf("1. 互斥访问\n");
-    printf("   - 临界区保护\n");
-    printf("   - 资源独占\n");
-    printf("   - 二进制信号量\n\n");
+    const char *name = "/test_state_sem";
+    unsigned int value = 5;
 
-    printf("2. 资源池\n");
-    printf("   - 连接池\n");
-    printf("   - 线程池\n");
-    printf("   - 对象池\n\n");
+    printf("创建信号量并查询状态...\n");
 
-    printf("3. 生产者-消费者\n");
-    printf("   - 缓冲区同步\n");
-    printf("   - 计数信号量\n");
-    printf("   - 流量控制\n\n");
+    sem_state_t state;
+    memset(&state, 0, sizeof(state));
 
-    printf("4. 进程同步\n");
-    printf("   - 命名信号量\n");
-    printf("   - 跨进程通信\n");
-    printf("   - 协调执行\n\n");
+    sem_handle_t sem = sem_create_ex(name, value, NULL, &state);
+    if (!sem) {
+        printf("创建失败\n");
+        return;
+    }
 
-    printf("5. 事件通知\n");
-    printf("   - 任务完成通知\n");
-    printf("   - 状态变更\n");
-    printf("   - 唤醒等待\n");
+    printf("初始状态:\n");
+    printf("  last_error: %d\n", state.last_error);
+    printf("  current_value: %u\n", state.current_value);
+    printf("  is_initialized: %s\n", state.is_initialized ? "是" : "否");
+    printf("  is_named: %s\n", state.is_named ? "是" : "否");
+
+    printf("\nP 操作后查询:\n");
+    sem_p(sem);
+
+    int val;
+    if (sem_getvalue(sem, &val) == 0) {
+        printf("  当前值: %d\n", val);
+    }
+
+    sem_close_delete(sem, name);
+    printf("演示完成\n");
 }
 
 int main(void) {
@@ -158,16 +207,16 @@ int main(void) {
     printf("    信号量演示\n");
     printf("========================================\n");
 
-    demo_concept();
-    demo_creation();
-    demo_pv();
-    demo_timed();
+    demo_basic_create();
+    demo_binary();
+    demo_counting();
     demo_config();
-    demo_errors();
-    demo_applications();
+    demo_error_handling();
+    demo_state_query();
 
     printf("\n========================================\n");
     printf("演示完成!\n");
+    printf("========================================\n");
 
     return 0;
 }
