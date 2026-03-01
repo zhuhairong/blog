@@ -82,40 +82,17 @@ static void demo_connect_packet(void) {
     printf("\n=== 演示 3: 连接报文构建和编码 ===\n");
 
     uint8_t buffer[256];
-    mqtt_error_t error;
 
     // 构建连接报文
-    mqtt_pkt_connect_config_t config;
-    memset(&config, 0, sizeof(config));
-
-    config.client_id = "demo_client_001";
-    config.username = "user";
-    config.password = "pass";
-    config.clean_session = true;
-    config.keep_alive = 60;
-    config.protocol_level = 4;  // MQTT 3.1.1
-
-    // 设置遗嘱消息
-    config.will_topic = "device/status";
-    config.will_message = "offline";
-    config.will_qos = 1;
-    config.will_retain = true;
-
-    printf("连接配置:\n");
-    printf("  客户端 ID: %s\n", config.client_id);
-    printf("  用户名: %s\n", config.username);
-    printf("  清理会话: %s\n", config.clean_session ? "是" : "否");
-    printf("  保活时间: %d 秒\n", config.keep_alive);
-    printf("  协议版本: MQTT %s\n", config.protocol_level == 4 ? "3.1.1" : "5.0");
-    printf("  遗嘱主题: %s\n", config.will_topic);
-    printf("  遗嘱消息: %s\n", config.will_message);
+    const char *client_id = "demo_client_001";
+    printf("客户端 ID: %s\n", client_id);
 
     // 编码连接报文
-    size_t size = mqtt_pkt_encode_connect(buffer, sizeof(buffer), &config, &error);
+    size_t size = mqtt_pkt_connect(buffer, client_id);
     if (size > 0) {
         print_hex("连接报文", buffer, size);
     } else {
-        printf("编码失败: %d\n", error);
+        printf("编码失败\n");
     }
 }
 
@@ -124,33 +101,21 @@ static void demo_publish_packet(void) {
     printf("\n=== 演示 4: 发布报文构建和编码 ===\n");
 
     uint8_t buffer[256];
-    mqtt_error_t error;
 
     // 构建发布报文
-    mqtt_pkt_publish_config_t config;
-    memset(&config, 0, sizeof(config));
-
-    config.topic = "home/livingroom/temperature";
-    config.payload = "23.5";
-    config.payload_len = strlen(config.payload);
-    config.qos = 1;
-    config.retain = true;
-    config.packet_id = 1234;
+    const char *topic = "home/livingroom/temperature";
+    const char *payload = "23.5";
 
     printf("发布配置:\n");
-    printf("  主题: %s\n", config.topic);
-    printf("  载荷: %s\n", (char*)config.payload);
-    printf("  载荷长度: %zu\n", config.payload_len);
-    printf("  QoS: %d\n", config.qos);
-    printf("  保留: %s\n", config.retain ? "是" : "否");
-    printf("  报文 ID: %d\n", config.packet_id);
+    printf("  主题: %s\n", topic);
+    printf("  载荷: %s\n", payload);
 
     // 编码发布报文
-    size_t size = mqtt_pkt_encode_publish(buffer, sizeof(buffer), &config, &error);
+    size_t size = mqtt_pkt_publish(buffer, topic, payload);
     if (size > 0) {
         print_hex("发布报文", buffer, size);
     } else {
-        printf("编码失败: %d\n", error);
+        printf("编码失败\n");
     }
 }
 
@@ -158,68 +123,26 @@ static void demo_publish_packet(void) {
 static void demo_subscribe_packet(void) {
     printf("\n=== 演示 5: 订阅报文构建和编码 ===\n");
 
-    uint8_t buffer[256];
-    mqtt_error_t error;
-
-    // 构建订阅报文
-    mqtt_pkt_topic_t topics[] = {
-        {"home/+/temperature", 1},  // + 单层通配符
-        {"home/livingroom/#", 0},   // # 多层通配符
-        {"device/+/status", 2},
-    };
-
-    printf("订阅主题:\n");
-    for (int i = 0; i < 3; i++) {
-        printf("  主题过滤器: %s, QoS: %d\n", topics[i].topic_filter, topics[i].qos);
-    }
-
-    // 编码订阅报文
-    size_t size = mqtt_pkt_encode_subscribe(buffer, sizeof(buffer), 0x5678, topics, 3, &error);
-    if (size > 0) {
-        print_hex("订阅报文", buffer, size);
-    } else {
-        printf("编码失败: %d\n", error);
-    }
+    printf("订阅主题示例:\n");
+    printf("  1. home/+/temperature (QoS 1) - 单层通配符\n");
+    printf("  2. home/livingroom/# (QoS 0) - 多层通配符\n");
+    printf("  3. device/+/status (QoS 2) - 设备状态\n");
+    printf("\n注意：库中未实现订阅报文构建函数\n");
 }
 
 // 演示 6: 心跳报文构建和编码
 static void demo_ping_packet(void) {
     printf("\n=== 演示 6: 心跳报文构建和编码 ===\n");
-
-    uint8_t buffer[10];
-    mqtt_error_t error;
-
-    // 编码 Ping 请求
-    size_t size = mqtt_pkt_encode_pingreq(buffer, sizeof(buffer), &error);
-    if (size > 0) {
-        print_hex("Ping 请求报文", buffer, size);
-    } else {
-        printf("编码失败: %d\n", error);
-    }
-
-    // 编码 Ping 响应
-    size = mqtt_pkt_encode_pingresp(buffer, sizeof(buffer), &error);
-    if (size > 0) {
-        print_hex("Ping 响应报文", buffer, size);
-    } else {
-        printf("编码失败: %d\n", error);
-    }
+    printf("注意：库中未实现心跳报文构建函数\n");
+    printf("Ping 请求报文格式: 0xC0 0x00\n");
+    printf("Ping 响应报文格式: 0xD0 0x00\n");
 }
 
 // 演示 7: 断开连接报文构建和编码
 static void demo_disconnect_packet(void) {
     printf("\n=== 演示 7: 断开连接报文构建和编码 ===\n");
-
-    uint8_t buffer[10];
-    mqtt_error_t error;
-
-    // 编码断开连接报文
-    size_t size = mqtt_pkt_encode_disconnect(buffer, sizeof(buffer), &error);
-    if (size > 0) {
-        print_hex("断开连接报文", buffer, size);
-    } else {
-        printf("编码失败: %d\n", error);
-    }
+    printf("注意：库中未实现断开连接报文构建函数\n");
+    printf("断开连接报文格式: 0xE0 0x00\n");
 }
 
 // 演示 8: 应用场景

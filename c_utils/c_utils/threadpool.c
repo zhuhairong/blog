@@ -278,11 +278,16 @@ int threadpool_resize(threadpool_t *pool, int new_num_threads) {
     
     pthread_mutex_lock(&(pool->lock));
     int old_count = pool->thread_count;
-    (void)old_count;
-    pool->thread_count = new_num_threads;
+    
+    // 只能减少线程数，不能增加线程数
+    // 因为增加线程数需要重新分配线程数组，这会导致复杂的同步问题
+    if (new_num_threads < old_count) {
+        pool->thread_count = new_num_threads;
+    }
+    
     pthread_mutex_unlock(&(pool->lock));
     
-    return new_num_threads;
+    return pool->thread_count;
 }
 
 int threadpool_get_thread_count(const threadpool_t *pool) {
@@ -326,6 +331,7 @@ void threadpool_cleanup_completed(threadpool_t *pool) {
         curr = next;
     }
     pool->completed_head = NULL;
+    pool->completed_count = 0;
     pthread_mutex_unlock(&(pool->lock));
 }
 
@@ -342,12 +348,14 @@ void threadpool_destroy(threadpool_t *pool) {
         pthread_join(pool->threads[i], NULL);
     }
     
+    pthread_mutex_lock(&(pool->lock));
     task_t *curr = pool->task_head;
     while (curr) {
         task_t *next = curr->next;
         free(curr);
         curr = next;
     }
+    pool->task_head = NULL;
     
     curr = pool->completed_head;
     while (curr) {
@@ -355,6 +363,8 @@ void threadpool_destroy(threadpool_t *pool) {
         free(curr);
         curr = next;
     }
+    pool->completed_head = NULL;
+    pthread_mutex_unlock(&(pool->lock));
     
     free(pool->threads);
     pthread_mutex_destroy(&(pool->lock));
