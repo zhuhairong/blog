@@ -5,12 +5,23 @@
  * - MQTT 报文类型
  * - 连接报文构建
  * - 发布/订阅报文
+ * - 报文编码和解码
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "../c_utils/mqtt_pkt.h"
+
+// 打印十六进制数据
+static void print_hex(const char* label, const uint8_t* data, size_t len) {
+    printf("%s (%zu bytes): ", label, len);
+    for (size_t i = 0; i < len && i < 32; i++) {
+        printf("%02X ", data[i]);
+    }
+    if (len > 32) printf("...");
+    printf("\n");
+}
 
 // 演示 1: MQTT 报文类型
 static void demo_packet_types(void) {
@@ -66,10 +77,14 @@ static void demo_qos(void) {
     printf("  - 关键消息: QoS 2\n");
 }
 
-// 演示 3: 连接配置
-static void demo_connect_config(void) {
-    printf("\n=== 演示 3: 连接配置 ===\n");
+// 演示 3: 连接报文构建和编码
+static void demo_connect_packet(void) {
+    printf("\n=== 演示 3: 连接报文构建和编码 ===\n");
 
+    uint8_t buffer[256];
+    mqtt_error_t error;
+
+    // 构建连接报文
     mqtt_pkt_connect_config_t config;
     memset(&config, 0, sizeof(config));
 
@@ -80,24 +95,38 @@ static void demo_connect_config(void) {
     config.keep_alive = 60;
     config.protocol_level = 4;  // MQTT 3.1.1
 
-    printf("连接配置示例:\n");
+    // 设置遗嘱消息
+    config.will_topic = "device/status";
+    config.will_message = "offline";
+    config.will_qos = 1;
+    config.will_retain = true;
+
+    printf("连接配置:\n");
     printf("  客户端 ID: %s\n", config.client_id);
     printf("  用户名: %s\n", config.username);
     printf("  清理会话: %s\n", config.clean_session ? "是" : "否");
     printf("  保活时间: %d 秒\n", config.keep_alive);
     printf("  协议版本: MQTT %s\n", config.protocol_level == 4 ? "3.1.1" : "5.0");
+    printf("  遗嘱主题: %s\n", config.will_topic);
+    printf("  遗嘱消息: %s\n", config.will_message);
 
-    printf("\n遗嘱消息配置:\n");
-    printf("  遗嘱主题: device/status\n");
-    printf("  遗嘱消息: offline\n");
-    printf("  遗嘱 QoS: 1\n");
-    printf("  遗嘱保留: 是\n");
+    // 编码连接报文
+    size_t size = mqtt_pkt_encode_connect(buffer, sizeof(buffer), &config, &error);
+    if (size > 0) {
+        print_hex("连接报文", buffer, size);
+    } else {
+        printf("编码失败: %d\n", error);
+    }
 }
 
-// 演示 4: 发布配置
-static void demo_publish_config(void) {
-    printf("\n=== 演示 4: 发布消息配置 ===\n");
+// 演示 4: 发布报文构建和编码
+static void demo_publish_packet(void) {
+    printf("\n=== 演示 4: 发布报文构建和编码 ===\n");
 
+    uint8_t buffer[256];
+    mqtt_error_t error;
+
+    // 构建发布报文
     mqtt_pkt_publish_config_t config;
     memset(&config, 0, sizeof(config));
 
@@ -108,7 +137,7 @@ static void demo_publish_config(void) {
     config.retain = true;
     config.packet_id = 1234;
 
-    printf("发布配置示例:\n");
+    printf("发布配置:\n");
     printf("  主题: %s\n", config.topic);
     printf("  载荷: %s\n", (char*)config.payload);
     printf("  载荷长度: %zu\n", config.payload_len);
@@ -116,38 +145,86 @@ static void demo_publish_config(void) {
     printf("  保留: %s\n", config.retain ? "是" : "否");
     printf("  报文 ID: %d\n", config.packet_id);
 
-    printf("\n主题层级:\n");
-    printf("  home/                  - 家\n");
-    printf("  home/livingroom/       - 客厅\n");
-    printf("  home/livingroom/temp   - 温度\n");
-    printf("  home/bedroom/light     - 卧室灯光\n");
+    // 编码发布报文
+    size_t size = mqtt_pkt_encode_publish(buffer, sizeof(buffer), &config, &error);
+    if (size > 0) {
+        print_hex("发布报文", buffer, size);
+    } else {
+        printf("编码失败: %d\n", error);
+    }
 }
 
-// 演示 5: 订阅主题
-static void demo_subscribe(void) {
-    printf("\n=== 演示 5: 订阅主题 ===\n");
+// 演示 5: 订阅报文构建和编码
+static void demo_subscribe_packet(void) {
+    printf("\n=== 演示 5: 订阅报文构建和编码 ===\n");
 
-    printf("订阅示例:\n\n");
+    uint8_t buffer[256];
+    mqtt_error_t error;
 
+    // 构建订阅报文
     mqtt_pkt_topic_t topics[] = {
         {"home/+/temperature", 1},  // + 单层通配符
         {"home/livingroom/#", 0},   // # 多层通配符
         {"device/+/status", 2},
     };
 
+    printf("订阅主题:\n");
     for (int i = 0; i < 3; i++) {
-        printf("  主题过滤器: %s\n", topics[i].topic_filter);
-        printf("  QoS: %d\n\n", topics[i].qos);
+        printf("  主题过滤器: %s, QoS: %d\n", topics[i].topic_filter, topics[i].qos);
     }
 
-    printf("通配符说明:\n");
-    printf("  + : 匹配单层 (如 home/+/temp 匹配 home/kitchen/temp)\n");
-    printf("  # : 匹配多层 (如 home/# 匹配 home/any/thing)\n");
+    // 编码订阅报文
+    size_t size = mqtt_pkt_encode_subscribe(buffer, sizeof(buffer), 0x5678, topics, 3, &error);
+    if (size > 0) {
+        print_hex("订阅报文", buffer, size);
+    } else {
+        printf("编码失败: %d\n", error);
+    }
 }
 
-// 演示 6: 应用场景
+// 演示 6: 心跳报文构建和编码
+static void demo_ping_packet(void) {
+    printf("\n=== 演示 6: 心跳报文构建和编码 ===\n");
+
+    uint8_t buffer[10];
+    mqtt_error_t error;
+
+    // 编码 Ping 请求
+    size_t size = mqtt_pkt_encode_pingreq(buffer, sizeof(buffer), &error);
+    if (size > 0) {
+        print_hex("Ping 请求报文", buffer, size);
+    } else {
+        printf("编码失败: %d\n", error);
+    }
+
+    // 编码 Ping 响应
+    size = mqtt_pkt_encode_pingresp(buffer, sizeof(buffer), &error);
+    if (size > 0) {
+        print_hex("Ping 响应报文", buffer, size);
+    } else {
+        printf("编码失败: %d\n", error);
+    }
+}
+
+// 演示 7: 断开连接报文构建和编码
+static void demo_disconnect_packet(void) {
+    printf("\n=== 演示 7: 断开连接报文构建和编码 ===\n");
+
+    uint8_t buffer[10];
+    mqtt_error_t error;
+
+    // 编码断开连接报文
+    size_t size = mqtt_pkt_encode_disconnect(buffer, sizeof(buffer), &error);
+    if (size > 0) {
+        print_hex("断开连接报文", buffer, size);
+    } else {
+        printf("编码失败: %d\n", error);
+    }
+}
+
+// 演示 8: 应用场景
 static void demo_applications(void) {
-    printf("\n=== 演示 6: 应用场景 ===\n");
+    printf("\n=== 演示 8: 应用场景 ===\n");
 
     printf("1. 物联网 (IoT)\n");
     printf("   - 传感器数据采集\n");
@@ -175,9 +252,9 @@ static void demo_applications(void) {
     printf("   - 数据上传\n");
 }
 
-// 演示 7: 协议特点
+// 演示 9: 协议特点
 static void demo_features(void) {
-    printf("\n=== 演示 7: MQTT 协议特点 ===\n");
+    printf("\n=== 演示 9: MQTT 协议特点 ===\n");
 
     printf("轻量级:\n");
     printf("  - 报文头最小 2 字节\n");
@@ -207,9 +284,11 @@ int main(void) {
 
     demo_packet_types();
     demo_qos();
-    demo_connect_config();
-    demo_publish_config();
-    demo_subscribe();
+    demo_connect_packet();
+    demo_publish_packet();
+    demo_subscribe_packet();
+    demo_ping_packet();
+    demo_disconnect_packet();
     demo_applications();
     demo_features();
 

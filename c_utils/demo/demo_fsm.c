@@ -68,7 +68,13 @@ static void on_exit(void *data, fsm_event_t event) {
     printf("  <- 退出状态: %s\n", state_name(fsm->current_state));
 }
 
-// 演示 1: 基本状态机
+// 事件处理回调
+static void on_event(void *data, fsm_event_t event) {
+    fsm_t *fsm = (fsm_t*)data;
+    printf("  处理事件: %s\n", event_name(event));
+}
+
+// 演示 1: 基本状态机创建和配置
 static void demo_basic(void) {
     printf("\n=== 演示 1: 基本状态机 ===\n");
     
@@ -83,18 +89,18 @@ static void demo_basic(void) {
     }
     
     printf("添加状态...\n");
-    fsm_add_state(fsm, STATE_IDLE, on_enter, on_exit, NULL, &error);
-    fsm_add_state(fsm, STATE_RUNNING, on_enter, on_exit, NULL, &error);
-    fsm_add_state(fsm, STATE_PAUSED, on_enter, on_exit, NULL, &error);
-    fsm_add_state(fsm, STATE_STOPPED, on_enter, on_exit, NULL, &error);
+    fsm_add_state(fsm, STATE_IDLE, on_enter, on_exit, on_event, &error);
+    fsm_add_state(fsm, STATE_RUNNING, on_enter, on_exit, on_event, &error);
+    fsm_add_state(fsm, STATE_PAUSED, on_enter, on_exit, on_event, &error);
+    fsm_add_state(fsm, STATE_STOPPED, on_enter, on_exit, on_event, &error);
     
     printf("添加状态转换...\n");
-    // IDLE -> RUNNING (START)
-    // RUNNING -> PAUSED (PAUSE)
-    // PAUSED -> RUNNING (RESUME)
-    // RUNNING -> STOPPED (STOP)
-    // PAUSED -> STOPPED (STOP)
-    // STOPPED -> IDLE (RESET)
+    fsm_add_transition(fsm, STATE_IDLE, EVENT_START, STATE_RUNNING, NULL, NULL, &error);
+    fsm_add_transition(fsm, STATE_RUNNING, EVENT_PAUSE, STATE_PAUSED, NULL, NULL, &error);
+    fsm_add_transition(fsm, STATE_PAUSED, EVENT_RESUME, STATE_RUNNING, NULL, NULL, &error);
+    fsm_add_transition(fsm, STATE_RUNNING, EVENT_STOP, STATE_STOPPED, NULL, NULL, &error);
+    fsm_add_transition(fsm, STATE_PAUSED, EVENT_STOP, STATE_STOPPED, NULL, NULL, &error);
+    fsm_add_transition(fsm, STATE_STOPPED, EVENT_RESET, STATE_IDLE, NULL, NULL, &error);
     
     printf("状态机结构:\n");
     printf("  IDLE --START--> RUNNING\n");
@@ -111,103 +117,176 @@ static void demo_basic(void) {
 static void demo_transitions(void) {
     printf("\n=== 演示 2: 状态转换流程 ===\n");
     
+    fsm_error_t error;
+    fsm_options_t opts = fsm_default_options();
+    
+    fsm_t *fsm = fsm_create(NULL, &opts, &error);
+    if (!fsm) {
+        printf("创建失败: %d\n", error);
+        return;
+    }
+    
+    // 添加状态
+    fsm_add_state(fsm, STATE_IDLE, on_enter, on_exit, on_event, &error);
+    fsm_add_state(fsm, STATE_RUNNING, on_enter, on_exit, on_event, &error);
+    fsm_add_state(fsm, STATE_PAUSED, on_enter, on_exit, on_event, &error);
+    fsm_add_state(fsm, STATE_STOPPED, on_enter, on_exit, on_event, &error);
+    
+    // 添加转换
+    fsm_add_transition(fsm, STATE_IDLE, EVENT_START, STATE_RUNNING, NULL, NULL, &error);
+    fsm_add_transition(fsm, STATE_RUNNING, EVENT_PAUSE, STATE_PAUSED, NULL, NULL, &error);
+    fsm_add_transition(fsm, STATE_PAUSED, EVENT_RESUME, STATE_RUNNING, NULL, NULL, &error);
+    fsm_add_transition(fsm, STATE_RUNNING, EVENT_STOP, STATE_STOPPED, NULL, NULL, &error);
+    fsm_add_transition(fsm, STATE_PAUSED, EVENT_STOP, STATE_STOPPED, NULL, NULL, &error);
+    fsm_add_transition(fsm, STATE_STOPPED, EVENT_RESET, STATE_IDLE, NULL, NULL, &error);
+    
     printf("模拟播放器状态机:\n\n");
     
-    const char *scenario[] = {
-        "初始状态: IDLE",
-        "事件: START -> 状态: RUNNING (开始播放)",
-        "事件: PAUSE -> 状态: PAUSED (暂停播放)",
-        "事件: RESUME -> 状态: RUNNING (恢复播放)",
-        "事件: STOP -> 状态: STOPPED (停止播放)",
-        "事件: RESET -> 状态: IDLE (重置)",
-        NULL
-    };
+    // 设置初始状态
+    fsm_set_initial_state(fsm, STATE_IDLE, &error);
     
-    for (int i = 0; scenario[i]; i++) {
-        printf("  %s\n", scenario[i]);
-    }
+    // 启动状态机
+    fsm_start(fsm, &error);
+    printf("初始状态: %s\n\n", state_name(fsm->current_state));
+    
+    // 模拟状态转换
+    printf("事件: START\n");
+    fsm_handle_event(fsm, EVENT_START, &error);
+    printf("当前状态: %s\n\n", state_name(fsm->current_state));
+    
+    printf("事件: PAUSE\n");
+    fsm_handle_event(fsm, EVENT_PAUSE, &error);
+    printf("当前状态: %s\n\n", state_name(fsm->current_state));
+    
+    printf("事件: RESUME\n");
+    fsm_handle_event(fsm, EVENT_RESUME, &error);
+    printf("当前状态: %s\n\n", state_name(fsm->current_state));
+    
+    printf("事件: STOP\n");
+    fsm_handle_event(fsm, EVENT_STOP, &error);
+    printf("当前状态: %s\n\n", state_name(fsm->current_state));
+    
+    printf("事件: RESET\n");
+    fsm_handle_event(fsm, EVENT_RESET, &error);
+    printf("当前状态: %s\n\n", state_name(fsm->current_state));
+    
+    fsm_free(fsm);
 }
 
-// 演示 3: 状态机应用场景
+// 演示 3: 错误处理
+static void demo_error_handling(void) {
+    printf("\n=== 演示 3: 错误处理 ===\n");
+    
+    fsm_error_t error;
+    fsm_options_t opts = fsm_default_options();
+    
+    fsm_t *fsm = fsm_create(NULL, &opts, &error);
+    if (!fsm) {
+        printf("创建失败: %d\n", error);
+        return;
+    }
+    
+    // 只添加一个状态
+    fsm_add_state(fsm, STATE_IDLE, on_enter, on_exit, on_event, &error);
+    
+    // 设置初始状态
+    fsm_set_initial_state(fsm, STATE_IDLE, &error);
+    
+    // 启动状态机
+    fsm_start(fsm, &error);
+    
+    // 尝试发送未处理的事件
+    printf("尝试发送未处理的事件...\n");
+    error = FSM_OK;
+    fsm_handle_event(fsm, EVENT_START, &error);
+    printf("错误码: %d (应该是 %d - 事件未处理)\n", error, FSM_ERROR_EVENT_NOT_HANDLED);
+    
+    // 尝试添加无效状态
+    printf("尝试添加无效状态...\n");
+    error = FSM_OK;
+    bool ok = fsm_add_state(NULL, STATE_RUNNING, on_enter, on_exit, on_event, &error);
+    printf("结果: %s, 错误码: %d (应该是 %d - 无效参数)\n", ok ? "成功" : "失败", error, FSM_ERROR_INVALID_PARAM);
+    
+    fsm_free(fsm);
+}
+
+// 演示 4: 带条件的状态转换
+static bool guard_condition(void *data, fsm_event_t event) {
+    // 模拟条件检查
+    static int count = 0;
+    count++;
+    bool allowed = (count % 2 == 0);
+    printf("  条件检查: %s (count=%d)\n", allowed ? "允许" : "拒绝", count);
+    return allowed;
+}
+
+static void transition_action(void *data, fsm_event_t event) {
+    printf("  执行转换动作\n");
+}
+
+static void demo_guards_and_actions(void) {
+    printf("\n=== 演示 4: 带条件的状态转换 ===\n");
+    
+    fsm_error_t error;
+    fsm_options_t opts = fsm_default_options();
+    opts.enable_guard = true;
+    
+    fsm_t *fsm = fsm_create(NULL, &opts, &error);
+    if (!fsm) {
+        printf("创建失败: %d\n", error);
+        return;
+    }
+    
+    fsm_add_state(fsm, STATE_IDLE, on_enter, on_exit, on_event, &error);
+    fsm_add_state(fsm, STATE_RUNNING, on_enter, on_exit, on_event, &error);
+    
+    // 添加带条件的转换
+    fsm_add_transition(fsm, STATE_IDLE, EVENT_START, STATE_RUNNING, guard_condition, transition_action, &error);
+    
+    // 设置初始状态
+    fsm_set_initial_state(fsm, STATE_IDLE, &error);
+    
+    // 启动状态机
+    fsm_start(fsm, &error);
+    
+    // 多次尝试转换
+    for (int i = 1; i <= 5; i++) {
+        printf("\n尝试 %d:\n", i);
+        error = FSM_OK;
+        fsm_handle_event(fsm, EVENT_START, &error);
+        printf("结果: %s, 错误码: %d\n", 
+               (fsm->current_state == STATE_RUNNING) ? "成功" : "失败", error);
+        
+        if (fsm->current_state == STATE_RUNNING) {
+            // 重置状态
+            fsm_stop(fsm, &error);
+            fsm_set_initial_state(fsm, STATE_IDLE, &error);
+            fsm_start(fsm, &error);
+        }
+    }
+    
+    fsm_free(fsm);
+}
+
+// 演示 5: 应用场景
 static void demo_applications(void) {
-    printf("\n=== 演示 3: 状态机应用场景 ===\n");
+    printf("\n=== 演示 5: 状态机应用场景 ===\n");
     
     printf("1. 网络连接管理\n");
     printf("   状态: DISCONNECTED -> CONNECTING -> CONNECTED -> DISCONNECTING\n");
-    printf("   事件: connect, connected, disconnect, disconnected\n");
-    printf("\n");
+    printf("   事件: connect, connected, disconnect, disconnected\n\n");
     
     printf("2. 订单处理系统\n");
     printf("   状态: CREATED -> PAID -> SHIPPED -> DELIVERED -> COMPLETED\n");
-    printf("   事件: pay, ship, deliver, complete, cancel\n");
-    printf("\n");
+    printf("   事件: pay, ship, deliver, complete, cancel\n\n");
     
     printf("3. 游戏角色状态\n");
     printf("   状态: IDLE -> WALKING -> RUNNING -> JUMPING -> ATTACKING\n");
-    printf("   事件: walk, run, jump, attack, stop\n");
-    printf("\n");
+    printf("   事件: walk, run, jump, attack, stop\n\n");
     
     printf("4. 线程生命周期\n");
     printf("   状态: NEW -> RUNNABLE -> RUNNING -> BLOCKED -> TERMINATED\n");
     printf("   事件: start, run, block, unblock, terminate\n");
-}
-
-// 演示 4: FSM 优势
-static void demo_advantages(void) {
-    printf("\n=== 演示 4: FSM 优势 ===\n");
-    
-    printf("使用 FSM 的好处:\n\n");
-    
-    printf("1. 代码结构清晰\n");
-    printf("   - 状态和行为分离\n");
-    printf("   - 易于理解和维护\n");
-    printf("\n");
-    
-    printf("2. 避免复杂条件判断\n");
-    printf("   - 消除大量 if-else/switch\n");
-    printf("   - 状态转换集中管理\n");
-    printf("\n");
-    
-    printf("3. 易于扩展\n");
-    printf("   - 添加新状态简单\n");
-    printf("   - 添加新转换简单\n");
-    printf("\n");
-    
-    printf("4. 可测试性强\n");
-    printf("   - 每个状态独立测试\n");
-    printf("   - 转换路径清晰\n");
-    printf("\n");
-    
-    printf("5. 可视化支持\n");
-    printf("   - 可生成状态图\n");
-    printf("   - 便于文档化\n");
-}
-
-// 演示 5: 实现模式
-static void demo_patterns(void) {
-    printf("\n=== 演示 5: FSM 实现模式 ===\n");
-    
-    printf("1.  switch/case 模式 (简单)\n");
-    printf("   switch (state) {\n");
-    printf("     case STATE_A: ...\n");
-    printf("     case STATE_B: ...\n");
-    printf("   }\n");
-    printf("\n");
-    
-    printf("2.  状态表模式 (中等)\n");
-    printf("   transition_table[state][event] = next_state;\n");
-    printf("\n");
-    
-    printf("3.  面向对象模式 (复杂)\n");
-    printf("   class State { virtual void handle() = 0; };\n");
-    printf("   class StateA : public State { ... };\n");
-    printf("\n");
-    
-    printf("4.  本库模式 (推荐)\n");
-    printf("   - 声明式配置\n");
-    printf("   - 回调函数支持\n");
-    printf("   - 守卫条件支持\n");
-    printf("   - 嵌套状态支持\n");
 }
 
 int main(void) {
@@ -217,9 +296,9 @@ int main(void) {
     
     demo_basic();
     demo_transitions();
+    demo_error_handling();
+    demo_guards_and_actions();
     demo_applications();
-    demo_advantages();
-    demo_patterns();
     
     printf("\n========================================\n");
     printf("演示完成!\n");
