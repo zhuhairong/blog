@@ -85,6 +85,41 @@ if(BUILD_DEMOS)
     endforeach()
 endif()
 
+# 构建项目
+option(BUILD_PROJECTS "Build project programs" ON)
+
+if(BUILD_PROJECTS)
+    # 日志分析工具
+    add_executable(log_analyzer 
+        ${CMAKE_CURRENT_SOURCE_DIR}/projects/log_analyzer/log_analyzer.c
+    )
+    target_link_libraries(log_analyzer PRIVATE c_utils)
+
+    # 进程监控工具
+    add_executable(process_monitor 
+        ${CMAKE_CURRENT_SOURCE_DIR}/projects/process_monitor/process_monitor.c
+    )
+    target_link_libraries(process_monitor PRIVATE c_utils)
+
+    # 任务管理器
+    add_executable(task_manager 
+        ${CMAKE_CURRENT_SOURCE_DIR}/projects/task_manager/task_manager.c
+    )
+    target_link_libraries(task_manager PRIVATE c_utils)
+
+    # 文本差异比较工具
+    add_executable(text_diff 
+        ${CMAKE_CURRENT_SOURCE_DIR}/projects/text_diff/text_diff.c
+    )
+    target_link_libraries(text_diff PRIVATE c_utils)
+
+    # 缓存服务器
+    add_executable(cache_server 
+        ${CMAKE_CURRENT_SOURCE_DIR}/projects/cache_server/cache_server.c
+    )
+    target_link_libraries(cache_server PRIVATE c_utils)
+endif()
+
 # 安装目标
 install(TARGETS c_utils
     ARCHIVE DESTINATION lib

@@ -77,6 +77,12 @@ socket_t net_connect(const char *host, const char *port) {
     return fd;
 }
 
+socket_t net_accept(socket_t server_fd) {
+    struct sockaddr_in client_addr;
+    socklen_t addr_len = sizeof(client_addr);
+    return accept(server_fd, (struct sockaddr*)&client_addr, &addr_len);
+}
+
 int net_send(socket_t fd, const void *data, size_t len) {
     return send(fd, (const char*)data, (int)len, 0);
 }

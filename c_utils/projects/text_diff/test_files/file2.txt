@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    printf("Hello, World!\n");
+    printf("Welcome!\n");
+    return 0;
+}
+
+void foo() {
+    printf("foo function\n");
+}
+
+void baz() {
+    printf("baz\n");
+}
