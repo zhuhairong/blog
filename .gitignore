@@ -43,3 +43,4 @@ next-env.d.ts
 .cache/**
 c_utils/projects/log_analyzer/sample.log
 c_utils/projects/log_analyzer/build/**
+.trae/**

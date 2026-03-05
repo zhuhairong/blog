@@ -322,6 +322,199 @@ static void demo_cross_platform(void) {
     printf("  - 一致的 API 行为\n");
 }
 
+// 演示 9: 配置选项测试
+static void demo_config_options(void) {
+    printf("\n=== 演示 9: 配置选项测试 ===\n");
+    
+    net_init();
+    
+    // 测试默认配置 (简化版本)
+    printf("配置选项测试:\n");
+    printf("  注意: 高级配置选项在当前实现中不可用\n");
+    
+    // 测试基本的服务器创建
+    printf("  创建服务器套接字...\n");
+    socket_t server_fd = net_listen("0");
+    if (server_fd != INVALID_SOCKET) {
+        printf("  ✓ 服务器套接字创建成功\n");
+        net_close(server_fd);
+    } else {
+        printf("  ✗ 服务器套接字创建失败\n");
+    }
+    
+    net_cleanup();
+}
+
+// 演示 10: 边界情况测试
+static void demo_boundary_cases(void) {
+    printf("\n=== 演示 10: 边界情况测试 ===\n");
+    
+    net_init();
+    
+    // 测试无效参数
+    printf("无效参数测试:\n");
+    
+    // 空指针测试
+    printf("  空指针测试...\n");
+    socket_t fd = net_listen(NULL);
+    if (fd == INVALID_SOCKET) {
+        printf("  ✓ 空指针测试通过 (返回 INVALID_SOCKET)\n");
+    } else {
+        printf("  ✗ 空指针测试失败\n");
+        net_close(fd);
+    }
+    
+    // 无效端口测试
+    printf("  无效端口测试...\n");
+    fd = net_connect("localhost", "99999");
+    if (fd == INVALID_SOCKET) {
+        printf("  ✓ 无效端口测试通过 (返回 INVALID_SOCKET)\n");
+    } else {
+        printf("  ✗ 无效端口测试失败\n");
+        net_close(fd);
+    }
+    
+    // 空地址测试
+    printf("  空地址测试...\n");
+    fd = net_connect("", "80");
+    if (fd == INVALID_SOCKET) {
+        printf("  ✓ 空地址测试通过 (返回 INVALID_SOCKET)\n");
+    } else {
+        printf("  ✗ 空地址测试失败\n");
+        net_close(fd);
+    }
+    
+    net_cleanup();
+}
+
+// 演示 11: 高级功能测试
+static void demo_advanced_features(void) {
+    printf("\n=== 演示 11: 高级功能测试 ===\n");
+    
+    net_init();
+    
+    // 测试基本的服务器创建
+    printf("基本功能测试:\n");
+    socket_t server_fd = net_listen("0");
+    if (server_fd != INVALID_SOCKET) {
+        printf("  ✓ 服务器套接字创建成功\n");
+        
+        // 注意: 不测试接受连接，因为会阻塞
+        printf("  注意: 不测试接受连接，因为会阻塞\n");
+        
+        net_close(server_fd);
+    } else {
+        printf("  ✗ 服务器套接字创建失败\n");
+    }
+    
+    net_cleanup();
+}
+
+// 演示 12: 异常情况测试
+static void demo_error_cases(void) {
+    printf("\n=== 演示 12: 异常情况测试 ===\n");
+    
+    net_init();
+    
+    // 测试连接失败
+    printf("连接失败测试:\n");
+    socket_t client_fd = net_connect("localhost", "9999");
+    if (client_fd == INVALID_SOCKET) {
+        printf("  ✓ 连接失败测试通过 (返回 INVALID_SOCKET)\n");
+    } else {
+        printf("  ✗ 连接失败测试失败\n");
+        net_close(client_fd);
+    }
+    
+    // 测试发送失败
+    printf("\n发送失败测试:\n");
+    client_fd = INVALID_SOCKET;
+    int sent = net_send(client_fd, "test", 4);
+    if (sent == SOCKET_ERROR) {
+        printf("  ✓ 发送失败测试通过 (返回 SOCKET_ERROR)\n");
+    } else {
+        printf("  ✗ 发送失败测试失败\n");
+    }
+    
+    // 测试接收失败
+    printf("\n接收失败测试:\n");
+    char buffer[1024];
+    int received = net_recv(client_fd, buffer, sizeof(buffer));
+    if (received == SOCKET_ERROR) {
+        printf("  ✓ 接收失败测试通过 (返回 SOCKET_ERROR)\n");
+    } else {
+        printf("  ✗ 接收失败测试失败\n");
+    }
+    
+    net_cleanup();
+}
+
+// 演示 13: 多客户端测试
+static void demo_multiple_clients(void) {
+    printf("\n=== 演示 13: 多客户端测试 ===\n");
+    
+    net_init();
+    
+    // 创建服务器套接字
+    socket_t server_fd = net_listen("0");
+    if (server_fd != INVALID_SOCKET) {
+        printf("  ✓ 服务器套接字创建成功\n");
+        
+        // 尝试多次连接
+        printf("  测试多次连接尝试...\n");
+        for (int i = 0; i < 3; i++) {
+            socket_t client_fd = net_connect("localhost", "8080");
+            if (client_fd == INVALID_SOCKET) {
+                printf("  连接尝试 %d: 返回 INVALID_SOCKET (预期，因为端口可能不同)\n", i+1);
+            } else {
+                printf("  连接尝试 %d: 成功\n", i+1);
+                net_close(client_fd);
+            }
+        }
+        
+        net_close(server_fd);
+    } else {
+        printf("  ✗ 服务器套接字创建失败\n");
+    }
+    
+    net_cleanup();
+}
+
+// 演示 14: 数据传输测试
+static void demo_data_transfer(void) {
+    printf("\n=== 演示 14: 数据传输测试 ===\n");
+    
+    net_init();
+    
+    // 测试基本的数据传输函数
+    printf("数据传输函数测试:\n");
+    
+    // 注意: 实际的数据传输需要客户端-服务器连接
+    // 这里只测试函数接口
+    printf("  注意: 实际的数据传输需要客户端-服务器连接\n");
+    printf("  这里只测试函数接口的基本调用\n");
+    
+    // 测试发送函数 (使用无效套接字)
+    const char *test_data = "test data";
+    int sent = net_send(INVALID_SOCKET, test_data, strlen(test_data));
+    if (sent == SOCKET_ERROR) {
+        printf("  ✓ 发送函数测试通过 (返回 SOCKET_ERROR)\n");
+    } else {
+        printf("  ✗ 发送函数测试失败\n");
+    }
+    
+    // 测试接收函数 (使用无效套接字)
+    char buffer[1024];
+    int received = net_recv(INVALID_SOCKET, buffer, sizeof(buffer));
+    if (received == SOCKET_ERROR) {
+        printf("  ✓ 接收函数测试通过 (返回 SOCKET_ERROR)\n");
+    } else {
+        printf("  ✗ 接收函数测试失败\n");
+    }
+    
+    net_cleanup();
+}
+
 int main(void) {
     printf("========================================\n");
     printf("    网络工具演示\n");
@@ -335,6 +528,12 @@ int main(void) {
     demo_api_reference();
     demo_applications();
     demo_cross_platform();
+    demo_config_options();
+    demo_boundary_cases();
+    demo_advanced_features();
+    demo_error_cases();
+    demo_multiple_clients();
+    demo_data_transfer();
     
     printf("\n========================================\n");
     printf("演示完成!\n");

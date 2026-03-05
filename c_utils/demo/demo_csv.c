@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "../c_utils/csv.h"
 
 // 打印 CSV 行
@@ -241,6 +242,415 @@ static void demo_errors(void) {
     printf("  不存在的文件: %s, 错误码: %d\n", csv ? "成功" : "失败", error);
 }
 
+// 演示 6.1: 边界情况测试
+static void demo_edge_cases(void) {
+    printf("\n=== 演示 6.1: 边界情况测试 ===\n");
+
+    // 空行
+    printf("空行测试:\n");
+    const char *empty_lines[] = {
+        "",                    // 完全空行
+        "   ",                  // 只有空格
+        "\n",                  // 只有换行符
+        "\r\n"                // 回车换行
+    };
+    int num_empty = sizeof(empty_lines) / sizeof(empty_lines[0]);
+    for (int i = 0; i < num_empty; i++) {
+        printf("  输入: '%s' (长度: %zu)\n", empty_lines[i], strlen(empty_lines[i]));
+        csv_error_t error;
+        csv_row_t *row = csv_parse_line(empty_lines[i], NULL, &error);
+        if (row) {
+            print_row(row);
+            csv_row_free(row);
+        } else {
+            printf("  解析失败，错误码: %d\n", error);
+        }
+    }
+
+    // 特殊字符
+    printf("\n特殊字符测试:\n");
+    const char *special_lines[] = {
+        "field1,field2\\nfield3",  // 包含转义换行符
+        "field1,field2\\rfield3",  // 包含转义回车符
+        "field1,field2\\tfield3",  // 包含转义制表符
+        "field1,field2\\,field3"   // 包含转义逗号
+    };
+    int num_special = sizeof(special_lines) / sizeof(special_lines[0]);
+    for (int i = 0; i < num_special; i++) {
+        printf("  输入: %s\n", special_lines[i]);
+        csv_error_t error;
+        csv_row_t *row = csv_parse_line(special_lines[i], NULL, &error);
+        if (row) {
+            print_row(row);
+            csv_row_free(row);
+        } else {
+            printf("  解析失败，错误码: %d\n", error);
+        }
+    }
+
+    // 超长行
+    printf("\n超长行测试:\n");
+    char long_line[1024];
+    strcpy(long_line, "field1");
+    for (int i = 0; i < 100; i++) {
+        strcat(long_line, ",field");
+    }
+    printf("  超长行长度: %zu\n", strlen(long_line));
+    csv_error_t error;
+    csv_row_t *row = csv_parse_line(long_line, NULL, &error);
+    if (row) {
+        printf("  解析成功，字段数: %zu\n", row->count);
+        csv_row_free(row);
+    } else {
+        printf("  解析失败，错误码: %d\n", error);
+    }
+}
+
+// 演示 6.2: 数据完整性测试
+static void demo_data_integrity(void) {
+    printf("\n=== 演示 6.2: 数据完整性测试 ===\n");
+
+    // 列数不一致
+    printf("列数不一致测试:\n");
+    const char *mismatch_lines[] = {
+        "name,age,city",         // 3列
+        "Alice,30",              // 2列
+        "Bob,25,Los Angeles,CA"  // 4列
+    };
+    int num_mismatch = sizeof(mismatch_lines) / sizeof(mismatch_lines[0]);
+    
+    csv_t *csv = csv_create(NULL, NULL);
+    if (csv) {
+        for (int i = 0; i < num_mismatch; i++) {
+            csv_error_t error;
+            csv_row_t *row = csv_parse_line(mismatch_lines[i], NULL, &error);
+            if (row) {
+                bool result = csv_add_row(csv, (const char **)row->fields, row->count, &error);
+                printf("  行 %d (字段数: %zu): %s, 错误码: %d\n", 
+                       i, row->count, result ? "成功" : "失败", error);
+                csv_row_free(row);
+            }
+        }
+        csv_free(csv);
+    }
+
+    // 空字段
+    printf("\n空字段测试:\n");
+    const char *empty_fields[] = {
+        "field1,,field3",        // 中间空字段
+        ",field2,field3",        // 开头空字段
+        "field1,field2,",        // 结尾空字段
+        ",,"                     // 全部空字段
+    };
+    int num_empty_fields = sizeof(empty_fields) / sizeof(empty_fields[0]);
+    for (int i = 0; i < num_empty_fields; i++) {
+        printf("  输入: %s\n", empty_fields[i]);
+        csv_error_t error;
+        csv_row_t *row = csv_parse_line(empty_fields[i], NULL, &error);
+        if (row) {
+            print_row(row);
+            csv_row_free(row);
+        } else {
+            printf("  解析失败，错误码: %d\n", error);
+        }
+    }
+}
+
+// 演示 6.3: 性能测试
+static void demo_performance(void) {
+    printf("\n=== 演示 6.3: 性能测试 ===\n");
+
+    // 批量解析测试
+    const char *test_lines[] = {
+        "name,age,city",
+        "Alice,30,New York",
+        "Bob,25,Los Angeles",
+        "Charlie,35,San Francisco",
+        "David,28,Boston"
+    };
+    int num_test_lines = sizeof(test_lines) / sizeof(test_lines[0]);
+    int iterations = 10000;
+
+    printf("批量解析测试: %d 次迭代\n", iterations);
+    printf("测试行数: %d\n", num_test_lines);
+    
+    clock_t start = clock();
+    csv_error_t error;
+    
+    for (int i = 0; i < iterations; i++) {
+        for (int j = 0; j < num_test_lines; j++) {
+            csv_row_t *row = csv_parse_line(test_lines[j], NULL, &error);
+            if (row) {
+                csv_row_free(row);
+            }
+        }
+    }
+    
+    clock_t end = clock();
+    double time_taken = (double)(end - start) / CLOCKS_PER_SEC;
+    printf("执行时间: %.4f 秒\n", time_taken);
+    printf("每秒解析行数: %.0f\n", (double)(iterations * num_test_lines) / time_taken);
+}
+
+// 演示 6.4: 扩展边界情况测试
+static void demo_edge_cases_extended(void) {
+    printf("\n=== 演示 6.4: 扩展边界情况测试 ===\n");
+
+    // 极短行
+    printf("极短行测试:\n");
+    const char *short_lines[] = {
+        "a",                   // 单个字符
+        ",",                  // 单个逗号
+        "\"\"",               // 空引号
+        "a,"
+    };
+    int num_short = sizeof(short_lines) / sizeof(short_lines[0]);
+    for (int i = 0; i < num_short; i++) {
+        printf("  输入: '%s'\n", short_lines[i]);
+        csv_error_t error;
+        csv_row_t *row = csv_parse_line(short_lines[i], NULL, &error);
+        if (row) {
+            print_row(row);
+            csv_row_free(row);
+        } else {
+            printf("  解析失败，错误码: %d\n", error);
+        }
+    }
+
+    // 嵌套引号
+    printf("\n嵌套引号测试:\n");
+    const char *nested_quotes[] = {
+        "\"\"\"",              // 三层引号
+        "\"\"text\"\"",         // 引号内引号
+        "\"a,\"b\"c\""        // 复杂嵌套
+    };
+    int num_nested = sizeof(nested_quotes) / sizeof(nested_quotes[0]);
+    for (int i = 0; i < num_nested; i++) {
+        printf("  输入: %s\n", nested_quotes[i]);
+        csv_error_t error;
+        csv_row_t *row = csv_parse_line(nested_quotes[i], NULL, &error);
+        if (row) {
+            print_row(row);
+            csv_row_free(row);
+        } else {
+            printf("  解析失败，错误码: %d\n", error);
+        }
+    }
+
+    // 混合内容
+    printf("\n混合内容测试:\n");
+    const char *mixed_content[] = {
+        "123,45.67,true",      // 数字和布尔值
+        "line1\nline2,line3",   // 换行符
+        "\t\tvalue\t\t",       // 制表符
+        "a\\b\\c,d\\e\\f"       // 反斜杠
+    };
+    int num_mixed = sizeof(mixed_content) / sizeof(mixed_content[0]);
+    for (int i = 0; i < num_mixed; i++) {
+        printf("  输入: %s\n", mixed_content[i]);
+        csv_error_t error;
+        csv_row_t *row = csv_parse_line(mixed_content[i], NULL, &error);
+        if (row) {
+            print_row(row);
+            csv_row_free(row);
+        } else {
+            printf("  解析失败，错误码: %d\n", error);
+        }
+    }
+}
+
+// 演示 6.5: 扩展异常情况测试
+static void demo_error_cases_extended(void) {
+    printf("\n=== 演示 6.5: 扩展异常情况测试 ===\n");
+
+    // 格式错误
+    printf("格式错误测试:\n");
+    const char *format_errors[] = {
+        "\"unclosed quote",       // 未闭合的引号
+        "quote\"without\"comma",  // 引号内无逗号
+        "field1,field2,"           // 末尾逗号
+    };
+    int num_format = sizeof(format_errors) / sizeof(format_errors[0]);
+    for (int i = 0; i < num_format; i++) {
+        printf("  输入: %s\n", format_errors[i]);
+        csv_error_t error;
+        csv_row_t *row = csv_parse_line(format_errors[i], NULL, &error);
+        if (row) {
+            print_row(row);
+            csv_row_free(row);
+        } else {
+            printf("  解析失败，错误码: %d\n", error);
+        }
+    }
+
+    // 内存分配测试（模拟）
+    printf("\n内存分配测试:\n");
+    // 注意：这里只是测试接口，实际内存分配失败需要在特定环境下测试
+    csv_error_t error;
+    csv_t *csv = csv_create(NULL, &error);
+    if (csv) {
+        printf("  CSV 创建成功\n");
+        csv_free(csv);
+    } else {
+        printf("  CSV 创建失败，错误码: %d\n", error);
+    }
+
+    // 越界访问测试
+    printf("\n越界访问测试:\n");
+    const char *test_file = "/tmp/csv_test_boundary.csv";
+    FILE *fp = fopen(test_file, "w");
+    if (fp) {
+        fprintf(fp, "a,b,c\n");
+        fprintf(fp, "1,2,3\n");
+        fclose(fp);
+
+        csv_t *csv = csv_load(test_file, NULL, &error);
+        if (csv) {
+            // 测试正常访问
+            const char *val = csv_get(csv, 0, 0, &error);
+            printf("  正常访问 (0,0): %s, 错误码: %d\n", val ? val : "失败", error);
+
+            // 测试行越界
+            val = csv_get(csv, 10, 0, &error);
+            printf("  行越界 (10,0): %s, 错误码: %d\n", val ? val : "失败", error);
+
+            // 测试列越界
+            val = csv_get(csv, 0, 10, &error);
+            printf("  列越界 (0,10): %s, 错误码: %d\n", val ? val : "失败", error);
+
+            csv_free(csv);
+        }
+        remove(test_file);
+    }
+}
+
+// 演示 6.6: 扩展性能测试
+static void demo_performance_extended(void) {
+    printf("\n=== 演示 6.6: 扩展性能测试 ===\n");
+
+    // 大文件处理测试
+    printf("大文件处理测试:\n");
+    const char *big_file = "/tmp/csv_big_test.csv";
+    FILE *fp = fopen(big_file, "w");
+    if (fp) {
+        // 写入1000行数据
+        fprintf(fp, "name,age,city\n");
+        for (int i = 0; i < 1000; i++) {
+            fprintf(fp, "person%d,%d,city%d\n", i, 20 + i % 50, i % 100);
+        }
+        fclose(fp);
+
+        clock_t start = clock();
+        csv_error_t error;
+        csv_t *csv = csv_load(big_file, NULL, &error);
+        clock_t end = clock();
+        double time_taken = (double)(end - start) / CLOCKS_PER_SEC;
+
+        if (csv) {
+            printf("  读取成功，行数: %zu\n", csv_get_rows(csv));
+            printf("  执行时间: %.4f 秒\n", time_taken);
+            csv_free(csv);
+        } else {
+            printf("  读取失败，错误码: %d\n", error);
+        }
+        remove(big_file);
+    }
+
+    // 复杂行解析测试
+    printf("\n复杂行解析测试:\n");
+    const char *complex_line = "\"complex,field\",\"with\"\"quotes\"\",123,true,\"line1\nline2\"";
+    int iterations = 10000;
+
+    clock_t start = clock();
+    for (int i = 0; i < iterations; i++) {
+        csv_error_t error;
+        csv_row_t *row = csv_parse_line(complex_line, NULL, &error);
+        if (row) {
+            csv_row_free(row);
+        }
+    }
+    clock_t end = clock();
+    double time_taken = (double)(end - start) / CLOCKS_PER_SEC;
+    printf("  解析复杂行 %d 次\n", iterations);
+    printf("  执行时间: %.4f 秒\n", time_taken);
+    printf("  每秒解析次数: %.0f\n", (double)iterations / time_taken);
+}
+
+// 演示 6.7: 兼容性测试
+static void demo_compatibility(void) {
+    printf("\n=== 演示 6.7: 兼容性测试 ===\n");
+
+    // 不同换行符测试
+    printf("不同换行符测试:\n");
+    const char *newline_tests[] = {
+        "a,b,c\n",          // LF
+        "a,b,c\r\n",        // CRLF
+        "a,b,c\r"           // CR
+    };
+    const char *newline_names[] = {"LF", "CRLF", "CR"};
+    int num_newline = sizeof(newline_tests) / sizeof(newline_tests[0]);
+    for (int i = 0; i < num_newline; i++) {
+        printf("  %s 换行: %s\n", newline_names[i], newline_tests[i]);
+        csv_error_t error;
+        csv_row_t *row = csv_parse_line(newline_tests[i], NULL, &error);
+        if (row) {
+            print_row(row);
+            csv_row_free(row);
+        } else {
+            printf("  解析失败，错误码: %d\n", error);
+        }
+    }
+
+    // 不同分隔符测试
+    printf("\n不同分隔符测试:\n");
+    const char *delimiter_tests[] = {
+        "a;b;c",            // 分号
+        "a|b|c",            // 管道
+        "a\tb\tc",          // 制表符
+        "a b c"              // 空格
+    };
+    char delimiters[] = {';', '|', '\t', ' '};
+    const char *delimiter_names[] = {"分号", "管道", "制表符", "空格"};
+    int num_delimiter = sizeof(delimiter_tests) / sizeof(delimiter_tests[0]);
+    for (int i = 0; i < num_delimiter; i++) {
+        printf("  %s 分隔: %s\n", delimiter_names[i], delimiter_tests[i]);
+        csv_config_t config = csv_default_config();
+        config.delimiter = delimiters[i];
+        csv_error_t error;
+        csv_row_t *row = csv_parse_line(delimiter_tests[i], &config, &error);
+        if (row) {
+            print_row(row);
+            csv_row_free(row);
+        } else {
+            printf("  解析失败，错误码: %d\n", error);
+        }
+    }
+
+    // 不同引号样式测试
+    printf("\n不同引号样式测试:\n");
+    const char *quote_tests[] = {
+        "'a','b','c'",       // 单引号
+        "\"a\",\"b\",\"c\"",     // 双引号
+        "`a`,`b`,`c`"        // 反引号
+    };
+    char quotes[] = {'\'', '"', '`'};
+    const char *quote_names[] = {"单引号", "双引号", "反引号"};
+    int num_quote = sizeof(quote_tests) / sizeof(quote_tests[0]);
+    for (int i = 0; i < num_quote; i++) {
+        printf("  %s: %s\n", quote_names[i], quote_tests[i]);
+        csv_config_t config = csv_default_config();
+        config.quote = quotes[i];
+        csv_error_t error;
+        csv_row_t *row = csv_parse_line(quote_tests[i], &config, &error);
+        if (row) {
+            print_row(row);
+            csv_row_free(row);
+        } else {
+            printf("  解析失败，错误码: %d\n", error);
+        }
+    }
+}
+
 // 演示 7: 应用场景
 static void demo_use_cases(void) {
     printf("\n=== 演示 7: 应用场景 ===\n");
@@ -306,6 +716,13 @@ int main(void) {
     demo_file_read();
     demo_config();
     demo_errors();
+    demo_edge_cases();
+    demo_data_integrity();
+    demo_performance();
+    demo_edge_cases_extended();
+    demo_error_cases_extended();
+    demo_performance_extended();
+    demo_compatibility();
     demo_use_cases();
     demo_best_practices();
 
