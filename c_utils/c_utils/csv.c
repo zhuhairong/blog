@@ -109,21 +109,20 @@ csv_row_t* csv_parse_line(const char *line, const csv_config_t *config, csv_erro
             // 普通字段
             const char *delim = strchr(p, cfg.delimiter);
             const char *newline = strchr(p, '\n');
+            const char *carriage = strchr(p, '\r');
             
             const char *end = delim;
             if (!end || (newline && newline < end)) {
                 end = newline;
+            }
+            if (!end || (carriage && carriage < end)) {
+                end = carriage;
             }
             if (!end) {
                 end = p + strlen(p);
             }
             
             len = end - p;
-            
-            // 去除尾部换行符
-            if (len > 0 && p[len-1] == '\r') {
-                len--;
-            }
             
             row->fields[row->count] = malloc(len + 1);
             if (!row->fields[row->count]) {
@@ -136,7 +135,11 @@ csv_row_t* csv_parse_line(const char *line, const csv_config_t *config, csv_erro
             row->count++;
             
             p = end;
-            if (*p == cfg.delimiter) p++;
+            if (*p == cfg.delimiter) {
+                p++;
+            } else if (*p == '\r' || *p == '\n') {
+                break;
+            }
         }
     }
     
