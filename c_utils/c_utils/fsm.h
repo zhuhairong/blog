@@ -25,8 +25,16 @@ typedef void (*fsm_action_t)(void *data, fsm_event_t event);
 // FSM 转换条件回调
 typedef bool (*fsm_guard_t)(void *data, fsm_event_t event);
 
-// FSM 状态转换
+// FSM 选项
 typedef struct {
+    bool auto_start;
+    bool enable_guard;
+    bool enable_error_handling;
+    bool enable_nested_states;
+} fsm_options_t;
+
+// FSM 状态转换
+typedef struct fsm_transition_s {
     int from_state;
     fsm_event_t event;
     int to_state;
@@ -36,7 +44,7 @@ typedef struct {
 } fsm_transition_s;
 
 // FSM 状态
-typedef struct {
+typedef struct fsm_state_s {
     int state_id;
     fsm_action_t on_enter;
     fsm_action_t on_exit;
@@ -58,15 +66,8 @@ typedef struct fsm_s {
     fsm_error_t error;
     char error_msg[256];
     struct fsm_s *parent;
+    fsm_options_t options;
 } fsm_t;
-
-// FSM 选项
-typedef struct {
-    bool auto_start;
-    bool enable_guard;
-    bool enable_error_handling;
-    bool enable_nested_states;
-} fsm_options_t;
 
 // 默认 FSM 选项
 // 返回: 默认选项

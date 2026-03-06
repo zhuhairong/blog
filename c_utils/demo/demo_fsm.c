@@ -59,13 +59,13 @@ static const char* event_name(int event) {
 // 进入状态回调
 static void on_enter(void *data, fsm_event_t event) {
     fsm_t *fsm = (fsm_t*)data;
-    printf("  -> 进入状态: %s\n", state_name(fsm->current_state));
+    printf("  -> 进入状态: %s\n", state_name(fsm_current_state(fsm)));
 }
 
 // 退出状态回调
 static void on_exit(void *data, fsm_event_t event) {
     fsm_t *fsm = (fsm_t*)data;
-    printf("  <- 退出状态: %s\n", state_name(fsm->current_state));
+    printf("  <- 退出状态: %s\n", state_name(fsm_current_state(fsm)));
 }
 
 // 事件处理回调
@@ -147,28 +147,28 @@ static void demo_transitions(void) {
     
     // 启动状态机
     fsm_start(fsm, &error);
-    printf("初始状态: %s\n\n", state_name(fsm->current_state));
+    printf("初始状态: %s\n\n", state_name(fsm_current_state(fsm)));
     
     // 模拟状态转换
     printf("事件: START\n");
     fsm_handle_event(fsm, EVENT_START, &error);
-    printf("当前状态: %s\n\n", state_name(fsm->current_state));
+    printf("当前状态: %s\n\n", state_name(fsm_current_state(fsm)));
     
     printf("事件: PAUSE\n");
     fsm_handle_event(fsm, EVENT_PAUSE, &error);
-    printf("当前状态: %s\n\n", state_name(fsm->current_state));
+    printf("当前状态: %s\n\n", state_name(fsm_current_state(fsm)));
     
     printf("事件: RESUME\n");
     fsm_handle_event(fsm, EVENT_RESUME, &error);
-    printf("当前状态: %s\n\n", state_name(fsm->current_state));
+    printf("当前状态: %s\n\n", state_name(fsm_current_state(fsm)));
     
     printf("事件: STOP\n");
     fsm_handle_event(fsm, EVENT_STOP, &error);
-    printf("当前状态: %s\n\n", state_name(fsm->current_state));
+    printf("当前状态: %s\n\n", state_name(fsm_current_state(fsm)));
     
     printf("事件: RESET\n");
     fsm_handle_event(fsm, EVENT_RESET, &error);
-    printf("当前状态: %s\n\n", state_name(fsm->current_state));
+    printf("当前状态: %s\n\n", state_name(fsm_current_state(fsm)));
     
     fsm_free(fsm);
 }
@@ -255,9 +255,9 @@ static void demo_guards_and_actions(void) {
         error = FSM_OK;
         fsm_handle_event(fsm, EVENT_START, &error);
         printf("结果: %s, 错误码: %d\n", 
-               (fsm->current_state == STATE_RUNNING) ? "成功" : "失败", error);
+               (fsm_current_state(fsm) == STATE_RUNNING) ? "成功" : "失败", error);
         
-        if (fsm->current_state == STATE_RUNNING) {
+        if (fsm_current_state(fsm) == STATE_RUNNING) {
             // 重置状态
             fsm_stop(fsm, &error);
             fsm_set_initial_state(fsm, STATE_IDLE, &error);
