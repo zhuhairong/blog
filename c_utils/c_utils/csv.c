@@ -2,6 +2,23 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+#include <ctype.h>
+
+// 修剪字符串两端的空白字符
+static char* trim_string(char *str) {
+    if (!str) return NULL;
+    
+    char *end;
+    while (isspace((unsigned char)*str)) str++;
+    
+    if (*str == 0) return str;
+    
+    end = str + strlen(str) - 1;
+    while (end > str && isspace((unsigned char)*end)) end--;
+    
+    end[1] = '\0';
+    return str;
+}
 
 // 默认CSV配置
 csv_config_t csv_default_config(void) {
@@ -132,6 +149,14 @@ csv_row_t* csv_parse_line(const char *line, const csv_config_t *config, csv_erro
             }
             memcpy(row->fields[row->count], p, len);
             row->fields[row->count][len] = '\0';
+            
+            if (cfg.trim_whitespace) {
+                char *trimmed = trim_string(row->fields[row->count]);
+                if (trimmed != row->fields[row->count]) {
+                    memmove(row->fields[row->count], trimmed, strlen(trimmed) + 1);
+                }
+            }
+            
             row->count++;
             
             p = end;
@@ -253,6 +278,8 @@ bool csv_save(const csv_t *csv, const char *filepath, csv_error_t *error) {
             if (j > 0) fputc(csv->config.delimiter, fp);
             
             const char *field = csv->data[i][j];
+            if (!field) field = "";
+            
             bool needs_quote = false;
             
             // 检查是否需要引号
@@ -398,6 +425,11 @@ const char* csv_get(const csv_t *csv, size_t row, size_t col, csv_error_t *error
     return csv_get_cell(csv, row, col, error);
 }
 
+// 兼容函数 - 设置单元格（别名）
+bool csv_set(csv_t *csv, size_t row, size_t col, const char *value, csv_error_t *error) {
+    return csv_set_cell(csv, row, col, value, error);
+}
+
 // 兼容函数 - 获取行数（别名）
 size_t csv_get_rows(const csv_t *csv) {
     return csv_row_count(csv);
@@ -406,6 +438,20 @@ size_t csv_get_rows(const csv_t *csv) {
 // 兼容函数 - 获取列数（别名）
 size_t csv_get_cols(const csv_t *csv) {
     return csv_col_count(csv);
+}
+
+// 检查 CSV 表格是否有错误
+bool csv_has_error(const csv_t *csv, csv_error_t *error, const char **error_msg) {
+    if (!csv) {
+        if (error) *error = CSV_ERROR_INVALID_PARAM;
+        if (error_msg) *error_msg = "NULL CSV object";
+        return true;
+    }
+    
+    if (error) *error = csv->error;
+    if (error_msg) *error_msg = csv->error_msg;
+    
+    return csv->has_error;
 }
 
 // 获取错误信息
