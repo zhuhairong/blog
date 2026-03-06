@@ -6,6 +6,7 @@
  * - 配置文件加载和保存
  * - 键值对读写
  * - 数据类型转换
+ * - INI 和 JSON 格式支持
  */
 
 #include <stdio.h>
@@ -14,7 +15,6 @@
 #include <time.h>
 #include "../c_utils/config.h"
 
-// 演示 1: 基本配置操作
 static void demo_basic_operations(void) {
     printf("\n=== 演示 1: 基本配置操作 ===\n");
 
@@ -24,14 +24,12 @@ static void demo_basic_operations(void) {
         return;
     }
 
-    // 设置配置值
     config_set_string(cfg, "app", "name", "MyApplication");
     config_set_string(cfg, "app", "version", "1.0.0");
     config_set_int(cfg, "app", "port", 8080);
     config_set_bool(cfg, "app", "debug", true);
     config_set_double(cfg, "app", "timeout", 30.5);
 
-    // 读取配置值
     printf("配置值:\n");
     printf("  app.name = %s\n", config_get_string(cfg, "app", "name", "unknown"));
     printf("  app.version = %s\n", config_get_string(cfg, "app", "version", "unknown"));
@@ -39,7 +37,6 @@ static void demo_basic_operations(void) {
     printf("  app.debug = %s\n", config_get_bool(cfg, "app", "debug", false) ? "true" : "false");
     printf("  app.timeout = %.2f\n", config_get_double(cfg, "app", "timeout", 0.0));
 
-    // 不存在的键
     printf("\n不存在的键:\n");
     printf("  app.missing = %s (默认值)\n",
            config_get_string(cfg, "app", "missing", "default_value"));
@@ -47,30 +44,24 @@ static void demo_basic_operations(void) {
     config_free(cfg);
 }
 
-// 演示 2: 数据类型
 static void demo_data_types(void) {
     printf("\n=== 演示 2: 数据类型 ===\n");
 
     config_t* cfg = config_create();
     if (!cfg) return;
 
-    // 字符串
     config_set_string(cfg, NULL, "title", "My Application");
     printf("字符串: %s\n", config_get_string(cfg, NULL, "title", ""));
 
-    // 整数
     config_set_int(cfg, NULL, "count", 42);
     printf("整数: %d\n", config_get_int(cfg, NULL, "count", 0));
 
-    // 浮点数
     config_set_double(cfg, NULL, "pi", 3.14159);
     printf("浮点数: %.5f\n", config_get_double(cfg, NULL, "pi", 0.0));
 
-    // 布尔值
     config_set_bool(cfg, NULL, "enabled", true);
     printf("布尔值: %s\n", config_get_bool(cfg, NULL, "enabled", false) ? "true" : "false");
 
-    // 修改值
     printf("\n修改后的值:\n");
     config_set_int(cfg, NULL, "count", 100);
     printf("count = %d\n", config_get_int(cfg, NULL, "count", 0));
@@ -78,25 +69,21 @@ static void demo_data_types(void) {
     config_free(cfg);
 }
 
-// 演示 3: 多节配置
 static void demo_sections(void) {
     printf("\n=== 演示 3: 多节配置 ===\n");
 
     config_t* cfg = config_create();
     if (!cfg) return;
 
-    // 数据库配置
     config_set_string(cfg, "database", "host", "localhost");
     config_set_int(cfg, "database", "port", 3306);
     config_set_string(cfg, "database", "name", "mydb");
     config_set_string(cfg, "database", "user", "admin");
 
-    // 日志配置
     config_set_string(cfg, "log", "level", "info");
     config_set_string(cfg, "log", "file", "/var/log/app.log");
     config_set_bool(cfg, "log", "console", true);
 
-    // 缓存配置
     config_set_string(cfg, "cache", "type", "redis");
     config_set_int(cfg, "cache", "ttl", 3600);
     config_set_int(cfg, "cache", "size", 1000);
@@ -119,11 +106,9 @@ static void demo_sections(void) {
     config_free(cfg);
 }
 
-// 演示 4: 配置文件加载和保存
 static void demo_file_operations(void) {
     printf("\n=== 演示 4: 配置文件加载和保存 ===\n");
 
-    // 创建配置
     config_t* cfg = config_create();
     if (!cfg) return;
 
@@ -132,7 +117,6 @@ static void demo_file_operations(void) {
     config_set_string(cfg, "database", "url", "postgres://localhost/mydb");
     config_set_int(cfg, "database", "pool_size", 10);
 
-    // 保存到文件
     const char* filename = "/tmp/demo_config.ini";
     config_error_t error;
     
@@ -140,12 +124,11 @@ static void demo_file_operations(void) {
     if (config_save(cfg, filename, CONFIG_FORMAT_INI, &error)) {
         printf("  保存成功\n");
     } else {
-        printf("  保存失败: 错误码 %d\n", error);
+        printf("  保存失败: %s\n", config_strerror(error));
     }
 
     config_free(cfg);
 
-    // 从文件加载
     printf("\n从文件加载配置...\n");
     cfg = config_load(filename, CONFIG_FORMAT_INI, &error);
     
@@ -157,94 +140,188 @@ static void demo_file_operations(void) {
         printf("  database.pool_size = %d\n", config_get_int(cfg, "database", "pool_size", 0));
         config_free(cfg);
     } else {
-        printf("  加载失败: 错误码 %d\n", error);
+        printf("  加载失败: %s\n", config_strerror(error));
     }
 }
 
-// 演示 5: 错误处理
-static void demo_error_handling(void) {
-    printf("\n=== 演示 5: 错误处理 ===\n");
-
-    printf("错误码说明:\n");
-    printf("  CONFIG_OK (%d): 成功\n", CONFIG_OK);
-    printf("  CONFIG_ERROR_FILE_OPEN (%d): 文件打开失败\n", CONFIG_ERROR_FILE_OPEN);
-    printf("  CONFIG_ERROR_FILE_READ (%d): 文件读取失败\n", CONFIG_ERROR_FILE_READ);
-    printf("  CONFIG_ERROR_FILE_WRITE (%d): 文件写入失败\n", CONFIG_ERROR_FILE_WRITE);
-    printf("  CONFIG_ERROR_PARSE (%d): 解析错误\n", CONFIG_ERROR_PARSE);
-    printf("  CONFIG_ERROR_MEMORY_ALLOC (%d): 内存分配失败\n", CONFIG_ERROR_MEMORY_ALLOC);
-
-    // 测试加载不存在的文件
-    printf("\n测试加载不存在的文件:\n");
-    config_error_t error;
-    config_t* cfg = config_load("/nonexistent/file.ini", CONFIG_FORMAT_INI, &error);
-    if (!cfg) {
-        printf("  预期中的失败，错误码: %d\n", error);
-    }
-}
-
-// 演示 6: 配置文件格式
-static void demo_formats(void) {
-    printf("\n=== 演示 6: 配置文件格式 ===\n");
-
-    printf("支持的格式:\n");
-    printf("  CONFIG_FORMAT_INI (0): INI 格式\n");
-    printf("  CONFIG_FORMAT_JSON (1): JSON 格式\n");
-    printf("  CONFIG_FORMAT_YAML (2): YAML 格式\n");
-    printf("  CONFIG_FORMAT_AUTO (3): 自动检测\n");
-
-    printf("\nINI 格式示例:\n");
-    printf("  [database]\n");
-    printf("  host = localhost\n");
-    printf("  port = 3306\n");
-    printf("  name = mydb\n\n");
-    printf("  [log]\n");
-    printf("  level = info\n");
-    printf("  file = app.log\n");
-}
-
-// 演示 7: 应用场景
-static void demo_use_cases(void) {
-    printf("\n=== 演示 7: 应用场景 ===\n");
+static void demo_json_format(void) {
+    printf("\n=== 演示 5: JSON 格式支持 ===\n");
 
     config_t* cfg = config_create();
     if (!cfg) return;
 
-    // 模拟应用配置
+    config_set_string(cfg, "app", "name", "JSON Demo");
+    config_set_string(cfg, "app", "version", "2.0.0");
+    config_set_int(cfg, "app", "port", 9000);
+    config_set_bool(cfg, "app", "debug", false);
+    
+    config_set_string(cfg, "", "title", "Global Setting");
+    config_set_int(cfg, "", "max_connections", 100);
+    config_set_bool(cfg, "", "enabled", true);
+
+    const char* filename = "/tmp/demo_config.json";
+    config_error_t error;
+    
+    printf("保存 JSON 配置到 %s...\n", filename);
+    if (config_save(cfg, filename, CONFIG_FORMAT_JSON, &error)) {
+        printf("  保存成功\n");
+        
+        printf("\nJSON 文件内容:\n");
+        FILE* fp = fopen(filename, "r");
+        if (fp) {
+            char line[256];
+            while (fgets(line, sizeof(line), fp)) {
+                printf("  %s", line);
+            }
+            fclose(fp);
+            printf("\n");
+        }
+    } else {
+        printf("  保存失败: %s\n", config_strerror(error));
+    }
+
+    config_free(cfg);
+
+    printf("\n从 JSON 文件加载配置...\n");
+    cfg = config_load(filename, CONFIG_FORMAT_JSON, &error);
+    
+    if (cfg) {
+        printf("  加载成功\n");
+        printf("  app.name = %s\n", config_get_string(cfg, "app", "name", ""));
+        printf("  app.version = %s\n", config_get_string(cfg, "app", "version", ""));
+        printf("  app.port = %d\n", config_get_int(cfg, "app", "port", 0));
+        printf("  title = %s\n", config_get_string(cfg, "", "title", ""));
+        printf("  max_connections = %d\n", config_get_int(cfg, "", "max_connections", 0));
+        printf("  enabled = %s\n", config_get_bool(cfg, "", "enabled", false) ? "true" : "false");
+        config_free(cfg);
+    } else {
+        printf("  加载失败: %s\n", config_strerror(error));
+    }
+}
+
+static void demo_auto_format(void) {
+    printf("\n=== 演示 6: 自动格式检测 ===\n");
+
+    printf("创建测试文件...\n");
+    
+    config_t* cfg = config_create();
+    if (!cfg) return;
+    
+    config_set_string(cfg, "test", "key", "value");
+    config_set_int(cfg, "test", "number", 42);
+    
+    config_error_t error;
+    config_save(cfg, "/tmp/auto_test.ini", CONFIG_FORMAT_INI, &error);
+    config_save(cfg, "/tmp/auto_test.json", CONFIG_FORMAT_JSON, &error);
+    config_free(cfg);
+    
+    printf("\n自动检测 INI 文件:\n");
+    cfg = config_load("/tmp/auto_test.ini", CONFIG_FORMAT_AUTO, &error);
+    if (cfg) {
+        printf("  成功加载 INI: test.key = %s\n", config_get_string(cfg, "test", "key", ""));
+        config_free(cfg);
+    }
+    
+    printf("\n自动检测 JSON 文件:\n");
+    cfg = config_load("/tmp/auto_test.json", CONFIG_FORMAT_AUTO, &error);
+    if (cfg) {
+        printf("  成功加载 JSON: test.key = %s\n", config_get_string(cfg, "test", "key", ""));
+        config_free(cfg);
+    }
+}
+
+static void demo_error_handling(void) {
+    printf("\n=== 演示 7: 错误处理 ===\n");
+
+    printf("错误码说明:\n");
+    printf("  CONFIG_OK (%d): %s\n", CONFIG_OK, config_strerror(CONFIG_OK));
+    printf("  CONFIG_ERROR_FILE_OPEN (%d): %s\n", CONFIG_ERROR_FILE_OPEN, config_strerror(CONFIG_ERROR_FILE_OPEN));
+    printf("  CONFIG_ERROR_FILE_READ (%d): %s\n", CONFIG_ERROR_FILE_READ, config_strerror(CONFIG_ERROR_FILE_READ));
+    printf("  CONFIG_ERROR_FILE_WRITE (%d): %s\n", CONFIG_ERROR_FILE_WRITE, config_strerror(CONFIG_ERROR_FILE_WRITE));
+    printf("  CONFIG_ERROR_PARSE (%d): %s\n", CONFIG_ERROR_PARSE, config_strerror(CONFIG_ERROR_PARSE));
+    printf("  CONFIG_ERROR_MEMORY_ALLOC (%d): %s\n", CONFIG_ERROR_MEMORY_ALLOC, config_strerror(CONFIG_ERROR_MEMORY_ALLOC));
+    printf("  CONFIG_ERROR_UNSUPPORTED_FORMAT (%d): %s\n", CONFIG_ERROR_UNSUPPORTED_FORMAT, config_strerror(CONFIG_ERROR_UNSUPPORTED_FORMAT));
+
+    printf("\n测试加载不存在的文件:\n");
+    config_error_t error;
+    config_t* cfg = config_load("/nonexistent/file.ini", CONFIG_FORMAT_INI, &error);
+    if (!cfg) {
+        printf("  预期中的失败，错误: %s\n", config_strerror(error));
+    }
+    
+    printf("\n测试 YAML 格式 (未实现):\n");
+    cfg = config_load("/tmp/test.yaml", CONFIG_FORMAT_YAML, &error);
+    if (!cfg) {
+        printf("  预期中的失败，错误: %s\n", config_strerror(error));
+    }
+}
+
+static void demo_sections_keys(void) {
+    printf("\n=== 演示 8: 节和键操作 ===\n");
+
+    config_t* cfg = config_create();
+    if (!cfg) return;
+
+    config_set_string(cfg, "database", "host", "localhost");
+    config_set_string(cfg, "database", "port", "3306");
+    config_set_string(cfg, "database", "name", "mydb");
+    
     config_set_string(cfg, "server", "host", "0.0.0.0");
-    config_set_int(cfg, "server", "port", 8080);
-    config_set_int(cfg, "server", "workers", 4);
+    config_set_string(cfg, "server", "port", "8080");
+    
+    config_set_string(cfg, "", "global_key", "global_value");
 
-    config_set_string(cfg, "database", "url", "postgres://localhost/mydb");
-    config_set_int(cfg, "database", "pool_size", 10);
-    config_set_double(cfg, "database", "timeout", 30.0);
-
-    config_set_string(cfg, "security", "jwt_secret", "my-secret-key");
-    config_set_int(cfg, "security", "jwt_expiry", 3600);
-    config_set_bool(cfg, "security", "ssl_enabled", true);
-
-    printf("应用配置:\n\n");
-
-    printf("服务器:\n");
-    printf("  Host: %s\n", config_get_string(cfg, "server", "host", ""));
-    printf("  Port: %d\n", config_get_int(cfg, "server", "port", 0));
-    printf("  Workers: %d\n", config_get_int(cfg, "server", "workers", 0));
-
-    printf("\n数据库:\n");
-    printf("  URL: %s\n", config_get_string(cfg, "database", "url", ""));
-    printf("  Pool Size: %d\n", config_get_int(cfg, "database", "pool_size", 0));
-    printf("  Timeout: %.1f秒\n", config_get_double(cfg, "database", "timeout", 0.0));
-
-    printf("\n安全:\n");
-    printf("  JWT Secret: %s\n", config_get_string(cfg, "security", "jwt_secret", ""));
-    printf("  JWT Expiry: %d秒\n", config_get_int(cfg, "security", "jwt_expiry", 0));
-    printf("  SSL Enabled: %s\n", config_get_bool(cfg, "security", "ssl_enabled", false) ? "是" : "否");
+    size_t section_count;
+    char** sections = config_get_sections(cfg, &section_count);
+    
+    printf("所有节 (%zu 个):\n", section_count);
+    for (size_t i = 0; i < section_count; i++) {
+        printf("  [%s]\n", sections[i]);
+        
+        size_t key_count;
+        char** keys = config_get_keys(cfg, sections[i], &key_count);
+        for (size_t j = 0; j < key_count; j++) {
+            const char* val = config_get_string(cfg, sections[i], keys[j], "");
+            printf("    %s = %s\n", keys[j], val);
+        }
+        config_free_keys(keys, key_count);
+    }
+    config_free_sections(sections, section_count);
 
     config_free(cfg);
 }
 
-// 演示 8: 性能测试
+static void demo_delete_clear(void) {
+    printf("\n=== 演示 9: 删除和清除操作 ===\n");
+
+    config_t* cfg = config_create();
+    if (!cfg) return;
+
+    config_set_string(cfg, "sec", "key1", "value1");
+    config_set_string(cfg, "sec", "key2", "value2");
+    config_set_string(cfg, "sec", "key3", "value3");
+    
+    printf("初始配置项数量: %zu\n", config_count(cfg));
+    
+    printf("\n删除 key1...\n");
+    if (config_delete(cfg, "sec", "key1")) {
+        printf("  删除成功\n");
+        printf("  当前配置项数量: %zu\n", config_count(cfg));
+    }
+    
+    printf("\n检查键是否存在:\n");
+    printf("  key1 存在: %s\n", config_exists(cfg, "sec", "key1") ? "是" : "否");
+    printf("  key2 存在: %s\n", config_exists(cfg, "sec", "key2") ? "是" : "否");
+    
+    printf("\n清除所有配置...\n");
+    config_clear(cfg);
+    printf("  清除后配置项数量: %zu\n", config_count(cfg));
+
+    config_free(cfg);
+}
+
 static void demo_performance(void) {
-    printf("\n=== 演示 8: 性能测试 ===\n");
+    printf("\n=== 演示 10: 性能测试 ===\n");
 
     config_t* cfg = config_create();
     if (!cfg) return;
@@ -288,38 +365,8 @@ static void demo_performance(void) {
     config_free(cfg);
 }
 
-// 演示 9: 配置继承和覆盖
-static void demo_inheritance(void) {
-    printf("\n=== 演示 9: 配置继承和覆盖 ===\n");
-
-    config_t* cfg = config_create();
-    if (!cfg) return;
-
-    // 默认配置
-    config_set_string(cfg, "default", "theme", "light");
-    config_set_int(cfg, "default", "font_size", 14);
-    config_set_string(cfg, "default", "language", "en");
-
-    // 用户配置（覆盖默认值）
-    config_set_string(cfg, "user", "theme", "dark");
-    config_set_int(cfg, "user", "font_size", 16);
-
-    printf("默认配置:\n");
-    printf("  theme = %s\n", config_get_string(cfg, "default", "theme", ""));
-    printf("  font_size = %d\n", config_get_int(cfg, "default", "font_size", 0));
-    printf("  language = %s\n", config_get_string(cfg, "default", "language", ""));
-
-    printf("\n用户配置:\n");
-    printf("  theme = %s\n", config_get_string(cfg, "user", "theme", ""));
-    printf("  font_size = %d\n", config_get_int(cfg, "user", "font_size", 0));
-    printf("  language = %s (继承默认值)\n", config_get_string(cfg, "default", "language", ""));
-
-    config_free(cfg);
-}
-
-// 演示 10: 最佳实践
 static void demo_best_practices(void) {
-    printf("\n=== 演示 10: 最佳实践 ===\n");
+    printf("\n=== 演示 11: 最佳实践 ===\n");
 
     printf("配置管理最佳实践:\n\n");
 
@@ -342,7 +389,12 @@ static void demo_best_practices(void) {
     printf("4. 文档:\n");
     printf("   - 每个配置项的用途\n");
     printf("   - 有效值范围\n");
-    printf("   - 示例配置\n");
+    printf("   - 示例配置\n\n");
+    
+    printf("5. 格式选择:\n");
+    printf("   - INI: 简单配置，易于手动编辑\n");
+    printf("   - JSON: 结构化配置，支持嵌套\n");
+    printf("   - 使用 CONFIG_FORMAT_AUTO 自动检测\n");
 }
 
 int main(void) {
@@ -354,11 +406,12 @@ int main(void) {
     demo_data_types();
     demo_sections();
     demo_file_operations();
+    demo_json_format();
+    demo_auto_format();
     demo_error_handling();
-    demo_formats();
-    demo_use_cases();
+    demo_sections_keys();
+    demo_delete_clear();
     demo_performance();
-    demo_inheritance();
     demo_best_practices();
 
     printf("\n========================================\n");

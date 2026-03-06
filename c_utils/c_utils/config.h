@@ -123,6 +123,13 @@ bool config_set_bool(config_t *cfg, const char *section, const char *key, bool v
 // 返回: 成功返回 true，失败返回 false
 bool config_delete(config_t *cfg, const char *section, const char *key);
 
+// 删除配置项（config_delete 的别名）
+// cfg: 配置
+// section: 节名（可为 NULL 表示默认节）
+// key: 键名
+// 返回: 成功返回 true，失败返回 false
+bool config_remove(config_t *cfg, const char *section, const char *key);
+
 // 检查配置项是否存在
 // cfg: 配置
 // section: 节名（可为 NULL 表示默认节）
@@ -130,9 +137,48 @@ bool config_delete(config_t *cfg, const char *section, const char *key);
 // 返回: 存在返回 true，不存在返回 false
 bool config_exists(const config_t *cfg, const char *section, const char *key);
 
+// 检查配置项是否存在（config_exists 的别名）
+// cfg: 配置
+// section: 节名（可为 NULL 表示默认节）
+// key: 键名
+// 返回: 存在返回 true，不存在返回 false
+bool config_has_key(const config_t *cfg, const char *section, const char *key);
+
 // 获取错误信息
 // error: 错误码
 // 返回: 错误信息字符串
 const char* config_strerror(config_error_t error);
+
+// 获取所有节名
+// cfg: 配置
+// count: 节数量（输出参数）
+// 返回: 节名数组，需调用 config_free_sections 释放
+char** config_get_sections(const config_t *cfg, size_t *count);
+
+// 释放节名列表
+// sections: 节名数组
+// count: 节数量
+void config_free_sections(char **sections, size_t count);
+
+// 获取指定节的所有键
+// cfg: 配置
+// section: 节名（可为 NULL 表示默认节）
+// count: 键数量（输出参数）
+// 返回: 键名数组，需调用 config_free_keys 释放
+char** config_get_keys(const config_t *cfg, const char *section, size_t *count);
+
+// 释放键列表
+// keys: 键名数组
+// count: 键数量
+void config_free_keys(char **keys, size_t count);
+
+// 清除所有配置
+// cfg: 配置
+void config_clear(config_t *cfg);
+
+// 获取配置项数量
+// cfg: 配置
+// 返回: 配置项数量
+size_t config_count(const config_t *cfg);
 
 #endif // C_UTILS_CONFIG_H

@@ -4,6 +4,9 @@
 #include <string.h>
 #include <ctype.h>
 
+#define MAX_LINE_SIZE 4096
+#define MAX_SECTION_SIZE 256
+
 typedef struct {
     char *section;
     char *key;
@@ -25,42 +28,54 @@ static char* trim(char *s) {
     return s;
 }
 
+static char* trim_copy(const char *s) {
+    while (isspace((unsigned char)*s)) s++;
+    size_t len = strlen(s);
+    if (len == 0) return strdup("");
+    
+    const char *end = s + len - 1;
+    while (end > s && isspace((unsigned char)*end)) end--;
+    size_t trimmed_len = end - s + 1;
+    
+    char *result = malloc(trimmed_len + 1);
+    if (result) {
+        memcpy(result, s, trimmed_len);
+        result[trimmed_len] = '\0';
+    }
+    return result;
+}
+
 // 创建配置
 config_t* config_create(void) {
     config_t *cfg = calloc(1, sizeof(config_t));
     return cfg;
 }
 
-// 从文件加载配置
-config_t* config_load(const char *filename, config_format_t format, config_error_t *error) {
-    if (!filename) {
-        if (error) *error = CONFIG_ERROR_FILE_OPEN;
-        return NULL;
-    }
-
-    FILE *fp = fopen(filename, "r");
-    if (!fp) {
-        if (error) *error = CONFIG_ERROR_FILE_OPEN;
-        return NULL;
-    }
-
+static config_t* config_load_ini(FILE *fp, config_error_t *error) {
     config_t *cfg = calloc(1, sizeof(config_t));
     if (!cfg) {
-        fclose(fp);
         if (error) *error = CONFIG_ERROR_MEMORY_ALLOC;
         return NULL;
     }
 
-    char line[256];
-    char current_section[64] = "";
+    char *line = malloc(MAX_LINE_SIZE);
+    char *current_section = calloc(1, MAX_SECTION_SIZE);
+    
+    if (!line || !current_section) {
+        free(cfg);
+        free(line);
+        free(current_section);
+        if (error) *error = CONFIG_ERROR_MEMORY_ALLOC;
+        return NULL;
+    }
 
-    while (fgets(line, sizeof(line), fp)) {
+    while (fgets(line, MAX_LINE_SIZE, fp)) {
         char *t = trim(line);
         if (*t == ';' || *t == '#' || *t == '\0') continue;
 
         if (*t == '[' && t[strlen(t)-1] == ']') {
             size_t len = strlen(t);
-            if (len > 2) {
+            if (len > 2 && len - 2 < MAX_SECTION_SIZE) {
                 strncpy(current_section, t + 1, len - 2);
                 current_section[len - 2] = '\0';
             }
@@ -73,7 +88,8 @@ config_t* config_load(const char *filename, config_format_t format, config_error
                     config_entry_t *new_entries = realloc(cfg->entries, sizeof(config_entry_t) * new_capacity);
                     if (!new_entries) {
                         config_free(cfg);
-                        fclose(fp);
+                        free(line);
+                        free(current_section);
                         if (error) *error = CONFIG_ERROR_MEMORY_ALLOC;
                         return NULL;
                     }
@@ -87,13 +103,304 @@ config_t* config_load(const char *filename, config_format_t format, config_error
             }
         }
     }
-    fclose(fp);
+    
+    free(line);
+    free(current_section);
     
     if (error) *error = CONFIG_OK;
     return cfg;
 }
 
-// 保存配置到文件
+static bool config_save_ini(const config_t *cfg, FILE *fp) {
+    char current_section[MAX_SECTION_SIZE] = "";
+    
+    for (size_t i = 0; i < cfg->count; i++) {
+        if (strcmp(cfg->entries[i].section, current_section) != 0) {
+            strncpy(current_section, cfg->entries[i].section, MAX_SECTION_SIZE - 1);
+            current_section[MAX_SECTION_SIZE - 1] = '\0';
+            if (strlen(current_section) > 0) {
+                fprintf(fp, "[%s]\n", current_section);
+            }
+        }
+        fprintf(fp, "%s=%s\n", cfg->entries[i].key, cfg->entries[i].value);
+    }
+    return true;
+}
+
+static config_t* config_load_json(FILE *fp, config_error_t *error) {
+    config_t *cfg = calloc(1, sizeof(config_t));
+    if (!cfg) {
+        if (error) *error = CONFIG_ERROR_MEMORY_ALLOC;
+        return NULL;
+    }
+
+    fseek(fp, 0, SEEK_END);
+    long file_size = ftell(fp);
+    fseek(fp, 0, SEEK_SET);
+    
+    char *content = malloc(file_size + 1);
+    if (!content) {
+        config_free(cfg);
+        if (error) *error = CONFIG_ERROR_MEMORY_ALLOC;
+        return NULL;
+    }
+    
+    size_t read_size = fread(content, 1, file_size, fp);
+    content[read_size] = '\0';
+    
+    char *p = content;
+    char current_section[MAX_SECTION_SIZE] = "";
+    char key[256];
+    char value[4096];
+    int brace_depth = 0;
+    
+    while (*p) {
+        if (*p == '{') {
+            brace_depth++;
+            p++;
+        } else if (*p == '}') {
+            brace_depth--;
+            if (brace_depth == 1) {
+                current_section[0] = '\0';
+            }
+            p++;
+        } else if (*p == '"') {
+            p++;
+            char *key_start = p;
+            while (*p && *p != '"') p++;
+            size_t key_len = p - key_start;
+            if (key_len > 0 && key_len < sizeof(key)) {
+                strncpy(key, key_start, key_len);
+                key[key_len] = '\0';
+            }
+            if (*p == '"') p++;
+            
+            while (*p && (*p == ':' || *p == ' ' || *p == '\t' || *p == '\n' || *p == '\r')) p++;
+            
+            if (*p == '{') {
+                strncpy(current_section, key, MAX_SECTION_SIZE - 1);
+                current_section[MAX_SECTION_SIZE - 1] = '\0';
+                brace_depth++;
+                p++;
+            } else if (*p == '"') {
+                p++;
+                char *val_start = p;
+                while (*p && *p != '"') {
+                    if (*p == '\\' && *(p+1)) p += 2;
+                    else p++;
+                }
+                size_t val_len = p - val_start;
+                if (val_len > 0 && val_len < sizeof(value)) {
+                    strncpy(value, val_start, val_len);
+                    value[val_len] = '\0';
+                }
+                if (*p == '"') p++;
+                
+                if (cfg->count >= cfg->capacity) {
+                    size_t new_capacity = cfg->capacity == 0 ? 16 : cfg->capacity * 2;
+                    config_entry_t *new_entries = realloc(cfg->entries, sizeof(config_entry_t) * new_capacity);
+                    if (!new_entries) {
+                        config_free(cfg);
+                        free(content);
+                        if (error) *error = CONFIG_ERROR_MEMORY_ALLOC;
+                        return NULL;
+                    }
+                    cfg->entries = new_entries;
+                    cfg->capacity = new_capacity;
+                }
+                cfg->entries[cfg->count].section = strdup(current_section);
+                cfg->entries[cfg->count].key = strdup(key);
+                cfg->entries[cfg->count].value = strdup(value);
+                cfg->count++;
+            } else if (*p && (*p == '-' || isdigit((unsigned char)*p))) {
+                char *val_start = p;
+                while (*p && (*p == '-' || *p == '.' || isdigit((unsigned char)*p))) p++;
+                size_t val_len = p - val_start;
+                if (val_len > 0 && val_len < sizeof(value)) {
+                    strncpy(value, val_start, val_len);
+                    value[val_len] = '\0';
+                }
+                
+                if (cfg->count >= cfg->capacity) {
+                    size_t new_capacity = cfg->capacity == 0 ? 16 : cfg->capacity * 2;
+                    config_entry_t *new_entries = realloc(cfg->entries, sizeof(config_entry_t) * new_capacity);
+                    if (!new_entries) {
+                        config_free(cfg);
+                        free(content);
+                        if (error) *error = CONFIG_ERROR_MEMORY_ALLOC;
+                        return NULL;
+                    }
+                    cfg->entries = new_entries;
+                    cfg->capacity = new_capacity;
+                }
+                cfg->entries[cfg->count].section = strdup(current_section);
+                cfg->entries[cfg->count].key = strdup(key);
+                cfg->entries[cfg->count].value = strdup(value);
+                cfg->count++;
+            } else if (strncmp(p, "true", 4) == 0) {
+                if (cfg->count >= cfg->capacity) {
+                    size_t new_capacity = cfg->capacity == 0 ? 16 : cfg->capacity * 2;
+                    config_entry_t *new_entries = realloc(cfg->entries, sizeof(config_entry_t) * new_capacity);
+                    if (!new_entries) {
+                        config_free(cfg);
+                        free(content);
+                        if (error) *error = CONFIG_ERROR_MEMORY_ALLOC;
+                        return NULL;
+                    }
+                    cfg->entries = new_entries;
+                    cfg->capacity = new_capacity;
+                }
+                cfg->entries[cfg->count].section = strdup(current_section);
+                cfg->entries[cfg->count].key = strdup(key);
+                cfg->entries[cfg->count].value = strdup("true");
+                cfg->count++;
+                p += 4;
+            } else if (strncmp(p, "false", 5) == 0) {
+                if (cfg->count >= cfg->capacity) {
+                    size_t new_capacity = cfg->capacity == 0 ? 16 : cfg->capacity * 2;
+                    config_entry_t *new_entries = realloc(cfg->entries, sizeof(config_entry_t) * new_capacity);
+                    if (!new_entries) {
+                        config_free(cfg);
+                        free(content);
+                        if (error) *error = CONFIG_ERROR_MEMORY_ALLOC;
+                        return NULL;
+                    }
+                    cfg->entries = new_entries;
+                    cfg->capacity = new_capacity;
+                }
+                cfg->entries[cfg->count].section = strdup(current_section);
+                cfg->entries[cfg->count].key = strdup(key);
+                cfg->entries[cfg->count].value = strdup("false");
+                cfg->count++;
+                p += 5;
+            }
+        } else {
+            p++;
+        }
+    }
+    
+    free(content);
+    if (error) *error = CONFIG_OK;
+    return cfg;
+}
+
+static bool config_save_json(const config_t *cfg, FILE *fp) {
+    fprintf(fp, "{\n");
+    
+    char **sections = NULL;
+    size_t section_count = 0;
+    
+    for (size_t i = 0; i < cfg->count; i++) {
+        bool found = false;
+        for (size_t j = 0; j < section_count; j++) {
+            if (strcmp(sections[j], cfg->entries[i].section) == 0) {
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            char **new_sections = realloc(sections, sizeof(char*) * (section_count + 1));
+            if (new_sections) {
+                sections = new_sections;
+                sections[section_count] = strdup(cfg->entries[i].section);
+                section_count++;
+            }
+        }
+    }
+    
+    for (size_t s = 0; s < section_count; s++) {
+        const char *sec = sections[s];
+        bool is_default = (strlen(sec) == 0);
+        
+        if (!is_default) {
+            fprintf(fp, "  \"%s\": {\n", sec);
+        }
+        
+        bool first = true;
+        for (size_t i = 0; i < cfg->count; i++) {
+            if (strcmp(cfg->entries[i].section, sec) == 0) {
+                if (!first) fprintf(fp, ",\n");
+                first = false;
+                
+                const char *val = cfg->entries[i].value;
+                bool is_number = (*val == '-' || isdigit((unsigned char)*val));
+                bool is_bool = (strcmp(val, "true") == 0 || strcmp(val, "false") == 0);
+                
+                if (is_default) {
+                    fprintf(fp, "  \"%s\": ", cfg->entries[i].key);
+                } else {
+                    fprintf(fp, "    \"%s\": ", cfg->entries[i].key);
+                }
+                
+                if (is_number || is_bool) {
+                    fprintf(fp, "%s", val);
+                } else {
+                    fprintf(fp, "\"%s\"", val);
+                }
+            }
+        }
+        fprintf(fp, "\n");
+        
+        if (!is_default) {
+            fprintf(fp, "  }%s\n", (s < section_count - 1) ? "," : "");
+        }
+    }
+    
+    fprintf(fp, "}\n");
+    
+    for (size_t i = 0; i < section_count; i++) {
+        free(sections[i]);
+    }
+    free(sections);
+    
+    return true;
+}
+
+static config_format_t detect_format(const char *filename) {
+    const char *ext = strrchr(filename, '.');
+    if (!ext) return CONFIG_FORMAT_INI;
+    
+    if (strcasecmp(ext, ".json") == 0) return CONFIG_FORMAT_JSON;
+    if (strcasecmp(ext, ".yaml") == 0 || strcasecmp(ext, ".yml") == 0) return CONFIG_FORMAT_YAML;
+    return CONFIG_FORMAT_INI;
+}
+
+config_t* config_load(const char *filename, config_format_t format, config_error_t *error) {
+    if (!filename) {
+        if (error) *error = CONFIG_ERROR_FILE_OPEN;
+        return NULL;
+    }
+
+    FILE *fp = fopen(filename, "r");
+    if (!fp) {
+        if (error) *error = CONFIG_ERROR_FILE_OPEN;
+        return NULL;
+    }
+
+    config_t *cfg = NULL;
+    
+    if (format == CONFIG_FORMAT_AUTO) {
+        format = detect_format(filename);
+    }
+    
+    switch (format) {
+        case CONFIG_FORMAT_JSON:
+            cfg = config_load_json(fp, error);
+            break;
+        case CONFIG_FORMAT_YAML:
+            if (error) *error = CONFIG_ERROR_UNSUPPORTED_FORMAT;
+            cfg = NULL;
+            break;
+        case CONFIG_FORMAT_INI:
+        default:
+            cfg = config_load_ini(fp, error);
+            break;
+    }
+    
+    fclose(fp);
+    return cfg;
+}
+
 bool config_save(const config_t *cfg, const char *filename, config_format_t format, config_error_t *error) {
     if (!cfg || !filename) {
         if (error) *error = CONFIG_ERROR_INVALID_KEY;
@@ -106,23 +413,28 @@ bool config_save(const config_t *cfg, const char *filename, config_format_t form
         return false;
     }
 
-    char current_section[64] = "";
+    if (format == CONFIG_FORMAT_AUTO) {
+        format = detect_format(filename);
+    }
     
-    for (size_t i = 0; i < cfg->count; i++) {
-        // 如果节发生变化，输出节名
-        if (strcmp(cfg->entries[i].section, current_section) != 0) {
-            strncpy(current_section, cfg->entries[i].section, sizeof(current_section) - 1);
-            current_section[sizeof(current_section) - 1] = '\0';
-            if (strlen(current_section) > 0) {
-                fprintf(fp, "[%s]\n", current_section);
-            }
-        }
-        fprintf(fp, "%s=%s\n", cfg->entries[i].key, cfg->entries[i].value);
+    bool result = false;
+    switch (format) {
+        case CONFIG_FORMAT_JSON:
+            result = config_save_json(cfg, fp);
+            break;
+        case CONFIG_FORMAT_YAML:
+            if (error) *error = CONFIG_ERROR_UNSUPPORTED_FORMAT;
+            result = false;
+            break;
+        case CONFIG_FORMAT_INI:
+        default:
+            result = config_save_ini(cfg, fp);
+            break;
     }
 
     fclose(fp);
-    if (error) *error = CONFIG_OK;
-    return true;
+    if (error) *error = result ? CONFIG_OK : CONFIG_ERROR_FILE_WRITE;
+    return result;
 }
 
 // 释放配置
@@ -246,7 +558,6 @@ bool config_remove(config_t *cfg, const char *section, const char *key) {
             free(cfg->entries[i].key);
             free(cfg->entries[i].value);
             
-            // 移动后续条目
             for (size_t j = i; j < cfg->count - 1; j++) {
                 cfg->entries[j] = cfg->entries[j + 1];
             }
@@ -255,6 +566,10 @@ bool config_remove(config_t *cfg, const char *section, const char *key) {
         }
     }
     return false;
+}
+
+bool config_delete(config_t *cfg, const char *section, const char *key) {
+    return config_remove(cfg, section, key);
 }
 
 // 检查配置项是否存在
@@ -270,6 +585,10 @@ bool config_has_key(const config_t *cfg, const char *section, const char *key) {
         }
     }
     return false;
+}
+
+bool config_exists(const config_t *cfg, const char *section, const char *key) {
+    return config_has_key(cfg, section, key);
 }
 
 // 获取所有节名
@@ -378,4 +697,12 @@ const char* config_error_string(config_error_t error) {
         case CONFIG_ERROR_UNSUPPORTED_FORMAT: return "Unsupported format";
         default: return "Unknown error";
     }
+}
+
+const char* config_strerror(config_error_t error) {
+    return config_error_string(error);
+}
+
+size_t config_count(const config_t *cfg) {
+    return cfg ? cfg->count : 0;
 }
