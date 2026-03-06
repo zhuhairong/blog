@@ -12,9 +12,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <time.h>
+#include <sys/stat.h>
 #include "../c_utils/fs_utils.h"
 
-// 演示 1: 文件读写
 static void demo_file_io(void) {
     printf("\n=== 演示 1: 文件读写操作 ===\n");
     
@@ -24,7 +25,6 @@ static void demo_file_io(void) {
     const char *test_file = "/tmp/fs_utils_test.txt";
     const char *content = "Hello, FS Utils!\nThis is a test file.\nLine 3.";
     
-    // 写入文件
     printf("写入文件: %s\n", test_file);
     if (fs_write_all(test_file, content, strlen(content), &opts, &error)) {
         printf("  写入成功 (%zu 字节)\n", strlen(content));
@@ -33,7 +33,6 @@ static void demo_file_io(void) {
         return;
     }
     
-    // 读取文件
     printf("\n读取文件:\n");
     size_t size;
     char *data = fs_read_all(test_file, &size, &error);
@@ -46,21 +45,18 @@ static void demo_file_io(void) {
         printf("  读取失败: %d\n", error);
     }
     
-    // 检查文件存在性
     printf("\n检查文件存在性:\n");
     printf("  %s: %s\n", test_file, 
            fs_exists(test_file, &error) ? "存在" : "不存在");
     printf("  /nonexistent/file.txt: %s\n", 
            fs_exists("/nonexistent/file.txt", &error) ? "存在" : "不存在");
     
-    // 获取文件大小
     printf("\n获取文件大小:\n");
     long file_size = fs_file_size(test_file, &error);
     if (file_size >= 0) {
         printf("  %s: %ld 字节\n", test_file, file_size);
     }
     
-    // 获取文件扩展名
     printf("\n获取文件扩展名:\n");
     const char *ext = fs_extname(test_file, &error);
     if (ext) {
@@ -73,80 +69,350 @@ static void demo_file_io(void) {
            fs_extname("/path/to/README", &error));
 }
 
-// 演示 2: 文件信息
-static void demo_file_info(void) {
-    printf("\n=== 演示 2: 文件信息获取 ===\n");
+static const char* file_type_to_string(fs_file_type_t type) {
+    switch (type) {
+        case FS_TYPE_REGULAR:      return "普通文件";
+        case FS_TYPE_DIRECTORY:    return "目录";
+        case FS_TYPE_SYMLINK:      return "符号链接";
+        case FS_TYPE_CHAR_DEVICE:  return "字符设备";
+        case FS_TYPE_BLOCK_DEVICE: return "块设备";
+        case FS_TYPE_FIFO:         return "命名管道";
+        case FS_TYPE_SOCKET:       return "套接字";
+        default:                   return "未知";
+    }
+}
+
+static void demo_fs_stat(void) {
+    printf("\n=== 演示 2: fs_stat - 获取文件详细信息 ===\n");
+    
+    fs_error_t error;
+    fs_file_info_t info;
+    
+    const char *test_files[] = {
+        "/tmp/fs_utils_test.txt",
+        "/tmp",
+        "/dev/null",
+        "/etc/passwd"
+    };
+    
+    for (size_t i = 0; i < sizeof(test_files) / sizeof(test_files[0]); i++) {
+        const char *filepath = test_files[i];
+        printf("\n文件: %s\n", filepath);
+        
+        if (fs_stat(filepath, &info, &error)) {
+            printf("  类型: %s\n", file_type_to_string(info.type));
+            printf("  大小: %zu 字节\n", info.size);
+            printf("  权限: %04o (八进制)\n", info.mode & 07777);
+            
+            char time_buf[64];
+            struct tm *tm_info;
+            
+            tm_info = localtime(&info.mtime);
+            strftime(time_buf, sizeof(time_buf), "%Y-%m-%d %H:%M:%S", tm_info);
+            printf("  修改时间: %s\n", time_buf);
+            
+            tm_info = localtime(&info.atime);
+            strftime(time_buf, sizeof(time_buf), "%Y-%m-%d %H:%M:%S", tm_info);
+            printf("  访问时间: %s\n", time_buf);
+            
+            tm_info = localtime(&info.ctime);
+            strftime(time_buf, sizeof(time_buf), "%Y-%m-%d %H:%M:%S", tm_info);
+            printf("  状态时间: %s\n", time_buf);
+            
+            printf("  UID: %u, GID: %u\n", info.uid, info.gid);
+            
+            if (info.path) {
+                printf("  路径: %s\n", info.path);
+            }
+        } else {
+            printf("  获取信息失败: %s\n", fs_strerror(error));
+        }
+    }
+}
+
+static void demo_fs_read_dir(void) {
+    printf("\n=== 演示 3: fs_read_dir - 列出目录内容 ===\n");
+    
+    fs_error_t error;
+    char **entries = NULL;
+    size_t count = 0;
+    
+    const char *dirs[] = {"/tmp", "/dev"};
+    
+    for (size_t d = 0; d < sizeof(dirs) / sizeof(dirs[0]); d++) {
+        const char *dirpath = dirs[d];
+        printf("\n目录: %s\n", dirpath);
+        
+        if (fs_read_dir(dirpath, &entries, &count, &error)) {
+            printf("  共 %zu 个条目:\n", count);
+            
+            size_t display_count = count > 10 ? 10 : count;
+            for (size_t i = 0; i < display_count; i++) {
+                printf("    [%zu] %s\n", i + 1, entries[i]);
+            }
+            if (count > 10) {
+                printf("    ... 还有 %zu 个条目\n", count - 10);
+            }
+            
+            fs_free_dir_entries(&entries, count);
+        } else {
+            printf("  读取目录失败: %s\n", fs_strerror(error));
+        }
+    }
+}
+
+static void demo_fs_strerror(void) {
+    printf("\n=== 演示 4: fs_strerror - 错误信息获取 ===\n");
     
     fs_error_t error;
     
-    printf("文件类型枚举:\n");
-    printf("  FS_TYPE_UNKNOWN      - 未知\n");
-    printf("  FS_TYPE_REGULAR      - 普通文件\n");
-    printf("  FS_TYPE_DIRECTORY    - 目录\n");
-    printf("  FS_TYPE_SYMLINK      - 符号链接\n");
-    printf("  FS_TYPE_CHAR_DEVICE  - 字符设备\n");
-    printf("  FS_TYPE_BLOCK_DEVICE - 块设备\n");
-    printf("  FS_TYPE_FIFO         - 命名管道\n");
-    printf("  FS_TYPE_SOCKET       - 套接字\n");
+    printf("错误码与对应信息:\n");
     
-    printf("\n获取文件信息示例:\n");
-    printf("  文件: /etc/passwd\n");
+    fs_error_t errors[] = {
+        FS_OK,
+        FS_ERROR_INVALID_PARAM,
+        FS_ERROR_FILE_NOT_FOUND,
+        FS_ERROR_FILE_OPEN,
+        FS_ERROR_FILE_READ,
+        FS_ERROR_FILE_WRITE,
+        FS_ERROR_FILE_CREATE,
+        FS_ERROR_FILE_DELETE,
+        FS_ERROR_DIR_OPEN,
+        FS_ERROR_DIR_CREATE,
+        FS_ERROR_DIR_DELETE,
+        FS_ERROR_DIR_READ,
+        FS_ERROR_PERMISSION_DENIED,
+        FS_ERROR_MEMORY_ALLOC,
+        FS_ERROR_BUFFER_TOO_SMALL,
+        FS_ERROR_PLATFORM_UNSUPPORTED,
+        FS_ERROR_INVALID_PATH
+    };
     
-    // 这里只是示例，实际 API 可能需要调整
-    printf("  类型: 普通文件\n");
-    printf("  大小: 查看实际文件\n");
-    printf("  权限: 查看实际文件\n");
+    for (size_t i = 0; i < sizeof(errors) / sizeof(errors[0]); i++) {
+        printf("  [%2d] %s\n", errors[i], fs_strerror(errors[i]));
+    }
+    
+    printf("\n实际使用示例:\n");
+    printf("  尝试读取不存在的文件...\n");
+    size_t size;
+    char *data = fs_read_all("/nonexistent/path/to/file.txt", &size, &error);
+    if (!data) {
+        printf("  错误码: %d\n", error);
+        printf("  错误信息: %s\n", fs_strerror(error));
+    }
 }
 
-// 演示 3: 路径操作
-static void demo_path_operations(void) {
-    printf("\n=== 演示 3: 路径操作 ===\n");
+static void demo_fs_is_absolute_path(void) {
+    printf("\n=== 演示 5: fs_is_absolute_path - 绝对路径判断 ===\n");
     
-    printf("路径处理功能:\n");
-    printf("  - 路径规范化\n");
-    printf("  - 路径拼接\n");
-    printf("  - 相对路径转绝对路径\n");
-    printf("  - 获取父目录\n");
-    printf("  - 获取文件名\n");
+    const char *paths[] = {
+        "/home/user/documents",
+        "/tmp/test.txt",
+        "./relative/path",
+        "../parent/dir",
+        "simple_filename.txt",
+        "~/home_directory",
+        "/",
+        "C:\\Windows\\System32",
+        "D:/data/files",
+        ""
+    };
     
-    printf("\n路径示例:\n");
-    printf("  /home/user/documents/file.txt\n");
-    printf("    父目录: /home/user/documents\n");
-    printf("    文件名: file.txt\n");
-    printf("    扩展名: .txt\n");
-    printf("    基本名: file\n");
-    
-    printf("\n  ./relative/path/../file.txt\n");
-    printf("    规范化: ./relative/file.txt\n");
-    
-    printf("\n  ~/Documents\n");
-    printf("    展开: /home/username/Documents\n");
+    printf("路径判断结果:\n");
+    for (size_t i = 0; i < sizeof(paths) / sizeof(paths[0]); i++) {
+        bool is_abs = fs_is_absolute_path(paths[i]);
+        printf("  \"%s\" -> %s\n", 
+               paths[i], 
+               is_abs ? "绝对路径" : "相对路径");
+    }
 }
 
-// 演示 4: 目录操作
-static void demo_directory_ops(void) {
-    printf("\n=== 演示 4: 目录操作 ===\n");
+static void demo_fs_realpath(void) {
+    printf("\n=== 演示 6: fs_realpath - 路径规范化 ===\n");
+    
+    fs_error_t error;
+    char buffer[1024];
+    
+    const char *paths[] = {
+        "/tmp/../tmp/./test.txt",
+        "/home/user/../user/./documents",
+        "./current_dir",
+        "/tmp/does_not_exist",
+        "/dev/null"
+    };
+    
+    printf("路径规范化结果:\n");
+    for (size_t i = 0; i < sizeof(paths) / sizeof(paths[0]); i++) {
+        const char *path = paths[i];
+        char *resolved = fs_realpath(path, buffer, sizeof(buffer), &error);
+        
+        if (resolved) {
+            printf("  \"%s\"\n", path);
+            printf("    -> \"%s\"\n", resolved);
+        } else {
+            printf("  \"%s\"\n", path);
+            printf("    -> 解析失败: %s\n", fs_strerror(error));
+        }
+    }
+}
+
+static void demo_fs_getcwd_chdir(void) {
+    printf("\n=== 演示 7: fs_getcwd/fs_chdir - 工作目录操作 ===\n");
+    
+    fs_error_t error;
+    char cwd_buffer[1024];
+    
+    char *original_cwd = fs_getcwd(cwd_buffer, sizeof(cwd_buffer), &error);
+    if (original_cwd) {
+        printf("当前工作目录: %s\n", original_cwd);
+    } else {
+        printf("获取当前目录失败: %s\n", fs_strerror(error));
+        return;
+    }
+    
+    printf("\n切换到 /tmp 目录...\n");
+    if (fs_chdir("/tmp", &error)) {
+        char new_cwd[1024];
+        if (fs_getcwd(new_cwd, sizeof(new_cwd), &error)) {
+            printf("  新工作目录: %s\n", new_cwd);
+        }
+        
+        printf("\n切换回原目录...\n");
+        if (fs_chdir(original_cwd, &error)) {
+            char restored_cwd[1024];
+            if (fs_getcwd(restored_cwd, sizeof(restored_cwd), &error)) {
+                printf("  恢复后的工作目录: %s\n", restored_cwd);
+            }
+        } else {
+            printf("  切换失败: %s\n", fs_strerror(error));
+        }
+    } else {
+        printf("  切换失败: %s\n", fs_strerror(error));
+    }
+    
+    printf("\n尝试切换到不存在的目录...\n");
+    if (!fs_chdir("/nonexistent/directory", &error)) {
+        printf("  预期失败: %s\n", fs_strerror(error));
+    }
+}
+
+static void demo_fs_rmdir_recursive(void) {
+    printf("\n=== 演示 8: fs_rmdir recursive - 递归删除目录 ===\n");
     
     fs_error_t error;
     
-    printf("目录操作功能:\n");
-    printf("  - 创建目录\n");
-    printf("  - 删除目录\n");
-    printf("  - 遍历目录\n");
-    printf("  - 递归操作\n");
+    const char *test_dir = "/tmp/fs_utils_test_dir";
+    const char *sub_dirs[] = {
+        "/tmp/fs_utils_test_dir",
+        "/tmp/fs_utils_test_dir/subdir1",
+        "/tmp/fs_utils_test_dir/subdir2",
+        "/tmp/fs_utils_test_dir/subdir1/deep"
+    };
     
-    printf("\n创建目录示例:\n");
-    printf("  fs_mkdir(\"/tmp/test_dir\", 0755, &error)\n");
-    printf("  fs_mkdir_recursive(\"/tmp/a/b/c\", 0755, &error)\n");
+    printf("创建测试目录结构...\n");
+    for (int i = 0; i < 4; i++) {
+        if (fs_mkdir(sub_dirs[i], true, &error)) {
+            printf("  创建: %s\n", sub_dirs[i]);
+        }
+    }
     
-    printf("\n遍历目录示例:\n");
-    printf("  fs_dir_foreach(\"/tmp\", callback, &error)\n");
-    printf("    遍历 /tmp 目录中的所有文件\n");
+    const char *test_files[] = {
+        "/tmp/fs_utils_test_dir/file1.txt",
+        "/tmp/fs_utils_test_dir/subdir1/file2.txt",
+        "/tmp/fs_utils_test_dir/subdir2/file3.txt",
+        "/tmp/fs_utils_test_dir/subdir1/deep/file4.txt"
+    };
+    
+    fs_options_t opts = fs_default_options();
+    for (int i = 0; i < 4; i++) {
+        const char *content = "test content";
+        if (fs_write_all(test_files[i], content, strlen(content), &opts, &error)) {
+            printf("  创建文件: %s\n", test_files[i]);
+        }
+    }
+    
+    printf("\n目录结构创建完成\n");
+    
+    printf("\n尝试非递归删除非空目录...\n");
+    if (!fs_rmdir(test_dir, false, &error)) {
+        printf("  预期失败: %s\n", fs_strerror(error));
+    }
+    
+    printf("\n递归删除目录...\n");
+    if (fs_rmdir(test_dir, true, &error)) {
+        printf("  删除成功: %s\n", test_dir);
+        printf("  验证目录是否已删除: %s\n", 
+               fs_exists(test_dir, &error) ? "仍存在" : "已删除");
+    } else {
+        printf("  删除失败: %s\n", fs_strerror(error));
+    }
 }
 
-// 演示 5: 文件系统选项
+static void demo_fs_copy_binary(void) {
+    printf("\n=== 演示 9: fs_copy - 二进制文件复制 ===\n");
+    
+    fs_error_t error;
+    fs_options_t opts = fs_default_options();
+    
+    const char *src_file = "/tmp/fs_utils_binary_test.bin";
+    const char *dest_file = "/tmp/fs_utils_binary_copy.bin";
+    
+    printf("创建测试二进制文件...\n");
+    unsigned char binary_data[] = {
+        0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
+        0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F,
+        0xFF, 0xFE, 0xFD, 0xFC, 0xFB, 0xFA, 0xF9, 0xF8,
+        0x00, 0x10, 0x20, 0x30, 0x40, 0x50, 0x60, 0x70
+    };
+    
+    if (fs_write_all(src_file, binary_data, sizeof(binary_data), &opts, &error)) {
+        printf("  创建源文件: %s (%zu 字节)\n", src_file, sizeof(binary_data));
+    } else {
+        printf("  创建源文件失败: %s\n", fs_strerror(error));
+        return;
+    }
+    
+    printf("\n复制二进制文件...\n");
+    if (fs_copy(src_file, dest_file, &opts, &error)) {
+        printf("  复制成功: %s -> %s\n", src_file, dest_file);
+        
+        printf("\n验证复制结果:\n");
+        size_t src_size, dest_size;
+        char *src_data = fs_read_all(src_file, &src_size, &error);
+        char *dest_data = fs_read_all(dest_file, &dest_size, &error);
+        
+        if (src_data && dest_data) {
+            printf("  源文件大小: %zu 字节\n", src_size);
+            printf("  目标文件大小: %zu 字节\n", dest_size);
+            
+            if (src_size == dest_size && memcmp(src_data, dest_data, src_size) == 0) {
+                printf("  内容验证: 完全一致 ✓\n");
+            } else {
+                printf("  内容验证: 不一致 ✗\n");
+            }
+            
+            free(src_data);
+            free(dest_data);
+        }
+        
+        printf("\n显示二进制内容 (前16字节):\n");
+        printf("  源文件:   ");
+        for (size_t i = 0; i < 16 && i < src_size; i++) {
+            printf("%02X ", (unsigned char)src_data[i]);
+        }
+        printf("\n");
+    } else {
+        printf("  复制失败: %s\n", fs_strerror(error));
+    }
+    
+    printf("\n清理测试文件...\n");
+    fs_unlink(src_file, &error);
+    fs_unlink(dest_file, &error);
+    printf("  清理完成\n");
+}
+
 static void demo_options(void) {
-    printf("\n=== 演示 5: 文件系统选项 ===\n");
+    printf("\n=== 演示 10: 文件系统选项 ===\n");
     
     fs_options_t opts = fs_default_options();
     
@@ -179,78 +445,21 @@ static void demo_options(void) {
     printf("    - false: 使用默认权限\n");
 }
 
-// 演示 6: 错误处理
-static void demo_error_handling(void) {
-    printf("\n=== 演示 6: 错误处理 ===\n");
-    
-    printf("错误码:\n");
-    printf("  FS_OK (0): 成功\n");
-    printf("  FS_ERROR_INVALID_PARAM: 无效参数\n");
-    printf("  FS_ERROR_FILE_NOT_FOUND: 文件不存在\n");
-    printf("  FS_ERROR_FILE_OPEN: 打开文件失败\n");
-    printf("  FS_ERROR_FILE_READ: 读取文件失败\n");
-    printf("  FS_ERROR_FILE_WRITE: 写入文件失败\n");
-    printf("  FS_ERROR_PERMISSION_DENIED: 权限拒绝\n");
-    printf("  FS_ERROR_MEMORY_ALLOC: 内存分配失败\n");
-    
-    printf("\n错误处理示例:\n");
-    printf("  fs_error_t error;\n");
-    printf("  char *data = fs_read_all(\"/etc/shadow\", &size, &error);\n");
-    printf("  if (!data) {\n");
-    printf("    if (error == FS_ERROR_PERMISSION_DENIED) {\n");
-    printf("      printf(\"权限不足\\n\");\n");
-    printf("    } else if (error == FS_ERROR_FILE_NOT_FOUND) {\n");
-    printf("      printf(\"文件不存在\\n\");\n");
-    printf("    }\n");
-    printf("  }\n");
-}
-
-// 演示 7: 实际应用
-static void demo_applications(void) {
-    printf("\n=== 演示 7: 实际应用场景 ===\n");
-    
-    printf("1. 配置文件管理\n");
-    printf("   - 读取配置文件\n");
-    printf("   - 自动创建默认配置\n");
-    printf("   - 原子写入更新\n");
-    printf("\n");
-    
-    printf("2. 日志系统\n");
-    printf("   - 日志文件写入\n");
-    printf("   - 日志轮转\n");
-    printf("   - 目录管理\n");
-    printf("\n");
-    
-    printf("3. 缓存系统\n");
-    printf("   - 缓存文件读写\n");
-    printf("   - 缓存清理\n");
-    printf("   - 过期检测\n");
-    printf("\n");
-    
-    printf("4. 文件同步\n");
-    printf("   - 文件复制\n");
-    printf("   - 目录同步\n");
-    printf("   - 增量更新\n");
-    printf("\n");
-    
-    printf("5. 安装程序\n");
-    printf("   - 创建目录结构\n");
-    printf("   - 复制文件\n");
-    printf("   - 设置权限\n");
-}
-
 int main(void) {
     printf("========================================\n");
     printf("    文件系统工具演示程序\n");
     printf("========================================\n");
     
     demo_file_io();
-    demo_file_info();
-    demo_path_operations();
-    demo_directory_ops();
+    demo_fs_stat();
+    demo_fs_read_dir();
+    demo_fs_strerror();
+    demo_fs_is_absolute_path();
+    demo_fs_realpath();
+    demo_fs_getcwd_chdir();
+    demo_fs_rmdir_recursive();
+    demo_fs_copy_binary();
     demo_options();
-    demo_error_handling();
-    demo_applications();
     
     printf("\n========================================\n");
     printf("演示完成!\n");

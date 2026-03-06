@@ -108,8 +108,9 @@ const char* fs_basename(const char *filepath, fs_error_t *error);
 // 获取目录名
 // filepath: 文件路径
 // error: 错误码（输出参数，可为 NULL）
-// 返回: 目录名，失败返回 NULL
-const char* fs_dirname(const char *filepath, fs_error_t *error);
+// 返回: 目录名（需调用者释放），失败返回 NULL
+// 注意: 返回动态分配的内存，调用者需负责释放
+char* fs_dirname(const char *filepath, fs_error_t *error);
 
 // 创建目录
 // dirpath: 目录路径
