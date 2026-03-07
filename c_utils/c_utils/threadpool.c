@@ -9,7 +9,9 @@
 typedef struct task_s {
     int id;
     void (*func)(void*);
+    void *(*func_with_result)(void*);
     void *arg;
+    threadpool_result_cb callback;
     threadpool_priority_t priority;
     struct task_s *next;
     bool completed;
@@ -53,7 +55,12 @@ static void* threadpool_worker(void *arg) {
             pool->active_count++;
             pthread_mutex_unlock(&(pool->lock));
             
-            (*(task->func))(task->arg);
+            if (task->func_with_result && task->callback) {
+                void *result = task->func_with_result(task->arg);
+                task->callback(task->arg, result);
+            } else if (task->func) {
+                (*(task->func))(task->arg);
+            }
             
             pthread_mutex_lock(&(pool->lock));
             pool->active_count--;
@@ -126,7 +133,9 @@ int threadpool_add_task_with_priority(threadpool_t *pool, void (*func)(void*),
     if (!task) return 0;
     
     task->func = func;
+    task->func_with_result = NULL;
     task->arg = arg;
+    task->callback = NULL;
     task->priority = priority;
     task->next = NULL;
     task->completed = false;
@@ -134,6 +143,7 @@ int threadpool_add_task_with_priority(threadpool_t *pool, void (*func)(void*),
 
     pthread_mutex_lock(&(pool->lock));
     task->id = pool->next_task_id++;
+    if (pool->next_task_id <= 0) pool->next_task_id = 1;
     
     if (pool->task_head == NULL) {
         pool->task_head = task;
@@ -161,10 +171,31 @@ int threadpool_add_task_with_priority(threadpool_t *pool, void (*func)(void*),
 
 int threadpool_add_task_with_callback(threadpool_t *pool, void *(*func)(void*), 
                                        void *arg, threadpool_result_cb callback) {
-    (void)func;
-    (void)arg;
-    (void)callback;
-    return 0;
+    if (!pool || !func) return 0;
+    
+    task_t *task = malloc(sizeof(task_t));
+    if (!task) return 0;
+    
+    task->func = NULL;
+    task->func_with_result = func;
+    task->arg = arg;
+    task->callback = callback;
+    task->priority = THREADPOOL_PRIORITY_NORMAL;
+    task->next = NULL;
+    task->completed = false;
+    task->cancelled = false;
+
+    pthread_mutex_lock(&(pool->lock));
+    task->id = pool->next_task_id++;
+    if (pool->next_task_id <= 0) pool->next_task_id = 1;
+    
+    task->next = pool->task_head;
+    pool->task_head = task;
+    pool->queue_size++;
+    pthread_cond_signal(&(pool->notify));
+    pthread_mutex_unlock(&(pool->lock));
+    
+    return task->id;
 }
 
 bool threadpool_cancel_task(threadpool_t *pool, int task_id) {
@@ -292,32 +323,50 @@ int threadpool_resize(threadpool_t *pool, int new_num_threads) {
 
 int threadpool_get_thread_count(const threadpool_t *pool) {
     if (!pool) return 0;
-    return pool->thread_count;
+    pthread_mutex_lock((pthread_mutex_t*)&pool->lock);
+    int count = pool->thread_count;
+    pthread_mutex_unlock((pthread_mutex_t*)&pool->lock);
+    return count;
 }
 
 int threadpool_get_active_count(const threadpool_t *pool) {
     if (!pool) return 0;
-    return pool->active_count;
+    pthread_mutex_lock((pthread_mutex_t*)&pool->lock);
+    int count = pool->active_count;
+    pthread_mutex_unlock((pthread_mutex_t*)&pool->lock);
+    return count;
 }
 
 int threadpool_get_pending_count(const threadpool_t *pool) {
     if (!pool) return 0;
-    return pool->queue_size;
+    pthread_mutex_lock((pthread_mutex_t*)&pool->lock);
+    int count = pool->queue_size;
+    pthread_mutex_unlock((pthread_mutex_t*)&pool->lock);
+    return count;
 }
 
 int threadpool_get_completed_count(const threadpool_t *pool) {
     if (!pool) return 0;
-    return pool->completed_count;
+    pthread_mutex_lock((pthread_mutex_t*)&pool->lock);
+    int count = pool->completed_count;
+    pthread_mutex_unlock((pthread_mutex_t*)&pool->lock);
+    return count;
 }
 
 bool threadpool_is_paused(const threadpool_t *pool) {
     if (!pool) return false;
-    return pool->paused;
+    pthread_mutex_lock((pthread_mutex_t*)&pool->lock);
+    bool paused = pool->paused;
+    pthread_mutex_unlock((pthread_mutex_t*)&pool->lock);
+    return paused;
 }
 
 bool threadpool_is_shutdown(const threadpool_t *pool) {
     if (!pool) return true;
-    return pool->shutdown;
+    pthread_mutex_lock((pthread_mutex_t*)&pool->lock);
+    bool shutdown = pool->shutdown;
+    pthread_mutex_unlock((pthread_mutex_t*)&pool->lock);
+    return shutdown;
 }
 
 void threadpool_cleanup_completed(threadpool_t *pool) {

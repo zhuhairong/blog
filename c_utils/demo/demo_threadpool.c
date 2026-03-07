@@ -56,7 +56,6 @@ static void result_callback(void *arg, void *result) {
     int *result_value = (int *)result;
     printf("任务 %d 的回调被调用，结果: %d\n", task_id, *result_value);
     free(result);
-    free(arg);
 }
 
 // 演示 1: 基本线程池创建和任务提交

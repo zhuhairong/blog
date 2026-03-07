@@ -2,18 +2,52 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <pthread.h>
 #include "../c_utils/utest.h"
 #include "../c_utils/threadpool.h"
 
 static int counter = 0;
+static pthread_mutex_t counter_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 static void increment_counter(void *arg) {
     (void)arg;
-    __sync_fetch_and_add(&counter, 1);
+    pthread_mutex_lock(&counter_mutex);
+    counter++;
+    pthread_mutex_unlock(&counter_mutex);
+    usleep(10000);
+}
+
+static void *increment_and_return(void *arg) {
+    (void)arg;
+    pthread_mutex_lock(&counter_mutex);
+    counter++;
+    pthread_mutex_unlock(&counter_mutex);
+    usleep(10000);
+    return (void*)(long)counter;
+}
+
+static int callback_count = 0;
+static void *callback_result = NULL;
+
+static void test_callback(void *arg, void *result) {
+    (void)arg;
+    pthread_mutex_lock(&counter_mutex);
+    callback_count++;
+    callback_result = result;
+    pthread_mutex_unlock(&counter_mutex);
+}
+
+static void reset_test_state(void) {
+    pthread_mutex_lock(&counter_mutex);
+    counter = 0;
+    callback_count = 0;
+    callback_result = NULL;
+    pthread_mutex_unlock(&counter_mutex);
 }
 
 void test_threadpool_create() {
     TEST(Threadpool_Create);
+    reset_test_state();
     threadpool_t* pool = threadpool_create(4);
     EXPECT_TRUE(pool != NULL);
     EXPECT_EQ(threadpool_get_thread_count(pool), 4);
@@ -63,25 +97,135 @@ void test_threadpool_wait_all() {
 
 void test_threadpool_add_task_with_priority() {
     TEST(Threadpool_AddTaskWithPriority);
-    threadpool_t* pool = threadpool_create(2);
+    reset_test_state();
+    threadpool_t* pool = threadpool_create(1);
     
-    counter = 0;
-    int low_id = threadpool_add_task_with_priority(pool, increment_counter, NULL, THREADPOOL_PRIORITY_LOW);
-    int normal_id = threadpool_add_task_with_priority(pool, increment_counter, NULL, THREADPOOL_PRIORITY_NORMAL);
-    int high_id = threadpool_add_task_with_priority(pool, increment_counter, NULL, THREADPOOL_PRIORITY_HIGH);
+    threadpool_pause(pool);
     
-    EXPECT_TRUE(low_id > 0);
-    EXPECT_TRUE(normal_id > 0);
-    EXPECT_TRUE(high_id > 0);
+    int id1 = threadpool_add_task_with_priority(pool, increment_counter, NULL, THREADPOOL_PRIORITY_LOW);
+    int id2 = threadpool_add_task_with_priority(pool, increment_counter, NULL, THREADPOOL_PRIORITY_HIGH);
+    int id3 = threadpool_add_task_with_priority(pool, increment_counter, NULL, THREADPOOL_PRIORITY_NORMAL);
     
+    EXPECT_TRUE(id1 > 0);
+    EXPECT_TRUE(id2 > 0);
+    EXPECT_TRUE(id3 > 0);
+    
+    threadpool_resume(pool);
     threadpool_wait_all(pool, 2000);
+    
     EXPECT_EQ(counter, 3);
     
     threadpool_destroy(pool);
 }
 
+void test_threadpool_callback() {
+    TEST(Threadpool_Callback);
+    reset_test_state();
+    
+    threadpool_t* pool = threadpool_create(4);
+    EXPECT_TRUE(pool != NULL);
+    
+    int task_id = threadpool_add_task_with_callback(pool, increment_and_return, NULL, test_callback);
+    EXPECT_TRUE(task_id > 0);
+    
+    threadpool_wait_all(pool, 2000);
+    
+    EXPECT_EQ(counter, 1);
+    EXPECT_EQ(callback_count, 1);
+    
+    threadpool_destroy(pool);
+}
+
+void test_threadpool_cancel_task() {
+    TEST(Threadpool_CancelTask);
+    reset_test_state();
+    
+    threadpool_t* pool = threadpool_create(1);
+    EXPECT_TRUE(pool != NULL);
+    
+    threadpool_pause(pool);
+    
+    int task_id1 = threadpool_add_task(pool, increment_counter, NULL);
+    int task_id2 = threadpool_add_task(pool, increment_counter, NULL);
+    
+    EXPECT_TRUE(task_id1 > 0);
+    EXPECT_TRUE(task_id2 > 0);
+    
+    bool cancelled = threadpool_cancel_task(pool, task_id2);
+    EXPECT_TRUE(cancelled);
+    
+    threadpool_resume(pool);
+    
+    threadpool_wait_all(pool, 2000);
+    
+    EXPECT_EQ(counter, 1);
+    
+    threadpool_destroy(pool);
+}
+
+void test_threadpool_wait_task() {
+    TEST(Threadpool_WaitTask);
+    reset_test_state();
+    
+    threadpool_t* pool = threadpool_create(4);
+    EXPECT_TRUE(pool != NULL);
+    
+    int task_id = threadpool_add_task(pool, increment_counter, NULL);
+    EXPECT_TRUE(task_id > 0);
+    
+    bool result = threadpool_wait_task(pool, task_id, 2000);
+    EXPECT_TRUE(result);
+    EXPECT_EQ(counter, 1);
+    
+    threadpool_destroy(pool);
+}
+
+void test_threadpool_resize() {
+    TEST(Threadpool_Resize);
+    reset_test_state();
+    
+    threadpool_t* pool = threadpool_create(4);
+    EXPECT_TRUE(pool != NULL);
+    EXPECT_EQ(threadpool_get_thread_count(pool), 4);
+    
+    int new_count = threadpool_resize(pool, 2);
+    EXPECT_EQ(new_count, 2);
+    
+    threadpool_destroy(pool);
+}
+
+void test_threadpool_null_params() {
+    TEST(Threadpool_NullParams);
+    
+    EXPECT_TRUE(threadpool_create(0) != NULL);
+    threadpool_destroy(NULL);
+    
+    EXPECT_EQ(threadpool_add_task(NULL, increment_counter, NULL), 0);
+    EXPECT_EQ(threadpool_add_task_with_priority(NULL, increment_counter, NULL, THREADPOOL_PRIORITY_NORMAL), 0);
+    EXPECT_EQ(threadpool_add_task_with_callback(NULL, increment_and_return, NULL, test_callback), 0);
+    
+    EXPECT_TRUE(threadpool_cancel_task(NULL, 1) == false);
+    EXPECT_TRUE(threadpool_wait_all(NULL, 1000) == false);
+    EXPECT_TRUE(threadpool_wait_task(NULL, 1, 1000) == false);
+    
+    threadpool_pause(NULL);
+    threadpool_resume(NULL);
+    
+    EXPECT_EQ(threadpool_resize(NULL, 4), 0);
+    
+    EXPECT_EQ(threadpool_get_thread_count(NULL), 0);
+    EXPECT_EQ(threadpool_get_active_count(NULL), 0);
+    EXPECT_EQ(threadpool_get_pending_count(NULL), 0);
+    EXPECT_EQ(threadpool_get_completed_count(NULL), 0);
+    EXPECT_TRUE(threadpool_is_paused(NULL) == false);
+    EXPECT_TRUE(threadpool_is_shutdown(NULL) == true);
+    
+    threadpool_cleanup_completed(NULL);
+}
+
 void test_threadpool_pause_resume() {
     TEST(Threadpool_PauseResume);
+    reset_test_state();
     threadpool_t* pool = threadpool_create(2);
     
     threadpool_pause(pool);
@@ -133,6 +277,7 @@ void test_threadpool_add_task_null_func() {
 
 void test_threadpool_is_shutdown() {
     TEST(Threadpool_IsShutdown);
+    reset_test_state();
     threadpool_t* pool = threadpool_create(2);
     
     EXPECT_FALSE(threadpool_is_shutdown(pool));
@@ -206,6 +351,11 @@ int main() {
     test_threadpool_add_task();
     test_threadpool_wait_all();
     test_threadpool_add_task_with_priority();
+    test_threadpool_callback();
+    test_threadpool_cancel_task();
+    test_threadpool_wait_task();
+    test_threadpool_resize();
+    test_threadpool_null_params();
     test_threadpool_pause_resume();
     test_threadpool_get_counts();
     test_threadpool_destroy_null();
