@@ -118,6 +118,30 @@ if(BUILD_PROJECTS)
         ${CMAKE_CURRENT_SOURCE_DIR}/projects/cache_server/cache_server.c
     )
     target_link_libraries(cache_server PRIVATE c_utils)
+
+    # 消息队列系统
+    add_executable(message_queue 
+        ${CMAKE_CURRENT_SOURCE_DIR}/projects/message_queue/message_queue.c
+    )
+    target_link_libraries(message_queue PRIVATE c_utils)
+
+    # 文件完整性校验工具
+    add_executable(file_checksum 
+        ${CMAKE_CURRENT_SOURCE_DIR}/projects/file_checksum/file_checksum.c
+    )
+    target_link_libraries(file_checksum PRIVATE c_utils)
+
+    # 性能基准测试工具
+    add_executable(benchmark 
+        ${CMAKE_CURRENT_SOURCE_DIR}/projects/benchmark/benchmark.c
+    )
+    target_link_libraries(benchmark PRIVATE c_utils)
+
+    # 图算法可视化工具
+    add_executable(graph_visualizer 
+        ${CMAKE_CURRENT_SOURCE_DIR}/projects/graph_visualizer/graph_visualizer.c
+    )
+    target_link_libraries(graph_visualizer PRIVATE c_utils)
 endif()
 
 # 安装目标
