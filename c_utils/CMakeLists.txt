@@ -12,12 +12,19 @@ file(GLOB C_UTILS_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/c_utils/*.c")
 # 排除test_main.c，因为它是测试入口
 list(FILTER C_UTILS_SOURCES EXCLUDE REGEX "test_main\\.c$")
 
+# 添加第三方库源文件
+file(GLOB THIRD_PARTY_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/*/*.c")
+list(APPEND C_UTILS_SOURCES ${THIRD_PARTY_SOURCES})
+
 # 创建静态库
 add_library(c_utils STATIC ${C_UTILS_SOURCES})
 
 # 设置头文件包含目录
 target_include_directories(c_utils PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/c_utils
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/cjson
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/nanopb
+    ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/miniz
 )
 
 # 链接数学库
