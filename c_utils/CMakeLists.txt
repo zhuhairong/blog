@@ -49,6 +49,31 @@ if(RT_LIB)
     target_link_libraries(c_utils PUBLIC ${RT_LIB})
 endif()
 
+# 查找 MySQL 库
+find_package(PkgConfig QUIET)
+if(PkgConfig_FOUND)
+    pkg_check_modules(MYSQL mysqlclient QUIET)
+endif()
+
+if(NOT MYSQL_FOUND)
+    find_library(MYSQL_LIB mysqlclient PATHS /usr/lib/mysql /usr/lib/x86_64-linux-gnu)
+    find_path(MYSQL_INCLUDE_DIR mysql/mysql.h PATHS /usr/include/mysql /usr/include)
+    if(MYSQL_LIB AND MYSQL_INCLUDE_DIR)
+        set(MYSQL_FOUND TRUE)
+        set(MYSQL_LIBRARIES ${MYSQL_LIB})
+        set(MYSQL_INCLUDE_DIRS ${MYSQL_INCLUDE_DIR})
+    endif()
+endif()
+
+if(MYSQL_FOUND)
+    message(STATUS "Found MySQL client library: ${MYSQL_LIBRARIES}")
+    target_include_directories(c_utils PUBLIC ${MYSQL_INCLUDE_DIRS})
+    target_link_libraries(c_utils PUBLIC ${MYSQL_LIBRARIES})
+    target_compile_definitions(c_utils PUBLIC C_UTILS_HAS_MYSQL=1)
+else()
+    message(STATUS "MySQL client library not found, mysql_wrapper will be disabled")
+endif()
+
 # 启用测试
 option(BUILD_TESTS "Build tests" ON)
 
