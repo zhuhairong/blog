@@ -114,6 +114,29 @@ export default function Home() {
               </div>
             </div>
           </Link>
+
+          <Link href="/quadratic.html" style={{ textDecoration: 'none' }}>
+            <div className="tool-card" style={{
+              background: 'linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 50%, #3d5a80 100%)',
+              borderRadius: '20px',
+              padding: '2rem',
+              color: 'white',
+              cursor: 'pointer',
+              boxShadow: '0 8px 32px rgba(61, 90, 128, 0.3)',
+              border: '1px solid rgba(61, 90, 128, 0.3)',
+            }}>
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📐</div>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem', fontWeight: 'bold' }}>一元二次方程详解</h3>
+              <p style={{ opacity: 0.9, lineHeight: 1.6 }}>
+                系统讲解一元二次方程的五种解法：直接开平方法、配方法、公式法、因式分解法、十字交叉法。包含可视化图解、交互练习、考点易错点分析！
+              </p>
+              <div style={{ marginTop: '1rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                <span style={{ background: 'rgba(255,255,255,0.15)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.875rem' }}>五种解法</span>
+                <span style={{ background: 'rgba(255,255,255,0.15)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.875rem' }}>可视化图解</span>
+                <span style={{ background: 'rgba(255,255,255,0.15)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.875rem' }}>交互练习</span>
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
 

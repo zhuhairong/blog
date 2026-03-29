@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一元二次方程解法详解 | 初中数学学习</title>
+    <link rel="stylesheet" href="quadratic.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-brand">📚 一元二次方程</div>
+        <ul class="nav-links">
+            <li><a href="#concept">概念</a></li>
+            <li><a href="#methods">解法</a></li>
+            <li><a href="#practice">练习</a></li>
+            <li><a href="#application">应用</a></li>
+            <li><a href="#exam-tips">考点</a></li>
+            <li><a href="#extension">拓展</a></li>
+        </ul>
+    </nav>
+
+    <!-- 头部横幅 -->
+    <header class="hero">
+        <h1>一元二次方程解法详解</h1>
+        <p class="subtitle">系统学习 · 五种解法 · 轻松掌握</p>
+        <div class="hero-equation">
+            <span class="highlight">ax² + bx + c = 0</span> <span class="note">(a≠0)</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- 模块一：概念引入 -->
+        <section id="concept" class="section">
+            <h2 class="section-title">📖 一、什么是一元二次方程</h2>
+
+            <div class="concept-card">
+                <h3>🎯 方程的定义</h3>
+                <p><strong>方程</strong>：含有未知数的等式叫做方程。</p>
+                <p><strong>一元二次方程</strong>：只含有<strong>一个</strong>未知数，未知数的最高次数是<strong>2</strong>的<strong>整式方程</strong>。</p>
+            </div>
+
+            <div class="concept-card highlight-card">
+                <h3>📐 标准形式</h3>
+                <div class="formula-box">
+                    <p class="main-formula"><strong>ax² + bx + c = 0</strong> <span class="condition">(a≠0)</span></p>
+                </div>
+
+                <!-- 方程各项可视化 -->
+                <div class="visual-box">
+                    <h4>🎨 各项可视化理解</h4>
+                    <div class="terms-visual">
+                        <div class="term-block">
+                            <div class="term-shape quadratic">
+                                <div class="shape-content">
+                                    <span class="term-label">二次项</span>
+                                    <span class="term-formula">ax²</span>
+                                    <span class="term-desc">决定抛物线开口方向和宽度</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="term-block">
+                            <div class="term-shape linear">
+                                <div class="shape-content">
+                                    <span class="term-label">一次项</span>
+                                    <span class="term-formula">bx</span>
+                                    <span class="term-desc">影响抛物线位置平移</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="term-block">
+                            <div class="term-shape constant">
+                                <div class="shape-content">
+                                    <span class="term-label">常数项</span>
+                                    <span class="term-formula">c</span>
+                                    <span class="term-desc">决定抛物线与y轴交点</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <table class="term-table">
+                    <tr>
+                        <th>名称</th>
+                        <th>表达式</th>
+                        <th>示例：2x² - 5x + 3 = 0</th>
+                    </tr>
+                    <tr>
+                        <td>二次项</td>
+                        <td>ax²</td>
+                        <td>2x²（系数 a=2）</td>
+                    </tr>
+                    <tr>
+                        <td>一次项</td>
+                        <td>bx</td>
+                        <td>-5x（系数 b=-5）</td>
+                    </tr>
+                    <tr>
+                        <td>常数项</td>
+                        <td>c</td>
+                        <td>3（c=3）</td>
+                    </tr>
+                </table>
+                <div class="warning-box">
+                    ⚠️ <strong>注意</strong>：a≠0 是关键条件！如果 a=0，方程就变成了一元一次方程。
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>🔍 生活中的例子</h3>
+                <div class="example-box">
+                    <p><strong>场景</strong>：用 20 米长的篱笆围成一个矩形花坛，要使面积为 24 平方米，边长是多少？</p>
+                    <p><strong>分析</strong>：设一边长为 x 米，则另一边为 (20-2x)/2 = 10-x 米</p>
+                    <p><strong>列方程</strong>：x(10-x) = 24 → x² - 10x + 24 = 0</p>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>✏️ 判断练习</h3>
+                <div class="quiz-item">
+                    <p>下列哪些是一元二次方程？（点击查看答案）</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="toggleAnswer(this)">
+                            <span class="quiz-text">① x² - 3x + 2 = 0</span>
+                            <span class="quiz-answer correct">✓ 是（标准形式）</span>
+                        </div>
+                        <div class="quiz-option" onclick="toggleAnswer(this)">
+                            <span class="quiz-text">② 2x + 5 = 0</span>
+                            <span class="quiz-answer wrong">✗ 不是（一次方程）</span>
+                        </div>
+                        <div class="quiz-option" onclick="toggleAnswer(this)">
+                            <span class="quiz-text">③ x² + y² = 4</span>
+                            <span class="quiz-answer wrong">✗ 不是（二元方程）</span>
+                        </div>
+                        <div class="quiz-option" onclick="toggleAnswer(this)">
+                            <span class="quiz-text">④ 0x² + 3x - 1 = 0</span>
+                            <span class="quiz-answer wrong">✗ 不是（a=0）</span>
+                        </div>
+                        <div class="quiz-option" onclick="toggleAnswer(this)">
+                            <span class="quiz-text">⑤ (x-1)² = 4</span>
+                            <span class="quiz-answer correct">✓ 是（展开后是标准形式）</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 模块二：五种解法 -->
+        <section id="methods" class="section">
+            <h2 class="section-title">🧮 二、五种解法详解</h2>
+
+            <!-- 解法选择指南 -->
+            <div class="method-guide">
+                <h3>🗺️ 如何选择解题方法？</h3>
+                <div class="flowchart">
+                    <div class="flow-step start">
+                        <span>观察方程形式</span>
+                    </div>
+                    <div class="flow-branches">
+                        <div class="branch">
+                            <div class="branch-condition">x² = k 或 (x+m)² = k</div>
+                            <div class="branch-method">直接开平方法</div>
+                            <div class="branch-tip">最快！</div>
+                        </div>
+                        <div class="branch">
+                            <div class="branch-condition">缺常数项 (ax²+bx=0)</div>
+                            <div class="branch-method">提公因式法</div>
+                            <div class="branch-tip">简单！</div>
+                        </div>
+                        <div class="branch">
+                            <div class="branch-condition">系数简单，易分解</div>
+                            <div class="branch-method">因式分解法/十字交叉法</div>
+                            <div class="branch-tip">常用！</div>
+                        </div>
+                        <div class="branch">
+                            <div class="branch-condition">系数复杂，难分解</div>
+                            <div class="branch-method">公式法</div>
+                            <div class="branch-tip">万能！</div>
+                        </div>
+                        <div class="branch">
+                            <div class="branch-condition">题目要求配方法</div>
+                            <div class="branch-method">配方法</div>
+                            <div class="branch-tip">按要求！</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="memory-tip">
+                    <p>💡 <strong>选择口诀</strong>：缺项用提取，平方直接开；整齐好分解，复杂上公式；题目有要求，方法随题意。</p>
+                </div>
+            </div>
+
+            <!-- 解法一：直接开平方法 -->
+            <div class="method-card simple">
+                <div class="method-header" onclick="toggleMethod(this)">
+                    <h3>📌 解法一：直接开平方法</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="method-content collapsed">
+                    <div class="method-intro">
+                        <p><strong>适用条件</strong>：形如 <span class="formula">x² = k</span> 或 <span class="formula">(x+m)² = k</span> 的方程</p>
+                    </div>
+                    <div class="method-steps">
+                        <h4>📝 解题步骤</h4>
+                        <ol>
+                            <li>确认方程形式符合 x² = k</li>
+                            <li>开平方得 <span class="formula">x = ±√k</span></li>
+                            <li>写出两个解</li>
+                        </ol>
+                    </div>
+                    <div class="method-example">
+                        <h4>📌 例题</h4>
+                        <div class="example-solution">
+                            <p class="problem"><strong>题目</strong>：解方程 x² = 16</p>
+                            <div class="solution-toggle" onclick="toggleSolution(this)">
+                                <span class="show-text">点击查看解答 ▼</span>
+                            </div>
+                            <div class="solution-content">
+                                <p><strong>解</strong>：</p>
+                                <p>x² = 16</p>
+                                <p>x = ±√16</p>
+                                <p>x = ±4</p>
+                                <p class="answer">∴ x₁ = 4，x₂ = -4</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="warning-box">
+                        ⚠️ <strong>易错提醒</strong>：开平方时不要漏掉负根！x² = 16 的解是 x = ±4，不是 x = 4。
+                    </div>
+                </div>
+            </div>
+
+            <!-- 解法二：配方法 -->
+            <div class="method-card detailed">
+                <div class="method-header" onclick="toggleMethod(this)">
+                    <h3>📌 解法二：配方法</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="method-content collapsed">
+                    <div class="method-intro">
+                        <p><strong>适用条件</strong>：任意一元二次方程（特别适用于求最值、证明不等式）</p>
+                    </div>
+                    <div class="method-steps">
+                        <h4>📝 解题步骤（口诀："移、化、配、开"）</h4>
+
+                        <!-- 配方步骤可视化 -->
+                        <div class="steps-visual">
+                            <div class="step-card">
+                                <div class="step-icon">移</div>
+                                <div class="step-content">
+                                    <p class="step-desc">将常数项移到等号右边</p>
+                                    <p class="step-example">x² + bx = -c</p>
+                                </div>
+                            </div>
+                            <div class="step-card">
+                                <div class="step-icon">化</div>
+                                <div class="step-content">
+                                    <p class="step-desc">二次项系数化为 1</p>
+                                    <p class="step-example">x² + (b/a)x = -c/a</p>
+                                </div>
+                            </div>
+                            <div class="step-card highlight-step">
+                                <div class="step-icon">配</div>
+                                <div class="step-content">
+                                    <p class="step-desc">两边同加 <strong>(b/2)²</strong></p>
+                                    <div class="formula-highlight">
+                                        <p>x² + (b/a)x + <span class="add-term">(b/2a)²</span> = -c/a + <span class="add-term">(b/2a)²</span></p>
+                                        <p class="complete-square">(x + b/2a)<span class="power">²</span> = ...</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-card">
+                                <div class="step-icon">开</div>
+                                <div class="step-content">
+                                    <p class="step-desc">开平方求解</p>
+                                    <p class="step-example">x + b/2a = ±√(...)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ol>
+                            <li><strong>移</strong>：将常数项移到等号右边</li>
+                            <li><strong>化</strong>：将二次项系数化为 1（两边同除以 a）</li>
+                            <li><strong>配</strong>：两边同加 <span class="formula">(b/2)²</span>，配成完全平方式</li>
+                            <li><strong>开</strong>：开平方求解</li>
+                        </ol>
+                    </div>
+                    <div class="method-example">
+                        <h4>📌 例题一</h4>
+                        <div class="example-solution">
+                            <p class="problem"><strong>题目</strong>：解方程 x² - 6x + 5 = 0</p>
+                            <div class="solution-toggle" onclick="toggleSolution(this)">
+                                <span class="show-text">点击查看解答 ▼</span>
+                            </div>
+                            <div class="solution-content">
+                                <p><strong>解</strong>：</p>
+                                <p>第一步（移）：x² - 6x = -5</p>
+                                <p>第二步（化）：二次项系数已经是 1，跳过</p>
+                                <p>第三步（配）：x² - 6x + <span class="highlight">9</span> = -5 + <span class="highlight">9</span></p>
+                                <p class="note">∵ (b/2)² = (-6/2)² = 9</p>
+                                <p>(x - 3)² = 4</p>
+                                <p>第四步（开）：x - 3 = ±2</p>
+                                <p>x - 3 = 2 或 x - 3 = -2</p>
+                                <p class="answer">∴ x₁ = 5，x₂ = 1</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-example">
+                        <h4>📌 例题二</h4>
+                        <div class="example-solution">
+                            <p class="problem"><strong>题目</strong>：解方程 2x² + 8x - 10 = 0</p>
+                            <div class="solution-toggle" onclick="toggleSolution(this)">
+                                <span class="show-text">点击查看解答 ▼</span>
+                            </div>
+                            <div class="solution-content">
+                                <p><strong>解</strong>：</p>
+                                <p>第一步（移）：2x² + 8x = 10</p>
+                                <p>第二步（化）：x² + 4x = 5（两边同除以 2）</p>
+                                <p>第三步（配）：x² + 4x + <span class="highlight">4</span> = 5 + <span class="highlight">4</span></p>
+                                <p class="note">∵ (b/2)² = (4/2)² = 4</p>
+                                <p>(x + 2)² = 9</p>
+                                <p>第四步（开）：x + 2 = ±3</p>
+                                <p>x + 2 = 3 或 x + 2 = -3</p>
+                                <p class="answer">∴ x₁ = 1，x₂ = -5</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="warning-box">
+                        ⚠️ <strong>易错提醒</strong>：配方时，<span class="formula">(b/2)²</span> 要同时加到等号两边！
+                    </div>
+                </div>
+            </div>
+
+            <!-- 解法三：公式法 -->
+            <div class="method-card detailed">
+                <div class="method-header" onclick="toggleMethod(this)">
+                    <h3>📌 解法三：公式法</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="method-content collapsed">
+                    <div class="method-intro">
+                        <p><strong>适用条件</strong>：任意一元二次方程（万能方法）</p>
+                    </div>
+                    <div class="formula-box highlight-formula">
+                        <h4>📐 求根公式</h4>
+                        <p class="main-formula">x = <span class="fraction"><span class="numerator">-b ± √(b²-4ac)</span><span class="denominator">2a</span></span></p>
+                        <p class="note">其中 Δ = b² - 4ac 称为<strong>判别式</strong></p>
+                    </div>
+                    <div class="discriminant-box">
+                        <h4>📊 判别式的意义</h4>
+
+                        <!-- 抛物线与x轴交点的三种情况图示 -->
+                        <div class="parabola-diagrams">
+                            <div class="parabola-case">
+                                <svg viewBox="0 0 100 60" class="parabola-svg">
+                                    <!-- x轴 -->
+                                    <line x1="5" y2="30" y1="30" x2="95" class="axis-line"/>
+                                    <!-- y轴 -->
+                                    <line x1="50" y2="5" y1="55" x2="50" class="axis-line"/>
+                                    <!-- 抛物线 Δ>0 -->
+                                    <path d="M10 50 Q50 5 90 50" class="parabola-path positive"/>
+                                    <!-- 交点标记 -->
+                                    <circle cx="25" cy="30" r="3" class="root-point"/>
+                                    <circle cx="75" cy="30" r="3" class="root-point"/>
+                                    <!-- 标注 -->
+                                    <text x="25" y="38" class="root-label">x₁</text>
+                                    <text x="75" y="38" class="root-label">x₂</text>
+                                    <text x="50" y="58" class="delta-label">Δ > 0</text>
+                                </svg>
+                                <div class="case-desc">
+                                    <strong>两个不相等的实数根</strong>
+                                    <p>抛物线与x轴有两个交点</p>
+                                </div>
+                            </div>
+                            <div class="parabola-case">
+                                <svg viewBox="0 0 100 60" class="parabola-svg">
+                                    <line x1="5" y2="30" y1="30" x2="95" class="axis-line"/>
+                                    <line x1="50" y2="5" y1="55" x2="50" class="axis-line"/>
+                                    <!-- 抛物线 Δ=0 -->
+                                    <path d="M10 50 Q50 15 90 50" class="parabola-path zero"/>
+                                    <!-- 交点标记（顶点） -->
+                                    <circle cx="50" cy="30" r="3" class="root-point"/>
+                                    <text x="50" y="38" class="root-label">x₁=x₂</text>
+                                    <text x="50" y="58" class="delta-label">Δ = 0</text>
+                                </svg>
+                                <div class="case-desc">
+                                    <strong>两个相等的实数根</strong>
+                                    <p>抛物线与x轴有一个交点（顶点）</p>
+                                </div>
+                            </div>
+                            <div class="parabola-case">
+                                <svg viewBox="0 0 100 60" class="parabola-svg">
+                                    <line x1="5" y2="30" y1="30" x2="95" class="axis-line"/>
+                                    <line x1="50" y2="5" y1="55" x2="50" class="axis-line"/>
+                                    <!-- 抛物线 Δ<0 -->
+                                    <path d="M10 50 Q50 5 90 50" class="parabola-path negative"/>
+                                    <!-- 无交点标记 -->
+                                    <text x="50" y="58" class="delta-label">Δ < 0</text>
+                                </svg>
+                                <div class="case-desc">
+                                    <strong>无实数根</strong>
+                                    <p>抛物线与x轴无交点</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <table class="term-table">
+                            <tr>
+                                <th>判别式 Δ</th>
+                                <th>根的情况</th>
+                            </tr>
+                            <tr>
+                                <td>Δ > 0</td>
+                                <td>两个不相等的实数根</td>
+                            </tr>
+                            <tr>
+                                <td>Δ = 0</td>
+                                <td>两个相等的实数根</td>
+                            </tr>
+                            <tr>
+                                <td>Δ < 0</td>
+                                <td>无实数根</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="method-steps">
+                        <h4>📝 解题步骤</h4>
+                        <ol>
+                            <li>将方程化为标准形式，确定 a、b、c 的值</li>
+                            <li>计算判别式 Δ = b² - 4ac</li>
+                            <li>代入求根公式求解</li>
+                        </ol>
+                    </div>
+                    <div class="method-example">
+                        <h4>📌 例题一</h4>
+                        <div class="example-solution">
+                            <p class="problem"><strong>题目</strong>：解方程 2x² + 3x - 2 = 0</p>
+                            <div class="solution-toggle" onclick="toggleSolution(this)">
+                                <span class="show-text">点击查看解答 ▼</span>
+                            </div>
+                            <div class="solution-content">
+                                <p><strong>解</strong>：</p>
+                                <p>第一步：确定系数 a = 2，b = 3，c = -2</p>
+                                <p>第二步：计算判别式</p>
+                                <p>Δ = b² - 4ac = 3² - 4×2×(-2) = 9 + 16 = 25 > 0</p>
+                                <p>方程有两个不相等的实数根</p>
+                                <p>第三步：代入公式</p>
+                                <p>x = <span class="fraction"><span class="numerator">-3 ± √25</span><span class="denominator">2×2</span></span> = <span class="fraction"><span class="numerator">-3 ± 5</span><span class="denominator">4</span></span></p>
+                                <p>x₁ = (-3+5)/4 = 2/4 = 1/2</p>
+                                <p>x₂ = (-3-5)/4 = -8/4 = -2</p>
+                                <p class="answer">∴ x₁ = 1/2，x₂ = -2</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-example">
+                        <h4>📌 例题二</h4>
+                        <div class="example-solution">
+                            <p class="problem"><strong>题目</strong>：解方程 x² - 4x + 4 = 0</p>
+                            <div class="solution-toggle" onclick="toggleSolution(this)">
+                                <span class="show-text">点击查看解答 ▼</span>
+                            </div>
+                            <div class="solution-content">
+                                <p><strong>解</strong>：</p>
+                                <p>第一步：确定系数 a = 1，b = -4，c = 4</p>
+                                <p>第二步：计算判别式</p>
+                                <p>Δ = b² - 4ac = (-4)² - 4×1×4 = 16 - 16 = 0</p>
+                                <p>方程有两个相等的实数根</p>
+                                <p>第三步：代入公式</p>
+                                <p>x = <span class="fraction"><span class="numerator">-(-4) ± √0</span><span class="denominator">2×1</span></span> = <span class="fraction"><span class="numerator">4</span><span class="denominator">2</span></span> = 2</p>
+                                <p class="answer">∴ x₁ = x₂ = 2</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="warning-box">
+                        ⚠️ <strong>易错提醒</strong>：代入公式时注意 b 的符号！b = -4 时，-b = -(-4) = 4
+                    </div>
+                </div>
+            </div>
+
+            <!-- 解法四：因式分解法 -->
+            <div class="method-card detailed">
+                <div class="method-header" onclick="toggleMethod(this)">
+                    <h3>📌 解法四：因式分解法</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="method-content collapsed">
+                    <div class="method-intro">
+                        <p><strong>适用条件</strong>：方程左边易于分解因式的情况</p>
+                    </div>
+                    <div class="method-steps">
+                        <h4>📝 解题步骤</h4>
+                        <ol>
+                            <li>移项使右边为 0</li>
+                            <li>左边分解因式</li>
+                            <li>令各因式为 0 求解</li>
+                        </ol>
+                    </div>
+                    <div class="method-example">
+                        <h4>📌 例题一（提公因式法）</h4>
+                        <div class="example-solution">
+                            <p class="problem"><strong>题目</strong>：解方程 x² - 5x = 0</p>
+                            <div class="solution-toggle" onclick="toggleSolution(this)">
+                                <span class="show-text">点击查看解答 ▼</span>
+                            </div>
+                            <div class="solution-content">
+                                <p><strong>解</strong>：</p>
+                                <p>提取公因式 x：</p>
+                                <p>x(x - 5) = 0</p>
+                                <p>令各因式为 0：</p>
+                                <p>x = 0 或 x - 5 = 0</p>
+                                <p class="answer">∴ x₁ = 0，x₂ = 5</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-example">
+                        <h4>📌 例题二（分组分解法）</h4>
+                        <div class="example-solution">
+                            <p class="problem"><strong>题目</strong>：解方程 x² - 5x + 6 = 0</p>
+                            <div class="solution-toggle" onclick="toggleSolution(this)">
+                                <span class="show-text">点击查看解答 ▼</span>
+                            </div>
+                            <div class="solution-content">
+                                <p><strong>解</strong>：</p>
+                                <p>分解因式：x² - 5x + 6 = (x - 2)(x - 3)</p>
+                                <p>(x - 2)(x - 3) = 0</p>
+                                <p>x - 2 = 0 或 x - 3 = 0</p>
+                                <p class="answer">∴ x₁ = 2，x₂ = 3</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="warning-box">
+                        ⚠️ <strong>易错提醒</strong>：分解因式后，不要忘记令每个因式都等于 0！
+                    </div>
+                </div>
+            </div>
+
+            <!-- 解法五：十字交叉法 -->
+            <div class="method-card detailed">
+                <div class="method-header" onclick="toggleMethod(this)">
+                    <h3>📌 解法五：十字交叉法</h3>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <div class="method-content collapsed">
+                    <div class="method-intro">
+                        <p><strong>适用条件</strong>：分解形如 ax² + bx + c 的二次三项式</p>
+                    </div>
+                    <div class="method-steps">
+                        <h4>📝 方法原理</h4>
+                        <p>将 ax² + bx + c 分解为 (mx + p)(nx + q)</p>
+                        <p>需要满足：</p>
+                        <ul>
+                            <li>m × n = a（二次项系数）</li>
+                            <li>p × q = c（常数项）</li>
+                            <li>mq + np = b（一次项系数）</li>
+                        </ul>
+                    </div>
+                    <div class="cross-diagram">
+                        <h4>📐 十字交叉图示</h4>
+                        <div class="cross-visual-enhanced">
+                            <div class="cross-layout">
+                                <!-- 左列（二次项分解） -->
+                                <div class="cross-column left-col">
+                                    <div class="cross-header">二次项 ax²</div>
+                                    <div class="cross-factor">
+                                        <span class="factor-box">m</span>
+                                        <span class="factor-x">x</span>
+                                    </div>
+                                    <div class="cross-factor">
+                                        <span class="factor-box">n</span>
+                                        <span class="factor-x">x</span>
+                                    </div>
+                                    <div class="cross-note">m × n = a</div>
+                                </div>
+
+                                <!-- 交叉线 -->
+                                <div class="cross-lines">
+                                    <svg viewBox="0 0 60 80" class="cross-svg">
+                                        <line x1="10" y2="20" y1="60" x2="50" class="cross-line"/>
+                                        <line x1="10" y2="60" y1="20" x2="50" class="cross-line"/>
+                                        <!-- 交叉点 -->
+                                        <circle cx="30" cy="40" r="5" class="cross-point"/>
+                                    </svg>
+                                </div>
+
+                                <!-- 右列（常数项分解） -->
+                                <div class="cross-column right-col">
+                                    <div class="cross-header">常数项 c</div>
+                                    <div class="cross-factor">
+                                        <span class="factor-box">p</span>
+                                    </div>
+                                    <div class="cross-factor">
+                                        <span class="factor-box">q</span>
+                                    </div>
+                                    <div class="cross-note">p × q = c</div>
+                                </div>
+                            </div>
+
+                            <!-- 验证结果 -->
+                            <div class="cross-verify">
+                                <div class="verify-arrow">
+                                    <span class="arrow-text">交叉相乘后相加</span>
+                                </div>
+                                <div class="verify-result">
+                                    <span class="calculation">mq + np = <strong class="result-value">b</strong></span>
+                                    <span class="check-mark">✓ 验证成立</span>
+                                </div>
+                            </div>
+
+                            <!-- 最终结果 -->
+                            <div class="cross-final">
+                                <span class="result-formula">ax² + bx + c = (mx + p)(nx + q)</span>
+                            </div>
+                        </div>
+                        <p class="cross-tip">💡 关键：找到合适的 m、n、p、q，使交叉相乘后相加等于一次项系数 b</p>
+                    </div>
+                    <div class="method-example">
+                        <h4>📌 例题一</h4>
+                        <div class="example-solution">
+                            <p class="problem"><strong>题目</strong>：分解 x² + 5x + 6</p>
+                            <div class="solution-toggle" onclick="toggleSolution(this)">
+                                <span class="show-text">点击查看解答 ▼</span>
+                            </div>
+                            <div class="solution-content">
+                                <p><strong>解</strong>：</p>
+                                <p>分析：a=1, b=5, c=6</p>
+                                <div class="cross-visual">
+                                    <div class="cross-row">
+                                        <span class="cross-item">1</span>
+                                        <span class="cross-arrow">↘</span>
+                                        <span class="cross-item">2</span>
+                                    </div>
+                                    <div class="cross-row">
+                                        <span class="cross-item">1</span>
+                                        <span class="cross-arrow">↗</span>
+                                        <span class="cross-item">3</span>
+                                    </div>
+                                    <div class="cross-result">1×3 + 1×2 = 5 ✓</div>
+                                </div>
+                                <p>x² + 5x + 6 = (x + 2)(x + 3)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-example">
+                        <h4>📌 例题二</h4>
+                        <div class="example-solution">
+                            <p class="problem"><strong>题目</strong>：分解 2x² - 7x + 3</p>
+                            <div class="solution-toggle" onclick="toggleSolution(this)">
+                                <span class="show-text">点击查看解答 ▼</span>
+                            </div>
+                            <div class="solution-content">
+                                <p><strong>解</strong>：</p>
+                                <p>分析：a=2, b=-7, c=3</p>
+                                <p>尝试分解：</p>
+                                <div class="cross-visual">
+                                    <div class="cross-row">
+                                        <span class="cross-item">2</span>
+                                        <span class="cross-arrow">↘</span>
+                                        <span class="cross-item">-1</span>
+                                    </div>
+                                    <div class="cross-row">
+                                        <span class="cross-item">1</span>
+                                        <span class="cross-arrow">↗</span>
+                                        <span class="cross-item">-3</span>
+                                    </div>
+                                    <div class="cross-result">2×(-3) + 1×(-1) = -7 ✓</div>
+                                </div>
+                                <p>2x² - 7x + 3 = (2x - 1)(x - 3)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-example">
+                        <h4>📌 例题三（完整求解）</h4>
+                        <div class="example-solution">
+                            <p class="problem"><strong>题目</strong>：解方程 3x² - 10x + 3 = 0</p>
+                            <div class="solution-toggle" onclick="toggleSolution(this)">
+                                <span class="show-text">点击查看解答 ▼</span>
+                            </div>
+                            <div class="solution-content">
+                                <p><strong>解</strong>：</p>
+                                <p>用十字交叉法分解 3x² - 10x + 3：</p>
+                                <div class="cross-visual">
+                                    <div class="cross-row">
+                                        <span class="cross-item">3</span>
+                                        <span class="cross-arrow">↘</span>
+                                        <span class="cross-item">-1</span>
+                                    </div>
+                                    <div class="cross-row">
+                                        <span class="cross-item">1</span>
+                                        <span class="cross-arrow">↗</span>
+                                        <span class="cross-item">-3</span>
+                                    </div>
+                                    <div class="cross-result">3×(-3) + 1×(-1) = -10 ✓</div>
+                                </div>
+                                <p>3x² - 10x + 3 = (3x - 1)(x - 3)</p>
+                                <p>(3x - 1)(x - 3) = 0</p>
+                                <p>3x - 1 = 0 或 x - 3 = 0</p>
+                                <p class="answer">∴ x₁ = 1/3，x₂ = 3</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tip-box">
+                        💡 <strong>技巧</strong>：当 a、c 为正数，b 为正数时，分解后都是正；当 a、c 为正数，b 为负数时，分解后都是负。
+                    </div>
+                    <div class="warning-box">
+                        ⚠️ <strong>易错提醒</strong>：交叉相乘方向不要搞反！验证时确保 mq + np = b。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 模块三：练习巩固 -->
+        <section id="practice" class="section">
+            <h2 class="section-title">✏️ 三、练习巩固</h2>
+
+            <div class="practice-tabs">
+                <button class="tab-btn active" onclick="switchTab(event, 'practice1')">直接开平方法</button>
+                <button class="tab-btn" onclick="switchTab(event, 'practice2')">配方法</button>
+                <button class="tab-btn" onclick="switchTab(event, 'practice3')">公式法</button>
+                <button class="tab-btn" onclick="switchTab(event, 'practice4')">因式分解法</button>
+                <button class="tab-btn" onclick="switchTab(event, 'practice5')">十字交叉法</button>
+                <button class="tab-btn" onclick="switchTab(event, 'practice6')">综合练习</button>
+            </div>
+
+            <div id="practice1" class="tab-content active">
+                <div class="practice-card">
+                    <h4>直接开平方法练习</h4>
+                    <div class="practice-item">
+                        <p class="problem">1. 解方程：x² = 25</p>
+                        <input type="text" class="answer-input" placeholder="x₁ = ?, x₂ = ?">
+                        <button class="check-btn" onclick="checkAnswer(this, 'x₁=5,x₂=-5')">检查答案</button>
+                        <div class="feedback"></div>
+                    </div>
+                    <div class="practice-item">
+                        <p class="problem">2. 解方程：(x - 2)² = 9</p>
+                        <input type="text" class="answer-input" placeholder="x₁ = ?, x₂ = ?">
+                        <button class="check-btn" onclick="checkAnswer(this, 'x₁=5,x₂=-1')">检查答案</button>
+                        <div class="feedback"></div>
+                    </div>
+                    <div class="practice-item">
+                        <p class="problem">3. 解方程：4x² = 16</p>
+                        <input type="text" class="answer-input" placeholder="x₁ = ?, x₂ = ?">
+                        <button class="check-btn" onclick="checkAnswer(this, 'x₁=2,x₂=-2')">检查答案</button>
+                        <div class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="practice2" class="tab-content">
+                <div class="practice-card">
+                    <h4>配方法练习</h4>
+                    <div class="practice-item">
+                        <p class="problem">1. 解方程：x² + 4x - 5 = 0</p>
+                        <input type="text" class="answer-input" placeholder="x₁ = ?, x₂ = ?">
+                        <button class="check-btn" onclick="checkAnswer(this, 'x₁=1,x₂=-5')">检查答案</button>
+                        <div class="feedback"></div>
+                    </div>
+                    <div class="practice-item">
+                        <p class="problem">2. 解方程：x² - 8x + 15 = 0</p>
+                        <input type="text" class="answer-input" placeholder="x₁ = ?, x₂ = ?">
+                        <button class="check-btn" onclick="checkAnswer(this, 'x₁=5,x₂=3')">检查答案</button>
+                        <div class="feedback"></div>
+                    </div>
+                    <div class="practice-item">
+                        <p class="problem">3. 解方程：2x² - 4x - 6 = 0</p>
+                        <input type="text" class="answer-input" placeholder="x₁ = ?, x₂ = ?">
+                        <button class="check-btn" onclick="checkAnswer(this, 'x₁=3,x₂=-1')">检查答案</button>
+                        <div class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="practice3" class="tab-content">
+                <div class="practice-card">
+                    <h4>公式法练习</h4>
+                    <div class="practice-item">
+                        <p class="problem">1. 解方程：x² - 5x + 4 = 0</p>
+                        <input type="text" class="answer-input" placeholder="x₁ = ?, x₂ = ?">
+                        <button class="check-btn" onclick="checkAnswer(this, 'x₁=4,x₂=1')">检查答案</button>
+                        <div class="feedback"></div>
+                    </div>
+                    <div class="practice-item">
+                        <p class="problem">2. 解方程：3x² + 2x - 1 = 0</p>
+                        <input type="text" class="answer-input" placeholder="x₁ = ?, x₂ = ?">
+                        <button class="check-btn" onclick="checkAnswer(this, 'x₁=1/3,x₂=-1')">检查答案</button>
+                        <div class="feedback"></div>
+                    </div>
+                    <div class="practice-item">
+                        <p class="problem">3. 解方程：x² - 6x + 9 = 0</p>
+                        <input type="text" class="answer-input" placeholder="x₁ = x₂ = ?">
+                        <button class="check-btn" onclick="checkAnswer(this, 'x₁=x₂=3')">检查答案</button>
+                        <div class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="practice4" class="tab-content">
+                <div class="practice-card">
+                    <h4>因式分解法练习</h4>
+                    <div class="practice-item">
+                        <p class="problem">1. 解方程：x² - 3x = 0</p>
+                        <input type="text" class="answer-input" placeholder="x₁ = ?, x₂ = ?">
+                        <button class="check-btn" onclick="checkAnswer(this, 'x₁=0,x₂=3')">检查答案</button>
+                        <div class="feedback"></div>
+                    </div>
+                    <div class="practice-item">
+                        <p class="problem">2. 解方程：x² - 7x + 12 = 0</p>
+                        <input type="text" class="answer-input" placeholder="x₁ = ?, x₂ = ?">
+                        <button class="check-btn" onclick="checkAnswer(this, 'x₁=4,x₂=3')">检查答案</button>
+                        <div class="feedback"></div>
+                    </div>
+                    <div class="practice-item">
+                        <p class="problem">3. 解方程：x² - x - 6 = 0</p>
+                        <input type="text" class="answer-input" placeholder="x₁ = ?, x₂ = ?">
+                        <button class="check-btn" onclick="checkAnswer(this, 'x₁=3,x₂=-2')">检查答案</button>
+                        <div class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="practice5" class="tab-content">
+                <div class="practice-card">
+                    <h4>十字交叉法练习</h4>
+                    <div class="practice-item">
+                        <p class="problem">1. 解方程：2x² - 5x + 2 = 0</p>
+                        <input type="text" class="answer-input" placeholder="x₁ = ?, x₂ = ?">
+                        <button class="check-btn" onclick="checkAnswer(this, 'x₁=2,x₂=1/2')">检查答案</button>
+                        <div class="feedback"></div>
+                    </div>
+                    <div class="practice-item">
+                        <p class="problem">2. 解方程：6x² - x - 2 = 0</p>
+                        <input type="text" class="answer-input" placeholder="x₁ = ?, x₂ = ?">
+                        <button class="check-btn" onclick="checkAnswer(this, 'x₁=2/3,x₂=-1/2')">检查答案</button>
+                        <div class="feedback"></div>
+                    </div>
+                    <div class="practice-item">
+                        <p class="problem">3. 解方程：3x² + 11x + 6 = 0</p>
+                        <input type="text" class="answer-input" placeholder="x₁ = ?, x₂ = ?">
+                        <button class="check-btn" onclick="checkAnswer(this, 'x₁=-2/3,x₂=-3')">检查答案</button>
+                        <div class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="practice6" class="tab-content">
+                <div class="practice-card">
+                    <h4>综合练习 - 选择合适的方法</h4>
+                    <div class="practice-item">
+                        <p class="problem">1. 解方程：x² - 9 = 0（建议方法：____）</p>
+                        <select class="method-select">
+                            <option value="">选择方法</option>
+                            <option value="直接开平方法">直接开平方法</option>
+                            <option value="配方法">配方法</option>
+                            <option value="公式法">公式法</option>
+                            <option value="因式分解法">因式分解法</option>
+                        </select>
+                        <input type="text" class="answer-input" placeholder="x₁ = ?, x₂ = ?">
+                        <button class="check-btn" onclick="checkComprehensive(this, '直接开平方法', 'x₁=3,x₂=-3')">检查答案</button>
+                        <div class="feedback"></div>
+                    </div>
+                    <div class="practice-item">
+                        <p class="problem">2. 解方程：x² + 6x + 9 = 0（建议方法：____）</p>
+                        <select class="method-select">
+                            <option value="">选择方法</option>
+                            <option value="直接开平方法">直接开平方法</option>
+                            <option value="配方法">配方法</option>
+                            <option value="公式法">公式法</option>
+                            <option value="因式分解法">因式分解法</option>
+                        </select>
+                        <input type="text" class="answer-input" placeholder="x₁ = x₂ = ?">
+                        <button class="check-btn" onclick="checkComprehensive(this, '直接开平方法', 'x₁=x₂=-3')">检查答案</button>
+                        <div class="feedback"></div>
+                    </div>
+                    <div class="practice-item">
+                        <p class="problem">3. 解方程：x² + x - 12 = 0（建议方法：____）</p>
+                        <select class="method-select">
+                            <option value="">选择方法</option>
+                            <option value="直接开平方法">直接开平方法</option>
+                            <option value="配方法">配方法</option>
+                            <option value="公式法">公式法</option>
+                            <option value="因式分解法">因式分解法</option>
+                            <option value="十字交叉法">十字交叉法</option>
+                        </select>
+                        <input type="text" class="answer-input" placeholder="x₁ = ?, x₂ = ?">
+                        <button class="check-btn" onclick="checkComprehensive(this, '因式分解法', 'x₁=3,x₂=-4')">检查答案</button>
+                        <div class="feedback"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 模块四：实际应用 -->
+        <section id="application" class="section">
+            <h2 class="section-title">🌍 四、实际应用</h2>
+
+            <div class="application-card">
+                <h3>📐 应用一：面积问题</h3>
+                <div class="app-problem">
+                    <!-- 矩形花坛示意图 -->
+                    <div class="app-diagram">
+                        <svg viewBox="0 0 200 120" class="app-svg">
+                            <!-- 矩形花坛 -->
+                            <rect x="40" y="20" width="120" height="60" class="garden-rect"/>
+                            <!-- 边长标注 -->
+                            <line x1="40" y2="85" y1="85" x2="160" class="dim-line"/>
+                            <text x="100" y="95" class="dim-text">x 米</text>
+                            <line x1="165" y2="20" y1="80" x2="165" class="dim-line-v"/>
+                            <text x="175" y="55" class="dim-text">(12-x) 米</text>
+                            <!-- 篱笆 -->
+                            <path d="M40 20 L160 20 L160 80 L40 80" class="fence-path" stroke-dasharray="5,3"/>
+                            <!-- 面积标注 -->
+                            <text x="100" y="55" class="area-text">面积 = 36 m²</text>
+                        </svg>
+                    </div>
+                    <p><strong>问题</strong>：用 24 米长的篱笆围成一个矩形花坛，要使面积为 36 平方米，花坛的边长应是多少？</p>
+                    <div class="solution-toggle" onclick="toggleSolution(this)">
+                        <span class="show-text">点击查看解答 ▼</span>
+                    </div>
+                    <div class="solution-content">
+                        <p><strong>解</strong>：</p>
+                        <p>设矩形的一边长为 x 米，则另一边长为 (24-2x)/2 = (12-x) 米</p>
+                        <p>根据题意列方程：x(12-x) = 36</p>
+                        <p>化简：-x² + 12x = 36</p>
+                        <p>x² - 12x + 36 = 0</p>
+                        <p>(x-6)² = 0</p>
+                        <p>x = 6</p>
+                        <p>另一边：12 - 6 = 6（米）</p>
+                        <p class="answer">答：花坛的边长为 6 米，是一个正方形花坛。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="application-card">
+                <h3>🏀 应用二：抛物问题</h3>
+                <div class="app-problem">
+                    <!-- 物体下落示意图 -->
+                    <div class="app-diagram">
+                        <svg viewBox="0 0 200 150" class="app-svg">
+                            <!-- 高度线 -->
+                            <line x1="30" y2="20" y1="130" x2="30" class="height-line"/>
+                            <!-- 高度标注 -->
+                            <text x="15" y="75" class="dim-text">h = 45m</text>
+                            <!-- 物体下落轨迹 -->
+                            <circle cx="30" cy="20" r="8" class="object-ball start"/>
+                            <circle cx="30" cy="130" r="8" class="object-ball end"/>
+                            <!-- 下落箭头 -->
+                            <path d="M30 30 L30 120" class="fall-arrow"/>
+                            <polygon points="30,130 25,120 35,120" class="arrow-head"/>
+                            <!-- 时间标注 -->
+                            <text x="60" y="130" class="dim-text">t = 3s</text>
+                            <!-- 公式 -->
+                            <text x="100" y="60" class="formula-text">h = 5t²</text>
+                        </svg>
+                    </div>
+                    <p><strong>问题</strong>：一个物体从高处自由下落，下落的高度 h（米）与时间 t（秒）的关系为 h = 5t²。若物体下落了 45 米，求下落时间。</p>
+                    <div class="solution-toggle" onclick="toggleSolution(this)">
+                        <span class="show-text">点击查看解答 ▼</span>
+                    </div>
+                    <div class="solution-content">
+                        <p><strong>解</strong>：</p>
+                        <p>根据题意列方程：5t² = 45</p>
+                        <p>t² = 9</p>
+                        <p>t = ±3</p>
+                        <p>∵ 时间不能为负数，∴ t = -3 舍去</p>
+                        <p class="answer">答：物体下落 45 米需要 3 秒。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="application-card">
+                <h3>📈 应用三：增长率问题</h3>
+                <div class="app-problem">
+                    <!-- 增长率示意图 -->
+                    <div class="app-diagram">
+                        <svg viewBox="0 0 250 100" class="app-svg">
+                            <!-- 三个月柱状图 -->
+                            <rect x="30" y="40" width="40" height="50" class="growth-bar month1"/>
+                            <text x="50" y="95" class="bar-label">一月</text>
+                            <text x="50" y="35" class="bar-value">100万</text>
+
+                            <rect x="100" y="30" width="40" height="60" class="growth-bar month2"/>
+                            <text x="120" y="95" class="bar-label">二月</text>
+                            <text x="120" y="25" class="bar-value">100(1+x)</text>
+
+                            <rect x="170" y="15" width="40" height="75" class="growth-bar month3"/>
+                            <text x="190" y="95" class="bar-label">三月</text>
+                            <text x="190" y="10" class="bar-value">100(1+x)²</text>
+
+                            <!-- 增长箭头 -->
+                            <path d="M75 55 L95 55" class="growth-arrow"/>
+                            <text x="85" y="48" class="arrow-label">x</text>
+                            <path d="M145 55 L165 55" class="growth-arrow"/>
+                            <text x="155" y="48" class="arrow-label">x</text>
+
+                            <!-- 总计标注 -->
+                            <text x="125" y="105" class="total-label">总计：364万元</text>
+                        </svg>
+                    </div>
+                    <p><strong>问题</strong>：某厂一月份产值 100 万元，第一季度总产值 364 万元，求二、三月份平均每月的增长率。</p>
+                    <div class="solution-toggle" onclick="toggleSolution(this)">
+                        <span class="show-text">点击查看解答 ▼</span>
+                    </div>
+                    <div class="solution-content">
+                        <p><strong>解</strong>：</p>
+                        <p>设平均增长率为 x</p>
+                        <p>一月份：100 万元</p>
+                        <p>二月份：100(1+x) 万元</p>
+                        <p>三月份：100(1+x)² 万元</p>
+                        <p>列方程：100 + 100(1+x) + 100(1+x)² = 364</p>
+                        <p>化简：(1+x)² + (1+x) + 1 = 3.64</p>
+                        <p>设 y = 1+x，则 y² + y + 1 = 3.64</p>
+                        <p>y² + y - 2.64 = 0</p>
+                        <p>解得 y = 1.2 或 y = -2.2</p>
+                        <p>y = 1+x = 1.2，∴ x = 0.2 = 20%</p>
+                        <p>（y = -2.2 < 0，不合题意舍去）</p>
+                        <p class="answer">答：平均每月增长率为 20%。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="application-card">
+                <h3>💰 应用四：利润问题</h3>
+                <div class="app-problem">
+                    <!-- 利润问题示意图 -->
+                    <div class="app-diagram">
+                        <svg viewBox="0 0 280 120" class="app-svg">
+                            <!-- 价格变化 -->
+                            <rect x="20" y="20" width="60" height="80" class="price-box"/>
+                            <text x="50" y="50" class="price-label">原价</text>
+                            <text x="50" y="70" class="price-value">60元</text>
+
+                            <rect x="100" y="20" width="60" height="80" class="price-box new"/>
+                            <text x="130" y="50" class="price-label">降价后</text>
+                            <text x="130" y="70" class="price-value">(60-x)元</text>
+
+                            <!-- 降价箭头 -->
+                            <path d="M85 60 L95 60" class="price-arrow"/>
+                            <text x="90" y="50" class="arrow-label">-x</text>
+
+                            <!-- 销量变化 -->
+                            <text x="200" y="40" class="sales-label">销量变化：</text>
+                            <text x="200" y="60" class="sales-value">300件 → (300+20x)件</text>
+                            <text x="200" y="80" class="sales-note">每降价1元，多卖20件</text>
+
+                            <!-- 利益关系 -->
+                            <text x="50" y="110" class="profit-formula">利润 = (售价-进价) × 销量</text>
+                        </svg>
+                    </div>
+                    <p><strong>问题</strong>：某商场销售一种商品，每件进价 40 元，售价 60 元，每周可卖出 300 件。经调查发现，每降价 1 元，每周可多卖出 20 件。要使每周利润达到 6125 元，应降价多少元？</p>
+                    <div class="solution-toggle" onclick="toggleSolution(this)">
+                        <span class="show-text">点击查看解答 ▼</span>
+                    </div>
+                    <div class="solution-content">
+                        <p><strong>解</strong>：</p>
+                        <p>设降价 x 元</p>
+                        <p>降价后每件利润：(60-x) - 40 = (20-x) 元</p>
+                        <p>降价后销量：300 + 20x 件</p>
+                        <p>列方程：(20-x)(300+20x) = 6125</p>
+                        <p>化简：6000 + 400x - 300x - 20x² = 6125</p>
+                        <p>20x² - 100x + 125 = 0</p>
+                        <p>4x² - 20x + 25 = 0</p>
+                        <p>(2x-5)² = 0</p>
+                        <p>x = 2.5</p>
+                        <p class="answer">答：应降价 2.5 元。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 模块五：考点与易错 -->
+        <section id="exam-tips" class="section">
+            <h2 class="section-title">📋 五、考点与易错</h2>
+
+            <!-- 典型考点 -->
+            <div class="exam-section">
+                <h3>🎯 典型考点</h3>
+
+                <div class="exam-card">
+                    <h4>考点一：基础概念</h4>
+                    <table class="exam-table">
+                        <tr>
+                            <th>考点</th>
+                            <th>常见题型</th>
+                            <th>解题关键</th>
+                        </tr>
+                        <tr>
+                            <td>判断方程类型</td>
+                            <td>给出多个方程，判断哪些是一元二次方程</td>
+                            <td>抓住三个条件：一个未知数、最高次数2、整式方程、a≠0</td>
+                        </tr>
+                        <tr>
+                            <td>确定系数</td>
+                            <td>求 ax²+bx+c=0 中 a、b、c 的值</td>
+                            <td>先化为标准形式，注意符号</td>
+                        </tr>
+                        <tr>
+                            <td>方程的根</td>
+                            <td>已知根，求方程或系数</td>
+                            <td>根代入方程成立</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="exam-card">
+                    <h4>考点二：解法选择</h4>
+                    <table class="exam-table">
+                        <tr>
+                            <th>考点</th>
+                            <th>常见题型</th>
+                            <th>解题关键</th>
+                        </tr>
+                        <tr>
+                            <td>选择最优解法</td>
+                            <td>给方程，选择最简便方法</td>
+                            <td>观察方程特征</td>
+                        </tr>
+                        <tr>
+                            <td>配方法应用</td>
+                            <td>求最小/最大值、证明不等式</td>
+                            <td>配成 (x+m)²+n 形式</td>
+                        </tr>
+                        <tr>
+                            <td>公式法推导</td>
+                            <td>推导求根公式</td>
+                            <td>掌握配方法过程</td>
+                        </tr>
+                        <tr>
+                            <td>判别式应用</td>
+                            <td>判断根的个数、求参数范围</td>
+                            <td>Δ>0 两不等根，Δ=0 两相等根，Δ<0 无实根</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="exam-card">
+                    <h4>考点三：韦达定理</h4>
+                    <table class="exam-table">
+                        <tr>
+                            <th>考点</th>
+                            <th>常见题型</th>
+                            <th>解题关键</th>
+                        </tr>
+                        <tr>
+                            <td>基本应用</td>
+                            <td>求 x₁+x₂、x₁·x₂</td>
+                            <td>直接代入公式：x₁+x₂=-b/a，x₁x₂=c/a</td>
+                        </tr>
+                        <tr>
+                            <td>变形应用</td>
+                            <td>求 x₁²+x₂²、1/x₁+1/x₂ 等</td>
+                            <td>用 x₁+x₂、x₁·x₂ 表示</td>
+                        </tr>
+                        <tr>
+                            <td>构造方程</td>
+                            <td>已知两根，构造方程</td>
+                            <td>x²-(x₁+x₂)x+x₁x₂=0</td>
+                        </tr>
+                        <tr>
+                            <td>根与系数关系</td>
+                            <td>已知一根，求另一根和参数</td>
+                            <td>联立韦达定理求解</td>
+                        </tr>
+                    </table>
+                    <div class="formula-box">
+                        <p><strong>韦达定理</strong>：设 x₁、x₂ 是方程 ax²+bx+c=0 的两根，则：</p>
+                        <p class="main-formula">x₁ + x₂ = -b/a &nbsp;&nbsp;&nbsp; x₁ · x₂ = c/a</p>
+
+                        <!-- 韦达定理可视化 -->
+                        <div class="vieta-visual">
+                            <svg viewBox="0 0 200 80" class="vieta-svg">
+                                <!-- 抛物线 -->
+                                <path d="M20 60 Q100 10 180 60" class="vieta-parabola"/>
+                                <!-- x轴 -->
+                                <line x1="10" y2="40" y1="40" x2="190" class="vieta-axis"/>
+                                <!-- 两根 -->
+                                <circle cx="40" cy="40" r="4" class="vieta-root"/>
+                                <circle cx="160" cy="40" r="4" class="vieta-root"/>
+                                <!-- 根标注 -->
+                                <text x="40" y="55" class="vieta-label">x₁</text>
+                                <text x="160" y="55" class="vieta-label">x₂</text>
+                                <!-- 对称轴 -->
+                                <line x1="100" y2="20" y1="70" x2="100" class="vieta-symmetry" stroke-dasharray="4,2"/>
+                                <!-- 对称轴标注 -->
+                                <text x="105" y="75" class="vieta-sym-label">对称轴 x = -(b/2a)</text>
+                                <!-- 关系说明 -->
+                                <path d="M40 50 Q100 65 160 50" class="vieta-relation"/>
+                                <text x="100" y="68" class="vieta-relation-text">x₁+x₂ = -b/a</text>
+                            </svg>
+                            <div class="vieta-notes">
+                                <p>💡 <strong>几何意义</strong>：两根之和等于对称轴位置的两倍</p>
+                                <p>💡 <strong>记忆技巧</strong>：和用 b，积用 c，都除以 a</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exam-card">
+                    <h4>考点四：应用题</h4>
+                    <table class="exam-table">
+                        <tr>
+                            <th>类型</th>
+                            <th>常见情境</th>
+                            <th>设未知数技巧</th>
+                        </tr>
+                        <tr>
+                            <td>面积问题</td>
+                            <td>围栏、地砖、裁剪</td>
+                            <td>设边长为 x</td>
+                        </tr>
+                        <tr>
+                            <td>增长率问题</td>
+                            <td>两年增长相同比例</td>
+                            <td>设增长率为 x</td>
+                        </tr>
+                        <tr>
+                            <td>利润问题</td>
+                            <td>降价促销、定价策略</td>
+                            <td>设降价/涨价 x 元</td>
+                        </tr>
+                        <tr>
+                            <td>传播问题</td>
+                            <td>病毒传播、消息转发</td>
+                            <td>设每次传播 x 人</td>
+                        </tr>
+                        <tr>
+                            <td>相遇问题</td>
+                            <td>两人相向而行</td>
+                            <td>设速度/时间为 x</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 易错点 -->
+            <div class="exam-section">
+                <h3>⚠️ 易错点详解</h3>
+
+                <div class="error-category">
+                    <h4>一、概念理解易错</h4>
+                    <table class="error-table">
+                        <tr>
+                            <th>易错点</th>
+                            <th>错误示例</th>
+                            <th>正确理解</th>
+                        </tr>
+                        <tr>
+                            <td>二次项系数</td>
+                            <td>认为 x²-2x+1=0 的 a=0</td>
+                            <td>a=1，常数项为 0 时方程仍是二次方程</td>
+                        </tr>
+                        <tr>
+                            <td>标准形式</td>
+                            <td>x²=2x+3 直接写 a=1,b=2,c=3</td>
+                            <td>先移项：x²-2x-3=0，a=1,b=-2,c=-3</td>
+                        </tr>
+                        <tr>
+                            <td>方程的解</td>
+                            <td>x²=4 的解为 x=2</td>
+                            <td>x=±2，漏掉负根是常见错误</td>
+                        </tr>
+                        <tr>
+                            <td>判别式条件</td>
+                            <td>使用韦达定理不考虑 Δ≥0</td>
+                            <td>必须先判断方程有实根</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="error-category">
+                    <h4>二、计算过程易错</h4>
+                    <table class="error-table">
+                        <tr>
+                            <th>易错点</th>
+                            <th>错误示例</th>
+                            <th>正确做法</th>
+                        </tr>
+                        <tr>
+                            <td>移项变号</td>
+                            <td>x²-5=3x → x²+3x-5=0</td>
+                            <td>x²-3x-5=0，移项要变号</td>
+                        </tr>
+                        <tr>
+                            <td>配方法漏加</td>
+                            <td>x²+4x+1=0 → x²+4x+4=-1</td>
+                            <td>两边同加 4：x²+4x+4=3</td>
+                        </tr>
+                        <tr>
+                            <td>公式代入符号</td>
+                            <td>2x²-3x+1=0 中 b=3</td>
+                            <td>b=-3，负号是系数的一部分</td>
+                        </tr>
+                        <tr>
+                            <td>开平方漏根</td>
+                            <td>(x-1)²=9 → x-1=3</td>
+                            <td>x-1=±3，得 x=4 或 x=-2</td>
+                        </tr>
+                        <tr>
+                            <td>十字交叉方向</td>
+                            <td>x²+5x+6 中，交叉写反</td>
+                            <td>验证：交叉相乘后相加应等于一次项系数</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="error-category">
+                    <h4>三、韦达定理易错</h4>
+                    <table class="error-table">
+                        <tr>
+                            <th>易错点</th>
+                            <th>错误示例</th>
+                            <th>正确做法</th>
+                        </tr>
+                        <tr>
+                            <td>符号混淆</td>
+                            <td>x²+3x-4=0 中 x₁+x₂=3</td>
+                            <td>x₁+x₂=-b/a=-3，注意负号</td>
+                        </tr>
+                        <tr>
+                            <td>使用前提</td>
+                            <td>不验根就使用韦达定理</td>
+                            <td>必须先判断 Δ≥0</td>
+                        </tr>
+                        <tr>
+                            <td>构造方程</td>
+                            <td>根为 2、3，方程为 x²+5x+6=0</td>
+                            <td>x²-5x+6=0，两根之和为 -b/a</td>
+                        </tr>
+                        <tr>
+                            <td>齐次变形</td>
+                            <td>求 x₁²+x₂² 直接等于 (x₁+x₂)²</td>
+                            <td>x₁²+x₂²=(x₁+x₂)²-2x₁x₂</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="error-category">
+                    <h4>四、应用题易错</h4>
+                    <table class="error-table">
+                        <tr>
+                            <th>易错点</th>
+                            <th>错误示例</th>
+                            <th>正确做法</th>
+                        </tr>
+                        <tr>
+                            <td>单位不统一</td>
+                            <td>面积用平方米，边长用厘米</td>
+                            <td>统一单位后再列方程</td>
+                        </tr>
+                        <tr>
+                            <td>忽略实际意义</td>
+                            <td>答案 x=-5（边长为负）</td>
+                            <td>检验并舍去不合实际的解</td>
+                        </tr>
+                        <tr>
+                            <td>增长率公式错误</td>
+                            <td>增长率为 x，两年后写成 (1+x)² 倍</td>
+                            <td>正确，但注意原始量乘这个倍数</td>
+                        </tr>
+                        <tr>
+                            <td>解答不完整</td>
+                            <td>只写 x=5，没有写"边长为5米"</td>
+                            <td>完整作答：答：边长为5米</td>
+                        </tr>
+                        <tr>
+                            <td>设问理解错误</td>
+                            <td>求增长率，设了增长人数</td>
+                            <td>设增长率为 x（百分数）</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="error-category">
+                    <h4>五、书写规范易错</h4>
+                    <table class="error-table">
+                        <tr>
+                            <th>易错点</th>
+                            <th>错误写法</th>
+                            <th>正确写法</th>
+                        </tr>
+                        <tr>
+                            <td>解的表示</td>
+                            <td>x=2,-3</td>
+                            <td>x₁=2，x₂=-3 或 x=2 或 x=-3</td>
+                        </tr>
+                        <tr>
+                            <td>公式书写</td>
+                            <td>分数线过短，运算顺序不清</td>
+                            <td>用括号明确：(-b±√Δ)/(2a)</td>
+                        </tr>
+                        <tr>
+                            <td>解方程格式</td>
+                            <td>缺少"解"字，直接开始</td>
+                            <td>开头写"解："，步骤清晰</td>
+                        </tr>
+                        <tr>
+                            <td>检验过程</td>
+                            <td>应用题不写检验</td>
+                            <td>写"经检验，x=-5 不合题意，舍去"</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 模块六：知识拓展 -->
+        <section id="extension" class="section">
+            <h2 class="section-title">🚀 六、知识拓展</h2>
+
+            <div class="extension-grid">
+                <div class="extension-card" onclick="toggleExtension(this)">
+                    <h3>📜 数学史话</h3>
+                    <p class="card-intro">一元二次方程的历史渊源...</p>
+                    <div class="extension-content">
+                        <h4>古巴比伦时期（约公元前2000年）</h4>
+                        <p>古巴比伦人已经能够解决一些特殊的一元二次方程问题，他们在泥板上记录了许多涉及面积和边长的问题，这些问题可以转化为一元二次方程。</p>
+
+                        <h4>中国《九章算术》（约公元前1世纪）</h4>
+                        <p>中国古代数学名著《九章算术》中已有"开方"的方法，可以求出正根。例如"今有积五万五千二百二十五步，问为方几何"，实际上就是解 x² = 55225。</p>
+
+                        <h4>阿拉伯数学家花拉子米（约公元820年）</h4>
+                        <p>阿拉伯数学家花拉子米在其著作《代数学》中，系统地讨论了一元二次方程的解法，给出了求根公式的几何证明。</p>
+
+                        <h4>韦达与韦达定理（16世纪）</h4>
+                        <p>法国数学家韦达发现了方程的根与系数之间的关系，即著名的"韦达定理"。这一发现极大地简化了许多代数问题的求解。</p>
+                    </div>
+                </div>
+
+                <div class="extension-card" onclick="toggleExtension(this)">
+                    <h3>📊 知识延伸</h3>
+                    <p class="card-intro">与一元二次方程相关的数学知识...</p>
+                    <div class="extension-content">
+                        <h4>二次函数与一元二次方程</h4>
+
+                        <!-- 函数与方程关系可视化 -->
+                        <div class="function-equation-visual">
+                            <svg viewBox="0 0 280 140" class="relation-svg">
+                                <!--坐标系 -->
+                                <line x1="20" y2="100" y1="100" x2="260" class="coord-axis"/>
+                                <line x1="140" y2="10" y1="130" x2="140" class="coord-axis"/>
+                                <!-- 轴标注 -->
+                                <text x="260" y="105" class="axis-label">x</text>
+                                <text x="145" y="15" class="axis-label">y</text>
+
+                                <!-- 抛物线 y=ax²+bx+c -->
+                                <path d="M30 120 Q140 20 250 120" class="func-parabola"/>
+
+                                <!-- 方程 ax²+bx+c=0 的根 -->
+                                <circle cx="60" cy="100" r="4" class="equation-root"/>
+                                <circle cx="220" cy="100" r="4" class="equation-root"/>
+                                <text x="55" y="115" class="root-text">x₁</text>
+                                <text x="215" y="115" class="root-text">x₂</text>
+
+                                <!-- 函数 y=ax²+bx+c 的图像 -->
+                                <text x="180" y="35" class="func-label">y = ax²+bx+c</text>
+
+                                <!-- 关系说明 -->
+                                <rect x="50" y="130" width="180" height="10" class="relation-box"/>
+                                <text x="55" y="137" class="relation-text small">方程的根 = 抛物线与x轴交点的横坐标</text>
+                            </svg>
+                        </div>
+
+                        <ul>
+                            <li>Δ > 0：抛物线与 x 轴有两个交点</li>
+                            <li>Δ = 0：抛物线与 x 轴有一个交点（相切）</li>
+                            <li>Δ < 0：抛物线与 x 轴无交点</li>
+                        </ul>
+
+                        <h4>高次方程简介</h4>
+                        <p>一元三次方程和一元四次方程也有求根公式，但非常复杂。挪威数学家阿贝尔在1824年证明了五次及以上的方程不存在一般的求根公式。</p>
+
+                        <h4>图象法求解</h4>
+                        <p>对于无法用公式求解的方程，可以用图象法求近似解：画出函数图像，找与 x 轴交点。</p>
+                    </div>
+                </div>
+
+                <div class="extension-card" onclick="toggleExtension(this)">
+                    <h3>🎯 趣味探索</h3>
+                    <p class="card-intro">数学中的美妙联系...</p>
+                    <div class="extension-content">
+                        <h4>黄金分割与一元二次方程</h4>
+                        <p>黄金分割比 φ = (√5-1)/2 ≈ 0.618，是方程 x² + x - 1 = 0 的正根。</p>
+                        <p>解方程 x² + x - 1 = 0：</p>
+                        <p>x = (-1 + √5)/2 ≈ 0.618</p>
+                        <p>黄金分割在建筑、艺术、自然界中广泛存在！</p>
+
+                        <h4>斐波那契数列</h4>
+                        <p>斐波那契数列：1, 1, 2, 3, 5, 8, 13, 21, 34, 55...</p>
+                        <p>相邻两项之比逐渐趋近于黄金分割比！</p>
+                        <p>55/34 ≈ 0.618，34/21 ≈ 0.618...</p>
+
+                        <h4>生活中的抛物线</h4>
+                        <ul>
+                            <li>喷泉水柱的轨迹</li>
+                            <li>篮球投篮的弧线</li>
+                            <li>抛物面天线（卫星锅）</li>
+                            <li>汽车前灯的反光罩</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="extension-card" onclick="toggleExtension(this)">
+                    <h3>💡 进阶技巧</h3>
+                    <p class="card-intro">提升解题能力的技巧...</p>
+                    <div class="extension-content">
+                        <h4>整体思想</h4>
+                        <p>把某个代数式看作整体，简化问题。</p>
+                        <p><strong>例</strong>：解方程 (x+1)² - 4(x+1) + 3 = 0</p>
+                        <p>设 y = x+1，则 y² - 4y + 3 = 0</p>
+                        <p>(y-1)(y-3) = 0</p>
+                        <p>y = 1 或 y = 3</p>
+                        <p>x+1 = 1 或 x+1 = 3</p>
+                        <p>x = 0 或 x = 2</p>
+
+                        <h4>换元法</h4>
+                        <p>对于特殊形式的方程，用换元法简化。</p>
+                        <p><strong>例</strong>：解方程 x⁴ - 5x² + 4 = 0</p>
+                        <p>设 y = x²，则 y² - 5y + 4 = 0</p>
+                        <p>(y-1)(y-4) = 0</p>
+                        <p>y = 1 或 y = 4</p>
+                        <p>x² = 1 或 x² = 4</p>
+                        <p>x = ±1 或 x = ±2</p>
+
+                        <h4>参数问题处理</h4>
+                        <p>含参数的方程，需要讨论参数的取值范围。</p>
+                        <p><strong>例</strong>：关于 x 的方程 x² - 2mx + m² - 1 = 0 有两个实根，求 m 的范围。</p>
+                        <p>Δ = 4m² - 4(m²-1) = 4 ≥ 0</p>
+                        <p>所以对任意实数 m，方程都有两个实根。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" onclick="scrollToTop()">↑</button>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>📚 一元二次方程解法详解 | 初中数学学习</p>
+        <p>用心制作，助力学习 ✨</p>
+    </footer>
+
+    <script src="quadratic.js"></script>
+</body>
+</html>

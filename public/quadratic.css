@@ -1,0 +1,1608 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', 'PingFang SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.8;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+/* 导航栏 */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-brand {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* 头部横幅 */
+.hero {
+    text-align: center;
+    padding: 120px 20px 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.subtitle {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.hero-equation {
+    font-size: 28px;
+    background: rgba(255,255,255,0.15);
+    padding: 20px 40px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.hero-equation .highlight {
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.hero-equation .note {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+/* 主内容区域 */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.section {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    font-size: 26px;
+    color: #667eea;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #667eea;
+}
+
+/* 概念卡片 */
+.concept-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-left: 5px solid #667eea;
+}
+
+.concept-card h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.highlight-card {
+    background: linear-gradient(135deg, #e8f4f8 0%, #d1e8f0 100%);
+    border-left: 5px solid #4CAF50;
+}
+
+/* 公式框 */
+.formula-box {
+    background: white;
+    border: 3px solid #667eea;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.main-formula {
+    font-size: 24px;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.formula-box .condition {
+    color: #e74c3c;
+    font-size: 14px;
+}
+
+.highlight-formula {
+    background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+    border: 3px solid #ffd700;
+}
+
+/* 分数样式 */
+.fraction {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.numerator {
+    border-bottom: 2px solid #333;
+    padding-bottom: 3px;
+}
+
+.denominator {
+    padding-top: 3px;
+}
+
+/* 表格样式 */
+.term-table, .exam-table, .error-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.term-table th, .exam-table th, .error-table th {
+    background: #667eea;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.term-table td, .exam-table td, .error-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.term-table tr:nth-child(even), .exam-table tr:nth-child(even), .error-table tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+/* 提示框 */
+.warning-box {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-left: 5px solid #ffc107;
+}
+
+.tip-box {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-left: 5px solid #28a745;
+}
+
+/* 练习题 */
+.quiz-item {
+    margin: 20px 0;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quiz-option {
+    background: #e9ecef;
+    padding: 15px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.quiz-option:hover {
+    background: #dee2e6;
+}
+
+.quiz-text {
+    font-size: 16px;
+}
+
+.quiz-answer {
+    display: none;
+    position: absolute;
+    right: 20px;
+    font-weight: bold;
+}
+
+.quiz-answer.correct {
+    color: #28a745;
+}
+
+.quiz-answer.wrong {
+    color: #dc3545;
+}
+
+.quiz-option.show-answer .quiz-answer {
+    display: block;
+}
+
+.quiz-option.show-answer.correct-bg {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+}
+
+.quiz-option.show-answer.wrong-bg {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+}
+
+/* 解法选择指南 */
+.method-guide {
+    background: linear-gradient(135deg, #e8f4f8 0%, #d1e8f0 100%);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.method-guide h3 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.flowchart {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.flow-step.start {
+    background: #667eea;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.flow-branches {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.branch {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.branch-condition {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    padding: 8px;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.branch-method {
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 5px;
+}
+
+.branch-tip {
+    font-size: 12px;
+    color: #28a745;
+}
+
+.memory-tip {
+    background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+    border-left: 5px solid #ffd700;
+}
+
+/* 解法卡片 */
+.method-card {
+    background: white;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border: 2px solid #e9ecef;
+}
+
+.method-card.simple {
+    border-left: 5px solid #17a2b8;
+}
+
+.method-card.detailed {
+    border-left: 5px solid #667eea;
+}
+
+.method-header {
+    background: linear-gradient(90deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 15px 20px;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.method-header h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+.toggle-icon {
+    font-size: 14px;
+    color: #666;
+}
+
+.method-content {
+    padding: 20px;
+}
+
+.method-content.collapsed {
+    display: none;
+}
+
+.method-intro {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.formula {
+    background: #fff3cd;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.method-steps {
+    margin-bottom: 20px;
+}
+
+.method-steps h4 {
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.method-steps ol {
+    padding-left: 25px;
+}
+
+.method-steps li {
+    margin-bottom: 10px;
+}
+
+/* 例题 */
+.method-example {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.method-example h4 {
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.example-solution {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    background: white;
+}
+
+.problem {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.solution-toggle {
+    background: #667eea;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.solution-toggle:hover {
+    background: #5a6fd6;
+}
+
+.solution-content {
+    display: none;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.solution-content.show {
+    display: block;
+}
+
+.answer {
+    color: #28a745;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 10px;
+    background: #d4edda;
+    border-radius: 5px;
+}
+
+.note {
+    color: #666;
+    font-size: 14px;
+}
+
+/* 十字交叉图示 */
+.cross-diagram {
+    background: white;
+    border: 2px solid #667eea;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.cross-visual {
+    display: inline-block;
+    padding: 20px;
+}
+
+.cross-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 5px;
+}
+
+.cross-item {
+    background: #667eea;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.cross-arrow {
+    color: #667eea;
+    font-size: 24px;
+}
+
+.cross-result {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.cross-tip {
+    color: #666;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* 练习模块 */
+.practice-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    background: #e9ecef;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    background: #dee2e6;
+}
+
+.tab-btn.active {
+    background: #667eea;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.practice-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.practice-card h4 {
+    color: #667eea;
+    margin-bottom: 20px;
+}
+
+.practice-item {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+}
+
+.practice-item .problem {
+    margin-bottom: 15px;
+}
+
+.answer-input {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    width: 200px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.answer-input:focus {
+    border-color: #667eea;
+    outline: none;
+}
+
+.method-select {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+.check-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.check-btn:hover {
+    background: #5a6fd6;
+}
+
+.feedback {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.feedback.correct {
+    background: #d4edda;
+    color: #28a745;
+}
+
+.feedback.wrong {
+    background: #f8d7da;
+    color: #dc3545;
+}
+
+/* 应用模块 */
+.application-card {
+    background: linear-gradient(135deg, #e8f4f8 0%, #d1e8f0 100%);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.application-card h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.app-problem {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* 考点模块 */
+.exam-section {
+    margin-bottom: 30px;
+}
+
+.exam-section h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 5px solid #667eea;
+}
+
+.exam-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.exam-card h4 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.error-category {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 2px solid #ffc107;
+}
+
+.error-category h4 {
+    color: #dc3545;
+    margin-bottom: 15px;
+}
+
+/* 拓展模块 */
+.extension-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.extension-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #ddd;
+}
+
+.extension-card:hover {
+    border-color: #667eea;
+    transform: translateY(-3px);
+}
+
+.extension-card h3 {
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.card-intro {
+    color: #666;
+    font-size: 14px;
+}
+
+.extension-content {
+    display: none;
+    margin-top: 20px;
+}
+
+.extension-content.show {
+    display: block;
+}
+
+.extension-content h4 {
+    color: #333;
+    margin: 15px 0 10px;
+    font-size: 16px;
+}
+
+.extension-content ul {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.extension-content li {
+    margin-bottom: 5px;
+}
+
+/* 返回顶部按钮 */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #667eea;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    display: none;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+#backToTop:hover {
+    background: #5a6fd6;
+    transform: translateY(-3px);
+}
+
+#backToTop.show {
+    display: block;
+}
+
+/* 页脚 */
+.footer {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        margin-top: 10px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .hero {
+        padding: 100px 15px 40px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero-equation {
+        font-size: 20px;
+        padding: 15px 20px;
+    }
+
+    .section {
+        padding: 20px 15px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .flow-branches {
+        grid-template-columns: 1fr;
+    }
+
+    .practice-tabs {
+        flex-direction: column;
+    }
+
+    .tab-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .answer-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .extension-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .term-table, .exam-table, .error-table {
+        font-size: 12px;
+    }
+
+    .term-table th, .term-table td,
+    .exam-table th, .exam-table td,
+    .error-table th, .error-table td {
+        padding: 8px 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .main-formula {
+        font-size: 18px;
+    }
+
+    .method-header h3 {
+        font-size: 16px;
+    }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section {
+    animation: fadeIn 0.5s ease;
+}
+
+/* 高亮效果 */
+.highlight {
+    background: #fff3cd;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+/* 打印友好 */
+@media print {
+    .navbar, #backToTop, .solution-toggle, .check-btn, .tab-btn {
+        display: none;
+    }
+
+    .solution-content, .method-content, .extension-content {
+        display: block !important;
+    }
+
+    .section {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
+
+/* ========== 图形可视化样式 ========== */
+
+/* 方程各项可视化 */
+.visual-box {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.visual-box h4 {
+    color: #667eea;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.terms-visual {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.term-block {
+    display: flex;
+    justify-content: center;
+}
+
+.term-shape {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.term-shape.quadratic {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.term-shape.linear {
+    background: linear-gradient(135deg, #17a2b8 0%, #20c997 100%);
+    color: white;
+}
+
+.term-shape.constant {
+    background: linear-gradient(135deg, #ffc107 0%, #fd7e14 100%);
+    color: white;
+}
+
+.shape-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.term-label {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.term-formula {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.term-desc {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* 抛物线与判别式图示 */
+.parabola-diagrams {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.parabola-case {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.parabola-svg {
+    width: 100%;
+    height: 60px;
+}
+
+.axis-line {
+    stroke: #333;
+    stroke-width: 1;
+}
+
+.parabola-path {
+    fill: none;
+    stroke-width: 2.5;
+}
+
+.parabola-path.positive {
+    stroke: #28a745;
+}
+
+.parabola-path.zero {
+    stroke: #17a2b8;
+}
+
+.parabola-path.negative {
+    stroke: #dc3545;
+}
+
+.root-point {
+    fill: #667eea;
+}
+
+.root-label {
+    font-size: 10px;
+    fill: #667eea;
+    text-anchor: middle;
+}
+
+.delta-label {
+    font-size: 12px;
+    fill: #333;
+    text-anchor: middle;
+    font-weight: bold;
+}
+
+.case-desc {
+    margin-top: 10px;
+}
+
+.case-desc strong {
+    color: #667eea;
+    display: block;
+    font-size: 14px;
+}
+
+.case-desc p {
+    font-size: 12px;
+    color: #666;
+}
+
+/* 配方法步骤可视化 */
+.steps-visual {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.step-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    border: 2px solid #e9ecef;
+}
+
+.step-card.highlight-step {
+    background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+    border: 2px solid #ffc107;
+}
+
+.step-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 auto 10px;
+}
+
+.step-content {
+    font-size: 13px;
+}
+
+.step-desc {
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.step-example {
+    color: #667eea;
+    font-weight: bold;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.formula-highlight {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 8px;
+}
+
+.formula-highlight p {
+    margin: 5px 0;
+    font-size: 12px;
+}
+
+.add-term {
+    color: #dc3545;
+    background: #ffeaa7;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.complete-square {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.power {
+    font-size: 10px;
+    vertical-align: super;
+}
+
+/* 十字交叉法增强图示 */
+.cross-visual-enhanced {
+    padding: 20px;
+}
+
+.cross-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.cross-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cross-header {
+    background: #667eea;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.cross-factor {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.factor-box {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.factor-x {
+    color: #667eea;
+    font-size: 14px;
+}
+
+.cross-note {
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+}
+
+.cross-lines {
+    width: 60px;
+}
+
+.cross-svg {
+    width: 100%;
+}
+
+.cross-line {
+    stroke: #667eea;
+    stroke-width: 2;
+}
+
+.cross-point {
+    fill: #ffc107;
+}
+
+.cross-verify {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.verify-arrow {
+    margin-bottom: 10px;
+}
+
+.arrow-text {
+    background: #e9ecef;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.verify-result {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    padding: 15px 20px;
+    border-radius: 10px;
+}
+
+.calculation {
+    font-size: 16px;
+}
+
+.result-value {
+    color: #dc3545;
+}
+
+.check-mark {
+    color: #28a745;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.cross-final {
+    margin-top: 15px;
+    background: #667eea;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+/* 应用题图示 */
+.app-diagram {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.app-svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 矩形花坛图示 */
+.garden-rect {
+    fill: #d4edda;
+    stroke: #28a745;
+    stroke-width: 2;
+}
+
+.dim-line {
+    stroke: #667eea;
+    stroke-width: 1;
+}
+
+.dim-line-v {
+    stroke: #667eea;
+    stroke-width: 1;
+}
+
+.dim-text {
+    font-size: 12px;
+    fill: #667eea;
+}
+
+.fence-path {
+    fill: none;
+    stroke: #dc3545;
+    stroke-width: 3;
+}
+
+.area-text {
+    font-size: 14px;
+    fill: #333;
+    text-anchor: middle;
+    font-weight: bold;
+}
+
+/* 物体下落图示 */
+.height-line {
+    stroke: #667eea;
+    stroke-width: 2;
+    stroke-dasharray: 5,3;
+}
+
+.object-ball {
+    fill: #dc3545;
+}
+
+.object-ball.start {
+    opacity: 0.3;
+}
+
+.object-ball.end {
+    opacity: 1;
+}
+
+.fall-arrow {
+    stroke: #dc3545;
+    stroke-width: 2;
+    stroke-dasharray: 8,4;
+}
+
+.arrow-head {
+    fill: #dc3545;
+}
+
+.formula-text {
+    font-size: 14px;
+    fill: #667eea;
+    font-weight: bold;
+}
+
+/* 增长率图示 */
+.growth-bar {
+    fill: #667eea;
+    opacity: 0.8;
+}
+
+.growth-bar.month2 {
+    fill: #17a2b8;
+}
+
+.growth-bar.month3 {
+    fill: #28a745;
+}
+
+.bar-label {
+    font-size: 12px;
+    fill: #333;
+    text-anchor: middle;
+}
+
+.bar-value {
+    font-size: 11px;
+    fill: #667eea;
+    text-anchor: middle;
+}
+
+.growth-arrow {
+    stroke: #ffc107;
+    stroke-width: 2;
+    fill: none;
+}
+
+.arrow-label {
+    font-size: 10px;
+    fill: #dc3545;
+}
+
+.total-label {
+    font-size: 14px;
+    fill: #333;
+    text-anchor: middle;
+    font-weight: bold;
+}
+
+/* 利润问题图示 */
+.price-box {
+    fill: #f8f9fa;
+    stroke: #667eea;
+    stroke-width: 2;
+}
+
+.price-box.new {
+    fill: #fff3cd;
+    stroke: #ffc107;
+}
+
+.price-label {
+    font-size: 14px;
+    fill: #333;
+    text-anchor: middle;
+}
+
+.price-value {
+    font-size: 12px;
+    fill: #667eea;
+    text-anchor: middle;
+    font-weight: bold;
+}
+
+.price-arrow {
+    stroke: #dc3545;
+    stroke-width: 2;
+}
+
+.sales-label {
+    font-size: 12px;
+    fill: #333;
+}
+
+.sales-value {
+    font-size: 11px;
+    fill: #667eea;
+}
+
+.sales-note {
+    font-size: 10px;
+    fill: #666;
+}
+
+.profit-formula {
+    font-size: 14px;
+    fill: #28a745;
+    text-anchor: middle;
+    font-weight: bold;
+}
+
+/* 韦达定理可视化 */
+.vieta-visual {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.vieta-svg {
+    max-width: 100%;
+    height: 80px;
+}
+
+.vieta-parabola {
+    fill: none;
+    stroke: #667eea;
+    stroke-width: 2;
+}
+
+.vieta-axis {
+    stroke: #333;
+    stroke-width: 1;
+}
+
+.vieta-root {
+    fill: #28a745;
+}
+
+.vieta-label {
+    font-size: 12px;
+    fill: #28a745;
+    text-anchor: middle;
+}
+
+.vieta-symmetry {
+    stroke: #dc3545;
+    stroke-width: 1;
+}
+
+.vieta-sym-label {
+    font-size: 10px;
+    fill: #dc3545;
+}
+
+.vieta-relation {
+    fill: none;
+    stroke: #17a2b8;
+    stroke-width: 1.5;
+    stroke-dasharray: 4,2;
+}
+
+.vieta-relation-text {
+    font-size: 10px;
+    fill: #17a2b8;
+    text-anchor: middle;
+}
+
+.vieta-notes {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.vieta-notes p {
+    margin: 5px 0;
+    font-size: 13px;
+}
+
+/* 函数与方程关系图示 */
+.function-equation-visual {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.relation-svg {
+    max-width: 100%;
+    height: 140px;
+}
+
+.coord-axis {
+    stroke: #333;
+    stroke-width: 1.5;
+}
+
+.axis-label {
+    font-size: 12px;
+    fill: #333;
+}
+
+.func-parabola {
+    fill: none;
+    stroke: #667eea;
+    stroke-width: 2.5;
+}
+
+.equation-root {
+    fill: #28a745;
+}
+
+.root-text {
+    font-size: 11px;
+    fill: #28a745;
+}
+
+.func-label {
+    font-size: 13px;
+    fill: #667eea;
+    font-weight: bold;
+}
+
+.relation-box {
+    fill: #fff3cd;
+    stroke: #ffc107;
+    stroke-width: 1;
+}
+
+.relation-text {
+    font-size: 12px;
+    fill: #333;
+}
+
+.relation-text.small {
+    font-size: 10px;
+}
+
+/* 响应式图形调整 */
+@media (max-width: 768px) {
+    .terms-visual {
+        grid-template-columns: 1fr;
+    }
+
+    .parabola-diagrams {
+        grid-template-columns: 1fr;
+    }
+
+    .steps-visual {
+        grid-template-columns: 1fr;
+    }
+
+    .cross-layout {
+        flex-direction: column;
+    }
+
+    .cross-lines {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .term-formula {
+        font-size: 16px;
+    }
+
+    .step-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .cross-final {
+        font-size: 14px;
+    }
+}
