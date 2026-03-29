@@ -45,8 +45,8 @@ export default function Home() {
         <h2 style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           🎮 学习工具
         </h2>
-        <div style={{ display: 'grid', gap: '1.5rem', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))' }}>
-          <Link href="/eng.html" style={{ textDecoration: 'none' }}>
+        <div style={{ display: 'grid', gap: '1.5rem', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', alignItems: 'stretch' }}>
+          <Link href="/eng.html" style={{ textDecoration: 'none', display: 'block' }}>
             <div className="tool-card" style={{
               background: 'linear-gradient(135deg, #312e81 0%, #4338ca 50%, #6366f1 100%)',
               borderRadius: '20px',
@@ -69,7 +69,7 @@ export default function Home() {
             </div>
           </Link>
 
-          <Link href="/cem.html" style={{ textDecoration: 'none' }}>
+          <Link href="/cem.html" style={{ textDecoration: 'none', display: 'block' }}>
             <div className="tool-card" style={{
               background: 'linear-gradient(135deg, #064e3b 0%, #047857 50%, #059669 100%)',
               borderRadius: '20px',
@@ -92,7 +92,7 @@ export default function Home() {
             </div>
           </Link>
 
-          <Link href="/tang-poems.html" style={{ textDecoration: 'none' }}>
+          <Link href="/tang-poems.html" style={{ textDecoration: 'none', display: 'block' }}>
             <div className="tool-card" style={{
               background: 'linear-gradient(135deg, #4a1d96 0%, #7c2d12 50%, #b45309 100%)',
               borderRadius: '20px',
@@ -105,17 +105,17 @@ export default function Home() {
               <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📜</div>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem', fontWeight: 'bold' }}>唐诗三百首 · 墨韵</h3>
               <p style={{ opacity: 0.9, lineHeight: 1.6 }}>
-                精选30首经典唐诗，涵盖李白、杜甫、白居易等名家名作。支持搜索、分类浏览，水墨风格沉浸式阅读，感受千年诗词之美！
+                精选111首经典唐诗，涵盖李白、杜甫、王维、白居易等35位名家名作。支持搜索、分类浏览，水墨风格沉浸式阅读，感受千年诗词之美！
               </p>
               <div style={{ marginTop: '1rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                <span style={{ background: 'rgba(255,255,255,0.15)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.875rem' }}>30首经典</span>
+                <span style={{ background: 'rgba(255,255,255,0.15)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.875rem' }}>111首经典</span>
                 <span style={{ background: 'rgba(255,255,255,0.15)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.875rem' }}>分类浏览</span>
                 <span style={{ background: 'rgba(255,255,255,0.15)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.875rem' }}>水墨风格</span>
               </div>
             </div>
           </Link>
 
-          <Link href="/quadratic.html" style={{ textDecoration: 'none' }}>
+          <Link href="/quadratic.html" style={{ textDecoration: 'none', display: 'block' }}>
             <div className="tool-card" style={{
               background: 'linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 50%, #3d5a80 100%)',
               borderRadius: '20px',
@@ -138,7 +138,7 @@ export default function Home() {
             </div>
           </Link>
 
-          <Link href="/english-grammar/index.html" style={{ textDecoration: 'none' }}>
+          <Link href="/english-grammar/index.html" style={{ textDecoration: 'none', display: 'block' }}>
             <div className="tool-card" style={{
               background: 'linear-gradient(135deg, #134e4a 0%, #0f766e 50%, #14b8a6 100%)',
               borderRadius: '20px',
