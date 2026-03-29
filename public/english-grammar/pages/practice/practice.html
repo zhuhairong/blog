@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>练习 - 初中二年级英语语法学习</title>
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <div class="main-content">
+    <div class="practice-container">
+      <!-- 面包屑导航 -->
+      <div class="breadcrumb">
+        <div class="breadcrumb-links">
+          <a href="../../index.html" class="breadcrumb-link">首页</a>
+          <span class="breadcrumb-separator">></span>
+          <span id="moduleBreadcrumb" class="breadcrumb-current">练习</span>
+        </div>
+      </div>
+
+      <!-- 练习头部 -->
+      <div class="practice-header">
+        <div class="practice-progress">
+          <div class="question-counter">题目 <span id="currentQuestion">1</span>/<span id="totalQuestions">10</span></div>
+          <div class="accuracy-display">
+            <div class="accuracy-item">
+              <span class="accuracy-icon" style="color: #2ECC71;">✓</span>
+              <span id="correctCount" class="accuracy-value">0</span>
+            </div>
+            <div class="accuracy-item">
+              <span class="accuracy-icon" style="color: #E74C3C;">✗</span>
+              <span id="wrongCount" class="accuracy-value">0</span>
+            </div>
+          </div>
+        </div>
+        <div class="practice-progress-bar">
+          <div id="progressFill" class="practice-progress-fill" style="width: 10%"></div>
+        </div>
+      </div>
+
+      <!-- 题目区域 -->
+      <div id="questionArea" class="question-area">
+        <!-- 题目内容由 JavaScript 动态生成 -->
+      </div>
+
+      <!-- 答案反馈 -->
+      <div id="feedbackArea" class="feedback-area">
+        <div id="feedbackIcon" class="feedback-icon"></div>
+        <div id="feedbackText" class="feedback-text"></div>
+        <div id="feedbackExplanation" class="feedback-explanation"></div>
+      </div>
+
+      <!-- 操作按钮 -->
+      <div class="practice-actions">
+        <button id="prevBtn" class="action-btn" onclick="prevQuestion()">上一题</button>
+        <button id="submitBtn" class="action-btn primary" onclick="submitAnswer()">提交答案</button>
+        <button id="nextBtn" class="action-btn" onclick="nextQuestion()">下一题</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部导航 -->
+  <nav class="navbar">
+    <a href="../../index.html" class="nav-item">
+      <span class="nav-icon">🏠</span>
+      <span class="nav-text">首页</span>
+    </a>
+    <a href="../achievements.html" class="nav-item">
+      <span class="nav-icon">🏆</span>
+      <span class="nav-text">成就</span>
+    </a>
+    <a href="../settings.html" class="nav-item">
+      <span class="nav-icon">⚙️</span>
+      <span class="nav-text">设置</span>
+    </a>
+    <a href="../help.html" class="nav-item">
+      <span class="nav-icon">❓</span>
+      <span class="nav-text">帮助</span>
+    </a>
+  </nav>
+
+  <!-- 连击提示 -->
+  <div id="comboToast" class="combo-toast"></div>
+
+  <!-- 成就弹窗 -->
+  <div id="achievementModal" class="achievement-modal">
+    <div class="achievement-content">
+      <div id="achievementIcon" class="achievement-icon">🌱</div>
+      <div id="achievementTitle" class="achievement-title">初学者</div>
+      <div id="achievementDesc" class="achievement-desc">完成第一次学习</div>
+      <div id="achievementPoints" class="achievement-points">+50 积分</div>
+    </div>
+  </div>
+
+  <script src="../../js/main.js"></script>
+  <script src="../../js/questions.js"></script>
+  <script>
+    // 练习页面逻辑
+    let currentModule = '';
+    let questions = [];
+    let currentIndex = 0;
+    let correctCount = 0;
+    let wrongCount = 0;
+    let comboCount = 0;
+    let answeredQuestions = [];
+    let questionStartTime = 0;
+
+    // 初始化
+    function init() {
+      // 获取模块参数
+      const params = new URLSearchParams(window.location.search);
+      currentModule = params.get('module') || 'present-perfect';
+
+      // 加载题目
+      questions = getRandomQuestions(currentModule, 10);
+
+      // 更新面包屑
+      const moduleName = GRAMMAR_MODULES.find(m => m.id === currentModule)?.name || '练习';
+      document.getElementById('moduleBreadcrumb').textContent = moduleName + ' - 练习';
+      document.getElementById('totalQuestions').textContent = questions.length;
+
+      // 初始化已答题记录
+      answeredQuestions = new Array(questions.length).fill(false);
+
+      // 显示第一题
+      showQuestion(0);
+
+      // 检查首次学习成就
+      if (Storage.getUserProgress().totalPoints === 0) {
+        AchievementManager.checkAndUnlock('first_study');
+      }
+    }
+
+    // 显示题目
+    function showQuestion(index) {
+      currentIndex = index;
+      const question = questions[index];
+
+      document.getElementById('currentQuestion').textContent = index + 1;
+      document.getElementById('progressFill').style.width = ((index + 1) / questions.length * 100) + '%';
+
+      // 更新按钮状态
+      document.getElementById('prevBtn').disabled = index === 0;
+      document.getElementById('nextBtn').disabled = !answeredQuestions[index];
+      document.getElementById('submitBtn').disabled = answeredQuestions[index];
+
+      // 隐藏反馈区
+      document.getElementById('feedbackArea').classList.remove('show', 'correct', 'wrong');
+
+      // 记录开始时间
+      questionStartTime = Date.now();
+
+      // 根据题型渲染
+      const questionArea = document.getElementById('questionArea');
+      questionArea.innerHTML = '';
+
+      switch (question.type) {
+        case 'choice':
+          renderChoiceQuestion(question, questionArea);
+          break;
+        case 'fill-blank':
+          renderFillBlankQuestion(question, questionArea);
+          break;
+        case 'judge':
+          renderJudgeQuestion(question, questionArea);
+          break;
+        case 'word-order':
+          renderWordOrderQuestion(question, questionArea);
+          break;
+      }
+    }
+
+    // 渲染选择题
+    function renderChoiceQuestion(question, container) {
+      container.innerHTML = `
+        <div class="question-text">${question.question}</div>
+        <div class="choice-options">
+          ${question.options.map((opt, i) => `
+            <div class="choice-option" data-index="${i}" onclick="selectOption(${i})">
+              ${opt}
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    // 渲染填空题
+    function renderFillBlankQuestion(question, container) {
+      container.innerHTML = `
+        <div class="question-text">${question.question}</div>
+        <input type="text" class="fill-blank-input" id="fillBlankInput" placeholder="输入答案">
+        <button class="submit-btn" onclick="submitAnswer()">提交</button>
+      `;
+    }
+
+    // 渲染判断题
+    function renderJudgeQuestion(question, container) {
+      container.innerHTML = `
+        <div class="question-text">${question.question}</div>
+        <div class="judge-options">
+          <div class="judge-option correct-btn" data-value="true" onclick="selectJudge(true)">正确 ✓</div>
+          <div class="judge-option wrong-btn" data-value="false" onclick="selectJudge(false)">错误 ✗</div>
+        </div>
+      `;
+    }
+
+    // 渲染连词成句题
+    function renderWordOrderQuestion(question, container) {
+      container.innerHTML = `
+        <div class="question-text">请将下列单词排列成正确的句子：</div>
+        <div class="word-cards" id="wordCardsContainer">
+          ${question.words.map(word => `
+            <div class="word-card" data-word="${word}" onclick="toggleWord(this)">${word}</div>
+          `).join('')}
+        </div>
+        <div style="margin-top: 15px;">
+          <input type="text" class="fill-blank-input" id="sentenceInput" placeholder="输入排列好的句子" style="width: 100%;">
+        </div>
+      `;
+    }
+
+    // 选择题选项点击
+    function selectOption(index) {
+      if (answeredQuestions[currentIndex]) return;
+
+      const options = document.querySelectorAll('.choice-option');
+      options.forEach(opt => opt.classList.remove('selected'));
+      options[index].classList.add('selected');
+    }
+
+    // 判断题选项点击
+    function selectJudge(value) {
+      if (answeredQuestions[currentIndex]) return;
+
+      const options = document.querySelectorAll('.judge-option');
+      options.forEach(opt => opt.classList.remove('selected'));
+
+      if (value) {
+        document.querySelector('.judge-option.correct-btn').classList.add('selected');
+      } else {
+        document.querySelector('.judge-option.wrong-btn').classList.add('selected');
+      }
+    }
+
+    // 连词成句单词点击
+    function toggleWord(element) {
+      if (answeredQuestions[currentIndex]) return;
+      element.classList.toggle('placed');
+    }
+
+    // 提交答案
+    function submitAnswer() {
+      if (answeredQuestions[currentIndex]) return;
+
+      const question = questions[currentIndex];
+      let userAnswer;
+      let isCorrect = false;
+
+      // 获取用户答案
+      switch (question.type) {
+        case 'choice':
+          const selectedOption = document.querySelector('.choice-option.selected');
+          if (!selectedOption) {
+            alert('请先选择一个答案！');
+            return;
+          }
+          userAnswer = parseInt(selectedOption.dataset.index);
+          isCorrect = userAnswer === question.answer;
+
+          // 显示正确/错误样式
+          if (isCorrect) {
+            selectedOption.classList.add('correct');
+          } else {
+            selectedOption.classList.add('wrong');
+            document.querySelectorAll('.choice-option')[question.answer].classList.add('correct');
+          }
+          break;
+
+        case 'fill-blank':
+          const input = document.getElementById('fillBlankInput');
+          userAnswer = input.value.trim().toLowerCase();
+          isCorrect = userAnswer === question.answer.toLowerCase();
+          break;
+
+        case 'judge':
+          const selectedJudge = document.querySelector('.judge-option.selected');
+          if (!selectedJudge) {
+            alert('请先选择正确或错误！');
+            return;
+          }
+          userAnswer = selectedJudge.dataset.value === 'true';
+          isCorrect = userAnswer === question.answer;
+          break;
+
+        case 'word-order':
+          const sentenceInput = document.getElementById('sentenceInput');
+          userAnswer = sentenceInput.value.trim();
+          isCorrect = userAnswer === question.answer;
+          break;
+      }
+
+      // 计算答题时间
+      const answerTime = (Date.now() - questionStartTime) / 1000;
+
+      // 更新统计
+      answeredQuestions[currentIndex] = true;
+
+      if (isCorrect) {
+        correctCount++;
+        comboCount++;
+        SoundEffects.playCorrect();
+
+        // 计算积分
+        let points = 10;
+        if (comboCount >= 3) {
+          points *= 2; // 连击双倍积分
+          UIHelper.showCombo(comboCount);
+        }
+        if (comboCount >= 5) {
+          AchievementManager.checkAndUnlock('combo_5');
+        }
+        if (answerTime <= 10) {
+          AchievementManager.checkAndUnlock('speed_10');
+        }
+
+        PointsSystem.addPoints(points);
+
+        // 显示正确反馈
+        showFeedback(true, points, question.explanation);
+      } else {
+        wrongCount++;
+        comboCount = 0;
+        SoundEffects.playWrong();
+
+        // 显示错误反馈
+        showFeedback(false, 0, question.explanation);
+      }
+
+      // 更新显示
+      document.getElementById('correctCount').textContent = correctCount;
+      document.getElementById('wrongCount').textContent = wrongCount;
+
+      // 更新进度
+      const progress = Storage.getUserProgress();
+      progress.todayQuestions = (progress.todayQuestions || 0) + 1;
+      Storage.setUserProgress(progress);
+
+      // 更新模块进度
+      Storage.updateModuleProgress(currentModule, 'completed',
+        Storage.getGrammarProgress()[currentModule].completed + 1);
+      if (isCorrect) {
+        Storage.updateModuleProgress(currentModule, 'correct',
+          Storage.getGrammarProgress()[currentModule].correct + 1);
+      }
+      StarCalculator.updateModuleStars(currentModule);
+
+      // 更新按钮状态
+      document.getElementById('submitBtn').disabled = true;
+      document.getElementById('nextBtn').disabled = false;
+
+      // 检查成就
+      AchievementManager.checkAllConditions();
+    }
+
+    // 显示反馈
+    function showFeedback(isCorrect, points, explanation) {
+      const feedbackArea = document.getElementById('feedbackArea');
+      feedbackArea.classList.add('show');
+
+      if (isCorrect) {
+        feedbackArea.classList.add('correct');
+        document.getElementById('feedbackIcon').textContent = '🎉';
+        document.getElementById('feedbackText').innerHTML = `<span class="points-earned">回答正确！+${points}积分</span>`;
+      } else {
+        feedbackArea.classList.add('wrong');
+        document.getElementById('feedbackIcon').textContent = '😢';
+        document.getElementById('feedbackText').textContent = '回答错误，继续加油！';
+      }
+
+      document.getElementById('feedbackExplanation').textContent = '解析：' + explanation;
+    }
+
+    // 上一题
+    function prevQuestion() {
+      if (currentIndex > 0) {
+        showQuestion(currentIndex - 1);
+      }
+    }
+
+    // 下一题
+    function nextQuestion() {
+      if (currentIndex < questions.length - 1) {
+        showQuestion(currentIndex + 1);
+      } else {
+        // 完成所有题目
+        finishPractice();
+      }
+    }
+
+    // 完成练习
+    function finishPractice() {
+      const accuracy = Math.round((correctCount / questions.length) * 100);
+
+      // 检查完美成绩成就
+      if (accuracy === 100) {
+        AchievementManager.checkAndUnlock('perfect_10');
+      }
+
+      // 显示结果
+      const questionArea = document.getElementById('questionArea');
+      questionArea.innerHTML = `
+        <div style="text-align: center; padding: 30px;">
+          <div style="font-size: 60px; margin-bottom: 20px;">${accuracy >= 80 ? '🏆' : accuracy >= 60 ? '👍' : '💪'}</div>
+          <div style="font-size: 24px; font-weight: bold; margin-bottom: 15px;">
+            ${accuracy >= 80 ? '太棒了！' : accuracy >= 60 ? '做得不错！' : '继续努力！'}
+          </div>
+          <div style="font-size: 18px; color: #7F8C8D; margin-bottom: 20px;">
+            正确率：${accuracy}% (${correctCount}/${questions.length})
+          </div>
+          <div style="margin-bottom: 20px;">
+            <span style="font-size: 20px; color: #FF6B35;">获得积分：+${correctCount * 10 + (comboCount >= 3 ? correctCount * 10 : 0)}</span>
+          </div>
+          <button class="practice-btn" onclick="window.location.href='practice.html?module=${currentModule}'" style="width: auto;">
+            再练一次
+          </button>
+          <button class="action-btn" onclick="window.location.href='../../index.html'" style="margin-top: 15px;">
+            返回首页
+          </button>
+        </div>
+      `;
+
+      // 隐藏其他元素
+      document.getElementById('feedbackArea').classList.remove('show');
+      document.getElementById('submitBtn').style.display = 'none';
+      document.getElementById('nextBtn').style.display = 'none';
+    }
+
+    // 页面加载完成后初始化
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>

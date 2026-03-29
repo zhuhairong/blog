@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>设置 - 初中二年级英语语法学习</title>
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <div class="main-content">
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb">
+      <div class="breadcrumb-links">
+        <a href="../../index.html" class="breadcrumb-link">首页</a>
+        <span class="breadcrumb-separator">></span>
+        <span class="breadcrumb-current">设置</span>
+      </div>
+    </div>
+
+    <!-- 音效设置 -->
+    <div class="settings-section">
+      <h3 class="settings-title">🔊 音效设置</h3>
+      <div class="settings-item">
+        <span class="settings-label">答题音效</span>
+        <div id="soundToggle" class="toggle-switch active" onclick="toggleSound()"></div>
+      </div>
+      <div class="settings-item">
+        <span class="settings-label">语音朗读</span>
+        <div id="speechToggle" class="toggle-switch active" onclick="toggleSpeech()"></div>
+      </div>
+    </div>
+
+    <!-- 学习进度 -->
+    <div class="settings-section">
+      <h3 class="settings-title">📊 学习进度</h3>
+      <div class="settings-item">
+        <span class="settings-label">总积分</span>
+        <span id="totalPointsDisplay" style="font-weight: bold; color: #FF6B35;">0</span>
+      </div>
+      <div class="settings-item">
+        <span class="settings-label">当前等级</span>
+        <span id="currentLevelDisplay" style="font-weight: bold;">1级 英语萌新</span>
+      </div>
+      <div class="settings-item">
+        <span class="settings-label">连续学习天数</span>
+        <span id="streakDaysDisplay" style="font-weight: bold; color: #E74C3C;">0天</span>
+      </div>
+      <div class="settings-item">
+        <span class="settings-label">已解锁成就</span>
+        <span id="achievementsDisplay" style="font-weight: bold;">0/8</span>
+      </div>
+    </div>
+
+    <!-- 数据管理 -->
+    <div class="settings-section">
+      <h3 class="settings-title">💾 数据管理</h3>
+      <p style="color: #7F8C8D; margin-bottom: 15px;">
+        学习数据保存在浏览器本地存储中，清除数据后将重新开始。
+      </p>
+      <button class="reset-btn" onclick="resetProgress()">
+        🗑️ 清除所有学习数据
+      </button>
+    </div>
+
+    <!-- 关于 -->
+    <div class="settings-section">
+      <h3 class="settings-title">ℹ️ 关于</h3>
+      <p style="color: #7F8C8D;">
+        初中二年级英语语法学习网页<br>
+        版本：1.0.0<br>
+        包含语法：现在完成时、过去进行时、情态动词、被动语态、比较级最高级、不定式和动名词、连词和状语从句
+      </p>
+    </div>
+  </div>
+
+  <!-- 底部导航 -->
+  <nav class="navbar">
+    <a href="../../index.html" class="nav-item">
+      <span class="nav-icon">🏠</span>
+      <span class="nav-text">首页</span>
+    </a>
+    <a href="achievements.html" class="nav-item">
+      <span class="nav-icon">🏆</span>
+      <span class="nav-text">成就</span>
+    </a>
+    <a href="settings.html" class="nav-item active">
+      <span class="nav-icon">⚙️</span>
+      <span class="nav-text">设置</span>
+    </a>
+    <a href="help.html" class="nav-item">
+      <span class="nav-icon">❓</span>
+      <span class="nav-text">帮助</span>
+    </a>
+  </nav>
+
+  <script src="../../js/main.js"></script>
+  <script>
+    // 设置页面逻辑
+    document.addEventListener('DOMContentLoaded', function() {
+      // 加载设置
+      const settings = Storage.getSettings();
+
+      // 音效开关
+      const soundToggle = document.getElementById('soundToggle');
+      soundToggle.classList.toggle('active', settings.soundEnabled);
+
+      // 更新进度显示
+      const progress = Storage.getUserProgress();
+      const levelInfo = PointsSystem.getLevelInfo(progress.level);
+      const achievements = Storage.getAchievements();
+
+      document.getElementById('totalPointsDisplay').textContent = progress.totalPoints;
+      document.getElementById('currentLevelDisplay').textContent = `${progress.level}级 ${levelInfo.title}`;
+      document.getElementById('streakDaysDisplay').textContent = `${progress.streakDays}天`;
+      document.getElementById('achievementsDisplay').textContent = `${achievements.length}/8`;
+    });
+
+    // 切换音效
+    function toggleSound() {
+      const settings = Storage.getSettings();
+      settings.soundEnabled = !settings.soundEnabled;
+      Storage.setSettings(settings);
+
+      document.getElementById('soundToggle').classList.toggle('active', settings.soundEnabled);
+
+      if (settings.soundEnabled) {
+        SoundEffects.playCorrect();
+      }
+    }
+
+    // 切换语音
+    function toggleSpeech() {
+      const settings = Storage.getSettings();
+      settings.speechEnabled = !settings.speechEnabled;
+      Storage.setSettings(settings);
+
+      document.getElementById('speechToggle').classList.toggle('active', settings.speechEnabled);
+    }
+
+    // 重置进度
+    function resetProgress() {
+      if (confirm('确定要清除所有学习数据吗？这将重置你的积分、等级和成就！')) {
+        Storage.clearAll();
+        alert('数据已清除！');
+
+        // 更新显示
+        document.getElementById('totalPointsDisplay').textContent = '0';
+        document.getElementById('currentLevelDisplay').textContent = '1级 英语萌新';
+        document.getElementById('streakDaysDisplay').textContent = '0天';
+        document.getElementById('achievementsDisplay').textContent = '0/8';
+      }
+    }
+  </script>
+</body>
+</html>

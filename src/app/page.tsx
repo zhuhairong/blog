@@ -137,6 +137,29 @@ export default function Home() {
               </div>
             </div>
           </Link>
+
+          <Link href="/english-grammar/index.html" style={{ textDecoration: 'none' }}>
+            <div className="tool-card" style={{
+              background: 'linear-gradient(135deg, #134e4a 0%, #0f766e 50%, #14b8a6 100%)',
+              borderRadius: '20px',
+              padding: '2rem',
+              color: 'white',
+              cursor: 'pointer',
+              boxShadow: '0 8px 32px rgba(20, 184, 166, 0.3)',
+              border: '1px solid rgba(20, 184, 166, 0.3)',
+            }}>
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📖</div>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem', fontWeight: 'bold' }}>初中英语语法闯关</h3>
+              <p style={{ opacity: 0.9, lineHeight: 1.6 }}>
+                初中二年级英语语法学习工具，涵盖7大语法模块：现在完成时、过去进行时、被动语态、情态动词、不定式与动名词、比较等级、连词。闯关式学习，成就系统激励！
+              </p>
+              <div style={{ marginTop: '1rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                <span style={{ background: 'rgba(255,255,255,0.15)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.875rem' }}>7大模块</span>
+                <span style={{ background: 'rgba(255,255,255,0.15)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.875rem' }}>闯关学习</span>
+                <span style={{ background: 'rgba(255,255,255,0.15)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.875rem' }}>成就系统</span>
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
 

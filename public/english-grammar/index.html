@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>初中二年级英语语法学习</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="main-content">
+    <!-- 仪表盘 -->
+    <div class="dashboard">
+      <div class="dashboard-header">
+        <div class="user-level">
+          <div class="level-badge">1级 英语萌新</div>
+          <div class="level-title">英语萌新</div>
+        </div>
+        <div class="points-display">
+          <div class="points-value">0</div>
+          <div class="points-label">积分</div>
+        </div>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-bar" style="width: 0%"></div>
+      </div>
+      <div class="stats-row">
+        <div class="stat-item streak">
+          <div class="stat-icon">🔥</div>
+          <div class="stat-value">0</div>
+          <div class="stat-label">连续天数</div>
+        </div>
+        <div class="stat-item today">
+          <div class="stat-icon">📝</div>
+          <div class="stat-value">0</div>
+          <div class="stat-label">今日题目</div>
+        </div>
+        <div class="stat-item achievements">
+          <div class="stat-icon">🏆</div>
+          <div class="stat-value">0</div>
+          <div class="stat-label">成就数</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 语法模块卡片 -->
+    <div class="grammar-grid">
+      <!-- 由 JavaScript 动态生成 -->
+    </div>
+  </div>
+
+  <!-- 底部导航 -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-item active">
+      <span class="nav-icon">🏠</span>
+      <span class="nav-text">首页</span>
+    </a>
+    <a href="pages/achievements.html" class="nav-item">
+      <span class="nav-icon">🏆</span>
+      <span class="nav-text">成就</span>
+    </a>
+    <a href="pages/settings.html" class="nav-item">
+      <span class="nav-icon">⚙️</span>
+      <span class="nav-text">设置</span>
+    </a>
+    <a href="pages/help.html" class="nav-item">
+      <span class="nav-icon">❓</span>
+      <span class="nav-text">帮助</span>
+    </a>
+  </nav>
+
+  <!-- 连击提示 -->
+  <div id="comboToast" class="combo-toast"></div>
+
+  <!-- 成就弹窗 -->
+  <div id="achievementModal" class="achievement-modal">
+    <div class="achievement-content">
+      <div id="achievementIcon" class="achievement-icon">🌱</div>
+      <div id="achievementTitle" class="achievement-title">初学者</div>
+      <div id="achievementDesc" class="achievement-desc">完成第一次学习</div>
+      <div id="achievementPoints" class="achievement-points">+50 积分</div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    // 首页特定逻辑
+    document.addEventListener('DOMContentLoaded', function() {
+      // 更新成就数显示
+      const achievements = Storage.getAchievements();
+      const achievementCount = document.querySelector('.stat-item.achievements .stat-value');
+      if (achievementCount) {
+        achievementCount.textContent = achievements.length;
+      }
+
+      // 检查是否获得首次学习成就
+      if (Storage.getUserProgress().totalPoints > 0) {
+        AchievementManager.checkAndUnlock('first_study');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>成就 - 初中二年级英语语法学习</title>
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <div class="main-content">
+    <!-- 面包屑导航 -->
+    <div class="breadcrumb">
+      <div class="breadcrumb-links">
+        <a href="../../index.html" class="breadcrumb-link">首页</a>
+        <span class="breadcrumb-separator">></span>
+        <span class="breadcrumb-current">成就</span>
+      </div>
+    </div>
+
+    <!-- 成就统计 -->
+    <div class="dashboard">
+      <div class="dashboard-header">
+        <div class="user-level">
+          <div class="level-badge">1级 英语萌新</div>
+        </div>
+        <div class="points-display">
+          <div class="points-value">0</div>
+          <div class="points-label">积分</div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="stat-icon">🏆</div>
+          <div id="achievementCount" class="stat-value">0</div>
+          <div class="stat-label">已解锁成就</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon">🎯</div>
+          <div id="totalAchievements" class="stat-value">8</div>
+          <div class="stat-label">总成就数</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 成就列表 -->
+    <div class="settings-section">
+      <h3 class="settings-title">🏅 成就徽章</h3>
+      <div id="achievementsGrid" class="achievements-grid">
+        <!-- 由 JavaScript 动态生成 -->
+      </div>
+    </div>
+
+    <!-- 等级信息 -->
+    <div class="settings-section">
+      <h3 class="settings-title">📊 等级系统</h3>
+      <div id="levelsList" style="margin-top: 15px;">
+        <!-- 由 JavaScript 动态生成 -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部导航 -->
+  <nav class="navbar">
+    <a href="../../index.html" class="nav-item">
+      <span class="nav-icon">🏠</span>
+      <span class="nav-text">首页</span>
+    </a>
+    <a href="achievements.html" class="nav-item active">
+      <span class="nav-icon">🏆</span>
+      <span class="nav-text">成就</span>
+    </a>
+    <a href="settings.html" class="nav-item">
+      <span class="nav-icon">⚙️</span>
+      <span class="nav-text">设置</span>
+    </a>
+    <a href="help.html" class="nav-item">
+      <span class="nav-icon">❓</span>
+      <span class="nav-text">帮助</span>
+    </a>
+  </nav>
+
+  <!-- 成就弹窗 -->
+  <div id="achievementModal" class="achievement-modal">
+    <div class="achievement-content">
+      <div id="achievementIcon" class="achievement-icon">🌱</div>
+      <div id="achievementTitle" class="achievement-title">初学者</div>
+      <div id="achievementDesc" class="achievement-desc">完成第一次学习</div>
+      <div id="achievementPoints" class="achievement-points">+50 积分</div>
+    </div>
+  </div>
+
+  <script src="../../js/main.js"></script>
+  <script>
+    // 成就页面逻辑
+    document.addEventListener('DOMContentLoaded', function() {
+      // 获取所有成就
+      const allAchievements = AchievementManager.getAllAchievements();
+      const unlockedCount = allAchievements.filter(a => a.unlocked).length;
+
+      // 更新统计
+      document.getElementById('achievementCount').textContent = unlockedCount;
+
+      // 渲染成就卡片
+      const achievementsGrid = document.getElementById('achievementsGrid');
+      achievementsGrid.innerHTML = allAchievements.map(achievement => `
+        <div class="achievement-item ${achievement.unlocked ? 'unlocked' : 'locked'}">
+          <div class="achievement-badge">${achievement.icon}</div>
+          <div class="achievement-name">${achievement.name}</div>
+          <div class="achievement-condition">${achievement.condition}</div>
+          ${achievement.unlocked ? '<div style="color: #2ECC71; font-size: 12px;">✓ 已解锁</div>' : ''}
+        </div>
+      `).join('');
+
+      // 渲染等级列表
+      const userProgress = Storage.getUserProgress();
+      const levelsList = document.getElementById('levelsList');
+      levelsList.innerHTML = LEVEL_THRESHOLDS.map(level => `
+        <div class="settings-item" style="${userProgress.level >= level.level ? 'background: #D5F5E3;' : ''}">
+          <div>
+            <strong>${level.level}级</strong> - ${level.title}
+          </div>
+          <div style="color: ${userProgress.level >= level.level ? '#2ECC71' : '#7F8C8D'};">
+            ${userProgress.level >= level.level ? '✓ 已达成' : level.points + '积分'}
+          </div>
+        </div>
+      `).join('');
+
+      // 更新等级显示
+      const levelInfo = PointsSystem.getLevelInfo(userProgress.level);
+      document.querySelector('.level-badge').textContent = `${userProgress.level}级 ${levelInfo.title}`;
+      document.querySelector('.points-value').textContent = userProgress.totalPoints;
+    });
+  </script>
+</body>
+</html>
