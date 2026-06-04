@@ -54,11 +54,12 @@ void test_http_req_reset() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_http_parse_request_line_basic();
     test_http_parse_request_line_post();
     test_http_method_is_valid();
     test_http_version_is_valid();
     test_http_req_reset();
 
-    return 0;
+    UTEST_END();
 }

@@ -198,7 +198,7 @@ kv_error_t kv_load_ex(const char *filename, const char *key, char *buffer, size_
                 kv_free_entries(entries, count);
                 return KV_BUFFER_TOO_SMALL;
             }
-            strcpy(buffer, entries[i].value);
+            memcpy(buffer, entries[i].value, len + 1);
             *value_len = len;
             found = true;
             break;

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #include "../c_utils/utest.h"
 #include "../c_utils/kalman_scalar.h"
 
@@ -21,7 +22,7 @@ void test_kalman_scalar_update() {
     kalman_scalar_init(&kf, 0.0, 1.0, 0.1, 0.5);
     
     double estimate = kalman_scalar_update(&kf, 1.0);
-    EXPECT_TRUE(estimate != 0 || estimate == 0);
+    EXPECT_TRUE(isfinite(estimate)); /* kalman_scalar_update produces a finite output */
 }
 
 void test_kalman_scalar_predict() {
@@ -32,18 +33,18 @@ void test_kalman_scalar_predict() {
     kalman_scalar_init(&kf, 0.0, 1.0, 0.1, 0.5);
     
     double estimate = kalman_scalar_predict(&kf);
-    EXPECT_TRUE(estimate == 0.0 || estimate != 0.0);
+    EXPECT_TRUE(isfinite(estimate)); /* kalman_scalar_predict produces a finite output */
 }
 
 void test_kalman_scalar_types() {
     TEST(KalmanScalar_Types);
     kalman_scalar_config_t config;
     memset(&config, 0, sizeof(config));
-    EXPECT_TRUE(sizeof(config) > 0);
-    
+    /* kalman_scalar_config_t type compiles and is instantiable */
+
     kalman_scalar_t kf;
     memset(&kf, 0, sizeof(kf));
-    EXPECT_TRUE(sizeof(kf) > 0);
+    /* kalman_scalar_t type compiles and is instantiable */
 }
 
 void test_kalman_scalar_error_values() {
@@ -53,11 +54,12 @@ void test_kalman_scalar_error_values() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_kalman_scalar_init();
     test_kalman_scalar_update();
     test_kalman_scalar_predict();
     test_kalman_scalar_types();
     test_kalman_scalar_error_values();
 
-    return 0;
+    UTEST_END();
 }

@@ -11,7 +11,9 @@ void test_suffix_array_build() {
     
     suffix_array_build(s, sa);
     
-    EXPECT_TRUE(sa[0] >= 0 && sa[0] < 6);
+    /* "banana" suffixes sorted: "a"(5),"ana"(3),"anana"(1),"banana"(0),"na"(4),"nana"(2) */
+    int expected[] = {5, 3, 1, 0, 4, 2};
+    EXPECT_TRUE(memcmp(sa, expected, 6 * sizeof(int)) == 0);
 }
 
 void test_suffix_array_build_sorted() {
@@ -21,9 +23,10 @@ void test_suffix_array_build_sorted() {
     
     suffix_array_build(s, sa);
     
-    EXPECT_TRUE(sa[0] >= 0 && sa[0] < 3);
-    EXPECT_TRUE(sa[1] >= 0 && sa[1] < 3);
-    EXPECT_TRUE(sa[2] >= 0 && sa[2] < 3);
+    /* "abc" suffixes sorted: "abc"(0),"bc"(1),"c"(2) */
+    EXPECT_EQ(sa[0], 0);
+    EXPECT_EQ(sa[1], 1);
+    EXPECT_EQ(sa[2], 2);
 }
 
 void test_suffix_array_single_char() {
@@ -51,15 +54,18 @@ void test_suffix_array_repeated() {
     
     suffix_array_build(s, sa);
     
-    EXPECT_TRUE(sa[0] >= 0 && sa[0] < 4);
+    /* "aaaa": all suffixes equal, indices in descending order */
+    int expected[] = {3, 2, 1, 0};
+    EXPECT_TRUE(memcmp(sa, expected, 4 * sizeof(int)) == 0);
 }
 
 int main() {
+    UTEST_BEGIN();
     test_suffix_array_build();
     test_suffix_array_build_sorted();
     test_suffix_array_single_char();
     test_suffix_array_empty();
     test_suffix_array_repeated();
 
-    return 0;
+    UTEST_END();
 }

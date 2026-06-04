@@ -8,7 +8,7 @@ void test_process_default_config() {
     TEST(Process_DefaultConfig);
     process_config_t config = process_default_config();
     
-    EXPECT_TRUE(config.max_output_size >= 0);
+    EXPECT_EQ(config.max_output_size, (size_t)0);
 }
 
 void test_process_run() {
@@ -111,6 +111,7 @@ void test_process_error_string() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_process_default_config();
     test_process_run();
     test_process_exec();
@@ -123,5 +124,5 @@ int main() {
     test_process_get_cwd();
     test_process_error_string();
 
-    return 0;
+    UTEST_END();
 }

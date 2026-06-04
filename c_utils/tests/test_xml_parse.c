@@ -39,7 +39,7 @@ void test_xml_get_tag_content_empty() {
     char out[64] = {0};
     
     const char* result = xml_get_tag_content(xml, "empty", out, sizeof(out));
-    EXPECT_TRUE(result != NULL || result == NULL);
+    EXPECT_TRUE(result != NULL); /* empty tag should return valid pointer */
 }
 
 void test_xml_get_tag_content_attributes() {
@@ -53,11 +53,12 @@ void test_xml_get_tag_content_attributes() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_xml_get_tag_content_basic();
     test_xml_get_tag_content_nested();
     test_xml_get_tag_content_not_found();
     test_xml_get_tag_content_empty();
     test_xml_get_tag_content_attributes();
 
-    return 0;
+    UTEST_END();
 }

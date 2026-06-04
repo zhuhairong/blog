@@ -260,6 +260,7 @@ void test_leaky_bucket_error_string() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_leaky_bucket_default_config();
     test_leaky_init();
     test_leaky_init_ex();
@@ -287,5 +288,5 @@ int main() {
     test_leaky_get_available_null();
     test_leaky_bucket_error_string();
 
-    return 0;
+    UTEST_END();
 }

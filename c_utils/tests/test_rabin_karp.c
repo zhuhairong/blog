@@ -50,11 +50,12 @@ void test_rabin_karp_search_middle() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_rabin_karp_search_found();
     test_rabin_karp_search_not_found();
     test_rabin_karp_search_beginning();
     test_rabin_karp_search_single_char();
     test_rabin_karp_search_middle();
 
-    return 0;
+    UTEST_END();
 }

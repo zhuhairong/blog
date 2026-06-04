@@ -1,3 +1,9 @@
+/**
+ * 排序算法演示程序
+ *
+ * 功能：冒泡排序、插入排序、选择排序、快速排序
+ */
+
 #include <stdio.h>
 #include "../c_utils/sort.h"
 #include "../c_utils/sort_heap.h"

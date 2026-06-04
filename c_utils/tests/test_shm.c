@@ -59,9 +59,10 @@ void test_shm_close_unmap_ex() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_shm_open_map_close();
     test_shm_open_map_ex();
     test_shm_close_unmap_ex();
 
-    return 0;
+    UTEST_END();
 }

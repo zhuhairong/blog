@@ -36,15 +36,16 @@ void test_manacher_get_default_config() {
     manacher_config_t config;
     manacher_get_default_config(&config);
     
-    EXPECT_TRUE(config.case_sensitive || !config.case_sensitive);
+    /* smoke test: manacher_get_default_config() completed without crash */
 }
 
 int main() {
+    UTEST_BEGIN();
     test_manacher_longest_palindrome();
     test_manacher_is_palindrome();
     test_manacher_empty_string();
     test_manacher_single_char();
     test_manacher_get_default_config();
 
-    return 0;
+    UTEST_END();
 }

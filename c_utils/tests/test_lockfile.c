@@ -127,6 +127,7 @@ void test_lockfile_force_unlock() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_lockfile_lock_unlock();
     test_lockfile_try_lock();
     test_lockfile_is_locked();
@@ -136,5 +137,5 @@ int main() {
     test_lockfile_get_status();
     test_lockfile_force_unlock();
 
-    return 0;
+    UTEST_END();
 }

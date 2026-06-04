@@ -12,11 +12,11 @@ void test_sort_utils_types() {
     TEST(SortUtils_Types);
     sort_utils_config_t config;
     memset(&config, 0, sizeof(config));
-    EXPECT_TRUE(sizeof(config) > 0);
-    
+    /* sort_utils_config_t type compiles and is instantiable */
+
     sort_utils_state_t state;
     memset(&state, 0, sizeof(state));
-    EXPECT_TRUE(sizeof(state) > 0);
+    /* sort_utils_state_t type compiles and is instantiable */
 }
 
 void test_sort_utils_error_values() {
@@ -66,11 +66,12 @@ void test_sort_utils_quicksort() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_sort_utils_types();
     test_sort_utils_error_values();
     test_sort_utils_config_fields();
     test_sort_utils_state_fields();
     test_sort_utils_quicksort();
 
-    return 0;
+    UTEST_END();
 }

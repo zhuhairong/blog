@@ -42,11 +42,12 @@ void test_coap_error_values() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_coap_types();
     test_coap_methods();
     test_coap_response_codes();
     test_coap_options();
     test_coap_error_values();
 
-    return 0;
+    UTEST_END();
 }

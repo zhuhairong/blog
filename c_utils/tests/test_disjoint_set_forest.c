@@ -74,17 +74,18 @@ void test_dsf_null_param() {
     dsf_error_t error;
     
     dsf_t* dsf = dsf_create(0, &error);
-    EXPECT_TRUE(dsf == NULL || dsf != NULL);
+    EXPECT_TRUE(dsf == NULL);  /* dsf_create(0) should fail */
     
     dsf_free(NULL);
 }
 
 int main() {
+    UTEST_BEGIN();
     test_dsf_create();
     test_dsf_find();
     test_dsf_union();
     test_dsf_same_set();
     test_dsf_null_param();
 
-    return 0;
+    UTEST_END();
 }

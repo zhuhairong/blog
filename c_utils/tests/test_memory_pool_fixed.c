@@ -7,7 +7,7 @@
 void test_mem_pool_fixed_default_config() {
     TEST(MemPoolFixed_DefaultConfig);
     mem_pool_fixed_config_t config = mem_pool_fixed_default_config();
-    EXPECT_TRUE(config.alignment == 0 || config.alignment > 0);
+    EXPECT_EQ(config.alignment, 0);
 }
 
 void test_mem_pool_fixed_init() {
@@ -42,7 +42,7 @@ void test_mem_pool_fixed_alloc_free() {
         
         mem_pool_fixed_destroy(&pool);
     } else {
-        EXPECT_TRUE(true);
+        EXPECT_NE(err, MEM_POOL_FIXED_OK); /* pool init failed unexpectedly */
     }
 }
 
@@ -56,11 +56,12 @@ void test_mem_pool_fixed_strerror() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_mem_pool_fixed_default_config();
     test_mem_pool_fixed_init();
     test_mem_pool_fixed_init_null();
     test_mem_pool_fixed_alloc_free();
     test_mem_pool_fixed_strerror();
 
-    return 0;
+    UTEST_END();
 }

@@ -148,6 +148,7 @@ void test_mmap_error_string() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_mmap_default_config();
     test_mmap_file_and_free();
     test_mmap_file_null();
@@ -161,5 +162,5 @@ int main() {
     test_mmap_anonymous_zero_size();
     test_mmap_error_string();
 
-    return 0;
+    UTEST_END();
 }

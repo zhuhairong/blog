@@ -207,6 +207,7 @@ void test_uf_multiple_components() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_uf_create();
     test_uf_create_zero();
     test_uf_create_large();
@@ -223,5 +224,5 @@ int main() {
     test_uf_free_null();
     test_uf_multiple_components();
 
-    return 0;
+    UTEST_END();
 }

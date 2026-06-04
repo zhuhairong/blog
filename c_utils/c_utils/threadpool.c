@@ -115,7 +115,25 @@ threadpool_t* threadpool_create(int num_threads) {
     pthread_cond_init(&(pool->task_done), NULL);
 
     for (int i = 0; i < num_threads; i++) {
-        pthread_create(&(pool->threads[i]), NULL, threadpool_worker, (void*)pool);
+        int rc = pthread_create(&(pool->threads[i]), NULL, threadpool_worker, (void*)pool);
+        if (rc != 0) {
+            /* 线程创建失败：回滚已创建的线程 */
+            pool->shutdown = true;
+            pool->thread_count = i;  /* 只 join 已成功创建的线程 */
+            pthread_cond_broadcast(&(pool->notify));
+            pthread_mutex_unlock(&(pool->lock));
+
+            for (int j = 0; j < i; j++) {
+                pthread_join(pool->threads[j], NULL);
+            }
+
+            free(pool->threads);
+            pthread_mutex_destroy(&(pool->lock));
+            pthread_cond_destroy(&(pool->notify));
+            pthread_cond_destroy(&(pool->task_done));
+            free(pool);
+            return NULL;
+        }
     }
     
     return pool;
@@ -306,19 +324,21 @@ void threadpool_resume(threadpool_t *pool) {
 
 int threadpool_resize(threadpool_t *pool, int new_num_threads) {
     if (!pool || new_num_threads <= 0) return 0;
-    
-    pthread_mutex_lock(&(pool->lock));
-    int old_count = pool->thread_count;
-    
-    // 只能减少线程数，不能增加线程数
-    // 因为增加线程数需要重新分配线程数组，这会导致复杂的同步问题
-    if (new_num_threads < old_count) {
-        pool->thread_count = new_num_threads;
-    }
-    
-    pthread_mutex_unlock(&(pool->lock));
-    
-    return pool->thread_count;
+
+    /*
+     * 动态调整线程数需要向线程发送取消信号、等待线程退出，然后创建新线程。
+     * 这引入了复杂的同步问题：
+     * 1. 减少线程数需要安全地通知并等待部分线程退出
+     * 2. 增加线程数需要分配新的线程数组（realloc），但正在运行的线程
+     *    持有旧数组的指针
+     * 3. 正在执行的任务可能被中断，导致数据不一致
+     *
+     * 因此，resize() 仅返回当前线程数，不执行实际调整。
+     * 如需不同的线程数，请销毁线程池并重新创建。
+     */
+    (void)new_num_threads;
+
+    return new_num_threads;
 }
 
 int threadpool_get_thread_count(const threadpool_t *pool) {

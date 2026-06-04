@@ -57,11 +57,12 @@ void test_stats_compute_empty() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_stats_compute();
     test_stats_compute_single();
     test_stats_compute_negative();
     test_stats_compute_variance();
     test_stats_compute_empty();
 
-    return 0;
+    UTEST_END();
 }

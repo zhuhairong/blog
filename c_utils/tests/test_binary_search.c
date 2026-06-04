@@ -95,6 +95,7 @@ void test_binary_search_is_sorted() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_binary_search_found();
     test_binary_search_not_found();
     test_binary_search_index();
@@ -104,5 +105,5 @@ int main() {
     test_binary_search_upper_bound();
     test_binary_search_is_sorted();
 
-    return 0;
+    UTEST_END();
 }

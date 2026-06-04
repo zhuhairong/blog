@@ -8,11 +8,11 @@ void test_poly1305_types() {
     TEST(Poly1305_Types);
     poly1305_config_t config;
     memset(&config, 0, sizeof(config));
-    EXPECT_TRUE(sizeof(config) > 0);
-    
+    /* poly1305_config_t type compiles and is instantiable */
+
     poly1305_ctx_t ctx;
     memset(&ctx, 0, sizeof(ctx));
-    EXPECT_TRUE(sizeof(ctx) > 0);
+    /* poly1305_ctx_t type compiles and is instantiable */
 }
 
 void test_poly1305_error_values() {
@@ -53,11 +53,12 @@ void test_poly1305_ctx_fields() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_poly1305_types();
     test_poly1305_error_values();
     test_poly1305_constants();
     test_poly1305_config_fields();
     test_poly1305_ctx_fields();
 
-    return 0;
+    UTEST_END();
 }

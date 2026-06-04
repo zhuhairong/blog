@@ -8,11 +8,11 @@ void test_dns_types() {
     TEST(DNS_Types);
     dns_header_t header;
     memset(&header, 0, sizeof(header));
-    EXPECT_TRUE(sizeof(header) > 0);
-    
+    /* dns_header_t type compiles and is instantiable */
+
     dns_question_t question;
     memset(&question, 0, sizeof(question));
-    EXPECT_TRUE(sizeof(question) > 0);
+    /* dns_question_t type compiles and is instantiable */
 }
 
 void test_dns_error_values() {
@@ -44,11 +44,12 @@ void test_dns_header_size() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_dns_types();
     test_dns_error_values();
     test_dns_record_types();
     test_dns_class_values();
     test_dns_header_size();
 
-    return 0;
+    UTEST_END();
 }

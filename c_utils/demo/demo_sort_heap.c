@@ -1,7 +1,13 @@
+/**
+ * 堆排序演示程序
+ *
+ * 功能：建堆、堆排序、优先队列操作
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "sort_heap.h"
+#include "../c_utils/sort_heap.h"
 
 void demo_basic_heap_sort(void) {
     printf("\n=== 基本堆排序演示 ===\n");

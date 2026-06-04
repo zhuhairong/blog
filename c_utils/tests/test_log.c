@@ -18,14 +18,14 @@ void test_log_level_values() {
 void test_log_set_level() {
     TEST(Log_SetLevel);
     log_set_level(LOG_LEVEL_INFO);
-    EXPECT_TRUE(true);
+    /* smoke test: verify log_set_level is callable without crash */
 }
 
 void test_log_set_quiet() {
     TEST(Log_SetQuiet);
     log_set_quiet(1);
     log_set_quiet(0);
-    EXPECT_TRUE(true);
+    /* smoke test: verify log_set_quiet is callable without crash */
 }
 
 void test_log_write() {
@@ -33,7 +33,7 @@ void test_log_write() {
     log_set_quiet(1);
     LOG_INFO("Test log message");
     log_set_quiet(0);
-    EXPECT_TRUE(true);
+    /* smoke test: verify LOG_INFO macro is callable without crash */
 }
 
 void test_log_level_macros() {
@@ -45,15 +45,16 @@ void test_log_level_macros() {
     LOGW("Warn");
     LOGE("Error");
     log_set_quiet(0);
-    EXPECT_TRUE(true);
+    /* smoke test: verify all log level macros are callable without crash */
 }
 
 int main() {
+    UTEST_BEGIN();
     test_log_level_values();
     test_log_set_level();
     test_log_set_quiet();
     test_log_write();
     test_log_level_macros();
 
-    return 0;
+    UTEST_END();
 }

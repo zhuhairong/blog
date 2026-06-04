@@ -190,6 +190,7 @@ void test_page_alloc_error_string() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_page_alloc_default_config();
     test_page_alloc_get_page_size();
     test_page_alloc();
@@ -210,5 +211,5 @@ int main() {
     test_page_alloc_reset_stats();
     test_page_alloc_error_string();
 
-    return 0;
+    UTEST_END();
 }

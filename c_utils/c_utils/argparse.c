@@ -170,12 +170,12 @@ void argparse_help(const argparse_t *ap) {
         for (int i = 0; i < ap->option_count; i++) {
             const arg_option_t *opt = &ap->options[i];
             char type_indicator[16] = "";
-            if (opt->type == ARG_INT) strcpy(type_indicator, " INT");
-            else if (opt->type == ARG_DOUBLE) strcpy(type_indicator, " FLOAT");
-            else if (opt->type == ARG_STRING) strcpy(type_indicator, " STR");
+            if (opt->type == ARG_INT) snprintf(type_indicator, sizeof(type_indicator), "%s", " INT");
+            else if (opt->type == ARG_DOUBLE) snprintf(type_indicator, sizeof(type_indicator), "%s", " FLOAT");
+            else if (opt->type == ARG_STRING) snprintf(type_indicator, sizeof(type_indicator), "%s", " STR");
             
             char required_indicator[8] = "";
-            if (opt->required) strcpy(required_indicator, " *");
+            if (opt->required) snprintf(required_indicator, sizeof(required_indicator), "%s", " *");
             
             printf("  -%c, --%-12s%s%s\n", 
                    opt->short_name, opt->long_name, opt->help, required_indicator);

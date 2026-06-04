@@ -193,6 +193,7 @@ void test_complex_constants() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_complex_add();
     test_complex_sub();
     test_complex_mul();
@@ -214,5 +215,5 @@ int main() {
     test_complex_strerror();
     test_complex_constants();
 
-    return 0;
+    UTEST_END();
 }

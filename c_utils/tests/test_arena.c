@@ -193,6 +193,7 @@ void test_arena_edge_case_zero_size() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_arena_create();
     test_arena_create_default();
     test_arena_alloc();
@@ -209,5 +210,5 @@ int main() {
     test_arena_destroy_null();
     test_arena_edge_case_zero_size();
 
-    return 0;
+    UTEST_END();
 }

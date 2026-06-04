@@ -1,3 +1,9 @@
+/**
+ * 统计工具演示程序
+ *
+ * 功能：均值、方差、标准差、分布计算
+ */
+
 #include <stdio.h>
 #include "../c_utils/stats.h"
 

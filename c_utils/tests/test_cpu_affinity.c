@@ -18,7 +18,7 @@ void test_cpu_affinity_is_cpu_valid() {
         bool valid = cpu_affinity_is_cpu_valid(0);
         EXPECT_TRUE(valid);
     } else {
-        EXPECT_TRUE(true);
+        /* smoke test: no CPUs available on this system — verify graceful handling */
     }
 }
 
@@ -28,7 +28,8 @@ void test_cpu_affinity_get() {
     cpu_affinity_error_t err;
     
     bool result = cpu_affinity_get(&cpu_id, &err);
-    EXPECT_TRUE(result || !result);
+    EXPECT_TRUE(result);
+    EXPECT_EQ(err, CPU_AFFINITY_OK);
 }
 
 void test_cpu_affinity_get_mask() {
@@ -37,7 +38,7 @@ void test_cpu_affinity_get_mask() {
     cpu_affinity_error_t err;
     
     bool result = cpu_affinity_get_mask(&mask, &err);
-    EXPECT_TRUE(result || !result);
+    EXPECT_TRUE(result);
 }
 
 void test_cpu_affinity_set_invalid() {
@@ -45,15 +46,16 @@ void test_cpu_affinity_set_invalid() {
     cpu_affinity_error_t err;
     
     bool result = cpu_affinity_set(-1, &err);
-    EXPECT_TRUE(!result || result);
+    EXPECT_FALSE(result);
 }
 
 int main() {
+    UTEST_BEGIN();
     test_cpu_affinity_get_cpu_count();
     test_cpu_affinity_is_cpu_valid();
     test_cpu_affinity_get();
     test_cpu_affinity_get_mask();
     test_cpu_affinity_set_invalid();
 
-    return 0;
+    UTEST_END();
 }

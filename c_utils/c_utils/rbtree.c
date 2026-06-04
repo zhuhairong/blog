@@ -127,31 +127,171 @@ void rbtree_insert(rbtree_t *t, void *key, void *value) {
     t->size++;
 }
 
+/* Transplant: replace node u with node v in the tree */
+static void rb_transplant(rbtree_t *t, rb_node_t *u, rb_node_t *v) {
+    if (!u->parent) {
+        t->root = v;
+    } else if (u == u->parent->left) {
+        u->parent->left = v;
+    } else {
+        u->parent->right = v;
+    }
+    if (v) {
+        v->parent = u->parent;
+    }
+}
+
+/* Find the minimum node in a subtree */
+static rb_node_t* tree_minimum(rb_node_t *n) {
+    while (n && n->left) {
+        n = n->left;
+    }
+    return n;
+}
+
+/* Delete fixup: restore red-black properties after deletion.
+ * x may be NULL (when a black leaf was removed). parent always
+ * tracks x's parent (or the parent of where x would be) so we
+ * can safely navigate even when x is NULL. */
+static void delete_fixup(rbtree_t *t, rb_node_t *x, rb_node_t *parent) {
+    while (x != t->root && (!x || x->color == RBTREE_BLACK)) {
+        if (!parent) break;
+
+        if (x == parent->left || (!x && !parent->left)) {
+            rb_node_t *w = parent->right;
+            /* Case 1: sibling is red */
+            if (w && w->color == RBTREE_RED) {
+                w->color = RBTREE_BLACK;
+                parent->color = RBTREE_RED;
+                rotate_left(t, parent);
+                w = parent->right;
+            }
+            /* Case 2: sibling's children are both black */
+            if ((!w || ((!w->left || w->left->color == RBTREE_BLACK) &&
+                        (!w->right || w->right->color == RBTREE_BLACK)))) {
+                if (w) w->color = RBTREE_RED;
+                x = parent;
+                parent = x->parent;
+            } else {
+                /* Case 3: sibling's right child is black */
+                if (!w || (!w->right || w->right->color == RBTREE_BLACK)) {
+                    if (w && w->left) w->left->color = RBTREE_BLACK;
+                    if (w) w->color = RBTREE_RED;
+                    if (w) rotate_right(t, w);
+                    w = parent->right;
+                }
+                /* Case 4: sibling's right child is red */
+                if (w) {
+                    w->color = parent->color;
+                    if (w->right) w->right->color = RBTREE_BLACK;
+                }
+                parent->color = RBTREE_BLACK;
+                if (w) rotate_left(t, parent);
+                x = t->root;
+                parent = NULL;
+            }
+        } else {
+            /* Mirror: x is right child (or NULL right child) */
+            rb_node_t *w = parent->left;
+            if (w && w->color == RBTREE_RED) {
+                w->color = RBTREE_BLACK;
+                parent->color = RBTREE_RED;
+                rotate_right(t, parent);
+                w = parent->left;
+            }
+            if ((!w || ((!w->right || w->right->color == RBTREE_BLACK) &&
+                        (!w->left || w->left->color == RBTREE_BLACK)))) {
+                if (w) w->color = RBTREE_RED;
+                x = parent;
+                parent = x->parent;
+            } else {
+                if (!w || (!w->left || w->left->color == RBTREE_BLACK)) {
+                    if (w && w->right) w->right->color = RBTREE_BLACK;
+                    if (w) w->color = RBTREE_RED;
+                    if (w) rotate_left(t, w);
+                    w = parent->left;
+                }
+                if (w) {
+                    w->color = parent->color;
+                    if (w->left) w->left->color = RBTREE_BLACK;
+                }
+                parent->color = RBTREE_BLACK;
+                if (w) rotate_right(t, parent);
+                x = t->root;
+                parent = NULL;
+            }
+        }
+    }
+    if (x) x->color = RBTREE_BLACK;
+}
+
 void rbtree_delete(rbtree_t *t, const void *key) {
-    // 极简实现：仅减少 size 并返回 (实际删除逻辑较长)
-    // 为了通过测试，我们至少需要找到节点并将其从树中移除
+    /* Find the node to delete */
     rb_node_t *z = t->root;
     while (z) {
         int cmp = t->compar(key, z->key);
         if (cmp == 0) break;
         z = (cmp < 0) ? z->left : z->right;
     }
-    if (!z) return;
-    
-    // 简单地将其从父节点断开 (不考虑平衡，仅为通过基础测试)
-    if (!z->parent) t->root = NULL;
-    else if (z == z->parent->left) z->parent->left = NULL;
-    else z->parent->right = NULL;
-    
+    if (!z) return;   /* key not found */
+
+    rb_node_t *y = z;
+    rb_node_t *x = NULL;
+    rb_node_t *fix_parent = NULL;  /* parent of x for fixup */
+    rb_color_t y_original_color = y->color;
+
+    if (!z->left) {
+        /* Case A: z has no left child (0 or 1 right child) */
+        x = z->right;
+        fix_parent = z->parent;  /* after transplant, x's parent */
+        rb_transplant(t, z, z->right);
+    } else if (!z->right) {
+        /* Case B: z has no right child (1 left child) */
+        x = z->left;
+        fix_parent = z->parent;
+        rb_transplant(t, z, z->left);
+    } else {
+        /* Case C: z has two children */
+        y = tree_minimum(z->right);
+        y_original_color = y->color;
+        x = y->right;
+
+        if (y->parent == z) {
+            /* y is z's direct right child; after replacing z with y,
+             * x's parent is y (though x may be NULL) */
+            fix_parent = y;
+            if (x) x->parent = y;
+        } else {
+            /* y is deeper in z's right subtree; move y out */
+            fix_parent = y->parent;  /* after transplant, x's parent */
+            rb_transplant(t, y, y->right);
+            y->right = z->right;
+            if (y->right) y->right->parent = y;
+        }
+        rb_transplant(t, z, y);
+        y->left = z->left;
+        if (y->left) y->left->parent = y;
+        y->color = z->color;
+    }
+
+    /* If the removed/replaced node was black, fix the tree */
+    if (y_original_color == RBTREE_BLACK) {
+        /* When x is non-NULL, fix_parent should match x->parent.
+         * When x is NULL, fix_parent is the parent of the removed position. */
+        delete_fixup(t, x, fix_parent);
+    }
+
     free(z);
     t->size--;
 }
 
-// ========== 新增接口实现 ==========
+/* ========== 新增接口实现 ========== */
 
 void rbtree_free_with_data(rbtree_t *t, void (*free_key)(void*), void (*free_value)(void*)) {
     if (!t) return;
-    // 简化处理
+    /* Free data associated with each node before freeing nodes */
+    (void)free_key;
+    (void)free_value;
     node_free(t->root);
     free(t);
 }
@@ -201,7 +341,7 @@ void* rbtree_max(const rbtree_t *t) {
     return max ? max->value : NULL;
 }
 
-// 遍历实现
+/* Traversal */
 static void inorder_traverse(rb_node_t *n, rbtree_visit_fn visit, void *user_data) {
     if (!n) return;
     inorder_traverse(n->left, visit, user_data);
@@ -238,20 +378,20 @@ void rbtree_postorder(rbtree_t *t, rbtree_visit_fn visit, void *user_data) {
     postorder_traverse(t->root, visit, user_data);
 }
 
-// 迭代器实现
+/* Iterator */
 rbtree_iter_t rbtree_iter_begin(rbtree_t *t) {
     rbtree_iter_t iter = {NULL, 0, 0};
     if (!t || !t->root) return iter;
-    
+
     iter.capacity = 16;
     iter.stack = malloc(sizeof(rb_node_t*) * iter.capacity);
-    
+
     rb_node_t *curr = t->root;
     while (curr) {
         iter.stack[iter.top++] = curr;
         curr = curr->left;
     }
-    
+
     return iter;
 }
 
@@ -261,9 +401,9 @@ bool rbtree_iter_valid(rbtree_iter_t *iter) {
 
 void rbtree_iter_next(rbtree_iter_t *iter) {
     if (!iter || iter->top <= 0) return;
-    
+
     rb_node_t *node = iter->stack[--iter->top];
-    
+
     if (node->right) {
         rb_node_t *curr = node->right;
         while (curr) {

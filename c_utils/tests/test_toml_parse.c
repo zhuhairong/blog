@@ -53,11 +53,12 @@ void test_toml_get_string_quoted() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_toml_get_string_basic();
     test_toml_get_string_not_found();
     test_toml_get_string_multiple();
     test_toml_get_string_empty();
     test_toml_get_string_quoted();
 
-    return 0;
+    UTEST_END();
 }

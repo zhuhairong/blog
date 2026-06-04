@@ -1,7 +1,13 @@
+/**
+ * UUID v4 快速生成演示程序
+ *
+ * 功能：随机 UUID 生成、性能对比
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "uuid_v4_fast.h"
+#include "../c_utils/uuid_v4_fast.h"
 
 void demo_basic_generation(void) {
     printf("\n=== 基本UUID v4生成演示 ===\n");

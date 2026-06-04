@@ -8,15 +8,15 @@ void test_ws_frame_types() {
     TEST(WS_Frame_Types);
     ws_frame_config_t config;
     memset(&config, 0, sizeof(config));
-    EXPECT_TRUE(sizeof(config) > 0);
-    
+    /* ws_frame_config_t type compiles and is instantiable */
+
     ws_frame_hdr_t hdr;
     memset(&hdr, 0, sizeof(hdr));
-    EXPECT_TRUE(sizeof(hdr) > 0);
-    
+    /* ws_frame_hdr_t type compiles and is instantiable */
+
     ws_frame_t frame;
     memset(&frame, 0, sizeof(frame));
-    EXPECT_TRUE(sizeof(frame) > 0);
+    /* ws_frame_t type compiles and is instantiable */
 }
 
 void test_ws_frame_error_values() {
@@ -58,15 +58,16 @@ void test_ws_frame_ctx() {
     TEST(WS_Frame_Ctx);
     ws_frame_ctx_t ctx;
     memset(&ctx, 0, sizeof(ctx));
-    EXPECT_TRUE(sizeof(ctx) > 0);
+    /* ws_frame_ctx_t type compiles and is instantiable */
 }
 
 int main() {
+    UTEST_BEGIN();
     test_ws_frame_types();
     test_ws_frame_error_values();
     test_ws_frame_config_defaults();
     test_ws_frame_hdr_defaults();
     test_ws_frame_ctx();
 
-    return 0;
+    UTEST_END();
 }

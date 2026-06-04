@@ -71,11 +71,12 @@ void test_bloom_counting_reset() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_bloom_counting_create_free();
     test_bloom_counting_add_check();
     test_bloom_counting_remove();
     test_bloom_counting_estimate();
     test_bloom_counting_reset();
 
-    return 0;
+    UTEST_END();
 }

@@ -20,7 +20,7 @@ void test_soundex_encode_empty() {
     char result[SOUNDEX_LENGTH + 1] = {0};
     
     soundex_encode("", result);
-    EXPECT_TRUE(result[0] != '\0' || result[0] == '\0');
+    EXPECT_EQ(result[0], '0'); /* empty input produces "0000" */
 }
 
 void test_soundex_encode_single() {
@@ -52,11 +52,12 @@ void test_soundex_encode_similar() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_soundex_encode_basic();
     test_soundex_encode_empty();
     test_soundex_encode_single();
     test_soundex_encode_numbers();
     test_soundex_encode_similar();
 
-    return 0;
+    UTEST_END();
 }

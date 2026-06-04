@@ -15,7 +15,6 @@ void test_stopwatch_start_stop() {
     
     stopwatch_stop(&sw);
     EXPECT_FALSE(sw.running);
-    EXPECT_TRUE(sw.elapsed > 0 || sw.elapsed == 0);
 }
 
 void test_stopwatch_reset() {
@@ -42,7 +41,7 @@ void test_stopwatch_elapsed_ms() {
     stopwatch_stop(&sw);
     
     uint64_t elapsed = stopwatch_elapsed_ms(&sw);
-    EXPECT_TRUE(elapsed >= 0);
+    (void)elapsed; /* verify function is callable after start/stop */
 }
 
 void test_stopwatch_multiple_starts() {
@@ -75,11 +74,12 @@ void test_stopwatch_elapsed_while_running() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_stopwatch_start_stop();
     test_stopwatch_reset();
     test_stopwatch_elapsed_ms();
     test_stopwatch_multiple_starts();
     test_stopwatch_elapsed_while_running();
 
-    return 0;
+    UTEST_END();
 }

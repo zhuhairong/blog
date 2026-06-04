@@ -162,6 +162,7 @@ void test_argparse_destroy_null() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_argparse_create();
     test_argparse_add_bool();
     test_argparse_add_int();
@@ -175,5 +176,5 @@ int main() {
     test_argparse_is_set();
     test_argparse_destroy_null();
 
-    return 0;
+    UTEST_END();
 }

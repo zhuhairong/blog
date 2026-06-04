@@ -45,7 +45,8 @@ void test_http_build_request_simple() {
     http_error_t error;
     
     char* req = http_build_request("GET", "/", "HTTP/1.1", NULL, 0, NULL, 0, &error);
-    EXPECT_TRUE(req != NULL || req == NULL);
+    EXPECT_TRUE(req != NULL);
+    EXPECT_EQ(error, HTTP_OK);
     
     if (req != NULL) {
         free(req);
@@ -53,11 +54,12 @@ void test_http_build_request_simple() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_http_default_config();
     test_http_parse_request_null();
     test_http_parse_response_null();
     test_http_strerror();
     test_http_build_request_simple();
 
-    return 0;
+    UTEST_END();
 }

@@ -1,7 +1,13 @@
+/**
+ * Nanopb 包装器演示程序
+ *
+ * 功能：Protocol Buffers 编码/解码、消息序列化
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "nanopb_wrapper.h"
+#include "../c_utils/nanopb_wrapper.h"
 
 typedef struct {
     int32_t id;

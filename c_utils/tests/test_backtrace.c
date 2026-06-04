@@ -15,8 +15,10 @@ void test_backtrace_get() {
 
 void test_backtrace_print() {
     TEST(Backtrace_Print);
+    /* backtrace_print is void — verify it doesn't crash */
     backtrace_print();
-    EXPECT_TRUE(true);
+    void* buf[10];
+    EXPECT_TRUE(backtrace_get(buf, 10) > 0);
 }
 
 void test_backtrace_get_symbols() {
@@ -27,7 +29,7 @@ void test_backtrace_get_symbols() {
     EXPECT_TRUE(count > 0);
     
     char** symbols = backtrace_get_symbols(buffer, count);
-    EXPECT_TRUE(symbols != NULL || symbols == NULL);
+    EXPECT_TRUE(symbols != NULL);
     
     if (symbols != NULL) {
         free(symbols);
@@ -39,7 +41,7 @@ void test_backtrace_get_frames() {
     backtrace_frame_t frames[10];
     
     size_t count = backtrace_get_frames(frames, 10);
-    EXPECT_TRUE(count >= 0);
+    EXPECT_TRUE(count > 0);
     
     backtrace_free_frames(frames, count);
 }
@@ -56,11 +58,12 @@ void test_backtrace_print_to_file() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_backtrace_get();
     test_backtrace_print();
     test_backtrace_get_symbols();
     test_backtrace_get_frames();
     test_backtrace_print_to_file();
 
-    return 0;
+    UTEST_END();
 }

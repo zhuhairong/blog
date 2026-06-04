@@ -44,11 +44,12 @@ void test_convex_hull_get_points_null() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_convex_hull_create_free();
     test_convex_hull_insufficient_points();
     test_convex_hull_null_points();
     test_convex_hull_get_point_count_null();
     test_convex_hull_get_points_null();
 
-    return 0;
+    UTEST_END();
 }

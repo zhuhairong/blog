@@ -324,6 +324,7 @@ void test_csv_error_file() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_csv_default_config();
     test_csv_create_free();
     test_csv_create_with_config();
@@ -344,5 +345,5 @@ int main() {
     test_csv_strerror();
     test_csv_error_file();
 
-    return 0;
+    UTEST_END();
 }

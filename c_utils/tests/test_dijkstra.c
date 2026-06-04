@@ -20,7 +20,7 @@ void test_dijkstra_graph_create_zero() {
     dijkstra_error_t error;
     
     dijkstra_graph_t* graph = dijkstra_graph_create(0, &error);
-    EXPECT_TRUE(graph == NULL || graph != NULL);
+    EXPECT_TRUE(graph == NULL);  /* zero nodes should fail */
 }
 
 void test_dijkstra_add_edge() {
@@ -77,11 +77,12 @@ void test_dijkstra_strerror() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_dijkstra_graph_create();
     test_dijkstra_graph_create_zero();
     test_dijkstra_add_edge();
     test_dijkstra_basic();
     test_dijkstra_strerror();
 
-    return 0;
+    UTEST_END();
 }

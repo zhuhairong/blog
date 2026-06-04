@@ -267,6 +267,7 @@ static void trie_collect_prefix(trie_node_t *node, char *prefix, size_t prefix_l
     
     if (node->is_end) {
         keys[*count] = strdup(prefix);
+        if (!keys[*count]) return;  // 内存分配失败，跳过当前节点
         values[*count] = node->value;
         (*count)++;
     }

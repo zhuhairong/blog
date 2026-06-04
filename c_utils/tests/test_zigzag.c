@@ -60,11 +60,12 @@ void test_zigzag_encode_int64() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_zigzag_encode_decode_positive();
     test_zigzag_encode_decode_negative();
     test_zigzag_encode_decode_zero();
     test_zigzag_create_destroy();
     test_zigzag_encode_int64();
 
-    return 0;
+    UTEST_END();
 }

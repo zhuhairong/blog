@@ -215,7 +215,7 @@ bool glob(const char *pattern, const glob_config_t *config, glob_t *result, glob
             strncpy(dir_part, pattern, dir_len);
             dir_part[dir_len] = '\0';
         } else {
-            strcpy(dir_part, "/");
+            snprintf(dir_part, sizeof(dir_part), "%s", "/");
         }
         strncpy(file_pattern, last_slash + 1, sizeof(file_pattern) - 1);
         file_pattern[sizeof(file_pattern) - 1] = '\0';

@@ -82,6 +82,7 @@ void test_rgb_to_hsl_black() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_rgb_to_hsl();
     test_hsl_to_rgb();
     test_rgb_to_hsl_green();
@@ -91,5 +92,5 @@ int main() {
     test_rgb_to_hsl_white();
     test_rgb_to_hsl_black();
 
-    return 0;
+    UTEST_END();
 }

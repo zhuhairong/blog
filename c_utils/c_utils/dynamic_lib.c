@@ -23,9 +23,15 @@ dynamic_lib_t* dynamic_lib_open(const char *path, dynamic_lib_error_t *error) {
     }
     
     lib->path = strdup(path);
+    if (!lib->path) {
+        dlclose(lib->handle);
+        free(lib);
+        if (error) *error = DYNAMIC_LIB_ERROR_MEMORY_ALLOC;
+        return NULL;
+    }
     lib->has_error = false;
     lib->error = DYNAMIC_LIB_OK;
-    
+
     if (error) *error = DYNAMIC_LIB_OK;
     return lib;
 }

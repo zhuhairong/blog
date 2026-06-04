@@ -1,3 +1,9 @@
+/**
+ * 动态数组演示程序
+ *
+ * 功能：添加、删除、访问、扩容
+ */
+
 #include <stdio.h>
 #include "../c_utils/vec.h"
 

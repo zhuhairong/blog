@@ -72,11 +72,12 @@ void test_delta_encode_int64() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_delta_encode_decode_int32();
     test_delta_default_config();
     test_delta_strerror();
     test_delta_encode_single();
     test_delta_encode_int64();
 
-    return 0;
+    UTEST_END();
 }

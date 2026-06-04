@@ -72,11 +72,12 @@ void test_ch_error_string() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_ch_init_free();
     test_ch_add_remove_node();
     test_ch_get_node();
     test_ch_node_count();
     test_ch_error_string();
 
-    return 0;
+    UTEST_END();
 }

@@ -35,7 +35,7 @@ void test_huffman_get_default_config() {
     huffman_config_t config;
     huffman_get_default_config(&config);
     
-    EXPECT_TRUE(config.max_tree_depth > 0 || config.max_tree_depth == 0);
+    EXPECT_EQ(config.max_tree_depth, (size_t)32);
 }
 
 void test_huffman_stats_empty() {
@@ -55,11 +55,12 @@ void test_huffman_stats_single() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_huffman_stats();
     test_huffman_create_free_tree();
     test_huffman_get_default_config();
     test_huffman_stats_empty();
     test_huffman_stats_single();
 
-    return 0;
+    UTEST_END();
 }

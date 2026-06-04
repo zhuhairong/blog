@@ -215,6 +215,7 @@ void test_rll_error_string() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_rll_default_config();
     test_rll_1_7_default_config();
     test_rll_encode_basic();
@@ -232,5 +233,5 @@ int main() {
     test_rll_compress_decompress_file();
     test_rll_error_string();
 
-    return 0;
+    UTEST_END();
 }

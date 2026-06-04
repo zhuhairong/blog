@@ -83,11 +83,12 @@ void test_fft_inverse_basic() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_fft_create_destroy();
     test_fft_create_null_config();
     test_fft_strerror();
     test_fft_compute_basic();
     test_fft_inverse_basic();
 
-    return 0;
+    UTEST_END();
 }

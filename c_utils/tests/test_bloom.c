@@ -224,6 +224,7 @@ void test_bloom_edge_case_empty_key() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_bloom_create();
     test_bloom_create_invalid_params();
     test_bloom_add_and_check();
@@ -240,5 +241,5 @@ int main() {
     test_bloom_edge_case_single_element();
     test_bloom_edge_case_empty_key();
 
-    return 0;
+    UTEST_END();
 }

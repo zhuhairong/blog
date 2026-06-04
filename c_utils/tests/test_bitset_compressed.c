@@ -8,7 +8,7 @@ void test_bitset_compressed_init() {
     TEST(BitsetCompressed_Init);
     bitset_compressed_t bc;
     bitset_comp_init(&bc);
-    EXPECT_TRUE(bc.runs == NULL || bc.runs != NULL);
+    EXPECT_TRUE(bc.runs == NULL);  /* after init, runs is NULL */
     EXPECT_EQ(bc.count, 0);
 }
 
@@ -48,11 +48,12 @@ void test_bitset_compressed_run_count() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_bitset_compressed_init();
     test_bitset_compressed_create_free();
     test_bitset_compressed_is_empty();
     test_bitset_compressed_size();
     test_bitset_compressed_run_count();
 
-    return 0;
+    UTEST_END();
 }

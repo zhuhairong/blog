@@ -18,6 +18,7 @@ void test_cobs_encode_decode() {
     err = cobs_decode(encoded, written, decoded, sizeof(decoded), &written);
     EXPECT_EQ(err, COBS_OK);
     EXPECT_EQ(written, (size_t)5);
+    EXPECT_TRUE(memcmp(in, decoded, 5) == 0);
 }
 
 void test_cobs_max_encoded_size() {
@@ -36,7 +37,7 @@ void test_cobs_validate() {
     TEST(Cobs_Validate);
     unsigned char valid[] = {0x03, 0x01, 0x02, 0x00};
     bool result = cobs_validate(valid, 4);
-    EXPECT_TRUE(result || !result);
+    EXPECT_TRUE(result);
 }
 
 void test_cobs_error_string() {
@@ -49,11 +50,12 @@ void test_cobs_error_string() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_cobs_encode_decode();
     test_cobs_max_encoded_size();
     test_cobs_max_decoded_size();
     test_cobs_validate();
     test_cobs_error_string();
 
-    return 0;
+    UTEST_END();
 }

@@ -283,6 +283,7 @@ void test_dstr_stress_append() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_dstr_new();
     test_dstr_new_len();
     test_dstr_new_empty();
@@ -313,5 +314,5 @@ int main() {
     test_dstr_capacity();
     test_dstr_stress_append();
 
-    return 0;
+    UTEST_END();
 }

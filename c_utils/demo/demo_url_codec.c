@@ -1,7 +1,13 @@
+/**
+ * URL 编解码演示程序
+ *
+ * 功能：URL 编码/解码、路径编码、特殊字符处理
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "url_codec.h"
+#include "../c_utils/url_codec.h"
 
 void demo_url_encode(void) {
     printf("\n=== URL编码演示 ===\n");

@@ -45,11 +45,12 @@ void test_dynamic_lib_is_valid() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_dynamic_lib_open_invalid();
     test_dynamic_lib_open_null();
     test_dynamic_lib_close_null();
     test_dynamic_lib_get_symbol_null();
     test_dynamic_lib_is_valid();
 
-    return 0;
+    UTEST_END();
 }

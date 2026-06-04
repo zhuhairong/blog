@@ -150,6 +150,7 @@ void test_vec3_strerror() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_vec3_add();
     test_vec3_sub();
     test_vec3_dot();
@@ -164,5 +165,5 @@ int main() {
     test_vec3_unit();
     test_vec3_strerror();
 
-    return 0;
+    UTEST_END();
 }

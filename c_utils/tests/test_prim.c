@@ -8,15 +8,15 @@ void test_prim_types() {
     TEST(Prim_Types);
     prim_config_t config;
     memset(&config, 0, sizeof(config));
-    EXPECT_TRUE(sizeof(config) > 0);
-    
+    /* prim_config_t type compiles and is instantiable */
+
     prim_edge_t edge;
     memset(&edge, 0, sizeof(edge));
-    EXPECT_TRUE(sizeof(edge) > 0);
-    
+    /* prim_edge_t type compiles and is instantiable */
+
     prim_result_t result;
     memset(&result, 0, sizeof(result));
-    EXPECT_TRUE(sizeof(result) > 0);
+    /* prim_result_t type compiles and is instantiable */
 }
 
 void test_prim_error_values() {
@@ -67,11 +67,12 @@ void test_prim_result_fields() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_prim_types();
     test_prim_error_values();
     test_prim_config_fields();
     test_prim_edge_fields();
     test_prim_result_fields();
 
-    return 0;
+    UTEST_END();
 }

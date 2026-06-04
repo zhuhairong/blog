@@ -168,6 +168,7 @@ void test_log_rotate_cleanup() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_log_rotate_basic();
     test_log_rotate_needs_rotation();
     test_log_rotate_no_rotation_needed();
@@ -178,5 +179,5 @@ int main() {
     test_log_rotate_ex();
     test_log_rotate_cleanup();
 
-    return 0;
+    UTEST_END();
 }

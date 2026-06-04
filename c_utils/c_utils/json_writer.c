@@ -149,7 +149,7 @@ static void json_writer_write_raw(json_writer_t *jw, const char *data) {
     } else if (jw->output_type == JSON_WRITER_OUTPUT_BUFFER) {
         size_t len = strlen(data);
         if (jw->output.buffer.used + len < jw->output.buffer.size) {
-            strcpy(jw->output.buffer.buffer + jw->output.buffer.used, data);
+            memcpy(jw->output.buffer.buffer + jw->output.buffer.used, data, len + 1);
             jw->output.buffer.used += len;
         }
     } else if (jw->output_type == JSON_WRITER_OUTPUT_CUSTOM) {

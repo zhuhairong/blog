@@ -72,15 +72,16 @@ void test_sparse_table_free() {
     sparse_table_init(&st, arr, 3);
     sparse_table_free(&st);
     
-    EXPECT_TRUE(1);
+    /* Verify no crash after init + free */
 }
 
 int main() {
+    UTEST_BEGIN();
     test_sparse_table_init();
     test_sparse_table_query_min();
     test_sparse_table_query_single();
     test_sparse_table_query_full();
     test_sparse_table_free();
 
-    return 0;
+    UTEST_END();
 }

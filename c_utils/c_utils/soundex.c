@@ -14,7 +14,7 @@ static char get_code(char c) {
 }
 
 void soundex_encode(const char *s, char *res) {
-    if (!s || !*s) { strcpy(res, "0000"); return; }
+    if (!s || !*s) { snprintf(res, 5, "%s", "0000"); return; }
     res[0] = (char)toupper(s[0]);
     int idx = 1;
     char prev_code = get_code(s[0]);

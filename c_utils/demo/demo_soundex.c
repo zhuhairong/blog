@@ -1,3 +1,9 @@
+/**
+ * Soundex 语音算法演示程序
+ *
+ * 功能：英文单词语音编码、相似发音匹配
+ */
+
 #include <stdio.h>
 #include "../c_utils/soundex.h"
 

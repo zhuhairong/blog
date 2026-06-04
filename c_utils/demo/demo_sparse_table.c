@@ -1,3 +1,9 @@
+/**
+ * 稀疏表演示程序
+ *
+ * 功能：RMQ 查询、区间最值、稀疏表构建
+ */
+
 #include <stdio.h>
 #include "../c_utils/sparse_table.h"
 

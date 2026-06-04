@@ -17,12 +17,14 @@ void test_punycode_encode_ascii() {
 
 void test_punycode_encode_unicode() {
     TEST(Punycode_EncodeUnicode);
-    uint32_t input[] = {0x4E2D, 0x56FD};
+    uint32_t input[] = {0x4E2D, 0x56FD};  /* 中国 */
     char output[64] = {0};
     size_t output_len = sizeof(output);
-    
+
     bool result = punycode_encode(input, 2, output, &output_len);
-    EXPECT_TRUE(result || !result);
+    /* NOTE: Non-ASCII Punycode bootstring encoding (RFC 3492) is not yet
+     * implemented. The library returns false for code points >= 0x80. */
+    EXPECT_FALSE(result);
 }
 
 void test_punycode_encode_empty() {
@@ -31,7 +33,7 @@ void test_punycode_encode_empty() {
     size_t output_len = sizeof(output);
     
     bool result = punycode_encode(NULL, 0, output, &output_len);
-    EXPECT_TRUE(result || !result);
+    EXPECT_FALSE(result);  /* NULL input should fail */
 }
 
 void test_punycode_encode_single() {
@@ -55,11 +57,12 @@ void test_punycode_encode_numbers() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_punycode_encode_ascii();
     test_punycode_encode_unicode();
     test_punycode_encode_empty();
     test_punycode_encode_single();
     test_punycode_encode_numbers();
 
-    return 0;
+    UTEST_END();
 }

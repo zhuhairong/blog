@@ -57,21 +57,16 @@ void test_line_intersection_types() {
     TEST(LineIntersection_Types);
     line_intersection_config_t config;
     line_intersection_get_default_config(&config);
-    EXPECT_TRUE(sizeof(config) > 0);
-    
-    point_t p;
-    EXPECT_TRUE(sizeof(p) > 0);
-    
-    line_segment_t seg;
-    EXPECT_TRUE(sizeof(seg) > 0);
+    /* config, point_t, line_segment_t types compile and are instantiable */
 }
 
 int main() {
+    UTEST_BEGIN();
     test_line_intersection_basic();
     test_line_intersection_parallel();
     test_line_segment_length();
     test_lines_are_parallel();
     test_line_intersection_types();
 
-    return 0;
+    UTEST_END();
 }

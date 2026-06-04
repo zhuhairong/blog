@@ -65,10 +65,11 @@ void test_sem_open_ex() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_sem_create_close();
     test_sem_create_ex();
     test_sem_p_v();
     test_sem_open_ex();
 
-    return 0;
+    UTEST_END();
 }

@@ -72,17 +72,18 @@ void test_varint_encode_size() {
     size_t len2 = varint_encode(127, buf);
     size_t len3 = varint_encode(128, buf);
     
-    EXPECT_TRUE(len1 > 0);
-    EXPECT_TRUE(len2 > 0);
-    EXPECT_TRUE(len3 > 0);
+    EXPECT_EQ(len1, (size_t)1);
+    EXPECT_EQ(len2, (size_t)1);
+    EXPECT_EQ(len3, (size_t)2);
 }
 
 int main() {
+    UTEST_BEGIN();
     test_varint_encode_decode_small();
     test_varint_encode_decode_large();
     test_varint_encode_decode_zero();
     test_varint_encode_decode_max();
     test_varint_encode_size();
 
-    return 0;
+    UTEST_END();
 }

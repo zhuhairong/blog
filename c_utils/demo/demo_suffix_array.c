@@ -1,3 +1,9 @@
+/**
+ * 后缀数组演示程序
+ *
+ * 功能：后缀数组构建、LCP 数组、子串搜索
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

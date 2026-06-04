@@ -1,7 +1,13 @@
+/**
+ * 版本号工具演示程序
+ *
+ * 功能：版本解析、比较、格式化
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "version.h"
+#include "../c_utils/version.h"
 
 void demo_version_parse(void) {
     printf("\n=== 版本解析演示 ===\n");

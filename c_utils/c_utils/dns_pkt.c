@@ -179,7 +179,11 @@ bool dns_pkt_parse(const uint8_t *buf, size_t buf_size, dns_pkt_t *pkt, dns_erro
             }
             
             pkt->questions[i].name = strdup(name);
-            
+            if (!pkt->questions[i].name) {
+                if (error) *error = DNS_ERROR_MEMORY_ALLOC;
+                return false;
+            }
+
             if (next_offset + 4 > buf_size) {
                 if (error) *error = DNS_ERROR_INVALID_PACKET;
                 return false;
@@ -208,7 +212,11 @@ bool dns_pkt_parse(const uint8_t *buf, size_t buf_size, dns_pkt_t *pkt, dns_erro
             }
             
             pkt->answers[i].name = strdup(name);
-            
+            if (!pkt->answers[i].name) {
+                if (error) *error = DNS_ERROR_MEMORY_ALLOC;
+                return false;
+            }
+
             if (next_offset + 10 > buf_size) {
                 if (error) *error = DNS_ERROR_INVALID_PACKET;
                 return false;

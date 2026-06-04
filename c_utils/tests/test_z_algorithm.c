@@ -59,11 +59,12 @@ void test_z_algorithm_strerror() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_z_algorithm_compute();
     test_z_algorithm_create_destroy();
     test_z_algorithm_compute_safe();
     test_z_algorithm_lcp();
     test_z_algorithm_strerror();
 
-    return 0;
+    UTEST_END();
 }

@@ -125,11 +125,36 @@ void* bplus_tree_get(const bplus_tree_t *tree, const void *key) {
 // 删除键值对（简化实现）
 bool bplus_tree_delete(bplus_tree_t *tree, const void *key) {
     if (!tree || !tree->root) return false;
-    
-    // 简化实现：仅标记为已删除
-    // 完整实现需要处理节点合并等复杂逻辑
-    
-    return false;  // 暂不支持删除
+    if (!tree->compar) return false;
+
+    bplus_node_t *leaf = tree->root;
+
+    /* 遍历到叶子节点（仅支持单层叶子） */
+    while (leaf && !leaf->is_leaf) {
+        int i = 0;
+        while (i < leaf->num_keys && tree->compar(key, leaf->keys[i]) >= 0) {
+            i++;
+        }
+        leaf = leaf->u.children[i];
+    }
+
+    if (!leaf || !leaf->is_leaf) return false;
+
+    /* 在叶子节点中查找并删除 */
+    for (int i = 0; i < leaf->num_keys; i++) {
+        if (tree->compar(leaf->keys[i], key) == 0) {
+            /* 将后续元素前移 */
+            for (int j = i; j < leaf->num_keys - 1; j++) {
+                leaf->keys[j] = leaf->keys[j + 1];
+                leaf->u.values[j] = leaf->u.values[j + 1];
+            }
+            leaf->num_keys--;
+            tree->size--;
+            return true;
+        }
+    }
+
+    return false;
 }
 
 // 检查 B+ 树是否为空

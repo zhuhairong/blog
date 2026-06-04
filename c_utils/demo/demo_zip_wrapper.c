@@ -1,8 +1,14 @@
+/**
+ * ZIP 包装器演示程序
+ *
+ * 功能：ZIP 压缩/解压、文件打包、目录遍历
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/stat.h>
-#include "zip_wrapper.h"
+#include "../c_utils/zip_wrapper.h"
 
 static void demo_create_zip_file(void) {
     printf("\n");

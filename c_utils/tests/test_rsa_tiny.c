@@ -26,11 +26,11 @@ void test_rsa_types() {
     TEST(RSA_Types);
     rsa_config_t config;
     memset(&config, 0, sizeof(config));
-    EXPECT_TRUE(sizeof(config) > 0);
-    
+    /* rsa_config_t type compiles and is instantiable */
+
     rsa_key_t key;
     memset(&key, 0, sizeof(key));
-    EXPECT_TRUE(sizeof(key) > 0);
+    /* rsa_key_t type compiles and is instantiable */
 }
 
 void test_rsa_error_values() {
@@ -41,11 +41,12 @@ void test_rsa_error_values() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_rsa_modpow_basic();
     test_rsa_modpow_zero_exp();
     test_rsa_modpow_zero_base();
     test_rsa_types();
     test_rsa_error_values();
 
-    return 0;
+    UTEST_END();
 }

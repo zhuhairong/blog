@@ -158,6 +158,7 @@ void test_lru_free_null() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_lru_create();
     test_lru_put_get();
     test_lru_get_not_found();
@@ -171,5 +172,5 @@ int main() {
     test_lru_get_stats();
     test_lru_free_null();
 
-    return 0;
+    UTEST_END();
 }

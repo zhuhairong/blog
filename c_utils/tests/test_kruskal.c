@@ -8,11 +8,11 @@ void test_kruskal_types() {
     TEST(Kruskal_Types);
     kruskal_config_t config;
     memset(&config, 0, sizeof(config));
-    EXPECT_TRUE(sizeof(config) > 0);
-    
+    /* kruskal_config_t type compiles and is instantiable */
+
     kruskal_edge_t edge;
     memset(&edge, 0, sizeof(edge));
-    EXPECT_TRUE(sizeof(edge) > 0);
+    /* kruskal_edge_t type compiles and is instantiable */
 }
 
 void test_kruskal_error_values() {
@@ -45,15 +45,16 @@ void test_kruskal_result() {
     TEST(Kruskal_Result);
     kruskal_result_t result;
     memset(&result, 0, sizeof(result));
-    EXPECT_TRUE(sizeof(result) > 0);
+    /* kruskal_result_t type compiles and is instantiable */
 }
 
 int main() {
+    UTEST_BEGIN();
     test_kruskal_types();
     test_kruskal_error_values();
     test_kruskal_default_config();
     test_kruskal_edge_fields();
     test_kruskal_result();
 
-    return 0;
+    UTEST_END();
 }

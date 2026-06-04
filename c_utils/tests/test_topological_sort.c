@@ -64,11 +64,12 @@ void test_topological_sort_disconnected() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_topological_sort_simple();
     test_topological_sort_single();
     test_topological_sort_linear();
     test_topological_sort_cycle();
     test_topological_sort_disconnected();
 
-    return 0;
+    UTEST_END();
 }

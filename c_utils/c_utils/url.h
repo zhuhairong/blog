@@ -63,12 +63,12 @@ void url_destroy(url_ctx_t* ctx);
 // URL 编码
 // 返回 URL_OK 表示成功，其他值表示错误
 // 如果 out 为 NULL，则返回所需的缓冲区大小
-url_error_t url_encode(url_ctx_t* ctx, const char *in, char *out, size_t *out_size);
+url_error_t url_encode_ex(url_ctx_t* ctx, const char *in, char *out, size_t *out_size);
 
 // URL 解码
 // 返回 URL_OK 表示成功，其他值表示错误
 // 如果 out 为 NULL，则返回所需的缓冲区大小
-url_error_t url_decode(url_ctx_t* ctx, const char *in, char *out, size_t *out_size);
+url_error_t url_decode_ex(url_ctx_t* ctx, const char *in, char *out, size_t *out_size);
 
 // URL 解析
 // 返回 URL_OK 表示成功，其他值表示错误

@@ -434,6 +434,7 @@ void test_fsm_on_event_callback() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_fsm_default_options();
     test_fsm_create_free();
     test_fsm_create_with_options();
@@ -456,5 +457,5 @@ int main() {
     test_fsm_null_params();
     test_fsm_on_event_callback();
 
-    return 0;
+    UTEST_END();
 }

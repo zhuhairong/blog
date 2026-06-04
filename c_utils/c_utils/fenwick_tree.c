@@ -16,7 +16,7 @@ fenwick_tree_t* fenwick_tree_create(size_t n, fenwick_type_t type, fenwick_error
     ft->type = type;
     ft->has_error = false;
     ft->error = FENWICK_OK;
-    strcpy(ft->error_msg, "Success");
+    snprintf(ft->error_msg, sizeof(ft->error_msg), "%s", "Success");
     
     size_t elem_size = (type == FENWICK_TYPE_DOUBLE || type == FENWICK_TYPE_FLOAT) ? sizeof(double) : sizeof(long long);
     ft->tree = calloc(ft->capacity, elem_size);

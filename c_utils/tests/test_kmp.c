@@ -48,15 +48,16 @@ void test_kmp_get_default_config() {
     kmp_config_t config;
     kmp_get_default_config(&config);
     
-    EXPECT_TRUE(config.case_sensitive || !config.case_sensitive);
+    /* smoke test: kmp_get_default_config() completed without crash */
 }
 
 int main() {
+    UTEST_BEGIN();
     test_kmp_search_found();
     test_kmp_search_not_found();
     test_kmp_search_beginning();
     test_kmp_search_ex();
     test_kmp_get_default_config();
 
-    return 0;
+    UTEST_END();
 }

@@ -39,15 +39,16 @@ void test_levenshtein_get_default_config() {
     levenshtein_config_t config;
     levenshtein_get_default_config(&config);
     
-    EXPECT_TRUE(config.case_sensitive || !config.case_sensitive);
+    /* smoke test: levenshtein_get_default_config() completed without crash */
 }
 
 int main() {
+    UTEST_BEGIN();
     test_levenshtein_distance_same();
     test_levenshtein_distance_different();
     test_levenshtein_distance_empty();
     test_levenshtein_similarity();
     test_levenshtein_get_default_config();
 
-    return 0;
+    UTEST_END();
 }

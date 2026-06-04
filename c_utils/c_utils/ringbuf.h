@@ -1,12 +1,33 @@
 #ifndef C_UTILS_RINGBUF_H
 #define C_UTILS_RINGBUF_H
 
+/**
+ * @file ringbuf.h
+ * @brief 环形缓冲区（已废弃）
+ *
+ * **已废弃**: 此模块已被 `ringbuffer` 取代，请在新代码中使用 ringbuffer.h。
+ * ringbuffer 提供相同的功能，具有更一致的 API 设计和更好的命名约定。
+ *
+ * 迁移指南：
+ *   - ringbuf_create()       → ringbuffer_create()
+ *   - ringbuf_write()        → ringbuffer_write()
+ *   - ringbuf_read()         → ringbuffer_read()
+ *   - ringbuf_peek()         → ringbuffer_peek()
+ *   - ringbuf_size()         → ringbuffer_available_read()
+ *   - ringbuf_avail()        → ringbuffer_available_write()
+ *   - 其他函数遵循相同的 ringbuf_* → ringbuffer_* 映射
+ *
+ * 此文件保留以维持向后兼容性，所有 API 均标记为 `CU_DEPRECATED`。
+ * 使用这些函数编译时将产生弃用警告。
+ */
+
 #include <stddef.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include "c_utils.h"
 
 /**
- * @brief 环形缓冲区错误码
+ * @brief 环形缓冲区错误码（已废弃，请使用 ringbuffer_error_t）
  */
 typedef enum {
     RINGBUF_OK = 0,                  /**< 成功 */
@@ -53,14 +74,14 @@ typedef struct ringbuf_s ringbuf_t;
  * @brief 获取默认配置
  * @return 默认配置
  */
-ringbuf_config_t ringbuf_default_config(void);
+ringbuf_config_t ringbuf_default_config(void) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 /**
  * @brief 创建环形缓冲区
  * @param capacity 缓冲区容量
  * @return 环形缓冲区指针，失败返回 NULL
  */
-ringbuf_t* ringbuf_create(size_t capacity);
+ringbuf_t* ringbuf_create(size_t capacity) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 /**
  * @brief 使用自定义配置创建环形缓冲区
@@ -68,13 +89,13 @@ ringbuf_t* ringbuf_create(size_t capacity);
  * @param error 错误码输出
  * @return 环形缓冲区指针，失败返回 NULL
  */
-ringbuf_t* ringbuf_create_ex(const ringbuf_config_t *config, ringbuf_error_t *error);
+ringbuf_t* ringbuf_create_ex(const ringbuf_config_t *config, ringbuf_error_t *error) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 /**
  * @brief 销毁环形缓冲区
  * @param rb 环形缓冲区指针
  */
-void ringbuf_free(ringbuf_t *rb);
+void ringbuf_free(ringbuf_t *rb) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 /**
  * @brief 销毁环形缓冲区（带错误处理）
@@ -82,7 +103,7 @@ void ringbuf_free(ringbuf_t *rb);
  * @param error 错误码输出
  * @return 是否成功
  */
-bool ringbuf_free_ex(ringbuf_t *rb, ringbuf_error_t *error);
+bool ringbuf_free_ex(ringbuf_t *rb, ringbuf_error_t *error) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 /**
  * @brief 写入数据到环形缓冲区
@@ -91,7 +112,7 @@ bool ringbuf_free_ex(ringbuf_t *rb, ringbuf_error_t *error);
  * @param len 数据长度
  * @return 实际写入的字节数
  */
-size_t ringbuf_write(ringbuf_t *rb, const uint8_t *data, size_t len);
+size_t ringbuf_write(ringbuf_t *rb, const uint8_t *data, size_t len) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 /**
  * @brief 写入数据到环形缓冲区（带错误处理）
@@ -101,7 +122,7 @@ size_t ringbuf_write(ringbuf_t *rb, const uint8_t *data, size_t len);
  * @param error 错误码输出
  * @return 实际写入的字节数
  */
-size_t ringbuf_write_ex(ringbuf_t *rb, const uint8_t *data, size_t len, ringbuf_error_t *error);
+size_t ringbuf_write_ex(ringbuf_t *rb, const uint8_t *data, size_t len, ringbuf_error_t *error) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 /**
  * @brief 从环形缓冲区读取数据
@@ -110,7 +131,7 @@ size_t ringbuf_write_ex(ringbuf_t *rb, const uint8_t *data, size_t len, ringbuf_
  * @param len 数据长度
  * @return 实际读取的字节数
  */
-size_t ringbuf_read(ringbuf_t *rb, uint8_t *data, size_t len);
+size_t ringbuf_read(ringbuf_t *rb, uint8_t *data, size_t len) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 /**
  * @brief 从环形缓冲区读取数据（带错误处理）
@@ -120,7 +141,7 @@ size_t ringbuf_read(ringbuf_t *rb, uint8_t *data, size_t len);
  * @param error 错误码输出
  * @return 实际读取的字节数
  */
-size_t ringbuf_read_ex(ringbuf_t *rb, uint8_t *data, size_t len, ringbuf_error_t *error);
+size_t ringbuf_read_ex(ringbuf_t *rb, uint8_t *data, size_t len, ringbuf_error_t *error) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 /**
  * @brief 查看环形缓冲区数据（不消费）
@@ -129,7 +150,7 @@ size_t ringbuf_read_ex(ringbuf_t *rb, uint8_t *data, size_t len, ringbuf_error_t
  * @param len 数据长度
  * @return 实际查看的字节数
  */
-size_t ringbuf_peek(const ringbuf_t *rb, uint8_t *data, size_t len);
+size_t ringbuf_peek(const ringbuf_t *rb, uint8_t *data, size_t len) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 /**
  * @brief 查看环形缓冲区数据（不消费，带错误处理）
@@ -139,42 +160,42 @@ size_t ringbuf_peek(const ringbuf_t *rb, uint8_t *data, size_t len);
  * @param error 错误码输出
  * @return 实际查看的字节数
  */
-size_t ringbuf_peek_ex(const ringbuf_t *rb, uint8_t *data, size_t len, ringbuf_error_t *error);
+size_t ringbuf_peek_ex(const ringbuf_t *rb, uint8_t *data, size_t len, ringbuf_error_t *error) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 /**
  * @brief 获取环形缓冲区当前使用大小
  * @param rb 环形缓冲区指针
  * @return 当前使用大小
  */
-size_t ringbuf_size(const ringbuf_t *rb);
+size_t ringbuf_size(const ringbuf_t *rb) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 /**
  * @brief 获取环形缓冲区可用空间
  * @param rb 环形缓冲区指针
  * @return 可用空间
  */
-size_t ringbuf_avail(const ringbuf_t *rb);
+size_t ringbuf_avail(const ringbuf_t *rb) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 /**
  * @brief 检查环形缓冲区是否已满
  * @param rb 环形缓冲区指针
  * @return 是否已满
  */
-bool ringbuf_is_full(const ringbuf_t *rb);
+bool ringbuf_is_full(const ringbuf_t *rb) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 /**
  * @brief 检查环形缓冲区是否为空
  * @param rb 环形缓冲区指针
  * @return 是否为空
  */
-bool ringbuf_is_empty(const ringbuf_t *rb);
+bool ringbuf_is_empty(const ringbuf_t *rb) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 /**
  * @brief 清空环形缓冲区
  * @param rb 环形缓冲区指针
  * @return 是否成功
  */
-bool ringbuf_clear(ringbuf_t *rb);
+bool ringbuf_clear(ringbuf_t *rb) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 /**
  * @brief 清空环形缓冲区（带错误处理）
@@ -182,7 +203,7 @@ bool ringbuf_clear(ringbuf_t *rb);
  * @param error 错误码输出
  * @return 是否成功
  */
-bool ringbuf_clear_ex(ringbuf_t *rb, ringbuf_error_t *error);
+bool ringbuf_clear_ex(ringbuf_t *rb, ringbuf_error_t *error) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 /**
  * @brief 获取环形缓冲区状态
@@ -191,7 +212,7 @@ bool ringbuf_clear_ex(ringbuf_t *rb, ringbuf_error_t *error);
  * @param error 错误码输出
  * @return 是否成功
  */
-bool ringbuf_get_state(const ringbuf_t *rb, ringbuf_state_t *state, ringbuf_error_t *error);
+bool ringbuf_get_state(const ringbuf_t *rb, ringbuf_state_t *state, ringbuf_error_t *error) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 /**
  * @brief 调整环形缓冲区大小
@@ -200,7 +221,7 @@ bool ringbuf_get_state(const ringbuf_t *rb, ringbuf_state_t *state, ringbuf_erro
  * @param error 错误码输出
  * @return 是否成功
  */
-bool ringbuf_resize(ringbuf_t *rb, size_t new_capacity, ringbuf_error_t *error);
+bool ringbuf_resize(ringbuf_t *rb, size_t new_capacity, ringbuf_error_t *error) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 /**
  * @brief 跳过指定数量的字节
@@ -209,7 +230,7 @@ bool ringbuf_resize(ringbuf_t *rb, size_t new_capacity, ringbuf_error_t *error);
  * @param error 错误码输出
  * @return 实际跳过的字节数
  */
-size_t ringbuf_skip(ringbuf_t *rb, size_t len, ringbuf_error_t *error);
+size_t ringbuf_skip(ringbuf_t *rb, size_t len, ringbuf_error_t *error) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 /**
  * @brief 从环形缓冲区复制数据到另一个环形缓冲区
@@ -219,7 +240,7 @@ size_t ringbuf_skip(ringbuf_t *rb, size_t len, ringbuf_error_t *error);
  * @param error 错误码输出
  * @return 实际复制的字节数
  */
-size_t ringbuf_copy(ringbuf_t *src, ringbuf_t *dst, size_t len, ringbuf_error_t *error);
+size_t ringbuf_copy(ringbuf_t *src, ringbuf_t *dst, size_t len, ringbuf_error_t *error) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 /**
  * @brief 查找指定字节在环形缓冲区中的位置
@@ -229,13 +250,13 @@ size_t ringbuf_copy(ringbuf_t *src, ringbuf_t *dst, size_t len, ringbuf_error_t 
  * @param error 错误码输出
  * @return 找到的位置，未找到返回 -1
  */
-size_t ringbuf_find(ringbuf_t *rb, uint8_t byte, size_t start_pos, ringbuf_error_t *error);
+size_t ringbuf_find(ringbuf_t *rb, uint8_t byte, size_t start_pos, ringbuf_error_t *error) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 /**
  * @brief 获取错误信息
  * @param error 错误码
  * @return 错误信息字符串
  */
-const char* ringbuf_error_string(ringbuf_error_t error);
+const char* ringbuf_error_string(ringbuf_error_t error) CU_DEPRECATED("Use ringbuffer_* functions instead");
 
 #endif // C_UTILS_RINGBUF_H

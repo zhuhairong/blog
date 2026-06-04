@@ -15,6 +15,7 @@ void test_lzw_encode_decode() {
     
     lzw_error_t err = lzw_decode(encoded, enc_len, decoded, sizeof(decoded), &enc_len);
     EXPECT_EQ(err, LZW_OK);
+    EXPECT_TRUE(memcmp(in, decoded, 9) == 0);
 }
 
 void test_lzw_get_default_config() {
@@ -28,7 +29,8 @@ void test_lzw_get_default_config() {
 void test_lzw_calculate_ratio() {
     TEST(Lzw_CalculateRatio);
     double ratio = lzw_calculate_ratio(100, 50);
-    EXPECT_TRUE(ratio > 0);
+    /* compression ratio = output / input = 50/100 */
+    EXPECT_DOUBLE_EQ(ratio, 0.5);
 }
 
 void test_lzw_encode_empty() {
@@ -36,7 +38,7 @@ void test_lzw_encode_empty() {
     unsigned char encoded[100] = {0};
     
     size_t enc_len = lzw_encode((unsigned char*)"", 0, encoded);
-    EXPECT_TRUE(enc_len >= 0);
+    EXPECT_EQ(enc_len, (size_t)0); /* encoding empty input returns 0 */
 }
 
 void test_lzw_encode_single() {
@@ -49,11 +51,12 @@ void test_lzw_encode_single() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_lzw_encode_decode();
     test_lzw_get_default_config();
     test_lzw_calculate_ratio();
     test_lzw_encode_empty();
     test_lzw_encode_single();
 
-    return 0;
+    UTEST_END();
 }

@@ -64,7 +64,8 @@ void test_slip_encode_ex() {
     slip_state_t state;
     slip_state_init(&state);
     size_t encoded_len = slip_encode_ex(input, input_len, output, 256, &config, &state);
-    EXPECT_TRUE(encoded_len > 0);
+    EXPECT_EQ(encoded_len, input_len + 1); /* payload + end delimiter */
+    EXPECT_EQ(output[encoded_len - 1], (unsigned char)SLIP_END);
     EXPECT_EQ(state.last_error, SLIP_OK);
 }
 
@@ -94,7 +95,11 @@ void test_slip_encode_with_special_chars() {
     size_t input_len = 4;
     unsigned char output[256];
     size_t encoded_len = slip_encode(input, input_len, output);
-    EXPECT_TRUE(encoded_len > 0);
+    /* SLIP_END, ESC_END, ESC_ESC, 'A', 'B', SLIP_END */
+    unsigned char expected[] = {SLIP_END, SLIP_ESC, SLIP_ESC_END, SLIP_ESC,
+                                SLIP_ESC_ESC, 0x41, 0x42, SLIP_END};
+    EXPECT_EQ(encoded_len, sizeof(expected));
+    EXPECT_TRUE(memcmp(output, expected, encoded_len) == 0);
 }
 
 void test_slip_decode() {
@@ -218,6 +223,7 @@ void test_slip_strerror() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_slip_config_init();
     test_slip_state_init();
     test_slip_reset_state();
@@ -235,5 +241,5 @@ int main() {
     test_slip_encode_decode_file();
     test_slip_strerror();
 
-    return 0;
+    UTEST_END();
 }

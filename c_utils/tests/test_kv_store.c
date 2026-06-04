@@ -8,11 +8,11 @@ void test_kv_types() {
     TEST(KV_Types);
     kv_config_t config;
     memset(&config, 0, sizeof(config));
-    EXPECT_TRUE(sizeof(config) > 0);
-    
+    /* kv_config_t type compiles and is instantiable */
+
     kv_entry_t entry;
     memset(&entry, 0, sizeof(entry));
-    EXPECT_TRUE(sizeof(entry) > 0);
+    /* kv_entry_t type compiles and is instantiable */
 }
 
 void test_kv_error_values() {
@@ -51,11 +51,12 @@ void test_kv_exists() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_kv_types();
     test_kv_error_values();
     test_kv_config_fields();
     test_kv_default_config();
     test_kv_exists();
 
-    return 0;
+    UTEST_END();
 }

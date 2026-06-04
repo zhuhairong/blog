@@ -177,7 +177,7 @@ static void serialize_string(const char *str, char **buf, size_t *len, size_t *c
             default:
                 if ((unsigned char)*p < 0x20) {
                     ensure_space(buf, len, cap, 7);
-                    sprintf(*buf + *len, "\\u%04x", (unsigned char)*p);
+                    snprintf(*buf + *len, 7, "\\u%04x", (unsigned char)*p);
                     *len += 6;
                 } else {
                     ensure_space(buf, len, cap, 2);

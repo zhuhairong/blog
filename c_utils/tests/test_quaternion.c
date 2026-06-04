@@ -65,11 +65,12 @@ void test_quat_add_zero() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_quat_add();
     test_quat_mul();
     test_quat_normalize();
     test_quat_mul_identity();
     test_quat_add_zero();
 
-    return 0;
+    UTEST_END();
 }

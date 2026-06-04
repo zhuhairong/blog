@@ -26,26 +26,38 @@ void test_random_u32() {
 
 void test_random_u16() {
     TEST(Random_U16);
-    uint16_t v = random_u16();
-    (void)v;
+    random_seed(42);
+    uint16_t v1 = random_u16();
+    random_seed(42);
+    uint16_t v2 = random_u16();
+    EXPECT_EQ(v1, v2); /* determinism: same seed → same output */
 }
 
 void test_random_u8() {
     TEST(Random_U8);
-    uint8_t v = random_u8();
-    (void)v;
+    random_seed(42);
+    uint8_t v1 = random_u8();
+    random_seed(42);
+    uint8_t v2 = random_u8();
+    EXPECT_EQ(v1, v2); /* determinism: same seed → same output */
 }
 
 void test_random_i64() {
     TEST(Random_I64);
-    int64_t v = random_i64();
-    (void)v;
+    random_seed(42);
+    int64_t v1 = random_i64();
+    random_seed(42);
+    int64_t v2 = random_i64();
+    EXPECT_EQ(v1, v2); /* determinism: same seed → same output */
 }
 
 void test_random_i32() {
     TEST(Random_I32);
-    int32_t v = random_i32();
-    (void)v;
+    random_seed(42);
+    int32_t v1 = random_i32();
+    random_seed(42);
+    int32_t v2 = random_i32();
+    EXPECT_EQ(v1, v2); /* determinism: same seed → same output */
 }
 
 void test_random_range() {

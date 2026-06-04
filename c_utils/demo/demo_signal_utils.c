@@ -1,3 +1,9 @@
+/**
+ * 信号处理工具演示程序
+ *
+ * 功能：信号注册、阻塞、发送和处理
+ */
+
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>

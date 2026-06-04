@@ -58,23 +58,25 @@ cobs_error_t cobs_decode(const unsigned char *in, size_t len, unsigned char *out
     
     while (read_index < len) {
         unsigned char code = in[read_index++];
-        
+
         if (code == 0) {
+            /* 0x00 is valid only as a frame delimiter at the very end */
+            if (read_index == len) break;
             return COBS_ERROR_INVALID_ENCODED_DATA;
         }
-        
+
         // 检查缓冲区是否足够
         if (write_index + code - 1 > out_buf_size) {
             return COBS_ERROR_BUFFER_TOO_SMALL;
         }
-        
+
         for (int i = 1; i < code; i++) {
             if (read_index >= len) {
                 return COBS_ERROR_UNTERMINATED_PACKET;
             }
             out[write_index++] = in[read_index++];
         }
-        
+
         // 如果不是块的最后一个字节，添加一个零字节
         if (code < 0xFF && read_index < len) {
             if (write_index >= out_buf_size) {
@@ -108,19 +110,20 @@ bool cobs_validate(const unsigned char *in, size_t len) {
     
     while (read_index < len) {
         unsigned char code = in[read_index++];
-        
+
         if (code == 0) {
-            return false;
+            /* 0x00 is valid only as a frame delimiter at the very end */
+            return (read_index == len);
         }
-        
+
         // 跳过 code-1 个数据字节
         read_index += code - 1;
-        
+
         if (read_index > len) {
             return false;
         }
     }
-    
+
     return true;
 }
 

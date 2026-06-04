@@ -8,7 +8,7 @@ void test_bmp_tiny_types() {
     TEST(BmpTiny_Types);
     bmp_tiny_info_t info;
     memset(&info, 0, sizeof(info));
-    EXPECT_TRUE(sizeof(info) > 0);
+    /* bmp_tiny_info_t type compiles and is instantiable */
 }
 
 void test_bmp_tiny_error_values() {
@@ -43,11 +43,12 @@ void test_bmp_tiny_read_invalid() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_bmp_tiny_types();
     test_bmp_tiny_error_values();
     test_bmp_tiny_info_fields();
     test_bmp_tiny_write_invalid();
     test_bmp_tiny_read_invalid();
 
-    return 0;
+    UTEST_END();
 }

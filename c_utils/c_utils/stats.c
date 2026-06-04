@@ -3,8 +3,11 @@
 #include <float.h>
 
 stats_t stats_compute(const double *data, size_t n) {
+    if (n == 0) {
+        stats_t s = {0, 0, 0, 0, 0};
+        return s;
+    }
     stats_t s = {DBL_MAX, -DBL_MAX, 0, 0, 0};
-    if (n == 0) return s;
     double sum = 0;
     for (size_t i = 0; i < n; i++) {
         if (data[i] < s.min) s.min = data[i];

@@ -17,18 +17,18 @@ void test_retry_init() {
     memset(&policy, 0, sizeof(policy));
     
     retry_init(&policy, 3, 100);
-    EXPECT_TRUE(policy.config.max_attempts == 3 || policy.config.max_attempts != 3);
+    EXPECT_EQ(policy.config.max_attempts, (size_t)3);
 }
 
 void test_retry_types() {
     TEST(Retry_Types);
     retry_config_t config;
     memset(&config, 0, sizeof(config));
-    EXPECT_TRUE(sizeof(config) > 0);
-    
+    /* retry_config_t type compiles and is instantiable */
+
     retry_state_t state;
     memset(&state, 0, sizeof(state));
-    EXPECT_TRUE(sizeof(state) > 0);
+    /* retry_state_t type compiles and is instantiable */
 }
 
 void test_retry_error_values() {
@@ -46,11 +46,12 @@ void test_retry_delay_values() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_retry_default_config();
     test_retry_init();
     test_retry_types();
     test_retry_error_values();
     test_retry_delay_values();
 
-    return 0;
+    UTEST_END();
 }

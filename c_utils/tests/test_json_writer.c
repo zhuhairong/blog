@@ -49,18 +49,19 @@ void test_json_writer_write_string() {
     
     if (writer != NULL) {
         err = json_writer_string(writer, "hello");
-        EXPECT_TRUE(err == JSON_WRITER_OK || err != JSON_WRITER_OK);
+        EXPECT_EQ(err, JSON_WRITER_OK);
         
         json_writer_destroy(writer);
     }
 }
 
 int main() {
+    UTEST_BEGIN();
     test_json_writer_create_file_null();
     test_json_writer_create_buffer();
     test_json_writer_destroy_null();
     test_json_writer_strerror();
     test_json_writer_write_string();
 
-    return 0;
+    UTEST_END();
 }

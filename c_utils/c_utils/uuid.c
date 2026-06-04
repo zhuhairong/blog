@@ -91,7 +91,7 @@ uuid_error_t uuid_to_string(uuid_ctx_t* ctx, const uuid_t* uuid, char* out) {
         "%02X%02X%02X%02X-%02X%02X-%02X%02X-%02X%02X-%02X%02X%02X%02X%02X%02X" :
         "%02x%02x%02x%02x-%02x%02x-%02x%02x-%02x%02x-%02x%02x%02x%02x%02x%02x";
     
-    sprintf(out, fmt,
+    snprintf(out, UUID_STR_LEN, fmt,
         uuid->data[0], uuid->data[1], uuid->data[2], uuid->data[3],
         uuid->data[4], uuid->data[5], uuid->data[6], uuid->data[7],
         uuid->data[8], uuid->data[9], uuid->data[10], uuid->data[11],
@@ -150,7 +150,7 @@ void uuid_v4(char *out) {
     r1 = (r1 & 0xFFFFFFFFFFFF0FFFULL) | 0x0000000000004000ULL;
     r2 = (r2 & 0x3FFFFFFFFFFFFFFFULL) | 0x8000000000000000ULL;
     
-    sprintf(out, "%08x-%04x-%04x-%04x-%012llx",
+    snprintf(out, UUID_STR_LEN, "%08x-%04x-%04x-%04x-%012llx",
             (uint32_t)(r1 >> 32),
             (uint16_t)(r1 >> 16),
             (uint16_t)r1,

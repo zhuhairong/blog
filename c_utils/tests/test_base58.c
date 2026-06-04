@@ -5,8 +5,8 @@
 
 void test_base58_encode_size() {
     TEST(Base58_EncodeSize);
-    EXPECT_TRUE(base58_encode_size(0) >= 1);
-    EXPECT_TRUE(base58_encode_size(10) >= 14);
+    EXPECT_EQ(base58_encode_size(0), (size_t)1);
+    EXPECT_EQ(base58_encode_size(10), (size_t)14);
 }
 
 void test_base58_encode() {
@@ -16,7 +16,8 @@ void test_base58_encode() {
     size_t out_len = sizeof(output);
     bool result = base58_encode(input, 5, output, &out_len);
     EXPECT_TRUE(result);
-    EXPECT_TRUE(out_len > 0);
+    EXPECT_EQ(out_len, (size_t)7);
+    EXPECT_TRUE(strcmp(output, "9Ajdvzr") == 0);
 }
 
 void test_base58_decode() {

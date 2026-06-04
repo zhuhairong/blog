@@ -180,6 +180,7 @@ void test_bitstream_edge_case_32bits() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_bitstream_init();
     test_bitstream_init_null();
     test_bitstream_read_single_bits();
@@ -196,5 +197,5 @@ int main() {
     test_bitstream_edge_case_single_byte();
     test_bitstream_edge_case_32bits();
 
-    return 0;
+    UTEST_END();
 }

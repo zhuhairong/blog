@@ -631,10 +631,11 @@ void test_net_concurrent_connections(void) {
 
 void test_net_types_size(void) {
     TEST(Net_TypesSize);
-    EXPECT_TRUE(sizeof(net_error_t) > 0);
-    EXPECT_TRUE(sizeof(net_config_t) > 0);
-    EXPECT_TRUE(sizeof(net_addr_t) > 0);
-    EXPECT_TRUE(sizeof(net_socket_state_t) > 0);
+    /* Verify enum/struct types compile and are instantiable */
+    (void)sizeof(net_error_t);
+    (void)sizeof(net_config_t);
+    (void)sizeof(net_addr_t);
+    (void)sizeof(net_socket_state_t);
 }
 
 void test_net_large_data_transfer(void) {
@@ -696,6 +697,7 @@ void test_net_large_data_transfer(void) {
 }
 
 int main(void) {
+    UTEST_BEGIN();
     test_net_init_success();
     test_net_init_cleanup_multiple();
     test_net_init_ex_error();
@@ -735,5 +737,5 @@ int main(void) {
     test_net_types_size();
     test_net_large_data_transfer();
     
-    return 0;
+    UTEST_END();
 }

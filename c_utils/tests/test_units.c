@@ -120,6 +120,7 @@ void test_units_strerror() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_units_celsius_fahrenheit();
     test_units_celsius_kelvin();
     test_units_km_miles();
@@ -131,5 +132,5 @@ int main() {
     test_units_convert_time();
     test_units_strerror();
 
-    return 0;
+    UTEST_END();
 }

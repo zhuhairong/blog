@@ -1,7 +1,13 @@
+/**
+ * TOML 解析演示程序
+ *
+ * 功能：TOML 文件解析、键值读取、表嵌套
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "toml_parse.h"
+#include "../c_utils/toml_parse.h"
 
 void demo_toml_get_string(void) {
     printf("\n=== TOML字符串获取演示 ===\n");

@@ -56,9 +56,9 @@ const char* mysql_wrap_error_string(mysql_wrap_error_t error) {
 void mysql_config_init(mysql_config_t* config) {
     if (!config) return;
     memset(config, 0, sizeof(mysql_config_t));
-    strcpy(config->host, "localhost");
+    snprintf(config->host, sizeof(config->host), "%s", "localhost");
     config->port = 3306;
-    strcpy(config->charset, "utf8mb4");
+    snprintf(config->charset, sizeof(config->charset), "%s", "utf8mb4");
     config->timeout = 30;
     config->auto_reconnect = true;
 }
@@ -623,21 +623,21 @@ mysql_wrap_error_t mysql_wrap_insert(mysql_wrap_conn_t* conn, const char* table,
     if (!sql) return MYSQL_WRAP_ERR_MEMORY;
     
     char* ptr = sql;
-    ptr += sprintf(ptr, "INSERT INTO %s (", table);
+    ptr += snprintf(ptr, sql_size - (size_t)(ptr - sql), "INSERT INTO %s (", table);
     
     for (unsigned int i = 0; i < count; i++) {
-        ptr += sprintf(ptr, "%s", fields[i]);
-        if (i < count - 1) ptr += sprintf(ptr, ", ");
+        ptr += snprintf(ptr, sql_size - (size_t)(ptr - sql), "%s", fields[i]);
+        if (i < count - 1) ptr += snprintf(ptr, sql_size - (size_t)(ptr - sql), ", ");
     }
     
-    ptr += sprintf(ptr, ") VALUES (");
+    ptr += snprintf(ptr, sql_size - (size_t)(ptr - sql), ") VALUES (");
     
     for (unsigned int i = 0; i < count; i++) {
-        ptr += sprintf(ptr, "'%s'", values[i]);
-        if (i < count - 1) ptr += sprintf(ptr, ", ");
+        ptr += snprintf(ptr, sql_size - (size_t)(ptr - sql), "'%s'", values[i]);
+        if (i < count - 1) ptr += snprintf(ptr, sql_size - (size_t)(ptr - sql), ", ");
     }
     
-    ptr += sprintf(ptr, ")");
+    ptr += snprintf(ptr, sql_size - (size_t)(ptr - sql), ")");
     
     int result = mysql_wrap_execute(conn, sql);
     free(sql);
@@ -662,15 +662,15 @@ mysql_wrap_error_t mysql_wrap_update(mysql_wrap_conn_t* conn, const char* table,
     if (!sql) return MYSQL_WRAP_ERR_MEMORY;
     
     char* ptr = sql;
-    ptr += sprintf(ptr, "UPDATE %s SET ", table);
+    ptr += snprintf(ptr, sql_size - (size_t)(ptr - sql), "UPDATE %s SET ", table);
     
     for (unsigned int i = 0; i < count; i++) {
-        ptr += sprintf(ptr, "%s = '%s'", fields[i], values[i]);
-        if (i < count - 1) ptr += sprintf(ptr, ", ");
+        ptr += snprintf(ptr, sql_size - (size_t)(ptr - sql), "%s = '%s'", fields[i], values[i]);
+        if (i < count - 1) ptr += snprintf(ptr, sql_size - (size_t)(ptr - sql), ", ");
     }
     
     if (where) {
-        ptr += sprintf(ptr, " WHERE %s", where);
+        ptr += snprintf(ptr, sql_size - (size_t)(ptr - sql), " WHERE %s", where);
     }
     
     int result = mysql_wrap_execute(conn, sql);

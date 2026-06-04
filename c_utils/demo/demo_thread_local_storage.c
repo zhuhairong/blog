@@ -1,3 +1,9 @@
+/**
+ * 线程局部存储演示程序
+ *
+ * 功能：TLS 创建、访问、销毁、多线程隔离
+ */
+
 #include <stdio.h>
 #include <pthread.h>
 #include <stdlib.h>

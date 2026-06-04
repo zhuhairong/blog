@@ -133,6 +133,7 @@ void test_skiplist_free_null() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_skiplist_create();
     test_skiplist_insert_get();
     test_skiplist_get_not_found();
@@ -142,5 +143,5 @@ int main() {
     test_skiplist_stress();
     test_skiplist_free_null();
 
-    return 0;
+    UTEST_END();
 }

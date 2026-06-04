@@ -288,6 +288,7 @@ void test_matrix_free_null() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_matrix_create();
     test_matrix_create_zero_size();
     test_matrix_set_get();
@@ -305,5 +306,5 @@ int main() {
     test_matrix_trace();
     test_matrix_free_null();
 
-    return 0;
+    UTEST_END();
 }

@@ -17,27 +17,30 @@ void test_regex_default_config() {
 void test_regex_match_basic() {
     TEST(Regex_MatchBasic);
     bool result = regex_match("hello", "hello world");
-    EXPECT_TRUE(result || !result);
+    /* "hello" should be found within "hello world" */
+    EXPECT_TRUE(result);
 }
 
 void test_regex_match_null() {
     TEST(Regex_MatchNull);
     bool result = regex_match("", "test");
-    EXPECT_TRUE(result || !result);
-    
+    /* empty pattern behavior — verify function doesn't crash */
+    (void)result; /* empty pattern — verify function doesn't crash */
+
     result = regex_match("test", "");
-    EXPECT_TRUE(result || !result);
+    /* pattern against empty string — verify function doesn't crash */
+    (void)result;
 }
 
 void test_regex_types() {
     TEST(Regex_Types);
     regex_config_t config;
     memset(&config, 0, sizeof(config));
-    EXPECT_TRUE(sizeof(config) > 0);
-    
+    /* regex_config_t type compiles and is instantiable */
+
     regex_match_result_t result;
     memset(&result, 0, sizeof(result));
-    EXPECT_TRUE(sizeof(result) > 0);
+    /* regex_match_result_t type compiles and is instantiable */
 }
 
 void test_regex_error_values() {
@@ -48,11 +51,12 @@ void test_regex_error_values() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_regex_default_config();
     test_regex_match_basic();
     test_regex_match_null();
     test_regex_types();
     test_regex_error_values();
 
-    return 0;
+    UTEST_END();
 }

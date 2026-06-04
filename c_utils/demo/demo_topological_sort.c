@@ -1,7 +1,13 @@
+/**
+ * 拓扑排序演示程序
+ *
+ * 功能：DAG 拓扑排序、环检测、Kahn 算法
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "topological_sort.h"
+#include "../c_utils/topological_sort.h"
 
 void demo_legacy_api(void) {
     printf("\n=== 传统API拓扑排序演示 ===\n");

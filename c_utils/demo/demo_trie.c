@@ -1,3 +1,9 @@
+/**
+ * 字典树 (Trie) 演示程序
+ *
+ * 功能：插入、查找、前缀匹配、自动补全
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

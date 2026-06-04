@@ -267,7 +267,7 @@ dstr dstr_replace(dstr s, const char *old, const char *new_str) {
         src = match + old_len;
     }
     // 复制剩余部分
-    strcpy(dst, src);
+    memcpy(dst, src, strlen(src) + 1);
     
     dstr_free(s);
     return result;

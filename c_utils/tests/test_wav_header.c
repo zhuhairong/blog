@@ -192,6 +192,7 @@ void test_wav_hdr_write_and_read() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_wav_hdr_create();
     test_wav_hdr_create_null();
     test_wav_hdr_init_safe();
@@ -214,5 +215,5 @@ int main() {
     test_wav_hdr_init();
     test_wav_hdr_write_and_read();
 
-    return 0;
+    UTEST_END();
 }

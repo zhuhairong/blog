@@ -515,6 +515,7 @@ void test_timer_state_tracking(void) {
 /* ==================== 主函数 ==================== */
 
 int main(void) {
+    UTEST_BEGIN();
     printf("\n========== 基础测试 ==========\n");
     test_timer_set();
     test_timer_update();
@@ -553,6 +554,6 @@ int main(void) {
     test_timer_state_tracking();
     
     printf("\n========== 测试完成 ==========\n");
-    
-    return 0;
+
+    UTEST_END();
 }

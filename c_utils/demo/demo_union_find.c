@@ -1,3 +1,9 @@
+/**
+ * 并查集演示程序
+ *
+ * 功能：合并、查找、路径压缩、按秩合并
+ */
+
 #include <stdio.h>
 #include "../c_utils/union_find.h"
 

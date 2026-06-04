@@ -46,7 +46,7 @@ void test_tls_config_init() {
     tls_config_t config;
     tls_config_init(&config);
     
-    EXPECT_TRUE(config.max_keys > 0 || config.max_keys == 0);
+    EXPECT_TRUE(config.max_keys > 0);
 }
 
 void test_tls_state_init() {
@@ -83,6 +83,7 @@ void test_tls_strerror() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_tls_key_create_delete();
     test_tls_set_get_value();
     test_tls_config_init();
@@ -90,5 +91,5 @@ int main() {
     test_tls_with_destructor();
     test_tls_strerror();
 
-    return 0;
+    UTEST_END();
 }

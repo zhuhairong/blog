@@ -52,11 +52,12 @@ void test_hmac_final_null() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_hmac_default_config();
     test_hmac_init_null();
     test_hmac_init_empty_key();
     test_hmac_update_null();
     test_hmac_final_null();
 
-    return 0;
+    UTEST_END();
 }

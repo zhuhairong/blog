@@ -35,12 +35,12 @@ char* path_join(const char *p1, const char *p2) {
     char *res = malloc(l1 + l2 + (need_sep ? 2 : 1));
     if (!res) return NULL;
     
-    strcpy(res, p1);
+    memcpy(res, p1, l1 + 1);
     if (need_sep) {
         res[l1] = PATH_SEP;
-        strcpy(res + l1 + 1, p2);
+        memcpy(res + l1 + 1, p2, l2 + 1);
     } else {
-        strcpy(res + l1, p2);
+        memcpy(res + l1, p2, l2 + 1);
     }
     return res;
 }
@@ -258,12 +258,12 @@ char* path_add_extension(const char *path, const char *extension, path_error_t *
         return NULL;
     }
     
-    strcpy(result, path);
+    memcpy(result, path, path_len + 1);
     if (need_dot) {
         result[path_len] = '.';
-        strcpy(result + path_len + 1, extension);
+        memcpy(result + path_len + 1, extension, ext_len + 1);
     } else if (extension) {
-        strcpy(result + path_len, extension);
+        memcpy(result + path_len, extension, ext_len + 1);
     } else {
         result[path_len] = '\0';
     }

@@ -11,7 +11,8 @@ void test_chacha20_tiny_basic() {
     uint8_t out[64] = {0};
     
     chacha20_tiny(key, nonce, 0, out, 64);
-    EXPECT_TRUE(true);
+    /* ChaCha20 fills output buffer — check it's not all zeros */
+    { int nz = 0; for (int i = 0; i < (int)(sizeof(out)); i++) if (out[i]) nz = 1; EXPECT_TRUE(nz); }
 }
 
 void test_chacha20_tiny_empty() {
@@ -20,8 +21,9 @@ void test_chacha20_tiny_empty() {
     uint8_t nonce[12] = {0};
     uint8_t out[1] = {0};
     
-    chacha20_tiny(key, nonce, 0, out, 0);
-    EXPECT_TRUE(true);
+    chacha20_tiny(key, nonce, 0, out, 1);
+    /* ChaCha20 fills output buffer — check it's not all zeros */
+    { int nz = 0; for (int i = 0; i < (int)(sizeof(out)); i++) if (out[i]) nz = 1; EXPECT_TRUE(nz); }
 }
 
 void test_chacha20_tiny_with_key() {
@@ -35,7 +37,8 @@ void test_chacha20_tiny_with_key() {
     uint8_t out[64] = {0};
     
     chacha20_tiny(key, nonce, 1, out, 64);
-    EXPECT_TRUE(true);
+    /* ChaCha20 fills output buffer — check it's not all zeros */
+    { int nz = 0; for (int i = 0; i < (int)(sizeof(out)); i++) if (out[i]) nz = 1; EXPECT_TRUE(nz); }
 }
 
 void test_chacha20_tiny_different_counters() {
@@ -47,7 +50,8 @@ void test_chacha20_tiny_different_counters() {
     
     chacha20_tiny(key, nonce, 0, out1, 64);
     chacha20_tiny(key, nonce, 1, out2, 64);
-    EXPECT_TRUE(true);
+    /* ChaCha20 fills output buffers — check they differ (different counters) */
+    EXPECT_TRUE(memcmp(out1, out2, sizeof(out1)) != 0);
 }
 
 void test_chacha20_tiny_large_output() {
@@ -57,15 +61,17 @@ void test_chacha20_tiny_large_output() {
     uint8_t out[256] = {0};
     
     chacha20_tiny(key, nonce, 0, out, 256);
-    EXPECT_TRUE(true);
+    /* ChaCha20 fills output buffer — check it's not all zeros */
+    { int nz = 0; for (int i = 0; i < (int)(sizeof(out)); i++) if (out[i]) nz = 1; EXPECT_TRUE(nz); }
 }
 
 int main() {
+    UTEST_BEGIN();
     test_chacha20_tiny_basic();
     test_chacha20_tiny_empty();
     test_chacha20_tiny_with_key();
     test_chacha20_tiny_different_counters();
     test_chacha20_tiny_large_output();
 
-    return 0;
+    UTEST_END();
 }

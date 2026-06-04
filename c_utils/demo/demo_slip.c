@@ -1,3 +1,9 @@
+/**
+ * SLIP 协议演示程序
+ *
+ * 功能：SLIP 编码/解码、数据帧封装/解封装
+ */
+
 #include <stdio.h>
 #include "../c_utils/slip.h"
 

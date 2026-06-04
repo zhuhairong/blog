@@ -1,3 +1,9 @@
+/**
+ * 跳表演示程序
+ *
+ * 功能：插入、删除、查找、范围查询
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

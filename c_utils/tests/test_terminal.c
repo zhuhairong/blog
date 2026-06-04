@@ -8,8 +8,7 @@ void test_term_config_init() {
     TEST(Term_ConfigInit);
     term_config_t config;
     term_config_init(&config);
-    
-    EXPECT_TRUE(config.enable_colors || !config.enable_colors);
+    /* smoke test: term_config_init() completed without crash */
 }
 
 void test_term_state_init() {
@@ -120,6 +119,7 @@ void test_term_clear_line() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_term_config_init();
     test_term_state_init();
     test_term_progress_init();
@@ -133,5 +133,5 @@ int main() {
     test_term_clear_screen();
     test_term_clear_line();
 
-    return 0;
+    UTEST_END();
 }

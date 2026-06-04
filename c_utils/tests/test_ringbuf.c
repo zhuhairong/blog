@@ -75,11 +75,12 @@ void test_ringbuf_clear() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_ringbuf_create_free();
     test_ringbuf_is_empty();
     test_ringbuf_write_read();
     test_ringbuf_size_avail();
     test_ringbuf_clear();
 
-    return 0;
+    UTEST_END();
 }

@@ -60,9 +60,22 @@ ini_t* ini_load(const char *filepath) {
             if (eq) {
                 *eq = 0;
                 ini->entries = realloc(ini->entries, sizeof(ini_entry) * (ini->count + 1));
+                if (!ini->entries) {
+                    ini_free(ini);
+                    fclose(f);
+                    return NULL;
+                }
                 ini->entries[ini->count].section = strdup(section);
                 ini->entries[ini->count].key = strdup(trim(s));
                 ini->entries[ini->count].value = strdup(trim(eq + 1));
+                if (!ini->entries[ini->count].section || !ini->entries[ini->count].key || !ini->entries[ini->count].value) {
+                    free(ini->entries[ini->count].section);
+                    free(ini->entries[ini->count].key);
+                    free(ini->entries[ini->count].value);
+                    ini_free(ini);
+                    fclose(f);
+                    return NULL;
+                }
                 ini->count++;
             }
         }
@@ -127,16 +140,25 @@ bool ini_set(ini_t *ini, const char *section, const char *key, const char *value
     for (int i = 0; i < ini->count; i++) {
         if (strcmp(ini->entries[i].section, section) == 0 &&
             strcmp(ini->entries[i].key, key) == 0) {
+            char *new_value = strdup(value);
+            if (!new_value) return false;
             free(ini->entries[i].value);
-            ini->entries[i].value = strdup(value);
+            ini->entries[i].value = new_value;
             return true;
         }
     }
-    
+
     ini->entries = realloc(ini->entries, sizeof(ini_entry) * (ini->count + 1));
+    if (!ini->entries) return false;
     ini->entries[ini->count].section = strdup(section);
     ini->entries[ini->count].key = strdup(key);
     ini->entries[ini->count].value = strdup(value);
+    if (!ini->entries[ini->count].section || !ini->entries[ini->count].key || !ini->entries[ini->count].value) {
+        free(ini->entries[ini->count].section);
+        free(ini->entries[ini->count].key);
+        free(ini->entries[ini->count].value);
+        return false;
+    }
     ini->count++;
     return true;
 }

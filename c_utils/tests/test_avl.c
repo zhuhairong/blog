@@ -271,6 +271,7 @@ void test_avl_stress() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_avl_create();
     test_avl_insert();
     test_avl_get();
@@ -287,5 +288,5 @@ int main() {
     test_avl_free_null();
     test_avl_stress();
 
-    return 0;
+    UTEST_END();
 }

@@ -1,7 +1,13 @@
+/**
+ * cJSON 包装器演示程序
+ *
+ * 功能：JSON 解析、生成、修改和序列化
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "cjson_wrapper.h"
+#include "../c_utils/cjson_wrapper.h"
 
 static void demo_parse_json(void) {
     printf("\n");

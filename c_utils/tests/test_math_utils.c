@@ -136,6 +136,7 @@ void test_math_utils_strerror() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_math_clamp();
     test_math_lerp();
     test_math_rand_int();
@@ -150,5 +151,5 @@ int main() {
     test_math_utils_normalize_angle();
     test_math_utils_strerror();
 
-    return 0;
+    UTEST_END();
 }

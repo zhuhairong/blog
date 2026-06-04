@@ -99,11 +99,12 @@ void test_bplus_tree_iterator() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_bplus_tree_create_free();
     test_bplus_tree_insert_get();
     test_bplus_tree_delete();
     test_bplus_tree_size();
     test_bplus_tree_iterator();
 
-    return 0;
+    UTEST_END();
 }

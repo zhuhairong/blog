@@ -188,6 +188,7 @@ void test_signal_block_unblock() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_signal_config_init();
     test_signal_state_init();
     test_signal_init_exit_handler();
@@ -210,5 +211,5 @@ int main() {
     test_signal_restore_default();
     test_signal_block_unblock();
 
-    return 0;
+    UTEST_END();
 }

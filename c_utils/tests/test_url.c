@@ -8,11 +8,11 @@ void test_url_types() {
     TEST(URL_Types);
     url_config_t config;
     memset(&config, 0, sizeof(config));
-    EXPECT_TRUE(sizeof(config) > 0);
-    
+    /* url_config_t type compiles and is instantiable */
+
     url_t url;
     memset(&url, 0, sizeof(url));
-    EXPECT_TRUE(sizeof(url) > 0);
+    /* url_t type compiles and is instantiable */
 }
 
 void test_url_error_values() {
@@ -40,22 +40,23 @@ void test_url_query_param() {
     TEST(URL_QueryParam);
     url_query_param_t param;
     memset(&param, 0, sizeof(param));
-    EXPECT_TRUE(sizeof(param) > 0);
+    /* url_query_param_t type compiles and is instantiable */
 }
 
 void test_url_parse_result() {
     TEST(URL_ParseResult);
     url_parse_result_t result;
     memset(&result, 0, sizeof(result));
-    EXPECT_TRUE(sizeof(result) > 0);
+    /* url_parse_result_t type compiles and is instantiable */
 }
 
 int main() {
+    UTEST_BEGIN();
     test_url_types();
     test_url_error_values();
     test_url_config_fields();
     test_url_query_param();
     test_url_parse_result();
 
-    return 0;
+    UTEST_END();
 }

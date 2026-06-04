@@ -41,6 +41,7 @@ void test_utf8_strlen_null() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_utf8_is_valid();
     test_utf8_strlen();
     test_utf8_strlen_ascii();
@@ -48,5 +49,5 @@ int main() {
     test_utf8_is_valid_null();
     test_utf8_strlen_null();
 
-    return 0;
+    UTEST_END();
 }

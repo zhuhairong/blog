@@ -8,7 +8,7 @@ void test_floyd_warshall_types() {
     TEST(FloydWarshall_Types);
     floyd_result_t result;
     memset(&result, 0, sizeof(result));
-    EXPECT_TRUE(sizeof(result) > 0);
+    /* floyd_result_t type compiles and is instantiable */
 }
 
 void test_floyd_warshall_error_values() {
@@ -39,16 +39,18 @@ void test_floyd_warshall_result_fields() {
 
 void test_floyd_warshall_free_null() {
     TEST(FloydWarshall_FreeNull);
+    /* Verify free(NULL) doesn't crash */
     floyd_warshall_free(NULL);
-    EXPECT_TRUE(true);
+    /* Verify free(NULL) doesn't crash — no assertion needed */
 }
 
 int main() {
+    UTEST_BEGIN();
     test_floyd_warshall_types();
     test_floyd_warshall_error_values();
     test_floyd_inf_value();
     test_floyd_warshall_result_fields();
     test_floyd_warshall_free_null();
 
-    return 0;
+    UTEST_END();
 }

@@ -370,6 +370,7 @@ void test_bitset_free_null() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_bitset_create();
     test_bitset_create_zero();
     test_bitset_create_large();
@@ -397,5 +398,5 @@ int main() {
     test_bitset_create_from_bytes();
     test_bitset_free_null();
 
-    return 0;
+    UTEST_END();
 }

@@ -1,7 +1,13 @@
+/**
+ * 排序工具演示程序
+ *
+ * 功能：数组比较、拷贝、反转、洗牌
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "sort_utils.h"
+#include "../c_utils/sort_utils.h"
 
 int int_compare(const void* a, const void* b) {
     return (*(int*)a - *(int*)b);

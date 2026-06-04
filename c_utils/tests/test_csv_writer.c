@@ -212,6 +212,7 @@ void test_csv_writer_strerror() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_csv_writer_default_config();
     test_csv_writer_create_and_free();
     test_csv_writer_create_null();
@@ -226,5 +227,5 @@ int main() {
     test_csv_writer_has_error();
     test_csv_writer_strerror();
 
-    return 0;
+    UTEST_END();
 }

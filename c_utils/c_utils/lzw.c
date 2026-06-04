@@ -262,6 +262,36 @@ static lzw_error_t lzw_internal_decode(const unsigned char *input, size_t input_
 
             lzw_dict_add(dict, prev_code, stack[stack_pos - 1]);
             prev_code = (unsigned short)code;
+        } else if (code == dict->next_code) {
+            /* Special case: encoder used a code before decoder has added it.
+             * Decoded string = decode(prev_code) + first_byte(decode(prev_code)) */
+            unsigned char stack[256];
+            size_t stack_pos = 0;
+
+            unsigned short curr_code = prev_code;
+            while (curr_code >= 256) {
+                stack[stack_pos++] = dict->entries[curr_code].suffix;
+                curr_code = dict->entries[curr_code].prefix;
+            }
+            stack[stack_pos++] = (unsigned char)curr_code;
+
+            /* Output decoded prev_code string */
+            for (size_t i = stack_pos - 1; i < stack_pos; i--) {
+                if (out_pos >= output_size) {
+                    lzw_dict_free(dict);
+                    return LZW_BUFFER_TOO_SMALL;
+                }
+                output[out_pos++] = stack[i];
+            }
+            /* Append the first byte again */
+            if (out_pos >= output_size) {
+                lzw_dict_free(dict);
+                return LZW_BUFFER_TOO_SMALL;
+            }
+            output[out_pos++] = stack[stack_pos - 1];
+
+            lzw_dict_add(dict, prev_code, stack[stack_pos - 1]);
+            prev_code = (unsigned short)code;
         } else {
             lzw_dict_free(dict);
             return LZW_INVALID_CODE;

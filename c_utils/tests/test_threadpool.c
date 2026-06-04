@@ -346,6 +346,7 @@ void test_threadpool_edge_case_many_threads() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_threadpool_create();
     test_threadpool_create_default();
     test_threadpool_add_task();
@@ -366,5 +367,5 @@ int main() {
     test_threadpool_edge_case_single_thread();
     test_threadpool_edge_case_many_threads();
 
-    return 0;
+    UTEST_END();
 }

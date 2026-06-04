@@ -56,11 +56,12 @@ void test_glob_match_null() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_glob_default_config();
     test_glob_match_basic();
     test_glob_match_question();
     test_glob_match_bracket();
     test_glob_match_null();
 
-    return 0;
+    UTEST_END();
 }

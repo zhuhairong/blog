@@ -20,11 +20,21 @@ bool delta_encode(const void *in, void *out, size_t n, delta_type_t type, delta_
         return false;
     }
     
-    // 简单实现：仅支持int32
+    // 简单实现：支持int32和int64
     if (type == DELTA_TYPE_INT32) {
         const int32_t *input = (const int32_t *)in;
         int32_t *output = (int32_t *)out;
-        
+
+        if (n > 0) {
+            output[0] = input[0];
+            for (size_t i = 1; i < n; i++) {
+                output[i] = input[i] - input[i-1];
+            }
+        }
+    } else if (type == DELTA_TYPE_INT64) {
+        const int64_t *input = (const int64_t *)in;
+        int64_t *output = (int64_t *)out;
+
         if (n > 0) {
             output[0] = input[0];
             for (size_t i = 1; i < n; i++) {
@@ -35,7 +45,7 @@ bool delta_encode(const void *in, void *out, size_t n, delta_type_t type, delta_
         if (error) *error = DELTA_ENCODING_ERROR_UNSUPPORTED_TYPE;
         return false;
     }
-    
+
     if (error) *error = DELTA_ENCODING_OK;
     return true;
 }
@@ -46,12 +56,22 @@ bool delta_decode(const void *in, void *out, size_t n, delta_type_t type, delta_
         if (error) *error = DELTA_ENCODING_ERROR_INVALID_PARAM;
         return false;
     }
-    
-    // 简单实现：仅支持int32
+
+    // 简单实现：支持int32和int64
     if (type == DELTA_TYPE_INT32) {
         const int32_t *input = (const int32_t *)in;
         int32_t *output = (int32_t *)out;
-        
+
+        if (n > 0) {
+            output[0] = input[0];
+            for (size_t i = 1; i < n; i++) {
+                output[i] = output[i-1] + input[i];
+            }
+        }
+    } else if (type == DELTA_TYPE_INT64) {
+        const int64_t *input = (const int64_t *)in;
+        int64_t *output = (int64_t *)out;
+
         if (n > 0) {
             output[0] = input[0];
             for (size_t i = 1; i < n; i++) {

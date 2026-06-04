@@ -8,11 +8,11 @@ void test_sort_merge_types() {
     TEST(SortMerge_Types);
     merge_config_t config;
     memset(&config, 0, sizeof(config));
-    EXPECT_TRUE(sizeof(config) > 0);
-    
+    /* merge_config_t type compiles and is instantiable */
+
     merge_state_t state;
     memset(&state, 0, sizeof(state));
-    EXPECT_TRUE(sizeof(state) > 0);
+    /* merge_state_t type compiles and is instantiable */
 }
 
 void test_sort_merge_error_values() {
@@ -62,11 +62,12 @@ void test_sort_merge_basic() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_sort_merge_types();
     test_sort_merge_error_values();
     test_sort_merge_config_fields();
     test_sort_merge_state_fields();
     test_sort_merge_basic();
 
-    return 0;
+    UTEST_END();
 }

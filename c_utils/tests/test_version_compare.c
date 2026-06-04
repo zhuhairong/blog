@@ -79,6 +79,7 @@ void test_version_compare_strerror() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_version_compare_str();
     test_version_compare_str_major();
     test_version_compare_str_minor();
@@ -88,5 +89,5 @@ int main() {
     test_version_compare_validate();
     test_version_compare_strerror();
 
-    return 0;
+    UTEST_END();
 }

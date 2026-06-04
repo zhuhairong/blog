@@ -28,7 +28,9 @@ void test_endian_swap64() {
 void test_endian_is_big() {
     TEST(Endian_IsBig);
     bool is_big = endian_is_big();
-    EXPECT_TRUE(is_big == true || is_big == false);
+    /* Verify determinism: calling twice should return the same result */
+    bool is_big2 = endian_is_big();
+    EXPECT_EQ(is_big, is_big2);
 }
 
 void test_host_to_net16() {
@@ -126,6 +128,7 @@ void test_endian_max() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_endian_swap16();
     test_endian_swap32();
     test_endian_swap64();
@@ -140,5 +143,5 @@ int main() {
     test_endian_zero();
     test_endian_max();
 
-    return 0;
+    UTEST_END();
 }

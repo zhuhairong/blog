@@ -8,11 +8,11 @@ void test_sha256_tiny_types() {
     TEST(SHA256_Tiny_Types);
     sha256_tiny_config_t config;
     memset(&config, 0, sizeof(config));
-    EXPECT_TRUE(sizeof(config) > 0);
-    
+    /* sha256_tiny_config_t type compiles and is instantiable */
+
     sha256_tiny_state_t state;
     memset(&state, 0, sizeof(state));
-    EXPECT_TRUE(sizeof(state) > 0);
+    /* sha256_tiny_state_t type compiles and is instantiable */
 }
 
 void test_sha256_tiny_error_values() {
@@ -23,7 +23,7 @@ void test_sha256_tiny_error_values() {
 
 void test_sha256_tiny_digest_size() {
     TEST(SHA256_Tiny_DigestSize);
-    EXPECT_TRUE(sizeof(uint8_t) == 1);
+    /* uint8_t is defined as exactly 1 byte per the C standard */
 }
 
 void test_sha256_tiny_config_fields() {
@@ -53,11 +53,12 @@ void test_sha256_tiny_state_fields() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_sha256_tiny_types();
     test_sha256_tiny_error_values();
     test_sha256_tiny_digest_size();
     test_sha256_tiny_config_fields();
     test_sha256_tiny_state_fields();
 
-    return 0;
+    UTEST_END();
 }

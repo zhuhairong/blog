@@ -8,11 +8,11 @@ void test_sort_heap_types() {
     TEST(SortHeap_Types);
     heap_config_t config;
     memset(&config, 0, sizeof(config));
-    EXPECT_TRUE(sizeof(config) > 0);
-    
+    /* heap_config_t type compiles and is instantiable */
+
     heap_state_t state;
     memset(&state, 0, sizeof(state));
-    EXPECT_TRUE(sizeof(state) > 0);
+    /* heap_state_t type compiles and is instantiable */
 }
 
 void test_sort_heap_error_values() {
@@ -57,11 +57,12 @@ void test_sort_heap_state_fields() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_sort_heap_types();
     test_sort_heap_error_values();
     test_sort_heap_type_values();
     test_sort_heap_config_fields();
     test_sort_heap_state_fields();
 
-    return 0;
+    UTEST_END();
 }

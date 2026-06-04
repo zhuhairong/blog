@@ -24,10 +24,6 @@ void test_fs_default_options() {
     TEST(Fs_DefaultOptions);
     fs_options_t opts = fs_default_options();
     EXPECT_TRUE(opts.buffer_size > 0);
-    EXPECT_TRUE(opts.follow_symlinks == true || opts.follow_symlinks == false);
-    EXPECT_TRUE(opts.create_dirs == true || opts.create_dirs == false);
-    EXPECT_TRUE(opts.atomic_write == true || opts.atomic_write == false);
-    EXPECT_TRUE(opts.secure_permissions == true || opts.secure_permissions == false);
 }
 
 void test_fs_write_read_all() {
@@ -473,7 +469,7 @@ void test_null_parameters() {
     EXPECT_FALSE(success);
     
     char* cwd = fs_getcwd(NULL, 0, &error);
-    EXPECT_TRUE(cwd != NULL || error != FS_OK);
+    EXPECT_TRUE(cwd == NULL);  /* fs_getcwd(NULL, 0) should fail */
     if (cwd) free(cwd);
     
     success = fs_chdir(NULL, &error);
@@ -624,6 +620,7 @@ void test_error_paths() {
 }
 
 int main() {
+    UTEST_BEGIN();
     printf("=== Running fs_utils tests ===\n\n");
     
     test_fs_default_options();
@@ -651,5 +648,5 @@ int main() {
     test_error_paths();
 
     printf("\n=== All tests completed ===\n");
-    return 0;
+    UTEST_END();
 }

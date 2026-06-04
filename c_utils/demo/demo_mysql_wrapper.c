@@ -1,7 +1,13 @@
+/**
+ * MySQL 包装器演示程序
+ *
+ * 功能：数据库连接、查询执行、结果处理
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "mysql_wrapper.h"
+#include "../c_utils/mysql_wrapper.h"
 
 static void demo_connect(void) {
     printf("\n");

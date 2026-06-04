@@ -87,11 +87,12 @@ void test_bellman_ford_reconstruct_path() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_bellman_ford_basic();
     test_bellman_ford_negative_cycle();
     test_bellman_ford_validate_input();
     test_bellman_ford_with_path();
     test_bellman_ford_reconstruct_path();
 
-    return 0;
+    UTEST_END();
 }

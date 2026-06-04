@@ -10,7 +10,10 @@ void test_rle_encode_basic() {
     unsigned char out[20] = {0};
     
     size_t out_len = rle_encode(in, sizeof(in), out);
-    EXPECT_TRUE(out_len > 0);
+    /* {3,1,2,2,4,3} — each run encoded as [count, value] */
+    unsigned char expected[] = {0x03, 0x01, 0x02, 0x02, 0x04, 0x03};
+    EXPECT_EQ(out_len, sizeof(expected));
+    EXPECT_TRUE(memcmp(out, expected, out_len) == 0);
     EXPECT_TRUE(out_len < sizeof(in));
 }
 
@@ -33,36 +36,46 @@ void test_rle_encode_no_repeat() {
     TEST(Rle_EncodeNoRepeat);
     unsigned char in[] = {1, 2, 3, 4, 5};
     unsigned char out[20] = {0};
-    
+
     size_t out_len = rle_encode(in, sizeof(in), out);
-    EXPECT_TRUE(out_len > 0);
+    /* no repeats: each byte encoded as [1, value] */
+    unsigned char expected[] = {0x01, 0x01, 0x01, 0x02, 0x01, 0x03, 0x01, 0x04, 0x01, 0x05};
+    EXPECT_EQ(out_len, sizeof(expected));
+    EXPECT_TRUE(memcmp(out, expected, out_len) == 0);
 }
 
 void test_rle_encode_single() {
     TEST(Rle_EncodeSingle);
     unsigned char in[] = {5};
     unsigned char out[10] = {0};
-    
+
     size_t out_len = rle_encode(in, sizeof(in), out);
-    EXPECT_TRUE(out_len > 0);
+    /* single byte: [1, 5] */
+    unsigned char expected[] = {0x01, 0x05};
+    EXPECT_EQ(out_len, sizeof(expected));
+    EXPECT_TRUE(memcmp(out, expected, out_len) == 0);
 }
 
 void test_rle_encode_all_same() {
     TEST(Rle_EncodeAllSame);
     unsigned char in[] = {7, 7, 7, 7, 7, 7, 7, 7};
     unsigned char out[20] = {0};
-    
+
     size_t out_len = rle_encode(in, sizeof(in), out);
-    EXPECT_TRUE(out_len > 0);
+    /* 8 sevens: [8, 7] */
+    unsigned char expected[] = {0x08, 0x07};
+    EXPECT_EQ(out_len, sizeof(expected));
+    EXPECT_TRUE(memcmp(out, expected, out_len) == 0);
     EXPECT_TRUE(out_len < sizeof(in));
 }
 
 int main() {
+    UTEST_BEGIN();
     test_rle_encode_basic();
     test_rle_decode_basic();
     test_rle_encode_no_repeat();
     test_rle_encode_single();
     test_rle_encode_all_same();
 
-    return 0;
+    UTEST_END();
 }

@@ -100,7 +100,7 @@ void test_vec_capacity() {
     vec_t* v = vec_create(sizeof(int));
     EXPECT_TRUE(v != NULL);
     
-    EXPECT_TRUE(vec_capacity(v) >= 0);
+    EXPECT_GT(vec_capacity(v), (size_t)0); /* freshly created vec has initial capacity */
     
     for (int i = 0; i < 100; i++) {
         vec_push(v, &i);

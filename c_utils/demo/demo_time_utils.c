@@ -1,3 +1,9 @@
+/**
+ * 时间工具演示程序
+ *
+ * 功能：时间格式化、解析、转换、时区处理
+ */
+
 #include <stdio.h>
 #include "../c_utils/time_utils.h"
 

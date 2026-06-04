@@ -1,8 +1,14 @@
+/**
+ * UUID v7 演示程序
+ *
+ * 功能：时间排序 UUID 生成、时间戳提取
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "uuid_v7.h"
+#include "../c_utils/uuid_v7.h"
 
 void demo_basic_generation(void) {
     printf("\n=== 基本UUID v7生成演示 ===\n");

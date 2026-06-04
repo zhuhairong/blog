@@ -1,3 +1,9 @@
+/**
+ * Tarjan 强连通分量演示程序
+ *
+ * 功能：SCC 检测、图分解、强连通分量提取
+ */
+
 #include <stdio.h>
 #include "../c_utils/tarjan_scc.h"
 

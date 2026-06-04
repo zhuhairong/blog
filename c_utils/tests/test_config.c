@@ -416,6 +416,7 @@ void test_config_special_chars() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_config_create_free();
     test_config_null_params();
     test_config_set_get_string();
@@ -438,5 +439,5 @@ int main() {
     test_config_empty_values();
     test_config_special_chars();
 
-    return 0;
+    UTEST_END();
 }

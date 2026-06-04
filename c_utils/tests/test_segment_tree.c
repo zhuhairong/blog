@@ -98,6 +98,7 @@ void test_segment_tree_free_null() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_segment_tree_init();
     test_segment_tree_query_sum();
     test_segment_tree_update();
@@ -106,5 +107,5 @@ int main() {
     test_segment_tree_single_element();
     test_segment_tree_free_null();
 
-    return 0;
+    UTEST_END();
 }

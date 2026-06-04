@@ -68,7 +68,7 @@ uuid_v7_error_t uuid_v7_generate_string(uuid_v7_ctx_t* ctx, char* out) {
         "%02X%02X%02X%02X-%02X%02X-%02X%02X-%02X%02X-%02X%02X%02X%02X%02X%02X" :
         "%02x%02x%02x%02x-%02x%02x-%02x%02x-%02x%02x-%02x%02x%02x%02x%02x%02x";
     
-    sprintf(out, fmt,
+    snprintf(out, 37, fmt,  /* 36 chars + null */
         uuid[0], uuid[1], uuid[2], uuid[3],
         uuid[4], uuid[5], uuid[6], uuid[7],
         uuid[8], uuid[9], uuid[10], uuid[11],

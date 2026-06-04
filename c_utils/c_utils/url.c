@@ -56,7 +56,7 @@ url_error_t url_encode_ex(url_ctx_t* ctx, const char *in, char *out, size_t *out
             len++;
         } else {
             if (out && len + 3 < *out_size) {
-                sprintf(out + len, "%%%02X", (unsigned char)*p);
+                snprintf(out + len, 4, "%%%02X", (unsigned char)*p);
             }
             len += 3;
         }
@@ -294,29 +294,29 @@ url_error_t url_build(url_ctx_t* ctx, const url_t* url, char *out, size_t *out_s
     }
     
     out[0] = '\0';
-    
+    size_t pos = 0;
+    size_t remaining = *out_size;
+
     if (url->scheme) {
-        strcat(out, url->scheme);
-        strcat(out, "://");
+        pos += snprintf(out + pos, remaining - pos, "%s", url->scheme);
+        pos += snprintf(out + pos, remaining - pos, "%s", "://");
     }
     if (url->host) {
-        strcat(out, url->host);
+        pos += snprintf(out + pos, remaining - pos, "%s", url->host);
     }
     if (url->port > 0 && url->port != 80 && url->port != 443) {
-        char port_str[8];
-        sprintf(port_str, ":%d", url->port);
-        strcat(out, port_str);
+        pos += snprintf(out + pos, remaining - pos, ":%d", url->port);
     }
     if (url->path) {
-        strcat(out, url->path);
+        pos += snprintf(out + pos, remaining - pos, "%s", url->path);
     }
     if (url->query) {
-        strcat(out, "?");
-        strcat(out, url->query);
+        pos += snprintf(out + pos, remaining - pos, "?");
+        pos += snprintf(out + pos, remaining - pos, "%s", url->query);
     }
     if (url->fragment) {
-        strcat(out, "#");
-        strcat(out, url->fragment);
+        pos += snprintf(out + pos, remaining - pos, "#");
+        pos += snprintf(out + pos, remaining - pos, "%s", url->fragment);
     }
     
     return URL_OK;
@@ -347,6 +347,7 @@ url_error_t url_get_query_param(const url_parse_result_t* result, const char *ke
     for (size_t i = 0; i < result->param_count; i++) {
         if (strcmp(result->params[i].key, key) == 0) {
             *value = strdup(result->params[i].value);
+            if (!*value) return URL_MEMORY_ERROR;
             return URL_OK;
         }
     }
@@ -365,8 +366,13 @@ url_error_t url_add_query_param(url_parse_result_t* result, const char *key, con
     result->params = new_params;
     result->params[result->param_count].key = strdup(key);
     result->params[result->param_count].value = strdup(value);
+    if (!result->params[result->param_count].key || !result->params[result->param_count].value) {
+        free(result->params[result->param_count].key);
+        free(result->params[result->param_count].value);
+        return URL_MEMORY_ERROR;
+    }
     result->param_count++;
-    
+
     return URL_OK;
 }
 
@@ -402,7 +408,7 @@ size_t url_encode_legacy(const char *in, char *out) {
             if (out) out[len] = *p;
             len++;
         } else {
-            if (out) sprintf(out + len, "%%%02X", (unsigned char)*p);
+            if (out) snprintf(out + len, 4, "%%%02X", (unsigned char)*p);
             len += 3;
         }
         p++;

@@ -166,5 +166,5 @@ void kruskal_get_default_config(kruskal_config_t *config) {
     
     config->enable_validation = true;
     config->return_edges = false;
-    config->max_edges = 0;
+    config->max_edges = 1024;
 }

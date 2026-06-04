@@ -36,11 +36,13 @@ void test_aes_tiny_encrypt_simple() {
     TEST(AesTiny_EncryptSimple);
     uint8_t in[16] = {0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77,
                       0x88, 0x99, 0xaa, 0xbb, 0xcc, 0xdd, 0xee, 0xff};
-    uint8_t key[16] = {0};
+    uint8_t key[16] = {0x2b, 0x7e, 0x15, 0x16, 0x28, 0xae, 0xd2, 0xa6,
+                      0xab, 0xf7, 0x15, 0x88, 0x09, 0xcf, 0x4f, 0x3c};
     uint8_t out[16] = {0};
-    
+
     aes_tiny_encrypt_simple(in, key, out);
-    EXPECT_TRUE(true);
+    /* Verify output is not identical to input (encryption occurred) */
+    EXPECT_TRUE(memcmp(in, out, 16) != 0);
 }
 
 void test_aes_tiny_encrypt_block() {
@@ -62,7 +64,7 @@ void test_aes_tiny_encrypt_block() {
     uint8_t out[16] = {0};
     
     err = aes_tiny_encrypt_block(ctx, in, out);
-    EXPECT_TRUE(err == AES_TINY_OK || err != AES_TINY_OK);
+    EXPECT_EQ(err, AES_TINY_OK);
     
     aes_tiny_destroy(ctx);
 }
@@ -83,17 +85,18 @@ void test_aes_tiny_get_last_error() {
     EXPECT_EQ(err, AES_TINY_OK);
     
     aes_tiny_error_t last_err = aes_tiny_get_last_error(ctx);
-    EXPECT_TRUE(last_err == AES_TINY_OK || last_err != AES_TINY_OK);
+    EXPECT_EQ(last_err, AES_TINY_OK);
     
     aes_tiny_destroy(ctx);
 }
 
 int main() {
+    UTEST_BEGIN();
     test_aes_tiny_create_destroy();
     test_aes_tiny_strerror();
     test_aes_tiny_encrypt_simple();
     test_aes_tiny_encrypt_block();
     test_aes_tiny_get_last_error();
 
-    return 0;
+    UTEST_END();
 }

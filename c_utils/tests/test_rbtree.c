@@ -271,6 +271,7 @@ void test_rbtree_stress() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_rbtree_create();
     test_rbtree_insert();
     test_rbtree_get();
@@ -287,5 +288,5 @@ int main() {
     test_rbtree_free_null();
     test_rbtree_stress();
 
-    return 0;
+    UTEST_END();
 }

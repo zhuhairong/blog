@@ -30,7 +30,7 @@ void test_base16_encode_upper() {
 void test_base16_decode() {
     TEST(Base16_Decode);
     char input[] = "48656c6c6f";
-    unsigned char output[8];
+    unsigned char output[8] = {0};
     size_t len = base16_decode(input, 10, output);
     EXPECT_EQ(len, 5);
     EXPECT_STR_EQ((char*)output, "Hello");

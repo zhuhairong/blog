@@ -1,7 +1,13 @@
+/**
+ * 归并排序演示程序
+ *
+ * 功能：自顶向下归并排序、自底向上归并排序
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "sort_merge.h"
+#include "../c_utils/sort_merge.h"
 
 void demo_basic_merge_sort(void) {
     printf("\n=== 基本归并排序演示 ===\n");

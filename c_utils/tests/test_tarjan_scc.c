@@ -8,11 +8,11 @@ void test_tarjan_types() {
     TEST(Tarjan_Types);
     tarjan_config_t config;
     memset(&config, 0, sizeof(config));
-    EXPECT_TRUE(sizeof(config) > 0);
-    
+    /* tarjan_config_t type compiles and is instantiable */
+
     tarjan_state_t state;
     memset(&state, 0, sizeof(state));
-    EXPECT_TRUE(sizeof(state) > 0);
+    /* tarjan_state_t type compiles and is instantiable */
 }
 
 void test_tarjan_error_values() {
@@ -25,7 +25,7 @@ void test_tarjan_graph_size() {
     TEST(Tarjan_GraphSize);
     tarjan_graph_t g;
     memset(&g, 0, sizeof(g));
-    EXPECT_TRUE(sizeof(g) > 0);
+    /* tarjan_graph_t type compiles and is instantiable */
 }
 
 void test_tarjan_config_fields() {
@@ -57,11 +57,12 @@ void test_tarjan_state_fields() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_tarjan_types();
     test_tarjan_error_values();
     test_tarjan_graph_size();
     test_tarjan_config_fields();
     test_tarjan_state_fields();
 
-    return 0;
+    UTEST_END();
 }

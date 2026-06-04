@@ -60,7 +60,7 @@ void test_astar_search_simple() {
     
     astar_result_t result = astar_search_simple(NULL, start, goal, simple_is_walkable, 10, 10);
     
-    EXPECT_TRUE(result.found || !result.found);
+    EXPECT_TRUE(result.found);  /* straight path on open 10x10 grid should be found */
     
     if (result.path != NULL) {
         free(result.path);
@@ -68,6 +68,7 @@ void test_astar_search_simple() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_astar_heuristic_manhattan();
     test_astar_heuristic_euclidean();
     test_astar_heuristic_diagonal();
@@ -75,5 +76,5 @@ int main() {
     test_astar_result_create_free();
     test_astar_search_simple();
 
-    return 0;
+    UTEST_END();
 }

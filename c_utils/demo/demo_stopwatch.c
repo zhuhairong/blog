@@ -1,3 +1,9 @@
+/**
+ * 秒表计时器演示程序
+ *
+ * 功能：高精度计时、分段计时、性能测量
+ */
+
 #include <stdio.h>
 #include "../c_utils/stopwatch.h"
 

@@ -8,7 +8,7 @@ void test_adler32_compute() {
     TEST(Adler32_Compute);
     const char* data = "hello";
     uint32_t checksum = adler32_compute(data, 5);
-    EXPECT_TRUE(checksum != 0);
+    EXPECT_EQ(checksum, 0x062C0215u);
 }
 
 void test_adler32_empty() {
@@ -48,7 +48,7 @@ void test_adler32_compute_safe() {
     uint32_t checksum = 0;
     adler32_error_t err = adler32_compute_safe(ctx, data, 11, &checksum);
     EXPECT_EQ(err, ADLER32_OK);
-    EXPECT_TRUE(checksum != 0);
+    EXPECT_EQ(checksum, 0x1A0B045Du);
     
     adler32_destroy(ctx);
 }
@@ -106,21 +106,26 @@ void test_adler32_reset() {
     adler32_compute_safe(ctx, data, 4, &checksum);
     
     adler32_reset(ctx);
-    
+
+    /* verify state was actually reset: compute again and compare to fresh checksum */
+    uint32_t reset_checksum = 0;
+    adler32_compute_safe(ctx, data, 4, &reset_checksum);
+    EXPECT_EQ(reset_checksum, checksum);
+
     adler32_destroy(ctx);
 }
 
 void test_adler32_known_values() {
     TEST(Adler32_KnownValues);
     uint32_t checksum = adler32_compute("Wikipedia", 9);
-    EXPECT_TRUE(checksum != 0);
+    EXPECT_EQ(checksum, 0x11E60398u);
 }
 
 void test_adler32_binary_data() {
     TEST(Adler32_BinaryData);
     unsigned char data[] = {0x00, 0x01, 0x02, 0x03, 0xFF, 0xFE, 0xFD};
     uint32_t checksum = adler32_compute(data, 7);
-    EXPECT_TRUE(checksum != 0);
+    EXPECT_EQ(checksum, 0x06190301u);
 }
 
 void test_adler32_long_data() {
@@ -129,7 +134,7 @@ void test_adler32_long_data() {
     memset(data, 'A', sizeof(data));
     
     uint32_t checksum = adler32_compute(data, sizeof(data));
-    EXPECT_TRUE(checksum != 0);
+    EXPECT_EQ(checksum, 0x87C1EB98u);
 }
 
 void test_adler32_incremental() {
@@ -148,6 +153,7 @@ void test_adler32_incremental() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_adler32_compute();
     test_adler32_empty();
     test_adler32_update();
@@ -162,5 +168,5 @@ int main() {
     test_adler32_long_data();
     test_adler32_incremental();
 
-    return 0;
+    UTEST_END();
 }

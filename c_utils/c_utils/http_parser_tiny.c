@@ -8,7 +8,7 @@ static const char *VALID_METHODS[] = {
 };
 
 static const char *VALID_VERSIONS[] = {
-    "HTTP/1.0", "HTTP/1.1", "HTTP/2", "HTTP/3", NULL
+    "HTTP/1.0", "HTTP/1.1", "HTTP/2.0", "HTTP/2", "HTTP/3", NULL
 };
 
 http_parser_tiny_error_t http_parse_request_line(const char *buf, size_t buf_len, http_req_t *req) {

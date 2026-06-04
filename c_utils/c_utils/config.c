@@ -99,6 +99,16 @@ static config_t* config_load_ini(FILE *fp, config_error_t *error) {
                 cfg->entries[cfg->count].section = strdup(current_section);
                 cfg->entries[cfg->count].key = strdup(trim(t));
                 cfg->entries[cfg->count].value = strdup(trim(sep + 1));
+                if (!cfg->entries[cfg->count].section || !cfg->entries[cfg->count].key || !cfg->entries[cfg->count].value) {
+                    free(cfg->entries[cfg->count].section);
+                    free(cfg->entries[cfg->count].key);
+                    free(cfg->entries[cfg->count].value);
+                    config_free(cfg);
+                    free(line);
+                    free(current_section);
+                    if (error) *error = CONFIG_ERROR_MEMORY_ALLOC;
+                    return NULL;
+                }
                 cfg->count++;
             }
         }
@@ -211,6 +221,15 @@ static config_t* config_load_json(FILE *fp, config_error_t *error) {
                 cfg->entries[cfg->count].section = strdup(current_section);
                 cfg->entries[cfg->count].key = strdup(key);
                 cfg->entries[cfg->count].value = strdup(value);
+                if (!cfg->entries[cfg->count].section || !cfg->entries[cfg->count].key || !cfg->entries[cfg->count].value) {
+                    free(cfg->entries[cfg->count].section);
+                    free(cfg->entries[cfg->count].key);
+                    free(cfg->entries[cfg->count].value);
+                    config_free(cfg);
+                    free(content);
+                    if (error) *error = CONFIG_ERROR_MEMORY_ALLOC;
+                    return NULL;
+                }
                 cfg->count++;
             } else if (*p && (*p == '-' || isdigit((unsigned char)*p))) {
                 char *val_start = p;
@@ -236,6 +255,15 @@ static config_t* config_load_json(FILE *fp, config_error_t *error) {
                 cfg->entries[cfg->count].section = strdup(current_section);
                 cfg->entries[cfg->count].key = strdup(key);
                 cfg->entries[cfg->count].value = strdup(value);
+                if (!cfg->entries[cfg->count].section || !cfg->entries[cfg->count].key || !cfg->entries[cfg->count].value) {
+                    free(cfg->entries[cfg->count].section);
+                    free(cfg->entries[cfg->count].key);
+                    free(cfg->entries[cfg->count].value);
+                    config_free(cfg);
+                    free(content);
+                    if (error) *error = CONFIG_ERROR_MEMORY_ALLOC;
+                    return NULL;
+                }
                 cfg->count++;
             } else if (strncmp(p, "true", 4) == 0) {
                 if (cfg->count >= cfg->capacity) {
@@ -253,6 +281,15 @@ static config_t* config_load_json(FILE *fp, config_error_t *error) {
                 cfg->entries[cfg->count].section = strdup(current_section);
                 cfg->entries[cfg->count].key = strdup(key);
                 cfg->entries[cfg->count].value = strdup("true");
+                if (!cfg->entries[cfg->count].section || !cfg->entries[cfg->count].key || !cfg->entries[cfg->count].value) {
+                    free(cfg->entries[cfg->count].section);
+                    free(cfg->entries[cfg->count].key);
+                    free(cfg->entries[cfg->count].value);
+                    config_free(cfg);
+                    free(content);
+                    if (error) *error = CONFIG_ERROR_MEMORY_ALLOC;
+                    return NULL;
+                }
                 cfg->count++;
                 p += 4;
             } else if (strncmp(p, "false", 5) == 0) {
@@ -271,6 +308,15 @@ static config_t* config_load_json(FILE *fp, config_error_t *error) {
                 cfg->entries[cfg->count].section = strdup(current_section);
                 cfg->entries[cfg->count].key = strdup(key);
                 cfg->entries[cfg->count].value = strdup("false");
+                if (!cfg->entries[cfg->count].section || !cfg->entries[cfg->count].key || !cfg->entries[cfg->count].value) {
+                    free(cfg->entries[cfg->count].section);
+                    free(cfg->entries[cfg->count].key);
+                    free(cfg->entries[cfg->count].value);
+                    config_free(cfg);
+                    free(content);
+                    if (error) *error = CONFIG_ERROR_MEMORY_ALLOC;
+                    return NULL;
+                }
                 cfg->count++;
                 p += 5;
             }
@@ -303,11 +349,16 @@ static bool config_save_json(const config_t *cfg, FILE *fp) {
             if (new_sections) {
                 sections = new_sections;
                 sections[section_count] = strdup(cfg->entries[i].section);
+                if (!sections[section_count]) {
+                    for (size_t k = 0; k < section_count; k++) free(sections[k]);
+                    free(sections);
+                    return false;
+                }
                 section_count++;
             }
         }
     }
-    
+
     for (size_t s = 0; s < section_count; s++) {
         const char *sec = sections[s];
         bool is_default = (strlen(sec) == 0);
@@ -504,12 +555,14 @@ bool config_set_string(config_t *cfg, const char *section, const char *key, cons
     for (size_t i = 0; i < cfg->count; i++) {
         if (strcmp(cfg->entries[i].section, sec) == 0 &&
             strcmp(cfg->entries[i].key, key) == 0) {
+            char *new_value = strdup(value);
+            if (!new_value) return false;
             free(cfg->entries[i].value);
-            cfg->entries[i].value = strdup(value);
+            cfg->entries[i].value = new_value;
             return true;
         }
     }
-    
+
     // 添加新条目
     if (cfg->count >= cfg->capacity) {
         size_t new_capacity = cfg->capacity == 0 ? 16 : cfg->capacity * 2;
@@ -518,10 +571,16 @@ bool config_set_string(config_t *cfg, const char *section, const char *key, cons
         cfg->entries = new_entries;
         cfg->capacity = new_capacity;
     }
-    
+
     cfg->entries[cfg->count].section = strdup(sec);
     cfg->entries[cfg->count].key = strdup(key);
     cfg->entries[cfg->count].value = strdup(value);
+    if (!cfg->entries[cfg->count].section || !cfg->entries[cfg->count].key || !cfg->entries[cfg->count].value) {
+        free(cfg->entries[cfg->count].section);
+        free(cfg->entries[cfg->count].key);
+        free(cfg->entries[cfg->count].value);
+        return false;
+    }
     cfg->count++;
     return true;
 }
@@ -616,6 +675,11 @@ char** config_get_sections(const config_t *cfg, size_t *count) {
             }
             sections = new_sections;
             sections[section_count] = strdup(cfg->entries[i].section);
+            if (!sections[section_count]) {
+                for (size_t k = 0; k < section_count; k++) free(sections[k]);
+                free(sections);
+                return NULL;
+            }
             section_count++;
         }
     }
@@ -651,6 +715,11 @@ char** config_get_keys(const config_t *cfg, const char *section, size_t *count) 
             }
             keys = new_keys;
             keys[key_count] = strdup(cfg->entries[i].key);
+            if (!keys[key_count]) {
+                for (size_t k = 0; k < key_count; k++) free(keys[k]);
+                free(keys);
+                return NULL;
+            }
             key_count++;
         }
     }

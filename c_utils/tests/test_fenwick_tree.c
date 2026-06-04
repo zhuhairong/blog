@@ -130,6 +130,7 @@ void test_fenwick_multiple_updates() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_fenwick_create();
     test_fenwick_create_zero();
     test_fenwick_update_query();
@@ -141,5 +142,5 @@ int main() {
     test_fenwick_free_null();
     test_fenwick_multiple_updates();
 
-    return 0;
+    UTEST_END();
 }

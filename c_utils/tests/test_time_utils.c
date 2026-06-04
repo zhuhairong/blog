@@ -47,11 +47,12 @@ void test_time_format_now_null_buf() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_time_now_ms();
     test_time_now_us();
     test_time_sleep_ms();
     test_time_format_now();
     test_time_format_now_null_buf();
 
-    return 0;
+    UTEST_END();
 }

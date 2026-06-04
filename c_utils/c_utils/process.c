@@ -5,6 +5,9 @@
 #include <unistd.h>
 #include <sys/wait.h>
 #include <sys/types.h>
+#include <sys/select.h>
+#include <sys/time.h>
+#include <signal.h>
 #include <errno.h>
 
 // 默认配置
@@ -48,7 +51,9 @@ char* process_exec(const char *cmd, int *exit_code) {
     int status = pclose(fp);
     if (exit_code) *exit_code = WEXITSTATUS(status);
     
-    return output ? output : strdup("");
+    if (output) return output;
+    char *empty = strdup("");
+    return empty ? empty : NULL;  // strdup 失败返回 NULL
 }
 
 bool process_exec_ex(const char *cmd, const process_config_t *config, process_result_t *result, process_error_t *error) {
@@ -109,50 +114,141 @@ bool process_exec_ex(const char *cmd, const process_config_t *config, process_re
     // 父进程
     close(pipe_stdout[1]);
     if (pipe_stderr[1] != -1) close(pipe_stderr[1]);
-    
-    // 读取输出
+
+    int timeout_ms = (config && config->timeout_ms > 0) ? config->timeout_ms : 0;
+    struct timeval deadline, now;
+    struct timeval *p_deadline = NULL;
+    if (timeout_ms > 0) {
+        gettimeofday(&deadline, NULL);
+        deadline.tv_sec += timeout_ms / 1000;
+        deadline.tv_usec += (timeout_ms % 1000) * 1000;
+        if (deadline.tv_usec >= 1000000) {
+            deadline.tv_sec++;
+            deadline.tv_usec -= 1000000;
+        }
+        p_deadline = &deadline;
+    }
+
     char buffer[4096];
     ssize_t n;
-    
-    while ((n = read(pipe_stdout[0], buffer, sizeof(buffer))) > 0) {
-        char *new_stdout = realloc(result->stdout, result->stdout_len + n + 1);
-        if (!new_stdout) {
-            close(pipe_stdout[0]);
-            if (pipe_stderr[0] != -1) close(pipe_stderr[0]);
-            if (error) *error = PROCESS_ERROR_MEMORY_ALLOC;
-            return false;
-        }
-        result->stdout = new_stdout;
-        memcpy(result->stdout + result->stdout_len, buffer, n);
-        result->stdout_len += n;
-        result->stdout[result->stdout_len] = '\0';
-    }
-    
-    close(pipe_stdout[0]);
-    
-    if (pipe_stderr[0] != -1) {
-        while ((n = read(pipe_stderr[0], buffer, sizeof(buffer))) > 0) {
-            char *new_stderr = realloc(result->stderr, result->stderr_len + n + 1);
-            if (!new_stderr) {
-                close(pipe_stderr[0]);
-                if (error) *error = PROCESS_ERROR_MEMORY_ALLOC;
-                return false;
-            }
-            result->stderr = new_stderr;
-            memcpy(result->stderr + result->stderr_len, buffer, n);
-            result->stderr_len += n;
-            result->stderr[result->stderr_len] = '\0';
-        }
-        close(pipe_stderr[0]);
-    }
-    
     int status;
-    waitpid(pid, &status, 0);
-    
+    bool child_exited = false;
+    bool timed_out = false;
+
+    while (!child_exited) {
+        // 构建 select 的 fd_set
+        fd_set readfds;
+        FD_ZERO(&readfds);
+        int max_fd = -1;
+
+        if (pipe_stdout[0] != -1) {
+            FD_SET(pipe_stdout[0], &readfds);
+            if (pipe_stdout[0] > max_fd) max_fd = pipe_stdout[0];
+        }
+        if (pipe_stderr[0] != -1) {
+            FD_SET(pipe_stderr[0], &readfds);
+            if (pipe_stderr[0] > max_fd) max_fd = pipe_stderr[0];
+        }
+
+        // 计算 select 超时时间
+        struct timeval tv;
+        struct timeval *p_tv = NULL;
+        if (p_deadline) {
+            gettimeofday(&now, NULL);
+            if (now.tv_sec > deadline.tv_sec ||
+                (now.tv_sec == deadline.tv_sec && now.tv_usec >= deadline.tv_usec)) {
+                // 超时
+                timed_out = true;
+                break;
+            }
+            tv.tv_sec = deadline.tv_sec - now.tv_sec;
+            tv.tv_usec = deadline.tv_usec - now.tv_usec;
+            if (tv.tv_usec < 0) {
+                tv.tv_sec--;
+                tv.tv_usec += 1000000;
+            }
+            if (tv.tv_sec < 0) {
+                timed_out = true;
+                break;
+            }
+            p_tv = &tv;
+        }
+
+        if (max_fd >= 0) {
+            int sel_ret = select(max_fd + 1, &readfds, NULL, NULL, p_tv);
+            if (sel_ret < 0) {
+                if (errno == EINTR) continue;
+                break;
+            }
+        } else {
+            // 没有可读的 fd，直接等待子进程
+            if (p_tv) {
+                usleep(p_tv->tv_sec * 1000000 + p_tv->tv_usec);
+            }
+        }
+
+        // 读取 stdout
+        if (pipe_stdout[0] != -1 && FD_ISSET(pipe_stdout[0], &readfds)) {
+            n = read(pipe_stdout[0], buffer, sizeof(buffer));
+            if (n > 0) {
+                char *new_stdout = realloc(result->stdout, result->stdout_len + n + 1);
+                if (new_stdout) {
+                    result->stdout = new_stdout;
+                    memcpy(result->stdout + result->stdout_len, buffer, n);
+                    result->stdout_len += n;
+                    result->stdout[result->stdout_len] = '\0';
+                }
+            } else if (n == 0) {
+                close(pipe_stdout[0]);
+                pipe_stdout[0] = -1;
+            }
+        }
+
+        // 读取 stderr
+        if (pipe_stderr[0] != -1 && FD_ISSET(pipe_stderr[0], &readfds)) {
+            n = read(pipe_stderr[0], buffer, sizeof(buffer));
+            if (n > 0) {
+                char *new_stderr = realloc(result->stderr, result->stderr_len + n + 1);
+                if (new_stderr) {
+                    result->stderr = new_stderr;
+                    memcpy(result->stderr + result->stderr_len, buffer, n);
+                    result->stderr_len += n;
+                    result->stderr[result->stderr_len] = '\0';
+                }
+            } else if (n == 0) {
+                close(pipe_stderr[0]);
+                pipe_stderr[0] = -1;
+            }
+        }
+
+        // 检查子进程是否退出
+        pid_t wret = waitpid(pid, &status, WNOHANG);
+        if (wret > 0) {
+            child_exited = true;
+        } else if (wret < 0) {
+            break;
+        }
+    }
+
+    // 关闭残留的管道 fd
+    if (pipe_stdout[0] != -1) close(pipe_stdout[0]);
+    if (pipe_stderr[0] != -1) close(pipe_stderr[0]);
+
+    if (timed_out) {
+        // 超时：杀死子进程
+        kill(pid, SIGKILL);
+        waitpid(pid, &status, 0);  // 回收僵尸进程
+        result->exit_code = -1;
+        result->succeeded = false;
+        result->timed_out = true;
+        if (error) *error = PROCESS_ERROR_TIMEOUT;
+        return false;
+    }
+
     result->exit_code = WEXITSTATUS(status);
     result->succeeded = (result->exit_code == 0);
     result->timed_out = false;
-    
+
     if (error) *error = PROCESS_OK;
     return result->succeeded;
 }
@@ -190,9 +286,10 @@ bool process_exec_argv(char *const argv[], const process_config_t *config, proce
     }
     
     cmd[0] = '\0';
+    size_t pos = 0;
     for (int i = 0; argv[i]; i++) {
-        if (i > 0) strcat(cmd, " ");
-        strcat(cmd, argv[i]);
+        if (i > 0) pos += snprintf(cmd + pos, cmd_len + 1 - pos, " ");
+        pos += snprintf(cmd + pos, cmd_len + 1 - pos, "%s", argv[i]);
     }
     
     bool ret = process_exec_ex(cmd, config, result, error);
@@ -258,8 +355,13 @@ char* process_which(const char *cmd, process_error_t *error) {
         snprintf(full_path, sizeof(full_path), "%s/%s", dir, cmd);
         if (access(full_path, X_OK) == 0) {
             free(path_copy);
+            char *result = strdup(full_path);
+            if (!result) {
+                if (error) *error = PROCESS_ERROR_MEMORY_ALLOC;
+                return NULL;
+            }
             if (error) *error = PROCESS_OK;
-            return strdup(full_path);
+            return result;
         }
         dir = strtok(NULL, ":");
     }

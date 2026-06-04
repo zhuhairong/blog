@@ -9,7 +9,7 @@ void test_mqtt_pkt_connect_basic() {
     uint8_t buf[256];
     
     size_t len = mqtt_pkt_connect(buf, "test_client");
-    EXPECT_TRUE(len > 0 || len == 0);
+    EXPECT_GT(len, (size_t)0);
 }
 
 void test_mqtt_pkt_publish_basic() {
@@ -17,7 +17,7 @@ void test_mqtt_pkt_publish_basic() {
     uint8_t buf[256];
     
     size_t len = mqtt_pkt_publish(buf, "test/topic", "hello");
-    EXPECT_TRUE(len > 0 || len == 0);
+    EXPECT_GT(len, (size_t)0);
 }
 
 void test_mqtt_pkt_types() {
@@ -30,13 +30,13 @@ void test_mqtt_pkt_types() {
 void test_mqtt_pkt_struct_sizes() {
     TEST(MQTT_Pkt_StructSizes);
     mqtt_pkt_connect_config_t conn_config;
-    EXPECT_TRUE(sizeof(conn_config) > 0);
-    
+    /* mqtt_pkt_connect_config_t type compiles and is instantiable */
+
     mqtt_pkt_publish_config_t pub_config;
-    EXPECT_TRUE(sizeof(pub_config) > 0);
-    
+    /* mqtt_pkt_publish_config_t type compiles and is instantiable */
+
     mqtt_pkt_topic_t topic;
-    EXPECT_TRUE(sizeof(topic) > 0);
+    /* mqtt_pkt_topic_t type compiles and is instantiable */
 }
 
 void test_mqtt_pkt_error_values() {
@@ -47,11 +47,12 @@ void test_mqtt_pkt_error_values() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_mqtt_pkt_connect_basic();
     test_mqtt_pkt_publish_basic();
     test_mqtt_pkt_types();
     test_mqtt_pkt_struct_sizes();
     test_mqtt_pkt_error_values();
 
-    return 0;
+    UTEST_END();
 }

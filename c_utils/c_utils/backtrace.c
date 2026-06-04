@@ -62,7 +62,8 @@ static void parse_symbol(const char *symbol, backtrace_frame_t *frame) {
     
     // 复制原始符号
     frame->symbol = strdup(symbol);
-    
+    if (!frame->symbol) return;
+
     // 尝试解析地址
     // 格式通常为: "./program(function+offset) [address]"
     const char *addr_start = strchr(symbol, '[');

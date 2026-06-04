@@ -16,7 +16,7 @@ void test_file_watcher_create_free() {
     file_watcher_options_t options = file_watcher_default_options();
     
     file_watcher_t* fw = file_watcher_create(&options, NULL, NULL, &error);
-    EXPECT_TRUE(fw != NULL || fw == NULL);
+    EXPECT_TRUE(fw != NULL);
     
     if (fw != NULL) {
         file_watcher_free(fw);
@@ -46,11 +46,12 @@ void test_file_watcher_get_count_null() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_file_watcher_default_options();
     test_file_watcher_create_free();
     test_file_watcher_add_null();
     test_file_watcher_remove_null();
     test_file_watcher_get_count_null();
 
-    return 0;
+    UTEST_END();
 }

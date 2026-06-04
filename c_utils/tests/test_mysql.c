@@ -98,7 +98,9 @@ TEST(connect_simple_null_params) {
 }
 
 TEST(disconnect_null) {
+    /* null-pointer safety: void function must not crash on NULL */
     mysql_wrap_disconnect(NULL);
+    /* test passes if we reach this point without crashing */
 }
 
 TEST(is_connected_null) {
@@ -141,7 +143,9 @@ TEST(execute_null_conn) {
 }
 
 TEST(result_free_null) {
+    /* null-pointer safety: void function must not crash on NULL */
     mysql_wrap_result_free(NULL);
+    /* test passes if we reach this point without crashing */
 }
 
 TEST(result_num_rows_null) {
@@ -218,7 +222,9 @@ TEST(pool_create_null_config) {
 }
 
 TEST(pool_destroy_null) {
+    /* null-pointer safety: void function must not crash on NULL */
     mysql_wrap_pool_destroy(NULL);
+    /* test passes if we reach this point without crashing */
 }
 
 TEST(pool_get_null) {
@@ -227,7 +233,9 @@ TEST(pool_get_null) {
 }
 
 TEST(pool_release_null) {
+    /* null-pointer safety: void function must not crash on NULL */
     mysql_wrap_pool_release(NULL, NULL);
+    /* test passes if we reach this point without crashing */
 }
 
 TEST(pool_size_null) {
@@ -259,7 +267,9 @@ TEST(escape_string_null) {
 }
 
 TEST(free_string_null) {
+    /* null-pointer safety: void function must not crash on NULL */
     mysql_wrap_free_string(NULL);
+    /* test passes if we reach this point without crashing */
 }
 
 int main(void) {

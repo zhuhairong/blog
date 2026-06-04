@@ -93,6 +93,7 @@ void test_sort_quicksort_negative() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_sort_quicksort();
     test_sort_quicksort_sorted();
     test_sort_quicksort_reverse();
@@ -102,5 +103,5 @@ int main() {
     test_sort_quicksort_empty();
     test_sort_quicksort_negative();
 
-    return 0;
+    UTEST_END();
 }

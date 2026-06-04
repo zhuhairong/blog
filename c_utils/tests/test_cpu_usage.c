@@ -96,6 +96,7 @@ void test_cpu_usage_multiple_refresh() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_cpu_usage_init();
     test_cpu_usage_get_core_count();
     test_cpu_usage_get_process_time();
@@ -107,5 +108,5 @@ int main() {
     test_cpu_usage_get_time_stats();
     test_cpu_usage_multiple_refresh();
 
-    return 0;
+    UTEST_END();
 }

@@ -61,11 +61,12 @@ void test_cron_match_str() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_cron_parse_basic();
     test_cron_parse_specific();
     test_cron_parse_invalid();
     test_cron_match();
     test_cron_match_str();
 
-    return 0;
+    UTEST_END();
 }

@@ -45,3 +45,5 @@ c_utils/projects/log_analyzer/sample.log
 c_utils/projects/log_analyzer/build/**
 .trae/**
 **/.trae/**
+c_utils/Testing/Temporary/CTestCostData.txt
+c_utils/Testing/Temporary/LastTest.log

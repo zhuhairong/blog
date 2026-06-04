@@ -224,6 +224,7 @@ void test_pipe_error_string() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_pipe_default_config();
     test_pipe_create_and_close();
     test_pipe_create_null();
@@ -242,5 +243,5 @@ int main() {
     test_pipe_close_ex_null();
     test_pipe_error_string();
 
-    return 0;
+    UTEST_END();
 }

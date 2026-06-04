@@ -42,7 +42,7 @@ void test_html_default_config() {
     TEST(Html_DefaultConfig);
     html_codec_config_t config = html_codec_default_config();
     
-    EXPECT_TRUE(config.encode_less_than || !config.encode_less_than);
+    /* smoke test: html_codec_default_config() completed without crash */
 }
 
 void test_html_strerror() {
@@ -55,11 +55,12 @@ void test_html_strerror() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_html_encode_basic();
     test_html_decode_basic();
     test_html_encode_decode_roundtrip();
     test_html_default_config();
     test_html_strerror();
 
-    return 0;
+    UTEST_END();
 }

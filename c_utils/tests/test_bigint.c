@@ -214,6 +214,7 @@ void test_bigint_stress_operations() {
 }
 
 int main() {
+    UTEST_BEGIN();
     test_bigint_from_str();
     test_bigint_from_str_large();
     test_bigint_zero();
@@ -230,5 +231,5 @@ int main() {
     test_bigint_free_null();
     test_bigint_stress_operations();
 
-    return 0;
+    UTEST_END();
 }

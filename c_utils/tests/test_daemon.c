@@ -200,6 +200,7 @@ void test_daemon_stop_not_running() {
 }
 
 int main() {
+    UTEST_BEGIN();
     cleanup_test_files();
     
     test_daemon_default_config();
@@ -218,5 +219,5 @@ int main() {
     
     cleanup_test_files();
     
-    return 0;
+    UTEST_END();
 }
