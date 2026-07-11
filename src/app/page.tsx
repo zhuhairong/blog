@@ -183,6 +183,29 @@ export default function Home() {
               </div>
             </div>
           </Link>
+
+          <Link href="/vocabulary/index.html" style={{ textDecoration: 'none', display: 'block' }}>
+            <div className="tool-card" style={{
+              background: 'linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #0284c7 100%)',
+              borderRadius: '20px',
+              padding: '2rem',
+              color: 'white',
+              cursor: 'pointer',
+              boxShadow: '0 8px 32px rgba(2, 132, 199, 0.3)',
+              border: '1px solid rgba(2, 132, 199, 0.3)',
+            }}>
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🔤</div>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem', fontWeight: 'bold' }}>初中英语单词记忆</h3>
+              <p style={{ opacity: 0.9, lineHeight: 1.6 }}>
+                初中英语全年级单词学习工具，涵盖七年级到九年级上下册核心词汇。支持英汉互译、拼写练习、易混淆词辨析，科学记忆助力轻松背单词！
+              </p>
+              <div style={{ marginTop: '1rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                <span style={{ background: 'rgba(255,255,255,0.15)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.875rem' }}>全年级词库</span>
+                <span style={{ background: 'rgba(255,255,255,0.15)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.875rem' }}>英汉互译</span>
+                <span style={{ background: 'rgba(255,255,255,0.15)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.875rem' }}>易混淆词</span>
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
 
