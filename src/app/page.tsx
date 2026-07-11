@@ -160,6 +160,29 @@ export default function Home() {
               </div>
             </div>
           </Link>
+
+          <Link href="/cloze/index.html" style={{ textDecoration: 'none', display: 'block' }}>
+            <div className="tool-card" style={{
+              background: 'linear-gradient(135deg, #7c2d12 0%, #9a3412 50%, #c2410c 100%)',
+              borderRadius: '20px',
+              padding: '2rem',
+              color: 'white',
+              cursor: 'pointer',
+              boxShadow: '0 8px 32px rgba(194, 65, 12, 0.3)',
+              border: '1px solid rgba(194, 65, 12, 0.3)',
+            }}>
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>✍️</div>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem', fontWeight: 'bold' }}>英语完型填空训练</h3>
+              <p style={{ opacity: 0.9, lineHeight: 1.6 }}>
+                中考英语核心词汇完型填空专项训练工具。涵盖词汇记忆、语境理解、语法搭配等多维度练习，按日计划循序渐进，助力中考英语提分！
+              </p>
+              <div style={{ marginTop: '1rem', display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                <span style={{ background: 'rgba(255,255,255,0.15)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.875rem' }}>完型填空</span>
+                <span style={{ background: 'rgba(255,255,255,0.15)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.875rem' }}>中考词汇</span>
+                <span style={{ background: 'rgba(255,255,255,0.15)', padding: '0.25rem 0.75rem', borderRadius: '999px', fontSize: '0.875rem' }}>每日计划</span>
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
 
