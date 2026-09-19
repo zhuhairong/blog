@@ -71,13 +71,26 @@ def translate_path(self, path):
 - 首页 `src/app/page.tsx` 中的 `TOOLS` 数组是作品列表的**唯一数据源**，新增工具需在此登记（href / title / desc / icon / tags / from / to / glow）。`glow` 用 `"R, G, B"` 字符串格式以支持 `rgba(var(--glow), a)`。
 
 ## GitHub Pages URL 行为（勿误判为 bug）
-| URL | 状态 |
-|---|---|
-| `/blog/` | 200 |
-| `/blog/c-utils` | **200**（canonical，Next 生成的形式） |
-| `/blog/c-utils/` | 404 |
+| URL | 状态 | 说明 |
+|---|---|---|
+| `/blog/` | 200 | 首页 |
+| `/blog/c-utils` | **200** | canonical，Next 生成的形式 |
+| `/blog/c-utils/` | 404 | 单文件 `out/c-utils.html`，无目录 |
+| `/blog/posts/hello-world` | 200 | 同上 |
+| `/blog/posts/` | 404 | 无索引页 |
+| `/blog/eng.html` | 200 | public 静态文件 |
+| `/blog/eng.html/` | 404 | 加了斜杠就必 404，与是否"目录"无关 |
+| `/blog/english-grammar` | 301 → `/blog/english-grammar/index.html` | 真实目录才有补斜杠重定向 |
 
-与本地 `python -m http.server` **行为相反**（本地加斜杠才 200）。所以 `Link href="/c-utils"` 是正确写法。
+**根因**：`output: 'export'` 产出 `out/c-utils.html` 这类单文件；GitHub Pages 不像 `python http.server` 那样自动补 `index.html`。
+与本地 `python -m http.server` **行为相反**（本地加斜杠才 200）。所以 `Link href="/c-utils"` 是正确写法，**全站链接统一不带尾斜杠**。
+
+## 未跟踪文件（用户资料，未经确认不得删除）
+- `初中单词/`（2.0M / 10 文件）— `diff -rq` 验证与 `public/vocabulary/` **逐字节一致**，是发布产物的源工作副本
+- `完型填空html/`（1.2M / 22 文件）— `index.html` 与 `public/cloze/index.html` 完全一致
+- `public/quadratic-structure.drawio`（24K）— 全站 grep **无引用**，drawio 源图
+
+处理选项：① 纳入版本管理 ② 加 `.gitignore` ③ 原样保留。**必须由用户明确选择后才可操作。**
 
 ## 质量门禁（每次改完必跑）
 ```bash
@@ -96,3 +109,13 @@ git status --short  # ⚠️ 必查：确认没有意外的 D（删除）条目
 3. **收尾前必须 `git status --short` 检查删除条目**，重点盯 `.github/`、`.gitignore`、`next.config.ts`、`tsconfig.json` 等不被构建产物覆盖的文件。
 4. 删除 `out/` 若被预览进程占用而失败（`[safe-delete] 操作失败`），先停进程，再用 Python `shutil.rmtree`。
 5. Windows 下 `.ps1` / `.bat` 脚本不要写非 ASCII 路径（编码会损坏文件名），改用直接命令。
+
+## Git 同步陷阱
+
+**不要相信 `git status -sb` 的 `[gone]`**。曾出现 `## master...origin/master [gone]`，看着像"远端分支被删"，
+实际只是本地缺少远程跟踪引用。**以 `git ls-remote origin refs/heads/master` 为准**：
+```bash
+git ls-remote origin refs/heads/master   # 真实远端 HEAD
+git rev-parse HEAD                       # 本地 HEAD
+git log <remote-sha>..HEAD --stat        # 看差了什么（确认不含代码再推）
+```
