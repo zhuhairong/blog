@@ -4102,5 +4102,488 @@
         ]
       }
     ]
+  },
+  {
+    "id": "censen",
+    "name": "岑参",
+    "pseudonym": "岑嘉州",
+    "aliases": [
+      "岑嘉州",
+      "岑二十七"
+    ],
+    "dynasty": "唐",
+    "birth": 715,
+    "death": 770,
+    "nativePlace": [
+      {
+        "placeId": "cn-hubei-jiangling",
+        "type": "birth",
+        "confidence": "C",
+        "note": "江陵（今湖北荆州）人。杜确《岑嘉州诗集序》称「南阳岑公」，南阳为郡望（其先世南阳棘阳），非生地。生年 715 系闻一多据诗文推定，另有 718、717 诸说，无定论。"
+      }
+    ],
+    "summary": "唐代最远的诗人。他去过的地方，此前几乎没有人写进诗里：火山、沙碛、雪海、天山。边塞诗在他手里不再是将士的代言，而是一个南方人对奇景的执迷——他写酷热的火山和冻硬的红旗，都带着同一种近乎记录的兴奋。",
+    "biography": "岑参（约 715—770），江陵（今湖北荆州）人，郡望南阳。曾祖文本、伯祖长倩、伯父羲皆位至宰相，父植官至仙州、晋州刺史，至岑参时家道已衰，父早卒，从兄受书，遍读经史。天宝三载（744）进士及第，授右内率府兵曹参军。天宝八载（749）赴安西，入安西四镇节度使高仙芝幕；天宝十三载（754）再赴北庭，充安西北庭节度使封常清判官——两度出塞凡六年，是他全部边塞诗的现场。至德二载（757）由杜甫等荐为右补阙，后历起居舍人、虢州长史、关西节度判官，终嘉州刺史，世称「岑嘉州」。大历三年（768）罢官东归，途中为蜀中兵乱所阻，大历五年（770）卒于成都旅舍。⚠️ 两《唐书》皆无岑参传，其生卒、仕履多据杜确《岑嘉州诗集序》、《唐才子传》及闻一多《岑嘉州系年考证》推定，本数据集相应条目一律不标 A 级置信度。",
+    "events": [
+      {
+        "id": "censen-e1",
+        "poetId": "censen",
+        "type": "birth",
+        "title": "生于江陵（约 715）",
+        "placeId": "cn-hubei-jiangling",
+        "date": {
+          "year": 715,
+          "original": "约开元三年",
+          "certainty": "approximate",
+          "fuzziness": 3
+        },
+        "description": "生年无史料明文，闻一多据其诗文推为开元三年（715），另有 717、718 诸说。生地江陵，出身三代宰相之家而至其时已衰。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "cen-jiazhou-xinian-kaozheng",
+            "title": "岑嘉州系年考证",
+            "author": "闻一多",
+            "reliability": "B"
+          },
+          {
+            "id": "cen-jiazhou-shiji-xu",
+            "title": "岑嘉州诗集序",
+            "author": "杜确",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "censen-e2",
+        "poetId": "censen",
+        "type": "study",
+        "title": "父早卒，家道中落，从兄受书",
+        "placeId": "cn-hubei-jiangling",
+        "date": {
+          "year": 725,
+          "original": "约开元十三年",
+          "certainty": "approximate",
+          "fuzziness": 5
+        },
+        "description": "父岑植早卒，家贫，从兄受业，遍读经史。杜确序称其「早岁孤贫，能自砥砺，遍览史籍」。具体年份无考，系于少年时期。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "cen-jiazhou-shiji-xu",
+            "title": "岑嘉州诗集序",
+            "author": "杜确",
+            "reliability": "B"
+          },
+          {
+            "id": "tang-caizi-zhuan",
+            "title": "唐才子传",
+            "author": "辛文房",
+            "locator": "卷三",
+            "reliability": "C"
+          }
+        ]
+      },
+      {
+        "id": "censen-e3",
+        "poetId": "censen",
+        "type": "seclusion",
+        "title": "隐居嵩阳，后往来终南、长安",
+        "placeId": "cn-shaanxi-zhongnan",
+        "date": {
+          "year": 734,
+          "original": "约开元二十二年",
+          "certainty": "approximate",
+          "fuzziness": 3
+        },
+        "description": "早年隐居嵩阳（今河南登封），后又往来终南山与长安之间，献书干谒而无所遇。此期诗多写山水隐居，与其后边塞之作判然两途。年份据闻一多考证推定。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "cen-jiazhou-xinian-kaozheng",
+            "title": "岑嘉州系年考证",
+            "author": "闻一多",
+            "reliability": "B"
+          },
+          {
+            "id": "quantangshi-199",
+            "title": "全唐诗",
+            "locator": "卷199",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "censen-e4",
+        "poetId": "censen",
+        "type": "exam",
+        "title": "进士及第（744）",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 744,
+          "original": "天宝三载",
+          "certainty": "exact",
+          "fuzziness": 0
+        },
+        "description": "天宝三载进士及第，年约三十。旧有「天宝三载状元」之说出自后世笔记，不足为据。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "cen-jiazhou-shiji-xu",
+            "title": "岑嘉州诗集序",
+            "author": "杜确",
+            "reliability": "B"
+          },
+          {
+            "id": "cen-jiazhou-xinian-kaozheng",
+            "title": "岑嘉州系年考证",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "censen-e5",
+        "poetId": "censen",
+        "type": "office",
+        "title": "授右内率府兵曹参军（745）",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 745,
+          "original": "天宝四载",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "及第后授右内率府兵曹参军，为从八品下之闲职，居长安。任职年份各家考证略有出入，故留 fuzziness 1。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "cen-jiazhou-xinian-kaozheng",
+            "title": "岑嘉州系年考证",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "censen-e6",
+        "poetId": "censen",
+        "type": "travel",
+        "title": "首度出塞，赴安西入高仙芝幕（749）",
+        "placeId": "cn-xinjiang-anxi-kuqa",
+        "date": {
+          "year": 749,
+          "original": "天宝八载",
+          "certainty": "exact",
+          "fuzziness": 0
+        },
+        "description": "天宝八载赴安西，充安西四镇节度使高仙芝幕掌书记（一说判官）。自长安西行，度陇、过凉州、出玉门，经沙碛而至龟兹——《逢入京使》《碛中作》《过碛》皆此行道上所作。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "cen-jiazhou-shiji-xu",
+            "title": "岑嘉州诗集序",
+            "author": "杜确",
+            "reliability": "B"
+          },
+          {
+            "id": "cen-jiazhou-xinian-kaozheng",
+            "title": "岑嘉州系年考证",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "censen-e7",
+        "poetId": "censen",
+        "type": "creation",
+        "title": "安西道中作《逢入京使》《过碛》诸诗",
+        "placeId": "cn-xinjiang-anxi-kuqa",
+        "date": {
+          "year": 750,
+          "original": "天宝九载",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "赴安西途中及在安西期间作《逢入京使》《碛中作》《过碛》等。这些诗的价值在于它们是中国诗第一次把「西域道上」本身当作书写对象，而不只是把边塞当作一个修辞位置。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "quantangshi-201",
+            "title": "全唐诗",
+            "locator": "卷201",
+            "reliability": "B"
+          },
+          {
+            "id": "cen-jiazhou-xinian-kaozheng",
+            "title": "岑嘉州系年考证",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "censen-e8",
+        "poetId": "censen",
+        "type": "office",
+        "title": "自安西还长安（751）",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 751,
+          "original": "天宝十载",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "天宝十载随高仙芝入朝，或即于是年返长安。高仙芝怛罗斯之败在其返朝前后，岑参是否亲历无明文。还京年份各家考证不一，留 fuzziness 1。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "cen-jiazhou-xinian-kaozheng",
+            "title": "岑嘉州系年考证",
+            "author": "闻一多",
+            "reliability": "B"
+          },
+          {
+            "id": "censen-nianpu",
+            "title": "岑参年谱",
+            "author": "赖义辉",
+            "reliability": "C"
+          }
+        ]
+      },
+      {
+        "id": "censen-e9",
+        "poetId": "censen",
+        "type": "office",
+        "title": "再度出塞，充封常清判官驻北庭（754）",
+        "placeId": "cn-xinjiang-beiting",
+        "date": {
+          "year": 754,
+          "original": "天宝十三载",
+          "certainty": "exact",
+          "fuzziness": 0
+        },
+        "description": "天宝十三载再赴西域，充安西北庭节度使封常清判官，驻北庭（今吉木萨尔）。《白雪歌》《轮台歌》《走马川行》三大歌行皆作于此期——他最好的诗全部写在这两年里。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "cen-jiazhou-shiji-xu",
+            "title": "岑嘉州诗集序",
+            "author": "杜确",
+            "reliability": "B"
+          },
+          {
+            "id": "cen-jiazhou-xinian-kaozheng",
+            "title": "岑嘉州系年考证",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "censen-e10",
+        "poetId": "censen",
+        "type": "war",
+        "title": "随封常清出师，作《轮台歌》《走马川行》",
+        "placeId": "cn-xinjiang-tang-luntai",
+        "date": {
+          "year": 755,
+          "original": "天宝十四载",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "封常清两度出师西征，岑参在轮台作《轮台歌奉送封大夫出师西征》《走马川行奉送出师西征》以送。所征为何史无明载（一说播仙），年份各家考证在 754—756 之间，故系 755 并留 fuzziness 1。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "quantangshi-199",
+            "title": "全唐诗",
+            "locator": "卷199",
+            "reliability": "B"
+          },
+          {
+            "id": "cen-jiazhou-xinian-kaozheng",
+            "title": "岑嘉州系年考证",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "censen-e11",
+        "poetId": "censen",
+        "type": "war",
+        "title": "安史乱起，东归；至德二载授右补阙（757）",
+        "placeId": "cn-shaanxi-fengxiang",
+        "date": {
+          "year": 757,
+          "original": "至德二载",
+          "certainty": "exact",
+          "fuzziness": 0
+        },
+        "description": "天宝十四载十一月安史之乱起，封常清被诛，岑参东归。至德二载肃宗驻凤翔，岑参由杜甫、裴荐等荐为右补阙。杜甫《奉答岑参补阙见赠》即此时唱和之作。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "cen-jiazhou-xinian-kaozheng",
+            "title": "岑嘉州系年考证",
+            "author": "闻一多",
+            "reliability": "B"
+          },
+          {
+            "id": "cen-jiazhou-shiji-xu",
+            "title": "岑嘉州诗集序",
+            "author": "杜确",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "censen-e12",
+        "poetId": "censen",
+        "type": "creation",
+        "title": "行军中作《行军九日思长安故园》",
+        "placeId": "cn-shaanxi-fengxiang",
+        "date": {
+          "year": 757,
+          "original": "至德二载九月",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "至德二载九日，随军在凤翔一带作《行军九日思长安故园》：「遥怜故园菊，应傍战场开。」其时长安尚未收复（同年九月收复），故园即是战场。系年据诗题「行军」与本传任职推定，非明文。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "quantangshi-201",
+            "title": "全唐诗",
+            "locator": "卷201",
+            "reliability": "B"
+          },
+          {
+            "id": "cen-jiazhou-xinian-kaozheng",
+            "title": "岑嘉州系年考证",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "censen-e13",
+        "poetId": "censen",
+        "type": "office",
+        "title": "出为虢州长史",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 762,
+          "original": "约宝应元年",
+          "certainty": "approximate",
+          "fuzziness": 3
+        },
+        "description": "上元、宝应间出为虢州长史（今河南灵宝），居虢州数年，诗多写州郡僚佐的失意。年份各家考证出入较大，故 fuzziness 取 3。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "cen-jiazhou-xinian-kaozheng",
+            "title": "岑嘉州系年考证",
+            "author": "闻一多",
+            "reliability": "B"
+          },
+          {
+            "id": "censen-nianpu",
+            "title": "岑参年谱",
+            "author": "赖义辉",
+            "reliability": "C"
+          }
+        ]
+      },
+      {
+        "id": "censen-e14",
+        "poetId": "censen",
+        "type": "office",
+        "title": "出为嘉州刺史（766）",
+        "placeId": "cn-sichuan-chengdu",
+        "date": {
+          "year": 766,
+          "original": "大历元年",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "大历元年除嘉州刺史（今四川乐山），因蜀中兵乱未得即赴，次年方入蜀。世称「岑嘉州」即由此。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "cen-jiazhou-shiji-xu",
+            "title": "岑嘉州诗集序",
+            "author": "杜确",
+            "reliability": "B"
+          },
+          {
+            "id": "cen-jiazhou-xinian-kaozheng",
+            "title": "岑嘉州系年考证",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "censen-e15",
+        "poetId": "censen",
+        "type": "exile",
+        "title": "罢官东归，阻于蜀中（768）",
+        "placeId": "cn-sichuan-chengdu",
+        "date": {
+          "year": 768,
+          "original": "大历三年",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "大历三年罢嘉州任，欲循江东归，适逢蜀中崔旰之乱，道路阻绝，滞留成都一带。《客舍悲秋有怀两省旧游呈幕中诸公》等作皆此时。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "cen-jiazhou-shiji-xu",
+            "title": "岑嘉州诗集序",
+            "author": "杜确",
+            "reliability": "B"
+          },
+          {
+            "id": "cen-jiazhou-xinian-kaozheng",
+            "title": "岑嘉州系年考证",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "censen-e16",
+        "poetId": "censen",
+        "type": "death",
+        "title": "卒于成都旅舍（770）",
+        "placeId": "cn-sichuan-chengdu",
+        "date": {
+          "year": 770,
+          "original": "大历五年",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "大历五年卒于成都旅舍，年约五十六。杜确序称其「终于蜀」，后编其遗文为《岑嘉州集》八卷。卒年亦有 769 一说，故留 fuzziness 1。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "cen-jiazhou-shiji-xu",
+            "title": "岑嘉州诗集序",
+            "author": "杜确",
+            "reliability": "B"
+          },
+          {
+            "id": "cen-jiazhou-xinian-kaozheng",
+            "title": "岑嘉州系年考证",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      }
+    ]
   }
 ]

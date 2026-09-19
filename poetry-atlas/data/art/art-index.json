@@ -71,6 +71,23 @@
     "featured": "poet-libai"
   },
   {
+    "objectID": 35974,
+    "src": "/poetry-atlas/art/35974.webp",
+    "srcSmall": "/poetry-atlas/art/35974-sm.webp",
+    "title": "Landscape",
+    "artist": "Unidentified artist",
+    "date": "18th century or later, spurious date of 1648",
+    "dynasty": "",
+    "medium": "Folding fan mounted as an album leaf; ink on gold paper",
+    "creditLine": "John Stewart Kennedy Fund, 1913",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/35974",
+    "motifs": [
+      "山",
+      "山水"
+    ],
+    "featured": "poet-censen"
+  },
+  {
     "objectID": 35975,
     "src": "/poetry-atlas/art/35975.webp",
     "srcSmall": "/poetry-atlas/art/35975-sm.webp",
@@ -98,6 +115,23 @@
     "medium": "Folding fan mounted as an album leaf; ink on gold paper",
     "creditLine": "John Stewart Kennedy Fund, 1913",
     "objectURL": "https://www.metmuseum.org/art/collection/search/35977",
+    "motifs": [
+      "山",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 35979,
+    "src": "/poetry-atlas/art/35979.webp",
+    "srcSmall": "/poetry-atlas/art/35979-sm.webp",
+    "title": "Landscape",
+    "artist": "Unidentified artist",
+    "date": "",
+    "dynasty": "",
+    "medium": "Folding fan mounted as an album leaf; ink and color on gold-flecked paper",
+    "creditLine": "John Stewart Kennedy Fund, 1913",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/35979",
     "motifs": [
       "山",
       "山水"
@@ -387,6 +421,23 @@
     "featured": ""
   },
   {
+    "objectID": 36014,
+    "src": "/poetry-atlas/art/36014.webp",
+    "srcSmall": "/poetry-atlas/art/36014-sm.webp",
+    "title": "Landscape",
+    "artist": "Zhao Zuo",
+    "date": "",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink on silk",
+    "creditLine": "John Stewart Kennedy Fund, 1913",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36014",
+    "motifs": [
+      "山",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
     "objectID": 36016,
     "src": "/poetry-atlas/art/36016.webp",
     "srcSmall": "/poetry-atlas/art/36016-sm.webp",
@@ -413,6 +464,23 @@
     "medium": "Hanging scroll; ink on paper",
     "creditLine": "John Stewart Kennedy Fund, 1913",
     "objectURL": "https://www.metmuseum.org/art/collection/search/36017",
+    "motifs": [
+      "山",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 36019,
+    "src": "/poetry-atlas/art/36019.webp",
+    "srcSmall": "/poetry-atlas/art/36019-sm.webp",
+    "title": "Landscape",
+    "artist": "Wen Boren",
+    "date": "dated 1558",
+    "dynasty": "",
+    "medium": "Handscroll; ink and color on paper",
+    "creditLine": "John Stewart Kennedy Fund, 1913",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36019",
     "motifs": [
       "山",
       "山水"
@@ -668,6 +736,23 @@
       "山水"
     ],
     "featured": ""
+  },
+  {
+    "objectID": 36054,
+    "src": "/poetry-atlas/art/36054.webp",
+    "srcSmall": "/poetry-atlas/art/36054-sm.webp",
+    "title": "Landscape with Birds",
+    "artist": "Unidentified artist",
+    "date": "16th century?",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink and color on silk",
+    "creditLine": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36054",
+    "motifs": [
+      "花鸟",
+      "山水"
+    ],
+    "featured": "poet-menghaoran"
   },
   {
     "objectID": 36055,
@@ -1229,6 +1314,22 @@
     "featured": ""
   },
   {
+    "objectID": 36148,
+    "src": "/poetry-atlas/art/36148.webp",
+    "srcSmall": "/poetry-atlas/art/36148-sm.webp",
+    "title": "Landscape",
+    "artist": "Xie Lansheng",
+    "date": "dated the 7th month of 1815",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink on silk",
+    "creditLine": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36148",
+    "motifs": [
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
     "objectID": 36149,
     "src": "/poetry-atlas/art/36149.webp",
     "srcSmall": "/poetry-atlas/art/36149-sm.webp",
@@ -1242,6 +1343,54 @@
     "motifs": [
       "雨",
       "云烟"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 36150,
+    "src": "/poetry-atlas/art/36150.webp",
+    "srcSmall": "/poetry-atlas/art/36150-sm.webp",
+    "title": "Landscape",
+    "artist": "Huang Jun",
+    "date": "dated Spring 1846",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink and color on paper",
+    "creditLine": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36150",
+    "motifs": [
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 36151,
+    "src": "/poetry-atlas/art/36151.webp",
+    "srcSmall": "/poetry-atlas/art/36151-sm.webp",
+    "title": "Landscape",
+    "artist": "Tang Yifen",
+    "date": "",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink and color on paper",
+    "creditLine": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36151",
+    "motifs": [
+      "山水"
+    ],
+    "featured": "poet-wangwei"
+  },
+  {
+    "objectID": 36152,
+    "src": "/poetry-atlas/art/36152.webp",
+    "srcSmall": "/poetry-atlas/art/36152-sm.webp",
+    "title": "Landscape",
+    "artist": "Li Xiuyi",
+    "date": "dated 1843",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink on paper",
+    "creditLine": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36152",
+    "motifs": [
+      "山水"
     ],
     "featured": ""
   },
@@ -1274,6 +1423,22 @@
     "objectURL": "https://www.metmuseum.org/art/collection/search/36154",
     "motifs": [
       "山",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 36155,
+    "src": "/poetry-atlas/art/36155.webp",
+    "srcSmall": "/poetry-atlas/art/36155-sm.webp",
+    "title": "Landscape",
+    "artist": "Cheng Tinglu",
+    "date": "dated 1827",
+    "dynasty": "",
+    "medium": "Album leaf; ink and color on paper",
+    "creditLine": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36155",
+    "motifs": [
       "山水"
     ],
     "featured": ""
@@ -1345,6 +1510,23 @@
     "featured": ""
   },
   {
+    "objectID": 36168,
+    "src": "/poetry-atlas/art/36168.webp",
+    "srcSmall": "/poetry-atlas/art/36168-sm.webp",
+    "title": "Landscapes after old masters",
+    "artist": "Du Xiang",
+    "date": "19th century",
+    "dynasty": "",
+    "medium": "Album of seven leaves; ink and color on paper",
+    "creditLine": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36168",
+    "motifs": [
+      "山",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
     "objectID": 36171,
     "src": "/poetry-atlas/art/36171.webp",
     "srcSmall": "/poetry-atlas/art/36171-sm.webp",
@@ -1375,6 +1557,22 @@
       "山",
       "荷",
       "花鸟"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 36174,
+    "src": "/poetry-atlas/art/36174.webp",
+    "srcSmall": "/poetry-atlas/art/36174-sm.webp",
+    "title": "Landscape",
+    "artist": "Gu Yun",
+    "date": "",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink on paper",
+    "creditLine": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36174",
+    "motifs": [
+      "山水"
     ],
     "featured": ""
   },
@@ -1484,6 +1682,55 @@
     "featured": ""
   },
   {
+    "objectID": 36191,
+    "src": "/poetry-atlas/art/36191.webp",
+    "srcSmall": "/poetry-atlas/art/36191-sm.webp",
+    "title": "Landscape",
+    "artist": "Zhang Shanghe",
+    "date": "",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink on paper",
+    "creditLine": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36191",
+    "motifs": [
+      "山",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 36192,
+    "src": "/poetry-atlas/art/36192.webp",
+    "srcSmall": "/poetry-atlas/art/36192-sm.webp",
+    "title": "Landscape",
+    "artist": "Jiang Yun",
+    "date": "dated 1888",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink on paper",
+    "creditLine": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36192",
+    "motifs": [
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 36433,
+    "src": "/poetry-atlas/art/36433.webp",
+    "srcSmall": "/poetry-atlas/art/36433-sm.webp",
+    "title": "Portrait of Ren'an in a Landscape",
+    "artist": "Shitao (Zhu Ruoji)",
+    "date": "dated 1684",
+    "dynasty": "",
+    "medium": "Handscroll; ink and color on paper",
+    "creditLine": "Purchase, The Dillon Fund Gift, 1987",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36433",
+    "motifs": [
+      "山水"
+    ],
+    "featured": "poet-baijuyi"
+  },
+  {
     "objectID": 36435,
     "src": "/poetry-atlas/art/36435.webp",
     "srcSmall": "/poetry-atlas/art/36435-sm.webp",
@@ -1494,6 +1741,22 @@
     "medium": "Album of ten paintings; ink on paper",
     "creditLine": "Edward Elliott Family Collection; Gift of Douglas Dillon, 1987",
     "objectURL": "https://www.metmuseum.org/art/collection/search/36435",
+    "motifs": [
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 36436,
+    "src": "/poetry-atlas/art/36436.webp",
+    "srcSmall": "/poetry-atlas/art/36436-sm.webp",
+    "title": "Landscapes",
+    "artist": "Zhang Feng",
+    "date": "dated 1644",
+    "dynasty": "",
+    "medium": "Album of twelve leaves; ink and color on paper",
+    "creditLine": "Edward Elliott Family Collection, Gift of Douglas Dillon, 1987",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36436",
     "motifs": [
       "山水"
     ],

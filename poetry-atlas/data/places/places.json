@@ -3188,5 +3188,213 @@
         "reliability": "B"
       }
     ]
+  },
+  {
+    "id": "cn-xinjiang-tang-luntai",
+    "historicalName": "轮台县（北庭）",
+    "historicalEra": "唐",
+    "modernName": "新疆维吾尔自治区乌鲁木齐市一带",
+    "modernHierarchy": {
+      "province": "新疆维吾尔自治区",
+      "city": "乌鲁木齐市"
+    },
+    "coordinates": [
+      87.58944,
+      43.63917
+    ],
+    "precision": "approximate",
+    "isCentroid": true,
+    "aliases": [
+      "唐轮台",
+      "轮台"
+    ],
+    "kind": "county",
+    "note": "唐轮台不等于今轮台县。唐轮台是北庭都护府属县，故址主流说法在今乌鲁木齐市南郊乌拉泊古城（本点即取此），另有昌吉古城、米泉诸说，学界尚无定论，故 precision 取 approximate 并标 isCentroid。今巴音郭楞蒙古自治州轮台县（约 84.25/41.78）是汉代轮台、清代所置，与岑参诗中的轮台相距约 400 公里，不可混同——这是读岑参边塞诗最常见的地理错误。",
+    "sources": [
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      },
+      {
+        "id": "xinjiang-kaogu",
+        "title": "新疆考古与史地研究",
+        "author": "王炳华",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-xinjiang-anxi-kuqa",
+    "historicalName": "安西（龟兹镇）",
+    "historicalEra": "唐",
+    "modernName": "新疆维吾尔自治区阿克苏地区库车市",
+    "modernHierarchy": {
+      "province": "新疆维吾尔自治区",
+      "city": "阿克苏地区",
+      "district": "库车市"
+    },
+    "coordinates": [
+      82.95,
+      41.56667
+    ],
+    "precision": "county",
+    "isCentroid": false,
+    "aliases": [
+      "安西",
+      "龟兹",
+      "安西四镇"
+    ],
+    "kind": "county",
+    "note": "唐安西都护府治所。贞观十四年（640）置于西州，显庆三年（658）移治龟兹，岑参诗中所称「安西」即此。开元后安西四镇节度使驻此，天宝八载（749）岑参赴安西即入高仙芝幕于此。",
+    "sources": [
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-xinjiang-beiting",
+    "historicalName": "北庭都护府（庭州）",
+    "historicalEra": "唐",
+    "modernName": "新疆维吾尔自治区昌吉州吉木萨尔县北庭故城",
+    "modernHierarchy": {
+      "province": "新疆维吾尔自治区",
+      "city": "昌吉回族自治州",
+      "district": "吉木萨尔县"
+    },
+    "coordinates": [
+      89.19146,
+      44.09644
+    ],
+    "precision": "site",
+    "isCentroid": false,
+    "aliases": [
+      "北庭",
+      "庭州",
+      "北庭都护府"
+    ],
+    "kind": "site",
+    "note": "长安二年（702）置北庭都护府于庭州，治今吉木萨尔县城北之北庭故城。天宝十三载（754）岑参再赴西域，充安西北庭节度使封常清判官，驻此。坐标为北庭故城遗址，precision 可到 site 级。",
+    "sources": [
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      },
+      {
+        "id": "xinjiang-kaogu",
+        "title": "新疆考古与史地研究",
+        "author": "王炳华",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-xinjiang-huoshan",
+    "historicalName": "火山（赤亭—交河戍一带）",
+    "historicalEra": "唐",
+    "modernName": "新疆维吾尔自治区吐鲁番市火焰山—交河故城一带",
+    "modernHierarchy": {
+      "province": "新疆维吾尔自治区",
+      "city": "吐鲁番市"
+    },
+    "coordinates": [
+      89.06528,
+      42.94972
+    ],
+    "precision": "approximate",
+    "isCentroid": true,
+    "aliases": [
+      "火山",
+      "火焰山",
+      "赤亭",
+      "交河"
+    ],
+    "kind": "site",
+    "note": "岑参诗中的「火山」即今吐鲁番火焰山，「赤亭」为赤亭守捉，「交河戍」在今交河故城一带。因诗中「火山」指一整片区域而非某一峰点，坐标取交河故城为代表点，precision 取 approximate、isCentroid 标 true。",
+    "sources": [
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-shaanxi-longshan",
+    "historicalName": "陇山（陇坻）",
+    "historicalEra": "唐",
+    "modernName": "陕西省宝鸡市陇县西北—甘肃省张家川一带",
+    "modernHierarchy": {
+      "province": "陕西省",
+      "city": "宝鸡市",
+      "district": "陇县"
+    },
+    "coordinates": [
+      106.6,
+      34.9
+    ],
+    "precision": "approximate",
+    "isCentroid": true,
+    "aliases": [
+      "陇山",
+      "陇坻",
+      "陇头",
+      "陇坂"
+    ],
+    "kind": "mountain",
+    "note": "唐人西行出长安必度陇山，「度陇」在唐诗里几乎是「离开中原」的同义词。山体绵延陕甘两省，本点为陇县西北一带代表点，仅作示意，不可当作岑参度陇的具体关口位置读。",
+    "sources": [
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-henan-liangyuan",
+    "historicalName": "梁园",
+    "historicalEra": "唐",
+    "modernName": "河南省商丘市（汉梁孝王兔园故址一带）",
+    "modernHierarchy": {
+      "province": "河南省",
+      "city": "商丘市"
+    },
+    "coordinates": [
+      115.6558,
+      34.4146
+    ],
+    "precision": "approximate",
+    "isCentroid": true,
+    "aliases": [
+      "梁园",
+      "兔园",
+      "梁苑"
+    ],
+    "kind": "site",
+    "note": "汉梁孝王所筑兔园，故址在唐宋宋州（今商丘）城东，唐时已成废墟，岑参过此作《山房春事》。园址范围史无确指，坐标取今商丘市区为代表点，precision 取 approximate。",
+    "sources": [
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ]
   }
 ]

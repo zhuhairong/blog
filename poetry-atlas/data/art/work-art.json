@@ -1622,5 +1622,207 @@
     "artCredit": "Gift of Mr. and Mrs. Earl Morse, 1972",
     "artImage": "https://images.metmuseum.org/CRDImages/as/original/1972_278_8_O.JPG",
     "artURL": "https://www.metmuseum.org/art/collection/search/36102"
+  },
+  {
+    "workId": "censen-baixuege",
+    "title": "白雪歌送武判官归京",
+    "poetId": "censen",
+    "motifs": [
+      "雪",
+      "山",
+      "送别"
+    ],
+    "objectID": 36148,
+    "artTitle": "Landscape",
+    "artArtist": "Xie Lansheng",
+    "artDate": "dated the 7th month of 1815",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-30131-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36148"
+  },
+  {
+    "workId": "censen-zoumachuan",
+    "title": "走马川行奉送出师西征",
+    "poetId": "censen",
+    "motifs": [
+      "风",
+      "山",
+      "行旅"
+    ],
+    "objectID": 36014,
+    "artTitle": "Landscape",
+    "artArtist": "Zhao Zuo",
+    "artDate": "",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/13_220_30_257361.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36014"
+  },
+  {
+    "workId": "censen-luntaige",
+    "title": "轮台歌奉送封大夫出师西征",
+    "poetId": "censen",
+    "motifs": [
+      "山",
+      "出师",
+      "行旅"
+    ],
+    "objectID": 36019,
+    "artTitle": "Landscape",
+    "artArtist": "Wen Boren",
+    "artDate": "dated 1558",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP166600_CRD.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36019"
+  },
+  {
+    "workId": "censen-huoshanyun",
+    "title": "火山云歌送别",
+    "poetId": "censen",
+    "motifs": [
+      "云",
+      "山",
+      "送别"
+    ],
+    "objectID": 36436,
+    "artTitle": "Landscapes",
+    "artArtist": "Zhang Feng",
+    "artDate": "dated 1644",
+    "artCredit": "Edward Elliott Family Collection, Gift of Douglas Dillon, 1987",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP162771.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36436"
+  },
+  {
+    "workId": "censen-liangzhou-yeji",
+    "title": "凉州馆中与诸判官夜集",
+    "poetId": "censen",
+    "motifs": [
+      "夜",
+      "山",
+      "城"
+    ],
+    "objectID": 36174,
+    "artTitle": "Landscape",
+    "artArtist": "Gu Yun",
+    "artDate": "",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-30287-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36174"
+  },
+  {
+    "workId": "censen-feng-rujingshi",
+    "title": "逢入京使",
+    "poetId": "censen",
+    "motifs": [
+      "山水",
+      "道上"
+    ],
+    "objectID": 36155,
+    "artTitle": "Landscape",
+    "artArtist": "Cheng Tinglu",
+    "artDate": "dated 1827",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP161193.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36155"
+  },
+  {
+    "workId": "censen-qizhongzuo",
+    "title": "碛中作",
+    "poetId": "censen",
+    "motifs": [
+      "沙",
+      "山水",
+      "旷远"
+    ],
+    "objectID": 36192,
+    "artTitle": "Landscape",
+    "artArtist": "Jiang Yun",
+    "artDate": "dated 1888",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-30342-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36192"
+  },
+  {
+    "workId": "censen-guoqi",
+    "title": "过碛",
+    "poetId": "censen",
+    "motifs": [
+      "沙",
+      "山水",
+      "西行"
+    ],
+    "objectID": 36191,
+    "artTitle": "Landscape",
+    "artArtist": "Zhang Shanghe",
+    "artDate": "",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-24839-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36191"
+  },
+  {
+    "workId": "censen-du-long-sijia",
+    "title": "赴北庭度陇思家",
+    "poetId": "censen",
+    "motifs": [
+      "山",
+      "山水",
+      "思乡"
+    ],
+    "objectID": 36168,
+    "artTitle": "Landscapes after old masters",
+    "artArtist": "Du Xiang",
+    "artDate": "19th century",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP161415.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36168"
+  },
+  {
+    "workId": "censen-wuwei-song-liu",
+    "title": "武威送刘判官赴碛西行军",
+    "poetId": "censen",
+    "motifs": [
+      "山",
+      "行旅",
+      "送别"
+    ],
+    "objectID": 36150,
+    "artTitle": "Landscape",
+    "artArtist": "Huang Jun",
+    "artDate": "dated Spring 1846",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-30135-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36150"
+  },
+  {
+    "workId": "censen-xingjun-jiuri",
+    "title": "行军九日思长安故园",
+    "poetId": "censen",
+    "motifs": [
+      "秋",
+      "山水"
+    ],
+    "objectID": 36152,
+    "artTitle": "Landscape",
+    "artArtist": "Li Xiuyi",
+    "artDate": "dated 1843",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-30199-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36152"
+  },
+  {
+    "workId": "censen-shanfang-chunshi",
+    "title": "山房春事二首（其二）",
+    "poetId": "censen",
+    "motifs": [
+      "春",
+      "山水",
+      "废墟"
+    ],
+    "objectID": 35979,
+    "artTitle": "Landscape",
+    "artArtist": "Unidentified artist",
+    "artDate": "",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153564.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/35979"
   }
 ]

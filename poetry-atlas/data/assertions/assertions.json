@@ -3445,5 +3445,405 @@
     "confidence": "C",
     "isPrimary": true,
     "triggerEventId": "baijuyi-e3"
+  },
+  {
+    "id": "a-censen-baixuege-1",
+    "workId": "censen-baixuege",
+    "poetId": "censen",
+    "placeId": "cn-xinjiang-tang-luntai",
+    "date": {
+      "year": 754,
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "中军帐里摆酒给武判官饯行，胡琴琵琶羌笛一起上；出辕门时雪还在下，红旗冻得扯不动。送到轮台东门，人拐过山就看不见了，雪地上只剩一串马蹄印。",
+    "setting": "轮台（唐北庭轮台，今乌鲁木齐一带）东门，八月飞雪日",
+    "rationale": "诗有明文「轮台东门送君去」，创作地在轮台无疑。岑参天宝十三载（754）至至德元载（756）充封常清判官驻北庭，轮台为北庭属县、封常清驻军之所，故系 754 并留 fuzziness 1。⚠️ 此「轮台」为唐轮台（今乌鲁木齐一带），与今巴音郭楞蒙古自治州轮台县（约 84.25/41.78）相距约 400 公里，不是同一地。诗中「瀚海」「天山」为所咏与泛指，非创作地。本数据集的唐轮台点取乌拉泊古城说（学界另有昌吉、米泉诸说），故 confidence 取 B 而非 A。",
+    "sources": [
+      {
+        "id": "quantangshi-199",
+        "title": "全唐诗",
+        "locator": "卷199",
+        "reliability": "B"
+      },
+      {
+        "id": "cen-jiazhou-xinian-kaozheng",
+        "title": "岑嘉州系年考证",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true,
+    "triggerEventId": "censen-e9"
+  },
+  {
+    "id": "a-censen-zoumachuan-1",
+    "workId": "censen-zoumachuan",
+    "poetId": "censen",
+    "placeId": "cn-xinjiang-tang-luntai",
+    "date": {
+      "year": 755,
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "大军夜里出发，风声像刀刮脸，马身上的雪被汗气蒸起来又冻成冰，幕府里写檄文的砚台都冻住了。诗人算出敌人不敢短兵相接，在车师西门等着捷报。",
+    "setting": "轮台，九月夜行军途中",
+    "rationale": "诗有明文「轮台九月风夜吼」，创作地在轮台一带无疑。所送为封常清某次西征，史无明载，年份各家考证在 754—756 之间，故系 755、fuzziness 1、confidence C。诗中「车师」（今吐鲁番西北）为行军所向之地，非创作地。",
+    "sources": [
+      {
+        "id": "quantangshi-199",
+        "title": "全唐诗",
+        "locator": "卷199",
+        "reliability": "B"
+      },
+      {
+        "id": "cen-jiazhou-xinian-kaozheng",
+        "title": "岑嘉州系年考证",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "censen-e10"
+  },
+  {
+    "id": "a-censen-luntaige-1",
+    "workId": "censen-luntaige",
+    "poetId": "censen",
+    "placeId": "cn-xinjiang-tang-luntai",
+    "date": {
+      "year": 755,
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "夜里城头吹角，羽书昨夜刚过渠黎，说单于已在金山西。天亮吹笛，大军开拔，四面鼓声把雪海都震得涌起来。诗人在鼓吹里插了一句「战场白骨缠草根」。",
+    "setting": "轮台城头，大军出征的黎明",
+    "rationale": "「轮台城头夜吹角」「汉兵屯在轮台北」明文，创作地在轮台。与《走马川行》同为送封常清出师之作，所征何事史无明载（一说播仙），年份系 755 并留 fuzziness 1，confidence C。诗中金山（阿尔泰山）、阴山皆为泛指的战地方位语，非创作地。",
+    "sources": [
+      {
+        "id": "quantangshi-199",
+        "title": "全唐诗",
+        "locator": "卷199",
+        "reliability": "B"
+      },
+      {
+        "id": "cen-jiazhou-xinian-kaozheng",
+        "title": "岑嘉州系年考证",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "censen-e10"
+  },
+  {
+    "id": "a-censen-huoshanyun-1",
+    "workId": "censen-huoshanyun",
+    "poetId": "censen",
+    "placeId": "cn-xinjiang-huoshan",
+    "date": {
+      "year": 755,
+      "certainty": "approximate",
+      "fuzziness": 2
+    },
+    "circumstance": "五月的火山上云厚得像凝住，鸟飞千里也不敢过来。这片云缭绕着吞掉铁关的树，氤氲着半掩交河戍。送人顺着火山以东的远路走，山上一片孤云跟着马去了。",
+    "setting": "火山（今吐鲁番火焰山）—赤亭—交河戍一带，五月",
+    "rationale": "诗明文点出赤亭、铁关、交河戍三个地名，皆在今吐鲁番一带，故系于火山—交河戍一带。但岑参是否亲至此地、此行是赴任抑或送人，史料无明文——他两度出塞往来西域，经西州（今吐鲁番）一带在情理之中，却无直接证据，故 confidence 取 C、fuzziness 2。本数据集火山点为区域代表点（isCentroid: true），不可当作某座具体山峰读。",
+    "sources": [
+      {
+        "id": "quantangshi-199",
+        "title": "全唐诗",
+        "locator": "卷199",
+        "reliability": "B"
+      },
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      },
+      {
+        "id": "cen-jiazhou-xinian-kaozheng",
+        "title": "岑嘉州系年考证",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "censen-e9"
+  },
+  {
+    "id": "a-censen-liangzhou-yeji-1",
+    "workId": "censen-liangzhou-yeji",
+    "poetId": "censen",
+    "placeId": "cn-gansu-liangzhou",
+    "date": {
+      "year": 750,
+      "certainty": "approximate",
+      "fuzziness": 2
+    },
+    "circumstance": "弯月升上城头，照着凉州城。城里有十万人家，一半胡人会弹琵琶。一曲弹罢肝肠欲断，河西幕府里的老朋友们，一别就是三五年。花门楼前看见秋草，他忽然不服气：怎么能就这么贫贱着老去。",
+    "setting": "凉州（今甘肃武威）馆中，秋夜",
+    "rationale": "诗明文「城头月出照凉州」「凉州七里十万家」，创作地在凉州无疑。但岑参两度出塞皆经凉州，此诗系首次（749—751 赴安西）抑或再度（754 赴北庭）途中，各家考证不一，故年份取两次出塞之间 750 并留 fuzziness 2、confidence C。「河西幕中多故人」指河西节度使幕府，与凉州地望相合。",
+    "sources": [
+      {
+        "id": "quantangshi-199",
+        "title": "全唐诗",
+        "locator": "卷199",
+        "reliability": "B"
+      },
+      {
+        "id": "cen-jiazhou-xinian-kaozheng",
+        "title": "岑嘉州系年考证",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "censen-e6"
+  },
+  {
+    "id": "a-censen-feng-rujingshi-1",
+    "workId": "censen-feng-rujingshi",
+    "poetId": "censen",
+    "placeId": "cn-xinjiang-anxi-kuqa",
+    "date": {
+      "year": 750,
+      "certainty": "approximate",
+      "fuzziness": 2
+    },
+    "circumstance": "往东望故乡，路长得没有尽头，两只袖子擦泪都擦不干。正碰上一位回京的使者，想写信可是马上没有纸笔，只好托他带句话：报个平安。",
+    "setting": "赴安西道中（天宝八载西行路上）",
+    "rationale": "诗题「逢入京使」说明作于入京使者相遇之处，即赴安西域途之上。但「道上」不是地点，诗中亦无任何地名可据，只能系于此行的目的地安西（龟兹）并明确降级：本条标的是「赴安西道中」这一行程区间，不是某一具体宿顿点，confidence 取 C、fuzziness 2。这是本数据集为数不多需要读者自行注意「区间系地」而非「点系地」的条目。",
+    "sources": [
+      {
+        "id": "quantangshi-201",
+        "title": "全唐诗",
+        "locator": "卷201",
+        "reliability": "B"
+      },
+      {
+        "id": "cen-jiazhou-xinian-kaozheng",
+        "title": "岑嘉州系年考证",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "censen-e6"
+  },
+  {
+    "id": "a-censen-qizhongzuo-1",
+    "workId": "censen-qizhongzuo",
+    "poetId": "censen",
+    "placeId": "cn-xinjiang-anxi-kuqa",
+    "date": {
+      "year": 750,
+      "certainty": "approximate",
+      "fuzziness": 2
+    },
+    "circumstance": "骑马往西走像要走到天上去，离家两个月，月亮圆了两回。今晚还不知道在哪儿过夜，万里平沙，一个人烟也没有。",
+    "setting": "沙碛之中（赴安西道中），日暮",
+    "rationale": "诗题「碛中作」标明在沙碛之中，属赴安西道中。「辞家见月两回圆」可推为离家约两月，与天宝八载（749）西行行程相合。沙碛为一片区域而非定点，本数据集不另立「莫贺延碛」点，系于此行目的地安西并降级标注，confidence C、fuzziness 2。",
+    "sources": [
+      {
+        "id": "quantangshi-201",
+        "title": "全唐诗",
+        "locator": "卷201",
+        "reliability": "B"
+      },
+      {
+        "id": "cen-jiazhou-xinian-kaozheng",
+        "title": "岑嘉州系年考证",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "censen-e6"
+  },
+  {
+    "id": "a-censen-guoqi-1",
+    "workId": "censen-guoqi",
+    "poetId": "censen",
+    "placeId": "cn-xinjiang-anxi-kuqa",
+    "date": {
+      "year": 750,
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "在黄沙碛里走得迷了路，四面望出去，云和天都低低压下来。都说地到了尽头天也就到头了，可他走到了安西，还得再往西。",
+    "setting": "安西（龟兹）以西的沙碛",
+    "rationale": "诗有明文「行到安西更向西」——这是岑参诗里少见的、能直接确定行踪方位的句子：人已到安西，且安西以西尚有行程。地点确凿，故 confidence 取 B；年份随天宝八载（749）赴安西一行系于 750 前后，fuzziness 1。",
+    "sources": [
+      {
+        "id": "quantangshi-201",
+        "title": "全唐诗",
+        "locator": "卷201",
+        "reliability": "B"
+      },
+      {
+        "id": "cen-jiazhou-xinian-kaozheng",
+        "title": "岑嘉州系年考证",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true,
+    "triggerEventId": "censen-e7"
+  },
+  {
+    "id": "a-censen-du-long-sijia-1",
+    "workId": "censen-du-long-sijia",
+    "poetId": "censen",
+    "placeId": "cn-shaanxi-longshan",
+    "date": {
+      "year": 754,
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "往西去轮台还有万里，他知道家信从此会越来越稀。陇山的鹦鹉会说话，那就托它替我多寄几封家书吧。",
+    "setting": "陇山（陇坻）道上，西向轮台",
+    "rationale": "诗题「赴北庭度陇思家」与「陇山鹦鹉能言语」皆明文，创作地在陇山道上确凿。天宝十三载（754）岑参再赴北庭，度陇即在此行，故系 754、fuzziness 1。因陇山绵延陕甘两省、本数据集该点为区域代表点（isCentroid: true），不能读作某一具体关口，故 confidence 取 B 而非 A。",
+    "sources": [
+      {
+        "id": "quantangshi-201",
+        "title": "全唐诗",
+        "locator": "卷201",
+        "reliability": "B"
+      },
+      {
+        "id": "cen-jiazhou-xinian-kaozheng",
+        "title": "岑嘉州系年考证",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true,
+    "triggerEventId": "censen-e9"
+  },
+  {
+    "id": "a-censen-wuwei-song-liu-1",
+    "workId": "censen-wuwei-song-liu",
+    "poetId": "censen",
+    "placeId": "cn-gansu-liangzhou",
+    "date": {
+      "year": 755,
+      "certainty": "approximate",
+      "fuzziness": 2
+    },
+    "circumstance": "五月的火山那边行人稀少，看他骑马去得像鸟一样快。都护的行营在太白星以西，号角一响，胡地的天就亮了。",
+    "setting": "武威（凉州），五月送刘判官赴碛西",
+    "rationale": "诗题「武威送刘判官赴碛西行军」明文标出创作地武威（今甘肃武威），地点确凿。⚠️ 诗中「火山五月行人少」是遥想刘判官将去之处（今吐鲁番），属所咏之地，不是创作地——本条系的是送别发生之地武威。年份随岑参两度出塞经凉州的区间系于 755 前后，fuzziness 2、confidence C。",
+    "sources": [
+      {
+        "id": "quantangshi-201",
+        "title": "全唐诗",
+        "locator": "卷201",
+        "reliability": "B"
+      },
+      {
+        "id": "cen-jiazhou-xinian-kaozheng",
+        "title": "岑嘉州系年考证",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "censen-e9"
+  },
+  {
+    "id": "a-censen-xingjun-jiuri-1",
+    "workId": "censen-xingjun-jiuri",
+    "poetId": "censen",
+    "placeId": "cn-shaanxi-fengxiang",
+    "date": {
+      "year": 757,
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "重阳该登高，他勉强自己去登，可没人送酒来。远远想起故园的菊花，这时候大概正开在战场边上。",
+    "setting": "凤翔行在一带，九月九日",
+    "rationale": "诗题「行军」二字与至德二载（757）岑参在凤翔行在任右补阙相合：是年二月肃宗驻凤翔，九月收复长安，诗作于此间，故「故园菊」才「应傍战场开」。但「行军」只说明随军，未标明具体营地，系于行在所在之凤翔并降级，confidence 取 C、fuzziness 1。⚠️ 长安为所咏之地（故园），非创作地，不另立异说。",
+    "sources": [
+      {
+        "id": "quantangshi-201",
+        "title": "全唐诗",
+        "locator": "卷201",
+        "reliability": "B"
+      },
+      {
+        "id": "cen-jiazhou-xinian-kaozheng",
+        "title": "岑嘉州系年考证",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "censen-e12"
+  },
+  {
+    "id": "a-censen-shanfang-chunshi-1",
+    "workId": "censen-shanfang-chunshi",
+    "poetId": "censen",
+    "placeId": "cn-henan-liangyuan",
+    "date": {
+      "year": 760,
+      "certainty": "approximate",
+      "fuzziness": 5
+    },
+    "circumstance": "黄昏的梁园上乱飞着乌鸦，极目望去萧条得只剩三两户人家。院里的树不知道人已经都不在了，春天一到，还开着从前的花。",
+    "setting": "梁园（汉梁孝王兔园故址，唐宋宋州城东）",
+    "rationale": "诗明文「梁园」，地在唐宋宋州（今河南商丘）城东，汉梁孝王兔园故址。此诗为安史乱后过梁园所作，然具体年份史料无征，各家系年出入较大（约 758—770 之间），故年份取 760、fuzziness 5、confidence 取最低之 C。本数据集梁园点为区域代表点（isCentroid: true），园址范围史无确指。",
+    "sources": [
+      {
+        "id": "quantangshi-201",
+        "title": "全唐诗",
+        "locator": "卷201",
+        "reliability": "B"
+      },
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      },
+      {
+        "id": "cen-jiazhou-xinian-kaozheng",
+        "title": "岑嘉州系年考证",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "censen-e13"
   }
 ]
