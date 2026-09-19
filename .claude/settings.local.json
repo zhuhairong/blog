@@ -4,7 +4,9 @@
       "Bash(git -C \"d:/work/ai_test/blog\" status)",
       "Bash(git -C \"d:/work/ai_test/blog\" diff src/app/page.tsx src/app/globals.css)",
       "Bash(git -C \"d:/work/ai_test/blog\" diff --cached --stat)",
-      "Bash(git -C \"d:/work/ai_test/blog\" status --untracked-files=all)"
+      "Bash(git -C \"d:/work/ai_test/blog\" status --untracked-files=all)",
+      "Bash(mkdir -p public/cloze)",
+      "Bash(cp \"完型填空html/\"* public/cloze/)"
     ]
   }
 }
