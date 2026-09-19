@@ -6,7 +6,8 @@
     "dev": "next dev",
     "atlas:build": "npm --prefix poetry-atlas run build",
     "atlas:check": "npm --prefix poetry-atlas run check",
-    "build": "npm run atlas:build && npm run atlas:check && next build",
+    "build": "npm run atlas:build && npm run atlas:check && next build && npm run fix:trailing-slash",
+    "fix:trailing-slash": "node scripts/fix-trailing-slash.mjs",
     "start": "next start",
     "lint": "eslint"
   },
