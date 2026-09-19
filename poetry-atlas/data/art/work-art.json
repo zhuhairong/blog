@@ -1441,5 +1441,186 @@
     "artCredit": "Gift of Harry Lenart, 1955",
     "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP204840_CRD.jpg",
     "artURL": "https://www.metmuseum.org/art/collection/search/36072"
+  },
+  {
+    "workId": "baijuyi-changhenge",
+    "title": "长恨歌",
+    "poetId": "baijuyi",
+    "motifs": [
+      "仙山",
+      "鹤",
+      "山水"
+    ],
+    "objectID": 36090,
+    "artTitle": "White Crane Mountain, leaf from Album for Zhou Lianggong",
+    "artArtist": "Ye Xin",
+    "artDate": "datable to 1654–55",
+    "artCredit": "Seymour Fund, 1964",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153914.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36090"
+  },
+  {
+    "workId": "baijuyi-pipayin",
+    "title": "琵琶引",
+    "poetId": "baijuyi",
+    "motifs": [
+      "江",
+      "舟",
+      "山水"
+    ],
+    "objectID": 36186,
+    "artTitle": "Landscape",
+    "artArtist": "Song Nian",
+    "artDate": "dated 1898",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP204808_CRD.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36186"
+  },
+  {
+    "workId": "baijuyi-guanyimai",
+    "title": "观刈麦",
+    "poetId": "baijuyi",
+    "motifs": [
+      "田园",
+      "山"
+    ],
+    "objectID": 35986,
+    "artTitle": "Landscape with Chicken",
+    "artArtist": "Cheng Jiasui",
+    "artDate": "",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153842.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/35986"
+  },
+  {
+    "workId": "baijuyi-maitanweng",
+    "title": "卖炭翁",
+    "poetId": "baijuyi",
+    "motifs": [
+      "山",
+      "山水"
+    ],
+    "objectID": 36177,
+    "artTitle": "Landscape",
+    "artArtist": "Wu Tao",
+    "artDate": "",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-30290-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36177"
+  },
+  {
+    "workId": "baijuyi-dalinsi-taohua",
+    "title": "大林寺桃花",
+    "poetId": "baijuyi",
+    "motifs": [
+      "桃",
+      "花鸟",
+      "鹤"
+    ],
+    "objectID": 36105,
+    "artTitle": "Cranes, peach tree, and China rose",
+    "artArtist": "Shen Quan (Shen Pin)",
+    "artDate": "18th century",
+    "artCredit": "The Harry G. C. Packard Collection of Asian Art, Gift of Harry G. C. Packard, and Purchase, Fletcher, Rogers, Harris Brisbane Dick, and Louis V. Bell Funds, Joseph Pulitzer Bequest, and The Annenberg Fund Inc. Gift, 1975",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP277568.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36105"
+  },
+  {
+    "workId": "baijuyi-caotang-chucheng",
+    "title": "香炉峰下新卜山居草堂初成偶题东壁",
+    "poetId": "baijuyi",
+    "motifs": [
+      "竹",
+      "山居"
+    ],
+    "objectID": 36164,
+    "artTitle": "Bamboo",
+    "artArtist": "Chen Ran",
+    "artDate": "",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-30281-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36164"
+  },
+  {
+    "workId": "baijuyi-penglihu-wangui",
+    "title": "彭蠡湖晚归",
+    "poetId": "baijuyi",
+    "motifs": [
+      "水",
+      "湖",
+      "山水"
+    ],
+    "objectID": 36129,
+    "artTitle": "Landscapes Painted for Wang Kui",
+    "artArtist": "Wang Jian",
+    "artDate": "1674–76",
+    "artCredit": "Gift of Douglas Dillon, 1979",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/1979_500_1_b_sf.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36129"
+  },
+  {
+    "workId": "baijuyi-qiantanghu-chunxing",
+    "title": "钱唐湖春行",
+    "poetId": "baijuyi",
+    "motifs": [
+      "春",
+      "花鸟"
+    ],
+    "objectID": 36106,
+    "artTitle": "Crabapple, China rose, and Indian flycatcher",
+    "artArtist": "Shen Quan (Shen Nanpin)",
+    "artDate": "1750",
+    "artCredit": "The Harry G. C. Packard Collection of Asian Art, Gift of Harry G. C. Packard, and Purchase, Fletcher, Rogers, Harris Brisbane Dick, and Louis V. Bell Funds, Joseph Pulitzer Bequest, and The Annenberg Fund Inc. Gift, 1975",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP221131.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36106"
+  },
+  {
+    "workId": "baijuyi-hangzhou-chunwang",
+    "title": "杭州春望",
+    "poetId": "baijuyi",
+    "motifs": [
+      "山水",
+      "城"
+    ],
+    "objectID": 36171,
+    "artTitle": "Landscapes",
+    "artArtist": "Zhang Zhiwan",
+    "artDate": "dated 1875",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP161429.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36171"
+  },
+  {
+    "workId": "baijuyi-jianglou-xiwang",
+    "title": "江楼夕望招客",
+    "poetId": "baijuyi",
+    "motifs": [
+      "夜",
+      "月",
+      "山水"
+    ],
+    "objectID": 36180,
+    "artTitle": "Landscape",
+    "artArtist": "Xu Xiang",
+    "artDate": "dated 1889",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-30334-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36180"
+  },
+  {
+    "workId": "baijuyi-guyuancao",
+    "title": "赋得古原草送别",
+    "poetId": "baijuyi",
+    "motifs": [
+      "山",
+      "山水"
+    ],
+    "objectID": 36102,
+    "artTitle": "Landscape",
+    "artArtist": "Fang Shishu",
+    "artDate": "",
+    "artCredit": "Gift of Mr. and Mrs. Earl Morse, 1972",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/1972_278_8_O.JPG",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36102"
   }
 ]

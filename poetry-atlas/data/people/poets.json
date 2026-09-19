@@ -3622,5 +3622,485 @@
         ]
       }
     ]
+  },
+  {
+    "id": "baijuyi",
+    "name": "白居易",
+    "courtesyName": "乐天",
+    "pseudonym": "香山居士",
+    "aliases": [
+      "白乐天",
+      "白香山",
+      "白傅",
+      "白太傅"
+    ],
+    "dynasty": "唐",
+    "birth": 772,
+    "death": 846,
+    "nativePlace": [
+      {
+        "placeId": "cn-henan-xinzheng",
+        "type": "birth",
+        "confidence": "B",
+        "note": "生于郑州新郑（今河南新郑）。《新唐书》本传称其先世太原人，后徙下邽；「太原」为郡望，非生地。世又以其晚年居洛阳香山，称「白香山」。"
+      }
+    ],
+    "summary": "唐代存诗最多的诗人之一，新乐府运动的旗手。诗要「为事而作」，要老妪能解；他自己编集、抄五本分藏五处——中国诗人里第一个这样认真经营身后传播的人。",
+    "biography": "白居易（772—846），字乐天，号香山居士。贞元十六年（800）进士及第，元和初任盩厔尉、翰林学士、左拾遗，以《秦中吟》《新乐府》讽谕时事。元和十年（815）宰相武元衡遇刺，他上疏请捕贼，被劾「越职言事」又加以「伤风教」之谤，贬江州司马——这是一生的分水岭，此后锋芒渐敛而诗境转深。历忠州、杭州、苏州刺史，所至有政声。晚年定居洛阳履道里，与香山寺僧如满结香火社，自号香山居士，会昌六年卒，葬龙门香山。他生前自编《白氏长庆集》七十五卷，抄写五部，分藏洛阳、庐山东林寺、苏州南禅院等处，是中国最早有意识地经营「文本传世」的诗人。",
+    "events": [
+      {
+        "id": "baijuyi-e1",
+        "poetId": "baijuyi",
+        "type": "birth",
+        "title": "生于郑州新郑（772）",
+        "placeId": "cn-henan-xinzheng",
+        "date": {
+          "year": 772,
+          "original": "大历七年",
+          "certainty": "exact",
+          "fuzziness": 0
+        },
+        "description": "生年两《唐书》一致（卒年 846、年七十五逆推），无争议。生地为其家寓居之新郑。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "jts-baijuyi",
+            "title": "旧唐书·白居易传",
+            "author": "刘昫等",
+            "locator": "卷166下",
+            "reliability": "A"
+          },
+          {
+            "id": "xts-baijuyi",
+            "title": "新唐书·白居易传",
+            "author": "欧阳修等",
+            "locator": "卷119",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "baijuyi-e2",
+        "poetId": "baijuyi",
+        "type": "travel",
+        "title": "避藩镇之乱，随家徙居符离",
+        "placeId": "cn-anhui-fuli",
+        "date": {
+          "year": 783,
+          "original": "建中四年",
+          "certainty": "approximate",
+          "fuzziness": 3
+        },
+        "description": "建中年间河南藩镇连兵，白居易随家避居宿州符离，少年时代在此度过十余年。具体迁徙年份史料无明文，只能系于战乱最剧的 783 年前后。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "zhongguo-lishi-diming-cidian",
+            "title": "中国历史地名大辞典",
+            "author": "史为乐",
+            "edition": "中国社会科学出版社",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "baijuyi-e3",
+        "poetId": "baijuyi",
+        "type": "recognition",
+        "title": "以《赋得古原草送别》谒顾况于长安",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 787,
+          "original": "贞元三年",
+          "certainty": "approximate",
+          "fuzziness": 2
+        },
+        "description": "《唐摭言》载：白居易以诗谒著作郎顾况，况戏之曰「长安米贵，居大不易」，及读至「野火烧不尽，春风吹又生」，乃叹「有句如此，居天下有甚难」。此事出自五代笔记，属小说家言，未必实录，故 confidence 取 C。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "tang-zhiyan",
+            "title": "唐摭言",
+            "author": "王定保",
+            "locator": "卷七",
+            "reliability": "C"
+          }
+        ]
+      },
+      {
+        "id": "baijuyi-e4",
+        "poetId": "baijuyi",
+        "type": "exam",
+        "title": "进士及第（800）",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 800,
+          "original": "贞元十六年",
+          "certainty": "exact",
+          "fuzziness": 0
+        },
+        "description": "贞元十六年进士及第，年二十九，同榜十七人中最年少。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "jts-baijuyi",
+            "title": "旧唐书·白居易传",
+            "author": "刘昫等",
+            "locator": "卷166下",
+            "reliability": "A"
+          },
+          {
+            "id": "xts-baijuyi",
+            "title": "新唐书·白居易传",
+            "author": "欧阳修等",
+            "locator": "卷119",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "baijuyi-e5",
+        "poetId": "baijuyi",
+        "type": "office",
+        "title": "授秘书省校书郎（803）",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 803,
+          "original": "贞元十九年",
+          "certainty": "exact",
+          "fuzziness": 0
+        },
+        "description": "贞元十九年登书判拔萃科，授秘书省校书郎，居长安常乐里，与元稹订交。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "jts-baijuyi",
+            "title": "旧唐书·白居易传",
+            "author": "刘昫等",
+            "locator": "卷166下",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "baijuyi-e6",
+        "poetId": "baijuyi",
+        "type": "office",
+        "title": "自校书郎出任盩厔县尉（806）",
+        "placeId": "cn-shaanxi-zhouzhi",
+        "date": {
+          "year": 806,
+          "original": "元和元年",
+          "certainty": "exact",
+          "fuzziness": 0
+        },
+        "description": "元和元年冬十二月由校书郎出为盩厔（今陕西周至）县尉。陈鸿《长恨歌传》明记此事，为《长恨歌》系地的关键时间锚点。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "changhenge-zhuan",
+            "title": "长恨歌传",
+            "author": "陈鸿",
+            "reliability": "B"
+          },
+          {
+            "id": "jts-baijuyi",
+            "title": "旧唐书·白居易传",
+            "author": "刘昫等",
+            "locator": "卷166下",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "baijuyi-e7",
+        "poetId": "baijuyi",
+        "type": "creation",
+        "title": "与陈鸿、王质夫游仙游寺，作《长恨歌》",
+        "placeId": "cn-shaanxi-zhouzhi",
+        "date": {
+          "year": 806,
+          "original": "元和元年冬十二月",
+          "certainty": "exact",
+          "fuzziness": 0
+        },
+        "description": "陈鸿《长恨歌传》：「元和元年冬十二月，太原白乐天自校书郎尉于盩厔，鸿与琅琊王质夫家于是邑，暇日相携游仙游寺，话及此事，相与感叹。质夫举酒于乐天前曰：……乐天深于诗，多于情者也，试为歌之，如何？」这是唐诗系地里少见的、有同时代人明文的创作现场记录。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "changhenge-zhuan",
+            "title": "长恨歌传",
+            "author": "陈鸿",
+            "reliability": "B"
+          },
+          {
+            "id": "quantangshi-435",
+            "title": "全唐诗",
+            "locator": "卷435",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "baijuyi-e8",
+        "poetId": "baijuyi",
+        "type": "office",
+        "title": "拜左拾遗、翰林学士",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 808,
+          "original": "元和三年",
+          "certainty": "exact",
+          "fuzziness": 0
+        },
+        "description": "元和二年召为翰林学士，三年拜左拾遗。任谏官期间作《秦中吟》十首、《新乐府》五十首，「篇篇无空文，句句必尽规」，是其政治诗最锋利的时期。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "jts-baijuyi",
+            "title": "旧唐书·白居易传",
+            "author": "刘昫等",
+            "locator": "卷166下",
+            "reliability": "A"
+          },
+          {
+            "id": "xts-baijuyi",
+            "title": "新唐书·白居易传",
+            "author": "欧阳修等",
+            "locator": "卷119",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "baijuyi-e9",
+        "poetId": "baijuyi",
+        "type": "demotion",
+        "title": "贬江州司马（815）",
+        "placeId": "cn-jiangxi-jiujiang",
+        "date": {
+          "year": 815,
+          "original": "元和十年",
+          "certainty": "exact",
+          "fuzziness": 0
+        },
+        "description": "宰相武元衡遇刺身亡，白居易上疏请捕贼，被劾「越职言事」；又以其母看花坠井死而白作《赏花》《新井》诗，谓「伤风教」，遂贬江州司马。后世多疑后一条系罗织，但两《唐书》皆载。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "jts-baijuyi",
+            "title": "旧唐书·白居易传",
+            "author": "刘昫等",
+            "locator": "卷166下",
+            "reliability": "A"
+          },
+          {
+            "id": "xts-baijuyi",
+            "title": "新唐书·白居易传",
+            "author": "欧阳修等",
+            "locator": "卷119",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "baijuyi-e10",
+        "poetId": "baijuyi",
+        "type": "creation",
+        "title": "浔阳江头作《琵琶引》（816）",
+        "placeId": "cn-jiangxi-jiujiang",
+        "date": {
+          "year": 816,
+          "original": "元和十一年秋",
+          "certainty": "exact",
+          "fuzziness": 0
+        },
+        "description": "诗序自述：「元和十年，予左迁九江郡司马。明年秋，送客湓浦口，闻舟船中夜弹琵琶者……因为长句歌以赠之。凡六百一十六言，命曰《琵琶引》。」时间、地点、缘起皆作者自述，是本数据集最硬的一条系地。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "quantangshi-435",
+            "title": "全唐诗",
+            "locator": "卷435",
+            "reliability": "B"
+          },
+          {
+            "id": "baishi-changqing-ji",
+            "title": "白氏长庆集",
+            "author": "白居易",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "baijuyi-e11",
+        "poetId": "baijuyi",
+        "type": "seclusion",
+        "title": "筑庐山遗爱草堂（817）",
+        "placeId": "cn-jiangxi-lushan",
+        "date": {
+          "year": 817,
+          "original": "元和十二年",
+          "certainty": "exact",
+          "fuzziness": 0
+        },
+        "description": "元和十二年春在庐山香炉峰下遗爱寺旁筑草堂，《庐山草堂记》详载其制。草堂成后常宿山中，与东林、西林寺僧往还。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "quantangshi-439",
+            "title": "全唐诗",
+            "locator": "卷439",
+            "reliability": "B"
+          },
+          {
+            "id": "baishi-changqing-ji",
+            "title": "白氏长庆集",
+            "author": "白居易",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "baijuyi-e12",
+        "poetId": "baijuyi",
+        "type": "office",
+        "title": "量移忠州刺史（818）",
+        "placeId": "cn-sichuan-zhongxian",
+        "date": {
+          "year": 818,
+          "original": "元和十三年",
+          "certainty": "exact",
+          "fuzziness": 0
+        },
+        "description": "元和十三年冬量移忠州（今重庆忠县）刺史，溯江而上经三峡赴任。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-baijuyi",
+            "title": "旧唐书·白居易传",
+            "author": "刘昫等",
+            "locator": "卷166下",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "baijuyi-e13",
+        "poetId": "baijuyi",
+        "type": "office",
+        "title": "出为杭州刺史（822）",
+        "placeId": "cn-zhejiang-hangzhou",
+        "date": {
+          "year": 822,
+          "original": "长庆二年冬十月",
+          "certainty": "exact",
+          "fuzziness": 0
+        },
+        "description": "长庆二年冬十月到杭州任，卷443 诗题自述「予以长庆二年冬十月到杭州」。任内筑堤捍湖、疏浚六井；今西湖白堤非其原筑，但钱塘门外至孤山一带之堤确为其所筑。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "quantangshi-443",
+            "title": "全唐诗",
+            "locator": "卷443",
+            "reliability": "B"
+          },
+          {
+            "id": "jts-baijuyi",
+            "title": "旧唐书·白居易传",
+            "author": "刘昫等",
+            "locator": "卷166下",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "baijuyi-e14",
+        "poetId": "baijuyi",
+        "type": "office",
+        "title": "苏州刺史（825）",
+        "placeId": "cn-jiangsu-suzhou",
+        "date": {
+          "year": 825,
+          "original": "宝历元年",
+          "certainty": "exact",
+          "fuzziness": 0
+        },
+        "description": "宝历元年五月除苏州刺史，次年因病去任。离苏时「苏州十万户，尽作婴儿啼」。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-baijuyi",
+            "title": "旧唐书·白居易传",
+            "author": "刘昫等",
+            "locator": "卷166下",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "baijuyi-e15",
+        "poetId": "baijuyi",
+        "type": "seclusion",
+        "title": "晚年定居洛阳履道里，号香山居士",
+        "placeId": "cn-henan-luoyang",
+        "date": {
+          "year": 835,
+          "original": "大和九年",
+          "certainty": "approximate",
+          "fuzziness": 3
+        },
+        "description": "大和末年起以太子宾客分司东都，定居洛阳履道里，与香山寺僧如满结香火社，自号香山居士，晚年诗多「闲适」之什。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-baijuyi",
+            "title": "旧唐书·白居易传",
+            "author": "刘昫等",
+            "locator": "卷166下",
+            "reliability": "A"
+          },
+          {
+            "id": "xts-baijuyi",
+            "title": "新唐书·白居易传",
+            "author": "欧阳修等",
+            "locator": "卷119",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "baijuyi-e16",
+        "poetId": "baijuyi",
+        "type": "death",
+        "title": "卒于洛阳，葬龙门香山（846）",
+        "placeId": "cn-henan-luoyang",
+        "date": {
+          "year": 846,
+          "original": "会昌六年",
+          "certainty": "exact",
+          "fuzziness": 0
+        },
+        "description": "会昌六年八月卒，年七十五，赠尚书右仆射，谥文。遗命葬洛阳龙门香山寺侧，李商隐为撰墓碑铭。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "jts-baijuyi",
+            "title": "旧唐书·白居易传",
+            "author": "刘昫等",
+            "locator": "卷166下",
+            "reliability": "A"
+          },
+          {
+            "id": "xts-baijuyi",
+            "title": "新唐书·白居易传",
+            "author": "欧阳修等",
+            "locator": "卷119",
+            "reliability": "A"
+          }
+        ]
+      }
+    ]
   }
 ]

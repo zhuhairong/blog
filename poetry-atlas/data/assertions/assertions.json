@@ -3111,5 +3111,339 @@
     "confidence": "C",
     "isPrimary": true,
     "triggerEventId": "menghaoran-e6"
+  },
+  {
+    "id": "a-baijuyi-changhenge-1",
+    "workId": "baijuyi-changhenge",
+    "poetId": "baijuyi",
+    "placeId": "cn-shaanxi-zhouzhi",
+    "date": {
+      "year": 806,
+      "certainty": "exact",
+      "fuzziness": 0
+    },
+    "circumstance": "三个人在寺里说起开元天宝旧事，感慨之余，王质夫举酒相劝：「非遇出世之才润色之，则与时消没——乐天深于诗，多于情者也，试为歌之。」于是有了这首诗。诗里写的马嵬在今兴平、剑阁在蜀中，都非创作地，而是歌中所咏之地。",
+    "setting": "盩厔（今陕西周至）仙游寺，冬十二月与陈鸿、王质夫同游",
+    "rationale": "创作地有同时代人陈鸿《长恨歌传》明文：「元和元年冬十二月，太原白乐天自校书郎尉于盩厔，鸿与琅琊王质夫家于是邑，暇日相携游仙游寺，话及此事」。地点精确到仙游寺，但本数据集的盩厔点为县城中心而非寺址，故不标 site 级，confidence 取 B。注意区分：诗中所咏马嵬坡（今兴平马嵬镇）是事件地，不是创作地，本条不作并列异说。",
+    "sources": [
+      {
+        "id": "changhenge-zhuan",
+        "title": "长恨歌传",
+        "author": "陈鸿",
+        "reliability": "B"
+      },
+      {
+        "id": "quantangshi-435",
+        "title": "全唐诗",
+        "locator": "卷435",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true,
+    "triggerEventId": "baijuyi-e7"
+  },
+  {
+    "id": "a-baijuyi-pipayin-1",
+    "workId": "baijuyi-pipayin",
+    "poetId": "baijuyi",
+    "placeId": "cn-jiangxi-jiujiang",
+    "date": {
+      "year": 816,
+      "certainty": "exact",
+      "fuzziness": 0
+    },
+    "circumstance": "送客送到江边，忽然听见船里有人弹琵琶，一听是京城的味道。请过来一见，是个嫁作商人妇的倡女，说到「去来江口守空船，绕船月明江水寒」，白居易听完说的是「同是天涯沦落人」——把自己和她放在了同一条船上。",
+    "setting": "江州浔阳城西湓浦口，秋夜舟中",
+    "rationale": "诗序自述时间地点缘起：「元和十年，予左迁九江郡司马。明年秋，送客湓浦口，闻舟船中夜弹琵琶者……因为长句歌以赠之。」作者自述、年月清晰，是全数据集中最可靠的一类系地，confidence 取 A。",
+    "sources": [
+      {
+        "id": "quantangshi-435",
+        "title": "全唐诗",
+        "locator": "卷435",
+        "reliability": "B"
+      },
+      {
+        "id": "baishi-changqing-ji",
+        "title": "白氏长庆集",
+        "author": "白居易",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "A",
+    "isPrimary": true,
+    "triggerEventId": "baijuyi-e10"
+  },
+  {
+    "id": "a-baijuyi-guanyimai-1",
+    "workId": "baijuyi-guanyimai",
+    "poetId": "baijuyi",
+    "placeId": "cn-shaanxi-zhouzhi",
+    "date": {
+      "year": 806,
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "五月麦黄，他去看农人收麦：壮丁在南冈，妇姑担饭，还有一个抱着孩子的贫妇在拾别人落下的麦穗，说自己家的田交完税就没了。白居易记下来，最后记的是自己的惭愧。",
+    "setting": "盩厔县郊麦田，五月",
+    "rationale": "诗题下自注「时为盩厔县尉」，作者自注任职地，系地可靠。任盩厔尉在元和元年冬至元和二年（806—807），五月麦收当在其间，故年份给 806 并留 fuzziness 1。县尉需巡行乡里，观刈麦当在县境田野而非县城，故地点用盩厔 county 点、confidence 标 B。",
+    "sources": [
+      {
+        "id": "quantangshi-424",
+        "title": "全唐诗",
+        "locator": "卷424",
+        "reliability": "B"
+      },
+      {
+        "id": "baishi-changqing-ji",
+        "title": "白氏长庆集",
+        "author": "白居易",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true,
+    "triggerEventId": "baijuyi-e6"
+  },
+  {
+    "id": "a-baijuyi-maitanweng-1",
+    "workId": "baijuyi-maitanweng",
+    "poetId": "baijuyi",
+    "placeId": "cn-shaanxi-xian",
+    "date": {
+      "year": 809,
+      "certainty": "approximate",
+      "fuzziness": 2
+    },
+    "circumstance": "老人在南山烧炭，指望天冷好卖个价钱；雪夜把炭车赶进城，迎面来了宫里的使者，拿半匹纱一丈绫就把一千多斤炭「买」走了。他写这首诗就是为了这一句：苦宫市也。",
+    "setting": "长安城南终南山中取材，市南门外被宫使强夺",
+    "rationale": "《新乐府》五十首作于元和四年（809）前后任左拾遗、翰林学士时，组诗整体系年有据而单篇多无明文，故年份取 809、fuzziness 2、confidence C。诗中所咏「南山」一般指长安城南终南山，市南门指长安城南门，故系于长安。这是讽谕诗的概括性场景，不宜当作某次具体事件的实录。",
+    "sources": [
+      {
+        "id": "quantangshi-427",
+        "title": "全唐诗",
+        "locator": "卷427",
+        "reliability": "B"
+      },
+      {
+        "id": "jts-baijuyi",
+        "title": "旧唐书·白居易传",
+        "author": "刘昫等",
+        "locator": "卷166下",
+        "reliability": "A"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "baijuyi-e8"
+  },
+  {
+    "id": "a-baijuyi-dalinsi-taohua-1",
+    "workId": "baijuyi-dalinsi-taohua",
+    "poetId": "baijuyi",
+    "placeId": "cn-jiangxi-lushan",
+    "date": {
+      "year": 817,
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "山下花都谢了，走到山寺里却看见桃花刚开。他先说「长恨春归无觅处」，再自己回答：原来春天跑到这儿来了。",
+    "setting": "庐山大林寺，四月",
+    "rationale": "诗在《全唐诗》卷439，该卷为白居易江州司马任内（815—818）之作；又元和十二年（817）春在庐山香炉峰下筑草堂，常宿山寺，游大林寺最可能在此年四月，故系 817 并留 fuzziness 1。「山寺桃花」明言寺中，但本数据集的庐山点为山体代表点，并非大林寺精确位置，故 confidence 取 B 而不取 A。",
+    "sources": [
+      {
+        "id": "quantangshi-439",
+        "title": "全唐诗",
+        "locator": "卷439",
+        "reliability": "B"
+      },
+      {
+        "id": "baishi-changqing-ji",
+        "title": "白氏长庆集",
+        "author": "白居易",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true,
+    "triggerEventId": "baijuyi-e11"
+  },
+  {
+    "id": "a-baijuyi-caotang-chucheng-1",
+    "workId": "baijuyi-caotang-chucheng",
+    "poetId": "baijuyi",
+    "placeId": "cn-jiangxi-lushan",
+    "date": {
+      "year": 817,
+      "certainty": "exact",
+      "fuzziness": 0
+    },
+    "circumstance": "五架三间，石阶桂柱，竹编墙。南檐冬天晒得到太阳，北户夏天迎得到风。他计划来春再修东厢，把妻子接来住。贬官三年，他开始认真安排生活了。",
+    "setting": "庐山香炉峰下遗爱寺旁，新筑草堂",
+    "rationale": "《庐山草堂记》与《全唐诗》卷439 诗题互证：元和十二年（817）春草堂初成。草堂在香炉峰下遗爱寺侧，本数据集庐山点即香炉峰一带代表点，故系于此。年份有《草堂记》明文，confidence 取 B（地点精度受限于山体代表点）。",
+    "sources": [
+      {
+        "id": "quantangshi-439",
+        "title": "全唐诗",
+        "locator": "卷439",
+        "reliability": "B"
+      },
+      {
+        "id": "baishi-changqing-ji",
+        "title": "白氏长庆集",
+        "author": "白居易",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true,
+    "triggerEventId": "baijuyi-e11"
+  },
+  {
+    "id": "a-baijuyi-penglihu-wangui-1",
+    "workId": "baijuyi-penglihu-wangui",
+    "poetId": "baijuyi",
+    "placeId": "cn-jiangxi-poyanghu",
+    "date": {
+      "year": 817,
+      "certainty": "approximate",
+      "fuzziness": 2
+    },
+    "circumstance": "湖上千白点是飞起的鸟，半红轮是落下去的太阳——风景好到不像该发愁的地方。可他最后说：凡是到这儿来望的人，没几个不愁。",
+    "setting": "彭蠡湖（今鄱阳湖）上，日暮归舟",
+    "rationale": "诗在《全唐诗》卷439（江州时期 815—818）；白居易江州任内屡有庐山、彭蠡之游，但本诗无明确系年，只能系于江州时期中段 817 前后，fuzziness 2、confidence C。彭蠡湖为唐时对鄱阳湖的称呼，本数据集该点为湖面中心（isCentroid: true），仅作示意，唐代湖界与今不同，不可当作精确位置读。",
+    "sources": [
+      {
+        "id": "quantangshi-439",
+        "title": "全唐诗",
+        "locator": "卷439",
+        "reliability": "B"
+      },
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "baijuyi-e11"
+  },
+  {
+    "id": "a-baijuyi-qiantanghu-chunxing-1",
+    "workId": "baijuyi-qiantanghu-chunxing",
+    "poetId": "baijuyi",
+    "placeId": "cn-zhejiang-hangzhou",
+    "date": {
+      "year": 823,
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "从孤山寺北贾亭西出发，沿湖往东走：水面刚涨平，莺争暖树，燕啄新泥，花快要看花了眼，草才刚没过马蹄。走到绿杨阴里的白沙堤，还嫌不够。",
+    "setting": "杭州西湖（唐称钱唐湖）孤山寺至白沙堤一带，早春骑马行游",
+    "rationale": "诗在《全唐诗》卷443，该卷为白居易杭州刺史任内之作；同卷诗题自述到任在长庆二年（822）十月，故西湖早春之作最早为次年（823）春，系 823 并留 fuzziness 1。诗题「钱唐湖」即今杭州西湖，孤山寺、白沙堤均在今西湖范围内，地点确凿。",
+    "sources": [
+      {
+        "id": "quantangshi-443",
+        "title": "全唐诗",
+        "locator": "卷443",
+        "reliability": "B"
+      },
+      {
+        "id": "jts-baijuyi",
+        "title": "旧唐书·白居易传",
+        "author": "刘昫等",
+        "locator": "卷166下",
+        "reliability": "A"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true,
+    "triggerEventId": "baijuyi-e13"
+  },
+  {
+    "id": "a-baijuyi-hangzhou-chunwang-1",
+    "workId": "baijuyi-hangzhou-chunwang",
+    "poetId": "baijuyi",
+    "placeId": "cn-zhejiang-hangzhou",
+    "date": {
+      "year": 823,
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "登楼东望，曙光照在望海楼上，江堤白沙一片。一联里摆出伍子胥的庙和苏小小的家——一个冤魂，一个艳名，共享这座城的春天。",
+    "setting": "杭州城东望海楼，春晨",
+    "rationale": "诗在《全唐诗》卷443（杭州时期）。望海楼在杭州城东，伍员庙、苏小家皆杭州实地，地点确凿；具体年份无明文，随杭州任内系于 823 前后，fuzziness 1、confidence B。",
+    "sources": [
+      {
+        "id": "quantangshi-443",
+        "title": "全唐诗",
+        "locator": "卷443",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true,
+    "triggerEventId": "baijuyi-e13"
+  },
+  {
+    "id": "a-baijuyi-jianglou-xiwang-1",
+    "workId": "baijuyi-jianglou-xiwang",
+    "poetId": "baijuyi",
+    "placeId": "cn-zhejiang-hangzhou",
+    "date": {
+      "year": 823,
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "城里万家灯火，水中央一道星河。风吹古树的声音像下雨，月照平沙的白像结霜——用两个假的冷，反衬一个真的热。招人来同销暑。",
+    "setting": "杭州江楼，夏夜",
+    "rationale": "诗在《全唐诗》卷443（杭州时期）。江楼在杭州城畔临江，「灯火万家城四畔」明言城中，地点确凿；年份无明文，随杭州任内系于 823 前后，fuzziness 1、confidence C（连系年带系地均无直接证据，只有卷次归属）。",
+    "sources": [
+      {
+        "id": "quantangshi-443",
+        "title": "全唐诗",
+        "locator": "卷443",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "baijuyi-e13"
+  },
+  {
+    "id": "a-baijuyi-guyuancao-1",
+    "workId": "baijuyi-guyuancao",
+    "poetId": "baijuyi",
+    "placeId": "cn-shaanxi-xian",
+    "date": {
+      "year": 787,
+      "certainty": "approximate",
+      "fuzziness": 3
+    },
+    "circumstance": "一首命题习作：原上草一岁一枯荣，野火烧不尽，春风吹又生。后四句才落到送别上——远芳侵古道，晴翠接荒城，又送王孙去，萋萋满别情。",
+    "setting": "长安，应进士举前行卷干谒",
+    "rationale": "系地只能到「在长安应举」这一层。《唐摭言》载白居易以诗谒顾况，况读至「野火烧不尽，春风吹又生」而改容——此事出自五代笔记，属小说家言，未可尽信，且即便属实也只说明作于长安干谒期间；另有作于符离一说。「古原」究系何地无从考证，故不立具体地点的异说，confidence 取 C、fuzziness 3。",
+    "sources": [
+      {
+        "id": "tang-zhiyan",
+        "title": "唐摭言",
+        "author": "王定保",
+        "locator": "卷七",
+        "reliability": "C"
+      },
+      {
+        "id": "jts-baijuyi",
+        "title": "旧唐书·白居易传",
+        "author": "刘昫等",
+        "locator": "卷166下",
+        "reliability": "A"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "baijuyi-e3"
   }
 ]

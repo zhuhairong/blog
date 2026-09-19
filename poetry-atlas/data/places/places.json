@@ -3087,5 +3087,106 @@
         "reliability": "B"
       }
     ]
+  },
+  {
+    "id": "cn-henan-xinzheng",
+    "historicalName": "郑州新郑县",
+    "historicalEra": "唐",
+    "modernName": "河南省新郑市",
+    "modernHierarchy": {
+      "province": "河南省",
+      "city": "郑州市",
+      "district": "新郑市"
+    },
+    "coordinates": [
+      113.7249,
+      34.39621
+    ],
+    "precision": "county",
+    "isCentroid": false,
+    "aliases": [
+      "新郑"
+    ],
+    "kind": "county",
+    "note": "白居易生地。其家自太原徙下邽（今陕西渭南），至其祖父白锽、父亲白季庚时寓居新郑，白居易即生于新郑县宅。注意：白居易「太原人」是郡望，不是生地。",
+    "sources": [
+      {
+        "id": "xts-baijuyi",
+        "title": "新唐书·白居易传",
+        "author": "欧阳修等",
+        "locator": "卷119",
+        "reliability": "A"
+      },
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-anhui-fuli",
+    "historicalName": "宿州符离县",
+    "historicalEra": "唐",
+    "modernName": "安徽省宿州市埇桥区符离镇",
+    "modernHierarchy": {
+      "province": "安徽省",
+      "city": "宿州市",
+      "district": "埇桥区"
+    },
+    "coordinates": [
+      116.97385,
+      33.75468
+    ],
+    "precision": "township",
+    "isCentroid": false,
+    "aliases": [
+      "符离",
+      "符离集"
+    ],
+    "kind": "township",
+    "note": "白居易少年避中原藩镇之乱，随家居此，前后约十余年。他后来反复追忆的「江南」，底色实成于符离，而非晚年所守的苏杭。",
+    "sources": [
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-jiangxi-poyanghu",
+    "historicalName": "彭蠡湖",
+    "historicalEra": "唐",
+    "modernName": "江西省鄱阳湖",
+    "modernHierarchy": {
+      "province": "江西省"
+    },
+    "coordinates": [
+      116.21667,
+      29.16667
+    ],
+    "precision": "approximate",
+    "isCentroid": true,
+    "aliases": [
+      "彭蠡",
+      "鄱阳湖",
+      "彭泽"
+    ],
+    "kind": "site",
+    "note": "古称彭蠡泽、彭泽，唐时已通称彭蠡湖。坐标为湖面中心，仅作示意——湖体随季节涨落极大，唐诗所言「彭蠡」边界与今鄱阳湖并不吻合，故 precision 取 approximate 并标 isCentroid。",
+    "sources": [
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ]
   }
 ]

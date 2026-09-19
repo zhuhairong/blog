@@ -139,6 +139,23 @@
     "featured": ""
   },
   {
+    "objectID": 35986,
+    "src": "/poetry-atlas/art/35986.webp",
+    "srcSmall": "/poetry-atlas/art/35986-sm.webp",
+    "title": "Landscape with Chicken",
+    "artist": "Cheng Jiasui",
+    "date": "",
+    "dynasty": "",
+    "medium": "Folding fan mounted as an album leaf; ink on gold paper",
+    "creditLine": "John Stewart Kennedy Fund, 1913",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/35986",
+    "motifs": [
+      "山",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
     "objectID": 35988,
     "src": "/poetry-atlas/art/35988.webp",
     "srcSmall": "/poetry-atlas/art/35988-sm.webp",
@@ -868,6 +885,25 @@
     "featured": ""
   },
   {
+    "objectID": 36090,
+    "src": "/poetry-atlas/art/36090.webp",
+    "srcSmall": "/poetry-atlas/art/36090-sm.webp",
+    "title": "White Crane Mountain, leaf from Album for Zhou Lianggong",
+    "artist": "Ye Xin",
+    "date": "datable to 1654–55",
+    "dynasty": "",
+    "medium": "Leaf from a collective album of many leaves; ink and color on paper",
+    "creditLine": "Seymour Fund, 1964",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36090",
+    "motifs": [
+      "山",
+      "鹤",
+      "花鸟",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
     "objectID": 36091,
     "src": "/poetry-atlas/art/36091.webp",
     "srcSmall": "/poetry-atlas/art/36091-sm.webp",
@@ -971,6 +1007,23 @@
     "featured": ""
   },
   {
+    "objectID": 36102,
+    "src": "/poetry-atlas/art/36102.webp",
+    "srcSmall": "/poetry-atlas/art/36102-sm.webp",
+    "title": "Landscape",
+    "artist": "Fang Shishu",
+    "date": "",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink and color on paper",
+    "creditLine": "Gift of Mr. and Mrs. Earl Morse, 1972",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36102",
+    "motifs": [
+      "山",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
     "objectID": 36103,
     "src": "/poetry-atlas/art/36103.webp",
     "srcSmall": "/poetry-atlas/art/36103-sm.webp",
@@ -983,6 +1036,55 @@
     "objectURL": "https://www.metmuseum.org/art/collection/search/36103",
     "motifs": [
       "水",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 36105,
+    "src": "/poetry-atlas/art/36105.webp",
+    "srcSmall": "/poetry-atlas/art/36105-sm.webp",
+    "title": "Cranes, peach tree, and China rose",
+    "artist": "Shen Quan (Shen Pin)",
+    "date": "18th century",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink and color on silk",
+    "creditLine": "The Harry G. C. Packard Collection of Asian Art, Gift of Harry G. C. Packard, and Purchase, Fletcher, Rogers, Harris Brisbane Dick, and Louis V. Bell Funds, Joseph Pulitzer Bequest, and The Annenberg Fund Inc. Gift, 1975",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36105",
+    "motifs": [
+      "鹤",
+      "花鸟"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 36106,
+    "src": "/poetry-atlas/art/36106.webp",
+    "srcSmall": "/poetry-atlas/art/36106-sm.webp",
+    "title": "Crabapple, China rose, and Indian flycatcher",
+    "artist": "Shen Quan (Shen Nanpin)",
+    "date": "1750",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink and color on silk",
+    "creditLine": "The Harry G. C. Packard Collection of Asian Art, Gift of Harry G. C. Packard, and Purchase, Fletcher, Rogers, Harris Brisbane Dick, and Louis V. Bell Funds, Joseph Pulitzer Bequest, and The Annenberg Fund Inc. Gift, 1975",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36106",
+    "motifs": [
+      "花鸟"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 36129,
+    "src": "/poetry-atlas/art/36129.webp",
+    "srcSmall": "/poetry-atlas/art/36129-sm.webp",
+    "title": "Landscapes Painted for Wang Kui",
+    "artist": "Wang Jian",
+    "date": "1674–76",
+    "dynasty": "",
+    "medium": "Album of eight painted leaves; ink and color on paper",
+    "creditLine": "Gift of Douglas Dillon, 1979",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36129",
+    "motifs": [
       "山水"
     ],
     "featured": ""
@@ -1226,6 +1328,39 @@
     "featured": ""
   },
   {
+    "objectID": 36164,
+    "src": "/poetry-atlas/art/36164.webp",
+    "srcSmall": "/poetry-atlas/art/36164-sm.webp",
+    "title": "Bamboo",
+    "artist": "Chen Ran",
+    "date": "",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink on paper",
+    "creditLine": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36164",
+    "motifs": [
+      "竹",
+      "花鸟"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 36171,
+    "src": "/poetry-atlas/art/36171.webp",
+    "srcSmall": "/poetry-atlas/art/36171-sm.webp",
+    "title": "Landscapes",
+    "artist": "Zhang Zhiwan",
+    "date": "dated 1875",
+    "dynasty": "",
+    "medium": "Album of twelve leaves; ink and color on paper",
+    "creditLine": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36171",
+    "motifs": [
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
     "objectID": 36172,
     "src": "/poetry-atlas/art/36172.webp",
     "srcSmall": "/poetry-atlas/art/36172-sm.webp",
@@ -1260,6 +1395,38 @@
     "featured": ""
   },
   {
+    "objectID": 36177,
+    "src": "/poetry-atlas/art/36177.webp",
+    "srcSmall": "/poetry-atlas/art/36177-sm.webp",
+    "title": "Landscape",
+    "artist": "Wu Tao",
+    "date": "",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink and color on paper",
+    "creditLine": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36177",
+    "motifs": [
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 36180,
+    "src": "/poetry-atlas/art/36180.webp",
+    "srcSmall": "/poetry-atlas/art/36180-sm.webp",
+    "title": "Landscape",
+    "artist": "Xu Xiang",
+    "date": "dated 1889",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink and color on paper",
+    "creditLine": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36180",
+    "motifs": [
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
     "objectID": 36181,
     "src": "/poetry-atlas/art/36181.webp",
     "srcSmall": "/poetry-atlas/art/36181-sm.webp",
@@ -1273,6 +1440,23 @@
     "motifs": [
       "水",
       "舟",
+      "山",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 36186,
+    "src": "/poetry-atlas/art/36186.webp",
+    "srcSmall": "/poetry-atlas/art/36186-sm.webp",
+    "title": "Landscape",
+    "artist": "Song Nian",
+    "date": "dated 1898",
+    "dynasty": "",
+    "medium": "Handscroll in six sections; ink and color on paper",
+    "creditLine": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36186",
+    "motifs": [
       "山",
       "山水"
     ],
