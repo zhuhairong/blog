@@ -162,6 +162,28 @@ export default async function PoetPage({
               {poet.dynasty} · {poet.birth?.year ?? '?'}–{poet.death?.year ?? '?'}
             </p>
             <p className={styles.poetHeroSummary}>{poet.summary}</p>
+            {/* 籍贯：祖籍与出生地常不同（如苏轼生于眉山，郡望赵郡栾城），
+                分开标注才谈得上考据精度。置信度按数据原样标出。 */}
+            {poet.nativePlace && poet.nativePlace.length > 0 && (
+              <p className={styles.poetHeroOrigin}>
+                {poet.nativePlace.map((n, i) => {
+                  const place = placeById.get(n.placeId);
+                  const verb =
+                    n.type === 'birth' ? '生于' : n.type === 'ancestral' ? '祖籍' : '籍';
+                  return (
+                    <span key={`${n.type}-${n.placeId}`}>
+                      {i > 0 && <span className={styles.originSep}> · </span>}
+                      {verb}
+                      {place?.historicalName ?? n.placeId}
+                      {place?.modernName && (
+                        <span className={styles.originModern}>（今{place.modernName}）</span>
+                      )}
+                      <span className={styles.originConf}>{n.confidence}</span>
+                    </span>
+                  );
+                })}
+              </p>
+            )}
           </div>
         </div>
 

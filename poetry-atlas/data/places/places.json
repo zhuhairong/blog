@@ -2979,5 +2979,97 @@
         "reliability": "B"
       }
     ]
+  },
+  {
+    "id": "cn-henan-mianchi",
+    "historicalName": "渑池",
+    "historicalEra": "宋",
+    "modernName": "河南省三门峡市渑池县",
+    "modernHierarchy": {
+      "province": "河南省",
+      "city": "三门峡市",
+      "district": "渑池县"
+    },
+    "coordinates": [
+      111.7557,
+      34.7657
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "黾池"
+    ],
+    "kind": "city",
+    "note": "嘉祐元年（1056）苏洵携苏轼、苏辙出蜀赴京，兄弟同过渑池，宿僧舍题壁于奉闲之室。五年后苏轼和苏辙《怀渑池寄子瞻兄》，追忆此事而有「雪泥鸿爪」之喻，此地遂成苏氏兄弟情谊的地理坐标。",
+    "sources": [
+      {
+        "id": "dongpo-nianpu",
+        "title": "东坡先生年谱",
+        "author": "王宗稷",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-hebei-luancheng",
+    "historicalName": "赵州栾城",
+    "historicalEra": "宋",
+    "modernName": "河北省石家庄市栾城区",
+    "modernHierarchy": {
+      "province": "河北省",
+      "city": "石家庄市",
+      "district": "栾城区"
+    },
+    "coordinates": [
+      114.6437,
+      37.8875
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "栾城",
+      "赵郡"
+    ],
+    "kind": "city",
+    "note": "苏氏郡望。苏辙《亡兄子瞻端明墓志铭》称苏氏之先出于唐神龙初眉州刺史苏味道，味道为赵州栾城人，其一子留居眉州，是为眉山苏氏之始。此为郡望，非苏轼实际籍贯。",
+    "sources": [
+      {
+        "id": "suzhe-muzhiming",
+        "title": "亡兄子瞻端明墓志铭",
+        "author": "苏辙",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-henan-jiacheng",
+    "historicalName": "汝州郏城",
+    "historicalEra": "宋",
+    "modernName": "河南省平顶山市郏县",
+    "modernHierarchy": {
+      "province": "河南省",
+      "city": "平顶山市",
+      "district": "郏县"
+    },
+    "coordinates": [
+      113.1896,
+      33.9753
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "郏县",
+      "小峨眉山"
+    ],
+    "kind": "city",
+    "note": "崇宁元年（1102）苏轼归葬于汝州郏城县钧台乡上瑞里（今平顶山郏县），其地有小峨眉山，形胜类蜀之峨眉，故名。苏辙后亦葬其侧，今为「三苏坟」。",
+    "sources": [
+      {
+        "id": "suzhe-muzhiming",
+        "title": "亡兄子瞻端明墓志铭",
+        "author": "苏辙",
+        "reliability": "B"
+      }
+    ]
   }
 ]

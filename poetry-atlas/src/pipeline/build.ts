@@ -410,6 +410,10 @@ function main() {
       ...(poet.events ?? [])
         .map((e) => e.placeId)
         .filter((id): id is string => Boolean(id)),
+      // ⚠️ 籍贯（出生地/祖籍）也必须进来。
+      //    否则 poet.places 里没有对应地点，前端只能显示裸 placeId，
+      //    「祖籍赵郡栾城」会显示成「祖籍 cn-hebei-luancheng」。
+      ...(poet.nativePlace ?? []).map((n) => n.placeId),
     ];
     const placeIds = new Set(placeIdList);
 

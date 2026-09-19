@@ -602,6 +602,36 @@
   color: var(--text-secondary);
 }
 
+/* 籍贯：祖籍与出生地分行标注，置信度随文标出 */
+.poetHeroOrigin {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.originSep {
+  color: var(--text-tertiary);
+}
+
+.originModern {
+  color: var(--text-tertiary);
+  font-size: 12px;
+}
+
+/* 置信度角标：与断言列表的 A/B/C 标记同一套语义 */
+.originConf {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 0 5px;
+  border: 1px solid var(--border-strong);
+  border-radius: 3px;
+  font-size: 10.5px;
+  line-height: 1.5;
+  color: var(--text-tertiary);
+  vertical-align: 1px;
+}
+
 /* ── 轨迹 ── */
 .trajectory {
   position: relative;
