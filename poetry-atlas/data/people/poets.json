@@ -3237,5 +3237,390 @@
         "reliability": "B"
       }
     ]
+  },
+  {
+    "id": "menghaoran",
+    "name": "孟浩然",
+    "courtesyName": "浩然",
+    "pseudonym": "孟山人",
+    "aliases": [
+      "孟襄阳",
+      "孟鹿门",
+      "鹿门处士"
+    ],
+    "dynasty": "唐",
+    "birth": {
+      "year": 689,
+      "original": "永昌元年",
+      "certainty": "approximate",
+      "fuzziness": 2
+    },
+    "death": {
+      "year": 740,
+      "original": "开元二十八年",
+      "certainty": "exact"
+    },
+    "nativePlace": [
+      {
+        "placeId": "cn-hubei-xiangyang",
+        "type": "birth",
+        "confidence": "B",
+        "note": "襄州襄阳（今湖北襄阳）人。《旧唐书》本传「孟浩然，隐鹿门山……还襄阳」，《新唐书》本传径称「襄州襄阳人」，两《唐书》一致，籍贯无争议。世称「孟襄阳」。"
+      }
+    ],
+    "summary": "唐代山水田园诗的开创者之一，与王维并称「王孟」。一生未仕，以隐逸与漫游终老，诗风清淡自然。李白称之「吾爱孟夫子，风流天下闻」。",
+    "biography": "孟浩然（689—740），襄州襄阳（今湖北襄阳）人。名浩，字浩然，世称孟襄阳；因早年隐居鹿门山，又称孟鹿门、鹿门处士。\n\n少好节义，喜振人患难，隐于鹿门山。年四十乃游京师，尝于太学赋诗，一座嗟伏，无敢抗。开元十六年（728）应进士举不第，此为他人生的转折点。据《新唐书》本传，王维曾私邀其入内署，玄宗忽至，浩然匿床下；帝命出诵所为诗，至「不才明主弃」句，帝不悦曰「卿不求仕，而朕未尝弃卿，奈何诬我」，因放还。此段记载极具戏剧性，后世或有润饰，然其不第还乡之事实，两《唐书》无异辞。\n\n此后漫游吴越数年，溯钱塘江经建德、桐庐，北上广陵，《宿建德江》《宿桐庐江寄广陵旧游》皆成于此行。还襄阳后，采访使韩朝宗约其偕至京师、欲荐于朝，恰故人至，剧饮欢甚，竟不赴期，朝宗怒而辞行，浩然亦不悔——此事最能见其性情。\n\n开元二十五年（737）张九龄贬荆州长史，辟其为从事，与之唱和，这是孟浩然一生仅有的仕宦经历，随府罢而终。开元二十八年（740）秋，王昌龄游襄阳来访，浩然背疽将愈，宴谑食鲜，疾动而卒，年五十二。友人王士源《孟浩然诗集序》记其「终于南园」。\n\n其诗不事雕琢而兴象玲珑，杜甫称「清诗句句尽堪传」，苏轼谓其「韵高而才短，如造内法酒手而无材料」。以《春晓》《过故人庄》《宿建德江》诸篇最为传诵。",
+    "events": [
+      {
+        "id": "menghaoran-e1",
+        "poetId": "menghaoran",
+        "type": "birth",
+        "title": "生于襄州襄阳（生年 689，另有 691 说）",
+        "placeId": "cn-hubei-xiangyang",
+        "date": {
+          "year": 689,
+          "original": "永昌元年",
+          "certainty": "approximate",
+          "fuzziness": 2
+        },
+        "description": "生年通行为 689 年（永昌元年），由卒年开元二十八年（740）年五十二逆推而得；另有 691 一说，相差二年，故 fuzziness 取 2。生地襄州襄阳则两《唐书》明载，无争议。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "jts-menghaoran",
+            "title": "旧唐书·孟浩然传",
+            "author": "刘昫等",
+            "locator": "卷190下·文苑下",
+            "reliability": "A"
+          },
+          {
+            "id": "xts-menghaoran",
+            "title": "新唐书·孟浩然传",
+            "author": "欧阳修等",
+            "locator": "卷203·文艺下",
+            "reliability": "A"
+          },
+          {
+            "id": "menghaoranji-xu",
+            "title": "孟浩然诗集序",
+            "author": "王士源",
+            "locator": "孟浩然集卷首",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "menghaoran-e2",
+        "poetId": "menghaoran",
+        "type": "seclusion",
+        "title": "少隐鹿门山，以诗自适（至年四十方游京师）",
+        "placeId": "cn-hubei-lumen",
+        "date": {
+          "from": {
+            "year": 710,
+            "certainty": "approximate"
+          },
+          "to": {
+            "year": 727,
+            "certainty": "approximate"
+          }
+        },
+        "description": "《旧唐书》本传：「孟浩然，隐鹿门山，以诗自适，年四十来游京师。」《新唐书》本传作「少好节义，喜振人患难，隐鹿门山。年四十，乃游京师」。鹿门山在襄阳东南，汉末庞德公即隐于此——孟浩然择此山，是自觉地接上一条隐逸的传统。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-menghaoran",
+            "title": "旧唐书·孟浩然传",
+            "author": "刘昫等",
+            "locator": "卷190下·文苑下",
+            "reliability": "A"
+          },
+          {
+            "id": "xts-menghaoran",
+            "title": "新唐书·孟浩然传",
+            "author": "欧阳修等",
+            "locator": "卷203·文艺下",
+            "reliability": "A"
+          },
+          {
+            "id": "yuanhe-junxian-tuzhi",
+            "title": "元和郡县图志",
+            "author": "李吉甫",
+            "locator": "卷二十一·襄州",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "menghaoran-e3",
+        "poetId": "menghaoran",
+        "type": "exam",
+        "title": "年四十游京师，应进士举不第",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 728,
+          "original": "开元十六年",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "开元十五年（727）冬赴长安，次年应进士举不第。此为其一生最重要的转折：此后虽两度入京，终未得一官。《秦中感秋寄远上人》「一丘常欲卧，三径苦无资。北土非吾愿，东林怀我师」即此期在长安的失意心境。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-menghaoran",
+            "title": "旧唐书·孟浩然传",
+            "author": "刘昫等",
+            "locator": "卷190下·文苑下",
+            "reliability": "A"
+          },
+          {
+            "id": "xts-menghaoran",
+            "title": "新唐书·孟浩然传",
+            "author": "欧阳修等",
+            "locator": "卷203·文艺下",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "menghaoran-e4",
+        "poetId": "menghaoran",
+        "type": "meeting",
+        "title": "与王维、张九龄交游；传因「不才明主弃」忤玄宗而被放还",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 728,
+          "original": "开元十六年",
+          "certainty": "approximate",
+          "fuzziness": 2
+        },
+        "description": "《新唐书》本传载王维私邀浩然入内署，玄宗突至，浩然匿床下，帝命出诵诗，至「不才明主弃」句，帝曰「卿不求仕，而朕未尝弃卿，奈何诬我」，因放还。此事《旧唐书》不载，仅见《新唐书》及《唐摭言》等，情节或有渲染，故 confidence 标 C——它是了解孟浩然形象的珍贵材料，但不是可以当编年用的硬证据。王维与孟浩然之交则确凿，《留别王侍御维》「当路谁相假，知音世所稀」是真切的。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "xts-menghaoran",
+            "title": "新唐书·孟浩然传",
+            "author": "欧阳修等",
+            "locator": "卷203·文艺下",
+            "reliability": "A"
+          },
+          {
+            "id": "quantangshi-menghaoran",
+            "title": "全唐诗·孟浩然小传",
+            "locator": "卷159",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "menghaoran-e5",
+        "poetId": "menghaoran",
+        "type": "travel",
+        "title": "漫游吴越：经建德、桐庐，北至广陵",
+        "placeId": "cn-zhejiang-jiande",
+        "date": {
+          "from": {
+            "year": 729,
+            "certainty": "approximate"
+          },
+          "to": {
+            "year": 731,
+            "certainty": "approximate"
+          }
+        },
+        "description": "落第后离京，漫游吴越数年。溯钱塘江而上，经睦州建德、桐庐，再北抵广陵（今扬州）。《宿建德江》《宿桐庐江寄广陵旧游》皆此行所作。「建德非吾土，维扬忆旧游」——人在桐庐江上，心在扬州旧友处，落第后的漂泊感尽在这十个字里。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "quantangshi-menghaoran",
+            "title": "全唐诗·孟浩然小传",
+            "locator": "卷159",
+            "reliability": "B"
+          },
+          {
+            "id": "zhongguo-lishi-diming-cidian",
+            "title": "中国历史地名大辞典",
+            "author": "史为乐",
+            "edition": "中国社会科学出版社",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "menghaoran-e6",
+        "poetId": "menghaoran",
+        "type": "travel",
+        "title": "还襄阳故园",
+        "placeId": "cn-hubei-xiangyang",
+        "date": {
+          "year": 732,
+          "certainty": "approximate",
+          "fuzziness": 2
+        },
+        "description": "吴越之游后返回襄阳，此后除一度入张九龄荆州幕外，基本未再远行。襄阳的鹿门山、岘山一带是其晚年活动的核心区域，《夜归鹿门山歌》《与诸子登岘山》《过故人庄》《夏日南亭怀辛大》诸篇皆系于这一时期的故园生活。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "jts-menghaoran",
+            "title": "旧唐书·孟浩然传",
+            "author": "刘昫等",
+            "locator": "卷190下·文苑下",
+            "reliability": "A"
+          },
+          {
+            "id": "quantangshi-menghaoran",
+            "title": "全唐诗·孟浩然小传",
+            "locator": "卷159",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "menghaoran-e7",
+        "poetId": "menghaoran",
+        "type": "other",
+        "title": "韩朝宗约其偕至京师欲荐于朝，因剧饮不赴",
+        "placeId": "cn-hubei-xiangyang",
+        "date": {
+          "year": 734,
+          "original": "开元二十二年",
+          "certainty": "approximate",
+          "fuzziness": 2
+        },
+        "description": "采访使韩朝宗约浩然同往京师，欲荐之于朝。恰故人至，剧饮欢甚，有人提醒「君与韩公有期」，浩然叱曰「业已饮，遑恤他！」竟不赴。朝宗怒而辞行，浩然亦不悔。此事两《唐书》并载，最能见其不慕荣利之性情，也使「欲济无舟楫」的干谒与「遑恤他」的疏狂形成同一个人的两面。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-menghaoran",
+            "title": "旧唐书·孟浩然传",
+            "author": "刘昫等",
+            "locator": "卷190下·文苑下",
+            "reliability": "A"
+          },
+          {
+            "id": "xts-menghaoran",
+            "title": "新唐书·孟浩然传",
+            "author": "欧阳修等",
+            "locator": "卷203·文艺下",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "menghaoran-e8",
+        "poetId": "menghaoran",
+        "type": "office",
+        "title": "张九龄贬荆州长史，辟为从事",
+        "placeId": "cn-hubei-jingzhou",
+        "date": {
+          "year": 737,
+          "original": "开元二十五年",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "《旧唐书》本传：「张九龄镇荆州，署为从事，与之唱和，不达而卒。」这是孟浩然一生唯一一次出仕，随张九龄罢府而终，前后不过一二年。以五十一岁之年入幕，可见其并未全然忘情于用世。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-menghaoran",
+            "title": "旧唐书·孟浩然传",
+            "author": "刘昫等",
+            "locator": "卷190下·文苑下",
+            "reliability": "A"
+          },
+          {
+            "id": "xts-menghaoran",
+            "title": "新唐书·孟浩然传",
+            "author": "欧阳修等",
+            "locator": "卷203·文艺下",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "menghaoran-e9",
+        "poetId": "menghaoran",
+        "type": "travel",
+        "title": "府罢，仍返襄阳",
+        "placeId": "cn-hubei-xiangyang",
+        "date": {
+          "year": 738,
+          "original": "开元二十六年",
+          "certainty": "approximate",
+          "fuzziness": 2
+        },
+        "description": "《新唐书》本传：「张九龄为荆州，辟置于府，府罢。」幕府解散后孟浩然回到襄阳故园，度过最后两年。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "xts-menghaoran",
+            "title": "新唐书·孟浩然传",
+            "author": "欧阳修等",
+            "locator": "卷203·文艺下",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "menghaoran-e10",
+        "poetId": "menghaoran",
+        "type": "meeting",
+        "title": "王昌龄游襄阳来访，宴谑食鲜，疾动而卒",
+        "placeId": "cn-hubei-xiangyang",
+        "date": {
+          "year": 740,
+          "original": "开元二十八年",
+          "certainty": "exact"
+        },
+        "description": "开元二十八年秋，王昌龄游襄阳来访，孟浩然背疽（疽发背）将愈，相见甚欢，宴谑食鲜，致旧疾发动而卒，年五十二。王士源《孟浩然诗集序》：「开元二十八年，王昌龄游襄阳，时浩然疾发背，且愈，得相欢饮。浩然宴谑，食鲜疾动，终于南园。」——以将愈之身而死于一场欢宴，结局本身就像他的诗一样，淡得让人说不出话。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "menghaoranji-xu",
+            "title": "孟浩然诗集序",
+            "author": "王士源",
+            "locator": "孟浩然集卷首",
+            "reliability": "A"
+          },
+          {
+            "id": "xts-menghaoran",
+            "title": "新唐书·孟浩然传",
+            "author": "欧阳修等",
+            "locator": "卷203·文艺下",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "menghaoran-e11",
+        "poetId": "menghaoran",
+        "type": "death",
+        "title": "卒于襄阳南园，年五十二",
+        "placeId": "cn-hubei-xiangyang",
+        "date": {
+          "year": 740,
+          "original": "开元二十八年",
+          "certainty": "exact"
+        },
+        "description": "卒于开元二十八年（740），葬襄阳。后樊泽为节度使，因其墓庳坏，符载以笺叩泽，乃更为刻碑凤林山南，封宠其墓。王维过郢州时曾画其像于刺史亭，因曰浩然亭；咸通中刺史郑諴谓贤者名不可斥，更署曰孟亭。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "xts-menghaoran",
+            "title": "新唐书·孟浩然传",
+            "author": "欧阳修等",
+            "locator": "卷203·文艺下",
+            "reliability": "A"
+          },
+          {
+            "id": "menghaoranji-xu",
+            "title": "孟浩然诗集序",
+            "author": "王士源",
+            "locator": "孟浩然集卷首",
+            "reliability": "A"
+          }
+        ]
+      }
+    ]
   }
 ]

@@ -2943,5 +2943,149 @@
         "reliability": "A"
       }
     ]
+  },
+  {
+    "id": "cn-hubei-lumen",
+    "historicalName": "襄州鹿门山",
+    "historicalEra": "唐",
+    "modernName": "湖北省襄阳市襄州区鹿门山",
+    "modernHierarchy": {
+      "province": "湖北省",
+      "city": "襄阳市",
+      "district": "襄州区"
+    },
+    "coordinates": [
+      112.26,
+      31.909
+    ],
+    "precision": "site",
+    "isCentroid": false,
+    "aliases": [
+      "鹿门山",
+      "苏岭山",
+      "鹿门"
+    ],
+    "kind": "mountain",
+    "note": "在襄阳城东南约十五公里，今襄阳市襄州区，最高海拔 371.7 米，为大洪山余脉。原名苏岭山；东汉建武中襄阳侯习郁立祠于山，刻二石鹿夹神道之口，百姓谓之鹿门庙，遂以庙名山。汉末庞德公（庞公）拒荆州刺史刘表之聘，携妻登此山采药不返；孟浩然早年亦隐居于此，故世称「孟鹿门」「鹿门处士」。《夜归鹿门山歌》「鹿门月照开烟树，忽到庞公栖隐处」即指此。",
+    "sources": [
+      {
+        "id": "yuanhe-junxian-tuzhi",
+        "title": "元和郡县图志",
+        "author": "李吉甫",
+        "locator": "卷二十一·襄州",
+        "reliability": "B"
+      },
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-zhejiang-jiande",
+    "historicalName": "睦州建德",
+    "historicalEra": "唐",
+    "modernName": "浙江省杭州市建德市",
+    "modernHierarchy": {
+      "province": "浙江省",
+      "city": "杭州市",
+      "district": "建德市"
+    },
+    "coordinates": [
+      119.28525,
+      29.47742
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "建德",
+      "睦州"
+    ],
+    "kind": "county",
+    "note": "唐睦州治所（自武周神功元年 697 年起），当新安江与兰江汇流处，今杭州市辖县级建德市（29.47742°N, 119.28525°E）。孟浩然后半生一次重要的吴越之游即溯钱塘江经此，《宿建德江》「移舟泊烟渚」之渚在城下江中。坐标取今建德市中心，为县治中心点，非精确泊舟处。",
+    "sources": [
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-zhejiang-tonglu",
+    "historicalName": "睦州桐庐",
+    "historicalEra": "唐",
+    "modernName": "浙江省杭州市桐庐县",
+    "modernHierarchy": {
+      "province": "浙江省",
+      "city": "杭州市",
+      "district": "桐庐县"
+    },
+    "coordinates": [
+      119.68732,
+      29.7954
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "桐庐",
+      "桐江"
+    ],
+    "kind": "county",
+    "note": "唐属睦州，富春江（桐江）穿境而过，今杭州市桐庐县（29.7954°N, 119.68732°E）。孟浩然《宿桐庐江寄广陵旧游》所宿即此江段。诗云「建德非吾土」，知其在桐庐时已离睦州治所建德，二地相距约五十公里，同属一州而分系两地。坐标取今桐庐县城，为县治中心点。",
+    "sources": [
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-hubei-jingzhou",
+    "historicalName": "荆州江陵",
+    "historicalEra": "唐",
+    "modernName": "湖北省荆州市荆州区",
+    "modernHierarchy": {
+      "province": "湖北省",
+      "city": "荆州市",
+      "district": "荆州区"
+    },
+    "coordinates": [
+      112.19,
+      30.353
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "江陵",
+      "荆州",
+      "江陵府"
+    ],
+    "kind": "city",
+    "note": "唐荆州治江陵县（天宝元年改江陵郡，乾元元年复为荆州，上元元年升江陵府），即今荆州市荆州区（30.353°N, 112.19°E）。开元二十五年（737）张九龄由宰相贬为荆州长史，辟孟浩然入幕府为从事，与之唱和；不久府罢，孟浩然仍返襄阳。坐标取今荆州区，为县治中心点。",
+    "sources": [
+      {
+        "id": "jts-menghaoran",
+        "title": "旧唐书·孟浩然传",
+        "author": "刘昫等",
+        "locator": "卷190下·文苑下",
+        "reliability": "A"
+      },
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ]
   }
 ]

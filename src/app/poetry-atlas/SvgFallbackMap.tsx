@@ -11,7 +11,6 @@
  * 画法（含断续线）时请配置 NEXT_PUBLIC_TIANDITU_KEY 走天地图瓦片。
  */
 
-import { useMemo } from 'react';
 import type { DerivedMapPoint } from '@/poetry-atlas/types';
 import styles from './atlas.module.css';
 import basemap from './china-basemap.json';
@@ -75,6 +74,37 @@ function toPath(flat: number[], proj: (lng: number, lat: number) => { x: number;
 /** 小于此尺寸（度）的岛礁退化成点，否则在角图里只是看不见的碎线 */
 const DOT_MAX_DIAG = 0.4;
 
+/* ── 底图几何：只依赖静态导入的 JSON，提到模块作用域算一次 ────
+ *
+ * 早先这两块写在组件里用 useMemo 包起来，React Compiler 无法保留该
+ * 手写记忆化（返回的是内部新建的对象），直接跳过整个组件的优化并报错。
+ * 它们的输入全是模块级常量，本来就该在模块加载时算一次 —— 既省掉每次
+ * 挂载的重复计算，也让编译器能正常工作。
+ */
+const PROVINCE_PATHS = basemap.provinces.map((p) => ({
+  name: p.name,
+  d: p.rings.map((r) => toPath(r.p, projectMain)).join(' '),
+}));
+
+/** 南海诸岛：海南省要素里纬度低于 17.5° 的环（海南岛本体不进角图） */
+const ISLAND_GEOMETRY = (() => {
+  const hainan = basemap.provinces.find((p) => p.name === '海南省');
+  const paths: string[] = [];
+  const dots: { x: number; y: number }[] = [];
+  if (!hainan) return { paths, dots };
+  for (const r of hainan.rings) {
+    if (r.bbox[1] >= 17.5) continue;
+    const diag = Math.hypot(r.bbox[2] - r.bbox[0], r.bbox[3] - r.bbox[1]);
+    if (diag < DOT_MAX_DIAG) {
+      // 取包围盒中心当作岛礁位置
+      dots.push(projectInset((r.bbox[0] + r.bbox[2]) / 2, (r.bbox[1] + r.bbox[3]) / 2));
+    } else {
+      paths.push(toPath(r.p, projectInset));
+    }
+  }
+  return { paths, dots };
+})();
+
 /* ── 精度样式（与瓦片底图保持一致的语言）───────────────── */
 const PRECISION_STYLE: Record<
   DerivedMapPoint['precision'],
@@ -89,35 +119,6 @@ const PRECISION_STYLE: Record<
 };
 
 export default function SvgFallbackMap({ points, selected, onSelect }: Props) {
-  /** 省界路径只在首次渲染时算一次 */
-  const provincePaths = useMemo(
-    () =>
-      basemap.provinces.map((p) => ({
-        name: p.name,
-        d: p.rings.map((r) => toPath(r.p, projectMain)).join(' '),
-      })),
-    [],
-  );
-
-  /** 南海诸岛：海南省要素里纬度低于 17.5° 的环 */
-  const islandGeometry = useMemo(() => {
-    const hainan = basemap.provinces.find((p) => p.name === '海南省');
-    if (!hainan) return { paths: [] as string[], dots: [] as { x: number; y: number }[] };
-    const paths: string[] = [];
-    const dots: { x: number; y: number }[] = [];
-    for (const r of hainan.rings) {
-      if (r.bbox[1] >= 17.5) continue; // 海南岛本体不进角图
-      const diag = Math.hypot(r.bbox[2] - r.bbox[0], r.bbox[3] - r.bbox[1]);
-      if (diag < DOT_MAX_DIAG) {
-        // 取包围盒中心当作岛礁位置
-        dots.push(projectInset((r.bbox[0] + r.bbox[2]) / 2, (r.bbox[1] + r.bbox[3]) / 2));
-      } else {
-        paths.push(toPath(r.p, projectInset));
-      }
-    }
-    return { paths, dots };
-  }, []);
-
   const projected = points.map((p) => ({
     ...p,
     ...projectMain(p.coordinates[0], p.coordinates[1]),
@@ -148,12 +149,12 @@ export default function SvgFallbackMap({ points, selected, onSelect }: Props) {
 
       {/* 省界：先描边后填充，边界线始终是连续的 */}
       <g filter="url(#atlasLandGlow)">
-        {provincePaths.map((p) => (
+        {PROVINCE_PATHS.map((p) => (
           <path key={`f-${p.name}`} d={p.d} fill="rgba(255,255,255,0.05)" stroke="none" />
         ))}
       </g>
       <g fill="none" stroke="rgba(255,255,255,0.16)" strokeWidth="0.9" strokeLinejoin="round">
-        {provincePaths.map((p) => (
+        {PROVINCE_PATHS.map((p) => (
           <path key={`s-${p.name}`} d={p.d} />
         ))}
       </g>
@@ -184,12 +185,12 @@ export default function SvgFallbackMap({ points, selected, onSelect }: Props) {
         />
         <g clipPath="url(#atlasInsetClip)">
           <g fill="none" stroke="rgba(255,255,255,0.18)" strokeWidth="0.7">
-            {islandGeometry.paths.map((d, i) => (
+            {ISLAND_GEOMETRY.paths.map((d, i) => (
               <path key={`ip${i}`} d={d} />
             ))}
           </g>
           <g fill="rgba(255,255,255,0.22)">
-            {islandGeometry.dots.map((d, i) => (
+            {ISLAND_GEOMETRY.dots.map((d, i) => (
               <circle key={`id${i}`} cx={d.x} cy={d.y} r="1.1" />
             ))}
           </g>

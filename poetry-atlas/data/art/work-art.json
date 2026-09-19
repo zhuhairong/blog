@@ -55,13 +55,13 @@
     "motifs": [
       "边塞"
     ],
-    "objectID": 39569,
-    "artTitle": "Eighteen Songs of a Nomad Flute: The Story of Lady Wenji",
-    "artArtist": "Unidentified artist",
-    "artDate": "early 15th century",
-    "artCredit": "Ex coll.: C. C. Wang Family, Gift of The Dillon Fund, 1973",
-    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP213003_CRD.jpg",
-    "artURL": "https://www.metmuseum.org/art/collection/search/39569"
+    "objectID": 36160,
+    "artTitle": "Bringing the Message of Victory to Dongshan",
+    "artArtist": "Wang Su",
+    "artDate": "1862",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DT8381.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36160"
   },
   {
     "workId": "dufu-zeng-li-bai",
@@ -182,13 +182,13 @@
       "夜",
       "月"
     ],
-    "objectID": 36133,
-    "artTitle": "Viewing a waterfall from a mountain pavilion",
-    "artArtist": "Li Yin",
-    "artDate": "1700",
-    "artCredit": "Anonymous Gift, in memory of Maitland F. Griggs, 1981",
-    "artImage": "https://images.metmuseum.org/CRDImages/as/original/1981_122_O.jpg",
-    "artURL": "https://www.metmuseum.org/art/collection/search/36133"
+    "objectID": 36153,
+    "artTitle": "Landscapes after old masters",
+    "artArtist": "Dai Xi",
+    "artDate": "mid-19th century",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-30200-001_crd.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36153"
   },
   {
     "workId": "dufu-qinzhou-zashi-yi",
@@ -759,13 +759,13 @@
       "田园",
       "秋"
     ],
-    "objectID": 36089,
-    "artTitle": "Autumn Landscape, leaf from Album for Zhou Lianggong",
-    "artArtist": "Xiang Shengmo",
-    "artDate": "ｄａｔｅｄ 1654",
-    "artCredit": "Seymour Fund, 1964",
-    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153913.jpg",
-    "artURL": "https://www.metmuseum.org/art/collection/search/36089"
+    "objectID": 39931,
+    "artTitle": "Landscapes",
+    "artArtist": "Dai Benxiao",
+    "artDate": "late 17th century",
+    "artCredit": "Purchase, The Dillon Fund Gift, 1989",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP160517.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/39931"
   },
   {
     "workId": "sushi-dingfengbo",
@@ -1235,5 +1235,211 @@
     "artCredit": "John Stewart Kennedy Fund, 1913",
     "artImage": "https://images.metmuseum.org/CRDImages/as/original/13_220_35_O.jpg",
     "artURL": "https://www.metmuseum.org/art/collection/search/36016"
+  },
+  {
+    "workId": "menghaoran-chunxiao",
+    "title": "春晓",
+    "poetId": "menghaoran",
+    "motifs": [
+      "春",
+      "花鸟"
+    ],
+    "objectID": 35996,
+    "artTitle": "Bird on a flowering branch",
+    "artArtist": "Zhang Chong",
+    "artDate": "late 16th or early 17th century",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153823.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/35996"
+  },
+  {
+    "workId": "menghaoran-gu-guren-zhuang",
+    "title": "过故人庄",
+    "poetId": "menghaoran",
+    "motifs": [
+      "田园",
+      "山水"
+    ],
+    "objectID": 36101,
+    "artTitle": "Landscape with Figures",
+    "artArtist": "Yang Jin",
+    "artDate": "Dated 1726",
+    "artCredit": "Gift of Mr. and Mrs. Earl Morse, 1972",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/1972_278_7_O.JPG",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36101"
+  },
+  {
+    "workId": "menghaoran-su-jiande-jiang",
+    "title": "宿建德江",
+    "poetId": "menghaoran",
+    "motifs": [
+      "水",
+      "舟",
+      "山水"
+    ],
+    "objectID": 36047,
+    "artTitle": "Miniature landscapes",
+    "artArtist": "Zhang Zongcang",
+    "artDate": "datable to 1751–54",
+    "artCredit": "Fletcher Fund, 1942",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP161848_CRD.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36047"
+  },
+  {
+    "workId": "menghaoran-wang-dongtinghu",
+    "title": "望洞庭湖赠张丞相",
+    "poetId": "menghaoran",
+    "motifs": [
+      "水",
+      "山水",
+      "舟"
+    ],
+    "objectID": 48950,
+    "artTitle": "Landscapes after old masters",
+    "artArtist": "Dong Qichang",
+    "artDate": "dated 1630",
+    "artCredit": "Edward Elliott Family Collection, Gift of Douglas Dillon, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DT8375.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/48950"
+  },
+  {
+    "workId": "menghaoran-deng-xian-shan",
+    "title": "与诸子登岘山",
+    "poetId": "menghaoran",
+    "motifs": [
+      "山",
+      "山水",
+      "怀古"
+    ],
+    "objectID": 36135,
+    "artTitle": "Landscape dedicated to Xiang Yuanbian",
+    "artArtist": "Wen Jia",
+    "artDate": "1578",
+    "artCredit": "Edward Elliott Family Collection, Purchase, The Dillon Fund Gift, 1981",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-29412-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36135"
+  },
+  {
+    "workId": "menghaoran-suimu-gui-nanshan",
+    "title": "岁暮归南山",
+    "poetId": "menghaoran",
+    "motifs": [
+      "山",
+      "山水",
+      "夜",
+      "月"
+    ],
+    "objectID": 35998,
+    "artTitle": "Landscape After Wen Zhengming",
+    "artArtist": "Shao Mi",
+    "artDate": "dated 1640",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153870.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/35998"
+  },
+  {
+    "workId": "menghaoran-liubie-wangwei",
+    "title": "留别王侍御维",
+    "poetId": "menghaoran",
+    "motifs": [
+      "山",
+      "山水"
+    ],
+    "objectID": 35988,
+    "artTitle": "Figure standing in a grove of trees",
+    "artArtist": "Li Liufang",
+    "artDate": "1613",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153843.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/35988"
+  },
+  {
+    "workId": "menghaoran-su-tonglu-jiang",
+    "title": "宿桐庐江寄广陵旧游",
+    "poetId": "menghaoran",
+    "motifs": [
+      "水",
+      "舟",
+      "山",
+      "山水"
+    ],
+    "objectID": 36071,
+    "artTitle": "Landscape",
+    "artArtist": "Wang Hui",
+    "artDate": "dated 1693",
+    "artCredit": "Gift of Wan-go H. C. Weng, 1955",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-37658-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36071"
+  },
+  {
+    "workId": "menghaoran-qinzhong-ganqiu",
+    "title": "秦中感秋寄远上人",
+    "poetId": "menghaoran",
+    "motifs": [
+      "秋",
+      "山",
+      "山水"
+    ],
+    "objectID": 36095,
+    "artTitle": "Landscape of the four seasons",
+    "artArtist": "Wei Zhike",
+    "artDate": "1635",
+    "artCredit": "Gift of J. T. Tai, 1968",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP204356_CRD.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36095"
+  },
+  {
+    "workId": "menghaoran-ye-gui-lumen",
+    "title": "夜归鹿门山歌",
+    "poetId": "menghaoran",
+    "motifs": [
+      "山",
+      "山水",
+      "夜",
+      "月"
+    ],
+    "objectID": 36100,
+    "artTitle": "Landscape in the style of Huang Gongwang",
+    "artArtist": "Wang Jian",
+    "artDate": "dated 1657",
+    "artCredit": "Gift of Mr. and Mrs. Earl Morse, 1972",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/1972_278_4_O.JPG",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36100"
+  },
+  {
+    "workId": "menghaoran-xiari-nanting",
+    "title": "夏日南亭怀辛大",
+    "poetId": "menghaoran",
+    "motifs": [
+      "夏",
+      "荷",
+      "竹",
+      "夜"
+    ],
+    "objectID": 36172,
+    "artTitle": "Zhou Dunyi admiring lotus flowers",
+    "artArtist": "Shu Hao",
+    "artDate": "late 19th century",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP161441.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36172"
+  },
+  {
+    "workId": "menghaoran-su-yeshi-shanfang",
+    "title": "宿业师山房期丁大不至",
+    "poetId": "menghaoran",
+    "motifs": [
+      "山",
+      "山水",
+      "夜",
+      "月"
+    ],
+    "objectID": 36072,
+    "artTitle": "Dream Landscape",
+    "artArtist": "Cheng Zhengkui",
+    "artDate": "dated 1674",
+    "artCredit": "Gift of Harry Lenart, 1955",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP204840_CRD.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36072"
   }
 ]

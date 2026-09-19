@@ -61,7 +61,6 @@ export default async function Post({ params }: Params) {
                     </header>
 
                     {post.coverImage && (
-                        // eslint-disable-next-line @next/next/no-img-element
                         <img className={styles.cover} src={post.coverImage} alt={post.title} />
                     )}
 

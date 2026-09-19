@@ -2776,5 +2776,340 @@
     "confidence": "C",
     "isPrimary": true,
     "triggerEventId": "wangwei-e7"
+  },
+  {
+    "id": "a-menghaoran-chunxiao-1",
+    "workId": "menghaoran-chunxiao",
+    "poetId": "menghaoran",
+    "placeId": "cn-hubei-xiangyang",
+    "date": {
+      "year": 730,
+      "certainty": "approximate",
+      "fuzziness": 10
+    },
+    "circumstance": "这是中国诗里最著名的一场春睡。醒来只听见鸟叫，想起昨夜的风雨，于是惦记落了多少花——全诗没有一句抒情，连「惜春」两个字都没出现，可那点惋惜全在「知多少」的问里。",
+    "setting": "襄阳故园，春晨卧榻，闻鸟啼而忆昨夜风雨",
+    "rationale": "《春晓》无确切系年。其写故园春晨，与孟浩然隐居襄阳时期的生活相合，学界通常笼统系于其隐居襄阳的岁月（约 727—740），故 fuzziness 取大值、confidence 标 C。这是存疑，不是敷衍：一首没有本事、没有题注的小诗，本就无法编年。",
+    "sources": [
+      {
+        "id": "quantangshi-menghaoran",
+        "title": "全唐诗·孟浩然小传",
+        "locator": "卷159",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "menghaoran-e2"
+  },
+  {
+    "id": "a-menghaoran-gu-guren-zhuang-1",
+    "workId": "menghaoran-gu-guren-zhuang",
+    "poetId": "menghaoran",
+    "placeId": "cn-hubei-xiangyang",
+    "date": {
+      "year": 730,
+      "certainty": "approximate",
+      "fuzziness": 8
+    },
+    "circumstance": "被老朋友请去吃顿饭，杀鸡煮黄米饭，开窗就是打谷场和菜园，喝着酒聊桑麻。「待到重阳日，还来就菊花」——还没走就约下次，这是田园诗里最有人味的一句。",
+    "setting": "襄阳近郊田家，场圃桑麻，相约重阳再访菊花",
+    "rationale": "所写为襄阳近郊的田家生活，地点无争议。系年则无明文，据其「隐居襄阳时期」笼统定于 730 年前后，fuzziness 取 8，confidence 标 C。",
+    "sources": [
+      {
+        "id": "quantangshi-menghaoran",
+        "title": "全唐诗·孟浩然小传",
+        "locator": "卷159",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "menghaoran-e6"
+  },
+  {
+    "id": "a-menghaoran-su-jiande-jiang-1",
+    "workId": "menghaoran-su-jiande-jiang",
+    "poetId": "menghaoran",
+    "placeId": "cn-zhejiang-jiande",
+    "date": {
+      "year": 730,
+      "certainty": "approximate",
+      "fuzziness": 2
+    },
+    "circumstance": "船停在烟雾迷蒙的小洲边，天晚了，羁旅之愁又新添一层。「野旷天低树」——原野太阔，天反而比树还低；「江清月近人」——江水太清，月亮像是凑过来陪人。前句是孤独的压迫，后句是唯一的安慰。",
+    "setting": "睦州建德城下江渚，日暮泊舟",
+    "rationale": "诗题即明言「建德」，地点确凿。系于孟浩然落第后漫游吴越期间（约 729—731），与《宿桐庐江寄广陵旧游》为同一行程之作。地点可靠而年份在数年范围内浮动，故 confidence 标 B。",
+    "sources": [
+      {
+        "id": "quantangshi-menghaoran",
+        "title": "全唐诗·孟浩然小传",
+        "locator": "卷159",
+        "reliability": "B"
+      },
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true,
+    "triggerEventId": "menghaoran-e5"
+  },
+  {
+    "id": "a-menghaoran-wang-dongtinghu-1",
+    "workId": "menghaoran-wang-dongtinghu",
+    "poetId": "menghaoran",
+    "placeId": "cn-hunan-yueyang",
+    "date": {
+      "year": 733,
+      "certainty": "approximate",
+      "fuzziness": 6
+    },
+    "circumstance": "八月的洞庭湖水涨平了岸，水汽蒸腾着云梦泽，波涛摇撼着岳阳城。这四句写足了湖的壮阔，却都是为了后四句：「欲济无舟楫」——我想过河，没有船；「端居耻圣明」——这样闲着，对不起这个清明的时代；「坐观垂钓者，徒有羡鱼情」——只能坐着看别人钓鱼。一首干谒诗写得这样体面，前无古人。",
+    "setting": "岳州巴陵，登岳阳楼望洞庭，八月秋汛",
+    "rationale": "诗题与「波撼岳阳城」明指洞庭湖畔岳州巴陵（今岳阳），地点确凿。然「张丞相」所指有张九龄、张说二说：主张九龄者系于开元二十一年（733）前后其为相时，主张说者另系他年。二说至今未有定论，年份因此无法收紧，fuzziness 取 6，confidence 标 C，并在作品 note 中两存其说——不因为哪一派更流行就替读者做决定。",
+    "sources": [
+      {
+        "id": "quantangshi-menghaoran",
+        "title": "全唐诗·孟浩然小传",
+        "locator": "卷159",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "menghaoran-e5"
+  },
+  {
+    "id": "a-menghaoran-deng-xian-shan-1",
+    "workId": "menghaoran-deng-xian-shan",
+    "poetId": "menghaoran",
+    "placeId": "cn-hubei-xiangyang",
+    "date": {
+      "year": 730,
+      "certainty": "approximate",
+      "fuzziness": 8
+    },
+    "circumstance": "人事一代代更替，往来便成了古今。江山留下名胜，我们又来登临。读到羊公碑，眼泪沾湿了衣襟——孟浩然哭的不是羊祜，是「我辈」终究也会成为后人眼中的「古」。",
+    "setting": "襄阳城南岘山，羊公碑（堕泪碑）前",
+    "rationale": "岘山在襄阳城南，晋羊祜镇襄阳时常登此，卒后民为立碑，望者流涕，杜预名之「堕泪碑」。诗为孟浩然与友人同登所作，地点在其故乡襄阳，无争议；系年无明文，笼统定于隐居襄阳时期，fuzziness 取 8，confidence 标 C。",
+    "sources": [
+      {
+        "id": "quantangshi-menghaoran",
+        "title": "全唐诗·孟浩然小传",
+        "locator": "卷159",
+        "reliability": "B"
+      },
+      {
+        "id": "yuanhe-junxian-tuzhi",
+        "title": "元和郡县图志",
+        "author": "李吉甫",
+        "locator": "卷二十一·襄州",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "menghaoran-e6"
+  },
+  {
+    "id": "a-menghaoran-suimu-gui-nanshan-1",
+    "workId": "menghaoran-suimu-gui-nanshan",
+    "poetId": "menghaoran",
+    "placeId": "cn-shaanxi-xian",
+    "date": {
+      "year": 728,
+      "certainty": "approximate",
+      "fuzziness": 2
+    },
+    "circumstance": "不去北阙上书了，回南山那间破屋子吧。「不才明主弃」——我没本事，被圣明的君主抛弃了；「多病故人疏」——又多病，老朋友也疏远了。这两句里有真委屈，也有真赌气，而正是这种半真半假的口气惹恼了玄宗。",
+    "setting": "长安，岁暮，求仕无果欲归",
+    "rationale": "《新唐书》本传载孟浩然在长安诵此诗至「不才明主弃」而忤玄宗，事在开元十六年（728）应举不第前后，故系于长安。诗题「归南山」之南山有终南山（长安南）与襄阳南山二解，然据本传本事，作于长安更为可信，故系长安而 confidence 标 B——异文「一作《归故园作》」提示另有一解，不宜断言。",
+    "sources": [
+      {
+        "id": "xts-menghaoran",
+        "title": "新唐书·孟浩然传",
+        "author": "欧阳修等",
+        "locator": "卷203·文艺下",
+        "reliability": "A"
+      },
+      {
+        "id": "quantangshi-menghaoran",
+        "title": "全唐诗·孟浩然小传",
+        "locator": "卷159",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true,
+    "triggerEventId": "menghaoran-e4"
+  },
+  {
+    "id": "a-menghaoran-liubie-wangwei-1",
+    "workId": "menghaoran-liubie-wangwei",
+    "poetId": "menghaoran",
+    "placeId": "cn-shaanxi-xian",
+    "date": {
+      "year": 728,
+      "certainty": "approximate",
+      "fuzziness": 6
+    },
+    "circumstance": "一天天寂寂地等，一天天空空地回来。想寻芳草归去，又不舍与故人分别。当权的人谁肯援手？知音在这世上本就稀少。那就守着寂寞，回去掩上故园的柴门吧。",
+    "setting": "长安，临别赠王维，求仕无果决意南归",
+    "rationale": "题称「王侍御维」，王维任侍御史约在开元末年前后，诗为离京留别之作，地点在长安。然王维为侍御史的确年尚有弹性，故 fuzziness 取 6、confidence 标 C。诗本身「寂寂竟何待，朝朝空自归」正是屡谒无果的实录，与《岁暮归南山》为同一心境。",
+    "sources": [
+      {
+        "id": "quantangshi-menghaoran",
+        "title": "全唐诗·孟浩然小传",
+        "locator": "卷159",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "menghaoran-e3"
+  },
+  {
+    "id": "a-menghaoran-su-tonglu-jiang-1",
+    "workId": "menghaoran-su-tonglu-jiang",
+    "poetId": "menghaoran",
+    "placeId": "cn-zhejiang-tonglu",
+    "date": {
+      "year": 730,
+      "certainty": "approximate",
+      "fuzziness": 2
+    },
+    "circumstance": "山色暗下来，猿声听着发愁，江水在夜里流得急。风在两岸树叶间作响，月亮照着一条孤船。「建德非吾土」——建德虽好不是我的故乡；「维扬忆旧游」——想起扬州的老朋友。于是把两行眼泪遥遥寄向海西头。",
+    "setting": "睦州桐庐江上，夜泊孤舟，怀广陵旧友",
+    "rationale": "诗题明言「桐庐江」，且「建德非吾土」可证其时已离睦州治所建德而泊于桐庐江段，二地同属睦州而相距约五十公里，故系于桐庐而非建德。与《宿建德江》同属落第后吴越之游（约 729—731）。地点可靠、年份在数年范围内浮动，confidence 标 B。",
+    "sources": [
+      {
+        "id": "quantangshi-menghaoran",
+        "title": "全唐诗·孟浩然小传",
+        "locator": "卷159",
+        "reliability": "B"
+      },
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true,
+    "triggerEventId": "menghaoran-e5"
+  },
+  {
+    "id": "a-menghaoran-qinzhong-ganqiu-1",
+    "workId": "menghaoran-qinzhong-ganqiu",
+    "poetId": "menghaoran",
+    "placeId": "cn-shaanxi-xian",
+    "date": {
+      "year": 728,
+      "certainty": "approximate",
+      "fuzziness": 4
+    },
+    "circumstance": "常想守着一丘山卧老，可惜连「三径」的资费都没有。北土不是我想待的地方，心里念的是东林寺的那位法师。黄金像烧桂一样烧完了，壮志一年年衰下去。傍晚凉风一起，听见蝉声，只是更添悲凉。",
+    "setting": "长安（秦中），秋日，干谒无成而思归隐",
+    "rationale": "「秦中」即关中，指长安，地点据题可定。所用「三径」「东林」皆归隐之典，与《岁暮归南山》同一时期心境，系于开元十六年（728）前后在长安求仕期间。年份有数年弹性，confidence 标 C。",
+    "sources": [
+      {
+        "id": "quantangshi-menghaoran",
+        "title": "全唐诗·孟浩然小传",
+        "locator": "卷159",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "menghaoran-e3"
+  },
+  {
+    "id": "a-menghaoran-ye-gui-lumen-1",
+    "workId": "menghaoran-ye-gui-lumen",
+    "poetId": "menghaoran",
+    "placeId": "cn-hubei-lumen",
+    "date": {
+      "year": 725,
+      "certainty": "approximate",
+      "fuzziness": 8
+    },
+    "circumstance": "山寺的钟声响时天已黄昏，渔梁渡口众人争渡、一片喧闹。别人顺着沙路回江村的村，我独自乘船回鹿门。鹿门的月光照开烟雾中的树林，忽然就到了庞公当年栖隐的地方。石门松径长久寂寥，只有我这个幽人自来自去。",
+    "setting": "襄阳鹿门山，夜归山径，月照烟树",
+    "rationale": "诗题与「鹿门月照开烟树，忽到庞公栖隐处」明指襄阳鹿门山；庞德公（庞公）汉末隐此，见《后汉书·逸民传》。系年无明文，据其「余亦乘舟归鹿门」当为隐居鹿门山时期（约 710—727 或晚年还乡后 732—740），二可，故 fuzziness 取大值、confidence 标 C。地点本身可靠，是这首诗唯一能确定的坐标。",
+    "sources": [
+      {
+        "id": "quantangshi-menghaoran",
+        "title": "全唐诗·孟浩然小传",
+        "locator": "卷159",
+        "reliability": "B"
+      },
+      {
+        "id": "yuanhe-junxian-tuzhi",
+        "title": "元和郡县图志",
+        "author": "李吉甫",
+        "locator": "卷二十一·襄州",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "menghaoran-e2"
+  },
+  {
+    "id": "a-menghaoran-xiari-nanting-1",
+    "workId": "menghaoran-xiari-nanting",
+    "poetId": "menghaoran",
+    "placeId": "cn-hubei-xiangyang",
+    "date": {
+      "year": 730,
+      "certainty": "approximate",
+      "fuzziness": 8
+    },
+    "circumstance": "山上的日光忽然西沉，池上的月亮渐渐东升。披散着头发乘凉，开窗躺着，宽敞而闲适。荷风吹来香气，竹露滴下清响。想取琴来弹，恨无知音欣赏——于是想起故人，半夜还在辗转思念。",
+    "setting": "襄阳故园南亭，夏夜纳凉，怀辛大",
+    "rationale": "所写为襄阳故园夏日生活，「南亭」当在其涧南园一带。系年无明文，笼统系于其还乡隐居时期，fuzziness 取 8，confidence 标 C。题中「辛大」其人不详，故怀人对象不可考，这一点不掩饰。",
+    "sources": [
+      {
+        "id": "quantangshi-menghaoran",
+        "title": "全唐诗·孟浩然小传",
+        "locator": "卷159",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "menghaoran-e6"
+  },
+  {
+    "id": "a-menghaoran-su-yeshi-shanfang-1",
+    "workId": "menghaoran-su-yeshi-shanfang",
+    "poetId": "menghaoran",
+    "placeId": "cn-hubei-xiangyang",
+    "date": {
+      "year": 730,
+      "certainty": "approximate",
+      "fuzziness": 8
+    },
+    "circumstance": "夕阳翻过西岭，群壑一下子就暗了。松间月色生出夜凉，风与泉充满清越的声响。打柴的人快走尽了，暮烟里的鸟刚刚栖定。约好的那个人还没来，我抱着一张琴在藤萝小径上等。",
+    "setting": "襄阳山中业师山房，夕暮候友人不至",
+    "rationale": "「业师」为僧人，「山房」为僧舍，当在襄阳近郊山中。系年无明文，笼统系于其隐居襄阳时期，fuzziness 取 8，confidence 标 C。",
+    "sources": [
+      {
+        "id": "quantangshi-menghaoran",
+        "title": "全唐诗·孟浩然小传",
+        "locator": "卷159",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "menghaoran-e6"
   }
 ]
