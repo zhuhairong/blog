@@ -1,10 +1,14 @@
-import { getAllPostIds, getPostData } from "@/lib/api";
-import Header from "@/components/Header";
+import Link from 'next/link';
+import { getAllPostIds, getPostData } from '@/lib/api';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { ArrowRight, Calendar } from '@/components/icons';
+import styles from './post.module.css';
+
+const REPO = 'https://github.com/zhuhairong/blog';
 
 type Params = {
-    params: Promise<{
-        id: string;
-    }>;
+    params: Promise<{ id: string }>;
 };
 
 export async function generateStaticParams() {
@@ -12,43 +16,63 @@ export async function generateStaticParams() {
     return paths.map((path) => path.params);
 }
 
+function formatDate(value: string) {
+    if (!value) return '';
+    const parsed = new Date(value);
+    if (Number.isNaN(parsed.getTime())) return value;
+    return parsed.toLocaleDateString('zh-CN', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    });
+}
+
 export default async function Post({ params }: Params) {
     const { id } = await params;
-    const postData = await getPostData(id);
+    const post = await getPostData(id);
 
     return (
         <>
             <Header />
-            <article>
-            <div style={{ marginBottom: '3rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '2rem' }}>
-                <h1 style={{ fontSize: '3rem', marginBottom: '1rem', lineHeight: '1.1' }}>{postData.title}</h1>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: 'var(--text-secondary)' }}>
-                    <time dateTime={postData.date}>{postData.date}</time>
-                    <a
-                        href={`https://github.com/YourUsername/YourRepo/edit/main/posts/${id}.md`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn btn-secondary"
-                        style={{ fontSize: '0.875rem', padding: '0.25rem 0.75rem', borderRadius: '4px' }}
-                    >
-                        Edit this Post on GitHub
-                    </a>
-                </div>
+
+            <div className="container">
+                <article className={styles.article}>
+                    <Link href="/" className={styles.back}>
+                        <ArrowRight size={16} className={styles.backIcon} />
+                        返回首页
+                    </Link>
+
+                    <header className={styles.head}>
+                        <h1 className={styles.title}>{post.title}</h1>
+                        <div className={styles.meta}>
+                            <span className={styles.date}>
+                                <Calendar size={15} />
+                                <time dateTime={post.date}>{formatDate(post.date)}</time>
+                            </span>
+                            <a
+                                href={`${REPO}/edit/master/posts/${id}.md`}
+                                target="_blank"
+                                rel="noreferrer"
+                                className={styles.edit}
+                            >
+                                在 GitHub 编辑
+                            </a>
+                        </div>
+                    </header>
+
+                    {post.coverImage && (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img className={styles.cover} src={post.coverImage} alt={post.title} />
+                    )}
+
+                    <div
+                        className={styles.content}
+                        dangerouslySetInnerHTML={{ __html: post.contentHtml || '' }}
+                    />
+                </article>
             </div>
 
-            {postData.coverImage && (
-                <img
-                    src={postData.coverImage}
-                    alt={postData.title}
-                    style={{ width: '100%', borderRadius: 'var(--radius-lg)', marginBottom: '2rem' }}
-                />
-            )}
-
-            <div
-                dangerouslySetInnerHTML={{ __html: postData.contentHtml || "" }}
-                style={{ fontSize: '1.1rem', lineHeight: '1.8' }}
-            />
-        </article>
+            <Footer />
         </>
     );
 }

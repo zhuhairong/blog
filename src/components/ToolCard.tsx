@@ -1,7 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { useRef, type MouseEvent } from 'react';
+import { useRef, type CSSProperties, type MouseEvent } from 'react';
+import { ArrowUpRight } from './icons';
+import styles from '@/app/page.module.css';
 
 export type Tool = {
     href: string;
@@ -9,16 +11,17 @@ export type Tool = {
     desc: string;
     icon: string;
     tags: string[];
-    /** 图标渐变主色 */
     from: string;
     to: string;
-    /** 卡片辉光色 */
     glow: string;
-    /** 分类 */
-    category: 'code' | 'study';
 };
 
-export default function ToolCard({ tool, featured = false }: { tool: Tool; featured?: boolean }) {
+type Props = {
+    tool: Tool;
+    featured?: boolean;
+};
+
+export default function ToolCard({ tool, featured = false }: Props) {
     const ref = useRef<HTMLAnchorElement | null>(null);
 
     const handleMove = (e: MouseEvent<HTMLAnchorElement>) => {
@@ -29,46 +32,53 @@ export default function ToolCard({ tool, featured = false }: { tool: Tool; featu
         el.style.setProperty('--my', `${e.clientY - rect.top}px`);
     };
 
-    return (
-        <Link
-            ref={ref}
-            href={tool.href}
-            onMouseMove={handleMove}
-            className={`tool-card-modern${featured ? ' is-featured' : ''}`}
-            style={
-                {
-                    '--tool-from': tool.from,
-                    '--tool-to': tool.to,
-                    '--tool-glow': tool.glow,
-                } as React.CSSProperties
-            }
-        >
-            <span className="tool-card-border" aria-hidden="true" />
-            <span className="tool-card-spotlight" aria-hidden="true" />
+    const vars = {
+        '--glow': tool.glow,
+        '--from': tool.from,
+        '--to': tool.to,
+    } as CSSProperties;
 
-            <div className="tool-card-inner">
-                <div className="tool-card-head">
-                    <div className="tool-card-icon">
-                        <span aria-hidden="true">{tool.icon}</span>
+    if (featured) {
+        return (
+            <Link ref={ref} href={tool.href} onMouseMove={handleMove} className={styles.card} style={vars}>
+                <div className={styles.cardBody}>
+                    <div className={styles.featuredTop}>
+                        <span className={styles.cardIcon} aria-hidden="true">
+                            {tool.icon}
+                        </span>
+                        <div className={styles.featuredMain}>
+                            <h3 className={styles.cardTitle}>{tool.title}</h3>
+                            <p className={styles.cardDesc}>{tool.desc}</p>
+                            <div className={styles.cardTags}>
+                                {tool.tags.map((t) => (
+                                    <span key={t} className={styles.tag}>
+                                        {t}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
                     </div>
-                    <svg className="tool-card-arrow" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                        <path
-                            d="M6 14L14 6M14 6H8M14 6v6"
-                            stroke="currentColor"
-                            strokeWidth="1.8"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                    </svg>
                 </div>
+                <ArrowUpRight size={24} className={styles.cardArrow} />
+            </Link>
+        );
+    }
 
-                <h3 className="tool-card-title">{tool.title}</h3>
-                <p className="tool-card-desc">{tool.desc}</p>
-
-                <div className="tool-card-tags">
-                    {tool.tags.map((tag) => (
-                        <span key={tag} className="tool-tag">
-                            {tag}
+    return (
+        <Link ref={ref} href={tool.href} onMouseMove={handleMove} className={styles.card} style={vars}>
+            <div className={styles.cardBody}>
+                <div className={styles.cardTop}>
+                    <span className={styles.cardIcon} aria-hidden="true">
+                        {tool.icon}
+                    </span>
+                    <ArrowUpRight size={20} className={styles.cardArrow} />
+                </div>
+                <h3 className={styles.cardTitle}>{tool.title}</h3>
+                <p className={styles.cardDesc}>{tool.desc}</p>
+                <div className={styles.cardTags}>
+                    {tool.tags.map((t) => (
+                        <span key={t} className={styles.tag}>
+                            {t}
                         </span>
                     ))}
                 </div>
