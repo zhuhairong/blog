@@ -14,6 +14,7 @@ import {
   getPlaceWorks,
   getPoetDetail,
   getPoetsIndex,
+  getFeaturedArt,
   isAtlasBuilt,
 } from '@/lib/atlas';
 import type { Confidence, PlacePrecision } from '@/poetry-atlas/types';
@@ -118,6 +119,8 @@ export default function PoetryAtlasPage() {
             seed="atlas|hero"
             size="hero"
             className={styles.atlasHeroScene}
+            art={getFeaturedArt('atlas-hero')}
+            artOpacity={0.5}
           />
           <div className={styles.atlasHeroBody}>
             <div className={styles.pageHead}>

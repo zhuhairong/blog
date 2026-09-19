@@ -21,6 +21,7 @@ import {
 } from '@/lib/atlas';
 import Scene from '../../scenes/SceneView';
 import { motiveOfPlace, motiveOfEvent, motiveOfTheme, weatherOf } from '../../scenes/scene';
+import { getArtForWork } from '@/lib/atlas';
 import type { Assertion, Place } from '@/poetry-atlas/types';
 
 export function generateStaticParams() {
@@ -125,6 +126,16 @@ export default async function WorkPage({
     ? weatherOf(`${triggerEvent.title} ${triggerEvent.description}`)
     : null;
 
+  /**
+   * 古画配图：只用在「诗框背景」这一处。
+   *
+   * 创作缘起那块讲的是具体事件，程序化 SVG 已经在准确表达「事件类型 + 地点」
+   * （战乱画关隘、贬谪画道路），换成一张意境古画反而丢失了这层语义；
+   * 而诗框背景本来就要的是「静气」，古画正好补上 SVG 缺的那份笔触。
+   * 各司其职，不混用。
+   */
+  const art = getArtForWork(work.id);
+
   return (
     <>
       <Header />
@@ -214,6 +225,7 @@ export default async function WorkPage({
               seed={`poem|${work.id}|${poemMotive}|${poemWeather}`}
               size="banner"
               className={styles.poemBoxScene}
+              art={art}
             />
             <div className={styles.poemBoxBody}>
               {work.content.map((line, i) => (
@@ -237,6 +249,31 @@ export default async function WorkPage({
             </div>
           </div>
         </Reveal>
+
+        {/* ── 配图出处 ──
+            公版素材的署名是硬要求：CC0 虽不强制，但学术产品必须交代来源，
+            否则用户无从核验这张画是什么、凭什么配这首诗。 */}
+        {art && (
+          <p className={styles.artCredit}>
+            <span className={styles.artCreditKey}>配图</span>
+            <span>
+              {art.artArtist ? `${art.artArtist} ` : ''}
+              {art.artTitle}
+              {art.artDate ? `（${art.artDate}）` : ''}
+            </span>
+            <span className={styles.artCreditSrc}>大都会艺术博物馆 · 公有领域</span>
+            {art.artURL && (
+              <a
+                className={styles.artCreditLink}
+                href={art.artURL}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                查看原件
+              </a>
+            )}
+          </p>
+        )}
 
         {/* ── 异说警告 ── */}
         {hasContest && (

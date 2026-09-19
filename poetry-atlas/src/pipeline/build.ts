@@ -365,6 +365,40 @@ function main() {
       .sort((a, b) => b.workCount - a.workCount),
   );
 
+  /**
+   * ── 配图索引 ──
+   *
+   * 站点的插画分两条腿：
+   *   1. `scene.ts` 的程序化 SVG（确定性、随主题变色）——用于生平事件、诗人页轨迹；
+   *   2. 这里的公版古画位图——用于诗框背景，因为它「精美」，而这正是 SVG 做不到的。
+   *
+   * 位图一旦入库就不可变，所以「哪首诗配哪幅画」必须在构建期定死并落盘，
+   * 不能放到前端随机挑（否则每次刷新图都变，且无法被缓存）。
+   * 匹配逻辑由 `tools/art-match.ts` 离线算好后写入 `data/art/work-art.json`，
+   * 这里只做「数据存在与否」的兼容处理：没有配图数据时静默跳过，
+   * 让站点退化成纯 SVG 版，而不是构建失败。
+   */
+  const artDir = path.resolve(HERE, '..', '..', 'data', 'art');
+  const artByWork = new Map<string, unknown>();
+  let artCatalog: unknown[] = [];
+  let artMatches: { workId: string }[] = [];
+  try {
+    const catalogFile = path.join(artDir, 'art-catalog.json');
+    const matchFile = path.join(artDir, 'work-art.json');
+    if (fs.existsSync(catalogFile) && fs.existsSync(matchFile)) {
+      artCatalog = JSON.parse(fs.readFileSync(catalogFile, 'utf8'));
+      artMatches = JSON.parse(fs.readFileSync(matchFile, 'utf8'));
+      for (const m of artMatches) artByWork.set(m.workId, m);
+      writeJson('art-catalog.json', artCatalog);
+      writeJson('work-art.json', artMatches);
+      console.log(`  ${'配图'.padEnd(28)} ${String(artMatches.length).padStart(8)} 首`);
+    } else {
+      console.log('  （无配图数据，跳过；插画回退为程序化 SVG）');
+    }
+  } catch (e) {
+    console.log('  ! 配图数据解析失败，已跳过：', (e as Error).message);
+  }
+
   // 逐诗人 / 逐作品详情分片
   let poetFiles = 0;
   let workFiles = 0;
@@ -396,6 +430,8 @@ function main() {
       ...work,
       assertions,
       places: ds.places.filter((p) => placeIds.has(p.id)),
+      // 该作品的配图（公版古画）。无则为 undefined，前端回退到 SVG 插画。
+      art: artByWork.get(work.id),
     });
     workFiles += 1;
   }

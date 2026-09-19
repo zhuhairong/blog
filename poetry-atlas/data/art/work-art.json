@@ -1,0 +1,970 @@
+[
+ {
+  "workId": "dufu-qiangcun-sanjian",
+  "title": "茅屋为秋风所破歌",
+  "poetId": "dufu",
+  "motifs": [
+   "田园",
+   "秋",
+   "夜",
+   "月"
+  ],
+  "objectID": 39920,
+  "artTitle": "River Village in Autumn Dawn",
+  "artArtist": "Zhao Lingrang",
+  "artDate": "13th century",
+  "artCredit": "Ex coll.: C. C. Wang Family, Purchase, Gift of J. Pierpont Morgan, by exchange, 1973",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP165233_CRD.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/39920"
+ },
+ {
+  "workId": "dufu-chunwang",
+  "title": "春望",
+  "poetId": "dufu",
+  "motifs": [
+   "建筑",
+   "春"
+  ],
+  "objectID": 36133,
+  "artTitle": "Viewing a waterfall from a mountain pavilion",
+  "artArtist": "Li Yin",
+  "artDate": "1700",
+  "artCredit": "Anonymous Gift, in memory of Maitland F. Griggs, 1981",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/1981_122_O.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36133"
+ },
+ {
+  "workId": "dufu-wangyue",
+  "title": "望岳",
+  "poetId": "dufu",
+  "motifs": [
+   "山"
+  ],
+  "objectID": 35984,
+  "artTitle": "Dwelling in landscape",
+  "artArtist": "Song Maojin",
+  "artDate": "17th century",
+  "artCredit": "John Stewart Kennedy Fund, 1913",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153841.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/35984"
+ },
+ {
+  "workId": "dufu-fangwei-ba",
+  "title": "房兵曹胡马",
+  "poetId": "dufu",
+  "motifs": [
+   "边塞"
+  ],
+  "objectID": 39569,
+  "artTitle": "Eighteen Songs of a Nomad Flute: The Story of Lady Wenji",
+  "artArtist": "Unidentified artist",
+  "artDate": "early 15th century",
+  "artCredit": "Ex coll.: C. C. Wang Family, Gift of The Dillon Fund, 1973",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP213003_CRD.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/39569"
+ },
+ {
+  "workId": "dufu-zeng-li-bai",
+  "title": "赠李白",
+  "poetId": "dufu",
+  "motifs": [
+   "送别"
+  ],
+  "objectID": 36453,
+  "artTitle": "Strolling in a misty valley",
+  "artArtist": "Mei Qing",
+  "artDate": "1649",
+  "artCredit": "Purchase, Soong Family Gift, in memory of Dr. T.V. Soong, 1994",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DT375239.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36453"
+ },
+ {
+  "workId": "dufu-aijiangtou",
+  "title": "哀江头",
+  "poetId": "dufu",
+  "motifs": [
+   "建筑",
+   "春"
+  ],
+  "objectID": 35989,
+  "artTitle": "Landscape with figure",
+  "artArtist": "Chen Jichun",
+  "artDate": "1635",
+  "artCredit": "John Stewart Kennedy Fund, 1913",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153844.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/35989"
+ },
+ {
+  "workId": "dufu-yueye",
+  "title": "月夜",
+  "poetId": "dufu",
+  "motifs": [
+   "夜",
+   "月"
+  ],
+  "objectID": 39901,
+  "artTitle": "Night-Shining White",
+  "artArtist": "Han Gan",
+  "artDate": "ca. 750",
+  "artCredit": "Purchase, The Dillon Fund Gift, 1977",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153705.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/39901"
+ },
+ {
+  "workId": "dufu-qiangcun-sanshou",
+  "title": "羌村三首",
+  "poetId": "dufu",
+  "motifs": [
+   "田园",
+   "夜",
+   "月"
+  ],
+  "objectID": 36037,
+  "artTitle": "Viewing the Moon under a Pine Tree",
+  "artArtist": "Ma Yuan",
+  "artDate": "early 13th century",
+  "artCredit": "Rogers Fund, 1923",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153498.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36037"
+ },
+ {
+  "workId": "dufu-xinan-li",
+  "title": "新安吏",
+  "poetId": "dufu",
+  "motifs": [
+   "田园"
+  ],
+  "objectID": 36005,
+  "artTitle": "Mountain Market, Clearing Mist",
+  "artArtist": "Xia Gui",
+  "artDate": "early 13th century",
+  "artCredit": "John Stewart Kennedy Fund, 1913",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP154073.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36005"
+ },
+ {
+  "workId": "dufu-shihao-li",
+  "title": "石壕吏",
+  "poetId": "dufu",
+  "motifs": [
+   "田园"
+  ],
+  "objectID": 36055,
+  "artTitle": "Landscape with great pine",
+  "artArtist": "Ma Lin",
+  "artDate": "second quarter 13th century",
+  "artCredit": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153508.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36055"
+ },
+ {
+  "workId": "dufu-tongguan-li",
+  "title": "潼关吏",
+  "poetId": "dufu",
+  "motifs": [
+   "边塞"
+  ],
+  "objectID": 39569,
+  "artTitle": "Eighteen Songs of a Nomad Flute: The Story of Lady Wenji",
+  "artArtist": "Unidentified artist",
+  "artDate": "early 15th century",
+  "artCredit": "Ex coll.: C. C. Wang Family, Gift of The Dillon Fund, 1973",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP213003_CRD.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/39569"
+ },
+ {
+  "workId": "dufu-chunsu",
+  "title": "春宿左省",
+  "poetId": "dufu",
+  "motifs": [
+   "建筑",
+   "春",
+   "夜",
+   "月"
+  ],
+  "objectID": 36133,
+  "artTitle": "Viewing a waterfall from a mountain pavilion",
+  "artArtist": "Li Yin",
+  "artDate": "1700",
+  "artCredit": "Anonymous Gift, in memory of Maitland F. Griggs, 1981",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/1981_122_O.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36133"
+ },
+ {
+  "workId": "dufu-qinzhou-zashi-yi",
+  "title": "秦州杂诗二十首·其七",
+  "poetId": "dufu",
+  "motifs": [
+   "水",
+   "夜",
+   "月"
+  ],
+  "objectID": 36011,
+  "artTitle": "First half of Ten Thousand Li of the Yangzi River",
+  "artArtist": "Unidentified artist",
+  "artDate": "late 15th century",
+  "artCredit": "John Stewart Kennedy Fund, 1913",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-44796-001.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36011"
+ },
+ {
+  "workId": "dufu-yueye-yi-shedi",
+  "title": "月夜忆舍弟",
+  "poetId": "dufu",
+  "motifs": [
+   "夜",
+   "秋",
+   "月"
+  ],
+  "objectID": 36084,
+  "artTitle": "Flowering Plum in Moonlight and Snow",
+  "artArtist": "Liu Shiru",
+  "artDate": "16th century",
+  "artCredit": "Gift of Alan Priest, 1959",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-37469-002.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36084"
+ },
+ {
+  "workId": "dufu-shuxiang",
+  "title": "蜀相",
+  "poetId": "dufu",
+  "motifs": [
+   "建筑"
+  ],
+  "objectID": 36053,
+  "artTitle": "Landscape with Pavilions and Cranes",
+  "artArtist": "Unidentified artist",
+  "artDate": "",
+  "artCredit": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153529.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36053"
+ },
+ {
+  "workId": "dufu-chunye-xiyu",
+  "title": "春夜喜雨",
+  "poetId": "dufu",
+  "motifs": [
+   "雨",
+   "春",
+   "夜",
+   "月"
+  ],
+  "objectID": 36056,
+  "artTitle": "Towing a Boat in a Rainstorm",
+  "artArtist": "Unidentified artist",
+  "artDate": "late 12th century",
+  "artCredit": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153500.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36056"
+ },
+ {
+  "workId": "dufu-wenguanjun-shou",
+  "title": "闻官军收河南河北",
+  "poetId": "dufu",
+  "motifs": [
+   "田园",
+   "春"
+  ],
+  "objectID": 36048,
+  "artTitle": "Spring Festival on the River",
+  "artArtist": "Unidentified artist",
+  "artDate": "18th century?",
+  "artCredit": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP120039_CRD.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36048"
+ },
+ {
+  "workId": "dufu-luye-shuhuai",
+  "title": "旅夜书怀",
+  "poetId": "dufu",
+  "motifs": [
+   "水",
+   "夜",
+   "月"
+  ],
+  "objectID": 36437,
+  "artTitle": "Lotus and waterbirds",
+  "artArtist": "Unidentified artist",
+  "artDate": "ca. 1300",
+  "artCredit": "Purchase, The Dillon Fund Gift, 1988",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-36424-001.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36437"
+ },
+ {
+  "workId": "dufu-qiuxing-ba-shou-yi",
+  "title": "秋兴八首·其一",
+  "poetId": "dufu",
+  "motifs": [
+   "送别",
+   "秋"
+  ],
+  "objectID": 35992,
+  "artTitle": "Setting Sun on the Autumn River",
+  "artArtist": "Pan Yunyu",
+  "artDate": "1604 or 1664",
+  "artCredit": "John Stewart Kennedy Fund, 1913",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153847.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/35992"
+ },
+ {
+  "workId": "dufu-denggao",
+  "title": "登高",
+  "poetId": "dufu",
+  "motifs": [
+   "水",
+   "秋"
+  ],
+  "objectID": 36000,
+  "artTitle": "River landscape",
+  "artArtist": "Zhuang Jiongsheng",
+  "artDate": "",
+  "artCredit": "John Stewart Kennedy Fund, 1913",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153851.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36000"
+ },
+ {
+  "workId": "dufu-yonghuai-guji-san",
+  "title": "咏怀古迹五首·其三",
+  "poetId": "dufu",
+  "motifs": [
+   "建筑"
+  ],
+  "objectID": 36026,
+  "artTitle": "Spring Ablutions at the Orchid Pavilion",
+  "artArtist": "Wang Wenzhi",
+  "artDate": "",
+  "artCredit": "John Stewart Kennedy Fund, 1913",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/13_220_118_O.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36026"
+ },
+ {
+  "workId": "dufu-dengyueyanglou",
+  "title": "登岳阳楼",
+  "poetId": "dufu",
+  "motifs": [
+   "水",
+   "夜",
+   "月"
+  ],
+  "objectID": 36181,
+  "artTitle": "Landscape",
+  "artArtist": "Wu Guxiang",
+  "artDate": "dated 1894",
+  "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP161444.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36181"
+ },
+ {
+  "workId": "dufu-jiangnan-feng-liguinian",
+  "title": "江南逢李龟年",
+  "poetId": "dufu",
+  "motifs": [
+   "送别",
+   "春"
+  ],
+  "objectID": 36067,
+  "artTitle": "Spring Landscape with Plum Blossoms, Scholar and Deer",
+  "artArtist": "Xie Shichen",
+  "artDate": "dated 1548",
+  "artCredit": "Bequest of Katherine S. Dreier, 1952",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/52_177_20_O1_sf.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36067"
+ },
+ {
+  "workId": "sushi-jiangchengzi-mizhou",
+  "title": "江城子·密州出猎",
+  "poetId": "sushi",
+  "motifs": [
+   "边塞",
+   "夜",
+   "月"
+  ],
+  "objectID": 39901,
+  "artTitle": "Night-Shining White",
+  "artArtist": "Han Gan",
+  "artDate": "ca. 750",
+  "artCredit": "Purchase, The Dillon Fund Gift, 1977",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153705.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/39901"
+ },
+ {
+  "workId": "sushi-shuidiaogetou",
+  "title": "水调歌头·明月几时有",
+  "poetId": "sushi",
+  "motifs": [
+   "夜",
+   "秋",
+   "月"
+  ],
+  "objectID": 36089,
+  "artTitle": "Autumn Landscape, leaf from Album for Zhou Lianggong",
+  "artArtist": "Xiang Shengmo",
+  "artDate": "ｄａｔｅｄ 1654",
+  "artCredit": "Seymour Fund, 1964",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153913.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36089"
+ },
+ {
+  "workId": "sushi-niannujiao-chibi",
+  "title": "念奴娇·赤壁怀古",
+  "poetId": "sushi",
+  "motifs": [
+   "水"
+  ],
+  "objectID": 36093,
+  "artTitle": "Landscape for Zhao Yipeng",
+  "artArtist": "Tang Yin",
+  "artDate": "late 15th–early 16th century",
+  "artCredit": "Purchase, Bequest of Dorothy Graham Bennett, 1967",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP369002.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36093"
+ },
+ {
+  "workId": "libai-jingyesi",
+  "title": "静夜思",
+  "poetId": "libai",
+  "motifs": [
+   "夜",
+   "月"
+  ],
+  "objectID": 36022,
+  "artTitle": "Enjoying the Moon: Landscape in the Manner of Wang Meng",
+  "artArtist": "Gu Yide",
+  "artDate": "dated 1628",
+  "artCredit": "John Stewart Kennedy Fund, 1913",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/146252.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36022"
+ },
+ {
+  "workId": "libai-shudaonan",
+  "title": "蜀道难",
+  "poetId": "libai",
+  "motifs": [
+   "水"
+  ],
+  "objectID": 72262,
+  "artTitle": "Landscapes after Tang-dynasty poems",
+  "artArtist": "Sheng Maoye",
+  "artDate": "mid-17th century",
+  "artCredit": "The Sackler Fund, 1969",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP160989.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/72262"
+ },
+ {
+  "workId": "libai-zaofabaidicheng",
+  "title": "早发白帝城",
+  "poetId": "libai",
+  "motifs": [
+   "水"
+  ],
+  "objectID": 36181,
+  "artTitle": "Landscape",
+  "artArtist": "Wu Guxiang",
+  "artDate": "dated 1894",
+  "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP161444.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36181"
+ },
+ {
+  "workId": "libai-yuexiaduzhuo",
+  "title": "月下独酌（其一）",
+  "poetId": "libai",
+  "motifs": [
+   "夜",
+   "月"
+  ],
+  "objectID": 36084,
+  "artTitle": "Flowering Plum in Moonlight and Snow",
+  "artArtist": "Liu Shiru",
+  "artDate": "16th century",
+  "artCredit": "Gift of Alan Priest, 1959",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-37469-002.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36084"
+ },
+ {
+  "workId": "libai-jiangjinjiu",
+  "title": "将进酒",
+  "poetId": "libai",
+  "motifs": [
+   "水"
+  ],
+  "objectID": 36002,
+  "artTitle": "Riverscape with moored boats",
+  "artArtist": "Wu Shantao",
+  "artDate": "late 17th or early 18th century",
+  "artCredit": "John Stewart Kennedy Fund, 1913",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153885.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36002"
+ },
+ {
+  "workId": "libai-wanglushanpubu",
+  "title": "望庐山瀑布",
+  "poetId": "libai",
+  "motifs": [
+   "水"
+  ],
+  "objectID": 36130,
+  "artTitle": "Landscapes of the Twelve Months",
+  "artArtist": "Gong Xian",
+  "artDate": "ca. 1685",
+  "artCredit": "Gift of Douglas Dillon, 1980",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP161078_crd.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36130"
+ },
+ {
+  "workId": "libai-zengwanglun",
+  "title": "赠汪伦",
+  "poetId": "libai",
+  "motifs": [
+   "送别",
+   "春"
+  ],
+  "objectID": 36136,
+  "artTitle": "Spring Breeze of Myriad Pasts",
+  "artArtist": "Zhang You",
+  "artDate": "mid-15th century",
+  "artCredit": "Edward Elliott Family Collection, Purchase, The Dillon Fund Gift, 1981",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-17820-002.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36136"
+ },
+ {
+  "workId": "libai-huanghelou-songmeng",
+  "title": "黄鹤楼送孟浩然之广陵",
+  "poetId": "libai",
+  "motifs": [
+   "水"
+  ],
+  "objectID": 35972,
+  "artTitle": "Gathering Water Chestnuts",
+  "artArtist": "Unidentified artist",
+  "artDate": "18th century or later, spurious date of 1706",
+  "artCredit": "John Stewart Kennedy Fund, 1913",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153880.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/35972"
+ },
+ {
+  "workId": "libai-mengyoutianmu",
+  "title": "梦游天姥吟留别",
+  "poetId": "libai",
+  "motifs": [
+   "水"
+  ],
+  "objectID": 36023,
+  "artTitle": "Fisherman and family",
+  "artArtist": "Zhang Lu",
+  "artDate": "16th century",
+  "artCredit": "John Stewart Kennedy Fund, 1913",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/13_220_115.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36023"
+ },
+ {
+  "workId": "libai-duzuojingtingshan",
+  "title": "独坐敬亭山",
+  "poetId": "libai",
+  "motifs": [
+   "水"
+  ],
+  "objectID": 35970,
+  "artTitle": "Song of the Lute",
+  "artArtist": "Ding Yunpeng",
+  "artDate": "1585",
+  "artCredit": "John Stewart Kennedy Fund, 1913",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-16368-003.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/35970"
+ },
+ {
+  "workId": "libai-zixiangge",
+  "title": "子夜吴歌·秋歌",
+  "poetId": "libai",
+  "motifs": [
+   "边塞",
+   "秋",
+   "夜",
+   "月"
+  ],
+  "objectID": 35992,
+  "artTitle": "Setting Sun on the Autumn River",
+  "artArtist": "Pan Yunyu",
+  "artDate": "1604 or 1664",
+  "artCredit": "John Stewart Kennedy Fund, 1913",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153847.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/35992"
+ },
+ {
+  "workId": "libai-xinglunan",
+  "title": "行路难（其一）",
+  "poetId": "libai",
+  "motifs": [
+   "水"
+  ],
+  "objectID": 35968,
+  "artTitle": "Forts Zeelandia and Provintia and the City of Tainan",
+  "artArtist": "Unidentified artist",
+  "artDate": "19th century",
+  "artCredit": "Gift of J. Pierpont Morgan, 1909",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP354272.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/35968"
+ },
+ {
+  "workId": "libai-xietiaolou-jianbie",
+  "title": "宣州谢朓楼饯别校书叔云",
+  "poetId": "libai",
+  "motifs": [
+   "送别"
+  ],
+  "objectID": 44759,
+  "artTitle": "Landscapes, Figures, and Flowers",
+  "artArtist": "Chen Hongshou",
+  "artDate": "dated 1618–22",
+  "artCredit": "Purchase, Friends of Far Eastern Art Gifts, 1985",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/1985_121_A_sf.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/44759"
+ },
+ {
+  "workId": "libai-dujingmensongbie",
+  "title": "渡荆门送别",
+  "poetId": "libai",
+  "motifs": [
+   "水"
+  ],
+  "objectID": 36033,
+  "artTitle": "One hundred water buffalo",
+  "artArtist": "Unidentified artist",
+  "artDate": "13th century",
+  "artCredit": "Rogers Fund, 1918",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP166575_CRD.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36033"
+ },
+ {
+  "workId": "libai-qiupuge",
+  "title": "秋浦歌（其十五）",
+  "poetId": "libai",
+  "motifs": [
+   "秋"
+  ],
+  "objectID": 36012,
+  "artTitle": "Scholar Admiring Autumn Scenery",
+  "artArtist": "Unidentified artist",
+  "artDate": "late 15th–early 16th century",
+  "artCredit": "John Stewart Kennedy Fund, 1913",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/13_220_8_20108.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36012"
+ },
+ {
+  "workId": "libai-emeidaishanyue",
+  "title": "峨眉山月歌",
+  "poetId": "libai",
+  "motifs": [
+   "水",
+   "秋",
+   "夜",
+   "月"
+  ],
+  "objectID": 36130,
+  "artTitle": "Landscapes of the Twelve Months",
+  "artArtist": "Gong Xian",
+  "artDate": "ca. 1685",
+  "artCredit": "Gift of Douglas Dillon, 1980",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP161078_crd.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36130"
+ },
+ {
+  "workId": "libai-dengjinlingfenghuangtai",
+  "title": "登金陵凤凰台",
+  "poetId": "libai",
+  "motifs": [
+   "山"
+  ],
+  "objectID": 45652,
+  "artTitle": "Cloudy Mountains",
+  "artArtist": "Fang Congyi",
+  "artDate": "ca. 1360–70",
+  "artCredit": "Ex coll.: C. C. Wang Family, Purchase, Gift of J. Pierpont Morgan, by exchange, 1973",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP213279_CRD.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/45652"
+ },
+ {
+  "workId": "libai-nanlingbieertong",
+  "title": "南陵别儿童入京",
+  "poetId": "libai",
+  "motifs": [],
+  "objectID": 36435,
+  "artTitle": "Landscapes",
+  "artArtist": "Zheng Min",
+  "artDate": "dated 1688",
+  "artCredit": "Edward Elliott Family Collection; Gift of Douglas Dillon, 1987",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP162761.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36435"
+ },
+ {
+  "workId": "sushi-heshi-mianchi",
+  "title": "和子由渑池怀旧",
+  "poetId": "sushi",
+  "motifs": [
+   "送别",
+   "雪"
+  ],
+  "objectID": 36064,
+  "artTitle": "Winter Landscape",
+  "artArtist": "Unidentified artist",
+  "artDate": "13th century",
+  "artCredit": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/47_18_136_O2_sf.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36064"
+ },
+ {
+  "workId": "sushi-jiangchengzi-yimao",
+  "title": "江城子·乙卯正月二十日夜记梦",
+  "poetId": "sushi",
+  "motifs": [
+   "送别",
+   "夜",
+   "月"
+  ],
+  "objectID": 36022,
+  "artTitle": "Enjoying the Moon: Landscape in the Manner of Wang Meng",
+  "artArtist": "Gu Yide",
+  "artDate": "dated 1628",
+  "artCredit": "John Stewart Kennedy Fund, 1913",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/146252.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36022"
+ },
+ {
+  "workId": "sushi-chaorantai",
+  "title": "望江南·超然台作",
+  "poetId": "sushi",
+  "motifs": [
+   "山"
+  ],
+  "objectID": 36168,
+  "artTitle": "Landscapes after old masters",
+  "artArtist": "Du Xiang",
+  "artDate": "19th century",
+  "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP161415.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36168"
+ },
+ {
+  "workId": "sushi-huanglou",
+  "title": "九日黄楼作",
+  "poetId": "sushi",
+  "motifs": [
+   "田园",
+   "秋"
+  ],
+  "objectID": 36089,
+  "artTitle": "Autumn Landscape, leaf from Album for Zhou Lianggong",
+  "artArtist": "Xiang Shengmo",
+  "artDate": "ｄａｔｅｄ 1654",
+  "artCredit": "Seymour Fund, 1964",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153913.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36089"
+ },
+ {
+  "workId": "sushi-dingfengbo",
+  "title": "定风波·莫听穿林打叶声",
+  "poetId": "sushi",
+  "motifs": [
+   "水",
+   "雨"
+  ],
+  "objectID": 36138,
+  "artTitle": "Listening to the Zither Among Streams and Pines",
+  "artArtist": "Xie Shichen",
+  "artDate": "",
+  "artCredit": "Edward Elliott Family Collection, Purchase, The Dillon Fund Gift, 1982",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/1982_1_9_O.JPG",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36138"
+ },
+ {
+  "workId": "sushi-hanshi-tie",
+  "title": "黄州寒食诗二首",
+  "poetId": "sushi",
+  "motifs": [
+   "雨"
+  ],
+  "objectID": 36188,
+  "artTitle": "Misty Rain on the River in Spring",
+  "artArtist": "Wu Shixian",
+  "artDate": "",
+  "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP162538.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36188"
+ },
+ {
+  "workId": "sushi-chibifu-qian",
+  "title": "赤壁赋",
+  "poetId": "sushi",
+  "motifs": [
+   "水",
+   "夜",
+   "月"
+  ],
+  "objectID": 36093,
+  "artTitle": "Landscape for Zhao Yipeng",
+  "artArtist": "Tang Yin",
+  "artDate": "late 15th–early 16th century",
+  "artCredit": "Purchase, Bequest of Dorothy Graham Bennett, 1967",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP369002.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36093"
+ },
+ {
+  "workId": "sushi-chibifu-hou",
+  "title": "后赤壁赋",
+  "poetId": "sushi",
+  "motifs": [
+   "水",
+   "雪",
+   "夜",
+   "月"
+  ],
+  "objectID": 36063,
+  "artTitle": "Wild Geese in Winter",
+  "artArtist": "Unidentified artist",
+  "artDate": "13th century",
+  "artCredit": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153509.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36063"
+ },
+ {
+  "workId": "sushi-jichengtiansi",
+  "title": "记承天寺夜游",
+  "poetId": "sushi",
+  "motifs": [
+   "夜",
+   "月"
+  ],
+  "objectID": 36037,
+  "artTitle": "Viewing the Moon under a Pine Tree",
+  "artArtist": "Ma Yuan",
+  "artDate": "early 13th century",
+  "artCredit": "Rogers Fund, 1923",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153498.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36037"
+ },
+ {
+  "workId": "sushi-tixilinbi",
+  "title": "题西林壁",
+  "poetId": "sushi",
+  "motifs": [
+   "水"
+  ],
+  "objectID": 36103,
+  "artTitle": "Eight Songs of the Xiao and Xiang Rivers",
+  "artArtist": "Unidentified artist",
+  "artDate": "16th or 17th century",
+  "artCredit": "Gift of Mr. and Mrs. Earl Morse, 1972",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP161037_crd.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36103"
+ },
+ {
+  "workId": "sushi-yinhu-shang-chuqing-houyu",
+  "title": "饮湖上初晴后雨",
+  "poetId": "sushi",
+  "motifs": [
+   "水",
+   "雨"
+  ],
+  "objectID": 36049,
+  "artTitle": "Streams and Mountains Without End",
+  "artArtist": "Unidentified artist",
+  "artDate": "17th century",
+  "artCredit": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP201351_CRD.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36049"
+ },
+ {
+  "workId": "sushi-wanghulou-zui-shu",
+  "title": "六月二十七日望湖楼醉书",
+  "poetId": "sushi",
+  "motifs": [
+   "水",
+   "夜",
+   "月",
+   "雨"
+  ],
+  "objectID": 36149,
+  "artTitle": "Mist and Rain in Helin",
+  "artArtist": "Pan Simu",
+  "artDate": "1841",
+  "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-30132-002.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36149"
+ },
+ {
+  "workId": "sushi-huichong-chunjiang",
+  "title": "惠崇春江晚景",
+  "poetId": "sushi",
+  "motifs": [
+   "水",
+   "春"
+  ],
+  "objectID": 36024,
+  "artTitle": "Recluse gazing at a waterfall",
+  "artArtist": "Ju Jie",
+  "artDate": "1559",
+  "artCredit": "John Stewart Kennedy Fund, 1913",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-16369-002.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36024"
+ },
+ {
+  "workId": "sushi-shilizhi",
+  "title": "食荔支",
+  "poetId": "sushi",
+  "motifs": [
+   "山"
+  ],
+  "objectID": 36091,
+  "artTitle": "Mountain Retreat,  leaf from Album for Zhou Lianggong",
+  "artArtist": "Shi Lin",
+  "artDate": "datable to 1654–55",
+  "artCredit": "Seymour Fund, 1964",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153915.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36091"
+ },
+ {
+  "workId": "sushi-liuyue-ershi-ri-yedu-hai",
+  "title": "六月二十日夜渡海",
+  "poetId": "sushi",
+  "motifs": [
+   "水",
+   "夜",
+   "月"
+  ],
+  "objectID": 36002,
+  "artTitle": "Riverscape with moored boats",
+  "artArtist": "Wu Shantao",
+  "artDate": "late 17th or early 18th century",
+  "artCredit": "John Stewart Kennedy Fund, 1913",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153885.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36002"
+ },
+ {
+  "workId": "sushi-ziti-jinshan-huaxiang",
+  "title": "自题金山画像",
+  "poetId": "sushi",
+  "motifs": [
+   "山"
+  ],
+  "objectID": 36154,
+  "artTitle": "Landscape",
+  "artArtist": "Wang Tingru",
+  "artDate": "19th century",
+  "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP161184.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36154"
+ },
+ {
+  "workId": "sushi-xier-shi",
+  "title": "洗儿诗",
+  "poetId": "sushi",
+  "motifs": [],
+  "objectID": 36141,
+  "artTitle": "Returning Home in a Driving Rain",
+  "artArtist": "Xia Gui",
+  "artDate": "early 13th century",
+  "artCredit": "Purchase, The Dillon Fund Gift, 1982",
+  "artImage": "https://images.metmuseum.org/CRDImages/as/original/DT8800.jpg",
+  "artURL": "https://www.metmuseum.org/art/collection/search/36141"
+ }
+]

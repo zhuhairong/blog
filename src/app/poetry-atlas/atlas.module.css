@@ -742,6 +742,34 @@
   font-variant-numeric: tabular-nums;
 }
 
+/*
+ * 头图右下角的古画署名。
+ * 刻意做得很轻（低对比、无边框），它不参与信息层级，
+ * 只在读者想追问「这张画是什么」时提供一个交代。
+ */
+.poetBannerCredit {
+  position: absolute;
+  right: 14px;
+  bottom: 16px;
+  max-width: 46%;
+  text-align: right;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--text-tertiary);
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.poetBannerCreditSrc {
+  opacity: 0.8;
+}
+
+@media (max-width: 640px) {
+  .poetBannerCredit {
+    display: none;
+  }
+}
+
 /* ── 作品行缩略插画 ── */
 .workRow {
   position: relative;
@@ -880,6 +908,91 @@
   inset: 0;
   opacity: 0.34;
   pointer-events: none;
+}
+
+/*
+ * 古画层（全站共用一条规则）。
+ *
+ * 站点是暗色主题，而古画是浅色纸本，直接贴上去就是一块刺眼的白斑。
+ * 这里用 CSS filter 把它「翻」成拓片质感，而不是在构建期生成一份染色副本：
+ *   invert(1)          纸白墨黑 → 底黑墨白，这是关键一步
+ *   hue-rotate(185deg) 补回被反相打乱的色相，赭石回冷，与青蓝主色同调
+ *   brightness(.72)    压暗，让白墨不会亮得发灰
+ *   contrast(1.25)     提对比，保住笔触的骨力
+ *   saturate(.85)      略降饱和，避免反相后的杂色跳出来
+ *
+ * 位图自身的 opacity 由组件内联控制（诗框 0.42 / 头图 0.46 / 缩略 0.62），
+ * 因为不同位置的文字密度不同，需要不同的压制程度。
+ *
+ * 注意：这些容器（诗框、头图、作品行缩略）都已是 position:relative，
+ * 所以这里只需绝对定位铺满即可。
+ */
+.poemBoxScene :global(.pa-art-layer),
+.poetBanner :global(.pa-art-layer),
+.workRowScene :global(.pa-art-layer) {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+  filter: invert(1) hue-rotate(185deg) brightness(0.72) contrast(1.25) saturate(0.85);
+  /* 与 SVG 大气层叠合：古画提供笔触，SVG 提供云气与渐隐 */
+  mix-blend-mode: screen;
+}
+
+/*
+ * 叠图模式下 SVG 只保留大气层（见 SceneView 的 svgAtmosphere），
+ * 它必须绝对定位才能压在古画之上，否则会被 img 挤下去。
+ */
+.poemBoxScene :global(.pa-art-overlay),
+.poetBanner :global(.pa-art-overlay) {
+  position: absolute;
+  inset: 0;
+}
+
+/* 缩略图太小，叠两层反而糊成一团：有古画时直接不叠 SVG 大气层 */
+
+/* 配图出处：学术产品必须交代素材来源 */
+.artCredit {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: -22px 0 34px;
+  font-size: 11.5px;
+  line-height: 1.7;
+  color: var(--text-tertiary);
+}
+
+.artCreditKey {
+  padding: 1px 6px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-secondary);
+  font-size: 11px;
+}
+
+.artCreditSrc {
+  color: var(--text-tertiary);
+  opacity: 0.85;
+}
+
+.artCreditLink {
+  color: var(--brand-light);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.artCreditLink:hover {
+  border-bottom-color: var(--brand-light);
+}
+
+@media (max-width: 640px) {
+  .artCredit {
+    margin-top: -16px;
+  }
 }
 
 .poemBoxScene::after {

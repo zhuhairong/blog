@@ -486,6 +486,51 @@
   padding: 38px;
 }
 
+/*
+ * 精选大卡的古画背景（中国诗歌时空图谱专用）。
+ *
+ * 与诗框同一套处理思路：站点是暗色主题，而古画是浅色纸本，
+ * 靠 invert + hue-rotate 翻成拓片质感再压暗，才不会变成一块白斑。
+ * 这张卡上文字密度高于诗框，且卡片本身有渐变底与鼠标光斑，
+ * 所以 opacity 比诗框给得更低（0.3），右边再补一道横向渐隐，
+ * 让文字所在的左半区几乎回到纯底色，保证对比度与光斑效果都不塌。
+ */
+.cardArt {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+  filter: invert(1) hue-rotate(185deg) brightness(0.7) contrast(1.25) saturate(0.85);
+}
+
+/* 渐隐遮罩：左密右疏，文字在左、画面在右 */
+.cardArt + .cardBody::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    var(--bg-surface) 0%,
+    rgba(14, 14, 22, 0.92) 34%,
+    rgba(14, 14, 22, 0.62) 62%,
+    rgba(14, 14, 22, 0.32) 100%
+  );
+}
+
+/* 有古画时，卡片主体要浮到图之上 */
+.featured .card:has(.cardArt) .cardBody,
+.featured .card:has(.cardArt) .cardArrow {
+  position: relative;
+  z-index: 1;
+}
+
 .featured .cardBody {
   flex-direction: row;
   align-items: center;

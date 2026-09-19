@@ -1,4 +1,5 @@
 import { getSortedPostsData } from '@/lib/api';
+import { getFeaturedArt } from '@/lib/atlas';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import HeroBackground from '@/components/HeroBackground';
@@ -109,6 +110,9 @@ const REST = TOOLS.slice(1);
 
 export default function Home() {
     const posts = getSortedPostsData();
+    // 特色卡的古画背景：与图谱主页主视觉同一幅，形成「进门—进屋」的一致感。
+    // 数据可能尚未构建（派生层缺失），此时返回 null，卡片退化为纯渐变，不会裂图。
+    const heroArt = getFeaturedArt('atlas-hero');
 
     return (
         <>
@@ -141,7 +145,19 @@ export default function Home() {
 
                     <Reveal delay={60}>
                         <div className={styles.featured}>
-                            <ToolCard tool={FEATURED} featured />
+                            <ToolCard
+                                tool={FEATURED}
+                                featured
+                                art={
+                                    heroArt
+                                        ? {
+                                              src: heroArt.src,
+                                              title: heroArt.artTitle,
+                                              artist: heroArt.artArtist,
+                                          }
+                                        : null
+                                }
+                            />
                         </div>
                     </Reveal>
 

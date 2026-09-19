@@ -13,6 +13,8 @@ import {
   formatDateFull,
   formatSource,
   getAllPoetIds,
+  getArtForWork,
+  getFeaturedArt,
   getPoetDetail,
   groupAssertions,
 } from '@/lib/atlas';
@@ -123,6 +125,20 @@ export default async function PoetPage({
     assertionsByWork.set(a.workId, list);
   }
 
+  /**
+   * 作品配图查表。
+   *
+   * 诗人页会渲染该诗人全部作品，逐条调 `getArtForWork` 会重复读 15 次
+   * 同一份 work/<id>.json（每篇作品的配图就存在那个分片里）。
+   * 这里一次性建索引，列表里直接命中 Map。
+   */
+  const artByWork = new Map<string, ReturnType<typeof getArtForWork>>();
+  for (const w of poet.works) artByWork.set(w.id, getArtForWork(w.id));
+  const artOf = (workId: string) => artByWork.get(workId) ?? null;
+
+  /** 诗人页头图的策展位配图（人工指定，非算法匹配） */
+  const poetArt = getFeaturedArt(`poet-${poet.id}`);
+
   return (
     <>
       <Header />
@@ -163,6 +179,8 @@ export default async function PoetPage({
               weather={weatherOf(
                 (poet.works[0]?.themes ?? []).join('') + poet.summary + events[0]!.description,
               )}
+              art={getFeaturedArt(`poet-${poet.id}`)}
+              artOpacity={0.46}
             />
             <div className={styles.poetBannerCap}>
               <SceneGlyph
@@ -172,6 +190,14 @@ export default async function PoetPage({
               />
               <span>{poet.works.length} 篇作品 · {events.length} 个生平节点</span>
             </div>
+            {/* 头图的古画署名：与作品页同理，公版素材也要交代来源 */}
+            {poetArt && (
+              <span className={styles.poetBannerCredit}>
+                {poetArt.artArtist ? `${poetArt.artArtist} ` : ''}
+                {poetArt.artTitle}
+                <span className={styles.poetBannerCreditSrc}> · 大都会博物馆 公有领域</span>
+              </span>
+            )}
           </div>
         )}
 
@@ -324,7 +350,8 @@ export default async function PoetPage({
                           href={`/poetry-atlas/work/${w.id}`}
                           className={styles.workRow}
                         >
-                          {/* 作品插画：构图取自「系地」，天候取自主题与名句 */}
+                          {/* 作品插画：构图取自「系地」，天候取自主题与名句；
+                              有古画配图时由古画提供笔触，SVG 只叠大气层 */}
                           <div className={styles.workRowScene}>
                             <Scene
                               size="thumb"
@@ -333,6 +360,7 @@ export default async function PoetPage({
                               weather={weatherOf(
                                 (w.themes ?? []).join('') + (w.famousLines?.[0] ?? ''),
                               )}
+                              art={artOf(w.id)}
                             />
                           </div>
                           <div className={styles.workRowMain}>

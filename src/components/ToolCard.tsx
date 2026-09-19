@@ -19,9 +19,18 @@ export type Tool = {
 type Props = {
     tool: Tool;
     featured?: boolean;
+    /**
+     * 特色卡的古画背景。
+     *
+     * 由服务端（page.tsx）从 poetry-atlas 派生数据里取出后传入 ——
+     * ToolCard 是客户端组件，不能直接读文件系统。
+     * 只传路径不传整幅画的元数据，因为卡片上已经有标题与描述，
+     * 再多一行署名会把版面压垮；署名在作品页与图谱页各自完整交代。
+     */
+    art?: { src: string; title: string; artist: string } | null;
 };
 
-export default function ToolCard({ tool, featured = false }: Props) {
+export default function ToolCard({ tool, featured = false, art }: Props) {
     const ref = useRef<HTMLAnchorElement | null>(null);
 
     const handleMove = (e: MouseEvent<HTMLAnchorElement>) => {
@@ -41,6 +50,17 @@ export default function ToolCard({ tool, featured = false }: Props) {
     if (featured) {
         return (
             <Link ref={ref} href={tool.href} onMouseMove={handleMove} className={styles.card} style={vars}>
+                {art && (
+                    <img
+                        className={styles.cardArt}
+                        src={art.src}
+                        alt=""
+                        aria-hidden="true"
+                        loading="lazy"
+                        decoding="async"
+                        title={art.artist ? `${art.artist} ${art.title}` : art.title}
+                    />
+                )}
                 <div className={styles.cardBody}>
                     <div className={styles.featuredTop}>
                         <span className={styles.cardIcon} aria-hidden="true">
