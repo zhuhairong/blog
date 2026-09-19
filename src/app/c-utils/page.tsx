@@ -77,14 +77,14 @@ function getCodeFiles(): CodeFilesData {
     
     try {
       headerContent = fs.readFileSync(headerPath, 'utf-8');
-    } catch (e) {
+    } catch {
       headerContent = '// 无法读取文件';
     }
     
     if (hasSource) {
       try {
         sourceContent = fs.readFileSync(sourcePath, 'utf-8');
-      } catch (e) {
+      } catch {
         sourceContent = null;
       }
     }
@@ -92,7 +92,7 @@ function getCodeFiles(): CodeFilesData {
     if (hasTest) {
       try {
         testContent = fs.readFileSync(testPath, 'utf-8');
-      } catch (e) {
+      } catch {
         testContent = null;
       }
     }
@@ -100,7 +100,7 @@ function getCodeFiles(): CodeFilesData {
     if (hasDemo) {
       try {
         demoContent = fs.readFileSync(demoPath, 'utf-8');
-      } catch (e) {
+      } catch {
         demoContent = null;
       }
     }
