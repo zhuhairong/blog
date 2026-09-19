@@ -51,7 +51,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          # Next.js 16 要求 Node >= 20.9；固定 22 与本地验证环境保持一致
+          node-version: "22"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -73,8 +74,17 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Install poetry-atlas dependencies
+        # poetry-atlas 是独立的子包（自带 package.json / tsx 构建管线），
+        # 其 data/derived/ 派生数据不入库，必须在此重新生成，否则站点没有数据。
+        run: npm ci --prefix poetry-atlas
       - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        # 必须走 npm run build 而非直接 next build：
+        #   atlas:build（考据数据 → 静态 JSON 分片）
+        #   atlas:check（新鲜度守卫，缺数据即失败）
+        #   next build（静态导出）
+        # 直接跑 next build 会跳过前两步，导致派生数据缺失却"构建成功"。
+        run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
