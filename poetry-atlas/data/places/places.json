@@ -2811,5 +2811,137 @@
         "reliability": "B"
       }
     ]
+  },
+  {
+    "id": "cn-shaanxi-zhongnan",
+    "historicalName": "终南山",
+    "historicalEra": "唐",
+    "modernName": "陕西省西安市长安区（秦岭北麓）",
+    "modernHierarchy": {
+      "province": "陕西省",
+      "city": "西安市",
+      "district": "长安区"
+    },
+    "coordinates": [
+      109.0073,
+      33.9815
+    ],
+    "precision": "site",
+    "isCentroid": false,
+    "aliases": [
+      "太乙山",
+      "南山",
+      "中南山",
+      "翠华山"
+    ],
+    "kind": "mountain",
+    "note": "秦岭山脉中段，广义西起武功、东至蓝田，唐人所谓「终南」多指长安以南这一段秦岭北麓。王维《终南山》「太乙近天都」之太乙即太乙山，今翠华山（长安区太乙宫镇），为秦岭终南山世界地质公园核心园区。坐标为翠华山一带。",
+    "sources": [
+      {
+        "id": "yuanhe-junxian-tuzhi",
+        "title": "元和郡县图志",
+        "author": "李吉甫",
+        "locator": "卷一·京兆府",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-hubei-xiangyang",
+    "historicalName": "襄州襄阳",
+    "historicalEra": "唐",
+    "modernName": "湖北省襄阳市",
+    "modernHierarchy": {
+      "province": "湖北省",
+      "city": "襄阳市"
+    },
+    "coordinates": [
+      112.1445,
+      32.0394
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "襄州",
+      "襄阳",
+      "汉江"
+    ],
+    "kind": "city",
+    "note": "汉水重镇，唐襄州治所，山南东道节度使亦驻此。王维开元二十八年（740）以殿中侍御史知南选，赴岭南途中经襄阳，作《汉江临泛》。孟浩然即襄阳人。",
+    "sources": [
+      {
+        "id": "yuanhe-junxian-tuzhi",
+        "title": "元和郡县图志",
+        "author": "李吉甫",
+        "locator": "卷二十一·襄州",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-gansu-liangzhou",
+    "historicalName": "凉州（河西节度使治所）",
+    "historicalEra": "唐",
+    "modernName": "甘肃省武威市凉州区",
+    "modernHierarchy": {
+      "province": "甘肃省",
+      "city": "武威市",
+      "district": "凉州区"
+    },
+    "coordinates": [
+      102.6342,
+      37.9282
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "凉州",
+      "河西",
+      "武威"
+    ],
+    "kind": "city",
+    "note": "唐河西节度使治所，丝路重镇。开元二十五年（737）河西节度副大使崔希逸破吐蕃于青海，王维以监察御史奉使出塞宣慰，作《使至塞上》。诗中「大漠孤烟直，长河落日圆」写河西塞外景象。",
+    "sources": [
+      {
+        "id": "jts-wangwei",
+        "title": "旧唐书·王维传",
+        "author": "刘昫等",
+        "locator": "卷190下",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-shanxi-qixian",
+    "historicalName": "太原府祁县",
+    "historicalEra": "唐",
+    "modernName": "山西省晋中市祁县",
+    "modernHierarchy": {
+      "province": "山西省",
+      "city": "晋中市",
+      "district": "祁县"
+    },
+    "coordinates": [
+      112.3325,
+      37.3589
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "祁县",
+      "祁",
+      "太原祁"
+    ],
+    "kind": "county",
+    "note": "王维祖籍。《旧唐书·王维传》称「王维，字摩诘，太原祁人」。其父王处廉官至汾州司马，始徙家于蒲州（今山西永济），故王维本人实生于河东蒲州。祖籍与生地宜分别看待，不宜混为一谈。",
+    "sources": [
+      {
+        "id": "jts-wangwei",
+        "title": "旧唐书·王维传",
+        "author": "刘昫等",
+        "locator": "卷190下",
+        "reliability": "A"
+      }
+    ]
   }
 ]

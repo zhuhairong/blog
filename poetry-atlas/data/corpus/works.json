@@ -1761,5 +1761,380 @@
       "风疾舟中伏枕书怀",
       "三十六韵"
     ]
+  },
+  {
+    "id": "wangwei-shizhi-saishang",
+    "title": "使至塞上",
+    "poetId": "wangwei",
+    "content": [
+      "单车欲问边，属国过居延。",
+      "征蓬出汉塞，归雁入胡天。",
+      "大漠孤烟直，长河落日圆。",
+      "萧关逢候骑，都护在燕然。"
+    ],
+    "form": "五言律诗",
+    "anthology": "全唐诗 卷126",
+    "themes": [
+      "边塞",
+      "大漠",
+      "行旅",
+      "壮阔"
+    ],
+    "famousLines": [
+      "大漠孤烟直，长河落日圆"
+    ],
+    "corpusRef": {
+      "dataset": "wikisource",
+      "path": "全唐诗/卷126"
+    }
+  },
+  {
+    "id": "wangwei-shanju-qiuming",
+    "title": "山居秋暝",
+    "poetId": "wangwei",
+    "content": [
+      "空山新雨后，天气晚来秋。",
+      "明月松间照，清泉石上流。",
+      "竹喧归浣女，莲动下渔舟。",
+      "随意春芳歇，王孙自可留。"
+    ],
+    "form": "五言律诗",
+    "anthology": "全唐诗 卷126",
+    "themes": [
+      "山水",
+      "秋",
+      "隐逸",
+      "田园",
+      "月"
+    ],
+    "famousLines": [
+      "明月松间照，清泉石上流"
+    ],
+    "corpusRef": {
+      "dataset": "wikisource",
+      "path": "全唐诗/卷126"
+    }
+  },
+  {
+    "id": "wangwei-zhongnanshan",
+    "title": "终南山",
+    "poetId": "wangwei",
+    "content": [
+      "太乙近天都，连山接海隅。",
+      "白云回望合，青霭入看无。",
+      "分野中峰变，阴晴众壑殊。",
+      "欲投人处宿，隔水问樵夫。"
+    ],
+    "form": "五言律诗",
+    "anthology": "全唐诗 卷126",
+    "themes": [
+      "山水",
+      "隐逸",
+      "高山"
+    ],
+    "famousLines": [
+      "白云回望合，青霭入看无"
+    ],
+    "corpusRef": {
+      "dataset": "wikisource",
+      "path": "全唐诗/卷126"
+    }
+  },
+  {
+    "id": "wangwei-hanjiang-linfan",
+    "title": "汉江临泛",
+    "poetId": "wangwei",
+    "content": [
+      "楚塞三湘接，荆门九派通。",
+      "江流天地外，山色有无中。",
+      "郡邑浮前浦，波澜动远空。",
+      "襄阳好风日，留醉与山翁。"
+    ],
+    "form": "五言律诗",
+    "anthology": "全唐诗 卷126",
+    "themes": [
+      "山水",
+      "江",
+      "行旅"
+    ],
+    "famousLines": [
+      "江流天地外，山色有无中"
+    ],
+    "corpusRef": {
+      "dataset": "wikisource",
+      "path": "全唐诗/卷126"
+    }
+  },
+  {
+    "id": "wangwei-guisongshan-zuo",
+    "title": "归嵩山作",
+    "poetId": "wangwei",
+    "content": [
+      "清川带长薄，车马去闲闲。",
+      "流水如有意，暮禽相与还。",
+      "荒城临古渡，落日满秋山。",
+      "迢递嵩高下，归来且闭关。"
+    ],
+    "form": "五言律诗",
+    "anthology": "全唐诗 卷126",
+    "themes": [
+      "山水",
+      "归隐",
+      "秋"
+    ],
+    "famousLines": [
+      "流水如有意，暮禽相与还"
+    ],
+    "corpusRef": {
+      "dataset": "wikisource",
+      "path": "全唐诗/卷126"
+    }
+  },
+  {
+    "id": "wangwei-guanlie",
+    "title": "观猎",
+    "poetId": "wangwei",
+    "content": [
+      "风劲角弓鸣，将军猎渭城。",
+      "草枯鹰眼疾，雪尽马蹄轻。",
+      "忽过新丰市，还归细柳营。",
+      "回看射雕处，千里暮云平。"
+    ],
+    "form": "五言律诗",
+    "anthology": "全唐诗 卷126",
+    "themes": [
+      "狩猎",
+      "边塞",
+      "豪迈"
+    ],
+    "famousLines": [
+      "草枯鹰眼疾，雪尽马蹄轻"
+    ],
+    "corpusRef": {
+      "dataset": "wikisource",
+      "path": "全唐诗/卷126"
+    }
+  },
+  {
+    "id": "wangwei-guo-xiangjisi",
+    "title": "过香积寺",
+    "poetId": "wangwei",
+    "content": [
+      "不知香积寺，数里入云峰。",
+      "古木无人径，深山何处钟？",
+      "泉声咽危石，日色冷青松。",
+      "薄暮空潭曲，安禅制毒龙。"
+    ],
+    "form": "五言律诗",
+    "anthology": "全唐诗 卷126",
+    "themes": [
+      "山水",
+      "禅",
+      "寺"
+    ],
+    "famousLines": [
+      "泉声咽危石，日色冷青松"
+    ],
+    "corpusRef": {
+      "dataset": "wikisource",
+      "path": "全唐诗/卷126"
+    }
+  },
+  {
+    "id": "wangwei-wangchuan-xianju",
+    "title": "辋川闲居赠裴秀才迪",
+    "poetId": "wangwei",
+    "content": [
+      "寒山转苍翠，秋水日潺湲。",
+      "倚杖柴门外，临风听暮蝉。",
+      "渡头余落日，墟里上孤烟。",
+      "复值接舆醉，狂歌五柳前。"
+    ],
+    "form": "五言律诗",
+    "anthology": "全唐诗 卷126",
+    "themes": [
+      "山水",
+      "秋",
+      "隐逸",
+      "友情"
+    ],
+    "famousLines": [
+      "渡头余落日，墟里上孤烟"
+    ],
+    "corpusRef": {
+      "dataset": "wikisource",
+      "path": "全唐诗/卷126"
+    }
+  },
+  {
+    "id": "wangwei-jiuyuejiuri",
+    "title": "九月九日忆山东兄弟",
+    "poetId": "wangwei",
+    "content": [
+      "独在异乡为异客，每逢佳节倍思亲。",
+      "遥知兄弟登高处，遍插茱萸少一人。"
+    ],
+    "form": "七言绝句",
+    "anthology": "全唐诗 卷128",
+    "themes": [
+      "思乡",
+      "重阳",
+      "兄弟"
+    ],
+    "famousLines": [
+      "独在异乡为异客，每逢佳节倍思亲"
+    ],
+    "corpusRef": {
+      "dataset": "wikisource",
+      "path": "全唐诗/卷128"
+    },
+    "note": "题中「山东」指华山以东，即其故乡蒲州一带，非今山东省。"
+  },
+  {
+    "id": "wangwei-jiyu-wangchuanzhuang",
+    "title": "积雨辋川庄作",
+    "poetId": "wangwei",
+    "content": [
+      "积雨空林烟火迟，蒸藜炊黍饷东菑。",
+      "漠漠水田飞白鹭，阴阴夏木啭黄鹂。",
+      "山中习静观朝槿，松下清斋折露葵。",
+      "野老与人争席罢，海鸥何事更相疑。"
+    ],
+    "form": "七言律诗",
+    "anthology": "全唐诗 卷128",
+    "themes": [
+      "田园",
+      "山水",
+      "隐逸",
+      "夏"
+    ],
+    "famousLines": [
+      "漠漠水田飞白鹭，阴阴夏木啭黄鹂"
+    ],
+    "corpusRef": {
+      "dataset": "wikisource",
+      "path": "全唐诗/卷128"
+    }
+  },
+  {
+    "id": "wangwei-luzhai",
+    "title": "鹿柴",
+    "poetId": "wangwei",
+    "content": [
+      "空山不见人，但闻人语响。",
+      "返景入深林，复照青苔上。"
+    ],
+    "form": "五言绝句",
+    "anthology": "全唐诗 卷128",
+    "themes": [
+      "山水",
+      "空寂",
+      "禅"
+    ],
+    "famousLines": [
+      "空山不见人，但闻人语响"
+    ],
+    "corpusRef": {
+      "dataset": "wikisource",
+      "path": "全唐诗/卷128"
+    },
+    "note": "《辋川集》二十首之一。「柴」通「寨」，指篱落。"
+  },
+  {
+    "id": "wangwei-zhuliguan",
+    "title": "竹里馆",
+    "poetId": "wangwei",
+    "content": [
+      "独坐幽篁里，弹琴复长啸。",
+      "深林人不知，明月来相照。"
+    ],
+    "form": "五言绝句",
+    "anthology": "全唐诗 卷128",
+    "themes": [
+      "竹",
+      "月",
+      "隐逸",
+      "孤独"
+    ],
+    "famousLines": [
+      "独坐幽篁里，弹琴复长啸"
+    ],
+    "corpusRef": {
+      "dataset": "wikisource",
+      "path": "全唐诗/卷128"
+    },
+    "note": "《辋川集》二十首之一。"
+  },
+  {
+    "id": "wangwei-weichengqu",
+    "title": "渭城曲",
+    "poetId": "wangwei",
+    "content": [
+      "渭城朝雨浥轻尘，客舍青青柳色新。",
+      "劝君更尽一杯酒，西出阳关无故人。"
+    ],
+    "form": "七言绝句",
+    "anthology": "全唐诗 卷128",
+    "themes": [
+      "送别",
+      "友情",
+      "边塞"
+    ],
+    "famousLines": [
+      "劝君更尽一杯酒，西出阳关无故人"
+    ],
+    "corpusRef": {
+      "dataset": "wikisource",
+      "path": "全唐诗/卷128"
+    },
+    "note": "一题《送元二使安西》，后入乐府为《阳关三叠》。"
+  },
+  {
+    "id": "wangwei-ningbichi",
+    "title": "凝碧池",
+    "poetId": "wangwei",
+    "content": [
+      "万户伤心生野烟，百僚何日更朝天。",
+      "秋槐叶落空宫里，凝碧池头奏管弦。"
+    ],
+    "form": "七言绝句",
+    "anthology": "全唐诗 卷128",
+    "themes": [
+      "亡国",
+      "战乱",
+      "悲愤",
+      "宫廷"
+    ],
+    "famousLines": [
+      "万户伤心生野烟，百僚何日更朝天"
+    ],
+    "corpusRef": {
+      "dataset": "wikisource",
+      "path": "全唐诗/卷128"
+    },
+    "note": "原题《菩提寺禁裴迪来相看说逆贼等凝碧池上作音乐供奉人等举声便一时泪下私成口号诵示裴迪》，为《全唐诗》所载长题，今取通称二字为题。"
+  },
+  {
+    "id": "wangwei-shanzhong-songbie",
+    "title": "送别",
+    "poetId": "wangwei",
+    "content": [
+      "山中相送罢，日暮掩柴扉。",
+      "春草明年绿，王孙归不归。"
+    ],
+    "form": "五言绝句",
+    "anthology": "全唐诗 卷128",
+    "themes": [
+      "送别",
+      "友情",
+      "春"
+    ],
+    "famousLines": [
+      "春草明年绿，王孙归不归"
+    ],
+    "corpusRef": {
+      "dataset": "wikisource",
+      "path": "全唐诗/卷128"
+    }
   }
 ]

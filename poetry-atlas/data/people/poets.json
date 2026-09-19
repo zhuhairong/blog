@@ -2753,5 +2753,489 @@
         "reliability": "B"
       }
     ]
+  },
+  {
+    "id": "wangwei",
+    "name": "王维",
+    "courtesyName": "摩诘",
+    "pseudonym": "摩诘居士",
+    "aliases": [
+      "王右丞",
+      "诗佛",
+      "摩诘"
+    ],
+    "dynasty": "唐",
+    "birth": {
+      "year": 701,
+      "original": "长安元年",
+      "certainty": "approximate",
+      "fuzziness": 2
+    },
+    "death": {
+      "year": 761,
+      "original": "上元二年",
+      "certainty": "exact"
+    },
+    "nativePlace": [
+      {
+        "placeId": "cn-shanxi-yongji",
+        "type": "birth",
+        "confidence": "B",
+        "note": "生于河东蒲州（今山西永济）。《新唐书》本传载其父王处廉终官汾州司马，徙家于蒲州，遂为河东人。陈铁民《王维为蒲州猗氏人考》据神道碑进一步考订为蒲州猗氏（今山西临猗）。"
+      },
+      {
+        "placeId": "cn-shanxi-qixian",
+        "type": "ancestral",
+        "confidence": "B",
+        "note": "祖籍太原祁县（今山西祁县）。《旧唐书》本传称「王维，字摩诘，太原祁人」，此为郡望祖籍，非其实际生地，与蒲州生地当分别看待。"
+      }
+    ],
+    "summary": "唐代山水田园诗的代表，与孟浩然并称「王孟」，被后世尊为「诗佛」。苏轼评曰：「味摩诘之诗，诗中有画；观摩诘之画，画中有诗。」",
+    "biography": "王维，字摩诘，河东蒲州（今山西永济）人，祖籍太原祁县。工书画，通音律，早慧能文。开元九年（721）进士擢第，调太乐丞，旋因伶人舞黄狮子事坐累，贬济州司仓参军。此后十余年沉沦下僚，曾隐于淇上、嵩山。开元二十二年（734）张九龄执政，擢为右拾遗，迁监察御史；开元二十五年（737）河西节度副大使崔希逸破吐蕃，王维奉使出塞宣慰，成《使至塞上》等边塞名篇。开元二十八年（740）知南选，赴岭南经襄阳，作《汉江临泛》。\n\n张九龄罢相后，王维的政治热情转冷，约天宝初得宋之问蓝田辋川别业，营治之，此后亦官亦隐，与裴迪浮舟往来，赋诗相酬，《辋川集》二十首及《山居秋暝》《积雨辋川庄作》等皆成于此期，为其艺术之极诣。\n\n天宝十五载（756）安禄山陷两京，王维扈从不及，为贼所获，服药阳瘖，拘于洛阳菩提寺。闻逆贼于凝碧池作乐，赋诗寄裴迪，以「万户伤心生野烟」明其心迹。两京收复后，以此诗及弟王缙请削官赎兄得免，责授太子中允，累迁尚书右丞，世称「王右丞」。上元二年（761）卒，年六十一。\n\n其生年尚有 693、694 两说，与通说 701 相差近十年，迄无定论，本图谱取通说而标 confidence 以存疑。",
+    "events": [
+      {
+        "id": "wangwei-e1",
+        "poetId": "wangwei",
+        "type": "birth",
+        "title": "生于河东蒲州（生年另有 693、694 二说）",
+        "placeId": "cn-shanxi-yongji",
+        "date": {
+          "year": 701,
+          "original": "长安元年",
+          "certainty": "approximate",
+          "fuzziness": 2
+        },
+        "description": "王维生年有三说：701（长安元年）、694、693，相差近十年，学界迄无定论。本图谱取通说 701，其卒年上元二年（761）则见于正史，较为确定。生地则无争议：其父王处廉徙家蒲州，王维生于河东蒲州。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "jts-wangwei",
+            "title": "旧唐书·王维传",
+            "author": "刘昫等",
+            "locator": "卷190下",
+            "reliability": "A"
+          },
+          {
+            "id": "xsts-wangwei",
+            "title": "新唐书·王维传",
+            "author": "欧阳修等",
+            "locator": "卷202",
+            "reliability": "A"
+          },
+          {
+            "id": "wangweiji-jiaozhu",
+            "title": "王维集校注",
+            "author": "陈铁民",
+            "edition": "中华书局",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "wangwei-e2",
+        "poetId": "wangwei",
+        "type": "exam",
+        "title": "进士擢第，调太乐丞（另有开元十九年说）",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 721,
+          "original": "开元九年",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "《全唐诗》小传载「开元九年，进士擢第，调太乐丞」。另有开元十九年（731）状元及第之说，流行于部分通俗读物。今从开元九年说，与《全唐诗》小传及主流年谱相合。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "quantangshi",
+            "title": "全唐诗",
+            "locator": "卷125 王维小传",
+            "reliability": "B"
+          },
+          {
+            "id": "wangweiji-jiaozhu",
+            "title": "王维集校注",
+            "author": "陈铁民",
+            "edition": "中华书局",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "wangwei-e3",
+        "poetId": "wangwei",
+        "type": "exile",
+        "title": "坐累贬济州司仓参军，后隐于淇上、嵩山",
+        "placeId": "cn-henan-songshan",
+        "date": {
+          "from": {
+            "year": 726,
+            "certainty": "approximate"
+          },
+          "to": {
+            "year": 734,
+            "certainty": "approximate"
+          }
+        },
+        "description": "任太乐丞不久，因伶人舞黄狮子事受累，贬为济州司倉参军，在济州数年。此后十余年沉沦下僚，曾隐居淇上、嵩山，《归嵩山作》即此期心境之写照：「流水如有意，暮禽相与还」，以万物之「还」反衬一身之未归。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "jts-wangwei",
+            "title": "旧唐书·王维传",
+            "author": "刘昫等",
+            "locator": "卷190下",
+            "reliability": "A"
+          },
+          {
+            "id": "wangweiji-jiaozhu",
+            "title": "王维集校注",
+            "author": "陈铁民",
+            "edition": "中华书局",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "wangwei-e4",
+        "poetId": "wangwei",
+        "type": "office",
+        "title": "张九龄执政，擢右拾遗，迁监察御史",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 734,
+          "original": "开元二十二年",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "开元二十二年张九龄为中书令，拔擢王维为右拾遗，后迁监察御史。这是王维一生中政治热情最高的时期，其《献始兴公》称张九龄「所不卖公器，动为苍生谋」。张九龄罢相后，王维亦渐疏于仕进。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-wangwei",
+            "title": "旧唐书·王维传",
+            "author": "刘昫等",
+            "locator": "卷190下",
+            "reliability": "A"
+          },
+          {
+            "id": "wangweiji-jiaozhu",
+            "title": "王维集校注",
+            "author": "陈铁民",
+            "edition": "中华书局",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "wangwei-e5",
+        "poetId": "wangwei",
+        "type": "office",
+        "title": "奉使出塞宣慰河西，作《使至塞上》",
+        "placeId": "cn-gansu-liangzhou",
+        "date": {
+          "year": 737,
+          "original": "开元二十五年",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "开元二十五年河西节度副大使崔希逸破吐蕃于青海，王维以监察御史奉使出塞宣慰，遂有《使至塞上》。「大漠孤烟直，长河落日圆」为唐人边塞诗中最具画面感的一联：几何般的直线与圆，把荒漠的辽阔与苍茫压缩成十个字。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-wangwei",
+            "title": "旧唐书·王维传",
+            "author": "刘昫等",
+            "locator": "卷190下",
+            "reliability": "A"
+          },
+          {
+            "id": "wangyoucheng-jianzhu",
+            "title": "王右丞集笺注",
+            "author": "赵殿成",
+            "edition": "中华书局",
+            "reliability": "B"
+          },
+          {
+            "id": "wangweiji-jiaozhu",
+            "title": "王维集校注",
+            "author": "陈铁民",
+            "edition": "中华书局",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "wangwei-e6",
+        "poetId": "wangwei",
+        "type": "travel",
+        "title": "知南选，赴岭南途中经襄阳",
+        "placeId": "cn-hubei-xiangyang",
+        "date": {
+          "year": 740,
+          "original": "开元二十八年",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "开元二十八年王维以殿中侍御史知南选，赴岭南，途经襄阳。《汉江临泛》成于此行：「江流天地外，山色有无中」以极简的虚实对照写江天一色，与其辋川诸作的幽微恰成对照——同一双眼睛，既能看深林之苔，也能看天地之外。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "wangyoucheng-jianzhu",
+            "title": "王右丞集笺注",
+            "author": "赵殿成",
+            "edition": "中华书局",
+            "reliability": "B"
+          },
+          {
+            "id": "wangweiji-jiaozhu",
+            "title": "王维集校注",
+            "author": "陈铁民",
+            "edition": "中华书局",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "wangwei-e7",
+        "poetId": "wangwei",
+        "type": "seclusion",
+        "title": "得宋之问蓝田辋川别业，营治之",
+        "placeId": "cn-shaanxi-lantian",
+        "date": {
+          "from": {
+            "year": 744,
+            "certainty": "approximate"
+          },
+          "to": {
+            "year": 756,
+            "certainty": "approximate"
+          }
+        },
+        "description": "约天宝初，王维得初唐诗人宋之问的蓝田辋川别业，加以营治，此后亦官亦隐。与裴迪浮舟往来，赋诗相酬，各咏辋川二十景，成《辋川集》二十首。辋川是王维艺术生命的地理坐标——中国诗歌史上，极少有一处地名能与一位诗人如此紧密地互相定义。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "wangyoucheng-jianzhu",
+            "title": "王右丞集笺注",
+            "author": "赵殿成",
+            "edition": "中华书局",
+            "reliability": "B"
+          },
+          {
+            "id": "wangweiji-jiaozhu",
+            "title": "王维集校注",
+            "author": "陈铁民",
+            "edition": "中华书局",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "wangwei-e8",
+        "poetId": "wangwei",
+        "type": "war",
+        "title": "安禄山陷长安，王维被俘，拘于洛阳菩提寺",
+        "placeId": "cn-henan-luoyang",
+        "date": {
+          "year": 756,
+          "original": "天宝十五载（至德元载）",
+          "certainty": "exact"
+        },
+        "description": "天宝十五载六月安禄山陷长安，王维扈从不及，为贼所获。相传他服药下痢，佯为瘖疾，仍被送至洛阳，拘于菩提寺，迫受伪职。逆贼于凝碧池上作乐，王维闻之悲恸，成《凝碧池》一绝，托裴迪传出。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-wangwei",
+            "title": "旧唐书·王维传",
+            "author": "刘昫等",
+            "locator": "卷190下",
+            "reliability": "A"
+          },
+          {
+            "id": "xsts-wangwei",
+            "title": "新唐书·王维传",
+            "author": "欧阳修等",
+            "locator": "卷202",
+            "reliability": "A"
+          },
+          {
+            "id": "wangyoucheng-jianzhu",
+            "title": "王右丞集笺注",
+            "author": "赵殿成",
+            "edition": "中华书局",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "wangwei-e9",
+        "poetId": "wangwei",
+        "type": "other",
+        "title": "两京收复，以《凝碧池》诗获免",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 757,
+          "original": "至德二载",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "至德二载两京收复，受伪职者皆下狱论罪。王维赖其《凝碧池》诗（「万户伤心生野烟，百僚何日更朝天」）流传于行在，得肃宗察其心迹；其弟王缙又请削己刑部侍郎之官以赎兄罪，遂得宽宥，责授太子中允。一首二十八字的小诗救了一条命，这在文学史上并不多见。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-wangwei",
+            "title": "旧唐书·王维传",
+            "author": "刘昫等",
+            "locator": "卷190下",
+            "reliability": "A"
+          },
+          {
+            "id": "xsts-wangwei",
+            "title": "新唐书·王维传",
+            "author": "欧阳修等",
+            "locator": "卷202",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "wangwei-e10",
+        "poetId": "wangwei",
+        "type": "office",
+        "title": "责授太子中允，累迁尚书右丞",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "from": {
+            "year": 758,
+            "certainty": "approximate"
+          },
+          "to": {
+            "year": 761,
+            "certainty": "approximate"
+          }
+        },
+        "description": "获免后责授太子中允，后迁中书舍人、给事中，终尚书右丞，世称「王右丞」。晚年笃信佛理，长斋奉佛，「退朝之后，焚香独坐，以禅诵为事」，辋川诸作中的空寂之境由此而来。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-wangwei",
+            "title": "旧唐书·王维传",
+            "author": "刘昫等",
+            "locator": "卷190下",
+            "reliability": "A"
+          },
+          {
+            "id": "xsts-wangwei",
+            "title": "新唐书·王维传",
+            "author": "欧阳修等",
+            "locator": "卷202",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "wangwei-e11",
+        "poetId": "wangwei",
+        "type": "seclusion",
+        "title": "亦官亦隐于终南、辋川",
+        "placeId": "cn-shaanxi-zhongnan",
+        "date": {
+          "from": {
+            "year": 744,
+            "certainty": "approximate"
+          },
+          "to": {
+            "year": 761,
+            "certainty": "approximate"
+          }
+        },
+        "description": "天宝以后，王维在朝为官而心在山林，往来于长安与辋川之间，亦曾隐于终南。《终南山》「白云回望合，青霭入看无」，写的是山中行旅的经验：回头看白云已经合拢，走进青霭之中却又看不见了——山之深，全从「望」与「入」两个动作里透出来，通篇无一句写山之高，而山自高。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "wangyoucheng-jianzhu",
+            "title": "王右丞集笺注",
+            "author": "赵殿成",
+            "edition": "中华书局",
+            "reliability": "B"
+          },
+          {
+            "id": "wangweiji-jiaozhu",
+            "title": "王维集校注",
+            "author": "陈铁民",
+            "edition": "中华书局",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "wangwei-e12",
+        "poetId": "wangwei",
+        "type": "death",
+        "title": "卒于长安，年六十一",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 761,
+          "original": "上元二年",
+          "certainty": "exact"
+        },
+        "description": "上元二年卒于长安，年六十一（若从生年 701 说）。临终之际，正与弟王缙及亲友诀别，「多敦厉朋友奉佛修心之旨」，掷笔而绝。葬于辋川（一说葬于蓝田）。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-wangwei",
+            "title": "旧唐书·王维传",
+            "author": "刘昫等",
+            "locator": "卷190下",
+            "reliability": "A"
+          },
+          {
+            "id": "xsts-wangwei",
+            "title": "新唐书·王维传",
+            "author": "欧阳修等",
+            "locator": "卷202",
+            "reliability": "A"
+          },
+          {
+            "id": "wangweiji-jiaozhu",
+            "title": "王维集校注",
+            "author": "陈铁民",
+            "edition": "中华书局",
+            "reliability": "B"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "jts-wangwei",
+        "title": "旧唐书·王维传",
+        "author": "刘昫等",
+        "locator": "卷190下",
+        "reliability": "A"
+      },
+      {
+        "id": "xsts-wangwei",
+        "title": "新唐书·王维传",
+        "author": "欧阳修等",
+        "locator": "卷202",
+        "reliability": "A"
+      },
+      {
+        "id": "wangyoucheng-jianzhu",
+        "title": "王右丞集笺注",
+        "author": "赵殿成",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "wangweiji-jiaozhu",
+        "title": "王维集校注",
+        "author": "陈铁民",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ]
   }
 ]

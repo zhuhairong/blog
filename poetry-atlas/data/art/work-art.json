@@ -992,5 +992,248 @@
     "artCredit": "John Stewart Kennedy Fund, 1913",
     "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153885.jpg",
     "artURL": "https://www.metmuseum.org/art/collection/search/36002"
+  },
+  {
+    "workId": "wangwei-shizhi-saishang",
+    "title": "使至塞上",
+    "poetId": "wangwei",
+    "motifs": [
+      "边塞",
+      "大漠",
+      "行旅"
+    ],
+    "objectID": 39668,
+    "artTitle": "Old Trees, Level Distance",
+    "artArtist": "Guo Xi",
+    "artDate": "ca. 1080",
+    "artCredit": "Gift of John M. Crawford Jr., in honor of Douglas Dillon, 1981",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP167812_CRD.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/39668"
+  },
+  {
+    "workId": "wangwei-shanju-qiuming",
+    "title": "山居秋暝",
+    "poetId": "wangwei",
+    "motifs": [
+      "山水",
+      "秋",
+      "月"
+    ],
+    "objectID": 36025,
+    "artTitle": "A Lodge in the Hills",
+    "artArtist": "Wu Li",
+    "artDate": "spuriously dated 1703",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/13_220_117_O.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36025"
+  },
+  {
+    "workId": "wangwei-zhongnanshan",
+    "title": "终南山",
+    "poetId": "wangwei",
+    "motifs": [
+      "山",
+      "山水"
+    ],
+    "objectID": 35971,
+    "artTitle": "Landscape after Li Cheng",
+    "artArtist": "Unidentified artist",
+    "artDate": "18th century or later, spurious date of 1680",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/13_100_25_O.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/35971"
+  },
+  {
+    "workId": "wangwei-hanjiang-linfan",
+    "title": "汉江临泛",
+    "poetId": "wangwei",
+    "motifs": [
+      "水",
+      "舟",
+      "山水"
+    ],
+    "objectID": 40057,
+    "artTitle": "Fisherman's Lodge At Mount Xisai",
+    "artArtist": "Li Jie",
+    "artDate": "ca. 1170",
+    "artCredit": "Bequest of John M. Crawford Jr., 1988",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-15820-005_crd.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/40057"
+  },
+  {
+    "workId": "wangwei-guisongshan-zuo",
+    "title": "归嵩山作",
+    "poetId": "wangwei",
+    "motifs": [
+      "山",
+      "山水"
+    ],
+    "objectID": 36027,
+    "artTitle": "Landscape After Wang Meng",
+    "artArtist": "Zhang Geng",
+    "artDate": "dated 1759",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/13_220_123_O1_sf.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36027"
+  },
+  {
+    "workId": "wangwei-guanlie",
+    "title": "观猎",
+    "poetId": "wangwei",
+    "motifs": [
+      "马"
+    ],
+    "objectID": 36039,
+    "artTitle": "Horse and willow tree",
+    "artArtist": "Unidentified artist",
+    "artDate": "early 15th century(?)",
+    "artCredit": "Gift of George D. Pratt, 1929",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153528.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36039"
+  },
+  {
+    "workId": "wangwei-guo-xiangjisi",
+    "title": "过香积寺",
+    "poetId": "wangwei",
+    "motifs": [
+      "山",
+      "山水"
+    ],
+    "objectID": 36088,
+    "artTitle": "Landscape after Ni Zan",
+    "artArtist": "Qi Zhijia",
+    "artDate": "dated 1651",
+    "artCredit": "Gift of Dr. Frederick Baekeland, 1963",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-37443-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36088"
+  },
+  {
+    "workId": "wangwei-wangchuan-xianju",
+    "title": "辋川闲居赠裴秀才迪",
+    "poetId": "wangwei",
+    "motifs": [
+      "山水",
+      "秋"
+    ],
+    "objectID": 36035,
+    "artTitle": "Rosy Sunset",
+    "artArtist": "Wen Tong",
+    "artDate": "16th century",
+    "artCredit": "Rogers Fund, 1919",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP201218_CRD.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36035"
+  },
+  {
+    "workId": "wangwei-jiuyuejiuri",
+    "title": "九月九日忆山东兄弟",
+    "poetId": "wangwei",
+    "motifs": [
+      "山",
+      "舟",
+      "旅"
+    ],
+    "objectID": 36175,
+    "artTitle": "Moored at the West Cliff",
+    "artArtist": "Gu Yun",
+    "artDate": "",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-30288-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36175"
+  },
+  {
+    "workId": "wangwei-jiyu-wangchuanzhuang",
+    "title": "积雨辋川庄作",
+    "poetId": "wangwei",
+    "motifs": [
+      "田园",
+      "水禽",
+      "荷"
+    ],
+    "objectID": 36437,
+    "artTitle": "Lotus and waterbirds",
+    "artArtist": "Unidentified artist",
+    "artDate": "ca. 1300",
+    "artCredit": "Purchase, The Dillon Fund Gift, 1988",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-36424-001.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36437"
+  },
+  {
+    "workId": "wangwei-luzhai",
+    "title": "鹿柴",
+    "poetId": "wangwei",
+    "motifs": [
+      "山",
+      "山水"
+    ],
+    "objectID": 36131,
+    "artTitle": "Landscapes with poems",
+    "artArtist": "Gong Xian",
+    "artDate": "1688",
+    "artCredit": "Gift of Douglas Dillon, 1981",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/1981_4_1a.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36131"
+  },
+  {
+    "workId": "wangwei-zhuliguan",
+    "title": "竹里馆",
+    "poetId": "wangwei",
+    "motifs": [
+      "竹"
+    ],
+    "objectID": 36096,
+    "artTitle": "Bamboo",
+    "artArtist": "Zheng Xie",
+    "artDate": "",
+    "artCredit": "The C. C. Wang Family Collection, Gift of C. C. Wang, 1968",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-37450-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36096"
+  },
+  {
+    "workId": "wangwei-weichengqu",
+    "title": "渭城曲",
+    "poetId": "wangwei",
+    "motifs": [
+      "山水",
+      "雪"
+    ],
+    "objectID": 36007,
+    "artTitle": "Waiting for the Ferry",
+    "artArtist": "Unidentified artist",
+    "artDate": "early 13th century",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153496.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36007"
+  },
+  {
+    "workId": "wangwei-ningbichi",
+    "title": "凝碧池",
+    "poetId": "wangwei",
+    "motifs": [
+      "园林",
+      "宫廷"
+    ],
+    "objectID": 36079,
+    "artTitle": "Elegant gathering in a garden",
+    "artArtist": "Unidentified artist",
+    "artDate": "15th–16th century",
+    "artCredit": "Gift of Edgar Worch, 1957",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-37462-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36079"
+  },
+  {
+    "workId": "wangwei-shanzhong-songbie",
+    "title": "送别",
+    "poetId": "wangwei",
+    "motifs": [
+      "山水",
+      "春"
+    ],
+    "objectID": 36016,
+    "artTitle": "Landscape",
+    "artArtist": "Yun Shouping",
+    "artDate": "",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/13_220_35_O.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36016"
   }
 ]

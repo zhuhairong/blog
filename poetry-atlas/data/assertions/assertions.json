@@ -2268,5 +2268,513 @@
     "confidence": "C",
     "isPrimary": false,
     "groupId": "sushi-chibi-site"
+  },
+  {
+    "id": "a-wangwei-shizhi-saishang-1",
+    "workId": "wangwei-shizhi-saishang",
+    "poetId": "wangwei",
+    "placeId": "cn-gansu-liangzhou",
+    "date": {
+      "year": 737,
+      "certainty": "approximate",
+      "fuzziness": 1,
+      "original": "开元二十五年"
+    },
+    "circumstance": "开元二十五年河西节度副大使崔希逸破吐蕃，王维以监察御史奉使出塞宣慰，途中作此诗。「征蓬」「归雁」是自况：一去一返之间，写尽身不由己的行役之感。「大漠孤烟直，长河落日圆」——直线与圆，十个字把荒漠的辽阔框成一幅几何图。",
+    "setting": "河西塞外，大漠长河，落日孤烟",
+    "rationale": "系年据《旧唐书》本传及赵殿成《王右丞集笺注》定开元二十五年（737），学界基本一致。系地取河西节度使治所凉州（今甘肃武威），即王维奉使所至之地；诗中「萧关」在今宁夏固原、「居延」在今内蒙古额济纳，为沿途所经，非驻留之地，本图谱取其使府所在而不取途经点。",
+    "sources": [
+      {
+        "id": "jts-wangwei",
+        "title": "旧唐书·王维传",
+        "author": "刘昫等",
+        "locator": "卷190下",
+        "reliability": "A"
+      },
+      {
+        "id": "wangyoucheng-jianzhu",
+        "title": "王右丞集笺注",
+        "author": "赵殿成",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "wangweiji-jiaozhu",
+        "title": "王维集校注",
+        "author": "陈铁民",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true,
+    "triggerEventId": "wangwei-e5"
+  },
+  {
+    "id": "a-wangwei-shanju-qiuming-1",
+    "workId": "wangwei-shanju-qiuming",
+    "poetId": "wangwei",
+    "placeId": "cn-shaanxi-lantian",
+    "date": {
+      "year": 750,
+      "certainty": "approximate",
+      "fuzziness": 8
+    },
+    "circumstance": "辋川别业的山居秋夜。雨后空山，明月照松、清泉流石，竹林里传来浣纱女子的喧笑，莲叶分开处渔舟滑出。末联「随意春芳歇，王孙自可留」，反用《楚辞·招隐士》「王孙兮归来」之意——别人劝他归去，他却说此地可留。",
+    "setting": "辋川山中，新雨初霁，秋夜月明",
+    "rationale": "辋川诸作多无确切系年，学界通常笼统系于天宝年间王维隐居辋川时期（约744—756），故 fuzziness 取大值，confidence 标 C——这是存疑，不是敷衍。",
+    "sources": [
+      {
+        "id": "wangyoucheng-jianzhu",
+        "title": "王右丞集笺注",
+        "author": "赵殿成",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "wangweiji-jiaozhu",
+        "title": "王维集校注",
+        "author": "陈铁民",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "wangwei-e7"
+  },
+  {
+    "id": "a-wangwei-zhongnanshan-1",
+    "workId": "wangwei-zhongnanshan",
+    "poetId": "wangwei",
+    "placeId": "cn-shaanxi-zhongnan",
+    "date": {
+      "year": 750,
+      "certainty": "approximate",
+      "fuzziness": 8
+    },
+    "circumstance": "通首写「望」与「入」两个动作：远望时白云连成一片，走入青霭之中却又看不见了。「分野中峰变，阴晴众壑殊」——一山之隔，已是两个天区、两种天气，山之广大由此透出。通篇无一句写山之高，而山自高。",
+    "setting": "终南山中，云霭变幻，峰壑殊候",
+    "rationale": "「太乙」即太乙山，今翠华山（西安市长安区太乙宫镇），为终南山核心。系年无明文可考，姑系于王维隐居辋川前后。辋川诸作多无确切系年，学界通常笼统系于天宝年间王维隐居辋川时期（约744—756），故 fuzziness 取大值，confidence 标 C——这是存疑，不是敷衍。",
+    "sources": [
+      {
+        "id": "wangyoucheng-jianzhu",
+        "title": "王右丞集笺注",
+        "author": "赵殿成",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "yuanhe-junxian-tuzhi",
+        "title": "元和郡县图志",
+        "author": "李吉甫",
+        "locator": "卷一·京兆府",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "wangwei-e11"
+  },
+  {
+    "id": "a-wangwei-hanjiang-linfan-1",
+    "workId": "wangwei-hanjiang-linfan",
+    "poetId": "wangwei",
+    "placeId": "cn-hubei-xiangyang",
+    "date": {
+      "year": 740,
+      "certainty": "approximate",
+      "fuzziness": 1,
+      "original": "开元二十八年"
+    },
+    "circumstance": "开元二十八年王维知南选，赴岭南途中经襄阳，临汉江而作。「江流天地外，山色有无中」以极简的虚实对照写江天一色；「郡邑浮前浦，波澜动远空」更进一层——城郭像是浮在水上，天空随波摇动，写的是舟行时的错觉，也正是江面辽阔的证据。",
+    "setting": "襄阳城外，汉江之上，楚塞荆门",
+    "rationale": "系年据赵殿成《王右丞集笺注》及陈铁民《王维集校注》定开元二十八年（740）王维知南选经襄阳时，学界通行。诗末「襄阳好风日，留醉与山翁」自道其地，系地最为确定。",
+    "sources": [
+      {
+        "id": "wangyoucheng-jianzhu",
+        "title": "王右丞集笺注",
+        "author": "赵殿成",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "wangweiji-jiaozhu",
+        "title": "王维集校注",
+        "author": "陈铁民",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true,
+    "triggerEventId": "wangwei-e6"
+  },
+  {
+    "id": "a-wangwei-guisongshan-zuo-1",
+    "workId": "wangwei-guisongshan-zuo",
+    "poetId": "wangwei",
+    "placeId": "cn-henan-songshan",
+    "date": {
+      "year": 734,
+      "certainty": "approximate",
+      "fuzziness": 2
+    },
+    "circumstance": "王维贬济州后曾隐于淇上、嵩山，此诗写归嵩山时的心境。「流水如有意，暮禽相与还」——流水与归鸟都像是有意与他同行，以万物之「还」反衬一身之未归；末联「迢递嵩高下，归来且闭关」，一个「且」字，把不甘与无奈一并收住。",
+    "setting": "嵩山道中，清川长薄，荒城古渡，落日秋山",
+    "rationale": "系于王维贬济州后隐居嵩山期间（约726—734）。此为生平中较晦暗的一段，确切年份无明文，故 fuzziness 取 2。",
+    "sources": [
+      {
+        "id": "jts-wangwei",
+        "title": "旧唐书·王维传",
+        "author": "刘昫等",
+        "locator": "卷190下",
+        "reliability": "A"
+      },
+      {
+        "id": "wangweiji-jiaozhu",
+        "title": "王维集校注",
+        "author": "陈铁民",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "wangwei-e3"
+  },
+  {
+    "id": "a-wangwei-guanlie-1",
+    "workId": "wangwei-guanlie",
+    "poetId": "wangwei",
+    "placeId": "cn-shaanxi-xian",
+    "date": {
+      "year": 730,
+      "certainty": "approximate",
+      "fuzziness": 8
+    },
+    "circumstance": "写将军于渭城狩猎：风劲角弓先鸣，草枯而鹰眼更疾，雪尽而马蹄更轻。「忽过新丰市，还归细柳营」以两个地名写驰骋之速——新丰、细柳皆长安近郊，须臾往返，猎骑之矫健尽在其中。",
+    "setting": "长安渭城近郊，新丰市至细柳营",
+    "rationale": "系年无确考，多系于王维早年居长安时。渭城、新丰、细柳营均在长安近郊，系地取长安。",
+    "sources": [
+      {
+        "id": "wangyoucheng-jianzhu",
+        "title": "王右丞集笺注",
+        "author": "赵殿成",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "wangweiji-jiaozhu",
+        "title": "王维集校注",
+        "author": "陈铁民",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-wangwei-guo-xiangjisi-1",
+    "workId": "wangwei-guo-xiangjisi",
+    "poetId": "wangwei",
+    "placeId": "cn-shaanxi-xian",
+    "date": {
+      "year": 745,
+      "certainty": "approximate",
+      "fuzziness": 10
+    },
+    "circumstance": "香积寺在长安城南神禾原上。诗从「不知」写起——本不知寺在何处，行数里入云峰，古木无径，唯闻钟声自深山某处传来。「泉声咽危石，日色冷青松」：泉声为石所阻而若咽，日色因松之青而觉冷，通感之用，无人能及。",
+    "setting": "长安城南香积寺，云峰古木，深山钟声",
+    "rationale": "系年无明文，各家系年出入较大，故 fuzziness 取 10。香积寺在唐长安城南，今西安市长安区，故系于长安。",
+    "sources": [
+      {
+        "id": "wangyoucheng-jianzhu",
+        "title": "王右丞集笺注",
+        "author": "赵殿成",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "wangweiji-jiaozhu",
+        "title": "王维集校注",
+        "author": "陈铁民",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-wangwei-wangchuan-xianju-1",
+    "workId": "wangwei-wangchuan-xianju",
+    "poetId": "wangwei",
+    "placeId": "cn-shaanxi-lantian",
+    "date": {
+      "year": 750,
+      "certainty": "approximate",
+      "fuzziness": 8
+    },
+    "circumstance": "赠裴迪之作。寒山转翠、秋水潺湲，诗人倚杖柴门听暮蝉；渡头落日、墟里孤烟，是一天中最静的片刻。末联以接舆（楚狂）比裴迪、以五柳（陶潜）自比，两个醉者与两个隐者打了个照面，全诗就活了。",
+    "setting": "辋川别业，柴门外，渡头墟里",
+    "rationale": "辋川诸作多无确切系年，学界通常笼统系于天宝年间王维隐居辋川时期（约744—756），故 fuzziness 取大值，confidence 标 C——这是存疑，不是敷衍。",
+    "sources": [
+      {
+        "id": "wangyoucheng-jianzhu",
+        "title": "王右丞集笺注",
+        "author": "赵殿成",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "wangweiji-jiaozhu",
+        "title": "王维集校注",
+        "author": "陈铁民",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "wangwei-e7"
+  },
+  {
+    "id": "a-wangwei-jiuyuejiuri-1",
+    "workId": "wangwei-jiuyuejiuri",
+    "poetId": "wangwei",
+    "placeId": "cn-shaanxi-xian",
+    "date": {
+      "year": 717,
+      "certainty": "approximate",
+      "fuzziness": 2
+    },
+    "circumstance": "旧说此诗作于王维十七岁时客居长安。前两句直说自己；后两句不从自己落笔，反从兄弟那边写——「遥知兄弟登高处，遍插茱萸少一人」，明明是自己想家，却说家里少了自己。这一转，使二十八字有了两倍的分量。",
+    "setting": "长安客中，重阳登高之日",
+    "rationale": "系年沿用旧说，作于王维少年客居长安时（约717）。题中「山东」指华山以东，即其故乡蒲州（今山西永济）一带，非今山东省——此为常见误读，特为标出。",
+    "sources": [
+      {
+        "id": "wangyoucheng-jianzhu",
+        "title": "王右丞集笺注",
+        "author": "赵殿成",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "wangweiji-jiaozhu",
+        "title": "王维集校注",
+        "author": "陈铁民",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true
+  },
+  {
+    "id": "a-wangwei-jiyu-wangchuanzhuang-1",
+    "workId": "wangwei-jiyu-wangchuanzhuang",
+    "poetId": "wangwei",
+    "placeId": "cn-shaanxi-lantian",
+    "date": {
+      "year": 750,
+      "certainty": "approximate",
+      "fuzziness": 8
+    },
+    "circumstance": "久雨后的辋川庄。炊烟因湿重而迟起，农人送饭到东边田里；「漠漠水田飞白鹭，阴阴夏木啭黄鹂」——水田之白与夏木之绿，白鹭之动与黄鹂之声，是唐人写田园最工的一联。末联用《庄子》「海鸥」典故，说自己已无机心，与人不争。",
+    "setting": "辋川庄中，积雨空林，水田夏木",
+    "rationale": "辋川诸作多无确切系年，学界通常笼统系于天宝年间王维隐居辋川时期（约744—756），故 fuzziness 取大值，confidence 标 C——这是存疑，不是敷衍。",
+    "sources": [
+      {
+        "id": "wangyoucheng-jianzhu",
+        "title": "王右丞集笺注",
+        "author": "赵殿成",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "wangweiji-jiaozhu",
+        "title": "王维集校注",
+        "author": "陈铁民",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "wangwei-e7"
+  },
+  {
+    "id": "a-wangwei-luzhai-1",
+    "workId": "wangwei-luzhai",
+    "poetId": "wangwei",
+    "placeId": "cn-shaanxi-lantian",
+    "date": {
+      "year": 750,
+      "certainty": "approximate",
+      "fuzziness": 8
+    },
+    "circumstance": "《辋川集》中最著名的一首。空山无人，只听见人语的回响；夕阳返照穿过深林，最后落在青苔上。以「响」写静、以「照」写幽——声音与光影在此成为空的证据，而非空的对立面。二十个字，是王维禅境的极致。",
+    "setting": "辋川鹿柴，空山深林，返景青苔",
+    "rationale": "辋川诸作多无确切系年，学界通常笼统系于天宝年间王维隐居辋川时期（约744—756），故 fuzziness 取大值，confidence 标 C——这是存疑，不是敷衍。",
+    "sources": [
+      {
+        "id": "wangyoucheng-jianzhu",
+        "title": "王右丞集笺注",
+        "author": "赵殿成",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "wangweiji-jiaozhu",
+        "title": "王维集校注",
+        "author": "陈铁民",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "wangwei-e7"
+  },
+  {
+    "id": "a-wangwei-zhuliguan-1",
+    "workId": "wangwei-zhuliguan",
+    "poetId": "wangwei",
+    "placeId": "cn-shaanxi-lantian",
+    "date": {
+      "year": 750,
+      "certainty": "approximate",
+      "fuzziness": 8
+    },
+    "circumstance": "《辋川集》之一。独坐竹林，弹琴长啸，深林之中无人知晓，唯有明月来相照。「人不知」是寂寞，「明月来相照」却又不寂寞——王维写孤独，总能留一线光。",
+    "setting": "辋川竹里馆，幽篁深林，明月独照",
+    "rationale": "辋川诸作多无确切系年，学界通常笼统系于天宝年间王维隐居辋川时期（约744—756），故 fuzziness 取大值，confidence 标 C——这是存疑，不是敷衍。",
+    "sources": [
+      {
+        "id": "wangyoucheng-jianzhu",
+        "title": "王右丞集笺注",
+        "author": "赵殿成",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "wangweiji-jiaozhu",
+        "title": "王维集校注",
+        "author": "陈铁民",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "wangwei-e7"
+  },
+  {
+    "id": "a-wangwei-weichengqu-1",
+    "workId": "wangwei-weichengqu",
+    "poetId": "wangwei",
+    "placeId": "cn-shaanxi-xian",
+    "date": {
+      "year": 750,
+      "certainty": "approximate",
+      "fuzziness": 10
+    },
+    "circumstance": "送友人元二出使安西都护府。渭城朝雨刚把轻尘压住，客舍旁的柳色正新；「劝君更尽一杯酒，西出阳关无故人」——同样是劝酒，这一杯的分量是：出了阳关，就再没有故人了。此诗后入乐府为《阳关三叠》，成为唐人送别的公共语言。",
+    "setting": "长安渭城，客舍柳色，朝雨初浥",
+    "rationale": "系年各家说法不一，故 fuzziness 取 10。渭城在唐长安西北（今陕西咸阳一带），送别之地在渭城而非安西，故系于长安。",
+    "sources": [
+      {
+        "id": "wangyoucheng-jianzhu",
+        "title": "王右丞集笺注",
+        "author": "赵殿成",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "wangweiji-jiaozhu",
+        "title": "王维集校注",
+        "author": "陈铁民",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-wangwei-ningbichi-1",
+    "workId": "wangwei-ningbichi",
+    "poetId": "wangwei",
+    "placeId": "cn-henan-luoyang",
+    "date": {
+      "year": 756,
+      "certainty": "approximate",
+      "fuzziness": 1,
+      "original": "天宝十五载"
+    },
+    "circumstance": "天宝十五载安禄山陷长安，王维为贼所获，拘于洛阳菩提寺。闻逆贼于凝碧池上作乐，供奉人举声泪下，遂成此绝。「万户伤心生野烟，百僚何日更朝天」——不是骂贼，是替整个朝廷哭；「秋槐叶落空宫里」一个「空」字，写尽宫阙无主。后来正是这首诗救了他的命。",
+    "setting": "洛阳菩提寺中，遥闻凝碧池上作乐",
+    "rationale": "系年据《旧唐书·王维传》明确为天宝十五载（至德元载，756）陷贼期间，作于洛阳菩提寺，证据确凿，故 confidence 标 A。凝碧池在唐东都洛阳宫苑中，系地取洛阳。",
+    "sources": [
+      {
+        "id": "jts-wangwei",
+        "title": "旧唐书·王维传",
+        "author": "刘昫等",
+        "locator": "卷190下",
+        "reliability": "A"
+      },
+      {
+        "id": "xsts-wangwei",
+        "title": "新唐书·王维传",
+        "author": "欧阳修等",
+        "locator": "卷202",
+        "reliability": "A"
+      },
+      {
+        "id": "wangyoucheng-jianzhu",
+        "title": "王右丞集笺注",
+        "author": "赵殿成",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "A",
+    "isPrimary": true,
+    "triggerEventId": "wangwei-e8"
+  },
+  {
+    "id": "a-wangwei-shanzhong-songbie-1",
+    "workId": "wangwei-shanzhong-songbie",
+    "poetId": "wangwei",
+    "placeId": "cn-shaanxi-lantian",
+    "date": {
+      "year": 750,
+      "certainty": "approximate",
+      "fuzziness": 8
+    },
+    "circumstance": "送别而不写别时，只写别后：「山中相送罢，日暮掩柴扉」——人已走远，才掩上柴门，这一「罢」字里有多少迟延。「春草明年绿，王孙归不归」问的是明年，答却没有给。与《楚辞》「王孙游兮不归，春草生兮萋萋」同一机杼，而更淡。",
+    "setting": "辋川山中，日暮柴扉，春草明年",
+    "rationale": "辋川诸作多无确切系年，学界通常笼统系于天宝年间王维隐居辋川时期（约744—756），故 fuzziness 取大值，confidence 标 C——这是存疑，不是敷衍。",
+    "sources": [
+      {
+        "id": "wangyoucheng-jianzhu",
+        "title": "王右丞集笺注",
+        "author": "赵殿成",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "wangweiji-jiaozhu",
+        "title": "王维集校注",
+        "author": "陈铁民",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "wangwei-e7"
   }
 ]
