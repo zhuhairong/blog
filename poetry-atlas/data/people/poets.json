@@ -163,7 +163,7 @@
         "poetId": "dufu",
         "type": "travel",
         "title": "游齐赵，「裘马颇清狂」",
-        "placeId": "cn-shandong-yanzhou-dufu",
+        "placeId": "cn-shandong-yanzhou",
         "date": {
           "from": {
             "year": 736,
@@ -282,7 +282,7 @@
         "poetId": "dufu",
         "type": "meeting",
         "title": "东鲁再会李白，同寻范十隐居",
-        "placeId": "cn-shandong-yanzhou-dufu",
+        "placeId": "cn-shandong-yanzhou",
         "date": {
           "year": 745,
           "original": "天宝四载",
@@ -893,7 +893,7 @@
         "poetId": "dufu",
         "type": "meeting",
         "title": "潭州遇李龟年，作《江南逢李龟年》",
-        "placeId": "cn-hunan-changsha-tan",
+        "placeId": "cn-hunan-changsha",
         "date": {
           "year": 770,
           "original": "大历五年",
@@ -1111,7 +1111,7 @@
         "poetId": "sushi",
         "type": "office",
         "title": "签书凤翔府判官",
-        "placeId": "cn-shaanxi-fengxiang-sushi",
+        "placeId": "cn-shaanxi-fengxiang",
         "date": {
           "from": {
             "year": 1061,
@@ -1213,7 +1213,7 @@
         "poetId": "sushi",
         "type": "office",
         "title": "通判杭州",
-        "placeId": "cn-zhejiang-hangzhou-sushi",
+        "placeId": "cn-zhejiang-hangzhou",
         "date": {
           "from": {
             "year": 1071,
@@ -1249,7 +1249,7 @@
         "poetId": "sushi",
         "type": "office",
         "title": "知密州，修超然台",
-        "placeId": "cn-shandong-zhucheng-sushi",
+        "placeId": "cn-shandong-zhucheng",
         "date": {
           "from": {
             "year": 1074,
@@ -1445,7 +1445,7 @@
         "poetId": "sushi",
         "type": "travel",
         "title": "自黄州移汝州，游庐山、会王安石",
-        "placeId": "cn-jiangxi-lushan-sushi",
+        "placeId": "cn-jiangxi-lushan",
         "date": {
           "year": 1084,
           "original": "元丰七年",
@@ -1504,7 +1504,7 @@
         "poetId": "sushi",
         "type": "office",
         "title": "再知杭州，疏浚西湖筑苏堤",
-        "placeId": "cn-zhejiang-hangzhou-sushi",
+        "placeId": "cn-zhejiang-hangzhou",
         "date": {
           "from": {
             "year": 1089,

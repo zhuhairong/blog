@@ -1,7 +1,7 @@
 [
   {
     "id": "a-dufu-maowu-1",
-    "workId": "dufu-qiangcun-sanjian",
+    "workId": "dufu-maowu-wei-qiufeng-suopo-ge",
     "poetId": "dufu",
     "placeId": "cn-sichuan-chengdu-caotang",
     "date": {
@@ -738,7 +738,7 @@
     "id": "a-dufu-wangyue-1",
     "workId": "dufu-wangyue",
     "poetId": "dufu",
-    "placeId": "cn-shandong-yanzhou-dufu",
+    "placeId": "cn-shandong-taishan",
     "date": {
       "year": 736,
       "original": "开元二十四年至二十八年间",
@@ -748,7 +748,7 @@
     "circumstance": "杜甫游齐赵，登泰山而作。「岱宗夫如何？齐鲁青未了」以问句起，写出远望泰山时那种不知如何措辞的震撼；结以「会当凌绝顶，一览众山小」，是二十四五岁的青年才有的、无可置疑的自信。",
     "triggerEventId": "dufu-e5",
     "setting": "齐赵漫游途中，望泰山而作",
-    "rationale": "诗题「望岳」而全篇无一「登」字，通首写「望」中之景（「决眦入归鸟」是极目远望之态），可证诗人此时尚未登顶，与杜甫晚年登山诗（《登高》《登岳阳楼》）的身临其境有别。系年据其游齐赵时间（约736-740）定，学界通行系于开元二十八年（740）前后，然确切年份无明文可考，故标 fuzziness 3。此诗为杜甫现存最早的作品之一，也是他年轻时代气象的唯一见证。",
+    "rationale": "诗题「望岳」而全篇无一「登」字，通首写「望」中之景（「决眦入归鸟」是极目远望之态），可证诗人此时尚未登顶，与杜甫晚年登山诗（《登高》《登岳阳楼》）的身临其境有别。系年据其游齐赵时间（约736-740）定，学界通行系于开元二十八年（740）前后，然确切年份无明文可考，故标 fuzziness 3。此诗为杜甫现存最早的作品之一，也是他年轻时代气象的唯一见证。 系地：岱宗即泰山，在今山东泰安。另有一说系于兖州——杜甫之父杜闲时任兖州司马，杜甫漫游齐赵（约736—740）以此为据点；然诗通首为「望」中之景，所望者即泰山，故本条系于泰山，兖州说附见于此。",
     "sources": [
       {
         "id": "dufu-nianpu-wen",
@@ -1410,7 +1410,7 @@
     "id": "a-dufu-jiangnan-liguinian-1",
     "workId": "dufu-jiangnan-feng-liguinian",
     "poetId": "dufu",
-    "placeId": "cn-hunan-changsha-tan",
+    "placeId": "cn-hunan-changsha",
     "date": {
       "year": 770,
       "original": "大历五年",
@@ -1444,7 +1444,7 @@
     "id": "a-dufu-jiangnan-liguinian-2",
     "workId": "dufu-jiangnan-feng-liguinian",
     "poetId": "dufu",
-    "placeId": "cn-hunan-changsha-tan",
+    "placeId": "cn-hunan-changsha",
     "date": {
       "year": 769,
       "original": "大历四年",
@@ -1453,7 +1453,7 @@
     },
     "circumstance": "第二说认为此诗作于大历四年（769）杜甫初至潭州时，而非大历五年。持此说者认为，若作于大历五年，则杜甫在潭州遭兵乱之后四处奔逃，未必有「正是江南好风景」的从容心境去写这样一首平淡的诗。",
     "setting": "潭州初至，暮春偶遇",
-    "rationale": "此说据杜甫行踪与诗中情绪推断：大历五年四月潭州兵乱，杜甫被迫再度逃难，境况窘迫；而「正是江南好风景」的语气较为从容，更可能作于大历四年初至潭州、生活稍安之时。此外，李龟年在潭州的居留时间亦无确考，不能排除大历四年已相遇的可能。列出此条以呈现系年分歧的实况。注意：本条 placeId 仅为占位（长安少陵原），不表示创作地在长安——持此说者仍认为作于潭州，只是年份不同。",
+    "rationale": "此说据杜甫行踪与诗中情绪推断：大历五年四月潭州兵乱，杜甫被迫再度逃难，境况窘迫；而「正是江南好风景」的语气较为从容，更可能作于大历四年初至潭州、生活稍安之时。此外，李龟年在潭州的居留时间亦无确考，不能排除大历四年已相遇的可能。列出此条以呈现系年分歧的实况。",
     "sources": [
       {
         "id": "dufu-xiangzhu",
@@ -1469,7 +1469,7 @@
   },
   {
     "id": "a-dufu-zuji-1",
-    "workId": "dufu-qiangcun-sanjian",
+    "workId": "dufu-fengji-zhouzhong",
     "poetId": "dufu",
     "placeId": "cn-hunan-leiyang",
     "date": {
@@ -1502,9 +1502,9 @@
   },
   {
     "id": "a-dufu-zuji-2",
-    "workId": "dufu-qiangcun-sanjian",
+    "workId": "dufu-fengji-zhouzhong",
     "poetId": "dufu",
-    "placeId": "cn-hunan-changsha-tan",
+    "placeId": "cn-hunan-changsha",
     "date": {
       "year": 770,
       "original": "大历五年冬",
@@ -1535,7 +1535,7 @@
     "id": "a-dufu-wangyue-2",
     "workId": "dufu-wangyue",
     "poetId": "dufu",
-    "placeId": "cn-shaanxi-xian",
+    "placeId": "",
     "date": {
       "year": 740,
       "original": "开元二十八年",
@@ -1544,7 +1544,7 @@
     },
     "circumstance": "《望岳》系年异说：或以为非作于齐赵漫游期间，而是杜甫晚年回忆之作。此说认为诗中「会当凌绝顶」的「会当」（应当）语气带有从容的预期，与青年时代「裘马清狂」的实地游历心境不尽相同。",
     "setting": "待考",
-    "rationale": "此条为《望岳》的分组断言之二（groupId: wangyue-time）。此说证据薄弱：杜甫现存诗中，凡晚年追忆之作多有明确的追怀标志（如「忆昔」「昔者」），而《望岳》通首为当下之景，无一追忆语，且其气象与《房兵曹胡马》等早年作品一致。列出此条以呈现少数说的存在，但不代表采纳。学界主流仍定《望岳》为杜甫青年游齐赵时所作。",
+    "rationale": "此条为《望岳》的分组断言之二（groupId: wangyue-time）。此说证据薄弱：杜甫现存诗中，凡晚年追忆之作多有明确的追怀标志（如「忆昔」「昔者」），而《望岳》通首为当下之景，无一追忆语，且其气象与《房兵曹胡马》等早年作品一致。列出此条以呈现少数说的存在，但不代表采纳。学界主流仍定《望岳》为杜甫青年游齐赵时所作。 系地说明：本条为系年异说，创作地无明文可考——若果为晚年追忆之作，则当作于其晚年所居之夔州或湖湘舟中；杜甫天宝十四载（755）离长安后终身未再北返，故不可能作于长安。本条不系地，以存疑。",
     "sources": [
       {
         "id": "dufu-xiangzhu",
@@ -1561,7 +1561,7 @@
   {
     "id": "a-sushi-heshi-mianchi-1",
     "workId": "sushi-heshi-mianchi",
-    "placeId": "cn-shaanxi-fengxiang-sushi",
+    "placeId": "cn-shaanxi-fengxiang",
     "date": {
       "year": 1061,
       "original": "嘉祐六年",
@@ -1593,7 +1593,7 @@
   {
     "id": "a-sushi-jiangchengzi-1",
     "workId": "sushi-jiangchengzi-mizhou",
-    "placeId": "cn-shandong-zhucheng-sushi",
+    "placeId": "cn-shandong-zhucheng",
     "date": {
       "year": 1075,
       "original": "熙宁八年",
@@ -1625,7 +1625,7 @@
   {
     "id": "a-sushi-shuidiaogetou-1",
     "workId": "sushi-shuidiaogetou",
-    "placeId": "cn-shandong-zhucheng-sushi",
+    "placeId": "cn-shandong-zhucheng",
     "date": {
       "year": 1076,
       "month": 8,
@@ -1652,7 +1652,7 @@
   {
     "id": "a-sushi-jiangchengzi-yimao-1",
     "workId": "sushi-jiangchengzi-yimao",
-    "placeId": "cn-shandong-zhucheng-sushi",
+    "placeId": "cn-shandong-zhucheng",
     "date": {
       "year": 1075,
       "original": "熙宁八年正月二十日",
@@ -1684,7 +1684,7 @@
   {
     "id": "a-sushi-chaorantai-1",
     "workId": "sushi-chaorantai",
-    "placeId": "cn-shandong-zhucheng-sushi",
+    "placeId": "cn-shandong-zhucheng",
     "date": {
       "year": 1076,
       "original": "熙宁九年暮春",
@@ -1952,7 +1952,7 @@
   {
     "id": "a-sushi-tixilinbi-1",
     "workId": "sushi-tixilinbi",
-    "placeId": "cn-jiangxi-lushan-sushi",
+    "placeId": "cn-jiangxi-lushan",
     "date": {
       "year": 1084,
       "original": "元丰七年",
@@ -1984,7 +1984,7 @@
   {
     "id": "a-sushi-yinhu-1",
     "workId": "sushi-yinhu-shang-chuqing-houyu",
-    "placeId": "cn-zhejiang-hangzhou-sushi",
+    "placeId": "cn-zhejiang-hangzhou",
     "date": {
       "year": 1073,
       "original": "熙宁六年",
@@ -2016,7 +2016,7 @@
   {
     "id": "a-sushi-wanghulou-1",
     "workId": "sushi-wanghulou-zui-shu",
-    "placeId": "cn-zhejiang-hangzhou-sushi",
+    "placeId": "cn-zhejiang-hangzhou",
     "date": {
       "year": 1072,
       "month": 6,

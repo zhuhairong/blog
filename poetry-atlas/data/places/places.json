@@ -419,10 +419,12 @@
     "isCentroid": true,
     "aliases": [
       "密州",
-      "东武"
+      "东武",
+      "诸城",
+      "超然台"
     ],
     "kind": "city",
-    "note": "苏轼于熙宁七年（1074）知密州，至熙宁九年末离任。豪放词代表作《江城子·密州出猎》《水调歌头》均作于此。超然台遗址在今诸城，为其所修。",
+    "note": "苏轼于熙宁七年（1074）知密州，至熙宁九年末离任。豪放词代表作《江城子·密州出猎》《水调歌头》均作于此。超然台遗址在今诸城，为其所修。 熙宁七年（1074）至熙宁九年（1076）苏轼知密州。修葺城北旧台，苏辙名之曰「超然台」，《超然台记》与《江城子·密州出猎》《水调歌头》皆成于此。",
     "sources": [
       {
         "id": "songshi-sushi",
@@ -490,10 +492,11 @@
     "aliases": [
       "临安",
       "钱塘",
-      "武林"
+      "武林",
+      "西湖"
     ],
     "kind": "city",
-    "note": "苏轼两度莅杭：熙宁四年（1071）任通判，元祐四年（1089）知杭州。后者疏浚西湖、筑苏堤。西湖、望湖楼等为其诗中常见地。",
+    "note": "苏轼两度莅杭：熙宁四年（1071）任通判，元祐四年（1089）知杭州。后者疏浚西湖、筑苏堤。西湖、望湖楼等为其诗中常见地。 苏轼两度仕杭：熙宁四年（1071）任通判，元祐四年（1089）知杭州。疏西湖、筑苏堤、建安乐坊，杭州德之。",
     "sources": [
       {
         "id": "songshi-sushi",
@@ -660,7 +663,7 @@
       "齐州"
     ],
     "kind": "city",
-    "note": "李清照出生地（章丘明水，宋属齐州）。辛弃疾亦济南人，二人并称「济南二安」。趵突泉、大明湖为其词中常见意象。",
+    "note": "李清照出生地（章丘明水，宋属齐州）。辛弃疾亦济南人，二人并称「济南二安」。趵突泉、大明湖为其词中常见意象。 辛弃疾出生地。辛氏为济南望族，但金人占领后其早年行迹记载有限。",
     "sources": [
       {
         "id": "songshi-lizhaozhao",
@@ -714,37 +717,6 @@
         "author": "王仲闻",
         "edition": "人民文学出版社",
         "reliability": "B"
-      }
-    ]
-  },
-  {
-    "id": "cn-shangdong-jinan",
-    "historicalName": "济南府历城",
-    "historicalEra": "宋",
-    "modernName": "山东省济南市历城区",
-    "modernHierarchy": {
-      "province": "山东省",
-      "city": "济南市",
-      "district": "历城区"
-    },
-    "coordinates": [
-      117.0652,
-      36.6803
-    ],
-    "precision": "county",
-    "isCentroid": true,
-    "aliases": [
-      "历城"
-    ],
-    "kind": "city",
-    "note": "辛弃疾出生地。辛氏为济南望族，但金人占领后其早年行迹记载有限。",
-    "sources": [
-      {
-        "id": "songshi-xinqiji",
-        "title": "宋史·辛弃疾传",
-        "author": "脱脱等",
-        "locator": "卷401",
-        "reliability": "A"
       }
     ]
   },
@@ -996,10 +968,11 @@
     "isCentroid": true,
     "aliases": [
       "潭州",
-      "长沙"
+      "长沙",
+      "湘江"
     ],
     "kind": "city",
-    "note": "辛弃疾于淳熙十五年（1188）前后知潭州兼湖南安抚使，创置飞虎军。岳麓山、湘江为其行迹所在。",
+    "note": "辛弃疾于淳熙十五年（1188）前后知潭州兼湖南安抚使，创置飞虎军。岳麓山、湘江为其行迹所在。 大历四年（769）至五年（770）杜甫漂泊潭州，寓居湘江舟中及岸上，遇李龟年作《江南逢李龟年》。大历五年潭州兵乱，杜甫再度逃难。",
     "sources": [
       {
         "id": "songshi-xinqiji",
@@ -1060,10 +1033,11 @@
     "aliases": [
       "东都",
       "洛邑",
-      "神都"
+      "神都",
+      "洛阳"
     ],
     "kind": "city",
-    "note": "唐东都，武则天时称神都。杜牧、李商隐等均有洛阳题材诗作。具体地点史料多只记「洛阳」，故取城市中心。",
+    "note": "唐东都，武则天时称神都。杜牧、李商隐等均有洛阳题材诗作。具体地点史料多只记「洛阳」，故取城市中心。 《江南逢李龟年》一诗系地异说：诗中「岐王宅里」「崔九堂前」为开元年间洛阳旧事，而「落花时节又逢君」通常系于潭州。此条仅用于记录该诗所追忆之地，非创作地。",
     "sources": [
       {
         "id": "chgis-tang",
@@ -1291,7 +1265,7 @@
       "沙丘"
     ],
     "kind": "city",
-    "note": "李白移家东鲁后的寄居地，其子伯禽即在此地。李白自称「山东李白」即源于此段寓居。杜甫《与李十二白同寻范十隐居》亦写东鲁同游事。",
+    "note": "李白移家东鲁后的寄居地，其子伯禽即在此地。李白自称「山东李白」即源于此段寓居。杜甫《与李十二白同寻范十隐居》亦写东鲁同游事。 杜甫之父杜闲曾任兖州司马，杜甫早年游齐赵并省亲于此。天宝四载（745）前后李白、杜甫同游东鲁即在此地，杜甫《与李十二白同寻范十隐居》记其事。",
     "sources": [
       {
         "id": "xsts-libai",
@@ -1328,10 +1302,11 @@
     "aliases": [
       "庐山",
       "匡山",
-      "匡庐"
+      "匡庐",
+      "西林寺"
     ],
     "kind": "mountain",
-    "note": "李白多次游庐山并曾隐居，作《望庐山瀑布》《庐山谣寄卢侍御虚舟》。庐山瀑布为香炉峰瀑布，位置明确。安史乱起后李白曾携妻在此避乱。",
+    "note": "李白多次游庐山并曾隐居，作《望庐山瀑布》《庐山谣寄卢侍御虚舟》。庐山瀑布为香炉峰瀑布，位置明确。安史乱起后李白曾携妻在此避乱。 元丰七年（1084）苏轼自黄州移汝州途中游庐山，西林寺壁题《题西林壁》，为宋诗理趣之最著者。",
     "sources": [
       {
         "id": "litaibai-nianpu",
@@ -1571,44 +1546,6 @@
       {
         "id": "libai-liufang-kao",
         "title": "李白流夜郎考",
-        "reliability": "C"
-      }
-    ]
-  },
-  {
-    "id": "cn-henan-yanshi",
-    "historicalName": "河南府偃师",
-    "historicalEra": "唐",
-    "modernName": "河南省洛阳市偃师区",
-    "modernHierarchy": {
-      "province": "河南省",
-      "city": "洛阳市",
-      "district": "偃师区"
-    },
-    "coordinates": [
-      112.7897,
-      34.7239
-    ],
-    "precision": "county",
-    "isCentroid": true,
-    "aliases": [
-      "偃师",
-      "尸乡",
-      "首阳"
-    ],
-    "kind": "city",
-    "note": "杜甫祖籍襄阳而徙居巩县，其家族于偃师首阳山下有旧庄（陆浑庄）。开元二十九年（741）杜甫自齐鲁归，筑室首阳山下，作《祭远祖当阳君文》。杜甫晚年归葬亦在首阳山下，今偃师有杜甫墓。",
-    "sources": [
-      {
-        "id": "dufu-nianpu-wen",
-        "title": "杜甫年谱",
-        "author": "闻一多",
-        "reliability": "B"
-      },
-      {
-        "id": "yanshi-xianzhi",
-        "title": "偃师县志",
-        "edition": "清乾隆年间刻本",
         "reliability": "C"
       }
     ]
@@ -2194,44 +2131,6 @@
     ]
   },
   {
-    "id": "cn-hunan-changsha-tan",
-    "historicalName": "潭州长沙",
-    "historicalEra": "唐",
-    "modernName": "湖南省长沙市",
-    "modernHierarchy": {
-      "province": "湖南省",
-      "city": "长沙市"
-    },
-    "coordinates": [
-      112.9388,
-      28.2282
-    ],
-    "precision": "prefecture",
-    "isCentroid": true,
-    "aliases": [
-      "潭州",
-      "长沙",
-      "湘江"
-    ],
-    "kind": "city",
-    "note": "大历四年（769）至五年（770）杜甫漂泊潭州，寓居湘江舟中及岸上，遇李龟年作《江南逢李龟年》。大历五年潭州兵乱，杜甫再度逃难。",
-    "sources": [
-      {
-        "id": "dufu-nianpu-wen",
-        "title": "杜甫年谱",
-        "author": "闻一多",
-        "reliability": "B"
-      },
-      {
-        "id": "jts-dufu",
-        "title": "旧唐书·杜甫传",
-        "author": "刘昫等",
-        "locator": "卷190下",
-        "reliability": "A"
-      }
-    ]
-  },
-  {
     "id": "cn-hunan-leiyang",
     "historicalName": "衡州耒阳",
     "historicalEra": "唐",
@@ -2271,45 +2170,6 @@
     ]
   },
   {
-    "id": "cn-shandong-yanzhou-dufu",
-    "historicalName": "兖州",
-    "historicalEra": "唐",
-    "modernName": "山东省济宁市兖州区",
-    "modernHierarchy": {
-      "province": "山东省",
-      "city": "济宁市",
-      "district": "兖州区"
-    },
-    "coordinates": [
-      116.8265,
-      35.5525
-    ],
-    "precision": "county",
-    "isCentroid": true,
-    "aliases": [
-      "兖州",
-      "东鲁",
-      "瑕丘"
-    ],
-    "kind": "city",
-    "note": "杜甫之父杜闲曾任兖州司马，杜甫早年游齐赵并省亲于此。天宝四载（745）前后李白、杜甫同游东鲁即在此地，杜甫《与李十二白同寻范十隐居》记其事。",
-    "sources": [
-      {
-        "id": "dufu-nianpu-wen",
-        "title": "杜甫年谱",
-        "author": "闻一多",
-        "reliability": "B"
-      },
-      {
-        "id": "jts-dufu",
-        "title": "旧唐书·杜甫传",
-        "author": "刘昫等",
-        "locator": "卷190下",
-        "reliability": "A"
-      }
-    ]
-  },
-  {
     "id": "cn-henan-yanshi-shouyang",
     "historicalName": "偃师首阳山",
     "historicalEra": "唐",
@@ -2329,10 +2189,13 @@
     "aliases": [
       "首阳山",
       "陆浑庄",
-      "土娄庄"
+      "土娄庄",
+      "偃师",
+      "尸乡",
+      "首阳"
     ],
     "kind": "mountain",
-    "note": "杜甫远祖杜预墓所在，杜甫于开元二十九年（741）在此筑室，作《祭远祖当阳君文》明其「不敢忘本，不敢违仁」之志。杜甫本人亦归葬于此，今偃师首阳山下有杜甫墓（与巩义、耒阳、平江等墓并存，为四说之一）。",
+    "note": "杜甫远祖杜预墓所在，杜甫于开元二十九年（741）在此筑室，作《祭远祖当阳君文》明其「不敢忘本，不敢违仁」之志。杜甫本人亦归葬于此，今偃师首阳山下有杜甫墓（与巩义、耒阳、平江等墓并存，为四说之一）。 杜甫祖籍襄阳而徙居巩县，其家族于偃师首阳山下有旧庄（陆浑庄）。开元二十九年（741）杜甫自齐鲁归，筑室首阳山下，作《祭远祖当阳君文》。杜甫晚年归葬亦在首阳山下，今偃师有杜甫墓。",
     "sources": [
       {
         "id": "dufu-jidangyangjunwen",
@@ -2345,6 +2208,12 @@
         "title": "杜甫年谱",
         "author": "闻一多",
         "reliability": "B"
+      },
+      {
+        "id": "yanshi-xianzhi",
+        "title": "偃师县志",
+        "edition": "清乾隆年间刻本",
+        "reliability": "C"
       }
     ]
   },
@@ -2406,10 +2275,11 @@
     "aliases": [
       "凤翔",
       "雍州",
-      "西府"
+      "西府",
+      "岐下"
     ],
     "kind": "city",
-    "note": "至德二载（757）二月肃宗由灵武进至凤翔，杜甫自鄜州羌村逃出，西赴凤翔行在，「麻鞋见天子，衣袖露两肘」，被授左拾遗。此为其一生中唯一接近权力中枢的时刻，不足半年即因疏救房琯获罪。",
+    "note": "至德二载（757）二月肃宗由灵武进至凤翔，杜甫自鄜州羌村逃出，西赴凤翔行在，「麻鞋见天子，衣袖露两肘」，被授左拾遗。此为其一生中唯一接近权力中枢的时刻，不足半年即因疏救房琯获罪。 嘉祐六年（1061）苏轼签书凤翔府判官，为首次外任。兄弟渑池之别、怀远驿夜雨对床之约均系于此期。",
     "sources": [
       {
         "id": "dufu-nianpu-wen",
@@ -2502,36 +2372,6 @@
         "author": "郦道元",
         "locator": "卷33",
         "reliability": "B"
-      }
-    ]
-  },
-  {
-    "id": "cn-henan-luoyang-jiangnan",
-    "historicalName": "洛阳（江南逢李龟年异说）",
-    "historicalEra": "唐",
-    "modernName": "河南省洛阳市一带",
-    "modernHierarchy": {
-      "province": "河南省",
-      "city": "洛阳市"
-    },
-    "coordinates": [
-      112.454,
-      34.6197
-    ],
-    "precision": "prefecture",
-    "isCentroid": true,
-    "aliases": [
-      "洛阳",
-      "东都"
-    ],
-    "kind": "city",
-    "note": "《江南逢李龟年》一诗系地异说：诗中「岐王宅里」「崔九堂前」为开元年间洛阳旧事，而「落花时节又逢君」通常系于潭州。此条仅用于记录该诗所追忆之地，非创作地。",
-    "sources": [
-      {
-        "id": "dufu-nianpu-wen",
-        "title": "杜甫年谱",
-        "author": "闻一多",
-        "reliability": "C"
       }
     ]
   },
@@ -2773,38 +2613,6 @@
     ]
   },
   {
-    "id": "cn-shaanxi-fengxiang-sushi",
-    "historicalName": "凤翔府",
-    "historicalEra": "宋",
-    "modernName": "陕西省宝鸡市凤翔区",
-    "modernHierarchy": {
-      "province": "陕西省",
-      "city": "宝鸡市",
-      "district": "凤翔区"
-    },
-    "coordinates": [
-      107.4007,
-      34.5217
-    ],
-    "precision": "prefecture",
-    "isCentroid": true,
-    "aliases": [
-      "凤翔",
-      "岐下"
-    ],
-    "kind": "city",
-    "note": "嘉祐六年（1061）苏轼签书凤翔府判官，为首次外任。兄弟渑池之别、怀远驿夜雨对床之约均系于此期。",
-    "sources": [
-      {
-        "id": "songshi-sushi",
-        "title": "宋史·苏轼传",
-        "author": "脱脱等",
-        "locator": "卷338",
-        "reliability": "A"
-      }
-    ]
-  },
-  {
     "id": "cn-jiangsu-jinling",
     "historicalName": "江宁金陵",
     "historicalEra": "宋",
@@ -2826,109 +2634,6 @@
     ],
     "kind": "city",
     "note": "元丰七年（1084）苏轼自黄州量移汝州，途经金陵，与罢相居钟山的王安石相见，同游累日，尽释前嫌。",
-    "sources": [
-      {
-        "id": "songshi-sushi",
-        "title": "宋史·苏轼传",
-        "author": "脱脱等",
-        "locator": "卷338",
-        "reliability": "A"
-      }
-    ]
-  },
-  {
-    "id": "cn-jiangxi-lushan-sushi",
-    "historicalName": "江州庐山",
-    "historicalEra": "宋",
-    "modernName": "江西省九江市庐山市",
-    "modernHierarchy": {
-      "province": "江西省",
-      "city": "九江市",
-      "district": "庐山市"
-    },
-    "coordinates": [
-      115.98,
-      29.55
-    ],
-    "precision": "site",
-    "isCentroid": false,
-    "aliases": [
-      "庐山",
-      "匡庐",
-      "西林寺"
-    ],
-    "kind": "mountain",
-    "note": "元丰七年（1084）苏轼自黄州移汝州途中游庐山，西林寺壁题《题西林壁》，为宋诗理趣之最著者。",
-    "sources": [
-      {
-        "id": "dongpo-nianpu",
-        "title": "东坡先生年谱",
-        "author": "王宗稷",
-        "reliability": "B"
-      }
-    ]
-  },
-  {
-    "id": "cn-zhejiang-hangzhou-sushi",
-    "historicalName": "杭州钱塘",
-    "historicalEra": "宋",
-    "modernName": "浙江省杭州市",
-    "modernHierarchy": {
-      "province": "浙江省",
-      "city": "杭州市"
-    },
-    "coordinates": [
-      120.1551,
-      30.2741
-    ],
-    "precision": "prefecture",
-    "isCentroid": true,
-    "aliases": [
-      "钱塘",
-      "临安",
-      "西湖"
-    ],
-    "kind": "city",
-    "note": "苏轼两度仕杭：熙宁四年（1071）任通判，元祐四年（1089）知杭州。疏西湖、筑苏堤、建安乐坊，杭州德之。",
-    "sources": [
-      {
-        "id": "songshi-sushi",
-        "title": "宋史·苏轼传",
-        "author": "脱脱等",
-        "locator": "卷338",
-        "reliability": "A"
-      },
-      {
-        "id": "dongpo-nianpu",
-        "title": "东坡先生年谱",
-        "author": "王宗稷",
-        "reliability": "B"
-      }
-    ]
-  },
-  {
-    "id": "cn-shandong-zhucheng-sushi",
-    "historicalName": "密州诸城",
-    "historicalEra": "宋",
-    "modernName": "山东省潍坊市诸城市",
-    "modernHierarchy": {
-      "province": "山东省",
-      "city": "潍坊市",
-      "district": "诸城市"
-    },
-    "coordinates": [
-      119.4098,
-      35.9956
-    ],
-    "precision": "county",
-    "isCentroid": true,
-    "aliases": [
-      "密州",
-      "诸城",
-      "超然台"
-    ],
-    "kind": "city",
-    "note": "熙宁七年（1074）至熙宁九年（1076）苏轼知密州。修葺城北旧台，苏辙名之曰「超然台」，《超然台记》与《江城子·密州出猎》《水调歌头》皆成于此。",
     "sources": [
       {
         "id": "songshi-sushi",
@@ -3068,6 +2773,41 @@
         "id": "suzhe-muzhiming",
         "title": "亡兄子瞻端明墓志铭",
         "author": "苏辙",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-shandong-taishan",
+    "historicalName": "兖州泰山",
+    "historicalEra": "唐",
+    "modernName": "山东省泰安市泰山区",
+    "modernHierarchy": {
+      "province": "山东省",
+      "city": "泰安市",
+      "district": "泰山区"
+    },
+    "coordinates": [
+      117.1075,
+      36.2558
+    ],
+    "precision": "site",
+    "isCentroid": false,
+    "aliases": [
+      "岱宗",
+      "岱山",
+      "岱岳",
+      "东岳",
+      "泰山"
+    ],
+    "kind": "mountain",
+    "note": "五岳之首，古名岱山、岱宗，主峰玉皇顶海拔 1532.7 米（36.2558°N, 117.1075°E），在今泰安市泰山区。杜甫《望岳》所咏即此山。唐属兖州（兖州治瑕丘，即今济宁兖州，在泰山之西南约八十公里）。",
+    "sources": [
+      {
+        "id": "yuanhe-junxian-tuzhi",
+        "title": "元和郡县图志",
+        "author": "李吉甫",
+        "locator": "卷十·兖州",
         "reliability": "B"
       }
     ]
