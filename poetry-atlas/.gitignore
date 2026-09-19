@@ -1,0 +1,9 @@
+# 依赖
+node_modules/
+
+# 构建产物（可由 data/ 重新生成，不入版本库）
+data/derived/
+
+# 外部数据源原始快照（体积大，按需下载，见 docs/DESIGN.md）
+data/raw/*/
+!data/raw/.gitkeep

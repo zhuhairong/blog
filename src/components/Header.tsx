@@ -7,6 +7,7 @@ import { BrandMark } from './icons';
 const NAV = [
     { href: '/#tools', label: '作品' },
     { href: '/#writing', label: '文章' },
+    { href: '/poetry-atlas', label: '诗歌图谱' },
     { href: '/c-utils', label: 'C-Utils' },
 ];
 

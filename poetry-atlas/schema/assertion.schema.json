@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://zhuhairong.github.io/blog/schema/assertion.schema.json",
+  "title": "Assertion 考据断言",
+  "description": "作品与时空的关联不是事实而是断言。同一作品可挂多条互斥断言，用 groupId 归组、confidence 分级。",
+  "type": "object",
+  "required": ["id", "workId", "poetId", "rationale", "sources", "confidence"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "workId": { "type": "string", "description": "断言主体：作品 id" },
+    "poetId": { "type": "string", "description": "冗余存储作者，便于聚合；须与 work.poetId 一致" },
+
+    "placeId": { "type": "string", "description": "创作地点 id，可省略表示地点不明" },
+    "date": { "$ref": "#/definitions/historicalDate" },
+    "dateRange": { "$ref": "#/definitions/dateRange" },
+
+    "circumstance": {
+      "type": "string",
+      "description": "创作情境：当时发生什么、心绪如何"
+    },
+    "triggerEventId": { "type": "string", "description": "触发的生平事件 id" },
+    "relatedPoetIds": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "交游对象：赠答、同游的诗人"
+    },
+    "setting": { "type": "string", "description": "节令、场合、氛围等" },
+
+    "rationale": {
+      "type": "string",
+      "minLength": 1,
+      "description": "判断依据：为何定于此地此时。必填，这是可复现性的保证"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/source" }
+    },
+    "confidence": {
+      "type": "string",
+      "enum": ["A", "B", "C", "D"],
+      "description": "A确定 / B较可靠 / C存疑 / D传说附会"
+    },
+
+    "groupId": {
+      "type": "string",
+      "description": "异说分组 id。同组断言互斥，前端并列展示为「异说」"
+    },
+    "isPrimary": {
+      "type": "boolean",
+      "description": "是否为当前主流说法，用于默认选中"
+    }
+  },
+  "definitions": {
+    "source": {
+      "type": "object",
+      "required": ["id", "title", "reliability"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "author": { "type": "string" },
+        "edition": { "type": "string" },
+        "locator": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "reliability": { "type": "string", "enum": ["A", "B", "C", "D"] }
+      }
+    },
+    "historicalDate": {
+      "type": "object",
+      "required": ["year", "original", "certainty"],
+      "additionalProperties": false,
+      "properties": {
+        "year": { "type": "number", "description": "公历年份，负数表示公元前" },
+        "month": { "type": "integer", "minimum": 1, "maximum": 12 },
+        "day": { "type": "integer", "minimum": 1, "maximum": 31 },
+        "original": { "type": "string", "description": "原始纪年表述，如「元丰七年十月」" },
+        "fuzziness": { "type": "number", "description": "浮动年数，0 表示确定" },
+        "certainty": { "type": "string", "enum": ["exact", "approximate", "range", "unknown"] }
+      }
+    },
+    "dateRange": {
+      "type": "object",
+      "required": ["from", "to"],
+      "additionalProperties": false,
+      "properties": {
+        "from": { "$ref": "#/definitions/historicalDate" },
+        "to": { "$ref": "#/definitions/historicalDate" }
+      }
+    }
+  }
+}

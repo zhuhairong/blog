@@ -13,6 +13,16 @@ const REPO = 'https://github.com/zhuhairong/blog';
 
 const TOOLS: Tool[] = [
     {
+        href: '/poetry-atlas',
+        title: '中国诗歌时空图谱',
+        desc: '从地域与时间两个维度梳理中国诗人与作品。每篇作品的创作地、系年与情境均标注考据依据、地理精度与置信度，学术争议完整保留、诸说并列。',
+        icon: '🗺️',
+        tags: ['时空地图', '考据溯源', '异说并存'],
+        from: '#7c5cff',
+        to: '#f472b6',
+        glow: '124, 92, 255',
+    },
+    {
         href: '/c-utils',
         title: 'C-Utils 代码库',
         desc: '149 个轻量级 C 语言工具库，涵盖数据结构、算法、系统编程、网络协议、加密编码等领域。模块化设计，即插即用。',

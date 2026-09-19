@@ -1,0 +1,2693 @@
+[
+  {
+    "id": "dufu",
+    "name": "杜甫",
+    "courtesyName": "子美",
+    "pseudonym": "少陵野老",
+    "aliases": [
+      "杜工部",
+      "杜拾遗",
+      "诗圣",
+      "少陵野老",
+      "杜少陵"
+    ],
+    "dynasty": "唐",
+    "birth": {
+      "year": 712,
+      "original": "先天元年",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "death": {
+      "year": 770,
+      "original": "大历五年",
+      "certainty": "approximate"
+    },
+    "nativePlace": [
+      {
+        "placeId": "cn-henan-gongyi",
+        "type": "birth",
+        "confidence": "A",
+        "note": "生于巩县，见《旧唐书》本传及元稹《墓志铭》"
+      },
+      {
+        "placeId": "cn-shaanxi-xian",
+        "type": "ancestral",
+        "confidence": "B",
+        "note": "京兆杜氏，祖居杜陵（少陵原），杜甫自号「少陵野老」即本此。祖籍襄阳，远祖杜预为京兆杜陵人。"
+      }
+    ],
+    "summary": "唐代伟大的现实主义诗人，与李白并称「李杜」。历经安史之乱，诗作被称为「诗史」，以沉郁顿挫见长。",
+    "biography": "杜甫（712—770），字子美，自号少陵野老，祖籍襄阳，生于河南府巩县，出身「奉儒守官」的京兆杜氏。青年时代漫游吴越、齐赵，「放荡齐赵间，裘马颇清狂」，与李白、高适同游梁宋，为其一生中最豪放的段落。天宝五载（746）入长安求仕，次年应制举因李林甫「野无遗贤」之谮而全员落第，困居长安近十年，至天宝十四载始得右卫率府兵曹参军一职，同年十一月安史之乱爆发。乱中携家避难鄜州，只身奔灵武行在，中途被叛军俘至长安，作《春望》。至德二载（757）逃赴凤翔，授左拾遗，旋因疏救房琯触怒肃宗，次年贬华州司功参军。乾元二年（759）春往返洛阳华州间，就沿途见闻作「三吏三别」，秋弃官西行，寓秦州、同谷，冬入蜀。上元元年（760）于成都浣花溪筑草堂，居蜀近四年，其间因徐知道之乱流寓梓州、阆州。永泰元年（765）离蜀东下，滞留夔州近两年，创作达四百三十余首，为一生成就之巅。大历三年（768）出峡，漂泊江陵、公安、岳州、潭州，大历五年（770）卒于湘江舟中，年五十九。杜甫身后极寂寞，中晚唐选本几不收录，至北宋经王洙、王琪整理，苏轼、黄庭坚推尊，方奠定「诗圣」地位——这一「身后升格」本身即文学史上极特殊的现象。",
+    "events": [
+      {
+        "id": "dufu-e1",
+        "poetId": "dufu",
+        "type": "birth",
+        "title": "生于巩县",
+        "placeId": "cn-henan-gongyi",
+        "date": {
+          "year": 712,
+          "original": "先天元年",
+          "certainty": "approximate"
+        },
+        "description": "生于河南府巩县，祖上为京兆杜氏，家学深厚。生年据元稹《墓志铭》「享年五十九」上推，然卒年本身有异说，故生年亦非绝对精确。母崔氏早逝，幼时寄养于洛阳仁风里二姑母家，杜甫晚年作《唐故万年县君京兆杜氏墓志》追述此事。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "jts-dufu",
+            "title": "旧唐书·杜甫传",
+            "author": "刘昫等",
+            "reliability": "A"
+          },
+          {
+            "id": "yuanzhen-muzhiming",
+            "title": "唐故工部员外郎杜君墓系铭并序",
+            "author": "元稹",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e2",
+        "poetId": "dufu",
+        "type": "other",
+        "title": "「七龄思即壮」，早慧能诗",
+        "placeId": "cn-henan-luoyang",
+        "date": {
+          "from": {
+            "year": 718,
+            "certainty": "approximate"
+          },
+          "to": {
+            "year": 725,
+            "certainty": "approximate"
+          }
+        },
+        "description": "《壮游》自述「七龄思即壮，开口咏凤凰。九龄书大字，有作成一囊」。少年杜甫寄居洛阳，得观公孙大娘舞剑器、听李龟年歌，又出入岐王李范、崔涤之宅，闻开元盛世之音——这些记忆后来都成了《观公孙大娘弟子舞剑器行》《江南逢李龟年》中追怀盛世的底片。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "dufu-zhuangyou",
+            "title": "壮游",
+            "author": "杜甫",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e3",
+        "poetId": "dufu",
+        "type": "travel",
+        "title": "漫游吴越",
+        "placeId": "cn-jiangsu-suzhou",
+        "date": {
+          "from": {
+            "year": 731,
+            "certainty": "approximate"
+          },
+          "to": {
+            "year": 735,
+            "certainty": "approximate"
+          }
+        },
+        "description": "开元十九年（731）前后，二十岁的杜甫开始为期数年的吴越之游：渡江南下，历金陵、姑苏、会稽，寻禹穴、游剡溪，欲浮海穷扶桑而未果。晚年《壮游》追忆「东下姑苏台，已具浮海航」，可见其青年时代亦有豪宕之气，非生来即「沉郁」。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "dufu-zhuangyou",
+            "title": "壮游",
+            "author": "杜甫",
+            "reliability": "A"
+          },
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e4",
+        "poetId": "dufu",
+        "type": "exam",
+        "title": "归洛阳应进士举，不第",
+        "placeId": "cn-henan-luoyang",
+        "date": {
+          "year": 735,
+          "original": "开元二十三年",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "自吴越归，赴洛阳应进士试，落第。此为杜甫一生两次科举之第一次。唐代进士科录取率极低（约百分之一二），落第本属常态，然与其后来应制举被李林甫全体黜落合观，可见其仕途始终不畅。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          },
+          {
+            "id": "jts-dufu",
+            "title": "旧唐书·杜甫传",
+            "author": "刘昫等",
+            "locator": "卷190下",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e5",
+        "poetId": "dufu",
+        "type": "travel",
+        "title": "游齐赵，「裘马颇清狂」",
+        "placeId": "cn-shandong-yanzhou-dufu",
+        "date": {
+          "from": {
+            "year": 736,
+            "certainty": "approximate"
+          },
+          "to": {
+            "year": 740,
+            "certainty": "approximate"
+          }
+        },
+        "description": "落第后北游齐赵，其父杜闲时任兖州司马，杜甫省亲并纵游其间，登泰山作《望岳》。「放荡齐赵间，裘马颇清狂。春歌丛台上，冬猎青丘旁」——这是他一生中最无忧的五年，《望岳》结句「会当凌绝顶，一览众山小」的气象，此后不再有。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "dufu-zhuangyou",
+            "title": "壮游",
+            "author": "杜甫",
+            "reliability": "A"
+          },
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e6",
+        "poetId": "dufu",
+        "type": "seclusion",
+        "title": "筑室首阳山下，祭远祖杜预",
+        "placeId": "cn-henan-yanshi-shouyang",
+        "date": {
+          "year": 741,
+          "original": "开元二十九年",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "自齐鲁归洛阳，于偃师首阳山下筑室，作《祭远祖当阳君文》，自称「不敢忘本，不敢违仁」。杜预为西晋名将兼《春秋左传集解》作者，杜甫一生以「诗是吾家事」自任，其「奉儒守官」的家学自觉在此正式确立。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "dufu-jidangyangjunwen",
+            "title": "祭远祖当阳君文",
+            "author": "杜甫",
+            "reliability": "A"
+          },
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e7",
+        "poetId": "dufu",
+        "type": "meeting",
+        "title": "与李白初遇于洛阳",
+        "placeId": "cn-henan-luoyang",
+        "date": {
+          "year": 744,
+          "original": "天宝三载",
+          "certainty": "approximate"
+        },
+        "description": "天宝三载春，李白赐金放还出长安，至洛阳与杜甫初遇。二人相差十一岁，此时李白已名满天下，杜甫尚是无名后辈。闻一多称之为「中国文学史上最值得纪念的一次会面，好像太阳与月亮走碰了头」。此后二人同游梁宋、齐鲁，杜甫终其一生怀念李白，赠诗十余首，而李白赠杜者仅三四首。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          },
+          {
+            "id": "xsts-dufu",
+            "title": "新唐书·杜甫传",
+            "author": "欧阳修等",
+            "locator": "卷201",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e8",
+        "poetId": "dufu",
+        "type": "meeting",
+        "title": "梁宋之游，与李白、高适同游",
+        "placeId": "cn-henan-shangqiu",
+        "date": {
+          "year": 744,
+          "original": "天宝三载秋",
+          "certainty": "approximate"
+        },
+        "description": "秋，三人同至宋州，登吹台（梁园遗址）、猎于孟诸泽，「饮酒赋诗，谈论天下事」。李白、高适、杜甫三人性格与诗风迥异，却在此结成唐代最著名的一次三人交游。杜甫晚年《遣怀》追忆「忆与高李辈，论交入酒垆」，将其视为一生的高光时刻。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "dufu-qianhuai",
+            "title": "遣怀",
+            "author": "杜甫",
+            "reliability": "A"
+          },
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e9",
+        "poetId": "dufu",
+        "type": "meeting",
+        "title": "东鲁再会李白，同寻范十隐居",
+        "placeId": "cn-shandong-yanzhou-dufu",
+        "date": {
+          "year": 745,
+          "original": "天宝四载",
+          "certainty": "approximate"
+        },
+        "description": "是年秋，杜甫至兖州，与李白再会，同访范十隐居、同游鲁城北郭。杜甫作《与李十二白同寻范十隐居》，记「醉眠秋共被，携手日同行」之状。二人自此一别，再无相见。这段同游成为此后杜甫追念李白的全部依据。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "dufu-yulibai-tongxun",
+            "title": "与李十二白同寻范十隐居",
+            "author": "杜甫",
+            "reliability": "A"
+          },
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e10",
+        "poetId": "dufu",
+        "type": "travel",
+        "title": "入长安求仕，寓居少陵原",
+        "placeId": "cn-shaanxi-changan-shaoling",
+        "date": {
+          "year": 746,
+          "original": "天宝五载",
+          "certainty": "approximate"
+        },
+        "description": "天宝五载西入长安，欲以文才致身。因杜氏祖居杜陵、樊川一带，遂寓居少陵原，自号「少陵野老」。此为「困居长安十年」之始。十年间他「朝扣富儿门，暮随肥马尘。残杯与冷炙，到处潜悲辛」，靠干谒、卖药、寄食为生。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "dufu-fengzeng-weizuocheng",
+            "title": "奉赠韦左丞丈二十二韵",
+            "author": "杜甫",
+            "reliability": "A"
+          },
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e11",
+        "poetId": "dufu",
+        "type": "exam",
+        "title": "应制举，为李林甫所黜，全员落第",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 747,
+          "original": "天宝六载",
+          "certainty": "approximate"
+        },
+        "description": "玄宗诏天下有一艺者赴京应试，杜甫应考。宰相李林甫恐举子对策揭其奸恶，故意让全部应试者落选，反上表称贺「野无遗贤」。这是一次制度性的羞辱——杜甫的落第不是因为才学，而是因为体制本身不允许真话。此事的挫败感在其诗中反复出现。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "zzztj",
+            "title": "资治通鉴",
+            "author": "司马光",
+            "locator": "卷215",
+            "reliability": "A"
+          },
+          {
+            "id": "jts-dufu",
+            "title": "旧唐书·杜甫传",
+            "author": "刘昫等",
+            "locator": "卷190下",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e12",
+        "poetId": "dufu",
+        "type": "other",
+        "title": "献《三大礼赋》，仍不得用",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 751,
+          "original": "天宝十载",
+          "certainty": "approximate"
+        },
+        "description": "献《朝献太清宫赋》《朝享太庙赋》《有事于南郊赋》三大礼赋，玄宗奇之，命待制集贤院。然而仅得「待制」之名，无实职，仍须继续干谒。杜甫又以《封西岳赋》表进，亦无结果。此后数年间他几乎把长安所有可能援手的人都求遍了。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-dufu",
+            "title": "旧唐书·杜甫传",
+            "author": "刘昫等",
+            "locator": "卷190下",
+            "reliability": "A"
+          },
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e13",
+        "poetId": "dufu",
+        "type": "office",
+        "title": "授右卫率府兵曹参军",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 755,
+          "original": "天宝十四载十月",
+          "certainty": "exact"
+        },
+        "description": "困居十年之后，终于得授右卫率府兵曹参军——一个看管兵器甲仗的从八品下小官。杜甫作《官定后戏赠》自嘲：「不作河西尉，凄凉为折腰。老夫怕趋走，率府且逍遥。」他拒绝更卑下的河西县尉，改就此职。这是他为官生涯的第一个职位，距安史之乱爆发仅一个月。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "dufu-guanding-houzeng",
+            "title": "官定后戏赠",
+            "author": "杜甫",
+            "reliability": "A"
+          },
+          {
+            "id": "jts-dufu",
+            "title": "旧唐书·杜甫传",
+            "author": "刘昫等",
+            "locator": "卷190下",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e14",
+        "poetId": "dufu",
+        "type": "travel",
+        "title": "赴奉先探家，幼子饿死，作《自京赴奉先县咏怀》",
+        "placeId": "cn-shaanxi-pucheng",
+        "date": {
+          "year": 755,
+          "month": 11,
+          "original": "天宝十四载十一月",
+          "certainty": "exact"
+        },
+        "description": "得官后赴奉先县（今蒲城）探视寄居的妻儿，途中作《自京赴奉先县咏怀五百字》。「朱门酒肉臭，路有冻死骨」即出此篇。归家则「入门闻号啕，幼子饿死」——而就在他写下此诗的同一时刻，安禄山已在范阳起兵，消息尚未传到长安。这个时间差，是杜甫本人也未意识到的残酷巧合。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "dufu-zijingfu-fengxian",
+            "title": "自京赴奉先县咏怀五百字",
+            "author": "杜甫",
+            "reliability": "A"
+          },
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e15",
+        "poetId": "dufu",
+        "type": "war",
+        "title": "安史之乱爆发",
+        "date": {
+          "year": 755,
+          "month": 11,
+          "original": "天宝十四载十一月",
+          "certainty": "exact"
+        },
+        "description": "安禄山于范阳起兵，天下大乱。杜甫此后诗作转以家国离乱为基调，是「诗史」特质形成的分水岭。战乱使其个人命运与王朝崩解彻底绑定，也是其诗歌由「个人抒怀」转向「时代记录」的转折点。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "zzztj",
+            "title": "资治通鉴",
+            "author": "司马光",
+            "locator": "卷217",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e16",
+        "poetId": "dufu",
+        "type": "travel",
+        "title": "携家避乱鄜州羌村",
+        "placeId": "cn-shaanxi-fuzhou-qiangcun",
+        "date": {
+          "year": 756,
+          "month": 6,
+          "original": "至德元载六月",
+          "certainty": "exact"
+        },
+        "description": "潼关失守前夕，杜甫自奉先将家眷北迁至鄜州羌村暂避。安顿尚未完毕，便听闻肃宗已于灵武即位，遂只身北上投奔行在。途中在延州一带被叛军俘获，押送长安——他从「投奔朝廷」的人，一夜之间变成了「陷贼」的人。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "dufu-qiangcun-sanshou",
+            "title": "羌村三首",
+            "author": "杜甫",
+            "reliability": "A"
+          },
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e17",
+        "poetId": "dufu",
+        "type": "other",
+        "title": "陷贼居长安，作《春望》《哀江头》",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "from": {
+            "year": 756,
+            "certainty": "approximate"
+          },
+          "to": {
+            "year": 757,
+            "certainty": "approximate"
+          }
+        },
+        "description": "被俘至长安，因官职卑微未被囚禁，然失去自由。次年春目睹都城残破、曲江寂寥，作《春望》《哀江头》。「国破山河在，城春草木深」十字为唐诗中最沉重的开篇之一。同期还在长安遇见了同样陷贼的王维、郑虔等人。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "dufu-chunwang",
+            "title": "春望",
+            "author": "杜甫",
+            "reliability": "A"
+          },
+          {
+            "id": "dufu-aijiangtou",
+            "title": "哀江头",
+            "author": "杜甫",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e18",
+        "poetId": "dufu",
+        "type": "office",
+        "title": "逃赴凤翔，授左拾遗",
+        "placeId": "cn-shaanxi-fengxiang",
+        "date": {
+          "year": 757,
+          "month": 4,
+          "original": "至德二载四月",
+          "certainty": "exact"
+        },
+        "description": "至德二载四月，杜甫自长安城中脱身，冒险西奔凤翔行在，「麻鞋见天子，衣袖露两肘」。肃宗嘉其忠，授左拾遗——从八品上，职在讽谏。这是他一生中距离权力中枢最近的时刻。杜甫自谓「涕泪受拾遗，流离主恩厚」，足见其感激。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "jts-dufu",
+            "title": "旧唐书·杜甫传",
+            "author": "刘昫等",
+            "locator": "卷190下",
+            "reliability": "A"
+          },
+          {
+            "id": "dufu-shuxiang-zoushu",
+            "title": "述怀",
+            "author": "杜甫",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e19",
+        "poetId": "dufu",
+        "type": "demotion",
+        "title": "疏救房琯，触怒肃宗",
+        "placeId": "cn-shaanxi-fengxiang",
+        "date": {
+          "year": 757,
+          "month": 5,
+          "original": "至德二载五月",
+          "certainty": "exact"
+        },
+        "description": "宰相房琯兵败陈涛斜被罢，杜甫以左拾遗身份上疏申救，措辞激烈，肃宗大怒，诏三司推问。赖张镐等营救，方得免罪。房琯案是肃宗与玄宗两朝旧臣暗中角力的表层，杜甫因这次上书被归入「房琯党」，此后一生仕途皆受此牵累。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "jts-dufu",
+            "title": "旧唐书·杜甫传",
+            "author": "刘昫等",
+            "locator": "卷190下",
+            "reliability": "A"
+          },
+          {
+            "id": "xsts-dufu",
+            "title": "新唐书·杜甫传",
+            "author": "欧阳修等",
+            "locator": "卷201",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e20",
+        "poetId": "dufu",
+        "type": "travel",
+        "title": "北归羌村省家，作《羌村三首》《北征》",
+        "placeId": "cn-shaanxi-fuzhou-qiangcun",
+        "date": {
+          "year": 757,
+          "month": 8,
+          "original": "至德二载闰八月",
+          "certainty": "exact"
+        },
+        "description": "肃宗特许杜甫归家省亲。诗人回到羌村，妻儿惊定而泣，「夜阑更秉烛，相对如梦寐」——十四个字写尽乱世重逢的恍惚。同期作长篇《北征》，以五古纪行，兼述家国，被后人评为「杜诗中的《离骚》」。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "dufu-qiangcun-sanshou",
+            "title": "羌村三首",
+            "author": "杜甫",
+            "reliability": "A"
+          },
+          {
+            "id": "dufu-beizheng",
+            "title": "北征",
+            "author": "杜甫",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e21",
+        "poetId": "dufu",
+        "type": "demotion",
+        "title": "贬华州司功参军",
+        "placeId": "cn-shaanxi-huazhou",
+        "date": {
+          "year": 758,
+          "month": 6,
+          "original": "乾元元年六月",
+          "certainty": "exact"
+        },
+        "description": "房琯再贬，杜甫作为「房党」外放华州司功参军，掌地方祭祀、学校、考试等杂务。从天子近臣到州郡末吏，落差极大。自此杜甫再未回到过朝廷中枢，其「致君尧舜上」的抱负事实上就此终结。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "jts-dufu",
+            "title": "旧唐书·杜甫传",
+            "author": "刘昫等",
+            "locator": "卷190下",
+            "reliability": "A"
+          },
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e22",
+        "poetId": "dufu",
+        "type": "war",
+        "title": "邺城兵溃，往返洛阳途中作「三吏三别」",
+        "placeId": "cn-henan-sanhaxiao",
+        "date": {
+          "year": 759,
+          "month": 3,
+          "original": "乾元二年三月",
+          "certainty": "exact"
+        },
+        "description": "九节度使联军溃于邺城，唐廷急征新兵补充。杜甫自洛阳返华州任所，沿途经新安、石壕、潼关，亲见征兵之惨——老人、少年、新婚者、无家者皆不能免。遂作《新安吏》《石壕吏》《潼关吏》《新婚别》《垂老别》《无家别》六篇。这组诗不抒情、不议论，只记录，是中国叙事诗的最高峰。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "dufu-shanli-shanbie",
+            "title": "三吏三别",
+            "author": "杜甫",
+            "reliability": "A"
+          },
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e23",
+        "poetId": "dufu",
+        "type": "demotion",
+        "title": "弃官西行，寓居秦州",
+        "placeId": "cn-gansu-qinzhou",
+        "date": {
+          "year": 759,
+          "month": 7,
+          "original": "乾元二年七月",
+          "certainty": "exact"
+        },
+        "description": "关中大旱，加上对朝廷彻底失望，杜甫弃华州司功参军职，携家西行至秦州投奔从侄杜佐。居四月，作诗近九十首，包括《秦州杂诗》二十首、《月夜忆舍弟》。「露从今夜白，月是故乡明」即出此期。因秦州生计亦无着落，冬又南迁同谷。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          },
+          {
+            "id": "dufu-qinzhou-zashi",
+            "title": "秦州杂诗二十首",
+            "author": "杜甫",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e24",
+        "poetId": "dufu",
+        "type": "travel",
+        "title": "寓居同谷，作《同谷七歌》",
+        "placeId": "cn-gansu-tonggu",
+        "date": {
+          "year": 759,
+          "month": 11,
+          "original": "乾元二年十一月",
+          "certainty": "exact"
+        },
+        "description": "至同谷（今成县），本欲依人，然境况反更艰难，全家拾橡栗、掘黄独（野生山芋）为食，儿女冻饿啼哭。杜甫作《乾元中寓居同谷县作歌七首》，逐首哀叹自身、妻子、弟妹、故人，是杜诗中体例最特殊、情绪最直露的一组。居不满一月即南下入蜀。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "dufu-tonggu-qige",
+            "title": "乾元中寓居同谷县作歌七首",
+            "author": "杜甫",
+            "reliability": "A"
+          },
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e25",
+        "poetId": "dufu",
+        "type": "travel",
+        "title": "度剑门入蜀，营建成都草堂",
+        "placeId": "cn-sichuan-chengdu-caotang",
+        "date": {
+          "year": 759,
+          "month": 12,
+          "original": "乾元二年冬",
+          "certainty": "exact"
+        },
+        "description": "十二月自同谷出发，取道剑门、梓潼、绵州，历经一月余的艰苦跋涉，于年底抵达成都。次年在友人严武、高适等资助下，于西郊浣花溪畔营建茅屋，即后世所称「杜甫草堂」。居蜀近四年，为一生中难得的安定时期，写景咏物与忧时伤乱并存。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          },
+          {
+            "id": "dugong-buzhu",
+            "title": "杜工部草堂诗笺",
+            "author": "蔡梦弼",
+            "edition": "宋刻本",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e26",
+        "poetId": "dufu",
+        "type": "war",
+        "title": "徐知道作乱，流寓梓州阆州",
+        "placeId": "cn-sichuan-santai",
+        "date": {
+          "year": 762,
+          "original": "宝应元年",
+          "certainty": "approximate"
+        },
+        "description": "七月，成都少尹徐知道据城作乱，成都陷入混乱。杜甫弃草堂避乱，流寓梓州、阆州近两年。期间闻官军收复河南河北，作《闻官军收河南河北》——这是杜集中最欢快的一首，然而他终究未能真正还乡。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          },
+          {
+            "id": "jts-dufu",
+            "title": "旧唐书·杜甫传",
+            "author": "刘昫等",
+            "locator": "卷190下",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e27",
+        "poetId": "dufu",
+        "type": "office",
+        "title": "严武再镇蜀，荐为节度参谋、检校工部员外郎",
+        "placeId": "cn-sichuan-chengdu-caotang",
+        "date": {
+          "year": 764,
+          "original": "广德二年",
+          "certainty": "approximate"
+        },
+        "description": "严武再任成都尹、剑南节度使，荐杜甫为节度参谋、检校工部员外郎，赐绯鱼袋——「杜工部」之称由此而来。然杜甫在幕府中「强将笑语供主人」，与同僚不睦，年余即辞归草堂。这是他一生中最后的官职，也是最勉强的一段任职。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-dufu",
+            "title": "旧唐书·杜甫传",
+            "author": "刘昫等",
+            "locator": "卷190下",
+            "reliability": "A"
+          },
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e28",
+        "poetId": "dufu",
+        "type": "travel",
+        "title": "离蜀东下，滞留夔州",
+        "placeId": "cn-sichuan-kuizhou",
+        "date": {
+          "year": 766,
+          "original": "大历元年",
+          "certainty": "approximate"
+        },
+        "description": "严武于永泰元年（765）四月卒，杜甫失去在蜀的最后依托，五月携家离成都东下，经嘉、戎、渝、忠诸州至云安，因病滞留。大历元年（766）移居夔州（今奉节），得夔州都督柏茂琳照拂，居近两年。此期作诗四百三十余首，占现存杜诗近三分之一，《秋兴八首》《咏怀古迹五首》《登高》皆成于此——一位老病的诗人，在峡江之畔达到了中国律诗的最高峰。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          },
+          {
+            "id": "dugong-buzhu",
+            "title": "杜工部草堂诗笺",
+            "author": "蔡梦弼",
+            "edition": "宋刻本",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e29",
+        "poetId": "dufu",
+        "type": "travel",
+        "title": "出峡漂泊湖湘，登岳阳楼",
+        "placeId": "cn-hunan-yueyang",
+        "date": {
+          "year": 768,
+          "month": 12,
+          "original": "大历三年冬",
+          "certainty": "exact"
+        },
+        "description": "大历三年（768）正月出峡至江陵，秋移公安，冬抵岳州，登岳阳楼，作《登岳阳楼》：「昔闻洞庭水，今上岳阳楼。吴楚东南坼，乾坤日夜浮。亲朋无一字，老病有孤舟。戎马关山北，凭轩涕泗流。」五十六字，把个人的老病漂零与国家的战乱未平合为一体，是杜诗晚年五律的压卷之作。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "dufu-dengyueyanglou",
+            "title": "登岳阳楼",
+            "author": "杜甫",
+            "reliability": "A"
+          },
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e30",
+        "poetId": "dufu",
+        "type": "meeting",
+        "title": "潭州遇李龟年，作《江南逢李龟年》",
+        "placeId": "cn-hunan-changsha-tan",
+        "date": {
+          "year": 770,
+          "original": "大历五年",
+          "certainty": "approximate"
+        },
+        "description": "漂泊潭州期间，杜甫遇见了开元年间在洛阳岐王、崔九宅中听过的乐师李龟年。二人皆已白头，一为流落乐工，一为漂泊诗人。杜甫作《江南逢李龟年》：「岐王宅里寻常见，崔九堂前几度闻。正是江南好风景，落花时节又逢君。」二十八字，无一字言及盛衰，而盛衰尽在其中。此诗系年与系地尚有异说。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "dufu-jiangnan-feng-liguinian",
+            "title": "江南逢李龟年",
+            "author": "杜甫",
+            "reliability": "A"
+          },
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e31",
+        "poetId": "dufu",
+        "type": "death",
+        "title": "卒于湘江舟中（异说：耒阳）",
+        "date": {
+          "year": 770,
+          "original": "大历五年",
+          "certainty": "approximate"
+        },
+        "description": "大历五年（770）四月，潭州兵乱，杜甫再度南逃，欲往郴州依舅氏崔伟，行至耒阳遇江水大涨，被迫返舟。同年冬卒，年五十九。《旧唐书》本传称其「啖牛肉白酒，一夕而卒于耒阳」，学界多不取此说，而主其卒于潭州至岳阳间湘江舟中。卒地异说有四：耒阳、潭州、岳阳、平江，杜甫墓亦相应有四处。一位记录了整个时代的诗人，其自身的最后坐标竟无法确定。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "jts-dufu",
+            "title": "旧唐书·杜甫传",
+            "author": "刘昫等",
+            "locator": "卷190下",
+            "reliability": "B"
+          },
+          {
+            "id": "xsts-dufu",
+            "title": "新唐书·杜甫传",
+            "author": "欧阳修等",
+            "locator": "卷201",
+            "reliability": "A"
+          },
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dufu-e32",
+        "poetId": "dufu",
+        "type": "other",
+        "title": "身后升格：从无名到「诗圣」",
+        "date": {
+          "from": {
+            "year": 770,
+            "certainty": "approximate"
+          },
+          "to": {
+            "year": 1050,
+            "certainty": "approximate"
+          }
+        },
+        "description": "杜甫身后极寂寞。现存十种唐人选唐诗中，无一种选其诗——他在当时的声望远不及其友人李白、高适、岑参。直至北宋王洙、王琪辑校《杜工部集》（1059），苏轼、黄庭坚、王安石推尊其为「古今诗人之首」，江西诗派奉为祖师，「诗圣」地位方确立。这一跨越近三百年的接受史反转，本身就是中国文学史上极特殊的现象：杜甫的声誉不是与他的创作同时生成的，而是被后世「追认」的。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "songshi-wenxue-zhuan",
+            "title": "宋史·文苑传",
+            "author": "脱脱等",
+            "reliability": "B"
+          },
+          {
+            "id": "yuanzhen-muzhiming",
+            "title": "唐故工部员外郎杜君墓系铭并序",
+            "author": "元稹",
+            "reliability": "A"
+          }
+        ]
+      }
+    ],
+    "externalIds": {
+      "cbdb": "1388",
+      "wikidata": "Q318998"
+    },
+    "sources": [
+      {
+        "id": "jts-dufu",
+        "title": "旧唐书·杜甫传",
+        "author": "刘昫等",
+        "edition": "中华书局点校本",
+        "locator": "卷190下",
+        "reliability": "A"
+      },
+      {
+        "id": "xsts-dufu",
+        "title": "新唐书·杜甫传",
+        "author": "欧阳修等",
+        "edition": "中华书局点校本",
+        "locator": "卷201",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "sushi",
+    "name": "苏轼",
+    "courtesyName": "子瞻",
+    "pseudonym": "东坡居士",
+    "aliases": [
+      "苏东坡",
+      "苏子瞻",
+      "苏文忠",
+      "东坡居士",
+      "眉山居士"
+    ],
+    "dynasty": "宋",
+    "birth": {
+      "year": 1037,
+      "month": 1,
+      "original": "景祐三年十二月十九日",
+      "certainty": "exact"
+    },
+    "death": {
+      "year": 1101,
+      "original": "建中靖国元年",
+      "certainty": "exact"
+    },
+    "nativePlace": [
+      {
+        "placeId": "cn-sichuan-meishan",
+        "type": "birth",
+        "confidence": "A",
+        "note": "眉州眉山人，见《宋史》本传及苏辙《亡兄子瞻端明墓志铭》"
+      }
+    ],
+    "summary": "北宋文学家、书画家，唐宋八大家之一。诗、词、文、书、画皆臻一流，开创豪放词风。一生宦海浮沉，屡遭贬谪而旷达自适。",
+    "biography": "苏轼字子瞻，一字和仲，自号东坡居士，眉州眉山人。嘉祐二年（1057）进士，欧阳修见其文惊呼「老夫当避此人，放出一头地」。熙宁间因反对王安石变法自请外任，历杭州、密州、徐州、湖州。元丰二年（1079）因《湖州谢上表》及旧诗被弹劾，下御史台狱百三十日，是为乌台诗案；次年贬黄州团练副使，躬耕城东故营地，自号东坡居士。黄州四年二个月作诗文七百五十余篇，元丰五年更以《念奴娇·赤壁怀古》《定风波》《赤壁赋》《后赤壁赋》《寒食帖》数作并出，为中国文化史上罕见的创作井喷，其文学巅峰即在此谪居之地。元祐间召还，官至翰林学士、知制诰，然其论政不主一端，对新法「校量利害，参用所长」，既忤王安石亦不合司马光，故两度外任，再知杭州时筑苏堤、疏西湖。绍圣后新党再起，连贬惠州、儋州，年六十二渡海赴海南，为宋代文字狱谪臣最重之罚。居儋三年而讲学不辍，海南文教由此始兴。元符三年（1100）遇赦北归，次年卒于常州，临终自题金山画像云「问汝平生功业，黄州惠州儋州」——一生自许之功业，独在三处贬所。苏轼诗、词、文、书、画皆臻一流，以诗为词而开豪放一派，散文汪洋恣肆与欧阳修并称「欧苏」，书法居宋四家之首，《黄州寒食诗帖》号「天下第三行书」。",
+    "events": [
+      {
+        "id": "sushi-e1",
+        "poetId": "sushi",
+        "type": "birth",
+        "title": "生于眉州眉山",
+        "placeId": "cn-sichuan-meishan",
+        "date": {
+          "year": 1037,
+          "original": "景祐三年十二月十九日",
+          "certainty": "exact"
+        },
+        "description": "生于眉州眉山县纱縠行苏宅。父苏洵，弟苏辙，父子三人后并称「三苏」，同列唐宋八大家。母程氏亲授以书，尝读《范滂传》而慨然有当世之志。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "songshi-sushi",
+            "title": "宋史·苏轼传",
+            "author": "脱脱等",
+            "locator": "卷338",
+            "reliability": "A"
+          },
+          {
+            "id": "suzhe-muzhiming",
+            "title": "亡兄子瞻端明墓志铭",
+            "author": "苏辙",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "sushi-e2",
+        "poetId": "sushi",
+        "type": "study",
+        "title": "母程氏卒，归葬眉山",
+        "placeId": "cn-sichuan-meishan",
+        "date": {
+          "year": 1057,
+          "original": "嘉祐二年",
+          "certainty": "exact"
+        },
+        "description": "嘉祐二年进士及第，欧阳修见其《刑赏忠厚之至论》惊呼「老夫当避此人，放出一头地」，由是名动京师。同年母程氏卒于乡，兄弟二人仓皇奔丧南归。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "songshi-sushi",
+            "title": "宋史·苏轼传",
+            "author": "脱脱等",
+            "locator": "卷338",
+            "reliability": "A"
+          },
+          {
+            "id": "suzhe-muzhiming",
+            "title": "亡兄子瞻端明墓志铭",
+            "author": "苏辙",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "sushi-e3",
+        "poetId": "sushi",
+        "type": "office",
+        "title": "签书凤翔府判官",
+        "placeId": "cn-shaanxi-fengxiang-sushi",
+        "date": {
+          "from": {
+            "year": 1061,
+            "original": "嘉祐六年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1064,
+            "original": "治平元年",
+            "certainty": "exact"
+          }
+        },
+        "description": "首次外任，签书凤翔府判官。与弟苏辙别于郑州，作《和子由渑池怀旧》「人生到处知何似，应似飞鸿踏雪泥」。在凤翔修东湖、疏饮凤池，始有治水经验。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "songshi-sushi",
+            "title": "宋史·苏轼传",
+            "author": "脱脱等",
+            "locator": "卷338",
+            "reliability": "A"
+          },
+          {
+            "id": "dongpo-nianpu",
+            "title": "东坡先生年谱",
+            "author": "王宗稷",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "sushi-e4",
+        "poetId": "sushi",
+        "type": "mourning",
+        "title": "妻丧父丧，归蜀守制",
+        "placeId": "cn-sichuan-meishan",
+        "date": {
+          "from": {
+            "year": 1065,
+            "original": "治平二年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1068,
+            "original": "熙宁元年",
+            "certainty": "exact"
+          }
+        },
+        "description": "治平二年妻王弗卒，次年父苏洵卒，兄弟二人扶柩归蜀，守制三年。熙宁元年服除，娶王弗堂妹王闰之，携家还朝。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "songshi-sushi",
+            "title": "宋史·苏轼传",
+            "author": "脱脱等",
+            "locator": "卷338",
+            "reliability": "A"
+          },
+          {
+            "id": "suzhe-muzhiming",
+            "title": "亡兄子瞻端明墓志铭",
+            "author": "苏辙",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "sushi-e5",
+        "poetId": "sushi",
+        "type": "office",
+        "title": "入朝任职史馆，反对王安石变法",
+        "placeId": "cn-henan-kaifeng",
+        "date": {
+          "from": {
+            "year": 1069,
+            "original": "熙宁二年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1071,
+            "original": "熙宁四年",
+            "certainty": "exact"
+          }
+        },
+        "description": "还朝后任殿中丞、直史馆。时王安石厉行新法，苏轼上万言书论其不便，与王安石政见相左。神宗欲用之于中枢，为安石所阻，遂自请外任。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "songshi-sushi",
+            "title": "宋史·苏轼传",
+            "author": "脱脱等",
+            "locator": "卷338",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "sushi-e6",
+        "poetId": "sushi",
+        "type": "office",
+        "title": "通判杭州",
+        "placeId": "cn-zhejiang-hangzhou-sushi",
+        "date": {
+          "from": {
+            "year": 1071,
+            "original": "熙宁四年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1074,
+            "original": "熙宁七年",
+            "certainty": "exact"
+          }
+        },
+        "description": "首次仕杭，任杭州通判。遍游西湖山水，写下大量山水诗与词，风格由早年的议论纵横转向清旷自然。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "songshi-sushi",
+            "title": "宋史·苏轼传",
+            "author": "脱脱等",
+            "locator": "卷338",
+            "reliability": "A"
+          },
+          {
+            "id": "dongpo-nianpu",
+            "title": "东坡先生年谱",
+            "author": "王宗稷",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "sushi-e7",
+        "poetId": "sushi",
+        "type": "office",
+        "title": "知密州，修超然台",
+        "placeId": "cn-shandong-zhucheng-sushi",
+        "date": {
+          "from": {
+            "year": 1074,
+            "original": "熙宁七年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1076,
+            "original": "熙宁九年",
+            "certainty": "exact"
+          }
+        },
+        "description": "自杭州移知密州。此为苏轼一生政治失意之始，却成词风转折之机：《江城子·密州出猎》自谓「自是一家」，豪放词风由此奠定；《水调歌头·明月几时有》亦成于此。修城北旧台，苏辙名之「超然台」。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "songshi-sushi",
+            "title": "宋史·苏轼传",
+            "author": "脱脱等",
+            "locator": "卷338",
+            "reliability": "A"
+          },
+          {
+            "id": "dongpo-nianpu",
+            "title": "东坡先生年谱",
+            "author": "王宗稷",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "sushi-e8",
+        "poetId": "sushi",
+        "type": "office",
+        "title": "知徐州，抗洪守城",
+        "placeId": "cn-jiangsu-xuzhou",
+        "date": {
+          "from": {
+            "year": 1077,
+            "original": "熙宁十年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1079,
+            "original": "元丰二年",
+            "certainty": "exact"
+          }
+        },
+        "description": "到任三月即遇黄河决澶渊，水汇城下，城下水二丈八尺，七十余日不退。苏轼禁富民出城，亲荷畚锸率禁军筑东南长堤，城赖以全。后筑黄楼纪其事。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "songshi-sushi",
+            "title": "宋史·苏轼传",
+            "author": "脱脱等",
+            "locator": "卷338",
+            "reliability": "A"
+          },
+          {
+            "id": "dongpo-nianpu",
+            "title": "东坡先生年谱",
+            "author": "王宗稷",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "sushi-e9",
+        "poetId": "sushi",
+        "type": "demotion",
+        "title": "移知湖州，到任三月被逮",
+        "placeId": "cn-zhejiang-huzhou",
+        "date": {
+          "year": 1079,
+          "original": "元丰二年四月",
+          "certainty": "exact"
+        },
+        "description": "实为元丰二年四月移知湖州，七月以《湖州谢上表》及旧诗被御史弹劾「讥讽朝政」，逮赴御史台狱。到任仅三月。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "songshi-sushi",
+            "title": "宋史·苏轼传",
+            "author": "脱脱等",
+            "locator": "卷338",
+            "reliability": "A"
+          },
+          {
+            "id": "wutai-shian",
+            "title": "乌台诗案",
+            "author": "朋九万",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "sushi-e10",
+        "poetId": "sushi",
+        "type": "demotion",
+        "title": "乌台诗案，下御史台狱",
+        "placeId": "cn-henan-kaifeng",
+        "date": {
+          "year": 1079,
+          "original": "元丰二年",
+          "certainty": "exact"
+        },
+        "description": "下御史台狱百三十日，自度必死，作诗与弟诀别「与君世世为兄弟，更结来生未了因」。赖太后曹氏及章惇、王安石等人营救，贬为黄州团练副使。此为中国历史上以诗获罪最著名之案。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "songshi-sushi",
+            "title": "宋史·苏轼传",
+            "author": "脱脱等",
+            "locator": "卷338",
+            "reliability": "A"
+          },
+          {
+            "id": "wutai-shian",
+            "title": "乌台诗案",
+            "author": "朋九万",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "sushi-e11",
+        "poetId": "sushi",
+        "type": "demotion",
+        "title": "贬黄州团练副使，躬耕东坡",
+        "placeId": "cn-hubei-huangzhou-dongpo",
+        "date": {
+          "from": {
+            "year": 1080,
+            "original": "元丰三年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1084,
+            "original": "元丰七年",
+            "certainty": "exact"
+          }
+        },
+        "description": "贬黄州团练副使，本州安置，不得签书公事。初寓定惠院，再迁临皋亭，后于城东故营地躬耕，自号「东坡居士」，筑雪堂。黄州四年二个月，作诗文七百五十余篇，为其文学之巅。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "songshi-sushi",
+            "title": "宋史·苏轼传",
+            "author": "脱脱等",
+            "locator": "卷338",
+            "reliability": "A"
+          },
+          {
+            "id": "kongfanli-nianpu",
+            "title": "苏轼年谱",
+            "author": "孔凡礼",
+            "edition": "中华书局",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "sushi-e12",
+        "poetId": "sushi",
+        "type": "creation",
+        "title": "元丰五年：二词二赋并作于黄州",
+        "placeId": "cn-hubei-huangzhou-dongpo",
+        "date": {
+          "year": 1082,
+          "original": "元丰五年",
+          "certainty": "exact"
+        },
+        "description": "是年为中国文化史上之「黄州年」：二月作《黄州寒食诗帖》（天下第三行书），三月作《定风波·莫听穿林打叶声》，七月作《念奴娇·赤壁怀古》与《赤壁赋》，十月作《后赤壁赋》。一人一年而就四篇传世之作。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "kongfanli-nianpu",
+            "title": "苏轼年谱",
+            "author": "孔凡礼",
+            "edition": "中华书局",
+            "reliability": "B"
+          },
+          {
+            "id": "dongpo-nianpu",
+            "title": "东坡先生年谱",
+            "author": "王宗稷",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "sushi-e13",
+        "poetId": "sushi",
+        "type": "travel",
+        "title": "自黄州移汝州，游庐山、会王安石",
+        "placeId": "cn-jiangxi-lushan-sushi",
+        "date": {
+          "year": 1084,
+          "original": "元丰七年",
+          "certainty": "exact"
+        },
+        "description": "量移汝州。途中游庐山，西林寺壁题《题西林壁》「不识庐山真面目，只缘身在此山中」。又过金陵，与罢相居钟山的王安石相见，同游累日，王安石劝其卜居钟山，昔日政敌竟成知己。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "dongpo-nianpu",
+            "title": "东坡先生年谱",
+            "author": "王宗稷",
+            "reliability": "B"
+          },
+          {
+            "id": "kongfanli-nianpu",
+            "title": "苏轼年谱",
+            "author": "孔凡礼",
+            "edition": "中华书局",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "sushi-e14",
+        "poetId": "sushi",
+        "type": "office",
+        "title": "元祐更化，召还入朝",
+        "placeId": "cn-henan-kaifeng",
+        "date": {
+          "from": {
+            "year": 1085,
+            "original": "元祐元年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1089,
+            "original": "元祐四年",
+            "certainty": "exact"
+          }
+        },
+        "description": "哲宗即位，高太后听政，尽废新法，苏轼被召还朝，累迁至翰林学士、知制诰。然其主张对新法「校量利害，参用所长」，既不满王安石之激进，亦不赞成司马光之尽废，故两面受攻，再度自请外任。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "songshi-sushi",
+            "title": "宋史·苏轼传",
+            "author": "脱脱等",
+            "locator": "卷338",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "sushi-e15",
+        "poetId": "sushi",
+        "type": "office",
+        "title": "再知杭州，疏浚西湖筑苏堤",
+        "placeId": "cn-zhejiang-hangzhou-sushi",
+        "date": {
+          "from": {
+            "year": 1089,
+            "original": "元祐四年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1091,
+            "original": "元祐六年",
+            "certainty": "exact"
+          }
+        },
+        "description": "二度仕杭。时西湖葑草蔓合过半，苏轼上《杭州乞度牒开西湖状》，取葑泥筑长堤，植芙蓉杨柳于其上，即今「苏堤」。又建安乐坊收治病民，为古代公立医院之先声。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "songshi-sushi",
+            "title": "宋史·苏轼传",
+            "author": "脱脱等",
+            "locator": "卷338",
+            "reliability": "A"
+          },
+          {
+            "id": "dongpo-nianpu",
+            "title": "东坡先生年谱",
+            "author": "王宗稷",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "sushi-e16",
+        "poetId": "sushi",
+        "type": "office",
+        "title": "知颍州、扬州",
+        "placeId": "cn-anhui-fuyang",
+        "date": {
+          "from": {
+            "year": 1091,
+            "original": "元祐六年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1092,
+            "original": "元祐七年",
+            "certainty": "exact"
+          }
+        },
+        "description": "知颍州半年，疏浚西湖、赈济灾民。元祐七年移知扬州，罢淮南盐税之弊，民称便。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "songshi-sushi",
+            "title": "宋史·苏轼传",
+            "author": "脱脱等",
+            "locator": "卷338",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "sushi-e17",
+        "poetId": "sushi",
+        "type": "office",
+        "title": "知定州，整饬军备",
+        "placeId": "cn-hebei-dingzhou",
+        "date": {
+          "year": 1093,
+          "original": "元祐八年",
+          "certainty": "exact"
+        },
+        "description": "出知定州。时边备废弛，苏轼整肃军纪、修缮营房、奏请复弓箭社。然高太后崩、哲宗亲政，新党再起，次年即遭远贬，定州为其仕途由显转贬之节点。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "songshi-sushi",
+            "title": "宋史·苏轼传",
+            "author": "脱脱等",
+            "locator": "卷338",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "sushi-e18",
+        "poetId": "sushi",
+        "type": "demotion",
+        "title": "贬惠州",
+        "placeId": "cn-guangdong-huizhou",
+        "date": {
+          "from": {
+            "year": 1094,
+            "original": "绍圣元年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1097,
+            "original": "绍圣四年",
+            "certainty": "exact"
+          }
+        },
+        "description": "以「讥斥先朝」之罪名落职知英州，未至复贬宁远军节度副使、惠州安置。居惠州三年，作「日啖荔支三百颗，不辞长作岭南人」，政敌见之以为尚太适意，遂有儋州之贬。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "songshi-sushi",
+            "title": "宋史·苏轼传",
+            "author": "脱脱等",
+            "locator": "卷338",
+            "reliability": "A"
+          },
+          {
+            "id": "dongpo-nianpu",
+            "title": "东坡先生年谱",
+            "author": "王宗稷",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "sushi-e19",
+        "poetId": "sushi",
+        "type": "demotion",
+        "title": "责授琼州别驾，昌化军安置（儋州）",
+        "placeId": "cn-hainan-danzhou",
+        "date": {
+          "from": {
+            "year": 1097,
+            "original": "绍圣四年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1100,
+            "original": "元符三年",
+            "certainty": "exact"
+          }
+        },
+        "description": "年六十二，责授琼州别驾、昌化军安置。宋时放逐臣子，罪大恶极者乃贬海南，仅轻于满门抄斩。苏轼居儋三年，讲学载酒堂、劝农凿井、开方治病，撰《东坡易传》《书传》《论语说》，海南文教自此始兴。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "songshi-sushi",
+            "title": "宋史·苏轼传",
+            "author": "脱脱等",
+            "locator": "卷338",
+            "reliability": "A"
+          },
+          {
+            "id": "kongfanli-nianpu",
+            "title": "苏轼年谱",
+            "author": "孔凡礼",
+            "edition": "中华书局",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "sushi-e20",
+        "poetId": "sushi",
+        "type": "travel",
+        "title": "遇赦北归，渡海",
+        "placeId": "cn-hainan-danzhou",
+        "date": {
+          "year": 1100,
+          "original": "元符三年六月",
+          "certainty": "exact"
+        },
+        "description": "徽宗即位大赦，苏轼量移廉州、舒州，复提举成都玉局观。六月二十日夜渡琼州海峡北归，作「九死南荒吾不恨，兹游奇绝冠平生」。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "songshi-sushi",
+            "title": "宋史·苏轼传",
+            "author": "脱脱等",
+            "locator": "卷338",
+            "reliability": "A"
+          },
+          {
+            "id": "kongfanli-nianpu",
+            "title": "苏轼年谱",
+            "author": "孔凡礼",
+            "edition": "中华书局",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "sushi-e21",
+        "poetId": "sushi",
+        "type": "death",
+        "title": "卒于常州",
+        "placeId": "cn-jiangsu-changzhou",
+        "date": {
+          "year": 1101,
+          "original": "建中靖国元年七月二十八日",
+          "certainty": "exact"
+        },
+        "description": "北归途中瘴毒大作，建中靖国元年七月二十八日卒于常州孙氏馆，年六十六。临终前两月自题金山画像：「问汝平生功业，黄州惠州儋州」——一生功业自许者，独三处贬所。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "songshi-sushi",
+            "title": "宋史·苏轼传",
+            "author": "脱脱等",
+            "locator": "卷338",
+            "reliability": "A"
+          },
+          {
+            "id": "suzhe-muzhiming",
+            "title": "亡兄子瞻端明墓志铭",
+            "author": "苏辙",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "sushi-e22",
+        "poetId": "sushi",
+        "type": "travel",
+        "title": "葬于郏城小峨眉山",
+        "placeId": "cn-sichuan-meishan",
+        "date": {
+          "year": 1102,
+          "original": "崇宁元年",
+          "certainty": "exact"
+        },
+        "description": "弟苏辙遵遗愿葬之于汝州郏城县小峨眉山，与苏洵衣冠冢、苏辙墓同居，世称「三苏坟」。此地以眉山故乡之峨眉名之，慰其「生不能归蜀」之憾。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "suzhe-muzhiming",
+            "title": "亡兄子瞻端明墓志铭",
+            "author": "苏辙",
+            "reliability": "B"
+          },
+          {
+            "id": "dongpo-nianpu",
+            "title": "东坡先生年谱",
+            "author": "王宗稷",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "sushi-e23",
+        "poetId": "sushi",
+        "type": "recognition",
+        "title": "身后追谥「文忠」，南宋特赠太师",
+        "placeId": "cn-henan-kaifeng",
+        "date": {
+          "from": {
+            "year": 1126,
+            "original": "靖康元年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1170,
+            "original": "乾道六年",
+            "certainty": "exact"
+          }
+        },
+        "description": "靖康元年追复端明殿学士，乾道六年南宋孝宗特赠太师、追谥「文忠」。与杜甫身后三百年始升格相类，苏轼之经典地位经历了从「党人」到「千古一人」的接受史过程。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "songshi-sushi",
+            "title": "宋史·苏轼传",
+            "author": "脱脱等",
+            "locator": "卷338",
+            "reliability": "A"
+          }
+        ]
+      }
+    ],
+    "externalIds": {
+      "cbdb": "1765",
+      "wikidata": "Q313275"
+    },
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "edition": "中华书局点校本",
+        "locator": "卷338",
+        "reliability": "A"
+      },
+      {
+        "id": "dongpo-nianpu",
+        "title": "东坡先生年谱",
+        "author": "王宗稷",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "libai",
+    "name": "李白",
+    "courtesyName": "太白",
+    "pseudonym": "青莲居士",
+    "aliases": [
+      "李太白",
+      "诗仙",
+      "青莲居士",
+      "谪仙人"
+    ],
+    "dynasty": "唐",
+    "birth": {
+      "year": 701,
+      "original": "长安元年",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "death": {
+      "year": 762,
+      "original": "宝应元年",
+      "certainty": "approximate"
+    },
+    "nativePlace": [
+      {
+        "placeId": "cn-sichuan-jiangyou",
+        "type": "birth",
+        "confidence": "B",
+        "note": "《草堂集序》称「神龙之始，逃归于蜀」，李白生于绵州昌明县青莲乡，即今江油市青莲镇。另有碎叶说，两说并存，此处取蜀中说为主流"
+      },
+      {
+        "placeId": "cn-hubei-anlu",
+        "type": "ancestral",
+        "confidence": "C",
+        "note": "一说「陇西成纪人，凉武昭王暠九世孙」，为李白自述之郡望，非实际居地，故列异说"
+      }
+    ],
+    "summary": "唐代浪漫主义诗人，被誉「诗仙」。想象奇诡、气势磅礴，与杜甫并称「李杜」，是唐诗最高峰的象征。",
+    "biography": "李白，字太白，号青莲居士。其家世与出生地至今聚讼不已——一说生于西域碎叶，五岁随父迁居蜀中绵州昌隆县青莲乡；一说即生于蜀中。少年即「五岁诵六甲，十岁观百家」，兼好任侠、喜纵横术。开元十二年（724）前后「仗剑去国，辞亲远游」，出三峡，下江陵，遇道士司马承祯，获「仙风道骨」之誉，遂作《大鹏遇希有鸟赋》自况。此后十年漫游江汉、吴越、齐鲁，并于安陆成婚，自谓「酒隐安陆，蹉跎十年」。\n\n天宝元年（742）奉诏入长安，供奉翰林，玄宗「降辇步迎」，一时恩遇甚隆。然仅以文学侍从见用，不得参预政事，又因性格傲岸招忌，三年后即遭谗被疏，赐金放还。离京后与杜甫、高适于梁宋同游，结下文学史上著名的交谊。此后寓家东鲁，往来于嵩山、庐山、吴越之间，求仙访道与干谒求仕并行不悖。\n\n安史之乱爆发后，李白携妻避乱庐山。至德元载（756）冬，应永王李璘之辟入其幕府。次年永王事败被杀，李白以「附逆」罪下狱浔阳，长流夜郎。乾元二年（759）行至巫山途中遇赦得还，作《早发白帝城》。此后漂泊于江夏、宣城、金陵一带，穷困潦倒，依人而食。宝应元年（762）依族叔当涂县令李阳冰养病，是年十一月卒于当涂，年六十二。初葬龙山，元和十二年（817）依其遗愿迁葬青山。\n\n李白一生交织着「求仕」与「求道」两条线索：前者驱使他干谒权贵、应诏入京、投书州郡；后者使他遍访名山、结交道士、向往飞升。两条线索都未能真正实现，恰恰是这种未完成，造就了他诗中那种磅礴的挣扎感。杜甫评他「笔落惊风雨，诗成泣鬼神」，后世则以其为「诗仙」——「谪仙人」三字，既是赞誉，也是他一生无法落地的宿命。",
+    "events": [
+      {
+        "id": "libai-e1",
+        "poetId": "libai",
+        "type": "birth",
+        "title": "出生于蜀中（异说：碎叶）",
+        "placeId": "cn-sichuan-jiangyou",
+        "date": {
+          "year": 701,
+          "original": "长安元年",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "李白生年基本可定为长安元年（701），但出生地与家世至今无定论。主蜀中说者据李阳冰《草堂集序》「神龙之始，逃归于蜀」及魏颢《李翰林集序》，认为其父于神龙初（705）携家归蜀，李白实生于蜀中；主碎叶说者据范传正《新墓碑》「隋末多难，一房被窜于碎叶」，认为其先世流寓西域，李白生于此。二说并存，学界迄无共识。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "libai-ji-caotang",
+            "title": "草堂集序",
+            "author": "李阳冰",
+            "reliability": "B"
+          },
+          {
+            "id": "libai-ji-xu",
+            "title": "李翰林集序",
+            "author": "魏颢",
+            "reliability": "B"
+          },
+          {
+            "id": "fan-chuanzheng-bei",
+            "title": "唐左拾遗翰林学士李公新墓碑并序",
+            "author": "范传正",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "libai-e2",
+        "poetId": "libai",
+        "type": "other",
+        "title": "少年读书学剑于蜀中",
+        "placeId": "cn-sichuan-jiangyou",
+        "date": {
+          "from": {
+            "year": 705,
+            "certainty": "approximate"
+          },
+          "to": {
+            "year": 718,
+            "certainty": "approximate"
+          }
+        },
+        "description": "「五岁诵六甲，十岁观百家」（《上安州裴长史书》），又「十五好剑术，遍干诸侯」（《与韩荆州书》）。少年李白兼治诗书与纵横剑术，且曾与东岩子隐于岷山之阳，养奇禽千计。这段蜀中成长经历塑造了他兼取儒、道、侠三重的底色。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "libai-shang-pei",
+            "title": "上安州裴长史书",
+            "author": "李白",
+            "reliability": "A"
+          },
+          {
+            "id": "libai-yu-hanjingzhou",
+            "title": "与韩荆州书",
+            "author": "李白",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "libai-e3",
+        "poetId": "libai",
+        "type": "travel",
+        "title": "游峨眉，作《峨眉山月歌》",
+        "placeId": "cn-sichuan-chengdu-emei",
+        "date": {
+          "year": 724,
+          "original": "开元十二年",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "出蜀前夕游嘉州峨眉山。此诗为李白集中少数明确可考的蜀中行迹之一，写「峨眉山月半轮秋，影入平羌江水流」，清朗中含去国之思，历来被视为他出蜀的序曲。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "litaibai-nianpu",
+            "title": "李太白年谱",
+            "author": "王琦",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "libai-e4",
+        "poetId": "libai",
+        "type": "travel",
+        "title": "出蜀，作《渡荆门送别》",
+        "placeId": "cn-hubei-yichang",
+        "date": {
+          "year": 724,
+          "original": "开元十二年",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "「仗剑去国，辞亲远游」，自蜀乘舟东下，出三峡、过荆门山。荆门为蜀楚分界，一出此门即「山随平野尽，江入大荒流」，视野骤然开阔。这是李白人生的第一个转折点：从此离开蜀中，终老未归。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "litaibai-nianpu",
+            "title": "李太白年谱",
+            "author": "王琦",
+            "reliability": "B"
+          },
+          {
+            "id": "libai-ji-caotang",
+            "title": "草堂集序",
+            "author": "李阳冰",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "libai-e5",
+        "poetId": "libai",
+        "type": "meeting",
+        "title": "江陵遇司马承祯，获「仙风道骨」之誉",
+        "placeId": "cn-hubei-jiangling",
+        "date": {
+          "year": 725,
+          "original": "开元十三年",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "于江陵遇道教上清派宗师司马承祯（时年已逾八十）。承祯见而异之，谓其「有仙风道骨，可与神游八极之表」。李白大受鼓舞，作《大鹏遇希有鸟赋》，以大鹏自比、以希有鸟喻承祯。此遇对他一生「求道」取向影响甚巨。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "libai-dapengfu",
+            "title": "大鹏赋序",
+            "author": "李白",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "libai-e6",
+        "poetId": "libai",
+        "type": "travel",
+        "title": "南游吴越，散金三十余万",
+        "placeId": "cn-jiangsu-yangzhou",
+        "date": {
+          "from": {
+            "year": 725,
+            "certainty": "approximate"
+          },
+          "to": {
+            "year": 727,
+            "certainty": "approximate"
+          }
+        },
+        "description": "自江陵东下，南穷苍梧，东涉溟海，历洞庭、金陵、扬州、会稽。在扬州「不逾一年，散金三十余万，有落魄公子，悉皆济之」。此期他尚是仗剑任侠的贵游少年，尚未体会生计之艰。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "libai-shang-pei",
+            "title": "上安州裴长史书",
+            "author": "李白",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "libai-e7",
+        "poetId": "libai",
+        "type": "other",
+        "title": "扬州大病，作《静夜思》【系地存疑】",
+        "placeId": "cn-jiangsu-yangzhou",
+        "date": {
+          "year": 726,
+          "original": "开元十四年",
+          "certainty": "approximate",
+          "fuzziness": 2
+        },
+        "description": "李白在扬州曾卧病，作《淮南卧病书怀寄蜀中赵征君蕤》，有「旅情不可道，飘零似秋蓬」之句。有学者据此推测《静夜思》亦当作于此期扬州旅舍，但此说无直接文献支持，仅为后人推定。参见该作品断言中的三说并列。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "litaibai-nianpu",
+            "title": "李太白年谱",
+            "author": "王琦",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "libai-e8",
+        "poetId": "libai",
+        "type": "marriage",
+        "title": "寓家安陆，与许氏成婚",
+        "placeId": "cn-hubei-anlu",
+        "date": {
+          "year": 727,
+          "original": "开元十五年",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "经人介绍娶故相许圉师孙女许氏，遂以安陆为家，前后寓居约十年，自谓「酒隐安陆，蹉跎十年」。这是李白一生唯一相对稳定的家庭时期，其女平阳、子伯禽均出于此。安陆十年是他由漫游少年转向求仕干谒的关键期。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "litaibai-nianpu",
+            "title": "李太白年谱",
+            "author": "王琦",
+            "reliability": "B"
+          },
+          {
+            "id": "libai-ji-caotang",
+            "title": "草堂集序",
+            "author": "李阳冰",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "libai-e9",
+        "poetId": "libai",
+        "type": "other",
+        "title": "上书裴长史、李长史求荐，遭谤见拒",
+        "placeId": "cn-hubei-anlu",
+        "date": {
+          "from": {
+            "year": 729,
+            "certainty": "approximate"
+          },
+          "to": {
+            "year": 730,
+            "certainty": "approximate"
+          }
+        },
+        "description": "困居安陆期间，多次上书地方长官求荐举，作《上安州裴长史书》《上安州李长史书》，自陈「三十成文章，历抵卿相」，并为自己遭人谗谤而辩白，然终未获荐。这段经历让他初尝干谒之难，也促成他西入长安一探。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "libai-shang-pei",
+            "title": "上安州裴长史书",
+            "author": "李白",
+            "reliability": "A"
+          },
+          {
+            "id": "libai-shang-li",
+            "title": "上安州李长史书",
+            "author": "李白",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "libai-e10",
+        "poetId": "libai",
+        "type": "travel",
+        "title": "一入长安，失意而归",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "from": {
+            "year": 730,
+            "certainty": "approximate"
+          },
+          "to": {
+            "year": 731,
+            "certainty": "approximate"
+          }
+        },
+        "description": "李白有两次入长安：一在开元十八年（730）前后，干谒不成，「遍干诸侯」而无所遇，穷困潦倒，与市井少年交游，有《行路难》「弹剑作歌奏苦声，曳裾王门不称情」之慨；二在天宝元年（742）奉诏入京。前一次长期被忽视，是理解《蜀道难》系年之争的关键。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "litaibai-nianpu",
+            "title": "李太白年谱",
+            "author": "王琦",
+            "reliability": "B"
+          },
+          {
+            "id": "libai-yanjiu-liangting",
+            "title": "李白两次入长安说",
+            "reliability": "C"
+          }
+        ]
+      },
+      {
+        "id": "libai-e11",
+        "poetId": "libai",
+        "type": "travel",
+        "title": "游嵩山，与元丹丘等同隐",
+        "placeId": "cn-henan-songshan",
+        "date": {
+          "year": 732,
+          "original": "开元二十年",
+          "certainty": "approximate",
+          "fuzziness": 2
+        },
+        "description": "与道士元丹丘、元演等交游于嵩山、颍阳一带。元丹丘是李白一生最重要的道友之一，二人交往逾三十年，李白集中赠元丹丘之作多达十余首。求道与求仕在李白身上并不矛盾——隐居名山本身即是抬高声价、以待征辟的方式。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "litaibai-nianpu",
+            "title": "李太白年谱",
+            "author": "王琦",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "libai-e12",
+        "poetId": "libai",
+        "type": "office",
+        "title": "奉诏入京，供奉翰林",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 742,
+          "original": "天宝元年",
+          "certainty": "exact"
+        },
+        "description": "由玉真公主、吴筠及贺知章等荐引，奉诏入长安，供奉翰林。玄宗初见时「降辇步迎，如见绮皓」，以七宝床赐食、御手调羹。然翰林供奉只是文学侍从，不预政事，李白「奋其智能，愿为辅弼」的期待从一开始就落空。贺知章读其《蜀道难》，惊呼「公非人世之人，可不是太白星精耶」，遂有「谪仙人」之号。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "jts-libai",
+            "title": "旧唐书·李白传",
+            "author": "刘昫等",
+            "edition": "中华书局点校本",
+            "locator": "卷190下",
+            "reliability": "A"
+          },
+          {
+            "id": "libai-ji-xu",
+            "title": "李翰林集序",
+            "author": "魏颢",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "libai-e13",
+        "poetId": "libai",
+        "type": "other",
+        "title": "醉中应制，高力士脱靴（本事可疑）",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 743,
+          "original": "天宝二年",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "「力士脱靴」「贵妃捧砚」是流传最广的李白故事，见于晚唐《酉阳杂俎》《松窗杂录》等笔记。但诸书记载互异，且多出中晚唐，最早的正史《旧唐书》仅言「尝沉醉殿上，引足令高力士脱靴」，未及捧砚之说。此故事是否实录，学界多持保留态度，宜作传说观。",
+        "confidence": "D",
+        "sources": [
+          {
+            "id": "jts-libai",
+            "title": "旧唐书·李白传",
+            "author": "刘昫等",
+            "locator": "卷190下",
+            "reliability": "A"
+          },
+          {
+            "id": "youyang-zazu",
+            "title": "酉阳杂俎",
+            "author": "段成式",
+            "reliability": "C"
+          },
+          {
+            "id": "songchuang-zalu",
+            "title": "松窗杂录",
+            "author": "李清",
+            "reliability": "D"
+          }
+        ]
+      },
+      {
+        "id": "libai-e14",
+        "poetId": "libai",
+        "type": "other",
+        "title": "赐金放还，离开长安",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 744,
+          "original": "天宝三载",
+          "certainty": "exact"
+        },
+        "description": "因遭谗被疏，玄宗「赐金放还」。这是李白人生的第二次重大转折：从「仰天大笑出门去」的得志，跌回「大道如青天，我独不得出」的失意。长安三年让他彻底看清自己与权力中心的距离——他可以被欣赏，但不会被任用。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "jts-libai",
+            "title": "旧唐书·李白传",
+            "author": "刘昫等",
+            "locator": "卷190下",
+            "reliability": "A"
+          },
+          {
+            "id": "xsts-libai",
+            "title": "新唐书·李白传",
+            "author": "欧阳修等",
+            "locator": "卷202",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "libai-e15",
+        "poetId": "libai",
+        "type": "meeting",
+        "title": "梁宋之游，与杜甫、高适同游",
+        "placeId": "cn-henan-shangqiu",
+        "date": {
+          "year": 744,
+          "original": "天宝三载秋",
+          "certainty": "exact"
+        },
+        "description": "离长安后至梁宋，与杜甫、高适相遇同游，登吹台、猎孟诸，「饮酒赋诗，谈论天下事」。李杜初识即在此年，二人相差十一岁。此后二人又同游齐鲁，杜甫集中怀念李白之作多达十余首，而李白赠杜甫者仅三四首——这种不对称本身就成了文学史上的著名话题。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          },
+          {
+            "id": "xsts-libai",
+            "title": "新唐书·李白传",
+            "author": "欧阳修等",
+            "locator": "卷202",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "libai-e16",
+        "poetId": "libai",
+        "type": "seclusion",
+        "title": "移家东鲁，与杜甫同游齐鲁",
+        "placeId": "cn-shandong-yanzhou",
+        "date": {
+          "from": {
+            "year": 745,
+            "certainty": "approximate"
+          },
+          "to": {
+            "year": 747,
+            "certainty": "approximate"
+          }
+        },
+        "description": "李白移家兖州瑕丘（东鲁），其子伯禽后来即在此。期间杜甫来访，二人同寻范十隐居、同访鲁城北郭，杜甫《与李十二白同寻范十隐居》记其事。李白自号「山东李白」即由此段寓居而来。后在东鲁与吴筠、孔巢父等结「竹溪六逸」。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "xsts-libai",
+            "title": "新唐书·李白传",
+            "author": "欧阳修等",
+            "locator": "卷202",
+            "reliability": "A"
+          },
+          {
+            "id": "dufu-nianpu-wen",
+            "title": "杜甫年谱",
+            "author": "闻一多",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "libai-e17",
+        "poetId": "libai",
+        "type": "travel",
+        "title": "南游吴越，梦游天姥",
+        "placeId": "cn-zhejiang-hangzhou",
+        "date": {
+          "year": 747,
+          "original": "天宝六载",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "自东鲁南下，历越中，登天姥山。此期所作《梦游天姥吟留别》以梦境写仙境，末句「安能摧眉折腰事权贵，使我不得开心颜」是离开长安后心境的直接宣泄。求仙访道在此期由兴趣变为精神出口。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "litaibai-nianpu",
+            "title": "李太白年谱",
+            "author": "王琦",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "libai-e18",
+        "poetId": "libai",
+        "type": "war",
+        "title": "安史之乱爆发，避乱庐山",
+        "placeId": "cn-jiangxi-lushan",
+        "date": {
+          "year": 755,
+          "month": 11,
+          "original": "天宝十四载十一月",
+          "certainty": "exact"
+        },
+        "description": "安禄山起兵范阳，天下大乱。李白时在梁宋一带，遂携妻宗氏南下避乱，隐于庐山。此期他虽身在江湖，仍密切关注时局，作《经乱离后天恩流夜郎忆旧游书怀》等长诗纪乱。国家危亡反而重新点燃了他「济苍生」的念头。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "xsts-libai",
+            "title": "新唐书·李白传",
+            "author": "欧阳修等",
+            "locator": "卷202",
+            "reliability": "A"
+          },
+          {
+            "id": "zzztj",
+            "title": "资治通鉴",
+            "author": "司马光",
+            "locator": "卷217",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "libai-e19",
+        "poetId": "libai",
+        "type": "office",
+        "title": "入永王李璘幕府",
+        "placeId": "cn-jiangxi-lushan",
+        "date": {
+          "year": 756,
+          "month": 12,
+          "original": "至德元载十二月",
+          "certainty": "exact"
+        },
+        "description": "永王李璘奉命为江陵大都督，经略南方。李璘慕李白之名，遣使三顾庐山相请。李白以为报国时机已至，欣然入幕，作《永王东巡歌》十一首，有「但用东山谢安石，为君谈笑静胡沙」之句。他并未察觉李璘已怀异志，更未察觉肃宗与李璘之间即将爆发的皇室内斗。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "xsts-libai",
+            "title": "新唐书·李白传",
+            "author": "欧阳修等",
+            "locator": "卷202",
+            "reliability": "A"
+          },
+          {
+            "id": "zzztj",
+            "title": "资治通鉴",
+            "author": "司马光",
+            "locator": "卷219",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "libai-e20",
+        "poetId": "libai",
+        "type": "war",
+        "title": "永王兵败，李白下狱浔阳",
+        "placeId": "cn-jiangxi-jiujiang",
+        "date": {
+          "year": 757,
+          "original": "至德二载",
+          "certainty": "exact"
+        },
+        "description": "永王李璘兵败被杀，李白以「附逆」罪被捕，系于浔阳狱中。他作《万愤词投魏郎中》陈冤，又有《上崔相百忧章》向宰相崔涣求援。幸得崔涣、宋若思等营救，免于死罪，改为长流夜郎。这场牢狱之灾是他一生最凶险的时刻。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "xsts-libai",
+            "title": "新唐书·李白传",
+            "author": "欧阳修等",
+            "locator": "卷202",
+            "reliability": "A"
+          },
+          {
+            "id": "libai-wanfenc",
+            "title": "万愤词投魏郎中",
+            "author": "李白",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "libai-e21",
+        "poetId": "libai",
+        "type": "exile",
+        "title": "长流夜郎",
+        "placeId": "cn-guizhou-tongzi",
+        "date": {
+          "year": 758,
+          "original": "乾元元年",
+          "certainty": "exact"
+        },
+        "description": "自浔阳启程，溯江西上，经江夏、沔州、三峡，赴流所夜郎。唐代夜郎地望有三说（珍州桐梓、业州新晃、夷州石阡），学界多主桐梓说，但迄无定论。途中作《流夜郎赠辛判官》《上三峡》等，年近六旬而遭长流，其心境可想而知。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "xsts-libai",
+            "title": "新唐书·李白传",
+            "author": "欧阳修等",
+            "locator": "卷202",
+            "reliability": "A"
+          },
+          {
+            "id": "libai-liufang-kao",
+            "title": "李白流夜郎考",
+            "reliability": "C"
+          }
+        ]
+      },
+      {
+        "id": "libai-e22",
+        "poetId": "libai",
+        "type": "other",
+        "title": "中途遇赦，作《早发白帝城》",
+        "placeId": "cn-hubei-yichang",
+        "date": {
+          "year": 759,
+          "original": "乾元二年三月",
+          "certainty": "exact"
+        },
+        "description": "行至巫山一带遇赦得还。朝廷因关中大旱大赦天下，李白在赦免之列。他随即掉舟东下，作《早发白帝城》：「朝辞白帝彩云间，千里江陵一日还。两岸猿声啼不住，轻舟已过万重山。」——四句皆写「快」，是文学史上写喜悦最酣畅的篇章之一。此诗系年因「遇赦」这一明确事件而相当可靠。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "xsts-libai",
+            "title": "新唐书·李白传",
+            "author": "欧阳修等",
+            "locator": "卷202",
+            "reliability": "A"
+          },
+          {
+            "id": "zzztj",
+            "title": "资治通鉴",
+            "author": "司马光",
+            "locator": "卷221",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "libai-e23",
+        "poetId": "libai",
+        "type": "travel",
+        "title": "遇赦后漂泊江汉，求荐不遂",
+        "placeId": "cn-hubei-wuchang",
+        "date": {
+          "from": {
+            "year": 760,
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 761,
+            "certainty": "exact"
+          }
+        },
+        "description": "遇赦后并未获得任用，李白重又回到干谒求荐的老路，往来于江夏、浔阳、金陵之间。此时他已六十岁，仍作《赠升州王使君忠臣》等诗希望得到引荐，然无人再敢用他。生计日蹙，须依人而食。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "litaibai-nianpu",
+            "title": "李太白年谱",
+            "author": "王琦",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "libai-e24",
+        "poetId": "libai",
+        "type": "office",
+        "title": "请缨从军，半道病还",
+        "placeId": "cn-anhui-xuancheng",
+        "date": {
+          "year": 761,
+          "original": "上元二年",
+          "certainty": "exact"
+        },
+        "description": "闻李光弼率大军出镇临淮追讨史朝义，李白以六十一岁高龄北上请缨从军，欲效死疆场。然行至金陵一带即因病折返，未能如愿。这是他一生中最后一次主动争取报国的机会，也是「济苍生」之志的终点。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "litaibai-nianpu",
+            "title": "李太白年谱",
+            "author": "王琦",
+            "reliability": "B"
+          },
+          {
+            "id": "xsts-libai",
+            "title": "新唐书·李白传",
+            "author": "欧阳修等",
+            "locator": "卷202",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "libai-e25",
+        "poetId": "libai",
+        "type": "death",
+        "title": "卒于当涂，年六十二",
+        "placeId": "cn-anhui-dangtu",
+        "date": {
+          "year": 762,
+          "original": "宝应元年十一月",
+          "certainty": "exact"
+        },
+        "description": "晚年穷困，往依族叔当涂县令李阳冰养病，并将手稿付之，李阳冰为作《草堂集序》。宝应元年（762）十一月卒于当涂，年六十二。关于其死因，有「病卒」与「醉酒捉月溺亡」两说并存，后者为晚出传说。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "libai-ji-caotang",
+            "title": "草堂集序",
+            "author": "李阳冰",
+            "reliability": "B"
+          },
+          {
+            "id": "libai-muzhiming",
+            "title": "唐故翰林学士李君碣记",
+            "author": "刘全白",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "libai-e26",
+        "poetId": "libai",
+        "type": "death",
+        "title": "「捉月溺亡」传说",
+        "placeId": "cn-anhui-dangtu-qingshan",
+        "date": {
+          "year": 762,
+          "original": "宝应元年",
+          "certainty": "approximate"
+        },
+        "description": "传说李白于当涂采石矶醉酒泛舟，见水中月影而俯身捉之，遂溺亡。此说盛传于宋以后，五代王定保《唐摭言》记其「着宫锦袍，游采石江中，傲然自得，旁若无人，因醉入水中捉月而死」。然李阳冰《草堂集序》、刘全白《碣记》均只言病卒，无一语及溺亡。此说属典型的文人想象与地方附会，宜作传说观。",
+        "confidence": "D",
+        "sources": [
+          {
+            "id": "libai-ji-caotang",
+            "title": "草堂集序",
+            "author": "李阳冰",
+            "reliability": "B"
+          },
+          {
+            "id": "tangzhiyan",
+            "title": "唐摭言",
+            "author": "王定保",
+            "reliability": "D"
+          }
+        ]
+      },
+      {
+        "id": "libai-e27",
+        "poetId": "libai",
+        "type": "other",
+        "title": "迁葬青山，立新墓碑",
+        "placeId": "cn-anhui-dangtu-qingshan",
+        "date": {
+          "year": 817,
+          "original": "元和十二年",
+          "certainty": "exact"
+        },
+        "description": "李白初葬当涂龙山。元和十二年（817），宣歙观察使范传正访得李白孙女二人，据其所述李白「悦谢家青山」的遗愿，将其迁葬于青山之阳，并立《唐左拾遗翰林学士李公新墓碑》。此碑是研究李白家世、流放夜郎等事的重要文献。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "fan-chuanzheng-bei",
+            "title": "唐左拾遗翰林学士李公新墓碑并序",
+            "author": "范传正",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "libai-e28",
+        "poetId": "libai",
+        "type": "meeting",
+        "title": "与汪伦交游于泾县桃花潭",
+        "placeId": "cn-anhui-jingxian",
+        "date": {
+          "year": 755,
+          "original": "天宝十四载",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "汪伦为泾县豪士，邀李白游桃花潭，临别以踏歌相送，李白作《赠汪伦》：「桃花潭水深千尺，不及汪伦送我情。」此诗语言极浅而情意极深，是流传最广的赠别诗之一。惟汪伦其人正史无传，其事仅见于地方志与宋人诗话，故系年置信度定为 B 而非 A。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jingxian-xianzhi",
+            "title": "泾县志",
+            "edition": "清嘉庆刻本",
+            "reliability": "C"
+          },
+          {
+            "id": "litaibai-nianpu",
+            "title": "李太白年谱",
+            "author": "王琦",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "libai-e29",
+        "poetId": "libai",
+        "type": "travel",
+        "title": "登太白峰，望长安",
+        "placeId": "cn-shaanxi-taibai",
+        "date": {
+          "year": 730,
+          "original": "开元十八年前后",
+          "certainty": "approximate",
+          "fuzziness": 3
+        },
+        "description": "《登太白峰》有「太白与我语，为我开天关」及「举手可近月，前行若无山」之句，末云「一别咸阳后，何时复相还」。诗中望长安而思归，与第一次入长安失意后的心境相合，故多系于开元十八年（730）前后。然亦有系于天宝初者，系年非定论。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "litaibai-nianpu",
+            "title": "李太白年谱",
+            "author": "王琦",
+            "reliability": "B"
+          }
+        ]
+      }
+    ],
+    "externalIds": {
+      "cbdb": "35605",
+      "wikidata": "Q7141"
+    },
+    "sources": [
+      {
+        "id": "jts-libai",
+        "title": "旧唐书·李白传",
+        "author": "刘昫等",
+        "edition": "中华书局点校本",
+        "locator": "卷190下",
+        "reliability": "A"
+      },
+      {
+        "id": "xsts-libai",
+        "title": "新唐书·李白传",
+        "author": "欧阳修等",
+        "locator": "卷202",
+        "reliability": "A"
+      },
+      {
+        "id": "litaibai-nianpu",
+        "title": "李太白年谱",
+        "author": "王琦",
+        "reliability": "B"
+      }
+    ]
+  }
+]

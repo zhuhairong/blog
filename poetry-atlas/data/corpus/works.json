@@ -1,0 +1,1690 @@
+[
+  {
+    "id": "dufu-qiangcun-sanjian",
+    "title": "茅屋为秋风所破歌",
+    "poetId": "dufu",
+    "content": [
+      "八月秋高风怒号，卷我屋上三重茅。",
+      "茅飞渡江洒江郊，高者挂罥长林梢，下者飘转沉塘坳。",
+      "南村群童欺我老无力，忍能对面为盗贼。",
+      "公然抱茅入竹去，唇焦口燥呼不得，归来倚杖自叹息。",
+      "俄顷风定云墨色，秋天漠漠向昏黑。",
+      "布衾多年冷似铁，娇儿恶卧踏里裂。",
+      "床头屋漏无干处，雨脚如麻未断绝。",
+      "自经丧乱少睡眠，长夜沾湿何由彻！",
+      "安得广厦千万间，大庇天下寒士俱欢颜，风雨不动安如山！",
+      "呜呼！何时眼前突兀见此屋，吾庐独破受冻死亦足！"
+    ],
+    "form": "七言歌行",
+    "anthology": "全唐诗 卷219",
+    "themes": [
+      "忧民",
+      "家国",
+      "茅屋",
+      "秋夜"
+    ],
+    "famousLines": [
+      "安得广厦千万间，大庇天下寒士俱欢颜"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "dufu-chunwang",
+    "title": "春望",
+    "poetId": "dufu",
+    "content": [
+      "国破山河在，城春草木深。",
+      "感时花溅泪，恨别鸟惊心。",
+      "烽火连三月，家书抵万金。",
+      "白头搔更短，浑欲不胜簪。"
+    ],
+    "form": "五言律诗",
+    "anthology": "全唐诗 卷224",
+    "themes": [
+      "忧国",
+      "战乱",
+      "思亲"
+    ],
+    "famousLines": [
+      "烽火连三月，家书抵万金"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "dufu-wangyue",
+    "title": "望岳",
+    "poetId": "dufu",
+    "content": [
+      "岱宗夫如何？齐鲁青未了。",
+      "造化钟神秀，阴阳割昏晓。",
+      "荡胸生曾云，决眦入归鸟。",
+      "会当凌绝顶，一览众山小。"
+    ],
+    "form": "五言律诗",
+    "anthology": "全唐诗 卷216",
+    "themes": [
+      "登临",
+      "壮志",
+      "泰山"
+    ],
+    "famousLines": [
+      "会当凌绝顶，一览众山小"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "dufu-fangwei-ba",
+    "title": "房兵曹胡马",
+    "poetId": "dufu",
+    "content": [
+      "胡马大宛名，锋棱瘦骨成。",
+      "竹批双耳峻，风入四蹄轻。",
+      "所向无空阔，真堪托死生。",
+      "骁腾有如此，万里可横行。"
+    ],
+    "form": "五言律诗",
+    "anthology": "全唐诗 卷224",
+    "themes": [
+      "咏物",
+      "壮志",
+      "骏马"
+    ],
+    "famousLines": [
+      "所向无空阔，真堪托死生"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "dufu-zeng-li-bai",
+    "title": "赠李白",
+    "poetId": "dufu",
+    "content": [
+      "二年客东都，所历厌机巧。",
+      "野人对膻腥，蔬食常不饱。",
+      "岂无青精饭，使我颜色好。",
+      "苦乏大药资，山林迹如扫。",
+      "李侯金闺彦，脱身事幽讨。",
+      "亦有梁宋游，方期拾瑶草。"
+    ],
+    "form": "五言古诗",
+    "anthology": "全唐诗 卷216",
+    "themes": [
+      "赠答",
+      "交游",
+      "隐逸"
+    ],
+    "famousLines": [
+      "亦有梁宋游，方期拾瑶草"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "dufu-aijiangtou",
+    "title": "哀江头",
+    "poetId": "dufu",
+    "content": [
+      "少陵野老吞声哭，春日潜行曲江曲。",
+      "江头宫殿锁千门，细柳新蒲为谁绿。",
+      "忆昔霓旌下南苑，苑中万物生颜色。",
+      "昭阳殿里第一人，同辇随君侍君侧。",
+      "辇前才人带弓箭，白马嚼啮黄金勒。",
+      "翻身向天仰射云，一笑正坠双飞翼。",
+      "明眸皓齿今何在，血污游魂归不得。",
+      "清渭东流剑阁深，去住彼此无消息。",
+      "人生有情泪沾臆，江水江花岂终极。",
+      "黄昏胡骑尘满城，欲往城南望城北。"
+    ],
+    "form": "七言歌行",
+    "anthology": "全唐诗 卷216",
+    "themes": [
+      "陷贼",
+      "怀古",
+      "伤逝"
+    ],
+    "famousLines": [
+      "人生有情泪沾臆，江水江花岂终极"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "dufu-yueye",
+    "title": "月夜",
+    "poetId": "dufu",
+    "content": [
+      "今夜鄜州月，闺中只独看。",
+      "遥怜小儿女，未解忆长安。",
+      "香雾云鬟湿，清辉玉臂寒。",
+      "何时倚虚幌，双照泪痕干。"
+    ],
+    "form": "五言律诗",
+    "anthology": "全唐诗 卷224",
+    "themes": [
+      "思亲",
+      "陷贼",
+      "月夜"
+    ],
+    "famousLines": [
+      "何时倚虚幌，双照泪痕干"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "dufu-qiangcun-sanshou",
+    "title": "羌村三首",
+    "poetId": "dufu",
+    "content": [
+      "峥嵘赤云西，日脚下平地。柴门鸟雀噪，归客千里至。",
+      "妻孥怪我在，惊定还拭泪。世乱遭飘荡，生还偶然遂。",
+      "邻人满墙头，感叹亦歔欷。夜阑更秉烛，相对如梦寐。",
+      "晚岁迫偷生，还家少欢趣。娇儿不离膝，畏我复却去。",
+      "忆昔好追凉，故绕池边树。萧萧北风劲，抚事煎百虑。",
+      "赖知禾黍收，已觉糟床注。如今足斟酌，且用慰迟暮。",
+      "群鸡正乱叫，客至鸡斗争。驱鸡上树木，始闻叩柴荆。",
+      "父老四五人，问我久远行。手中各有携，倾榼浊复清。",
+      "苦辞酒味薄，黍地无人耕。兵革既未息，儿童尽东征。",
+      "请为父老歌，艰难愧深情。歌罢仰天叹，四座泪纵横。"
+    ],
+    "form": "五言古诗",
+    "anthology": "全唐诗 卷217",
+    "themes": [
+      "还家",
+      "战乱",
+      "民生"
+    ],
+    "famousLines": [
+      "夜阑更秉烛，相对如梦寐"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "dufu-xinan-li",
+    "title": "新安吏",
+    "poetId": "dufu",
+    "content": [
+      "客行新安道，喧呼闻点兵。",
+      "借问新安吏，县小更无丁。",
+      "府帖昨夜下，次选中男行。",
+      "中男绝短小，何以守王城。",
+      "肥男有母送，瘦男独伶俜。",
+      "白水暮东流，青山犹哭声。",
+      "莫自使眼枯，收汝泪纵横。",
+      "眼枯即见骨，天地终无情。",
+      "我军取相州，日夕望其平。",
+      "岂意贼难料，归军星散营。",
+      "就粮近故垒，练卒依旧京。",
+      "掘壕不到水，牧马役亦轻。",
+      "况乃王师顺，抚养甚分明。",
+      "送行勿泣血，仆射如父兄。"
+    ],
+    "form": "五言古诗",
+    "anthology": "全唐诗 卷217",
+    "themes": [
+      "征兵",
+      "战乱",
+      "民生"
+    ],
+    "famousLines": [
+      "白水暮东流，青山犹哭声"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "dufu-shihao-li",
+    "title": "石壕吏",
+    "poetId": "dufu",
+    "content": [
+      "暮投石壕村，有吏夜捉人。",
+      "老翁逾墙走，老妇出门看。",
+      "吏呼一何怒，妇啼一何苦。",
+      "听妇前致词，三男邺城戍。",
+      "一男附书至，二男新战死。",
+      "存者且偷生，死者长已矣。",
+      "室中更无人，惟有乳下孙。",
+      "有孙母未去，出入无完裙。",
+      "老妪力虽衰，请从吏夜归。",
+      "急应河阳役，犹得备晨炊。",
+      "夜久语声绝，如闻泣幽咽。",
+      "天明登前途，独与老翁别。"
+    ],
+    "form": "五言古诗",
+    "anthology": "全唐诗 卷217",
+    "themes": [
+      "征兵",
+      "战乱",
+      "民生"
+    ],
+    "famousLines": [
+      "吏呼一何怒，妇啼一何苦"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "dufu-tongguan-li",
+    "title": "潼关吏",
+    "poetId": "dufu",
+    "content": [
+      "士卒何草草，筑城潼关道。",
+      "大城铁不如，小城万丈余。",
+      "借问潼关吏，修关还备胡。",
+      "要我下马行，为我指山隅。",
+      "连云列战格，飞鸟不能逾。",
+      "胡来但自守，岂复忧西都。",
+      "丈人视要处，窄狭容单车。",
+      "艰难奋长戟，万古用一夫。",
+      "哀哉桃林战，百万化为鱼。",
+      "请嘱防关将，慎勿学哥舒。"
+    ],
+    "form": "五言古诗",
+    "anthology": "全唐诗 卷217",
+    "themes": [
+      "边防",
+      "战乱",
+      "讽谏"
+    ],
+    "famousLines": [
+      "请嘱防关将，慎勿学哥舒"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "dufu-chunsu",
+    "title": "春宿左省",
+    "poetId": "dufu",
+    "content": [
+      "花隐掖垣暮，啾啾栖鸟过。",
+      "星临万户动，月傍九霄多。",
+      "不寝听金钥，因风想玉珂。",
+      "明朝有封事，数问夜如何。"
+    ],
+    "form": "五言律诗",
+    "anthology": "全唐诗 卷225",
+    "themes": [
+      "任职",
+      "宫廷",
+      "尽职"
+    ],
+    "famousLines": [
+      "明朝有封事，数问夜如何"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "dufu-qinzhou-zashi-yi",
+    "title": "秦州杂诗二十首·其七",
+    "poetId": "dufu",
+    "content": [
+      "莽莽万重山，孤城山谷间。",
+      "无风云出塞，不夜月临关。",
+      "属国归何晚，楼兰斩未还。",
+      "烟尘独长望，衰飒正摧颜。"
+    ],
+    "form": "五言律诗",
+    "anthology": "全唐诗 卷225",
+    "themes": [
+      "边塞",
+      "感时",
+      "漂泊"
+    ],
+    "famousLines": [
+      "无风云出塞，不夜月临关"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "dufu-yueye-yi-shedi",
+    "title": "月夜忆舍弟",
+    "poetId": "dufu",
+    "content": [
+      "戍鼓断人行，边秋一雁声。",
+      "露从今夜白，月是故乡明。",
+      "有弟皆分散，无家问死生。",
+      "寄书长不达，况乃未休兵。"
+    ],
+    "form": "五言律诗",
+    "anthology": "全唐诗 卷225",
+    "themes": [
+      "思亲",
+      "战乱",
+      "秋夜"
+    ],
+    "famousLines": [
+      "露从今夜白，月是故乡明"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "dufu-shuxiang",
+    "title": "蜀相",
+    "poetId": "dufu",
+    "content": [
+      "丞相祠堂何处寻，锦官城外柏森森。",
+      "映阶碧草自春色，隔叶黄鹂空好音。",
+      "三顾频烦天下计，两朝开济老臣心。",
+      "出师未捷身先死，长使英雄泪满襟。"
+    ],
+    "form": "七言律诗",
+    "anthology": "全唐诗 卷226",
+    "themes": [
+      "怀古",
+      "咏史",
+      "诸葛亮"
+    ],
+    "famousLines": [
+      "出师未捷身先死，长使英雄泪满襟"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "dufu-chunye-xiyu",
+    "title": "春夜喜雨",
+    "poetId": "dufu",
+    "content": [
+      "好雨知时节，当春乃发生。",
+      "随风潜入夜，润物细无声。",
+      "野径云俱黑，江船火独明。",
+      "晓看红湿处，花重锦官城。"
+    ],
+    "form": "五言律诗",
+    "anthology": "全唐诗 卷226",
+    "themes": [
+      "写景",
+      "春雨",
+      "成都"
+    ],
+    "famousLines": [
+      "随风潜入夜，润物细无声"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "dufu-wenguanjun-shou",
+    "title": "闻官军收河南河北",
+    "poetId": "dufu",
+    "content": [
+      "剑外忽传收蓟北，初闻涕泪满衣裳。",
+      "却看妻子愁何在，漫卷诗书喜欲狂。",
+      "白日放歌须纵酒，青春作伴好还乡。",
+      "即从巴峡穿巫峡，便下襄阳向洛阳。"
+    ],
+    "form": "七言律诗",
+    "anthology": "全唐诗 卷227",
+    "themes": [
+      "喜讯",
+      "还乡",
+      "战乱结束"
+    ],
+    "famousLines": [
+      "白日放歌须纵酒，青春作伴好还乡"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "dufu-luye-shuhuai",
+    "title": "旅夜书怀",
+    "poetId": "dufu",
+    "content": [
+      "细草微风岸，危樯独夜舟。",
+      "星垂平野阔，月涌大江流。",
+      "名岂文章著，官应老病休。",
+      "飘飘何所似，天地一沙鸥。"
+    ],
+    "form": "五言律诗",
+    "anthology": "全唐诗 卷229",
+    "themes": [
+      "漂泊",
+      "夜泊",
+      "身世"
+    ],
+    "famousLines": [
+      "星垂平野阔，月涌大江流"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "dufu-qiuxing-ba-shou-yi",
+    "title": "秋兴八首·其一",
+    "poetId": "dufu",
+    "content": [
+      "玉露凋伤枫树林，巫山巫峡气萧森。",
+      "江间波浪兼天涌，塞上风云接地阴。",
+      "丛菊两开他日泪，孤舟一系故园心。",
+      "寒衣处处催刀尺，白帝城高急暮砧。"
+    ],
+    "form": "七言律诗",
+    "anthology": "全唐诗 卷230",
+    "themes": [
+      "秋思",
+      "夔州",
+      "故园",
+      "组诗"
+    ],
+    "famousLines": [
+      "丛菊两开他日泪，孤舟一系故园心"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "dufu-denggao",
+    "title": "登高",
+    "poetId": "dufu",
+    "content": [
+      "风急天高猿啸哀，渚清沙白鸟飞回。",
+      "无边落木萧萧下，不尽长江滚滚来。",
+      "万里悲秋常作客，百年多病独登台。",
+      "艰难苦恨繁霜鬓，潦倒新停浊酒杯。"
+    ],
+    "form": "七言律诗",
+    "anthology": "全唐诗 卷227",
+    "themes": [
+      "悲秋",
+      "漂泊",
+      "登临",
+      "老病"
+    ],
+    "famousLines": [
+      "无边落木萧萧下，不尽长江滚滚来"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "dufu-yonghuai-guji-san",
+    "title": "咏怀古迹五首·其三",
+    "aliases": [
+      "咏怀古迹·明妃村"
+    ],
+    "poetId": "dufu",
+    "content": [
+      "群山万壑赴荆门，生长明妃尚有村。",
+      "一去紫台连朔漠，独留青冢向黄昏。",
+      "画图省识春风面，环佩空归夜月魂。",
+      "千载琵琶作胡语，分明怨恨曲中论。"
+    ],
+    "form": "七言律诗",
+    "anthology": "全唐诗 卷230",
+    "themes": [
+      "怀古",
+      "咏史",
+      "王昭君"
+    ],
+    "famousLines": [
+      "群山万壑赴荆门，生长明妃尚有村"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "dufu-dengyueyanglou",
+    "title": "登岳阳楼",
+    "poetId": "dufu",
+    "content": [
+      "昔闻洞庭水，今上岳阳楼。",
+      "吴楚东南坼，乾坤日夜浮。",
+      "亲朋无一字，老病有孤舟。",
+      "戎马关山北，凭轩涕泗流。"
+    ],
+    "form": "五言律诗",
+    "anthology": "全唐诗 卷233",
+    "themes": [
+      "登临",
+      "洞庭",
+      "忧国",
+      "老病"
+    ],
+    "famousLines": [
+      "吴楚东南坼，乾坤日夜浮"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "dufu-jiangnan-feng-liguinian",
+    "title": "江南逢李龟年",
+    "poetId": "dufu",
+    "content": [
+      "岐王宅里寻常见，崔九堂前几度闻。",
+      "正是江南好风景，落花时节又逢君。"
+    ],
+    "form": "七言绝句",
+    "anthology": "全唐诗 卷232",
+    "themes": [
+      "重逢",
+      "盛衰",
+      "怀旧"
+    ],
+    "famousLines": [
+      "正是江南好风景，落花时节又逢君"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "sushi-jiangchengzi-mizhou",
+    "title": "江城子·密州出猎",
+    "poetId": "sushi",
+    "content": [
+      "老夫聊发少年狂，左牵黄，右擎苍，锦帽貂裘，千骑卷平冈。",
+      "为报倾城随太守，亲射虎，看孙郎。",
+      "酒酣胸胆尚开张。鬓微霜，又何妨！持节云中，何日遣冯唐？",
+      "会挽雕弓如满月，西北望，射天狼。"
+    ],
+    "form": "词",
+    "cipai": "江城子",
+    "themes": [
+      "豪放",
+      "报国",
+      "边事",
+      "出猎"
+    ],
+    "famousLines": [
+      "会挽雕弓如满月，西北望，射天狼"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "宋词/ci.song.0.json"
+    }
+  },
+  {
+    "id": "sushi-shuidiaogetou",
+    "title": "水调歌头·明月几时有",
+    "aliases": [
+      "水调歌头·丙辰中秋"
+    ],
+    "poetId": "sushi",
+    "content": [
+      "明月几时有？把酒问青天。不知天上宫阙，今夕是何年。",
+      "我欲乘风归去，又恐琼楼玉宇，高处不胜寒。起舞弄清影，何似在人间。",
+      "转朱阁，低绮户，照无眠。不应有恨，何事长向别时圆？",
+      "人有悲欢离合，月有阴晴圆缺，此事古难全。但愿人长久，千里共婵娟。"
+    ],
+    "form": "词",
+    "cipai": "水调歌头",
+    "themes": [
+      "中秋",
+      "怀人",
+      "哲思",
+      "豪放"
+    ],
+    "famousLines": [
+      "但愿人长久，千里共婵娟"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "宋词/ci.song.0.json"
+    }
+  },
+  {
+    "id": "sushi-niannujiao-chibi",
+    "title": "念奴娇·赤壁怀古",
+    "poetId": "sushi",
+    "content": [
+      "大江东去，浪淘尽，千古风流人物。",
+      "故垒西边，人道是，三国周郎赤壁。",
+      "乱石穿空，惊涛拍岸，卷起千堆雪。",
+      "江山如画，一时多少豪杰。",
+      "遥想公瑾当年，小乔初嫁了，雄姿英发。",
+      "羽扇纶巾，谈笑间，樯橹灰飞烟灭。",
+      "故国神游，多情应笑我，早生华发。",
+      "人生如梦，一尊还酹江月。"
+    ],
+    "form": "词",
+    "cipai": "念奴娇",
+    "themes": [
+      "怀古",
+      "豪放",
+      "赤壁",
+      "人生"
+    ],
+    "famousLines": [
+      "大江东去，浪淘尽，千古风流人物"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "宋词/ci.song.0.json"
+    }
+  },
+  {
+    "id": "libai-jingyesi",
+    "title": "静夜思",
+    "aliases": [
+      "夜思"
+    ],
+    "poetId": "libai",
+    "content": [
+      "床前明月光，疑是地上霜。",
+      "举头望明月，低头思故乡。"
+    ],
+    "form": "五言绝句",
+    "anthology": "全唐诗 卷165",
+    "themes": [
+      "思乡",
+      "月夜"
+    ],
+    "famousLines": [
+      "举头望明月，低头思故乡"
+    ],
+    "textualVariants": [
+      {
+        "text": "床前看月光，疑是地上霜。举头望山月，低头思故乡。",
+        "source": {
+          "id": "songshu-lishi",
+          "title": "宋蜀刻本《李太白文集》",
+          "reliability": "B"
+        }
+      }
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "libai-shudaonan",
+    "title": "蜀道难",
+    "poetId": "libai",
+    "content": [
+      "噫吁嚱，危乎高哉！蜀道之难，难于上青天！",
+      "蚕丛及鱼凫，开国何茫然！",
+      "尔来四万八千岁，不与秦塞通人烟。",
+      "西当太白有鸟道，可以横绝峨眉巅。",
+      "地崩山摧壮士死，然后天梯石栈相钩连。",
+      "上有六龙回日之高标，下有冲波逆折之回川。",
+      "黄鹤之飞尚不得过，猿猱欲度愁攀援。",
+      "青泥何盘盘，百步九折萦岩峦。",
+      "扪参历井仰胁息，以手抚膺坐长叹。",
+      "问君西游何时还？畏途巉岩不可攀。",
+      "但见悲鸟号古木，雄飞雌从绕林间。",
+      "又闻子规啼夜月，愁空山。",
+      "蜀道之难，难于上青天，使人听此凋朱颜！",
+      "连峰去天不盈尺，枯松倒挂倚绝壁。",
+      "飞湍瀑流争喧豗，砯崖转石万壑雷。",
+      "其险也如此，嗟尔远道之人胡为乎来哉！",
+      "剑阁峥嵘而崔嵬，一夫当关，万夫莫开。",
+      "所守或匪亲，化为狼与豺。",
+      "朝避猛虎，夕避长蛇，磨牙吮血，杀人如麻。",
+      "锦城虽云乐，不如早还家。",
+      "蜀道之难，难于上青天，侧身西望长咨嗟！"
+    ],
+    "form": "乐府歌行",
+    "anthology": "全唐诗 卷162",
+    "themes": [
+      "山川",
+      "送别",
+      "忧患",
+      "豪放"
+    ],
+    "famousLines": [
+      "蜀道之难，难于上青天",
+      "一夫当关，万夫莫开"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "libai-zaofabaidicheng",
+    "title": "早发白帝城",
+    "aliases": [
+      "下江陵"
+    ],
+    "poetId": "libai",
+    "content": [
+      "朝辞白帝彩云间，千里江陵一日还。",
+      "两岸猿声啼不住，轻舟已过万重山。"
+    ],
+    "form": "七言绝句",
+    "anthology": "全唐诗 卷181",
+    "themes": [
+      "遇赦",
+      "山水",
+      "快意"
+    ],
+    "famousLines": [
+      "两岸猿声啼不住，轻舟已过万重山"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "libai-yuexiaduzhuo",
+    "title": "月下独酌（其一）",
+    "poetId": "libai",
+    "content": [
+      "花间一壶酒，独酌无相亲。",
+      "举杯邀明月，对影成三人。",
+      "月既不解饮，影徒随我身。",
+      "暂伴月将影，行乐须及春。",
+      "我歌月徘徊，我舞影零乱。",
+      "醒时同交欢，醉后各分散。",
+      "永结无情游，相期邈云汉。"
+    ],
+    "form": "五言古诗",
+    "anthology": "全唐诗 卷182",
+    "themes": [
+      "孤独",
+      "月夜",
+      "饮酒",
+      "哲思"
+    ],
+    "famousLines": [
+      "举杯邀明月，对影成三人"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "libai-jiangjinjiu",
+    "title": "将进酒",
+    "aliases": [
+      "惜樽空"
+    ],
+    "poetId": "libai",
+    "content": [
+      "君不见黄河之水天上来，奔流到海不复回。",
+      "君不见高堂明镜悲白发，朝如青丝暮成雪。",
+      "人生得意须尽欢，莫使金樽空对月。",
+      "天生我材必有用，千金散尽还复来。",
+      "烹羊宰牛且为乐，会须一饮三百杯。",
+      "岑夫子，丹丘生，将进酒，杯莫停。",
+      "与君歌一曲，请君为我倾耳听。",
+      "钟鼓馔玉不足贵，但愿长醉不复醒。",
+      "古来圣贤皆寂寞，惟有饮者留其名。",
+      "陈王昔时宴平乐，斗酒十千恣欢谑。",
+      "主人何为言少钱，径须沽取对君酌。",
+      "五花马，千金裘，呼儿将出换美酒，与尔同销万古愁。"
+    ],
+    "form": "乐府歌行",
+    "anthology": "全唐诗 卷162",
+    "themes": [
+      "饮酒",
+      "抒怀",
+      "豪放",
+      "时间"
+    ],
+    "famousLines": [
+      "天生我材必有用，千金散尽还复来",
+      "君不见黄河之水天上来"
+    ],
+    "textualVariants": [
+      {
+        "text": "敦煌残卷本题作《惜樽空》，首二句作「君不见黄河之水天上来，奔流到海不复回」，末段文字与今本颇有异同。",
+        "source": {
+          "id": "dunhuang-can",
+          "title": "敦煌写本《惜樽空》残卷",
+          "reliability": "B"
+        }
+      }
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "libai-wanglushanpubu",
+    "title": "望庐山瀑布",
+    "poetId": "libai",
+    "content": [
+      "日照香炉生紫烟，遥看瀑布挂前川。",
+      "飞流直下三千尺，疑是银河落九天。"
+    ],
+    "form": "七言绝句",
+    "anthology": "全唐诗 卷180",
+    "themes": [
+      "山水",
+      "庐山",
+      "夸张"
+    ],
+    "famousLines": [
+      "飞流直下三千尺，疑是银河落九天"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "libai-zengwanglun",
+    "title": "赠汪伦",
+    "poetId": "libai",
+    "content": [
+      "李白乘舟将欲行，忽闻岸上踏歌声。",
+      "桃花潭水深千尺，不及汪伦送我情。"
+    ],
+    "form": "七言绝句",
+    "anthology": "全唐诗 卷171",
+    "themes": [
+      "送别",
+      "友情"
+    ],
+    "famousLines": [
+      "桃花潭水深千尺，不及汪伦送我情"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "libai-huanghelou-songmeng",
+    "title": "黄鹤楼送孟浩然之广陵",
+    "poetId": "libai",
+    "content": [
+      "故人西辞黄鹤楼，烟花三月下扬州。",
+      "孤帆远影碧空尽，唯见长江天际流。"
+    ],
+    "form": "七言绝句",
+    "anthology": "全唐诗 卷174",
+    "themes": [
+      "送别",
+      "友情",
+      "江南"
+    ],
+    "famousLines": [
+      "孤帆远影碧空尽，唯见长江天际流"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "libai-mengyoutianmu",
+    "title": "梦游天姥吟留别",
+    "aliases": [
+      "别东鲁诸公"
+    ],
+    "poetId": "libai",
+    "content": [
+      "海客谈瀛洲，烟涛微茫信难求。",
+      "越人语天姥，云霞明灭或可睹。",
+      "天姥连天向天横，势拔五岳掩赤城。",
+      "天台四万八千丈，对此欲倒东南倾。",
+      "我欲因之梦吴越，一夜飞度镜湖月。",
+      "湖月照我影，送我至剡溪。",
+      "谢公宿处今尚在，渌水荡漾清猿啼。",
+      "脚著谢公屐，身登青云梯。",
+      "半壁见海日，空中闻天鸡。",
+      "千岩万转路不定，迷花倚石忽已暝。",
+      "熊咆龙吟殷岩泉，栗深林兮惊层巅。",
+      "云青青兮欲雨，水澹澹兮生烟。",
+      "列缺霹雳，丘峦崩摧。",
+      "洞天石扉，訇然中开。",
+      "青冥浩荡不见底，日月照耀金银台。",
+      "霓为衣兮风为马，云之君兮纷纷而来下。",
+      "虎鼓瑟兮鸾回车，仙之人兮列如麻。",
+      "忽魂悸以魄动，恍惊起而长嗟。",
+      "惟觉时之枕席，失向来之烟霞。",
+      "世间行乐亦如此，古来万事东流水。",
+      "别君去兮何时还？且放白鹿青崖间，须行即骑访名山。",
+      "安能摧眉折腰事权贵，使我不得开心颜！"
+    ],
+    "form": "乐府歌行",
+    "anthology": "全唐诗 卷174",
+    "themes": [
+      "游仙",
+      "山水",
+      "傲骨",
+      "梦"
+    ],
+    "famousLines": [
+      "安能摧眉折腰事权贵，使我不得开心颜"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "libai-duzuojingtingshan",
+    "title": "独坐敬亭山",
+    "poetId": "libai",
+    "content": [
+      "众鸟高飞尽，孤云独去闲。",
+      "相看两不厌，只有敬亭山。"
+    ],
+    "form": "五言绝句",
+    "anthology": "全唐诗 卷182",
+    "themes": [
+      "孤独",
+      "山水",
+      "晚年"
+    ],
+    "famousLines": [
+      "相看两不厌，只有敬亭山"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "libai-zixiangge",
+    "title": "子夜吴歌·秋歌",
+    "poetId": "libai",
+    "content": [
+      "长安一片月，万户捣衣声。",
+      "秋风吹不尽，总是玉关情。",
+      "何日平胡虏，良人罢远征。"
+    ],
+    "form": "乐府民歌",
+    "anthology": "全唐诗 卷165",
+    "themes": [
+      "思妇",
+      "边塞",
+      "战争",
+      "长安"
+    ],
+    "famousLines": [
+      "长安一片月，万户捣衣声"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "libai-xinglunan",
+    "title": "行路难（其一）",
+    "poetId": "libai",
+    "content": [
+      "金樽清酒斗十千，玉盘珍羞直万钱。",
+      "停杯投箸不能食，拔剑四顾心茫然。",
+      "欲渡黄河冰塞川，将登太行雪满山。",
+      "闲来垂钓碧溪上，忽复乘舟梦日边。",
+      "行路难！行路难！多歧路，今安在？",
+      "长风破浪会有时，直挂云帆济沧海。"
+    ],
+    "form": "乐府歌行",
+    "anthology": "全唐诗 卷162",
+    "themes": [
+      "失意",
+      "抒怀",
+      "求仕",
+      "希望"
+    ],
+    "famousLines": [
+      "长风破浪会有时，直挂云帆济沧海"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "libai-xietiaolou-jianbie",
+    "title": "宣州谢朓楼饯别校书叔云",
+    "aliases": [
+      "陪侍御叔华登楼歌"
+    ],
+    "poetId": "libai",
+    "content": [
+      "弃我去者，昨日之日不可留；",
+      "乱我心者，今日之日多烦忧。",
+      "长风万里送秋雁，对此可以酣高楼。",
+      "蓬莱文章建安骨，中间小谢又清发。",
+      "俱怀逸兴壮思飞，欲上青天揽明月。",
+      "抽刀断水水更流，举杯消愁愁更愁。",
+      "人生在世不称意，明朝散发弄扁舟。"
+    ],
+    "form": "乐府歌行",
+    "anthology": "全唐诗 卷177",
+    "themes": [
+      "送别",
+      "失意",
+      "怀才",
+      "宣城"
+    ],
+    "famousLines": [
+      "抽刀断水水更流，举杯消愁愁更愁"
+    ],
+    "textualVariants": [
+      {
+        "text": "题一作《陪侍御叔华登楼歌》。「校书叔云」所指为李云或李华，学界尚有异说。",
+        "source": {
+          "id": "libai-jizhu-wangqi",
+          "title": "李太白全集",
+          "author": "王琦",
+          "reliability": "B"
+        }
+      }
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "libai-dujingmensongbie",
+    "title": "渡荆门送别",
+    "poetId": "libai",
+    "content": [
+      "渡远荆门外，来从楚国游。",
+      "山随平野尽，江入大荒流。",
+      "月下飞天镜，云生结海楼。",
+      "仍怜故乡水，万里送行舟。"
+    ],
+    "form": "五言律诗",
+    "anthology": "全唐诗 卷174",
+    "themes": [
+      "出蜀",
+      "送别",
+      "思乡",
+      "山川"
+    ],
+    "famousLines": [
+      "山随平野尽，江入大荒流"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "libai-qiupuge",
+    "title": "秋浦歌（其十五）",
+    "poetId": "libai",
+    "content": [
+      "白发三千丈，缘愁似个长。",
+      "不知明镜里，何处得秋霜。"
+    ],
+    "form": "五言绝句",
+    "anthology": "全唐诗 卷167",
+    "themes": [
+      "愁绪",
+      "暮年",
+      "夸张"
+    ],
+    "famousLines": [
+      "白发三千丈，缘愁似个长"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "libai-emeidaishanyue",
+    "title": "峨眉山月歌",
+    "poetId": "libai",
+    "content": [
+      "峨眉山月半轮秋，影入平羌江水流。",
+      "夜发清溪向三峡，思君不见下渝州。"
+    ],
+    "form": "七言绝句",
+    "anthology": "全唐诗 卷167",
+    "themes": [
+      "思乡",
+      "出蜀",
+      "月夜",
+      "山水"
+    ],
+    "famousLines": [
+      "峨眉山月半轮秋，影入平羌江水流"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "libai-dengjinlingfenghuangtai",
+    "title": "登金陵凤凰台",
+    "poetId": "libai",
+    "content": [
+      "凤凰台上凤凰游，凤去台空江自流。",
+      "吴宫花草埋幽径，晋代衣冠成古丘。",
+      "三山半落青天外，二水中分白鹭洲。",
+      "总为浮云能蔽日，长安不见使人愁。"
+    ],
+    "form": "七言律诗",
+    "anthology": "全唐诗 卷180",
+    "themes": [
+      "怀古",
+      "金陵",
+      "忧国",
+      "登临"
+    ],
+    "famousLines": [
+      "总为浮云能蔽日，长安不见使人愁"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "libai-nanlingbieertong",
+    "title": "南陵别儿童入京",
+    "poetId": "libai",
+    "content": [
+      "白酒新熟山中归，黄鸡啄黍秋正肥。",
+      "呼童烹鸡酌白酒，儿女嬉笑牵人衣。",
+      "高歌取醉欲自慰，起舞落日争光辉。",
+      "游说万乘苦不早，著鞭跨马涉远道。",
+      "会稽愚妇轻买臣，余亦辞家西入秦。",
+      "仰天大笑出门去，我辈岂是蓬蒿人。"
+    ],
+    "form": "七言歌行",
+    "anthology": "全唐诗 卷174",
+    "themes": [
+      "入京",
+      "得志",
+      "豪迈"
+    ],
+    "famousLines": [
+      "仰天大笑出门去，我辈岂是蓬蒿人"
+    ],
+    "corpusRef": {
+      "dataset": "chinese-poetry",
+      "path": "全唐诗/poet.tang.0.json"
+    }
+  },
+  {
+    "id": "sushi-heshi-mianchi",
+    "title": "和子由渑池怀旧",
+    "poetId": "sushi",
+    "content": [
+      "人生到处知何似，应似飞鸿踏雪泥。",
+      "泥上偶然留指爪，鸿飞那复计东西。",
+      "老僧已死成新塔，坏壁无由见旧题。",
+      "往日崎岖还记否，路长人困蹇驴嘶。"
+    ],
+    "form": "七言律诗",
+    "anthology": "苏轼诗集 卷3",
+    "themes": [
+      "怀旧",
+      "人生",
+      "哲思",
+      "飞鸿"
+    ],
+    "famousLines": [
+      "人生到处知何似，应似飞鸿踏雪泥"
+    ],
+    "corpusRef": {
+      "dataset": "manual",
+      "path": "poetry-atlas/data/corpus/works.json"
+    }
+  },
+  {
+    "id": "sushi-jiangchengzi-yimao",
+    "title": "江城子·乙卯正月二十日夜记梦",
+    "poetId": "sushi",
+    "content": [
+      "十年生死两茫茫，不思量，自难忘。",
+      "千里孤坟，无处话凄凉。纵使相逢应不识，尘满面，鬓如霜。",
+      "夜来幽梦忽还乡，小轩窗，正梳妆。",
+      "相顾无言，惟有泪千行。料得年年肠断处，明月夜，短松冈。"
+    ],
+    "form": "词",
+    "cipai": "江城子",
+    "anthology": "东坡乐府 卷1",
+    "themes": [
+      "悼亡",
+      "怀人",
+      "梦",
+      "生死"
+    ],
+    "famousLines": [
+      "十年生死两茫茫，不思量，自难忘"
+    ],
+    "corpusRef": {
+      "dataset": "manual",
+      "path": "poetry-atlas/data/corpus/works.json"
+    }
+  },
+  {
+    "id": "sushi-chaorantai",
+    "title": "望江南·超然台作",
+    "poetId": "sushi",
+    "content": [
+      "春未老，风细柳斜斜。试上超然台上看，半壕春水一城花。烟雨暗千家。",
+      "寒食后，酒醒却咨嗟。休对故人思故国，且将新火试新茶。诗酒趁年华。"
+    ],
+    "form": "词",
+    "cipai": "望江南",
+    "anthology": "东坡乐府 卷1",
+    "themes": [
+      "登临",
+      "思乡",
+      "超然",
+      "寒食"
+    ],
+    "famousLines": [
+      "且将新火试新茶。诗酒趁年华"
+    ],
+    "corpusRef": {
+      "dataset": "manual",
+      "path": "poetry-atlas/data/corpus/works.json"
+    }
+  },
+  {
+    "id": "sushi-huanglou",
+    "title": "九日黄楼作",
+    "poetId": "sushi",
+    "content": [
+      "去年重阳不可说，南城夜半千沤发。",
+      "水穿城下作雷鸣，泥满城头飞雨滑。",
+      "黄花白酒无人问，日暮归来洗靴袜。",
+      "岂知还复有今年，把盏对花容一呷。",
+      "莫嫌酒薄红粉陋，终胜泥中千柄锸。",
+      "黄楼新成壁未干，清河已落霜初杀。"
+    ],
+    "form": "七言古诗",
+    "anthology": "苏轼诗集 卷17",
+    "themes": [
+      "抗洪",
+      "徐州",
+      "忧民",
+      "重阳"
+    ],
+    "famousLines": [
+      "黄楼新成壁未干，清河已落霜初杀"
+    ],
+    "corpusRef": {
+      "dataset": "manual",
+      "path": "poetry-atlas/data/corpus/works.json"
+    }
+  },
+  {
+    "id": "sushi-dingfengbo",
+    "title": "定风波·莫听穿林打叶声",
+    "poetId": "sushi",
+    "content": [
+      "莫听穿林打叶声，何妨吟啸且徐行。",
+      "竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。",
+      "料峭春风吹酒醒，微冷，山头斜照却相迎。",
+      "回首向来萧瑟处，归去，也无风雨也无晴。"
+    ],
+    "form": "词",
+    "cipai": "定风波",
+    "anthology": "东坡乐府 卷2",
+    "themes": [
+      "旷达",
+      "雨",
+      "人生",
+      "沙湖道中"
+    ],
+    "famousLines": [
+      "一蓑烟雨任平生",
+      "也无风雨也无晴"
+    ],
+    "corpusRef": {
+      "dataset": "manual",
+      "path": "poetry-atlas/data/corpus/works.json"
+    }
+  },
+  {
+    "id": "sushi-hanshi-tie",
+    "title": "黄州寒食诗二首",
+    "poetId": "sushi",
+    "content": [
+      "自我来黄州，已过三寒食。年年欲惜春，春去不容惜。",
+      "今年又苦雨，两月秋萧瑟。卧闻海棠花，泥污燕支雪。",
+      "暗中偷负去，夜半真有力。何殊病少年，病起头已白。",
+      "",
+      "春江欲入户，雨势来不已。小屋如渔舟，濛濛水云里。",
+      "空庖煮寒菜，破灶烧湿苇。那知是寒食，但见乌衔纸。",
+      "君门深九重，坟墓在万里。也拟哭途穷，死灰吹不起。"
+    ],
+    "form": "五言古诗",
+    "anthology": "苏轼诗集 卷21",
+    "themes": [
+      "寒食",
+      "苦雨",
+      "贬谪",
+      "困顿"
+    ],
+    "famousLines": [
+      "君门深九重，坟墓在万里"
+    ],
+    "corpusRef": {
+      "dataset": "manual",
+      "path": "poetry-atlas/data/corpus/works.json"
+    }
+  },
+  {
+    "id": "sushi-chibifu-qian",
+    "title": "赤壁赋",
+    "poetId": "sushi",
+    "content": [
+      "壬戌之秋，七月既望，苏子与客泛舟游于赤壁之下。清风徐来，水波不兴。",
+      "举酒属客，诵明月之诗，歌窈窕之章。少焉，月出于东山之上，徘徊于斗牛之间。",
+      "白露横江，水光接天。纵一苇之所如，凌万顷之茫然。",
+      "浩浩乎如冯虚御风，而不知其所止；飘飘乎如遗世独立，羽化而登仙。",
+      "寄蜉蝣于天地，渺沧海之一粟。哀吾生之须臾，羡长江之无穷。",
+      "惟江上之清风，与山间之明月，耳得之而为声，目遇之而成色，取之无禁，用之不竭。"
+    ],
+    "form": "赋",
+    "anthology": "苏轼文集 卷1",
+    "themes": [
+      "赤壁",
+      "哲思",
+      "江月",
+      "旷达"
+    ],
+    "famousLines": [
+      "寄蜉蝣于天地，渺沧海之一粟"
+    ],
+    "corpusRef": {
+      "dataset": "manual",
+      "path": "poetry-atlas/data/corpus/works.json"
+    }
+  },
+  {
+    "id": "sushi-chibifu-hou",
+    "title": "后赤壁赋",
+    "poetId": "sushi",
+    "content": [
+      "是岁十月之望，步自雪堂，将归于临皋。二客从予过黄泥之坂。",
+      "霜露既降，木叶尽脱。人影在地，仰见明月，顾而乐之，行歌相答。",
+      "江流有声，断岸千尺，山高月小，水落石出。曾日月之几何，而江山不可复识矣。",
+      "适有孤鹤，横江东来。翅如车轮，玄裳缟衣，戛然长鸣，掠予舟而西也。"
+    ],
+    "form": "赋",
+    "anthology": "苏轼文集 卷1",
+    "themes": [
+      "赤壁",
+      "冬夜",
+      "孤鹤",
+      "出尘"
+    ],
+    "famousLines": [
+      "江流有声，断岸千尺，山高月小，水落石出"
+    ],
+    "corpusRef": {
+      "dataset": "manual",
+      "path": "poetry-atlas/data/corpus/works.json"
+    }
+  },
+  {
+    "id": "sushi-jichengtiansi",
+    "title": "记承天寺夜游",
+    "poetId": "sushi",
+    "content": [
+      "元丰六年十月十二日夜，解衣欲睡，月色入户，欣然起行。",
+      "念无与为乐者，遂至承天寺寻张怀民。怀民亦未寝，相与步于中庭。",
+      "庭下如积水空明，水中藻、荇交横，盖竹柏影也。",
+      "何夜无月？何处无竹柏？但少闲人如吾两人者耳。"
+    ],
+    "form": "散文",
+    "anthology": "苏轼文集 卷71",
+    "themes": [
+      "夜游",
+      "月",
+      "闲适",
+      "黄州"
+    ],
+    "famousLines": [
+      "庭下如积水空明，水中藻、荇交横，盖竹柏影也"
+    ],
+    "corpusRef": {
+      "dataset": "manual",
+      "path": "poetry-atlas/data/corpus/works.json"
+    }
+  },
+  {
+    "id": "sushi-tixilinbi",
+    "title": "题西林壁",
+    "poetId": "sushi",
+    "content": [
+      "横看成岭侧成峰，远近高低各不同。",
+      "不识庐山真面目，只缘身在此山中。"
+    ],
+    "form": "七言绝句",
+    "anthology": "苏轼诗集 卷23",
+    "themes": [
+      "庐山",
+      "理趣",
+      "哲思",
+      "山水"
+    ],
+    "famousLines": [
+      "不识庐山真面目，只缘身在此山中"
+    ],
+    "corpusRef": {
+      "dataset": "manual",
+      "path": "poetry-atlas/data/corpus/works.json"
+    }
+  },
+  {
+    "id": "sushi-yinhu-shang-chuqing-houyu",
+    "title": "饮湖上初晴后雨",
+    "poetId": "sushi",
+    "content": [
+      "水光潋滟晴方好，山色空蒙雨亦奇。",
+      "欲把西湖比西子，淡妆浓抹总相宜。"
+    ],
+    "form": "七言绝句",
+    "anthology": "苏轼诗集 卷9",
+    "themes": [
+      "西湖",
+      "雨",
+      "晴",
+      "山水"
+    ],
+    "famousLines": [
+      "欲把西湖比西子，淡妆浓抹总相宜"
+    ],
+    "corpusRef": {
+      "dataset": "manual",
+      "path": "poetry-atlas/data/corpus/works.json"
+    }
+  },
+  {
+    "id": "sushi-wanghulou-zui-shu",
+    "title": "六月二十七日望湖楼醉书",
+    "poetId": "sushi",
+    "content": [
+      "黑云翻墨未遮山，白雨跳珠乱入船。",
+      "卷地风来忽吹散，望湖楼下水如天。"
+    ],
+    "form": "七言绝句",
+    "anthology": "苏轼诗集 卷7",
+    "themes": [
+      "西湖",
+      "暴雨",
+      "骤雨",
+      "风云"
+    ],
+    "famousLines": [
+      "黑云翻墨未遮山，白雨跳珠乱入船"
+    ],
+    "corpusRef": {
+      "dataset": "manual",
+      "path": "poetry-atlas/data/corpus/works.json"
+    }
+  },
+  {
+    "id": "sushi-huichong-chunjiang",
+    "title": "惠崇春江晚景",
+    "poetId": "sushi",
+    "content": [
+      "竹外桃花三两枝，春江水暖鸭先知。",
+      "蒌蒿满地芦芽短，正是河豚欲上时。"
+    ],
+    "form": "七言绝句",
+    "anthology": "苏轼诗集 卷26",
+    "themes": [
+      "题画",
+      "春江",
+      "早春",
+      "江"
+    ],
+    "famousLines": [
+      "竹外桃花三两枝，春江水暖鸭先知"
+    ],
+    "corpusRef": {
+      "dataset": "manual",
+      "path": "poetry-atlas/data/corpus/works.json"
+    }
+  },
+  {
+    "id": "sushi-shilizhi",
+    "title": "食荔支",
+    "poetId": "sushi",
+    "content": [
+      "罗浮山下四时春，卢橘杨梅次第新。",
+      "日啖荔支三百颗，不辞长作岭南人。"
+    ],
+    "form": "七言绝句",
+    "anthology": "苏轼诗集 卷40",
+    "themes": [
+      "惠州",
+      "岭南",
+      "旷达",
+      "荔支"
+    ],
+    "famousLines": [
+      "日啖荔支三百颗，不辞长作岭南人"
+    ],
+    "corpusRef": {
+      "dataset": "manual",
+      "path": "poetry-atlas/data/corpus/works.json"
+    }
+  },
+  {
+    "id": "sushi-liuyue-ershi-ri-yedu-hai",
+    "title": "六月二十日夜渡海",
+    "poetId": "sushi",
+    "content": [
+      "参横斗转欲三更，苦雨终风也解晴。",
+      "云散月明谁点缀？天容海色本澄清。",
+      "空余鲁叟乘桴意，粗识轩辕奏乐声。",
+      "九死南荒吾不恨，兹游奇绝冠平生。"
+    ],
+    "form": "七言律诗",
+    "anthology": "苏轼诗集 卷43",
+    "themes": [
+      "渡海",
+      "北归",
+      "儋州",
+      "旷达"
+    ],
+    "famousLines": [
+      "九死南荒吾不恨，兹游奇绝冠平生"
+    ],
+    "corpusRef": {
+      "dataset": "manual",
+      "path": "poetry-atlas/data/corpus/works.json"
+    }
+  },
+  {
+    "id": "sushi-ziti-jinshan-huaxiang",
+    "title": "自题金山画像",
+    "poetId": "sushi",
+    "content": [
+      "心似已灰之木，身如不系之舟。",
+      "问汝平生功业，黄州惠州儋州。"
+    ],
+    "form": "六言绝句",
+    "anthology": "苏轼诗集 卷48",
+    "themes": [
+      "自题",
+      "回首",
+      "贬谪",
+      "功业"
+    ],
+    "famousLines": [
+      "问汝平生功业，黄州惠州儋州"
+    ],
+    "corpusRef": {
+      "dataset": "manual",
+      "path": "poetry-atlas/data/corpus/works.json"
+    }
+  },
+  {
+    "id": "sushi-xier-shi",
+    "title": "洗儿诗",
+    "poetId": "sushi",
+    "content": [
+      "人皆养子望聪明，我被聪明误一生。",
+      "惟愿孩儿愚且鲁，无灾无难到公卿。"
+    ],
+    "form": "七言绝句",
+    "anthology": "苏轼诗集 卷22",
+    "themes": [
+      "洗儿",
+      "愤世",
+      "人生",
+      "自嘲"
+    ],
+    "famousLines": [
+      "惟愿孩儿愚且鲁，无灾无难到公卿"
+    ],
+    "corpusRef": {
+      "dataset": "manual",
+      "path": "poetry-atlas/data/corpus/works.json"
+    }
+  }
+]

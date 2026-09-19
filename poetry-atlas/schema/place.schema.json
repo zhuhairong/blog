@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://zhuhairong.github.io/blog/schema/place.schema.json",
+  "title": "Place 地点",
+  "description": "古今地名双轨制。历史地名与今地名并存，坐标精度如实标注。",
+  "type": "object",
+  "required": [
+    "id",
+    "historicalName",
+    "modernName",
+    "modernHierarchy",
+    "coordinates",
+    "precision",
+    "isCentroid",
+    "sources"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$",
+      "description": "稳定标识，小写字母数字连字符，如 cn-henan-gongyi"
+    },
+    "historicalName": {
+      "type": "string",
+      "minLength": 1,
+      "description": "诗作创作当时的地名，如「巩县」「江宁」"
+    },
+    "historicalEra": {
+      "type": "string",
+      "description": "该历史地名所属朝代，如「唐」「宋」"
+    },
+    "modernName": {
+      "type": "string",
+      "minLength": 1,
+      "description": "今地名的完整可读表述，如「河南省郑州市巩义市」"
+    },
+    "modernHierarchy": {
+      "type": "object",
+      "required": ["province"],
+      "additionalProperties": false,
+      "properties": {
+        "province": { "type": "string" },
+        "city": { "type": "string" },
+        "district": { "type": "string" },
+        "township": { "type": "string" },
+        "village": { "type": "string" }
+      },
+      "description": "今行政区划层级链，缺失层级直接省略，用于聚合与筛选"
+    },
+    "coordinates": {
+      "type": "array",
+      "items": { "type": "number" },
+      "minItems": 2,
+      "maxItems": 2,
+      "description": "[经度, 纬度]。经度 73~135，纬度 3~54（中国境内）"
+    },
+    "precision": {
+      "type": "string",
+      "enum": ["province", "prefecture", "county", "township", "site", "approximate"],
+      "description": "地理精度层级。史料到哪一级就标哪一级，不得虚标"
+    },
+    "isCentroid": {
+      "type": "boolean",
+      "description": "坐标是否为行政区中心点。true 表示仅代表大致区域，非精确遗址"
+    },
+    "aliases": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "别名异称，如「汴京」「汴梁」「东京」"
+    },
+    "kind": {
+      "type": "string",
+      "enum": ["city", "mountain", "river", "lake", "pass", "temple", "tomb", "other"]
+    },
+    "note": {
+      "type": "string",
+      "description": "考据说明：为何定位于此"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "description": "溯源依据。至少一条，否则不予收录",
+      "items": { "$ref": "#/definitions/source" }
+    }
+  },
+  "definitions": {
+    "source": {
+      "type": "object",
+      "required": ["id", "title", "reliability"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "author": { "type": "string" },
+        "edition": { "type": "string" },
+        "locator": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "reliability": { "type": "string", "enum": ["A", "B", "C", "D"] }
+      }
+    }
+  }
+}

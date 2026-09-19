@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "atlas:build": "npm --prefix poetry-atlas run build",
+    "atlas:check": "npm --prefix poetry-atlas run check",
+    "build": "npm run atlas:build && npm run atlas:check && next build",
     "start": "next start",
     "lint": "eslint"
   },

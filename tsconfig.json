@@ -19,7 +19,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/poetry-atlas/*": ["./poetry-atlas/src/*"]
     }
   },
   "include": [
@@ -30,5 +31,5 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules", "c_utils"]
+  "exclude": ["node_modules", "c_utils", "poetry-atlas/node_modules"]
 }

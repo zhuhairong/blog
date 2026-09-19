@@ -1,0 +1,2983 @@
+[
+  {
+    "id": "cn-henan-gongyi",
+    "historicalName": "巩县",
+    "historicalEra": "唐",
+    "modernName": "河南省郑州市巩义市",
+    "modernHierarchy": {
+      "province": "河南省",
+      "city": "郑州市",
+      "district": "巩义市"
+    },
+    "coordinates": [
+      112.982,
+      34.748
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "巩",
+      "东周"
+    ],
+    "kind": "city",
+    "note": "杜甫出生地。唐属河南府巩县，今为巩义市。笔架山下有其诞生窑洞遗址（纪念性）。",
+    "sources": [
+      {
+        "id": "jts-dufu",
+        "title": "旧唐书·杜甫传",
+        "author": "刘昫等",
+        "edition": "中华书局点校本",
+        "locator": "卷190下",
+        "reliability": "A"
+      },
+      {
+        "id": "chgis-tang",
+        "title": "中国历史地理信息系统 CHGIS 唐代政区",
+        "author": "复旦大学历史地理研究所 / 哈佛大学",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-sichuan-chengdu-caotang",
+    "historicalName": "成都府浣花溪",
+    "historicalEra": "唐",
+    "modernName": "四川省成都市青羊区浣花溪畔",
+    "modernHierarchy": {
+      "province": "四川省",
+      "city": "成都市",
+      "district": "青羊区",
+      "township": "草堂街道"
+    },
+    "coordinates": [
+      104.0294,
+      30.6629
+    ],
+    "precision": "site",
+    "isCentroid": false,
+    "aliases": [
+      "成都草堂",
+      "浣花草堂",
+      "少陵草堂"
+    ],
+    "kind": "site",
+    "note": "乾元二年（759）冬杜甫入蜀，次年春在浣花溪畔营建草堂，居此近四年，作诗约240首。今为成都杜甫草堂博物馆，遗址位置确凿。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "dugong-buzhu",
+        "title": "杜工部草堂诗笺",
+        "author": "蔡梦弼",
+        "edition": "宋刻本",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-sichuan-kuizhou",
+    "historicalName": "夔州",
+    "historicalEra": "唐",
+    "modernName": "重庆市奉节县",
+    "modernHierarchy": {
+      "province": "重庆市",
+      "city": "重庆市",
+      "district": "奉节县"
+    },
+    "coordinates": [
+      109.4636,
+      31.0184
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "奉节",
+      "白帝城",
+      "鱼复"
+    ],
+    "kind": "city",
+    "note": "唐夔州治奉节，扼三峡入口。杜甫于永泰二年（766）至大历三年（768）居此近两年，创作达430余首，为其一生创作高峰。白帝城在其东。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "chgis-tang",
+        "title": "中国历史地理信息系统 CHGIS 唐代政区",
+        "author": "复旦大学历史地理研究所 / 哈佛大学",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-shaanxi-xian",
+    "historicalName": "长安",
+    "historicalEra": "唐",
+    "modernName": "陕西省西安市",
+    "modernHierarchy": {
+      "province": "陕西省",
+      "city": "西安市"
+    },
+    "coordinates": [
+      108.9398,
+      34.3416
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "京兆",
+      "西京",
+      "长安城",
+      "上都"
+    ],
+    "kind": "city",
+    "note": "唐都城，诗人汇聚之地。具体创作点多在城内坊里或曲江、乐游原等处，史料通常只记「长安」，故坐标取城市中心。",
+    "sources": [
+      {
+        "id": "chgis-tang",
+        "title": "中国历史地理信息系统 CHGIS 唐代政区",
+        "author": "复旦大学历史地理研究所 / 哈佛大学",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-shaanxi-lantian",
+    "historicalName": "蓝田辋川",
+    "historicalEra": "唐",
+    "modernName": "陕西省西安市蓝田县辋川镇",
+    "modernHierarchy": {
+      "province": "陕西省",
+      "city": "西安市",
+      "district": "蓝田县",
+      "township": "辋川镇"
+    },
+    "coordinates": [
+      109.323,
+      33.995
+    ],
+    "precision": "township",
+    "isCentroid": true,
+    "aliases": [
+      "辋川别业",
+      "辋谷"
+    ],
+    "kind": "mountain",
+    "note": "王维于天宝三载（744）前后得宋之问旧居，营为辋川别业，半官半隐于此十余年。《辋川集》二十首所咏即此地二十景。史料明确记载到辋川，故定为乡镇级。",
+    "sources": [
+      {
+        "id": "jts-wangwei",
+        "title": "旧唐书·王维传",
+        "author": "刘昫等",
+        "edition": "中华书局点校本",
+        "locator": "卷190下",
+        "reliability": "A"
+      },
+      {
+        "id": "wangchuan-ji",
+        "title": "辋川集",
+        "author": "王维",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-shanxi-yongji",
+    "historicalName": "河中府",
+    "historicalEra": "唐",
+    "modernName": "山西省运城市永济市",
+    "modernHierarchy": {
+      "province": "山西省",
+      "city": "运城市",
+      "district": "永济市"
+    },
+    "coordinates": [
+      110.4476,
+      34.8672
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "蒲州",
+      "蒲坂"
+    ],
+    "kind": "city",
+    "note": "唐河中府治河东县（今永济）。王之涣、王维祖籍太原王氏分支，此为其籍贯所在区域之一。鹳雀楼故址在今永济蒲州镇。",
+    "sources": [
+      {
+        "id": "jts-wangzhihuan",
+        "title": "旧唐书·王勃等传附",
+        "author": "刘昫等",
+        "locator": "卷190中",
+        "reliability": "B"
+      },
+      {
+        "id": "chgis-tang",
+        "title": "中国历史地理信息系统 CHGIS 唐代政区",
+        "author": "复旦大学历史地理研究所 / 哈佛大学",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-shanxi-taiyuan",
+    "historicalName": "太原府",
+    "historicalEra": "唐",
+    "modernName": "山西省太原市",
+    "modernHierarchy": {
+      "province": "山西省",
+      "city": "太原市"
+    },
+    "coordinates": [
+      112.5489,
+      37.8706
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "晋阳",
+      "并州",
+      "北都"
+    ],
+    "kind": "city",
+    "note": "太原王氏郡望所在。王维、王之涣均自称太原王氏，但唐代士人郡望与实际居地常有分离，需与真实籍贯区分。",
+    "sources": [
+      {
+        "id": "xsts-wangwei",
+        "title": "新唐书·王维传",
+        "author": "欧阳修等",
+        "edition": "中华书局点校本",
+        "locator": "卷202",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-sichuan-jiangyou",
+    "historicalName": "绵州昌隆",
+    "historicalEra": "唐",
+    "modernName": "四川省绵阳市江油市青莲镇",
+    "modernHierarchy": {
+      "province": "四川省",
+      "city": "绵阳市",
+      "district": "江油市",
+      "township": "青莲镇"
+    },
+    "coordinates": [
+      104.7249,
+      31.7128
+    ],
+    "precision": "township",
+    "isCentroid": true,
+    "aliases": [
+      "青莲乡",
+      "彰明",
+      "昌明"
+    ],
+    "kind": "township",
+    "note": "李白少年居地。「青莲居士」之号即源于此。今江油青莲镇有李白故里纪念馆。注意：李白出生地学界有蜀中说与西域碎叶说之争，此条指其少年成长地，非出生地。",
+    "sources": [
+      {
+        "id": "litaibai-nianpu",
+        "title": "李太白年谱",
+        "author": "王琦",
+        "reliability": "B"
+      },
+      {
+        "id": "xsts-libai",
+        "title": "新唐书·李白传",
+        "author": "欧阳修等",
+        "locator": "卷202",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-hubei-anlu",
+    "historicalName": "安州安陆",
+    "historicalEra": "唐",
+    "modernName": "湖北省孝感市安陆市",
+    "modernHierarchy": {
+      "province": "湖北省",
+      "city": "孝感市",
+      "district": "安陆市"
+    },
+    "coordinates": [
+      113.6888,
+      31.2556
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "安陆",
+      "安州"
+    ],
+    "kind": "city",
+    "note": "李白于开元十五年（727）前后与此地许氏成婚，遂以安陆为家，前后寓居约十年，自号「酒隐安陆，蹉跎十年」。寿山、白兆山有其遗迹。",
+    "sources": [
+      {
+        "id": "litaibai-nianpu",
+        "title": "李太白年谱",
+        "author": "王琦",
+        "reliability": "B"
+      },
+      {
+        "id": "libai-ji-xu",
+        "title": "李太白全集序",
+        "author": "魏颢",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-hubei-yichang",
+    "historicalName": "峡州夷陵",
+    "historicalEra": "宋",
+    "modernName": "湖北省宜昌市夷陵区",
+    "modernHierarchy": {
+      "province": "湖北省",
+      "city": "宜昌市",
+      "district": "夷陵区"
+    },
+    "coordinates": [
+      111.3262,
+      30.7699
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "夷陵",
+      "峡州"
+    ],
+    "kind": "city",
+    "note": "欧阳修于景祐三年（1036）贬为峡州夷陵县令，在此约一年。《戏答元珍》即作于此地。",
+    "sources": [
+      {
+        "id": "songshi-ouyangxiu",
+        "title": "宋史·欧阳修传",
+        "author": "脱脱等",
+        "edition": "中华书局点校本",
+        "locator": "卷319",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-anhui-chuzhou",
+    "historicalName": "滁州",
+    "historicalEra": "宋",
+    "modernName": "安徽省滁州市琅琊区",
+    "modernHierarchy": {
+      "province": "安徽省",
+      "city": "滁州市",
+      "district": "琅琊区"
+    },
+    "coordinates": [
+      118.3168,
+      32.3016
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "滁",
+      "永阳"
+    ],
+    "kind": "city",
+    "note": "欧阳修于庆历五年（1045）知滁州，自号醉翁，建醉翁亭于琅琊山。《醉翁亭记》作于此。琅琊山在今滁州西南。",
+    "sources": [
+      {
+        "id": "songshi-ouyangxiu",
+        "title": "宋史·欧阳修传",
+        "author": "脱脱等",
+        "locator": "卷319",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-shandong-zhucheng",
+    "historicalName": "密州诸城",
+    "historicalEra": "宋",
+    "modernName": "山东省潍坊市诸城市",
+    "modernHierarchy": {
+      "province": "山东省",
+      "city": "潍坊市",
+      "district": "诸城市"
+    },
+    "coordinates": [
+      119.4095,
+      35.9952
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "密州",
+      "东武"
+    ],
+    "kind": "city",
+    "note": "苏轼于熙宁七年（1074）知密州，至熙宁九年末离任。豪放词代表作《江城子·密州出猎》《水调歌头》均作于此。超然台遗址在今诸城，为其所修。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "edition": "中华书局点校本",
+        "locator": "卷338",
+        "reliability": "A"
+      },
+      {
+        "id": "dongpo-nianpu",
+        "title": "东坡先生年谱",
+        "author": "王宗稷",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-hubei-huanggang",
+    "historicalName": "黄州",
+    "historicalEra": "宋",
+    "modernName": "湖北省黄冈市黄州区",
+    "modernHierarchy": {
+      "province": "湖北省",
+      "city": "黄冈市",
+      "district": "黄州区"
+    },
+    "coordinates": [
+      114.8787,
+      30.4475
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "齐安",
+      "黄冈"
+    ],
+    "kind": "city",
+    "note": "元丰三年（1080）苏轼因乌台诗案贬黄州团练副使，居此四年余，躬耕东坡、自号东坡居士。前后《赤壁赋》《念奴娇·赤壁怀古》皆作于此。注意黄州赤壁为「文赤壁」，非赤壁之战旧址。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-zhejiang-hangzhou",
+    "historicalName": "杭州",
+    "historicalEra": "宋",
+    "modernName": "浙江省杭州市",
+    "modernHierarchy": {
+      "province": "浙江省",
+      "city": "杭州市"
+    },
+    "coordinates": [
+      120.1551,
+      30.2741
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "临安",
+      "钱塘",
+      "武林"
+    ],
+    "kind": "city",
+    "note": "苏轼两度莅杭：熙宁四年（1071）任通判，元祐四年（1089）知杭州。后者疏浚西湖、筑苏堤。西湖、望湖楼等为其诗中常见地。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-jiangsu-yangzhou",
+    "historicalName": "扬州",
+    "historicalEra": "唐",
+    "modernName": "江苏省扬州市",
+    "modernHierarchy": {
+      "province": "江苏省",
+      "city": "扬州市"
+    },
+    "coordinates": [
+      119.4215,
+      32.3933
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "广陵",
+      "江都",
+      "维扬"
+    ],
+    "kind": "city",
+    "note": "唐代东南第一都会。李白《静夜思》有「作于扬州旅舍」之说，但存争议，见该作品断言。",
+    "sources": [
+      {
+        "id": "chgis-tang",
+        "title": "中国历史地理信息系统 CHGIS 唐代政区",
+        "author": "复旦大学历史地理研究所 / 哈佛大学",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-anhui-chizhou",
+    "historicalName": "池州",
+    "historicalEra": "唐",
+    "modernName": "安徽省池州市贵池区",
+    "modernHierarchy": {
+      "province": "安徽省",
+      "city": "池州市",
+      "district": "贵池区"
+    },
+    "coordinates": [
+      117.489,
+      30.6577
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "秋浦",
+      "池阳"
+    ],
+    "kind": "city",
+    "note": "李白多次游历秋浦（今贵池），作《秋浦歌》十七首。唐属池州。",
+    "sources": [
+      {
+        "id": "litaibai-nianpu",
+        "title": "李太白年谱",
+        "author": "王琦",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-sichuan-meishan",
+    "historicalName": "眉州眉山",
+    "historicalEra": "宋",
+    "modernName": "四川省眉山市东坡区",
+    "modernHierarchy": {
+      "province": "四川省",
+      "city": "眉山市",
+      "district": "东坡区"
+    },
+    "coordinates": [
+      103.8485,
+      30.0754
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "眉山",
+      "眉州"
+    ],
+    "kind": "city",
+    "note": "苏轼出生地与籍贯。苏氏父子（苏洵、苏轼、苏辙）皆眉山人，今有三苏祠。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      },
+      {
+        "id": "sushi-nianpu-kong",
+        "title": "苏轼年谱",
+        "author": "孔凡礼",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-henan-kaifeng",
+    "historicalName": "汴京",
+    "historicalEra": "宋",
+    "modernName": "河南省开封市",
+    "modernHierarchy": {
+      "province": "河南省",
+      "city": "开封市"
+    },
+    "coordinates": [
+      114.3076,
+      34.7972
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "东京",
+      "汴梁",
+      "大梁",
+      "开封府"
+    ],
+    "kind": "city",
+    "note": "北宋都城。苏轼于嘉祐、熙宁、元祐间多次在汴京任职或途经。具体创作地点多不可考，故取城市中心。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-shandong-jinan",
+    "historicalName": "齐州历城",
+    "historicalEra": "宋",
+    "modernName": "山东省济南市历下区",
+    "modernHierarchy": {
+      "province": "山东省",
+      "city": "济南市",
+      "district": "历下区"
+    },
+    "coordinates": [
+      117.0769,
+      36.6665
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "济南",
+      "历城",
+      "齐州"
+    ],
+    "kind": "city",
+    "note": "李清照出生地（章丘明水，宋属齐州）。辛弃疾亦济南人，二人并称「济南二安」。趵突泉、大明湖为其词中常见意象。",
+    "sources": [
+      {
+        "id": "songshi-lizhaozhao",
+        "title": "宋史·李格非传附李清照",
+        "author": "脱脱等",
+        "locator": "卷444",
+        "reliability": "B"
+      },
+      {
+        "id": "songshi-xinqiji",
+        "title": "宋史·辛弃疾传",
+        "author": "脱脱等",
+        "locator": "卷401",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-shandong-zhangqiu",
+    "historicalName": "齐州章丘明水",
+    "historicalEra": "宋",
+    "modernName": "山东省济南市章丘区明水街道",
+    "modernHierarchy": {
+      "province": "山东省",
+      "city": "济南市",
+      "district": "章丘区",
+      "township": "明水街道"
+    },
+    "coordinates": [
+      117.5259,
+      36.7128
+    ],
+    "precision": "township",
+    "isCentroid": true,
+    "aliases": [
+      "明水",
+      "章丘"
+    ],
+    "kind": "township",
+    "note": "李清照故里。据《廉先生序》碑及明清志书记载为章丘明水，今有李清照纪念馆。此为史料记载到乡镇的少数案例。",
+    "sources": [
+      {
+        "id": "zhangqiu-xianzhi",
+        "title": "章丘县志",
+        "edition": "清道光十三年刻本",
+        "reliability": "C"
+      },
+      {
+        "id": "licong-ji",
+        "title": "李清照集校注",
+        "author": "王仲闻",
+        "edition": "人民文学出版社",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-shangdong-jinan",
+    "historicalName": "济南府历城",
+    "historicalEra": "宋",
+    "modernName": "山东省济南市历城区",
+    "modernHierarchy": {
+      "province": "山东省",
+      "city": "济南市",
+      "district": "历城区"
+    },
+    "coordinates": [
+      117.0652,
+      36.6803
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "历城"
+    ],
+    "kind": "city",
+    "note": "辛弃疾出生地。辛氏为济南望族，但金人占领后其早年行迹记载有限。",
+    "sources": [
+      {
+        "id": "songshi-xinqiji",
+        "title": "宋史·辛弃疾传",
+        "author": "脱脱等",
+        "locator": "卷401",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-jiangxi-jiujiang",
+    "historicalName": "江州浔阳",
+    "historicalEra": "唐",
+    "modernName": "江西省九江市浔阳区",
+    "modernHierarchy": {
+      "province": "江西省",
+      "city": "九江市",
+      "district": "浔阳区"
+    },
+    "coordinates": [
+      115.9898,
+      29.7051
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "江州",
+      "浔阳",
+      "柴桑"
+    ],
+    "kind": "city",
+    "note": "白居易于元和十年（815）贬江州司马，居此四年。《琵琶行》《与元九书》均作于此。琵琶亭遗址在今九江。",
+    "sources": [
+      {
+        "id": "jts-baijuyi",
+        "title": "旧唐书·白居易传",
+        "author": "刘昫等",
+        "edition": "中华书局点校本",
+        "locator": "卷166",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-shaanxi-zhouzhi",
+    "historicalName": "盩厔",
+    "historicalEra": "唐",
+    "modernName": "陕西省西安市周至县",
+    "modernHierarchy": {
+      "province": "陕西省",
+      "city": "西安市",
+      "district": "周至县"
+    },
+    "coordinates": [
+      108.2221,
+      34.1633
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "盩厔",
+      "周至"
+    ],
+    "kind": "county",
+    "note": "白居易任盩厔县尉时作《长恨歌》。仙游寺在其境，为《长恨歌》创作地传说所在。",
+    "sources": [
+      {
+        "id": "jts-baijuyi",
+        "title": "旧唐书·白居易传",
+        "author": "刘昫等",
+        "locator": "卷166",
+        "reliability": "A"
+      },
+      {
+        "id": "changhenge-xu",
+        "title": "长恨歌传",
+        "author": "陈鸿",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-henan-xinxiang",
+    "historicalName": "卫州共城",
+    "historicalEra": "宋",
+    "modernName": "河南省新乡市辉县市",
+    "modernHierarchy": {
+      "province": "河南省",
+      "city": "新乡市",
+      "district": "辉县市"
+    },
+    "coordinates": [
+      113.8054,
+      35.4629
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "共城",
+      "百泉"
+    ],
+    "kind": "mountain",
+    "note": "邵雍、苏轼等曾游此地百泉。苏辙曾任共城令。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-jiangsu-suzhou",
+    "historicalName": "苏州吴县",
+    "historicalEra": "唐",
+    "modernName": "江苏省苏州市",
+    "modernHierarchy": {
+      "province": "江苏省",
+      "city": "苏州市"
+    },
+    "coordinates": [
+      120.5853,
+      31.2989
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "吴郡",
+      "姑苏",
+      "吴中"
+    ],
+    "kind": "city",
+    "note": "唐代江南重镇。韦应物、白居易、刘禹锡均曾刺苏州。张继《枫桥夜泊》所写寒山寺在此。",
+    "sources": [
+      {
+        "id": "chgis-tang",
+        "title": "中国历史地理信息系统 CHGIS 唐代政区",
+        "author": "复旦大学历史地理研究所 / 哈佛大学",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-sichuan-chengdu",
+    "historicalName": "益州成都",
+    "historicalEra": "唐",
+    "modernName": "四川省成都市",
+    "modernHierarchy": {
+      "province": "四川省",
+      "city": "成都市"
+    },
+    "coordinates": [
+      104.0665,
+      30.5728
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "益州",
+      "锦城",
+      "蓉城"
+    ],
+    "kind": "city",
+    "note": "唐代西南都会，有「扬一益二」之称。具体创作地点常不可考，故取城市中心。",
+    "sources": [
+      {
+        "id": "chgis-tang",
+        "title": "中国历史地理信息系统 CHGIS 唐代政区",
+        "author": "复旦大学历史地理研究所 / 哈佛大学",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-jiangxi-shangrao",
+    "historicalName": "信州上饶",
+    "historicalEra": "宋",
+    "modernName": "江西省上饶市信州区",
+    "modernHierarchy": {
+      "province": "江西省",
+      "city": "上饶市",
+      "district": "信州区"
+    },
+    "coordinates": [
+      117.9435,
+      28.4551
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "信州",
+      "上饶"
+    ],
+    "kind": "city",
+    "note": "辛弃疾于淳熙八年（1181）罢官后，闲居上饶带湖约十年，后移铅山瓢泉。此期为其词作丰收期。",
+    "sources": [
+      {
+        "id": "songshi-xinqiji",
+        "title": "宋史·辛弃疾传",
+        "author": "脱脱等",
+        "locator": "卷401",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-jiangxi-qianshan",
+    "historicalName": "信州铅山",
+    "historicalEra": "宋",
+    "modernName": "江西省上饶市铅山县",
+    "modernHierarchy": {
+      "province": "江西省",
+      "city": "上饶市",
+      "district": "铅山县"
+    },
+    "coordinates": [
+      117.7096,
+      28.3155
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "铅山",
+      "瓢泉",
+      "期思"
+    ],
+    "kind": "township",
+    "note": "辛弃疾晚年卜居铅山瓢泉，自号「瓢泉翁」。其《贺新郎》《破阵子》等多作于此。",
+    "sources": [
+      {
+        "id": "songshi-xinqiji",
+        "title": "宋史·辛弃疾传",
+        "author": "脱脱等",
+        "locator": "卷401",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-hunan-changsha",
+    "historicalName": "潭州长沙",
+    "historicalEra": "宋",
+    "modernName": "湖南省长沙市",
+    "modernHierarchy": {
+      "province": "湖南省",
+      "city": "长沙市"
+    },
+    "coordinates": [
+      112.9388,
+      28.2282
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "潭州",
+      "长沙"
+    ],
+    "kind": "city",
+    "note": "辛弃疾于淳熙十五年（1188）前后知潭州兼湖南安抚使，创置飞虎军。岳麓山、湘江为其行迹所在。",
+    "sources": [
+      {
+        "id": "songshi-xinqiji",
+        "title": "宋史·辛弃疾传",
+        "author": "脱脱等",
+        "locator": "卷401",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-hebei-zhengding",
+    "historicalName": "真定府",
+    "historicalEra": "宋",
+    "modernName": "河北省石家庄市正定县",
+    "modernHierarchy": {
+      "province": "河北省",
+      "city": "石家庄市",
+      "district": "正定县"
+    },
+    "coordinates": [
+      114.5707,
+      38.1466
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "真定",
+      "恒山郡"
+    ],
+    "kind": "city",
+    "note": "宋金对峙时期的北方重镇。注意：此地在宋代已属辽/金控制区，与南宋文人行迹无关，此处仅为地理参考。",
+    "sources": [
+      {
+        "id": "songshi-dilizhi",
+        "title": "宋史·地理志",
+        "author": "脱脱等",
+        "locator": "卷86",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-henan-luoyang",
+    "historicalName": "洛阳",
+    "historicalEra": "唐",
+    "modernName": "河南省洛阳市",
+    "modernHierarchy": {
+      "province": "河南省",
+      "city": "洛阳市"
+    },
+    "coordinates": [
+      112.454,
+      34.6197
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "东都",
+      "洛邑",
+      "神都"
+    ],
+    "kind": "city",
+    "note": "唐东都，武则天时称神都。杜牧、李商隐等均有洛阳题材诗作。具体地点史料多只记「洛阳」，故取城市中心。",
+    "sources": [
+      {
+        "id": "chgis-tang",
+        "title": "中国历史地理信息系统 CHGIS 唐代政区",
+        "author": "复旦大学历史地理研究所 / 哈佛大学",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-anhui-dangtu",
+    "historicalName": "宣州当涂",
+    "historicalEra": "唐",
+    "modernName": "安徽省马鞍山市当涂县",
+    "modernHierarchy": {
+      "province": "安徽省",
+      "city": "马鞍山市",
+      "district": "当涂县"
+    },
+    "coordinates": [
+      118.4976,
+      31.571
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "当涂",
+      "姑孰",
+      "太平府"
+    ],
+    "kind": "city",
+    "note": "李白晚年依族叔李阳冰（当涂县令）养病于此，宝应元年（762）卒于当涂，初葬龙山，后迁青山。今有李白墓园。此为李白卒地，史料明确。",
+    "sources": [
+      {
+        "id": "libai-muzhiming",
+        "title": "唐故翰林学士李君碣记",
+        "author": "刘全白",
+        "reliability": "B"
+      },
+      {
+        "id": "xsts-libai",
+        "title": "新唐书·李白传",
+        "author": "欧阳修等",
+        "edition": "中华书局点校本",
+        "locator": "卷202",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-anhui-dangtu-qingshan",
+    "historicalName": "当涂青山",
+    "historicalEra": "唐",
+    "modernName": "安徽省马鞍山市当涂县青山",
+    "modernHierarchy": {
+      "province": "安徽省",
+      "city": "马鞍山市",
+      "district": "当涂县",
+      "township": "太白镇"
+    },
+    "coordinates": [
+      118.5762,
+      31.5404
+    ],
+    "precision": "site",
+    "isCentroid": false,
+    "aliases": [
+      "青山",
+      "青林山",
+      "谢公山"
+    ],
+    "kind": "tomb",
+    "note": "李白墓迁葬处。李白初葬当涂龙山，元和十二年（817）宣歙观察使范传正据其遗愿「悦谢家青山」迁葬青山之阳。今李白墓园在此，位置确凿。",
+    "sources": [
+      {
+        "id": "fan-chuanzheng-bei",
+        "title": "唐左拾遗翰林学士李公新墓碑并序",
+        "author": "范传正",
+        "reliability": "B"
+      },
+      {
+        "id": "libai-muzhiming",
+        "title": "唐故翰林学士李君碣记",
+        "author": "刘全白",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-guizhou-tongzi",
+    "historicalName": "珍州夜郎",
+    "historicalEra": "唐",
+    "modernName": "贵州省遵义市桐梓县",
+    "modernHierarchy": {
+      "province": "贵州省",
+      "city": "遵义市",
+      "district": "桐梓县"
+    },
+    "coordinates": [
+      106.8251,
+      28.1337
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "夜郎",
+      "珍州",
+      "夜郎坝"
+    ],
+    "kind": "city",
+    "note": "李白流放夜郎之贬所。唐有三夜郎，此为珍州夜郎（今桐梓），学界多主此说。另有湖南新晃夜郎、贵州石阡等异说，故此条置信度标 B 而非 A。",
+    "sources": [
+      {
+        "id": "xsts-libai",
+        "title": "新唐书·李白传",
+        "author": "欧阳修等",
+        "locator": "卷202",
+        "reliability": "A"
+      },
+      {
+        "id": "libai-liufang-kao",
+        "title": "李白流夜郎考",
+        "reliability": "C"
+      }
+    ]
+  },
+  {
+    "id": "cn-hubei-jiangling",
+    "historicalName": "荆州江陵",
+    "historicalEra": "唐",
+    "modernName": "湖北省荆州市荆州区",
+    "modernHierarchy": {
+      "province": "湖北省",
+      "city": "荆州市",
+      "district": "荆州区"
+    },
+    "coordinates": [
+      112.1901,
+      30.3527
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "江陵",
+      "荆州",
+      "南郡"
+    ],
+    "kind": "city",
+    "note": "李白出蜀首站，于此遇道士司马承祯，获「有仙风道骨」之评并作《大鹏遇希有鸟赋》。亦为遇赦东还时「千里江陵一日还」所指之地。",
+    "sources": [
+      {
+        "id": "libai-dapengfu",
+        "title": "大鹏赋序",
+        "author": "李白",
+        "reliability": "A"
+      },
+      {
+        "id": "litaibai-nianpu",
+        "title": "李太白年谱",
+        "author": "王琦",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-henan-shangqiu",
+    "historicalName": "宋州宋城",
+    "historicalEra": "唐",
+    "modernName": "河南省商丘市睢阳区",
+    "modernHierarchy": {
+      "province": "河南省",
+      "city": "商丘市",
+      "district": "睢阳区"
+    },
+    "coordinates": [
+      115.6535,
+      34.3884
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "宋城",
+      "梁园",
+      "宋州",
+      "睢阳"
+    ],
+    "kind": "city",
+    "note": "唐称宋州，治宋城，即古梁园所在。天宝三载（744）李白赐金放还后至此，与杜甫、高适同游梁宋，登吹台、猎孟诸，为文学史上著名的一次交游。",
+    "sources": [
+      {
+        "id": "xsts-libai",
+        "title": "新唐书·李白传",
+        "author": "欧阳修等",
+        "locator": "卷202",
+        "reliability": "A"
+      },
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-shandong-yanzhou",
+    "historicalName": "兖州瑕丘",
+    "historicalEra": "唐",
+    "modernName": "山东省济宁市兖州区",
+    "modernHierarchy": {
+      "province": "山东省",
+      "city": "济宁市",
+      "district": "兖州区"
+    },
+    "coordinates": [
+      116.8265,
+      35.5525
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "兖州",
+      "东鲁",
+      "瑕丘",
+      "沙丘"
+    ],
+    "kind": "city",
+    "note": "李白移家东鲁后的寄居地，其子伯禽即在此地。李白自称「山东李白」即源于此段寓居。杜甫《与李十二白同寻范十隐居》亦写东鲁同游事。",
+    "sources": [
+      {
+        "id": "xsts-libai",
+        "title": "新唐书·李白传",
+        "author": "欧阳修等",
+        "locator": "卷202",
+        "reliability": "A"
+      },
+      {
+        "id": "litaibai-nianpu",
+        "title": "李太白年谱",
+        "author": "王琦",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-jiangxi-lushan",
+    "historicalName": "江州庐山",
+    "historicalEra": "唐",
+    "modernName": "江西省九江市庐山市",
+    "modernHierarchy": {
+      "province": "江西省",
+      "city": "九江市",
+      "district": "庐山市",
+      "township": "牯岭镇"
+    },
+    "coordinates": [
+      115.9827,
+      29.5548
+    ],
+    "precision": "site",
+    "isCentroid": false,
+    "aliases": [
+      "庐山",
+      "匡山",
+      "匡庐"
+    ],
+    "kind": "mountain",
+    "note": "李白多次游庐山并曾隐居，作《望庐山瀑布》《庐山谣寄卢侍御虚舟》。庐山瀑布为香炉峰瀑布，位置明确。安史乱起后李白曾携妻在此避乱。",
+    "sources": [
+      {
+        "id": "litaibai-nianpu",
+        "title": "李太白年谱",
+        "author": "王琦",
+        "reliability": "B"
+      },
+      {
+        "id": "libai-ji-xu",
+        "title": "李太白全集序",
+        "author": "魏颢",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-anhui-jingxian",
+    "historicalName": "宣州泾县",
+    "historicalEra": "唐",
+    "modernName": "安徽省宣城市泾县",
+    "modernHierarchy": {
+      "province": "安徽省",
+      "city": "宣城市",
+      "district": "泾县"
+    },
+    "coordinates": [
+      118.4197,
+      30.6857
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "泾县",
+      "泾川",
+      "桃花潭"
+    ],
+    "kind": "river",
+    "note": "汪伦邀李白游泾县桃花潭，临别踏歌相送，李白作《赠汪伦》。桃花潭在今泾县桃花潭镇，位置明确，然此诗是否确为汪伦而作尚有异说。",
+    "sources": [
+      {
+        "id": "litaibai-nianpu",
+        "title": "李太白年谱",
+        "author": "王琦",
+        "reliability": "B"
+      },
+      {
+        "id": "jingxian-xianzhi",
+        "title": "泾县志",
+        "edition": "清嘉庆刻本",
+        "reliability": "C"
+      }
+    ]
+  },
+  {
+    "id": "cn-anhui-xuancheng",
+    "historicalName": "宣州宣城",
+    "historicalEra": "唐",
+    "modernName": "安徽省宣城市宣州区",
+    "modernHierarchy": {
+      "province": "安徽省",
+      "city": "宣城市",
+      "district": "宣州区"
+    },
+    "coordinates": [
+      118.7582,
+      30.946
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "宣城",
+      "宣州",
+      "宛陵"
+    ],
+    "kind": "city",
+    "note": "李白晚年多次游宣城，登敬亭山、谢朓楼，作《独坐敬亭山》《宣州谢朓楼饯别校书叔云》。南齐谢朓曾任宣城太守，李白一生倾慕谢朓，故屡至其地。",
+    "sources": [
+      {
+        "id": "litaibai-nianpu",
+        "title": "李太白年谱",
+        "author": "王琦",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-sichuan-chengdu-emei",
+    "historicalName": "嘉州峨眉",
+    "historicalEra": "唐",
+    "modernName": "四川省乐山市峨眉山市",
+    "modernHierarchy": {
+      "province": "四川省",
+      "city": "乐山市",
+      "district": "峨眉山市"
+    },
+    "coordinates": [
+      103.4844,
+      29.6012
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "峨眉山",
+      "峨眉"
+    ],
+    "kind": "mountain",
+    "note": "李白出蜀前游峨眉山，作《峨眉山月歌》。此为李白集中少有的明确可考蜀中行迹之一。",
+    "sources": [
+      {
+        "id": "litaibai-nianpu",
+        "title": "李太白年谱",
+        "author": "王琦",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-hubei-wuchang",
+    "historicalName": "鄂州江夏",
+    "historicalEra": "唐",
+    "modernName": "湖北省武汉市武昌区",
+    "modernHierarchy": {
+      "province": "湖北省",
+      "city": "武汉市",
+      "district": "武昌区"
+    },
+    "coordinates": [
+      114.3162,
+      30.5472
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "江夏",
+      "鄂州",
+      "武昌",
+      "黄鹤楼"
+    ],
+    "kind": "city",
+    "note": "黄鹤楼所在。李白《黄鹤楼送孟浩然之广陵》作于此，另有「眼前有景道不得，崔颢题诗在上头」之传说（该传说晚出，可信度低）。",
+    "sources": [
+      {
+        "id": "litaibai-nianpu",
+        "title": "李太白年谱",
+        "author": "王琦",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-shaanxi-taibai",
+    "historicalName": "岐州太白山",
+    "historicalEra": "唐",
+    "modernName": "陕西省宝鸡市眉县",
+    "modernHierarchy": {
+      "province": "陕西省",
+      "city": "宝鸡市",
+      "district": "眉县",
+      "township": "汤峪镇"
+    },
+    "coordinates": [
+      107.7695,
+      34.0526
+    ],
+    "precision": "township",
+    "isCentroid": true,
+    "aliases": [
+      "太白山",
+      "终南山"
+    ],
+    "kind": "mountain",
+    "note": "秦岭主峰，唐时士人隐居求仕的「终南捷径」所在之一。李白《登太白峰》所咏即此。注意与李白之字「太白」无直接关联，系同名。",
+    "sources": [
+      {
+        "id": "litaibai-nianpu",
+        "title": "李太白年谱",
+        "author": "王琦",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-henan-songshan",
+    "historicalName": "河南府嵩山",
+    "historicalEra": "唐",
+    "modernName": "河南省郑州市登封市",
+    "modernHierarchy": {
+      "province": "河南省",
+      "city": "郑州市",
+      "district": "登封市",
+      "township": "嵩阳街道"
+    },
+    "coordinates": [
+      113.039,
+      34.4595
+    ],
+    "precision": "township",
+    "isCentroid": true,
+    "aliases": [
+      "嵩山",
+      "嵩岳",
+      "中岳"
+    ],
+    "kind": "mountain",
+    "note": "五岳之中岳，唐时道教与隐逸圣地。李白与元丹丘等道士交游于嵩山、颍阳一带，作《题元丹丘颍阳山居》等。",
+    "sources": [
+      {
+        "id": "litaibai-nianpu",
+        "title": "李太白年谱",
+        "author": "王琦",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-guangxi-yelang",
+    "historicalName": "夜郎（异说）",
+    "historicalEra": "唐",
+    "modernName": "贵州省铜仁市石阡县一带",
+    "modernHierarchy": {
+      "province": "贵州省",
+      "city": "铜仁市"
+    },
+    "coordinates": [
+      108.2236,
+      27.5194
+    ],
+    "precision": "approximate",
+    "isCentroid": true,
+    "aliases": [
+      "夜郎",
+      "石阡"
+    ],
+    "kind": "city",
+    "note": "李白流放夜郎贬所的异说之一。唐代「夜郎」地望有三说（珍州桐梓、业州新晃、夷州石阡），学界未有定论，此条以 approximate 精度存之，仅作异说参考。",
+    "sources": [
+      {
+        "id": "libai-liufang-kao",
+        "title": "李白流夜郎考",
+        "reliability": "C"
+      }
+    ]
+  },
+  {
+    "id": "cn-henan-yanshi",
+    "historicalName": "河南府偃师",
+    "historicalEra": "唐",
+    "modernName": "河南省洛阳市偃师区",
+    "modernHierarchy": {
+      "province": "河南省",
+      "city": "洛阳市",
+      "district": "偃师区"
+    },
+    "coordinates": [
+      112.7897,
+      34.7239
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "偃师",
+      "尸乡",
+      "首阳"
+    ],
+    "kind": "city",
+    "note": "杜甫祖籍襄阳而徙居巩县，其家族于偃师首阳山下有旧庄（陆浑庄）。开元二十九年（741）杜甫自齐鲁归，筑室首阳山下，作《祭远祖当阳君文》。杜甫晚年归葬亦在首阳山下，今偃师有杜甫墓。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "yanshi-xianzhi",
+        "title": "偃师县志",
+        "edition": "清乾隆年间刻本",
+        "reliability": "C"
+      }
+    ]
+  },
+  {
+    "id": "cn-shaanxi-pucheng",
+    "historicalName": "同州奉先",
+    "historicalEra": "唐",
+    "modernName": "陕西省渭南市蒲城县",
+    "modernHierarchy": {
+      "province": "陕西省",
+      "city": "渭南市",
+      "district": "蒲城县"
+    },
+    "coordinates": [
+      109.5863,
+      34.9556
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "奉先",
+      "同州",
+      "蒲城"
+    ],
+    "kind": "city",
+    "note": "天宝十四载（755）杜甫由长安赴奉先县探视寄居于此的妻儿，途中作《自京赴奉先县咏怀五百字》，至家则幼子已饿死。此诗为安史之乱前夜最重要的长篇之一。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "jts-dufu",
+        "title": "旧唐书·杜甫传",
+        "author": "刘昫等",
+        "locator": "卷190下",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-shaanxi-fuzhou-qiangcun",
+    "historicalName": "鄜州羌村",
+    "historicalEra": "唐",
+    "modernName": "陕西省延安市富县",
+    "modernHierarchy": {
+      "province": "陕西省",
+      "city": "延安市",
+      "district": "富县"
+    },
+    "coordinates": [
+      109.3797,
+      35.9881
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "鄜州",
+      "羌村",
+      "富县"
+    ],
+    "kind": "city",
+    "note": "天宝十五载（756）杜甫携家避乱至此，安置妻孥于羌村，只身奔灵武行在，中途被叛军所俘。至德二载（757）脱身西归，作《羌村三首》《北征》。羌村在今富县境内，具体村址存异说。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "dugong-buzhu",
+        "title": "杜工部草堂诗笺",
+        "author": "蔡梦弼",
+        "edition": "宋刻本",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-henan-sanhaxiao",
+    "historicalName": "陕州石壕村",
+    "historicalEra": "唐",
+    "modernName": "河南省三门峡市陕州区",
+    "modernHierarchy": {
+      "province": "河南省",
+      "city": "三门峡市",
+      "district": "陕州区"
+    },
+    "coordinates": [
+      111.1035,
+      34.7206
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "石壕村",
+      "陕州",
+      "硖石"
+    ],
+    "kind": "city",
+    "note": "杜甫《石壕吏》所写之地，在今陕州区观音堂镇石壕村一带。乾元二年（759）春杜甫由洛阳返华州任所，途经新安、石壕、潼关，就沿途见闻作「三吏」。「石壕村」具体位置地方志有记载，唯村址历代或有迁移。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "shanxian-zhi",
+        "title": "陕州志",
+        "edition": "清乾隆年间刻本",
+        "reliability": "C"
+      }
+    ]
+  },
+  {
+    "id": "cn-henan-xinan",
+    "historicalName": "河南府新安",
+    "historicalEra": "唐",
+    "modernName": "河南省洛阳市新安县",
+    "modernHierarchy": {
+      "province": "河南省",
+      "city": "洛阳市",
+      "district": "新安县"
+    },
+    "coordinates": [
+      112.1323,
+      34.7281
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "新安",
+      "东垣"
+    ],
+    "kind": "city",
+    "note": "杜甫《新安吏》所写之地。乾元二年（759）春，九节度使兵溃邺城，唐廷急征新兵，杜甫行经新安，见「县小更无丁」之状，作此诗。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-shaanxi-tongguan",
+    "historicalName": "华州潼关",
+    "historicalEra": "唐",
+    "modernName": "陕西省渭南市潼关县",
+    "modernHierarchy": {
+      "province": "陕西省",
+      "city": "渭南市",
+      "district": "潼关县"
+    },
+    "coordinates": [
+      110.2463,
+      34.5448
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "潼关",
+      "桃林",
+      "关门"
+    ],
+    "kind": "pass",
+    "note": "关中门户。至德元载（756）六月潼关失守，长安随陷，为杜甫一生转折之关键。乾元二年（759）杜甫行经此地，作《潼关吏》，借筑城之卒口吻警告守将勿轻出战。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "zzztj",
+        "title": "资治通鉴",
+        "author": "司马光",
+        "locator": "卷218",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-shaanxi-huazhou",
+    "historicalName": "华州郑县",
+    "historicalEra": "唐",
+    "modernName": "陕西省渭南市华州区",
+    "modernHierarchy": {
+      "province": "陕西省",
+      "city": "渭南市",
+      "district": "华州区"
+    },
+    "coordinates": [
+      109.7717,
+      34.5125
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "华州",
+      "郑县",
+      "华县"
+    ],
+    "kind": "city",
+    "note": "乾元元年（758）六月杜甫由左拾遗出为华州司功参军。任上曾赴洛阳、返华州，途中作「三吏三别」。乾元二年（759）秋弃官西去秦州。华州任内不足一年半，却是其诗风转向沉郁的关键期。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "jts-dufu",
+        "title": "旧唐书·杜甫传",
+        "author": "刘昫等",
+        "locator": "卷190下",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-gansu-qinzhou",
+    "historicalName": "秦州",
+    "historicalEra": "唐",
+    "modernName": "甘肃省天水市秦州区",
+    "modernHierarchy": {
+      "province": "甘肃省",
+      "city": "天水市",
+      "district": "秦州区"
+    },
+    "coordinates": [
+      105.7247,
+      34.5787
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "秦州",
+      "天水",
+      "成纪"
+    ],
+    "kind": "city",
+    "note": "乾元二年（759）秋杜甫弃华州司功参军职，携家西行寓居秦州约四个月，作诗近九十首，包括《月夜忆舍弟》《秦州杂诗》二十首。因生计无着，冬又南赴同谷。其从侄杜佐、友人赞公在此。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "dugong-buzhu",
+        "title": "杜工部草堂诗笺",
+        "author": "蔡梦弼",
+        "edition": "宋刻本",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-gansu-tonggu",
+    "historicalName": "成州同谷",
+    "historicalEra": "唐",
+    "modernName": "甘肃省陇南市成县",
+    "modernHierarchy": {
+      "province": "甘肃省",
+      "city": "陇南市",
+      "district": "成县"
+    },
+    "coordinates": [
+      105.7423,
+      33.7409
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "同谷",
+      "成州",
+      "凤凰村"
+    ],
+    "kind": "city",
+    "note": "乾元二年（759）冬杜甫自秦州南行至此，寓居约一月，生活极困，至有「手脚冻皴皮肉死」之句，作《乾元中寓居同谷县作歌七首》（即《同谷七歌》）。继而南下入蜀。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "dugong-buzhu",
+        "title": "杜工部草堂诗笺",
+        "author": "蔡梦弼",
+        "edition": "宋刻本",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-sichuan-zitong",
+    "historicalName": "剑州梓潼",
+    "historicalEra": "唐",
+    "modernName": "四川省绵阳市梓潼县",
+    "modernHierarchy": {
+      "province": "四川省",
+      "city": "绵阳市",
+      "district": "梓潼县"
+    },
+    "coordinates": [
+      105.1636,
+      31.6357
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "梓潼",
+      "剑州",
+      "七曲山"
+    ],
+    "kind": "pass",
+    "note": "剑门蜀道上的要冲。乾元二年（759）十二月杜甫自同谷入蜀，取道剑门，经梓潼、鹿头关至成都。此为杜甫一生行迹中最艰难的一段山路。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-sichuan-mianyang",
+    "historicalName": "绵州",
+    "historicalEra": "唐",
+    "modernName": "四川省绵阳市涪城区",
+    "modernHierarchy": {
+      "province": "四川省",
+      "city": "绵阳市",
+      "district": "涪城区"
+    },
+    "coordinates": [
+      104.6796,
+      31.4675
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "绵州",
+      "巴西",
+      "涪城"
+    ],
+    "kind": "city",
+    "note": "杜甫入蜀途中过绵州，后永泰元年（765）离成都南下时又经此地，作《绵州官池赠别同赋》《越王楼歌》等。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-sichuan-zhongxian",
+    "historicalName": "忠州",
+    "historicalEra": "唐",
+    "modernName": "重庆市忠县",
+    "modernHierarchy": {
+      "province": "重庆市",
+      "city": "重庆市",
+      "district": "忠县"
+    },
+    "coordinates": [
+      108.0395,
+      30.291
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "忠州",
+      "临江",
+      "龙兴"
+    ],
+    "kind": "city",
+    "note": "永泰元年（765）杜甫携家离蜀东下，经嘉州、戎州、渝州、忠州。忠州有龙兴寺，杜甫登临并作诗。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-shaanxi-yan-an",
+    "historicalName": "延州",
+    "historicalEra": "唐",
+    "modernName": "陕西省延安市",
+    "modernHierarchy": {
+      "province": "陕西省",
+      "city": "延安市"
+    },
+    "coordinates": [
+      109.4897,
+      36.5853
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "延州",
+      "肤施",
+      "延安"
+    ],
+    "kind": "city",
+    "note": "天宝十五载（756）肃宗即位于灵武，杜甫只身北上投奔行在，行至延州一带被叛军俘获，押送长安。此段行程细节史料记载有限，故精度止于州级。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "zzztj",
+        "title": "资治通鉴",
+        "author": "司马光",
+        "locator": "卷218",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-sichuan-santai",
+    "historicalName": "梓州",
+    "historicalEra": "唐",
+    "modernName": "四川省绵阳市三台县",
+    "modernHierarchy": {
+      "province": "四川省",
+      "city": "绵阳市",
+      "district": "三台县"
+    },
+    "coordinates": [
+      105.0954,
+      31.0959
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "梓州",
+      "郪县",
+      "三台"
+    ],
+    "kind": "city",
+    "note": "宝应元年（762）成都少尹徐知道作乱，杜甫避乱流寓梓州、阆州近两年，作诗百余首。期间闻官军收河南河北，作《闻官军收河南河北》。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "jts-dufu",
+        "title": "旧唐书·杜甫传",
+        "author": "刘昫等",
+        "locator": "卷190下",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-sichuan-langzhong",
+    "historicalName": "阆州",
+    "historicalEra": "唐",
+    "modernName": "四川省南充市阆中市",
+    "modernHierarchy": {
+      "province": "四川省",
+      "city": "南充市",
+      "district": "阆中市"
+    },
+    "coordinates": [
+      106.0054,
+      31.5583
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "阆州",
+      "阆中",
+      "保宁"
+    ],
+    "kind": "city",
+    "note": "杜甫流寓梓州期间曾两至阆州，吊房琯墓、游滕王亭，作《阆山歌》《阆水歌》。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-hubei-gongan",
+    "historicalName": "江陵府公安",
+    "historicalEra": "唐",
+    "modernName": "湖北省荆州市公安县",
+    "modernHierarchy": {
+      "province": "湖北省",
+      "city": "荆州市",
+      "district": "公安县"
+    },
+    "coordinates": [
+      112.2294,
+      30.0583
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "公安",
+      "油口",
+      "孱陵"
+    ],
+    "kind": "city",
+    "note": "大历三年（768）正月杜甫出峡至江陵，秋移居公安，寓居数月。作《公安县怀古》《移居公安山馆》等。后赴岳阳。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-hunan-yueyang",
+    "historicalName": "岳州巴陵",
+    "historicalEra": "唐",
+    "modernName": "湖南省岳阳市岳阳楼区",
+    "modernHierarchy": {
+      "province": "湖南省",
+      "city": "岳阳市",
+      "district": "岳阳楼区"
+    },
+    "coordinates": [
+      113.1294,
+      29.3571
+    ],
+    "precision": "site",
+    "isCentroid": false,
+    "aliases": [
+      "岳州",
+      "巴陵",
+      "岳阳楼",
+      "洞庭"
+    ],
+    "kind": "site",
+    "note": "大历三年（768）冬杜甫登岳阳楼，作《登岳阳楼》「昔闻洞庭水，今上岳阳楼」。此为其晚年五律压卷之作。楼临洞庭，位置历代可考。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "dugong-buzhu",
+        "title": "杜工部草堂诗笺",
+        "author": "蔡梦弼",
+        "edition": "宋刻本",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-hunan-changsha-tan",
+    "historicalName": "潭州长沙",
+    "historicalEra": "唐",
+    "modernName": "湖南省长沙市",
+    "modernHierarchy": {
+      "province": "湖南省",
+      "city": "长沙市"
+    },
+    "coordinates": [
+      112.9388,
+      28.2282
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "潭州",
+      "长沙",
+      "湘江"
+    ],
+    "kind": "city",
+    "note": "大历四年（769）至五年（770）杜甫漂泊潭州，寓居湘江舟中及岸上，遇李龟年作《江南逢李龟年》。大历五年潭州兵乱，杜甫再度逃难。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "jts-dufu",
+        "title": "旧唐书·杜甫传",
+        "author": "刘昫等",
+        "locator": "卷190下",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-hunan-leiyang",
+    "historicalName": "衡州耒阳",
+    "historicalEra": "唐",
+    "modernName": "湖南省衡阳市耒阳市",
+    "modernHierarchy": {
+      "province": "湖南省",
+      "city": "衡阳市",
+      "district": "耒阳市"
+    },
+    "coordinates": [
+      112.8598,
+      26.4223
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "耒阳",
+      "衡州"
+    ],
+    "kind": "city",
+    "note": "杜甫卒地异说之一。旧说杜甫漂泊耒阳遇洪水，县令馈食，一夕卒于舟中；《旧唐书》本传采此说。然学界多主其卒于潭州至岳阳间湘江舟中，故耒阳说与湘江舟中说并存，见其卒地断言分组。",
+    "sources": [
+      {
+        "id": "jts-dufu",
+        "title": "旧唐书·杜甫传",
+        "author": "刘昫等",
+        "locator": "卷190下",
+        "reliability": "B"
+      },
+      {
+        "id": "xsts-dufu",
+        "title": "新唐书·杜甫传",
+        "author": "欧阳修等",
+        "locator": "卷201",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-shandong-yanzhou-dufu",
+    "historicalName": "兖州",
+    "historicalEra": "唐",
+    "modernName": "山东省济宁市兖州区",
+    "modernHierarchy": {
+      "province": "山东省",
+      "city": "济宁市",
+      "district": "兖州区"
+    },
+    "coordinates": [
+      116.8265,
+      35.5525
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "兖州",
+      "东鲁",
+      "瑕丘"
+    ],
+    "kind": "city",
+    "note": "杜甫之父杜闲曾任兖州司马，杜甫早年游齐赵并省亲于此。天宝四载（745）前后李白、杜甫同游东鲁即在此地，杜甫《与李十二白同寻范十隐居》记其事。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "jts-dufu",
+        "title": "旧唐书·杜甫传",
+        "author": "刘昫等",
+        "locator": "卷190下",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-henan-yanshi-shouyang",
+    "historicalName": "偃师首阳山",
+    "historicalEra": "唐",
+    "modernName": "河南省洛阳市偃师区首阳山",
+    "modernHierarchy": {
+      "province": "河南省",
+      "city": "洛阳市",
+      "district": "偃师区",
+      "township": "首阳山街道"
+    },
+    "coordinates": [
+      112.7723,
+      34.7412
+    ],
+    "precision": "township",
+    "isCentroid": true,
+    "aliases": [
+      "首阳山",
+      "陆浑庄",
+      "土娄庄"
+    ],
+    "kind": "mountain",
+    "note": "杜甫远祖杜预墓所在，杜甫于开元二十九年（741）在此筑室，作《祭远祖当阳君文》明其「不敢忘本，不敢违仁」之志。杜甫本人亦归葬于此，今偃师首阳山下有杜甫墓（与巩义、耒阳、平江等墓并存，为四说之一）。",
+    "sources": [
+      {
+        "id": "dufu-jidangyangjunwen",
+        "title": "祭远祖当阳君文",
+        "author": "杜甫",
+        "reliability": "A"
+      },
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-sichuan-jianmen",
+    "historicalName": "剑州剑门",
+    "historicalEra": "唐",
+    "modernName": "四川省广元市剑阁县剑门关镇",
+    "modernHierarchy": {
+      "province": "四川省",
+      "city": "广元市",
+      "district": "剑阁县",
+      "township": "剑门关镇"
+    },
+    "coordinates": [
+      105.5774,
+      32.2765
+    ],
+    "precision": "site",
+    "isCentroid": false,
+    "aliases": [
+      "剑门关",
+      "剑阁",
+      "大剑山"
+    ],
+    "kind": "pass",
+    "note": "蜀道天险，李白《蜀道难》「剑阁峥嵘而崔嵬」所咏。乾元二年（759）十二月杜甫入蜀经此。关址在今剑阁县剑门关镇，历代位置基本固定。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "jiange-xianzhi",
+        "title": "剑阁县志",
+        "edition": "清乾隆年间刻本",
+        "reliability": "C"
+      }
+    ]
+  },
+  {
+    "id": "cn-shaanxi-fengxiang",
+    "historicalName": "凤翔府",
+    "historicalEra": "唐",
+    "modernName": "陕西省宝鸡市凤翔区",
+    "modernHierarchy": {
+      "province": "陕西省",
+      "city": "宝鸡市",
+      "district": "凤翔区"
+    },
+    "coordinates": [
+      107.4007,
+      34.5217
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "凤翔",
+      "雍州",
+      "西府"
+    ],
+    "kind": "city",
+    "note": "至德二载（757）二月肃宗由灵武进至凤翔，杜甫自鄜州羌村逃出，西赴凤翔行在，「麻鞋见天子，衣袖露两肘」，被授左拾遗。此为其一生中唯一接近权力中枢的时刻，不足半年即因疏救房琯获罪。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "jts-dufu",
+        "title": "旧唐书·杜甫传",
+        "author": "刘昫等",
+        "locator": "卷190下",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-shaanxi-changan-shaoling",
+    "historicalName": "长安少陵原",
+    "historicalEra": "唐",
+    "modernName": "陕西省西安市长安区少陵原",
+    "modernHierarchy": {
+      "province": "陕西省",
+      "city": "西安市",
+      "district": "长安区",
+      "township": "杜曲街道"
+    },
+    "coordinates": [
+      108.9253,
+      34.1274
+    ],
+    "precision": "township",
+    "isCentroid": true,
+    "aliases": [
+      "少陵",
+      "杜曲",
+      "樊川"
+    ],
+    "kind": "site",
+    "note": "汉宣帝许皇后陵（少陵）所在原，杜甫祖居京兆杜氏于杜曲、樊川一带，故自号「少陵野老」「杜陵布衣」。天宝五载（746）至十四载（755）困居长安十年，即寓于此原及长安城内。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "yuanzhen-muzhiming",
+        "title": "唐故工部员外郎杜君墓系铭并序",
+        "author": "元稹",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-sichuan-kuizhou-baidi",
+    "historicalName": "夔州白帝城",
+    "historicalEra": "唐",
+    "modernName": "重庆市奉节县白帝城",
+    "modernHierarchy": {
+      "province": "重庆市",
+      "city": "重庆市",
+      "district": "奉节县",
+      "township": "白帝镇"
+    },
+    "coordinates": [
+      109.5703,
+      31.0493
+    ],
+    "precision": "site",
+    "isCentroid": false,
+    "aliases": [
+      "白帝城",
+      "白帝",
+      "瞿塘峡"
+    ],
+    "kind": "site",
+    "note": "夔州东瞿塘峡口，刘备托孤处。杜甫居夔州期间登白帝城、望瞿塘，作《白帝》《白帝城最高楼》《秋兴八首》等。李白《早发白帝城》亦咏此地。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "shuijingzhu",
+        "title": "水经注",
+        "author": "郦道元",
+        "locator": "卷33",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-henan-luoyang-jiangnan",
+    "historicalName": "洛阳（江南逢李龟年异说）",
+    "historicalEra": "唐",
+    "modernName": "河南省洛阳市一带",
+    "modernHierarchy": {
+      "province": "河南省",
+      "city": "洛阳市"
+    },
+    "coordinates": [
+      112.454,
+      34.6197
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "洛阳",
+      "东都"
+    ],
+    "kind": "city",
+    "note": "《江南逢李龟年》一诗系地异说：诗中「岐王宅里」「崔九堂前」为开元年间洛阳旧事，而「落花时节又逢君」通常系于潭州。此条仅用于记录该诗所追忆之地，非创作地。",
+    "sources": [
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "C"
+      }
+    ]
+  },
+  {
+    "id": "cn-jiangsu-xuzhou",
+    "historicalName": "徐州彭城",
+    "historicalEra": "宋",
+    "modernName": "江苏省徐州市",
+    "modernHierarchy": {
+      "province": "江苏省",
+      "city": "徐州市"
+    },
+    "coordinates": [
+      117.1848,
+      34.2618
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "彭城",
+      "徐州"
+    ],
+    "kind": "city",
+    "note": "苏轼熙宁十年（1077）至元丰二年（1079）知徐州。到任三月即遇黄河决澶渊，率军民筑堤守城七十余日，城赖以全。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-zhejiang-huzhou",
+    "historicalName": "湖州吴兴",
+    "historicalEra": "宋",
+    "modernName": "浙江省湖州市",
+    "modernHierarchy": {
+      "province": "浙江省",
+      "city": "湖州市"
+    },
+    "coordinates": [
+      120.0868,
+      30.8943
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "吴兴",
+      "湖州"
+    ],
+    "kind": "city",
+    "note": "元丰二年（1079）四月苏轼移知湖州，到任仅三月，因《湖州谢上表》被弹劾，逮赴御史台狱，是为乌台诗案。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      },
+      {
+        "id": "wutai-shian",
+        "title": "乌台诗案",
+        "author": "朋九万",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-guangdong-huizhou",
+    "historicalName": "惠州",
+    "historicalEra": "宋",
+    "modernName": "广东省惠州市",
+    "modernHierarchy": {
+      "province": "广东省",
+      "city": "惠州市"
+    },
+    "coordinates": [
+      114.4161,
+      23.1115
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "惠阳"
+    ],
+    "kind": "city",
+    "note": "绍圣元年（1094）十月苏轼贬惠州，居三年。虽岭南瘴疠之地，仍作「日啖荔支三百颗，不辞长作岭南人」，旷达如故。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      },
+      {
+        "id": "dongpo-nianpu",
+        "title": "东坡先生年谱",
+        "author": "王宗稷",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-hainan-danzhou",
+    "historicalName": "儋州昌化军",
+    "historicalEra": "宋",
+    "modernName": "海南省儋州市中和镇",
+    "modernHierarchy": {
+      "province": "海南省",
+      "city": "儋州市",
+      "township": "中和镇"
+    },
+    "coordinates": [
+      109.3526,
+      19.7288
+    ],
+    "precision": "township",
+    "isCentroid": false,
+    "aliases": [
+      "儋耳",
+      "昌化军",
+      "儋县"
+    ],
+    "kind": "city",
+    "note": "绍圣四年（1097）苏轼责授琼州别驾、昌化军安置，居儋三年。此地为海南贬所，宋时视为「垂老投荒」之绝境。载酒堂讲学、劝农凿井皆在此。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      },
+      {
+        "id": "kongfanli-nianpu",
+        "title": "苏轼年谱",
+        "author": "孔凡礼",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-jiangsu-changzhou",
+    "historicalName": "常州",
+    "historicalEra": "宋",
+    "modernName": "江苏省常州市",
+    "modernHierarchy": {
+      "province": "江苏省",
+      "city": "常州市"
+    },
+    "coordinates": [
+      119.9741,
+      31.8112
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "晋陵",
+      "毗陵"
+    ],
+    "kind": "city",
+    "note": "苏轼一生卜居常州之愿久矣，晚年自儋州北归，建中靖国元年（1101）七月卒于常州孙氏馆。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-anhui-fuyang",
+    "historicalName": "颍州汝阴",
+    "historicalEra": "宋",
+    "modernName": "安徽省阜阳市",
+    "modernHierarchy": {
+      "province": "安徽省",
+      "city": "阜阳市"
+    },
+    "coordinates": [
+      115.8145,
+      32.89
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "汝阴",
+      "颍州"
+    ],
+    "kind": "city",
+    "note": "元祐六年（1091）苏轼知颍州，疏浚西湖、赈济灾民，居半年余。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-hebei-dingzhou",
+    "historicalName": "定州",
+    "historicalEra": "宋",
+    "modernName": "河北省保定市定州市",
+    "modernHierarchy": {
+      "province": "河北省",
+      "city": "保定市",
+      "district": "定州市"
+    },
+    "coordinates": [
+      114.9904,
+      38.5162
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "中山府"
+    ],
+    "kind": "city",
+    "note": "元祐八年（1093）苏轼出知定州，整饬军备。次年即遭贬惠州，定州为其仕途由显转贬之节点。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-shaanxi-fengxiang-sushi",
+    "historicalName": "凤翔府",
+    "historicalEra": "宋",
+    "modernName": "陕西省宝鸡市凤翔区",
+    "modernHierarchy": {
+      "province": "陕西省",
+      "city": "宝鸡市",
+      "district": "凤翔区"
+    },
+    "coordinates": [
+      107.4007,
+      34.5217
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "凤翔",
+      "岐下"
+    ],
+    "kind": "city",
+    "note": "嘉祐六年（1061）苏轼签书凤翔府判官，为首次外任。兄弟渑池之别、怀远驿夜雨对床之约均系于此期。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-jiangsu-jinling",
+    "historicalName": "江宁金陵",
+    "historicalEra": "宋",
+    "modernName": "江苏省南京市",
+    "modernHierarchy": {
+      "province": "江苏省",
+      "city": "南京市"
+    },
+    "coordinates": [
+      118.7969,
+      32.0603
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "金陵",
+      "江宁",
+      "建康"
+    ],
+    "kind": "city",
+    "note": "元丰七年（1084）苏轼自黄州量移汝州，途经金陵，与罢相居钟山的王安石相见，同游累日，尽释前嫌。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-jiangxi-lushan-sushi",
+    "historicalName": "江州庐山",
+    "historicalEra": "宋",
+    "modernName": "江西省九江市庐山市",
+    "modernHierarchy": {
+      "province": "江西省",
+      "city": "九江市",
+      "district": "庐山市"
+    },
+    "coordinates": [
+      115.98,
+      29.55
+    ],
+    "precision": "site",
+    "isCentroid": false,
+    "aliases": [
+      "庐山",
+      "匡庐",
+      "西林寺"
+    ],
+    "kind": "mountain",
+    "note": "元丰七年（1084）苏轼自黄州移汝州途中游庐山，西林寺壁题《题西林壁》，为宋诗理趣之最著者。",
+    "sources": [
+      {
+        "id": "dongpo-nianpu",
+        "title": "东坡先生年谱",
+        "author": "王宗稷",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-zhejiang-hangzhou-sushi",
+    "historicalName": "杭州钱塘",
+    "historicalEra": "宋",
+    "modernName": "浙江省杭州市",
+    "modernHierarchy": {
+      "province": "浙江省",
+      "city": "杭州市"
+    },
+    "coordinates": [
+      120.1551,
+      30.2741
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "钱塘",
+      "临安",
+      "西湖"
+    ],
+    "kind": "city",
+    "note": "苏轼两度仕杭：熙宁四年（1071）任通判，元祐四年（1089）知杭州。疏西湖、筑苏堤、建安乐坊，杭州德之。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      },
+      {
+        "id": "dongpo-nianpu",
+        "title": "东坡先生年谱",
+        "author": "王宗稷",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-shandong-zhucheng-sushi",
+    "historicalName": "密州诸城",
+    "historicalEra": "宋",
+    "modernName": "山东省潍坊市诸城市",
+    "modernHierarchy": {
+      "province": "山东省",
+      "city": "潍坊市",
+      "district": "诸城市"
+    },
+    "coordinates": [
+      119.4098,
+      35.9956
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "密州",
+      "诸城",
+      "超然台"
+    ],
+    "kind": "city",
+    "note": "熙宁七年（1074）至熙宁九年（1076）苏轼知密州。修葺城北旧台，苏辙名之曰「超然台」，《超然台记》与《江城子·密州出猎》《水调歌头》皆成于此。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-hubei-huangzhou-dongpo",
+    "historicalName": "黄州东坡",
+    "historicalEra": "宋",
+    "modernName": "湖北省黄冈市黄州区",
+    "modernHierarchy": {
+      "province": "湖北省",
+      "city": "黄冈市",
+      "district": "黄州区"
+    },
+    "coordinates": [
+      114.8795,
+      30.447
+    ],
+    "precision": "site",
+    "isCentroid": false,
+    "aliases": [
+      "东坡",
+      "雪堂",
+      "临皋亭",
+      "定惠院"
+    ],
+    "kind": "village",
+    "note": "元丰四年（1081）故人马正卿为苏轼请得黄州城东故营地数十亩，躬耕其中，遂号「东坡居士」。次年筑雪堂五间于东坡之胁。黄州四年为其文学巅峰。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      },
+      {
+        "id": "kongfanli-nianpu",
+        "title": "苏轼年谱",
+        "author": "孔凡礼",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ]
+  }
+]

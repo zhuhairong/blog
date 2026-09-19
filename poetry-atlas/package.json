@@ -1,0 +1,19 @@
+{
+  "name": "poetry-atlas",
+  "version": "0.1.0",
+  "private": true,
+  "description": "中国诗歌时空图谱 — 诗人与作品的时空映射考据数据集与构建管线",
+  "type": "module",
+  "scripts": {
+    "validate": "tsx src/pipeline/validators/validate.ts --run",
+    "build": "tsx src/pipeline/build.ts",
+    "check": "tsx src/pipeline/check-derived.ts",
+    "stats": "tsx src/pipeline/stats.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.9.3",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}

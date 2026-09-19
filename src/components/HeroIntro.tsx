@@ -81,7 +81,7 @@ export default function HeroIntro({ repo }: { repo: string }) {
 
             <div className={styles.stats}>
                 <div className={styles.stat}>
-                    <span className={styles.statNum}>8</span>
+                    <span className={styles.statNum}>9</span>
                     <span className={styles.statLabel}>实用作品</span>
                 </div>
                 <span className={styles.statDivider} aria-hidden="true" />
@@ -93,6 +93,11 @@ export default function HeroIntro({ repo }: { repo: string }) {
                 <div className={styles.stat}>
                     <span className={styles.statNum}>111</span>
                     <span className={styles.statLabel}>收录唐诗</span>
+                </div>
+                <span className={styles.statDivider} aria-hidden="true" />
+                <div className={styles.stat}>
+                    <span className={styles.statNum}>3</span>
+                    <span className={styles.statLabel}>位诗人入谱</span>
                 </div>
             </div>
         </>

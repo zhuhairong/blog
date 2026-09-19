@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { BrandMark } from './icons';
 
 const LINKS = [
+    { href: '/poetry-atlas', label: '诗歌图谱' },
     { href: '/c-utils', label: 'C-Utils' },
     { href: '/vocabulary/index.html', label: '单词记忆' },
     { href: '/cloze/index.html', label: '完型填空' },
