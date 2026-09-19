@@ -167,7 +167,22 @@ poetry-atlas/
 ## 地图合规提醒
 
 ⚠️ 在中国大陆提供地图服务须使用**有测绘资质**的数据源，未经批准不得使用境外地图。
-正式上线前必须确认底图来源合规（推荐高德／天地图，或降级为示意地图）。
+
+**本项目的做法**（见 `src/app/poetry-atlas/tiles.ts`）：
+
+- 底图**只用天地图**（国家地理信息公共服务平台，具备甲级测绘资质）。
+  国界、行政界线、台湾及南海诸岛等领土要素一律由天地图按国家标准画法渲染，
+  本项目不自绘界线、不改动、不叠加境外底图。
+- **明确不用**：Google Maps、Apple Maps、Bing（境外版）、OpenStreetMap、
+  Mapbox 等无资质数据源。
+- 密钥走 `NEXT_PUBLIC_TIANDITU_KEY`，构建期内联进静态产物。
+  未配置时不报错，自动回落到自绘的等距圆柱示意底图（`SvgFallbackMap.tsx`），
+  该示意图只是点位相对位置的示意，**不含任何界线画法**，因此也不涉及界线合规问题。
+- 投影陷阱：天地图 `_c` 是经纬度投影、`_w` 才是球面墨卡托。
+  Leaflet 默认 CRS 为 EPSG:3857，必须用 `_w`，否则整张图错位。
+  已核对官方 GetCapabilities：`_w` 的 TileMatrix 编号与 Leaflet 的 zoom 一一对应，无需 zoomOffset。
+
+申请密钥：<https://console.tianditu.gov.cn/> → 应用管理 → 创建新应用（类型选「浏览器端」）。
 
 ---
 

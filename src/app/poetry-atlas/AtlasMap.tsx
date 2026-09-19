@@ -1,10 +1,28 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import styles from './atlas.module.css';
 import type { DerivedMapPoint } from '@/poetry-atlas/types';
 import { CONFIDENCE_UI, PRECISION_LABEL, type PlaceWorkEntry } from '@/lib/atlas-view';
+import { TIANDITU_KEY, TIANDITU_BASEMAPS } from './tiles';
+
+/**
+ * Leaflet 在模块初始化阶段就会访问 window，静态导出时服务端预渲染会炸。
+ * 用 ssr:false 把它推迟到浏览器端。
+ */
+const TileAtlasMap = dynamic(() => import('./TileAtlasMap'), {
+  ssr: false,
+  loading: () => <div className={styles.mapLoading}>正在加载地图…</div>,
+});
+
+/**
+ * 回落底图带一份 60KB 的行政区划边界。拆成独立 chunk，
+ * 配了密钥的站点就不会为这份永远不会渲染的数据付流量。
+ * 不用 ssr:false —— 保留预渲染，未配密钥时首屏直接就有图，不闪。
+ */
+const SvgFallbackMap = dynamic(() => import('./SvgFallbackMap'));
 
 interface Props {
   points: DerivedMapPoint[];
@@ -12,52 +30,24 @@ interface Props {
   placeWorks: Record<string, PlaceWorkEntry[]>;
 }
 
-/** 中国地理范围（用于把经纬度线性映射到 SVG 视口） */
-const BOUNDS = { minLng: 73, maxLng: 136, minLat: 17, maxLat: 54 };
-
-/** 投影：等距圆柱。对全国尺度的示意地图足够，且无依赖、无合规风险 */
-function project(lng: number, lat: number, w: number, h: number) {
-  const x = ((lng - BOUNDS.minLng) / (BOUNDS.maxLng - BOUNDS.minLng)) * w;
-  // 纬度反向：北在上
-  const y = ((BOUNDS.maxLat - lat) / (BOUNDS.maxLat - BOUNDS.minLat)) * h;
-  return { x, y };
-}
-
-/** 按精度决定点的视觉权重：精度越低，视觉越弱 */
-const PRECISION_STYLE: Record<
-  DerivedMapPoint['precision'],
-  { r: number; fillOpacity: number; ring: boolean }
-> = {
-  site: { r: 7, fillOpacity: 1, ring: true },
-  township: { r: 6.5, fillOpacity: 1, ring: true },
-  county: { r: 6, fillOpacity: 0.85, ring: true },
-  prefecture: { r: 6, fillOpacity: 0.8, ring: true },
-  province: { r: 5.5, fillOpacity: 0.7, ring: false },
-  approximate: { r: 5.5, fillOpacity: 0.55, ring: false },
-};
-
 export default function AtlasMap({ points, placeWorks }: Props) {
   const [selected, setSelected] = useState<string | null>(null);
   const [precisionFilter, setPrecisionFilter] = useState<Set<string>>(new Set());
+  const [basemap, setBasemap] = useState<string>('ter');
+  const [dark, setDark] = useState(false);
 
-  const W = 1000;
-  const H = 620;
-
-  const projected = useMemo(
-    () =>
-      points.map((p) => ({
-        ...p,
-        ...project(p.coordinates[0], p.coordinates[1], W, H),
-      })),
-    [points],
-  );
+  const hasKey = TIANDITU_KEY.length > 0;
 
   /** 精度过滤器：空集合表示全显示 */
-  const visible = projected.filter(
-    (p) => precisionFilter.size === 0 || precisionFilter.has(p.precision),
+  const visible = useMemo(
+    () =>
+      points.filter(
+        (p) => precisionFilter.size === 0 || precisionFilter.has(p.precision),
+      ),
+    [points, precisionFilter],
   );
 
-  const active = projected.find((p) => p.placeId === selected) ?? null;
+  const active = points.find((p) => p.placeId === selected) ?? null;
 
   const togglePrecision = (key: string) => {
     setPrecisionFilter((prev) => {
@@ -68,7 +58,13 @@ export default function AtlasMap({ points, placeWorks }: Props) {
     });
   };
 
+  const handleSelect = useCallback((placeId: string | null) => {
+    setSelected((prev) => (prev === placeId ? null : placeId));
+  }, []);
+
   const precisions = [...new Set(points.map((p) => p.precision))];
+  const activeBasemap =
+    TIANDITU_BASEMAPS.find((b) => b.id === basemap) ?? TIANDITU_BASEMAPS[0];
 
   return (
     <div className={styles.mapWrap}>
@@ -102,87 +98,63 @@ export default function AtlasMap({ points, placeWorks }: Props) {
             </button>
           );
         })}
+
+        {hasKey && (
+          <>
+            <span className={styles.mapToolbarDivider} aria-hidden="true" />
+            <span className={styles.mapHint} style={{ marginLeft: 0, marginRight: 8 }}>
+              底图
+            </span>
+            {TIANDITU_BASEMAPS.map((b) => (
+              <button
+                key={b.id}
+                type="button"
+                title={b.hint}
+                className={`${styles.chip} ${basemap === b.id ? styles.chipOn : ''}`}
+                onClick={() => setBasemap(b.id)}
+                aria-pressed={basemap === b.id}
+              >
+                {b.label}
+              </button>
+            ))}
+            <button
+              type="button"
+              className={`${styles.chip} ${dark ? styles.chipOn : ''}`}
+              onClick={() => setDark((d) => !d)}
+              aria-pressed={dark}
+              title="把底图反色以适配深色站点主题（仅改变配色，不改变任何地理要素）"
+            >
+              {dark ? '深色底图' : '原色底图'}
+            </button>
+          </>
+        )}
+
         <span className={styles.mapHint}>
           {visible.length} / {points.length} 个地点
         </span>
       </div>
 
       <div className={styles.mapCanvas}>
-        <svg
-          className={styles.mapSvg}
-          viewBox={`0 0 ${W} ${H}`}
-          role="img"
-          aria-label="诗人创作地分布示意地图"
-        >
-          {/* 网格背景，纯装饰 */}
-          <g stroke="rgba(255,255,255,0.035)" strokeWidth="1">
-            {[0.2, 0.4, 0.6, 0.8].map((f) => (
-              <line key={`h${f}`} x1="0" y1={H * f} x2={W} y2={H * f} />
-            ))}
-            {[0.2, 0.4, 0.6, 0.8].map((f) => (
-              <line key={`v${f}`} x1={W * f} y1="0" x2={W * f} y2={H} />
-            ))}
-          </g>
-
-          {/* 点 */}
-          {visible.map((p) => {
-            const st = PRECISION_STYLE[p.precision];
-            const isActive = p.placeId === selected;
-            // 低精度用偏暖色提示"位置不精确"，高精度用绿色表示可靠
-            const reliable = p.precision === 'site' || p.precision === 'township';
-            const color = reliable ? '#34d399' : p.isCentroid ? '#fbbf24' : '#38bdf8';
-
-            return (
-              <g
-                key={p.placeId}
-                className={styles.mapPoint}
-                onClick={() => setSelected(isActive ? null : p.placeId)}
-                role="button"
-                tabIndex={0}
-                aria-label={`${p.historicalName}，${p.workCount} 篇作品`}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    setSelected(isActive ? null : p.placeId);
-                  }
-                }}
-              >
-                {/* 光晕 */}
-                <circle cx={p.x} cy={p.y} r={st.r * 3.2} fill={color} opacity={isActive ? 0.2 : 0.08} />
-                {/* 中心点用虚线圈明确标注"非精确位置" */}
-                {p.isCentroid && (
-                  <circle
-                    className={styles.centroidRing}
-                    cx={p.x}
-                    cy={p.y}
-                    r={st.r + 5}
-                    stroke={color}
-                    strokeWidth="1.2"
-                  />
-                )}
-                {/* 精确遗址用实线外圈强调 */}
-                {!p.isCentroid && st.ring && (
-                  <circle cx={p.x} cy={p.y} r={st.r + 3} fill="none" stroke={color} strokeWidth="1" opacity="0.5" />
-                )}
-                <circle
-                  className="pointCore"
-                  cx={p.x}
-                  cy={p.y}
-                  r={isActive ? st.r + 2 : st.r}
-                  fill={color}
-                  fillOpacity={st.fillOpacity}
-                />
-                {isActive && (
-                  <circle cx={p.x} cy={p.y} r={st.r + 9} fill="none" stroke={color} strokeWidth="1.5" opacity="0.7" />
-                )}
-                <text className={styles.pointLabel} x={p.x + st.r + 8} y={p.y + 4}>
-                  {p.historicalName}
-                  {p.workCount > 1 ? ` (${p.workCount})` : ''}
-                </text>
-              </g>
-            );
-          })}
-        </svg>
+        {hasKey ? (
+          <TileAtlasMap
+            points={visible}
+            selected={selected}
+            onSelect={handleSelect}
+            basemap={basemap}
+            dark={dark}
+          />
+        ) : (
+          <>
+            <SvgFallbackMap points={visible} selected={selected} onSelect={handleSelect} />
+            <div className={styles.mapNoKey}>
+              <strong>当前为示意底图</strong>
+              <span>
+                未配置天地图密钥，故未加载真实地理底图。配置
+                <code>NEXT_PUBLIC_TIANDITU_KEY</code> 后此处会自动切换为天地图矢量／地形晕渲／影像瓦片。
+              </span>
+            </div>
+          </>
+        )}
 
         {/* 侧栏详情 */}
         <aside className={styles.mapDetail}>
@@ -193,6 +165,13 @@ export default function AtlasMap({ points, placeWorks }: Props) {
               <br />
               虚线圆圈表示该坐标是<strong style={{ color: 'var(--amber)' }}>行政区中心点</strong>
               ，仅代表大致区域，并非精确创作位置。
+              {hasKey && (
+                <>
+                  <br />
+                  <br />
+                  当前底图：<strong>{activeBasemap.label}</strong>。{activeBasemap.hint}。
+                </>
+              )}
             </p>
           ) : (
             <>
@@ -202,6 +181,7 @@ export default function AtlasMap({ points, placeWorks }: Props) {
               <div className={styles.detailMeta}>
                 <span className={styles.tag}>{PRECISION_LABEL[active.precision]}</span>
                 {active.isCentroid && <span className={`${styles.tag} ${styles.tagWarn}`}>中心点坐标</span>}
+                {active.isBirthplace && <span className={`${styles.tag} ${styles.tagBirth}`}>诗人籍贯/生地</span>}
                 <span className={styles.tag}>
                   {active.yearRange[0]}–{active.yearRange[1]}
                 </span>

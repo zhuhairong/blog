@@ -84,6 +84,12 @@ jobs:
         #   atlas:check（新鲜度守卫，缺数据即失败）
         #   next build（静态导出）
         # 直接跑 next build 会跳过前两步，导致派生数据缺失却"构建成功"。
+        #
+        # NEXT_PUBLIC_TIANDITU_KEY：天地图底图密钥，构建期内联进静态产物。
+        # 在仓库 Settings → Secrets and variables → Actions 里添加同名 secret；
+        # 未配置时构建照常通过，地图自动回落到自绘示意底图，不会白屏。
+        env:
+          NEXT_PUBLIC_TIANDITU_KEY: ${{ secrets.NEXT_PUBLIC_TIANDITU_KEY }}
         run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
