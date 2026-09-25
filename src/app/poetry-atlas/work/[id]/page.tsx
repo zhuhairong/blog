@@ -228,11 +228,32 @@ export default async function WorkPage({
               art={art}
             />
             <div className={styles.poemBoxBody}>
-              {work.content.map((line, i) => (
-                <p key={i} className={styles.poemLine}>
-                  {line}
-                </p>
-              ))}
+              {work.content.map((line, i) => {
+                /*
+                 * 逐句译注与正文是平行数组（第 i 条对第 i 行）。
+                 * 数据层已强校验等长，这里仍做一次可选链兜底：
+                 * 万一某篇尚未配译注，也只退化为「无小字」，不该炸页。
+                 */
+                const note = work.lineNotes?.[i];
+                return (
+                  <div key={i} className={styles.poemLineGroup}>
+                    <p className={styles.poemLine}>{line}</p>
+                    {note?.trans ? (
+                      <div className={styles.poemLineNote}>
+                        <p className={styles.poemLineTrans}>{note.trans}</p>
+                        {note.note && (
+                          <p className={styles.poemLineGloss}>
+                            <span className={styles.poemLineGlossKey} aria-hidden="true">
+                              注
+                            </span>
+                            {note.note}
+                          </p>
+                        )}
+                      </div>
+                    ) : null}
+                  </div>
+                );
+              })}
 
               {work.textualVariants?.length ? (
                 <div className={styles.variantNote}>

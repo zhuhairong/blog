@@ -211,6 +211,21 @@ export interface LifeEvent {
 // 作品：诗篇
 // ─────────────────────────────────────────────
 
+/**
+ * 逐句译注。
+ *
+ * 与 `Work.content` **等长同序**——第 i 条对第 i 行，构建期强校验，
+ * 长度不符直接报 error。之所以用平行数组而不是嵌进 content，
+ * 是为了让「原文」保持纯净：原文来自公有领域的语料快照，
+ * 译注是本站编者自撰的现代解读，两者版权属性不同，不该混在一处。
+ */
+export interface LineNote {
+  /** 白话直译。原文为空行时可留空串（前端跳过渲染） */
+  trans: string;
+  /** 难点注：典故、生僻字词、古今异义、地名官职。无难点则省略 */
+  note?: string;
+}
+
 export interface Work {
   id: string;
   title: string;
@@ -219,6 +234,13 @@ export interface Work {
   poetId: string;
   /** 正文，逐段/逐句存储以保留结构 */
   content: string[];
+  /**
+   * 逐句译注，长度必须与 content 相等。
+   *
+   * ⚠️ 译注为编者自撰，不得抄录现代点校本的注释——`docs/DESIGN.md`
+   * 已明确：诗词原文属公有领域，但**现代标点、校勘、注释有版权**。
+   */
+  lineNotes?: LineNote[];
   /** 体裁：五言绝句、七言律诗、词牌名等 */
   form?: string;
   /** 词牌名（仅词） */

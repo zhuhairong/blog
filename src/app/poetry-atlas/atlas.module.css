@@ -1137,12 +1137,63 @@
   z-index: 1;
 }
 
+/*
+ * 逐句译注。
+ *
+ * 正文与译文成对出现，行距的归属随之改变：原来 2.1 的行距是给「行与行
+ * 之间」留气口的，现在那句气口必须让给「译文与下一句原文之间」，
+ * 否则每句诗都会被拆成两块互不相干的文字。故：
+ *   .poemLine      收到 1.75 —— 只保证组内（原文 + 译文）紧凑
+ *   .poemLineGroup 负责组间距离 —— 让「一句诗」重新成为一个整体
+ */
+.poemLineGroup + .poemLineGroup {
+  margin-top: 13px;
+}
+
 .poemLine {
   font-size: clamp(17px, 2.3vw, 20px);
-  line-height: 2.1;
+  line-height: 1.75;
   color: var(--text-primary);
   letter-spacing: 0.06em;
   font-family: 'Songti SC', 'SimSun', 'Noto Serif SC', Georgia, serif;
+}
+
+.poemLineNote {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 3px;
+}
+
+/*
+ * 译文用无衬线、二级灰，与宋体正文形成明确的层级差——
+ * 读者扫一眼就知道哪行是原文、哪行是编者的话，不需要额外标签。
+ */
+.poemLineTrans {
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  font-family: var(--font-sans);
+}
+
+.poemLineGloss {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--text-tertiary);
+  letter-spacing: 0.02em;
+  font-family: var(--font-sans);
+}
+
+.poemLineGlossKey {
+  display: inline-block;
+  margin-right: 5px;
+  padding: 0 4px;
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  font-size: 10.5px;
+  line-height: 1.5;
+  vertical-align: 1px;
 }
 
 .poemDivider {

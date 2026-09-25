@@ -114,6 +114,8 @@ poetry-atlas/
 - `invalid-coordinates` / `coordinates-out-of-china` — 坐标非法
 - `poet-mismatch` — 断言与作品的作者不一致
 - `empty-dataset` — **数据为空**（防止路径错误导致静默成功）
+- `line-notes-length-mismatch` — 逐句译注与正文行数不等（平行数组错位）
+- `missing-line-translation` — 非空正文行缺少白话直译
 
 ### 告警级（warning）
 - `assertion-no-temporospatial` — 断言既无地点也无时间
@@ -123,6 +125,7 @@ poetry-atlas/
 ### 提示级（info）
 - `centroid-location` — 使用行政区中心点，前端需弱化渲染
 - `works-without-location` — 覆盖率统计
+- `line-notes-coverage` — 逐句译注覆盖率（未全覆盖时才报）
 
 ---
 
@@ -137,6 +140,12 @@ poetry-atlas/
    - 每个事件都要有 `sources` 和 `confidence`
 
 3. **作品**：在 `data/corpus/works.json` 添加。
+   - `content` 一律**一联一条**（律诗 4 条、绝句 2 条、《长恨歌》60 条）
+   - 同时要写 `lineNotes`：与 `content` **等长同序**的逐句译注，
+     第 i 条对第 i 行，长度不符构建直接报错
+   - `lineNotes[i].trans` 是白话直译；有典故／生僻字／古今异义时再加 `lineNotes[i].note`
+   - ⚠️ 译注**必须自撰**。诗词原文属公有领域，但现代点校本的标点、校勘、
+     **注释**有版权（见 `docs/DESIGN.md`），抄点校本即为侵权
 
 4. **考据断言**：在 `data/assertions/assertions.json` 添加。
    - `rationale` 写清**判断依据**：「为何定于此地此时」

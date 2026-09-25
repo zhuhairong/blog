@@ -200,6 +200,48 @@ export function validate(ds: DatasetBundle): ValidationIssue[] {
         message: '作品正文为空',
       });
     }
+    // ── 逐句译注：与正文等长同序是硬约束 ──
+    // 平行数组一旦错位，就会出现「这句的译文挂在下一句下面」这种
+    // 极难被肉眼发现的错误，所以长度必须严格相等，不容许差一。
+    if (w.lineNotes) {
+      if (w.lineNotes.length !== w.content.length) {
+        push({
+          severity: 'error',
+          code: 'line-notes-length-mismatch',
+          entity: { type: 'work', id: w.id },
+          message: `逐句译注 ${w.lineNotes.length} 条，与正文 ${w.content.length} 行不等`,
+          hint: '译注按行一一对应，多一条少一条都会整体错位。请补齐或删除多余项。',
+        });
+      } else {
+        w.lineNotes.forEach((n, i) => {
+          // 原文本身是空行（如组诗之间的分隔）时不要求译文
+          const needTrans = Boolean(w.content[i]?.trim());
+          if (needTrans && !n.trans?.trim()) {
+            push({
+              severity: 'error',
+              code: 'missing-line-translation',
+              entity: { type: 'work', id: w.id },
+              message: `第 ${i + 1} 行「${w.content[i]}」缺少白话直译`,
+            });
+          }
+        });
+      }
+    }
+  }
+
+  // ── 译注覆盖率（提示性，不阻断构建）──
+  if (ds.works.length > 0) {
+    const annotated = ds.works.filter((w) => w.lineNotes?.length).length;
+    const totalLines = ds.works.reduce((n, w) => n + w.content.length, 0);
+    const doneLines = ds.works.reduce((n, w) => n + (w.lineNotes?.length ?? 0), 0);
+    if (annotated < ds.works.length) {
+      push({
+        severity: 'info',
+        code: 'line-notes-coverage',
+        entity: { type: 'dataset', id: 'line-notes' },
+        message: `逐句译注已覆盖 ${annotated}/${ds.works.length} 篇（${doneLines}/${totalLines} 行）`,
+      });
+    }
   }
 
   // ── 断言：核心校验 ──
