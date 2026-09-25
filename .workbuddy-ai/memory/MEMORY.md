@@ -117,8 +117,14 @@ npm run atlas:check    # 新鲜度守卫
 - `poetry-atlas/poet-phases.ts`：分期数据唯一来源，`phasesOf()` 对未知诗人按生卒年三等分兜底
 - 地图双轨：`tiles.ts` 读 `NEXT_PUBLIC_TIANDITU_KEY`，有 key → `TileAtlasMap.tsx`（Leaflet + 天地图 WMTS）；
   无 key → `SvgFallbackMap.tsx`（自绘墨卡托，带 60KB 行政区划 JSON，独立 chunk）。
-  行迹图同理双轨：`journey/JourneyTileMap.tsx` / `journey/JourneySvgMap.tsx`，
+- 行迹图同理双轨：`journey/JourneyTileMap.tsx` / `journey/JourneySvgMap.tsx`，
   两者必须共用 `journey/journey-util.ts` 的取色取径规则，否则切换密钥前后站点大小颜色会变。
+- **站点间连弧线 + 箭头**（箭头表示时间方向），几何在 `journey-util.ts`：
+  `arcControl / arcAt / arcSamples`。外凸方向取自行进方向的左手侧，
+  故往返两程自动分居弦两侧、不重叠；箭头放弧线 `t=0.58` 处（放站点上会被站点圆盖住），
+  短段不放。⚠️ `MAX_BOW=30` 是上限，改大要复测是否顶进侧栏（安全区余量仅约 62 单位）。
+  ⚠️ 瓦片版求控制点前须按 `cos(纬度)` 转等距局部坐标，屏幕角取平面角的负值。
+  ⚠️ 改画法时**同步改文件头注释与脚注**，并保留「弧线不代表史料记载了具体路线」的声明。
   ⚠️ 投影陷阱：天地图 `_c` 是经纬度投影、`_w` 才是球面墨卡托。
   ⚠️ 国界/断续线等领土要素**不自绘**，一律交给天地图按国家标准渲染。
   底图提示条（`mapNoKey`）已于 `0476df5` 移除，不要再加回来。
