@@ -1668,6 +1668,25 @@
   filter: drop-shadow(0 0 3px rgba(124, 92, 255, 0.55));
 }
 
+/* 方向箭头：实心三角，颜色比线略亮，压在弧线上指向下一站。
+   放在 <g> 里整体设 pointer-events:none，免得挡住站点圆点的点击 */
+.journeyArrows {
+  pointer-events: none;
+}
+
+.journeyArrow {
+  fill: #c4b5fd;
+  stroke: rgba(8, 8, 13, 0.55);
+  stroke-width: 0.8;
+  stroke-linejoin: round;
+  paint-order: stroke;
+}
+
+/* 身后事件（迁葬、追谥）那段是虚线，箭头也跟着减淡 */
+.journeyArrowAfter {
+  fill: rgba(167, 139, 250, 0.62);
+}
+
 /* 站点序号：压在色块上，用深色字保证对比度 */
 .journeySeq {
   fill: #0b0b12;
@@ -1998,6 +2017,23 @@
 
 :global(.atlasJourneyPin.isPlaying) {
   box-shadow: 0 0 0 5px color-mix(in srgb, var(--pin, #a78bfa) 32%, transparent);
+}
+
+/* 瓦片底图上的方向箭头（divIcon 内联 SVG）。与自绘版同色同形，免得切密钥前后变样 */
+:global(.atlasJourneyArrow) {
+  pointer-events: none;
+}
+
+:global(.atlasJourneyArrow path) {
+  fill: #c4b5fd;
+  stroke: rgba(8, 8, 13, 0.55);
+  stroke-width: 0.8;
+  stroke-linejoin: round;
+  paint-order: stroke;
+}
+
+:global(.atlasJourneyArrow.isAfter path) {
+  fill: rgba(167, 139, 250, 0.62);
 }
 
 /* ── 响应式 ── */

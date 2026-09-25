@@ -202,7 +202,7 @@ export default async function PoetPage({
         <div className={styles.sectionHead} id="journey">
           <h2 className={styles.sectionTitle}>一生行迹</h2>
           <p className={styles.sectionNote}>
-            按年代连成一线 · 点站点看该地所作 · 可播放一生
+            按年代连成一线，箭头指向下一站 · 点站点看该地所作 · 可播放一生
           </p>
         </div>
 

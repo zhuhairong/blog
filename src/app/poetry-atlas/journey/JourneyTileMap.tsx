@@ -21,7 +21,7 @@ import {
   TIANDITU_BASEMAPS,
   tiandituTileUrl,
 } from '../tiles';
-import { toneOf, radiusOf, groupStopsByCoordinate, displayedStopOf, nextStopInGroup } from './journey-util';
+import { toneOf, radiusOf, groupStopsByCoordinate, displayedStopOf, nextStopInGroup, arcControl, arcAt, arcSamples, type Pt } from './journey-util';
 
 interface Props {
   stops: JourneyStop[];
@@ -31,6 +31,30 @@ interface Props {
   /** 底图反色（深色主题适配） */
   dark: boolean;
   playing: boolean;
+}
+
+/** 弧线外凸上限、箭头位置、放箭头的最小段长——与自绘版保持一致
+ *  （自绘版按 viewBox 单位，这里换算成度：1000 单位约合 12°，故 30 单位 ≈ 0.36°） */
+const ARC_MAX_DEG = 0.36;
+const ARC_MIN_SEG_DEG = 0.36;
+const ARROW_T = 0.58;
+
+/**
+ * 两点间的弧线，在**按纬度校正后的平面**里求控制点。
+ *
+ * 直接用经纬度当平面坐标会让弧往南北向偏——同一度数，经度对应的实际距离
+ * 随纬度缩短。乘上 cos(纬度) 转成等距局部坐标再求，弧才是对称的。
+ */
+function flatArc(a: JourneyStop, b: JourneyStop) {
+  const cosLat = Math.max(
+    0.2,
+    Math.cos((((a.coordinates[1] + b.coordinates[1]) / 2) * Math.PI) / 180),
+  );
+  const A: Pt = { x: a.coordinates[0] * cosLat, y: a.coordinates[1] };
+  const B: Pt = { x: b.coordinates[0] * cosLat, y: b.coordinates[1] };
+  const C = arcControl(A, B, ARC_MAX_DEG);
+  const toLL = (p: Pt) => [p.y, p.x / cosLat] as L.LatLngTuple;
+  return { A, B, C, toLL, segLen: Math.hypot(B.x - A.x, B.y - A.y) };
 }
 
 export default function JourneyTileMap({
@@ -113,31 +137,57 @@ export default function JourneyTileMap({
     const latlng = (s: JourneyStop) => [s.coordinates[1], s.coordinates[0]] as L.LatLngTuple;
     const live = stops.filter((s) => !s.posthumous);
     const after = stops.filter((s) => s.posthumous);
+    const afterChain: JourneyStop[] = live.length ? [live[live.length - 1]!, ...after] : after;
+
+    /** 一串站连成弧线（Leaflet 没有原生曲线，用采样折线近似） */
+    const arcLatLngs = (chain: JourneyStop[]) => {
+      const pts: L.LatLngTuple[] = [];
+      for (let i = 1; i < chain.length; i++) {
+        const { A, B, C, toLL } = flatArc(chain[i - 1]!, chain[i]!);
+        const samples = arcSamples(A, C, B, 16);
+        // 每段的首点与前一段末点重合，跳过以免重复
+        for (let k = i === 1 ? 0 : 1; k < samples.length; k++) pts.push(toLL(samples[k]!));
+      }
+      return pts;
+    };
+
+    /** 弧线中点附近的箭头，朝向即时间方向 */
+    const addArrows = (chain: JourneyStop[], extraClass: string) => {
+      for (let i = 1; i < chain.length; i++) {
+        const { A, B, C, toLL, segLen } = flatArc(chain[i - 1]!, chain[i]!);
+        if (segLen < ARC_MIN_SEG_DEG) continue;
+        const p = arcAt(A, C, B, ARROW_T);
+        // 平面坐标里 y 向北，屏幕上向北是「上」，故屏幕角取负
+        const deg = ((-p.angle * 180) / Math.PI).toFixed(1);
+        const icon = L.divIcon({
+          className: '',
+          iconSize: [14, 12],
+          iconAnchor: [7, 6],
+          html:
+            `<svg class="atlasJourneyArrow${extraClass}" width="14" height="12" viewBox="0 0 14 12"` +
+            ` style="transform:rotate(${deg}deg)"><path d="M1 1.6 L13 6 L1 10.4 Z"/></svg>`,
+        });
+        L.marker(toLL(p), { icon, keyboard: false, interactive: false }).addTo(group);
+      }
+    };
 
     // 行迹线：先宽而淡的光晕，再叠实线，深浅底图上都看得见
     if (live.length > 1) {
-      L.polyline(live.map(latlng), {
-        color: '#a78bfa',
-        weight: 7,
-        opacity: 0.18,
-        lineJoin: 'round',
-      }).addTo(group);
-      L.polyline(live.map(latlng), {
-        color: '#a78bfa',
-        weight: 2,
-        opacity: 0.92,
-        lineJoin: 'round',
-      }).addTo(group);
+      const line = arcLatLngs(live);
+      L.polyline(line, { color: '#a78bfa', weight: 7, opacity: 0.18, lineJoin: 'round' }).addTo(group);
+      L.polyline(line, { color: '#a78bfa', weight: 2, opacity: 0.92, lineJoin: 'round' }).addTo(group);
     }
     // 身后事件（迁葬、追谥）另用虚线接续
-    if (after.length > 0 && live.length > 0) {
-      L.polyline([...live.slice(-1), ...after].map(latlng), {
+    if (afterChain.length > 1) {
+      L.polyline(arcLatLngs(afterChain), {
         color: '#a78bfa',
         weight: 1.4,
         opacity: 0.5,
         dashArray: '5 5',
       }).addTo(group);
     }
+    if (live.length > 1) addArrows(live, '');
+    if (afterChain.length > 1) addArrows(afterChain, ' isAfter');
 
     // 站点：用 divIcon 承载序号，序号即行迹顺序。
     // 按坐标归组——同址多次驻留（苏轼三还眉山等）位置重合，逐个画会互相盖住。

@@ -6,8 +6,9 @@
  * 与「创作地分布」共用 `geo.tsx` 的投影与底图几何，
  * 保证两张图的中国形状完全一致。
  *
- * 画法上的取舍：站点之间用**直线**连接，不做贝塞尔美化——
- * 行迹是史料推出来的路线，弧线会让人误以为有精确的路径信息。
+ * 画法上的取舍：站点之间连**弧线**，弧线中点附近加**箭头**，箭头即时间方向。
+ * 弧线只是把两点间的先后关系画得可读，并不表示史料记载了具体路线；
+ * 外凸方向由行进方向决定，故往返两程自然分居弦的两侧、不会重叠。
  */
 
 import type { JourneyStop } from '@/poetry-atlas/types';
@@ -20,6 +21,9 @@ import {
   groupStopsByCoordinate,
   displayedStopOf,
   nextStopInGroup,
+  arcControl,
+  arcAt,
+  type Pt,
 } from './journey-util';
 
 interface Props {
@@ -29,6 +33,16 @@ interface Props {
   /** 播放到当前站时给一个呼吸圈，帮助视线跟上 */
   playing: boolean;
 }
+
+/** 弧线外凸的绝对上限（viewBox 单位）。取景已给右侧栏留出安全区，
+ *  上限须小于那 62 单位的余量，否则弧线会伸进侧栏底下。 */
+const MAX_BOW = 30;
+/** 箭头放在弧线的这个比例处——避开两端站点圆，落在可见的弧段上 */
+const ARROW_T = 0.58;
+/** 短于这个长度的段不放箭头，否则密集处会挤成一团 */
+const ARROW_MIN_SEG = 30;
+/** 箭头三角（指向 +x，靠 transform 旋转到切向） */
+const ARROW_D = 'M-5 -4 L6.5 0 L-5 4 Z';
 
 export default function JourneySvgMap({ stops, selectedSeq, onSelect, playing }: Props) {
   /**
@@ -47,8 +61,36 @@ export default function JourneySvgMap({ stops, selectedSeq, onSelect, playing }:
 
   const live = all.filter((p) => !p.stop.posthumous);
   const after = all.filter((p) => p.stop.posthumous);
-  const line = (pts: typeof all) =>
-    pts.map((p, i) => `${i === 0 ? 'M' : 'L'}${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' ');
+
+  /** 逐段外凸的弧线路径 */
+  const arcPath = (pts: Pt[]) => {
+    if (pts.length < 2) return '';
+    let d = `M${pts[0]!.x.toFixed(1)} ${pts[0]!.y.toFixed(1)}`;
+    for (let i = 1; i < pts.length; i++) {
+      const c = arcControl(pts[i - 1]!, pts[i]!, MAX_BOW);
+      d += ` Q${c.x.toFixed(1)} ${c.y.toFixed(1)} ${pts[i]!.x.toFixed(1)} ${pts[i]!.y.toFixed(1)}`;
+    }
+    return d;
+  };
+
+  /** 每段弧线上的箭头位置与朝向 */
+  const arrowsOf = (pts: Pt[]) => {
+    const out: { key: string; x: number; y: number; deg: number }[] = [];
+    for (let i = 1; i < pts.length; i++) {
+      const a = pts[i - 1]!;
+      const b = pts[i]!;
+      if (Math.hypot(b.x - a.x, b.y - a.y) < ARROW_MIN_SEG) continue;
+      const p = arcAt(a, arcControl(a, b, MAX_BOW), b, ARROW_T);
+      out.push({ key: `a${i}`, x: p.x, y: p.y, deg: (p.angle * 180) / Math.PI });
+    }
+    return out;
+  };
+
+  const liveD = arcPath(live);
+  const liveArrows = arrowsOf(live);
+  const afterPts: Pt[] = live.length ? [live[live.length - 1]!, ...after] : after;
+  const afterD = arcPath(afterPts);
+  const afterArrows = arrowsOf(afterPts);
 
   /** 标记按坐标归组：同址多次驻留只画一个点，避免互相盖住 */
   const marks = groupStopsByCoordinate(stops).map((group) => {
@@ -67,11 +109,12 @@ export default function JourneySvgMap({ stops, selectedSeq, onSelect, playing }:
       <BasemapLayers proj={proj} />
 
       {/* ── 行迹线 ──
-          先画一层宽而淡的「光晕」，再叠一层实线，让线在深浅底图上都看得见 */}
-      {live.length > 1 && (
+          先画一层宽而淡的「光晕」，再叠一层实线，让线在深浅底图上都看得见。
+          两层用同一条弧线路径，避免视觉上错位。 */}
+      {liveD && (
         <>
           <path
-            d={line(live)}
+            d={liveD}
             fill="none"
             stroke="rgba(124,92,255,0.22)"
             strokeWidth="7"
@@ -80,7 +123,7 @@ export default function JourneySvgMap({ stops, selectedSeq, onSelect, playing }:
           />
           <path
             className={styles.journeyLine}
-            d={line(live)}
+            d={liveD}
             fill="none"
             stroke="rgba(167,139,250,0.92)"
             strokeWidth="2"
@@ -90,15 +133,36 @@ export default function JourneySvgMap({ stops, selectedSeq, onSelect, playing }:
         </>
       )}
       {/* 身后事件（迁葬、追谥）另用虚线接续 */}
-      {after.length > 0 && live.length > 0 && (
+      {afterD && live.length > 0 && (
         <path
-          d={line([live[live.length - 1]!, ...after])}
+          d={afterD}
           fill="none"
           stroke="rgba(167,139,250,0.5)"
           strokeWidth="1.4"
           strokeDasharray="5 5"
         />
       )}
+
+      {/* ── 方向箭头 ──
+          沿线排布、不放在站点上（站点圆会盖住它），朝向即「下一站往哪走」 */}
+      <g className={styles.journeyArrows} aria-hidden="true">
+        {liveArrows.map((a) => (
+          <path
+            key={a.key}
+            className={styles.journeyArrow}
+            d={ARROW_D}
+            transform={`translate(${a.x.toFixed(1)} ${a.y.toFixed(1)}) rotate(${a.deg.toFixed(1)})`}
+          />
+        ))}
+        {afterArrows.map((a) => (
+          <path
+            key={a.key}
+            className={`${styles.journeyArrow} ${styles.journeyArrowAfter}`}
+            d={ARROW_D}
+            transform={`translate(${a.x.toFixed(1)} ${a.y.toFixed(1)}) rotate(${a.deg.toFixed(1)})`}
+          />
+        ))}
+      </g>
 
       {/* ── 站点（按坐标归组，同址多次驻留只画一个） ── */}
       {marks.map(({ group, x, y }) => {

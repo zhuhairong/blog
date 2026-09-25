@@ -60,3 +60,64 @@ export function nextStopInGroup(
   if (i < 0) return group[0]!.seq;
   return group[(i + 1) % group.length]!.seq;
 }
+
+/* ─────────── 弧线几何（两版底图共用） ───────────
+ *
+ * 站点之间画弧线而不是直线，弧线中点附近加箭头表示时间方向。
+ * 几何只认平面坐标，SVG 版传投影后的 x/y、瓦片版传经纬度，两边形状一致。
+ */
+
+export interface Pt {
+  x: number;
+  y: number;
+}
+
+/** 弧线外凸比例（相对弦长）与绝对上限（单位同入参坐标） */
+export const ARC_BULGE = 0.2;
+
+/**
+ * 二次贝塞尔的控制点：自弦中点向**行进方向的左手侧**外凸。
+ *
+ * 关键在于方向取自 a→b：往返两程的方向相反，法向随之翻转，
+ * 于是去程与回程自动分居弦的两侧、形成梭形，不会叠在一起。
+ */
+export function arcControl(a: Pt, b: Pt, maxOff = Infinity): Pt {
+  const dx = b.x - a.x;
+  const dy = b.y - a.y;
+  const dist = Math.hypot(dx, dy);
+  if (dist === 0) return { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+  const off = Math.min(dist * ARC_BULGE, maxOff);
+  return {
+    x: (a.x + b.x) / 2 + (-dy / dist) * off,
+    y: (a.y + b.y) / 2 + (dx / dist) * off,
+  };
+}
+
+/** 二次贝塞尔在参数 t 处的点与切向角（弧度） */
+export function arcAt(
+  a: Pt,
+  c: Pt,
+  b: Pt,
+  t: number,
+): { x: number; y: number; angle: number } {
+  const mt = 1 - t;
+  const x = mt * mt * a.x + 2 * mt * t * c.x + t * t * b.x;
+  const y = mt * mt * a.y + 2 * mt * t * c.y + t * t * b.y;
+  const tx = 2 * mt * (c.x - a.x) + 2 * t * (b.x - c.x);
+  const ty = 2 * mt * (c.y - a.y) + 2 * t * (b.y - c.y);
+  return { x, y, angle: Math.atan2(ty, tx) };
+}
+
+/** 把二次贝塞尔采样成折线（Leaflet 没有原生曲线，用它近似） */
+export function arcSamples(a: Pt, c: Pt, b: Pt, n = 16): Pt[] {
+  const out: Pt[] = [];
+  for (let i = 0; i <= n; i++) {
+    const t = i / n;
+    const mt = 1 - t;
+    out.push({
+      x: mt * mt * a.x + 2 * mt * t * c.x + t * t * b.x,
+      y: mt * mt * a.y + 2 * mt * t * c.y + t * t * b.y,
+    });
+  }
+  return out;
+}
