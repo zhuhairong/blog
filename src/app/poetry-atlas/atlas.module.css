@@ -341,39 +341,6 @@
   color: var(--text-tertiary);
 }
 
-/* 未配置密钥时的提示条：说清楚"这是示意图，不是真实地理底图" */
-.mapNoKey {
-  position: absolute;
-  left: 14px;
-  bottom: 14px;
-  max-width: 420px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 10px 14px;
-  border: 1px solid var(--border-strong);
-  border-left: 3px solid var(--amber);
-  border-radius: var(--r-sm);
-  background: rgba(14, 14, 22, 0.92);
-  backdrop-filter: blur(10px);
-  font-size: 12px;
-  line-height: 1.6;
-  color: var(--text-tertiary);
-}
-
-.mapNoKey strong {
-  color: var(--amber);
-  font-size: 12.5px;
-}
-
-.mapNoKey code {
-  padding: 1px 5px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.08);
-  color: var(--text-secondary);
-  font-size: 11.5px;
-}
-
 /* ── 地图侧栏（选中地点详情）── */
 .mapDetail {
   position: absolute;

@@ -144,16 +144,7 @@ export default function AtlasMap({ points, placeWorks }: Props) {
             dark={dark}
           />
         ) : (
-          <>
-            <SvgFallbackMap points={visible} selected={selected} onSelect={handleSelect} />
-            <div className={styles.mapNoKey}>
-              <strong>当前为示意底图</strong>
-              <span>
-                未配置天地图密钥，故未加载真实地理底图。配置
-                <code>NEXT_PUBLIC_TIANDITU_KEY</code> 后此处会自动切换为天地图矢量／地形晕渲／影像瓦片。
-              </span>
-            </div>
-          </>
+          <SvgFallbackMap points={visible} selected={selected} onSelect={handleSelect} />
         )}
 
         {/* 侧栏详情 */}
