@@ -631,6 +631,23 @@
     "featured": ""
   },
   {
+    "objectID": 36030,
+    "src": "/poetry-atlas/art/36030.webp",
+    "srcSmall": "/poetry-atlas/art/36030-sm.webp",
+    "title": "Lady in a Bamboo Grove after Qiu Ying",
+    "artist": "Shen Shuo",
+    "date": "",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink and color on silk",
+    "creditLine": "Gift of John C. Ferguson, 1916",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36030",
+    "motifs": [
+      "竹",
+      "花鸟"
+    ],
+    "featured": ""
+  },
+  {
     "objectID": 36033,
     "src": "/poetry-atlas/art/36033.webp",
     "srcSmall": "/poetry-atlas/art/36033-sm.webp",
@@ -823,6 +840,22 @@
       "舟",
       "山",
       "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 36059,
+    "src": "/poetry-atlas/art/36059.webp",
+    "srcSmall": "/poetry-atlas/art/36059-sm.webp",
+    "title": "Flowers and Butterflies",
+    "artist": "Ma Quan",
+    "date": "",
+    "dynasty": "",
+    "medium": "Handscroll; ink and color on paper",
+    "creditLine": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36059",
+    "motifs": [
+      "花鸟"
     ],
     "featured": ""
   },
@@ -1088,6 +1121,22 @@
     "objectURL": "https://www.metmuseum.org/art/collection/search/36096",
     "motifs": [
       "竹",
+      "花鸟"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 36099,
+    "src": "/poetry-atlas/art/36099.webp",
+    "srcSmall": "/poetry-atlas/art/36099-sm.webp",
+    "title": "Vase of Flowers",
+    "artist": "Chen Hongshou",
+    "date": "",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink and color on silk",
+    "creditLine": "Gift of Mr. and Mrs. Earl Morse, 1972",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36099",
+    "motifs": [
       "花鸟"
     ],
     "featured": ""
@@ -1545,6 +1594,22 @@
     "featured": ""
   },
   {
+    "objectID": 36166,
+    "src": "/poetry-atlas/art/36166.webp",
+    "srcSmall": "/poetry-atlas/art/36166-sm.webp",
+    "title": "Flower and Bird",
+    "artist": "Zhang Xiong",
+    "date": "dated 1878",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink and color on paper",
+    "creditLine": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36166",
+    "motifs": [
+      "花鸟"
+    ],
+    "featured": ""
+  },
+  {
     "objectID": 36168,
     "src": "/poetry-atlas/art/36168.webp",
     "srcSmall": "/poetry-atlas/art/36168-sm.webp",
@@ -1640,6 +1705,41 @@
     "objectURL": "https://www.metmuseum.org/art/collection/search/36177",
     "motifs": [
       "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 36178,
+    "src": "/poetry-atlas/art/36178.webp",
+    "srcSmall": "/poetry-atlas/art/36178-sm.webp",
+    "title": "Hawk, pine, plum, and rock",
+    "artist": "Zhu Cheng",
+    "date": "dated 1873",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink and color on paper",
+    "creditLine": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36178",
+    "motifs": [
+      "梅",
+      "花鸟",
+      "松"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 36179,
+    "src": "/poetry-atlas/art/36179.webp",
+    "srcSmall": "/poetry-atlas/art/36179-sm.webp",
+    "title": "Birds and Narcissus",
+    "artist": "Xu Xiang",
+    "date": "dated 1883",
+    "dynasty": "",
+    "medium": "Folding fan mounted as an album leaf; ink and color on alum paper",
+    "creditLine": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36179",
+    "motifs": [
+      "山",
+      "花鸟"
     ],
     "featured": ""
   },
@@ -2019,6 +2119,680 @@
       "水",
       "舟",
       "山",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 41483,
+    "src": "/poetry-atlas/art/41483.webp",
+    "srcSmall": "/poetry-atlas/art/41483-sm.webp",
+    "title": "Landscapes and trees",
+    "artist": "Gong Xian",
+    "date": "ca. 1679",
+    "dynasty": "",
+    "medium": "Album of twelve leaves; ink on paper",
+    "creditLine": "From the P. Y. and Kinmay W. Tang Family Collection, Gift of Wen and Constance Fong, in honor of Mr. and Mrs. Douglas Dillon, 1979",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/41483",
+    "motifs": [
+      "山水"
+    ],
+    "featured": "poet-dumu"
+  },
+  {
+    "objectID": 51742,
+    "src": "/poetry-atlas/art/51742.webp",
+    "srcSmall": "/poetry-atlas/art/51742-sm.webp",
+    "title": "Lotus",
+    "artist": "Unidentified artist",
+    "date": "",
+    "dynasty": "",
+    "medium": "Album leaf; ink and color on silk",
+    "creditLine": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/51742",
+    "motifs": [
+      "荷",
+      "花鸟"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 40092,
+    "src": "/poetry-atlas/art/40092.webp",
+    "srcSmall": "/poetry-atlas/art/40092-sm.webp",
+    "title": "Boating by a Willow Bank",
+    "artist": "Unidentified artist",
+    "date": "13th century",
+    "dynasty": "",
+    "medium": "Fan mounted as an album leaf; ink and color on silk",
+    "creditLine": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/40092",
+    "motifs": [
+      "水",
+      "舟",
+      "山",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 49454,
+    "src": "/poetry-atlas/art/49454.webp",
+    "srcSmall": "/poetry-atlas/art/49454-sm.webp",
+    "title": "Landscape",
+    "artist": "Hu Yuan",
+    "date": "dated 1885",
+    "dynasty": "",
+    "medium": "Folding fan mounted as an album leaf; ink and color on alum paper",
+    "creditLine": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/49454",
+    "motifs": [
+      "山",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 49237,
+    "src": "/poetry-atlas/art/49237.webp",
+    "srcSmall": "/poetry-atlas/art/49237-sm.webp",
+    "title": "Landscapes and calligraphy",
+    "artist": "Gao Fenghan",
+    "date": "dated 1736",
+    "dynasty": "",
+    "medium": "Album of six paintings; ink and color on paper",
+    "creditLine": "Edward Elliott Family Collection, Purchase, The Dillon Fund Gift, 1981",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/49237",
+    "motifs": [
+      "山水"
+    ],
+    "featured": "poet-lishangyin"
+  },
+  {
+    "objectID": 49150,
+    "src": "/poetry-atlas/art/49150.webp",
+    "srcSmall": "/poetry-atlas/art/49150-sm.webp",
+    "title": "Clearing after Rain over Streams and Mountains",
+    "artist": "Wang Hui",
+    "date": "dated 1662",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink on paper",
+    "creditLine": "Bequest of John M. Crawford Jr., 1988",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/49150",
+    "motifs": [
+      "雨",
+      "水",
+      "山"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 40088,
+    "src": "/poetry-atlas/art/40088.webp",
+    "srcSmall": "/poetry-atlas/art/40088-sm.webp",
+    "title": "Boats Moored in Wind and Rain",
+    "artist": "Unidentified artist",
+    "date": "13th century",
+    "dynasty": "",
+    "medium": "Fan mounted as an album leaf; ink and color on silk",
+    "creditLine": "Bequest of John M. Crawford Jr., 1988",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/40088",
+    "motifs": [
+      "雨",
+      "水",
+      "舟",
+      "山",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 49172,
+    "src": "/poetry-atlas/art/49172.webp",
+    "srcSmall": "/poetry-atlas/art/49172-sm.webp",
+    "title": "Bamboo in wind and rain",
+    "artist": "Shitao (Zhu Ruoji)",
+    "date": "ca. 1694",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink on paper",
+    "creditLine": "Edward Elliott Family Collection, Gift of Douglas Dillon, 1984",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/49172",
+    "motifs": [
+      "雨",
+      "竹",
+      "花鸟"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 37396,
+    "src": "/poetry-atlas/art/37396.webp",
+    "srcSmall": "/poetry-atlas/art/37396-sm.webp",
+    "title": "Figures, flowers, and landscapes",
+    "artist": "Chen Hongshou",
+    "date": "one leaf dated 1627",
+    "dynasty": "",
+    "medium": "Album of eleven leaves; ink and color on silk",
+    "creditLine": "Gift of Mr. and Mrs. Wan-go H. C. Weng, 1999",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/37396",
+    "motifs": [
+      "花鸟",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 53594,
+    "src": "/poetry-atlas/art/53594.webp",
+    "srcSmall": "/poetry-atlas/art/53594-sm.webp",
+    "title": "Eight Landscape Scenes and Calligraphy",
+    "artist": "Unidentified artist",
+    "date": "19th century",
+    "dynasty": "",
+    "medium": "Album of twenty-two leaves; ink and wash on paper",
+    "creditLine": "Seymour Fund, 1955",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/53594",
+    "motifs": [
+      "山",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 41481,
+    "src": "/poetry-atlas/art/41481.webp",
+    "srcSmall": "/poetry-atlas/art/41481-sm.webp",
+    "title": "Landscapes after old masters",
+    "artist": "Wang Hui",
+    "date": "dated 1674 and 1677",
+    "dynasty": "",
+    "medium": "Album of twelve leaves; ink and color on paper",
+    "creditLine": "Purchase, The Dillon Fund Gift, 1989",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/41481",
+    "motifs": [
+      "山",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 39557,
+    "src": "/poetry-atlas/art/39557.webp",
+    "srcSmall": "/poetry-atlas/art/39557-sm.webp",
+    "title": "Wooded Mountains at Dusk",
+    "artist": "Kuncan",
+    "date": "dated 1666",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink and color on paper",
+    "creditLine": "Bequest of John M. Crawford Jr., 1988",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/39557",
+    "motifs": [
+      "山",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 49549,
+    "src": "/poetry-atlas/art/49549.webp",
+    "srcSmall": "/poetry-atlas/art/49549-sm.webp",
+    "title": "Anchorage on a rainy night",
+    "artist": "Shen Zhou",
+    "date": "dated 1477",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink on paper",
+    "creditLine": "Gift of Marie-Hélène and Guy Weill, 2015",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/49549",
+    "motifs": [
+      "夜",
+      "月",
+      "雨",
+      "山",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 45655,
+    "src": "/poetry-atlas/art/45655.webp",
+    "srcSmall": "/poetry-atlas/art/45655-sm.webp",
+    "title": "Flowers",
+    "artist": "Lü Jingfu",
+    "date": "14th century",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink and color on silk",
+    "creditLine": "Rogers Fund, 1912",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/45655",
+    "motifs": [
+      "花鸟"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 40054,
+    "src": "/poetry-atlas/art/40054.webp",
+    "srcSmall": "/poetry-atlas/art/40054-sm.webp",
+    "title": "Odes of the State of Bin",
+    "artist": "Ma Hezhi",
+    "date": "mid-12th century",
+    "dynasty": "",
+    "medium": "Handscroll; ink, color, gold and silver on silk",
+    "creditLine": "Ex coll.: C. C. Wang Family, Purchase, Gift of J. Pierpont Morgan, by exchange, 1973",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/40054",
+    "motifs": [
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 49143,
+    "src": "/poetry-atlas/art/49143.webp",
+    "srcSmall": "/poetry-atlas/art/49143-sm.webp",
+    "title": "Birds in a lotus pond",
+    "artist": "Bada Shanren (Zhu Da)",
+    "date": "ca. 1690",
+    "dynasty": "",
+    "medium": "Handscroll; ink on satin",
+    "creditLine": "Bequest of John M. Crawford Jr., 1988",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/49143",
+    "motifs": [
+      "荷",
+      "花鸟"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 51416,
+    "src": "/poetry-atlas/art/51416.webp",
+    "srcSmall": "/poetry-atlas/art/51416-sm.webp",
+    "title": "Women and children in a garden",
+    "artist": "Unidentified artist",
+    "date": "",
+    "dynasty": "",
+    "medium": "Handscroll; ink and color on silk",
+    "creditLine": "John Stewart Kennedy Fund, 1913",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/51416",
+    "motifs": [
+      "园林"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 74818,
+    "src": "/poetry-atlas/art/74818.webp",
+    "srcSmall": "/poetry-atlas/art/74818-sm.webp",
+    "title": "Discourse on Poetry",
+    "artist": "Gao Jian",
+    "date": "1698",
+    "dynasty": "",
+    "medium": "Handscroll; ink on paper",
+    "creditLine": "Purchase, The Vincent Astor Foundation Gift and The Dillon Fund Gift, 2008",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/74818",
+    "motifs": [
+      "园林",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 739501,
+    "src": "/poetry-atlas/art/739501.webp",
+    "srcSmall": "/poetry-atlas/art/739501-sm.webp",
+    "title": "Zhou Dunyi Admiring Lotuses",
+    "artist": "Lu Peng",
+    "date": "dated 1896",
+    "dynasty": "",
+    "medium": "Album leaf; ink and color on paper",
+    "creditLine": "Gift of Jane DeBevoise and the Calello Family, 2024",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/739501",
+    "motifs": [
+      "荷",
+      "花鸟"
+    ],
+    "featured": "poet-liqingzhao"
+  },
+  {
+    "objectID": 51417,
+    "src": "/poetry-atlas/art/51417.webp",
+    "srcSmall": "/poetry-atlas/art/51417-sm.webp",
+    "title": "Autumn Landscape",
+    "artist": "",
+    "date": "",
+    "dynasty": "",
+    "medium": "Handscroll; ink and color on silk",
+    "creditLine": "John Stewart Kennedy Fund, 1913",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/51417",
+    "motifs": [
+      "秋",
+      "山水"
+    ],
+    "featured": "poet-luyou"
+  },
+  {
+    "objectID": 41471,
+    "src": "/poetry-atlas/art/41471.webp",
+    "srcSmall": "/poetry-atlas/art/41471-sm.webp",
+    "title": "Autumn landscape with egrets and ducks",
+    "artist": "Lü Ji",
+    "date": "late 15th century",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink and color on silk",
+    "creditLine": "Purchase, Bequest of Dorothy Graham Bennett, 1980",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/41471",
+    "motifs": [
+      "花鸟",
+      "秋",
+      "水禽",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 904732,
+    "src": "/poetry-atlas/art/904732.webp",
+    "srcSmall": "/poetry-atlas/art/904732-sm.webp",
+    "title": "Landscape",
+    "artist": "Li Kui",
+    "date": "dated 1867",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink and color on paper",
+    "creditLine": "Funds from various donors, 2024",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/904732",
+    "motifs": [
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 51822,
+    "src": "/poetry-atlas/art/51822.webp",
+    "srcSmall": "/poetry-atlas/art/51822-sm.webp",
+    "title": "Landscape",
+    "artist": "Zhang Cining",
+    "date": "1807",
+    "dynasty": "",
+    "medium": "Handscroll; ink and color on silk",
+    "creditLine": "Rogers Fund, 1957",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/51822",
+    "motifs": [
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 49134,
+    "src": "/poetry-atlas/art/49134.webp",
+    "srcSmall": "/poetry-atlas/art/49134-sm.webp",
+    "title": "Landscape",
+    "artist": "Liu Yu",
+    "date": "1680",
+    "dynasty": "",
+    "medium": "Handscroll; ink on paper",
+    "creditLine": "Bequest of John M. Crawford Jr., 1988",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/49134",
+    "motifs": [
+      "水",
+      "山",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 45681,
+    "src": "/poetry-atlas/art/45681.webp",
+    "srcSmall": "/poetry-atlas/art/45681-sm.webp",
+    "title": "Misty Landscape",
+    "artist": "Unidentified artist",
+    "date": "15th–16th century",
+    "dynasty": "",
+    "medium": "Fan mounted as an album leaf; ink and color on silk",
+    "creditLine": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/45681",
+    "motifs": [
+      "水",
+      "舟",
+      "山",
+      "云烟",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 49178,
+    "src": "/poetry-atlas/art/49178.webp",
+    "srcSmall": "/poetry-atlas/art/49178-sm.webp",
+    "title": "Drunk in Autumn Woods",
+    "artist": "Shitao (Zhu Ruoji)",
+    "date": "ca. 1702",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink and color on paper",
+    "creditLine": "Gift of John M. Crawford Jr., 1987",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/49178",
+    "motifs": [
+      "秋",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 51872,
+    "src": "/poetry-atlas/art/51872.webp",
+    "srcSmall": "/poetry-atlas/art/51872-sm.webp",
+    "title": "Autumn Mountains",
+    "artist": "Dong Qichang",
+    "date": "",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink on paper",
+    "creditLine": "Bequest of John M. Crawford Jr., 1988",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/51872",
+    "motifs": [
+      "山",
+      "秋",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 42260,
+    "src": "/poetry-atlas/art/42260.webp",
+    "srcSmall": "/poetry-atlas/art/42260-sm.webp",
+    "title": "Recluse Fisherman, Autumn Trees",
+    "artist": "Sheng Mao",
+    "date": "dated 1349",
+    "dynasty": "",
+    "medium": "Fan mounted as an album leaf; ink and color on silk",
+    "creditLine": "Ex coll.: C. C. Wang Family, Purchase, Florance Waterbury Bequest and Gift of Mr. and Mrs. Nathan Cummings, by exchange, 1973",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/42260",
+    "motifs": [
+      "水",
+      "舟",
+      "山",
+      "秋",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 45664,
+    "src": "/poetry-atlas/art/45664.webp",
+    "srcSmall": "/poetry-atlas/art/45664-sm.webp",
+    "title": "Palaces among Autumn Mountains",
+    "artist": "Unidentified artist",
+    "date": "",
+    "dynasty": "",
+    "medium": "Round fan mounted as an album leaf; ink, color, and gold on silk",
+    "creditLine": "Bequest of John M. Crawford Jr., 1988",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/45664",
+    "motifs": [
+      "山",
+      "秋",
+      "建筑",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 49468,
+    "src": "/poetry-atlas/art/49468.webp",
+    "srcSmall": "/poetry-atlas/art/49468-sm.webp",
+    "title": "Sailing in Autumn",
+    "artist": "Xugu (Zhu Huairen)",
+    "date": "dated 1893",
+    "dynasty": "",
+    "medium": "Album leaf; ink and color on paper",
+    "creditLine": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/49468",
+    "motifs": [
+      "水",
+      "舟",
+      "秋",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 40422,
+    "src": "/poetry-atlas/art/40422.webp",
+    "srcSmall": "/poetry-atlas/art/40422-sm.webp",
+    "title": "Scholar Admiring Autumn Scenery",
+    "artist": "Unidentified artist",
+    "date": "ca. 1525",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink and color on paper",
+    "creditLine": "John Stewart Kennedy Fund, 1913",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/40422",
+    "motifs": [
+      "秋",
+      "文士",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 42261,
+    "src": "/poetry-atlas/art/42261.webp",
+    "srcSmall": "/poetry-atlas/art/42261-sm.webp",
+    "title": "Angling in the Autumn River",
+    "artist": "Sheng Zhu",
+    "date": "ca. 1370",
+    "dynasty": "",
+    "medium": "Fan mounted as an album leaf; ink and color on silk",
+    "creditLine": "Ex coll.: C. C. Wang Family, Purchase, Bequest of Martha T. Fiske Collord, in memory of her first husband, Josiah M. Fiske, Bequest of Mrs. Beekman Hoppin, and Gift of Herman Cooper, by exchange, 1973",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/42261",
+    "motifs": [
+      "水",
+      "山",
+      "秋",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 49030,
+    "src": "/poetry-atlas/art/49030.webp",
+    "srcSmall": "/poetry-atlas/art/49030-sm.webp",
+    "title": "Lofty Recluse in Autumn Mountains",
+    "artist": "Wang Duo",
+    "date": "dated 1651",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink on paper",
+    "creditLine": "Gift of Ernest Erickson Foundation, 1985",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/49030",
+    "motifs": [
+      "山",
+      "秋",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 51858,
+    "src": "/poetry-atlas/art/51858.webp",
+    "srcSmall": "/poetry-atlas/art/51858-sm.webp",
+    "title": "Landscape with Autumn Foliage",
+    "artist": "Shen Zhou",
+    "date": "",
+    "dynasty": "",
+    "medium": "Album leaf; ink and color on paper",
+    "creditLine": "Bequest of Walter Carlebach, 1969",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/51858",
+    "motifs": [
+      "水",
+      "舟",
+      "秋",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 45683,
+    "src": "/poetry-atlas/art/45683.webp",
+    "srcSmall": "/poetry-atlas/art/45683-sm.webp",
+    "title": "Autumn Colors among Streams and Mountains",
+    "artist": "Shen Zhou",
+    "date": "ca. 1490–1500",
+    "dynasty": "",
+    "medium": "Handscroll; ink on paper",
+    "creditLine": "Gift of Douglas Dillon, 1979",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/45683",
+    "motifs": [
+      "水",
+      "山",
+      "秋",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 45665,
+    "src": "/poetry-atlas/art/45665.webp",
+    "srcSmall": "/poetry-atlas/art/45665-sm.webp",
+    "title": "Village and Temples in Jiangnan",
+    "artist": "Unidentified artist",
+    "date": "early 15th century",
+    "dynasty": "",
+    "medium": "Round fan mounted as an album leaf; ink, color, and gold on silk",
+    "creditLine": "Bequest of John M. Crawford Jr., 1988",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/45665",
+    "motifs": [
+      "山",
+      "建筑",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 73650,
+    "src": "/poetry-atlas/art/73650.webp",
+    "srcSmall": "/poetry-atlas/art/73650-sm.webp",
+    "title": "Peach Blossom Spring",
+    "artist": "Zhang Hong",
+    "date": "dated 1638",
+    "dynasty": "",
+    "medium": "Handscroll; ink and color on paper",
+    "creditLine": "Gift of Julia and John Curtis, 2015",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/73650",
+    "motifs": [
+      "山",
+      "春",
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 49173,
+    "src": "/poetry-atlas/art/49173.webp",
+    "srcSmall": "/poetry-atlas/art/49173-sm.webp",
+    "title": "Returning Home",
+    "artist": "Shitao (Zhu Ruoji)",
+    "date": "ca. 1695",
+    "dynasty": "",
+    "medium": "Album of twelve leaves; ink and color on paper",
+    "creditLine": "From the P. Y. and Kinmay W. Tang Family, Gift of Wen and Constance Fong, in honor of Mr. and Mrs. Douglas Dillon, 1976",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/49173",
+    "motifs": [
+      "水",
+      "舟",
       "山水"
     ],
     "featured": ""

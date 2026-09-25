@@ -4658,5 +4658,1842 @@
         "reliability": "B"
       }
     ]
+  },
+  {
+    "id": "lishangyin",
+    "name": "李商隐",
+    "courtesyName": "义山",
+    "pseudonym": "玉谿生",
+    "aliases": [
+      "李义山",
+      "玉溪生",
+      "樊南生",
+      "李樊南"
+    ],
+    "dynasty": "唐",
+    "birth": {
+      "year": 813,
+      "original": "约元和八年",
+      "certainty": "approximate",
+      "fuzziness": 2
+    },
+    "death": {
+      "year": 858,
+      "original": "大中十二年",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "nativePlace": [
+      {
+        "placeId": "cn-henan-huaizhou",
+        "type": "ancestral",
+        "confidence": "A",
+        "note": "怀州河内（今河南沁阳）。两《唐书》本传均称「怀州河内人」，此为李氏籍贯与郡望，非其生地。"
+      },
+      {
+        "placeId": "cn-henan-xingyang",
+        "type": "birth",
+        "confidence": "C",
+        "note": "生于郑州荥阳（今河南荥阳）。其父李嗣时任获嘉县令，故又有生于获嘉一说，两说并存，此处取荥阳说。"
+      }
+    ],
+    "summary": "晚唐诗人，与杜牧并称「小李杜」。诗风秾丽深婉，尤以《无题》诸作与咏史诗著称；一生困于牛李党争，仕途偃蹇。",
+    "biography": "李商隐（约813—858），字义山，号玉谿生、樊南生，怀州河内（今河南沁阳）人。\n\n幼年随父李嗣宦游浙东、浙西，约十岁时父卒，奉丧北还郑州，家道由此中落，「佣书贩舂」以养。少年时受知于天平军节度使令狐楚，习今体章奏；开成二年（837）登进士第。次年入泾原节度使王茂元幕并娶其女——王茂元属李党，而令狐楚父子属牛党，他因此被目为「背恩」，此后终身陷于党争夹缝，仕途蹭蹬。\n\n会昌年间母丧去官，大中初年先后入桂管观察使郑亚幕（桂州）、武宁军节度使卢弘止幕（徐州）、东川节度使柳仲郢幕（梓州），多为幕职，辗转南北。大中十二年（858）罢盐铁推官后还郑州，约于是年卒，年四十六。\n\n其诗构思缜密、辞采浓丽，善用典故与象征，风格在晚唐独树一帜。《无题》诸作意旨隐晦，千载聚讼；咏史诗则借古讽今，识见锐利。有《玉谿生诗集》传世。",
+    "events": [
+      {
+        "id": "lishangyin-e1",
+        "poetId": "lishangyin",
+        "type": "birth",
+        "title": "生于郑州荥阳（生年约 813，另有 812 说）",
+        "placeId": "cn-henan-xingyang",
+        "date": {
+          "year": 813,
+          "original": "约元和八年",
+          "certainty": "approximate",
+          "fuzziness": 2
+        },
+        "description": "生年无明文，通行据其《祭裴氏姊文》等自述与履历逆推为元和八年（813）前后，另有 812 一说。生地亦有荥阳、获嘉两说：其父李嗣时任获嘉令，故有生于任所之说；而两《唐书》称其籍贯怀州河内，郑州荥阳则是其家长期居止与「郑州李商隐」之称的由来。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "jts-lishangyin",
+            "title": "旧唐书·李商隐传",
+            "author": "刘昫等",
+            "locator": "卷190下·文苑下",
+            "reliability": "A"
+          },
+          {
+            "id": "xts-lishangyin",
+            "title": "新唐书·李商隐传",
+            "author": "欧阳修等",
+            "locator": "卷203·文艺下",
+            "reliability": "A"
+          },
+          {
+            "id": "zhang-caitian-nianpu",
+            "title": "玉谿生年谱会笺",
+            "author": "张采田",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "lishangyin-e2",
+        "poetId": "lishangyin",
+        "type": "other",
+        "title": "父李嗣卒于浙西幕，随母奉丧北还郑州",
+        "placeId": "cn-henan-xingyang",
+        "date": {
+          "year": 823,
+          "original": "约长庆三年",
+          "certainty": "approximate",
+          "fuzziness": 2
+        },
+        "description": "李嗣曾为获嘉令，后入浙东、浙西观察使幕。约长庆三年卒于幕中，李商隐时年约十岁，随母奉丧北归郑州。此后家境窘困，他自述「佣书贩舂，以养」。《旧唐书》称其「幼能为文」，即此困顿中力学之期。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "jts-lishangyin",
+            "title": "旧唐书·李商隐传",
+            "author": "刘昫等",
+            "locator": "卷190下·文苑下",
+            "reliability": "A"
+          },
+          {
+            "id": "zhang-caitian-nianpu",
+            "title": "玉谿生年谱会笺",
+            "author": "张采田",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "lishangyin-e3",
+        "poetId": "lishangyin",
+        "type": "meeting",
+        "title": "令狐楚辟为天平军节度使巡官，授以今体章奏",
+        "placeId": "cn-shandong-yunzhou",
+        "date": {
+          "year": 829,
+          "original": "大和三年",
+          "certainty": "exact"
+        },
+        "description": "天平军节度使令狐楚镇郓州，爱其才，辟为巡官，亲授骈文章奏之法。这是李商隐一生最重要的知遇，其骈文功底与早期仕进之阶皆出于此。令狐楚后调任太原，亦携之同行。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-lishangyin",
+            "title": "旧唐书·李商隐传",
+            "author": "刘昫等",
+            "locator": "卷190下·文苑下",
+            "reliability": "A"
+          },
+          {
+            "id": "xts-lishangyin",
+            "title": "新唐书·李商隐传",
+            "author": "欧阳修等",
+            "locator": "卷203·文艺下",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "lishangyin-e4",
+        "poetId": "lishangyin",
+        "type": "meeting",
+        "title": "随令狐楚至太原幕",
+        "placeId": "cn-shanxi-taiyuan",
+        "date": {
+          "year": 833,
+          "original": "大和七年",
+          "certainty": "exact"
+        },
+        "description": "令狐楚由天平军移镇河东，李商隐随至太原。期间曾入京应举不第，往来于太原、长安之间。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-lishangyin",
+            "title": "旧唐书·李商隐传",
+            "author": "刘昫等",
+            "locator": "卷190下·文苑下",
+            "reliability": "A"
+          },
+          {
+            "id": "zhang-caitian-nianpu",
+            "title": "玉谿生年谱会笺",
+            "author": "张采田",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "lishangyin-e5",
+        "poetId": "lishangyin",
+        "type": "exam",
+        "title": "登进士第（令狐绹力荐）",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 837,
+          "original": "开成二年",
+          "certainty": "exact"
+        },
+        "description": "因令狐楚之子令狐绹延誉，李商隐于是年登进士第。同年令狐楚卒。这是他科举生涯的顶点，也是此后被指「背恩」的起点。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "jts-lishangyin",
+            "title": "旧唐书·李商隐传",
+            "author": "刘昫等",
+            "locator": "卷190下·文苑下",
+            "reliability": "A"
+          },
+          {
+            "id": "xts-lishangyin",
+            "title": "新唐书·李商隐传",
+            "author": "欧阳修等",
+            "locator": "卷203·文艺下",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "lishangyin-e6",
+        "poetId": "lishangyin",
+        "type": "office",
+        "title": "入泾原节度使王茂元幕，娶王氏",
+        "placeId": "cn-gansu-jingzhou",
+        "date": {
+          "year": 838,
+          "original": "开成三年",
+          "certainty": "exact"
+        },
+        "description": "登第次年赴泾州，入泾原节度使王茂元幕并娶其女。王茂元近李德裕一党，而令狐氏属牛党，此举被牛党视为背恩，李商隐自此终身在党争夹缝中辗转。《安定城楼》一诗即作于此期。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-lishangyin",
+            "title": "旧唐书·李商隐传",
+            "author": "刘昫等",
+            "locator": "卷190下·文苑下",
+            "reliability": "A"
+          },
+          {
+            "id": "xts-lishangyin",
+            "title": "新唐书·李商隐传",
+            "author": "欧阳修等",
+            "locator": "卷203·文艺下",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "lishangyin-e7",
+        "poetId": "lishangyin",
+        "type": "office",
+        "title": "为秘书省校书郎，后调弘农尉",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "from": {
+            "year": 839,
+            "original": "开成四年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 841,
+            "original": "会昌元年",
+            "certainty": "exact"
+          }
+        },
+        "description": "释褐为秘书省校书郎，旋调弘农尉。京中秘书省的经历是他日后《无题》「走马兰台」等句的实境所本（兰台即秘书省别称）。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-lishangyin",
+            "title": "旧唐书·李商隐传",
+            "author": "刘昫等",
+            "locator": "卷190下·文苑下",
+            "reliability": "A"
+          },
+          {
+            "id": "zhang-caitian-nianpu",
+            "title": "玉谿生年谱会笺",
+            "author": "张采田",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "lishangyin-e8",
+        "poetId": "lishangyin",
+        "type": "mourning",
+        "title": "母丧去官，居郑州守制",
+        "placeId": "cn-henan-xingyang",
+        "date": {
+          "from": {
+            "year": 842,
+            "original": "会昌二年",
+            "certainty": "approximate"
+          },
+          "to": {
+            "year": 844,
+            "original": "会昌四年",
+            "certainty": "approximate"
+          }
+        },
+        "description": "会昌初丁母忧去官，居家守制近三年。此期正值李德裕当国、会昌中兴，李商隐却因守制而错失仕进时机，会昌年间的政治气象多只能写入诗中追想。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "zhang-caitian-nianpu",
+            "title": "玉谿生年谱会笺",
+            "author": "张采田",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "lishangyin-e9",
+        "poetId": "lishangyin",
+        "type": "office",
+        "title": "入桂管观察使郑亚幕，远赴桂州",
+        "placeId": "cn-guangxi-guilin",
+        "date": {
+          "from": {
+            "year": 847,
+            "original": "大中元年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 849,
+            "original": "大中三年",
+            "certainty": "approximate"
+          }
+        },
+        "description": "宣宗即位后李党失势，郑亚出为桂管观察使，辟李商隐为幕僚。他随幕远赴桂州，这是他一生行迹最南的一段。桂州气候温润、草木葱郁，《晚晴》「越鸟巢干后」即以岭外风物自况。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-lishangyin",
+            "title": "旧唐书·李商隐传",
+            "author": "刘昫等",
+            "locator": "卷190下·文苑下",
+            "reliability": "A"
+          },
+          {
+            "id": "zhang-caitian-nianpu",
+            "title": "玉谿生年谱会笺",
+            "author": "张采田",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "lishangyin-e10",
+        "poetId": "lishangyin",
+        "type": "office",
+        "title": "入武宁军节度使卢弘止幕，居徐州",
+        "placeId": "cn-jiangsu-xuzhou",
+        "date": {
+          "year": 851,
+          "original": "大中五年",
+          "certainty": "exact"
+        },
+        "description": "郑亚贬循州后，李商隐北还，入武宁军节度使卢弘止幕于徐州。未几卢弘止卒，幕府解散，他再度失去依托；同年妻王氏亦卒，其《房中曲》等悼亡之作即在此前后。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-lishangyin",
+            "title": "旧唐书·李商隐传",
+            "author": "刘昫等",
+            "locator": "卷190下·文苑下",
+            "reliability": "A"
+          },
+          {
+            "id": "zhang-caitian-nianpu",
+            "title": "玉谿生年谱会笺",
+            "author": "张采田",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "lishangyin-e11",
+        "poetId": "lishangyin",
+        "type": "office",
+        "title": "入东川节度使柳仲郢幕，居梓州五年",
+        "placeId": "cn-sichuan-santai",
+        "date": {
+          "from": {
+            "year": 851,
+            "original": "大中五年冬",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 855,
+            "original": "大中九年",
+            "certainty": "exact"
+          }
+        },
+        "description": "徐州幕散后，应东川节度使柳仲郢之辟，远赴梓州，前后五年。这是他仕途上最长久的一段幕职，也是其诗风最沉郁的时期。《夜雨寄北》所写「巴山夜雨」即东川景物。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-lishangyin",
+            "title": "旧唐书·李商隐传",
+            "author": "刘昫等",
+            "locator": "卷190下·文苑下",
+            "reliability": "A"
+          },
+          {
+            "id": "zhang-caitian-nianpu",
+            "title": "玉谿生年谱会笺",
+            "author": "张采田",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "lishangyin-e12",
+        "poetId": "lishangyin",
+        "type": "office",
+        "title": "随柳仲郢还京，为盐铁推官",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 855,
+          "original": "大中九年",
+          "certainty": "exact"
+        },
+        "description": "柳仲郢内调，李商隐随还长安，补太学博士，后为盐铁推官，曾往江东理事。晚年身体多病，仕途已无起色。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-lishangyin",
+            "title": "旧唐书·李商隐传",
+            "author": "刘昫等",
+            "locator": "卷190下·文苑下",
+            "reliability": "A"
+          },
+          {
+            "id": "zhang-caitian-nianpu",
+            "title": "玉谿生年谱会笺",
+            "author": "张采田",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "lishangyin-e13",
+        "poetId": "lishangyin",
+        "type": "death",
+        "title": "罢官还郑州，约卒于本年",
+        "placeId": "cn-henan-xingyang",
+        "date": {
+          "year": 858,
+          "original": "大中十二年",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "罢盐铁推官后还郑州闲居，约于是年卒，年约四十六。卒年另有 857 说，相差一年，故 fuzziness 取 1。崔珏《哭李商隐》「虚负凌云万丈才，一生襟抱未曾开」，可为其一生写照。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "jts-lishangyin",
+            "title": "旧唐书·李商隐传",
+            "author": "刘昫等",
+            "locator": "卷190下·文苑下",
+            "reliability": "A"
+          },
+          {
+            "id": "xts-lishangyin",
+            "title": "新唐书·李商隐传",
+            "author": "欧阳修等",
+            "locator": "卷203·文艺下",
+            "reliability": "A"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "jts-lishangyin",
+        "title": "旧唐书·李商隐传",
+        "author": "刘昫等",
+        "locator": "卷190下·文苑下",
+        "reliability": "A"
+      },
+      {
+        "id": "xts-lishangyin",
+        "title": "新唐书·李商隐传",
+        "author": "欧阳修等",
+        "locator": "卷203·文艺下",
+        "reliability": "A"
+      },
+      {
+        "id": "zhang-caitian-nianpu",
+        "title": "玉谿生年谱会笺",
+        "author": "张采田",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "dumu",
+    "name": "杜牧",
+    "courtesyName": "牧之",
+    "pseudonym": "樊川居士",
+    "aliases": [
+      "杜樊川",
+      "小杜",
+      "杜紫微"
+    ],
+    "dynasty": "唐",
+    "birth": {
+      "year": 803,
+      "original": "贞元十九年",
+      "certainty": "exact"
+    },
+    "death": {
+      "year": 852,
+      "original": "大中六年",
+      "certainty": "exact"
+    },
+    "nativePlace": [
+      {
+        "placeId": "cn-shaanxi-xian",
+        "type": "birth",
+        "confidence": "A",
+        "note": "京兆万年（长安城内），两《唐书》本传均称「京兆万年人」。祖居长安城南樊川，故世称「杜樊川」。"
+      }
+    ],
+    "summary": "晚唐诗人，与李商隐并称「小李杜」。诗风俊爽豪宕，尤长七绝；《阿房宫赋》为唐赋名篇。一生仕宦州郡，遍历扬、黄、池、睦、湖诸州。",
+    "biography": "杜牧（803—852），字牧之，京兆万年（今陕西西安）人，宰相杜佑之孙。因祖居长安樊川，世称杜樊川。\n\n少有才名，二十余岁作《阿房宫赋》，为时传诵。大和二年（828）登进士第，又中贤良方正科。此后十余年多为幕职：入沈传师江西、宣歙幕，又入牛僧孺淮南节度使幕于扬州，前后约三年，放浪形骸，「十年一觉扬州梦」即此期记忆。\n\n开成年间入朝为监察御史，旋分司东都；会昌二年（842）出为黄州刺史，其后历池州、睦州、湖州刺史，皆有治绩。大中六年（852）迁中书舍人，未几卒，年五十。\n\n杜牧诗兼擅各体，七绝尤为精绝，写景则明丽如画，咏史则翻案见识，怀古则沉慨苍茫。他自述「某苦心为诗，本求高绝，不务奇丽，不涉习俗」，可为定评。有《樊川文集》传世。",
+    "events": [
+      {
+        "id": "dumu-e1",
+        "poetId": "dumu",
+        "type": "birth",
+        "title": "生于京兆万年（长安）",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 803,
+          "original": "贞元十九年",
+          "certainty": "exact"
+        },
+        "description": "生于长安城中的杜氏旧第。祖杜佑为德宗、顺宗、宪宗三朝宰相，著《通典》；家世显赫，杜牧早年深受此门风沾溉。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "jts-dumu",
+            "title": "旧唐书·杜牧传",
+            "author": "刘昫等",
+            "locator": "卷147",
+            "reliability": "A"
+          },
+          {
+            "id": "xts-dumu",
+            "title": "新唐书·杜牧传",
+            "author": "欧阳修等",
+            "locator": "卷166",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "dumu-e2",
+        "poetId": "dumu",
+        "type": "other",
+        "title": "祖父杜佑卒，家道渐落",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 812,
+          "original": "元和七年",
+          "certainty": "exact"
+        },
+        "description": "祖父杜佑卒，杜牧年十岁。此后父杜从郁亦早卒，家计日窘，他自述「某幼孤贫，家本秦地」。门第虽高而家境已非昔比，这层落差是理解其诗中「落魄」之感的背景。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-dumu",
+            "title": "旧唐书·杜牧传",
+            "author": "刘昫等",
+            "locator": "卷147",
+            "reliability": "A"
+          },
+          {
+            "id": "miu-yue-nianpu",
+            "title": "杜牧年谱",
+            "author": "缪钺",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dumu-e3",
+        "poetId": "dumu",
+        "type": "creation",
+        "title": "作《阿房宫赋》",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 825,
+          "original": "宝历元年",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "敬宗即位后大兴土木、游猎无度，杜牧感时作《阿房宫赋》，借秦之覆亡讽谏当世，末句「后人哀之而不鉴之，亦使后人而复哀后人也」传诵千古。作年一般系于宝历元年，年二十三。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-dumu",
+            "title": "旧唐书·杜牧传",
+            "author": "刘昫等",
+            "locator": "卷147",
+            "reliability": "A"
+          },
+          {
+            "id": "miu-yue-nianpu",
+            "title": "杜牧年谱",
+            "author": "缪钺",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dumu-e4",
+        "poetId": "dumu",
+        "type": "exam",
+        "title": "登进士第，又中贤良方正科",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 828,
+          "original": "大和二年",
+          "certainty": "exact"
+        },
+        "description": "是年登进士第，同年应贤良方正能直言极谏科及第，授弘文馆校书郎、试左武卫兵曹参军。太学博士吴武陵曾以其《阿房宫赋》荐于主司崔郾，为唐代科举中一段著名佳话。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "jts-dumu",
+            "title": "旧唐书·杜牧传",
+            "author": "刘昫等",
+            "locator": "卷147",
+            "reliability": "A"
+          },
+          {
+            "id": "xts-dumu",
+            "title": "新唐书·杜牧传",
+            "author": "欧阳修等",
+            "locator": "卷166",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "dumu-e5",
+        "poetId": "dumu",
+        "type": "office",
+        "title": "入沈传师宣歙观察使幕",
+        "placeId": "cn-anhui-xuancheng",
+        "date": {
+          "from": {
+            "year": 833,
+            "original": "大和七年",
+            "certainty": "approximate"
+          },
+          "to": {
+            "year": 835,
+            "original": "大和九年",
+            "certainty": "approximate"
+          }
+        },
+        "description": "先入沈传师江西观察使幕于洪州，大和七年随沈传师移镇宣歙，至宣州。宣州数年是他诗歌渐成气候的时期，《题宣州开元寺水阁》即作于此后追忆或居留之际。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "xts-dumu",
+            "title": "新唐书·杜牧传",
+            "author": "欧阳修等",
+            "locator": "卷166",
+            "reliability": "A"
+          },
+          {
+            "id": "miu-yue-nianpu",
+            "title": "杜牧年谱",
+            "author": "缪钺",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dumu-e6",
+        "poetId": "dumu",
+        "type": "office",
+        "title": "为淮南节度使牛僧孺掌书记，居扬州",
+        "placeId": "cn-jiangsu-yangzhou",
+        "date": {
+          "from": {
+            "year": 833,
+            "original": "大和七年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 835,
+            "original": "大和九年",
+            "certainty": "exact"
+          }
+        },
+        "description": "入牛僧孺淮南节度使幕为掌书记，居扬州约三年。扬州为当时东南第一都会，杜牧在此诗酒流连，「十年一觉扬州梦，赢得青楼薄幸名」即后来追忆此期之作。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-dumu",
+            "title": "旧唐书·杜牧传",
+            "author": "刘昫等",
+            "locator": "卷147",
+            "reliability": "A"
+          },
+          {
+            "id": "miu-yue-nianpu",
+            "title": "杜牧年谱",
+            "author": "缪钺",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dumu-e7",
+        "poetId": "dumu",
+        "type": "office",
+        "title": "入朝为监察御史，分司东都",
+        "placeId": "cn-henan-luoyang",
+        "date": {
+          "from": {
+            "year": 836,
+            "original": "开成元年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 840,
+            "original": "开成五年",
+            "certainty": "approximate"
+          }
+        },
+        "description": "由扬州赴长安任监察御史，旋以弟杜顗病目，分司东都洛阳以便照料。此期往来洛阳、长安之间，官位清而要，诗多登临怀古。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-dumu",
+            "title": "旧唐书·杜牧传",
+            "author": "刘昫等",
+            "locator": "卷147",
+            "reliability": "A"
+          },
+          {
+            "id": "miu-yue-nianpu",
+            "title": "杜牧年谱",
+            "author": "缪钺",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dumu-e8",
+        "poetId": "dumu",
+        "type": "demotion",
+        "title": "出为黄州刺史（齐安郡）",
+        "placeId": "cn-hubei-huanggang",
+        "date": {
+          "from": {
+            "year": 842,
+            "original": "会昌二年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 844,
+            "original": "会昌四年",
+            "certainty": "exact"
+          }
+        },
+        "description": "会昌二年出为黄州刺史。黄州僻处江畔、地瘠民贫，他自嘲「使君家似野人居」；然治郡有方，曾疏浚河道、兴学劝农。《齐安郡晚秋》与《赤壁》皆作于此任。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-dumu",
+            "title": "旧唐书·杜牧传",
+            "author": "刘昫等",
+            "locator": "卷147",
+            "reliability": "A"
+          },
+          {
+            "id": "miu-yue-nianpu",
+            "title": "杜牧年谱",
+            "author": "缪钺",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dumu-e9",
+        "poetId": "dumu",
+        "type": "office",
+        "title": "迁池州刺史",
+        "placeId": "cn-anhui-chizhou",
+        "date": {
+          "from": {
+            "year": 844,
+            "original": "会昌四年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 846,
+            "original": "会昌六年",
+            "certainty": "exact"
+          }
+        },
+        "description": "由黄州迁池州刺史。会昌四年九月九日与友人张祜同登齐山，作《九日齐山登高》，为唐人重阳诗中的名篇。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-dumu",
+            "title": "旧唐书·杜牧传",
+            "author": "刘昫等",
+            "locator": "卷147",
+            "reliability": "A"
+          },
+          {
+            "id": "miu-yue-nianpu",
+            "title": "杜牧年谱",
+            "author": "缪钺",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dumu-e10",
+        "poetId": "dumu",
+        "type": "office",
+        "title": "迁睦州刺史",
+        "placeId": "cn-zhejiang-jiande",
+        "date": {
+          "from": {
+            "year": 848,
+            "original": "大中二年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 849,
+            "original": "大中三年",
+            "certainty": "exact"
+          }
+        },
+        "description": "大中二年由比部员外郎出为睦州刺史，居建德。睦州山川清峻，他自杭州溯钱塘江西上赴任，途中多纪行之作。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "xts-dumu",
+            "title": "新唐书·杜牧传",
+            "author": "欧阳修等",
+            "locator": "卷166",
+            "reliability": "A"
+          },
+          {
+            "id": "miu-yue-nianpu",
+            "title": "杜牧年谱",
+            "author": "缪钺",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dumu-e11",
+        "poetId": "dumu",
+        "type": "office",
+        "title": "迁湖州刺史，复入朝为中书舍人",
+        "placeId": "cn-zhejiang-huzhou",
+        "date": {
+          "from": {
+            "year": 851,
+            "original": "大中五年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 852,
+            "original": "大中六年",
+            "certainty": "exact"
+          }
+        },
+        "description": "大中五年由考功郎中、知制诰出为湖州刺史；次年入为中书舍人。湖州任上曾上《进撰故江西韦大夫遗爱碑文表》，并修葺水利。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jts-dumu",
+            "title": "旧唐书·杜牧传",
+            "author": "刘昫等",
+            "locator": "卷147",
+            "reliability": "A"
+          },
+          {
+            "id": "miu-yue-nianpu",
+            "title": "杜牧年谱",
+            "author": "缪钺",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "dumu-e12",
+        "poetId": "dumu",
+        "type": "death",
+        "title": "迁中书舍人，未几卒",
+        "placeId": "cn-shaanxi-xian",
+        "date": {
+          "year": 852,
+          "original": "大中六年",
+          "certainty": "exact"
+        },
+        "description": "入为中书舍人，居长安。是年冬卒，年五十。临终前自撰墓志铭，尽焚其文章之十之七八，今存《樊川文集》二十卷系其外甥裴延翰所编。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "jts-dumu",
+            "title": "旧唐书·杜牧传",
+            "author": "刘昫等",
+            "locator": "卷147",
+            "reliability": "A"
+          },
+          {
+            "id": "xts-dumu",
+            "title": "新唐书·杜牧传",
+            "author": "欧阳修等",
+            "locator": "卷166",
+            "reliability": "A"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "jts-dumu",
+        "title": "旧唐书·杜牧传",
+        "author": "刘昫等",
+        "locator": "卷147",
+        "reliability": "A"
+      },
+      {
+        "id": "xts-dumu",
+        "title": "新唐书·杜牧传",
+        "author": "欧阳修等",
+        "locator": "卷166",
+        "reliability": "A"
+      },
+      {
+        "id": "miu-yue-nianpu",
+        "title": "杜牧年谱",
+        "author": "缪钺",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "luyou",
+    "name": "陆游",
+    "courtesyName": "务观",
+    "pseudonym": "放翁",
+    "aliases": [
+      "陆放翁",
+      "陆务观",
+      "龟堂"
+    ],
+    "dynasty": "宋",
+    "birth": {
+      "year": 1125,
+      "original": "宣和七年",
+      "certainty": "exact"
+    },
+    "death": {
+      "year": 1210,
+      "original": "嘉定二年十二月二十九日（公历 1210 年 1 月 26 日）",
+      "certainty": "exact"
+    },
+    "nativePlace": [
+      {
+        "placeId": "cn-zhejiang-shanyin",
+        "type": "birth",
+        "confidence": "A",
+        "note": "越州山阴（今浙江绍兴），《宋史》本传明载「越州山阴人」。另有生于其父淮南舟中之说，然籍贯山阴无异议。"
+      }
+    ],
+    "summary": "南宋诗人，存诗九千余首，为古代作品最多的诗人。终身以恢复中原为志，诗风雄浑悲慨；晚年闲居山阴，田园之作亦清畅可诵。",
+    "biography": "陆游（1125—1210），字务观，号放翁，越州山阴（今浙江绍兴）人。\n\n生当北宋覆亡之际，襁褓中即随家避兵南奔，「儿时万死避胡兵」为其一生记忆的起点。绍兴年间应礼部试，因名次在秦桧之孙前而遭黜落；秦桧死后方得出仕。孝宗即位，赐进士出身，然隆兴和议既成，恢复之议遂寝。\n\n乾道八年（1172）入四川宣抚使王炎幕，驻南郑，亲历西北前线，「铁马秋风大散关」即此期实境——这是他一生唯一一段真正的军旅生涯，前后不足一年，却成为他后半生反复追忆的梦境。此后仕蜀多年，官至成都府路安抚司参议官。\n\n淳熙十六年（1189）知严州，次年入朝修史，旋以「嘲咏风月」罢归山阴，此后二十年闲居不出。嘉定二年（1209）十二月卒，年八十五。临终作《示儿》，「王师北定中原日，家祭无忘告乃翁」为其一生志业之终章。\n\n陆游诗兼有李白的雄奇与杜甫的沉郁，题材极广，爱国诸篇尤为后人推重。与尤袤、杨万里、范成大并称「中兴四大诗人」。",
+    "events": [
+      {
+        "id": "luyou-e1",
+        "poetId": "luyou",
+        "type": "birth",
+        "title": "生于越州山阴（另有生于淮南舟中之说）",
+        "placeId": "cn-zhejiang-shanyin",
+        "date": {
+          "year": 1125,
+          "original": "宣和七年十月十七日",
+          "certainty": "exact"
+        },
+        "description": "《宋史》本传称「越州山阴人」，籍贯无争议。另有记载其父陆宰携家赴京、行次淮南，陆游生于淮河舟中，故小名「游」。两说并存，此处籍贯从正史，出生情形另记于描述。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "ss-luyou",
+            "title": "宋史·陆游传",
+            "author": "脱脱等",
+            "locator": "卷395",
+            "reliability": "A"
+          },
+          {
+            "id": "yubeishan-nianpu",
+            "title": "陆游年谱",
+            "author": "于北山",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "luyou-e2",
+        "poetId": "luyou",
+        "type": "war",
+        "title": "靖康之变，随家避兵南奔，还居山阴",
+        "placeId": "cn-zhejiang-shanyin",
+        "date": {
+          "from": {
+            "year": 1126,
+            "original": "靖康元年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1128,
+            "original": "建炎二年",
+            "certainty": "approximate"
+          }
+        },
+        "description": "金兵南下，汴京陷落，二帝北狩。陆宰携家辗转避兵，历经「儿时万死避胡兵」的颠沛，最终归居山阴。国破之痛贯穿其一生，是他所有爱国诗篇的情感底色。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "ss-luyou",
+            "title": "宋史·陆游传",
+            "author": "脱脱等",
+            "locator": "卷395",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "luyou-e3",
+        "poetId": "luyou",
+        "type": "study",
+        "title": "家居山阴力学，年十二能诗文",
+        "placeId": "cn-zhejiang-shanyin",
+        "date": {
+          "from": {
+            "year": 1132,
+            "original": "绍兴二年",
+            "certainty": "approximate"
+          },
+          "to": {
+            "year": 1152,
+            "original": "绍兴二十二年",
+            "certainty": "approximate"
+          }
+        },
+        "description": "《宋史》称其「年十二能诗文」，长而荫补登仕郎。山阴陆氏为越中望族，藏书甚富，家学与乡邦文献为其早年根柢。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "ss-luyou",
+            "title": "宋史·陆游传",
+            "author": "脱脱等",
+            "locator": "卷395",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "luyou-e4",
+        "poetId": "luyou",
+        "type": "demotion",
+        "title": "应礼部试，为秦桧所黜",
+        "placeId": "cn-zhejiang-hangzhou",
+        "date": {
+          "year": 1153,
+          "original": "绍兴二十三年",
+          "certainty": "exact"
+        },
+        "description": "赴临安应锁厅试，主司陈之茂取为第一，秦桧之孙秦埙次之，秦桧大怒；次年礼部试，陆游因「喜论恢复」再遭黜落。直至绍兴二十五年秦桧死，方得出仕。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "ss-luyou",
+            "title": "宋史·陆游传",
+            "author": "脱脱等",
+            "locator": "卷395",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "luyou-e5",
+        "poetId": "luyou",
+        "type": "office",
+        "title": "入为敕令所删定官，累迁大理寺司直",
+        "placeId": "cn-zhejiang-hangzhou",
+        "date": {
+          "from": {
+            "year": 1160,
+            "original": "绍兴三十年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1162,
+            "original": "绍兴三十二年",
+            "certainty": "exact"
+          }
+        },
+        "description": "秦桧死后，陆游始为宁德主簿，后调福州决曹，再入临安为敕令所删定官、大理寺司直。孝宗即位后赐进士出身，其「恢复」之论颇见采纳。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "ss-luyou",
+            "title": "宋史·陆游传",
+            "author": "脱脱等",
+            "locator": "卷395",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "luyou-e6",
+        "poetId": "luyou",
+        "type": "demotion",
+        "title": "隆兴和议成，出为镇江、隆兴通判，旋罢归山阴",
+        "placeId": "cn-zhejiang-shanyin",
+        "date": {
+          "from": {
+            "year": 1163,
+            "original": "隆兴元年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1166,
+            "original": "乾道二年",
+            "certainty": "exact"
+          }
+        },
+        "description": "符离兵败后主和派得势，陆游先通判镇江，再通判隆兴府，终以「交结台谏，鼓唱是非」罢归山阴，闲居四年。乾道二年罢归后即居山阴三山别业，作《游山西村》。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "ss-luyou",
+            "title": "宋史·陆游传",
+            "author": "脱脱等",
+            "locator": "卷395",
+            "reliability": "A"
+          },
+          {
+            "id": "yubeishan-nianpu",
+            "title": "陆游年谱",
+            "author": "于北山",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "luyou-e7",
+        "poetId": "luyou",
+        "type": "office",
+        "title": "赴夔州通判任，溯江入蜀",
+        "placeId": "cn-sichuan-kuizhou",
+        "date": {
+          "from": {
+            "year": 1170,
+            "original": "乾道六年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1171,
+            "original": "乾道七年",
+            "certainty": "exact"
+          }
+        },
+        "description": "乾道六年闰五月自山阴启程赴夔州通判任，溯长江历两浙、江淮、荆湖而入峡，沿途逐日记之，成《入蜀记》六卷——一部兼具地理与文史价值的行记。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "rushuji",
+            "title": "入蜀记",
+            "author": "陆游",
+            "locator": "卷1—6",
+            "reliability": "A"
+          },
+          {
+            "id": "ss-luyou",
+            "title": "宋史·陆游传",
+            "author": "脱脱等",
+            "locator": "卷395",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "luyou-e8",
+        "poetId": "luyou",
+        "type": "war",
+        "title": "入四川宣抚使王炎幕，驻南郑，亲历西北前线",
+        "placeId": "cn-shaanxi-nanzheng",
+        "date": {
+          "from": {
+            "year": 1172,
+            "original": "乾道八年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1172,
+            "original": "乾道八年十一月",
+            "certainty": "exact"
+          }
+        },
+        "description": "乾道八年，陆游入四川宣抚使王炎幕为干办公事，驻南郑（今汉中），往来于陇蜀之间，曾亲临大散关前线。这是他一生唯一亲历军旅的时期，虽不足一年，却成为他此后四十年反复入梦的记忆：「铁马秋风大散关」「铁马冰河入梦来」皆本于此。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "ss-luyou",
+            "title": "宋史·陆游传",
+            "author": "脱脱等",
+            "locator": "卷395",
+            "reliability": "A"
+          },
+          {
+            "id": "yubeishan-nianpu",
+            "title": "陆游年谱",
+            "author": "于北山",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "luyou-e9",
+        "poetId": "luyou",
+        "type": "travel",
+        "title": "王炎召还，自南郑赴成都，过剑门",
+        "placeId": "cn-sichuan-jianmen",
+        "date": {
+          "year": 1172,
+          "original": "乾道八年十一月",
+          "certainty": "exact"
+        },
+        "description": "是年十一月王炎召还，幕府解散，陆游改除成都府安抚司参议官，自南郑南行入蜀，途经剑门关，作《剑门道中遇微雨》。从「铁马秋风」的军旅转为「细雨骑驴」的行旅，其自嘲与不甘尽在此诗。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "ss-luyou",
+            "title": "宋史·陆游传",
+            "author": "脱脱等",
+            "locator": "卷395",
+            "reliability": "A"
+          },
+          {
+            "id": "yubeishan-nianpu",
+            "title": "陆游年谱",
+            "author": "于北山",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "luyou-e10",
+        "poetId": "luyou",
+        "type": "office",
+        "title": "官蜀中，历蜀州、嘉州、荣州、成都",
+        "placeId": "cn-sichuan-chengdu",
+        "date": {
+          "from": {
+            "year": 1173,
+            "original": "乾道九年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1178,
+            "original": "淳熙五年",
+            "certainty": "exact"
+          }
+        },
+        "description": "此后数年间历蜀州通判、嘉州、荣州摄事，淳熙二年（1175）起为成都府路安抚司参议官，前后居蜀约八年。淳熙三年被劾罢官，即居成都，自号「放翁」。《病起书怀》作于淳熙三年成都任上。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "ss-luyou",
+            "title": "宋史·陆游传",
+            "author": "脱脱等",
+            "locator": "卷395",
+            "reliability": "A"
+          },
+          {
+            "id": "yubeishan-nianpu",
+            "title": "陆游年谱",
+            "author": "于北山",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "luyou-e11",
+        "poetId": "luyou",
+        "type": "office",
+        "title": "东归，历福建、江西，以「擅权」罢归山阴",
+        "placeId": "cn-zhejiang-shanyin",
+        "date": {
+          "from": {
+            "year": 1178,
+            "original": "淳熙五年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1186,
+            "original": "淳熙十三年",
+            "certainty": "exact"
+          }
+        },
+        "description": "淳熙五年出蜀东归，历提举福建常平茶盐、提举江南西路常平茶盐，淳熙八年以「擅权」被劾罢归山阴，闲居五年。此期是他创作最丰的阶段之一，《书愤》《临安春雨初霁》等皆在起复前后。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "ss-luyou",
+            "title": "宋史·陆游传",
+            "author": "脱脱等",
+            "locator": "卷395",
+            "reliability": "A"
+          },
+          {
+            "id": "yubeishan-nianpu",
+            "title": "陆游年谱",
+            "author": "于北山",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "luyou-e12",
+        "poetId": "luyou",
+        "type": "office",
+        "title": "起知严州，陛辞临安",
+        "placeId": "cn-zhejiang-jiande",
+        "date": {
+          "from": {
+            "year": 1186,
+            "original": "淳熙十三年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1189,
+            "original": "淳熙十六年",
+            "certainty": "exact"
+          }
+        },
+        "description": "淳熙十三年起知严州，先赴临安陛辞，寓居西湖畔，作《临安春雨初霁》；次年抵严州任，创刻《剑南诗稿》于郡斋。淳熙十五年任满，入朝为军器少监。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "ss-luyou",
+            "title": "宋史·陆游传",
+            "author": "脱脱等",
+            "locator": "卷395",
+            "reliability": "A"
+          },
+          {
+            "id": "yubeishan-nianpu",
+            "title": "陆游年谱",
+            "author": "于北山",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "luyou-e13",
+        "poetId": "luyou",
+        "type": "seclusion",
+        "title": "以「嘲咏风月」罢归，闲居山阴二十年",
+        "placeId": "cn-zhejiang-shanyin",
+        "date": {
+          "from": {
+            "year": 1191,
+            "original": "绍熙二年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1210,
+            "original": "嘉定二年",
+            "certainty": "exact"
+          }
+        },
+        "description": "淳熙十六年入朝修《两朝实录》，绍熙二年被劾「嘲咏风月」罢官，自此闲居山阴三山别业近二十年，以耕读课子终老。其间曾重游沈园，作《沈园》二首；晚年封渭南伯，然志业终付空望。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "ss-luyou",
+            "title": "宋史·陆游传",
+            "author": "脱脱等",
+            "locator": "卷395",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "luyou-e14",
+        "poetId": "luyou",
+        "type": "death",
+        "title": "卒于山阴，临终作《示儿》",
+        "placeId": "cn-zhejiang-shanyin",
+        "date": {
+          "year": 1210,
+          "original": "嘉定二年十二月二十九日（公历 1210 年 1 月 26 日）",
+          "certainty": "exact"
+        },
+        "description": "卒于山阴，年八十五。临终作《示儿》：「死去元知万事空，但悲不见九州同。王师北定中原日，家祭无忘告乃翁。」距其南郑从军已三十八年，北定之志终未实现。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "ss-luyou",
+            "title": "宋史·陆游传",
+            "author": "脱脱等",
+            "locator": "卷395",
+            "reliability": "A"
+          },
+          {
+            "id": "yubeishan-nianpu",
+            "title": "陆游年谱",
+            "author": "于北山",
+            "reliability": "B"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "ss-luyou",
+        "title": "宋史·陆游传",
+        "author": "脱脱等",
+        "locator": "卷395",
+        "reliability": "A"
+      },
+      {
+        "id": "rushuji",
+        "title": "入蜀记",
+        "author": "陆游",
+        "locator": "卷1—6",
+        "reliability": "A"
+      },
+      {
+        "id": "yubeishan-nianpu",
+        "title": "陆游年谱",
+        "author": "于北山",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "liqingzhao",
+    "name": "李清照",
+    "courtesyName": "",
+    "pseudonym": "易安居士",
+    "aliases": [
+      "李易安",
+      "易安",
+      "漱玉词人"
+    ],
+    "dynasty": "宋",
+    "birth": {
+      "year": 1084,
+      "original": "元丰七年",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "death": {
+      "year": 1155,
+      "original": "约绍兴二十五年前后",
+      "certainty": "approximate",
+      "fuzziness": 4
+    },
+    "nativePlace": [
+      {
+        "placeId": "cn-shandong-zhangqiu",
+        "type": "birth",
+        "confidence": "B",
+        "note": "齐州章丘（今山东济南章丘区）人。其父李格非为「苏门后四学士」之一，《宋史·李格非传》称「济南章丘人」，李清照籍贯本此。"
+      }
+    ],
+    "summary": "宋代女词人，婉约派代表，有「千古第一才女」之称。前期词清丽明快，南渡后转为沉痛凄怆；《金石录后序》为宋代散文名篇。",
+    "biography": "李清照（1084—约1155），号易安居士，齐州章丘（今山东济南章丘）人。父李格非为礼部员外郎、「苏门后四学士」之一，母王氏亦出书香门第。\n\n建中靖国元年（1101）嫁太学生赵明诚，夫妇同好金石书画，共事搜求校勘。大观元年（1107）赵挺之罢相后，二人屏居青州十余年，筑「归来堂」，是李清照一生最安定的时期。宣和年间赵明诚起复，先后知莱州、淄州。\n\n靖康之变起，青州十余屋书册金石尽毁于兵火；建炎二年（1128）赵明诚知江宁府，李清照随任。次年赵明诚病卒于建康，此后她孤身流寓越州、台州、温州、衢州，绍兴二年（1132）至临安。绍兴四年避乱金华，作《武陵春》，并为赵明诚遗著《金石录》作后序——一篇兼有金石学价值与身世之痛的自述。卒年无确考，约在绍兴二十五年（1155）前后。\n\n李清照词以「别是一家」自命，善以寻常语度入音律，白描见工，情致深婉。南渡前后的词风转折，是宋词史上最鲜明的个人轨迹之一。",
+    "events": [
+      {
+        "id": "liqingzhao-e1",
+        "poetId": "liqingzhao",
+        "type": "birth",
+        "title": "生于齐州章丘（生年 1084，另有 1081 说）",
+        "placeId": "cn-shandong-zhangqiu",
+        "date": {
+          "year": 1084,
+          "original": "元丰七年",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "生年通行定为元丰七年（1084），由《金石录后序》所记建中靖国元年（1101）年二十一逆推而得；另有 1081 一说，相差三年。籍贯章丘据《宋史·李格非传》。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "ss-ligeifei",
+            "title": "宋史·李格非传",
+            "author": "脱脱等",
+            "locator": "卷444·文苑六",
+            "reliability": "A"
+          },
+          {
+            "id": "jinshilu-houxu",
+            "title": "金石录后序",
+            "author": "李清照",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "liqingzhao-e2",
+        "poetId": "liqingzhao",
+        "type": "study",
+        "title": "随父居汴京，少有诗名",
+        "placeId": "cn-henan-kaifeng",
+        "date": {
+          "from": {
+            "year": 1090,
+            "original": "元祐五年",
+            "certainty": "approximate"
+          },
+          "to": {
+            "year": 1101,
+            "original": "建中靖国元年",
+            "certainty": "exact"
+          }
+        },
+        "description": "父李格非官京师，李清照随居汴京。元符二年（1099）前后作《如梦令·常记溪亭日暮》，以少女之笔写溪亭醉归，一时「当时文士莫不击节」。此期词风清丽明快，为其前期代表作。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "ss-ligeifei",
+            "title": "宋史·李格非传",
+            "author": "脱脱等",
+            "locator": "卷444·文苑六",
+            "reliability": "A"
+          },
+          {
+            "id": "wang-zhongwen-jiaozhu",
+            "title": "李清照集校注",
+            "author": "王仲闻",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "liqingzhao-e3",
+        "poetId": "liqingzhao",
+        "type": "marriage",
+        "title": "适太学生赵明诚",
+        "placeId": "cn-henan-kaifeng",
+        "date": {
+          "year": 1101,
+          "original": "建中靖国元年",
+          "certainty": "exact"
+        },
+        "description": "是年嫁赵明诚，时年二十一（一作十八）。赵明诚父赵挺之时为吏部侍郎。夫妇同好金石，每朔望质衣取半千钱，步入相国寺市碑文果实，归则相对展玩咀嚼——此段生活见《金石录后序》自述，是宋代文人生活的一手材料。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "jinshilu-houxu",
+            "title": "金石录后序",
+            "author": "李清照",
+            "reliability": "A"
+          },
+          {
+            "id": "ss-ligeifei",
+            "title": "宋史·李格非传",
+            "author": "脱脱等",
+            "locator": "卷444·文苑六",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "liqingzhao-e4",
+        "poetId": "liqingzhao",
+        "type": "seclusion",
+        "title": "赵挺之罢相卒，夫妇屏居青州十余年",
+        "placeId": "cn-shandong-qingzhou",
+        "date": {
+          "from": {
+            "year": 1107,
+            "original": "大观元年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1121,
+            "original": "宣和三年",
+            "certainty": "approximate"
+          }
+        },
+        "description": "大观元年赵挺之罢相，旋即卒；赵明诚亦罢官，夫妇遂屏居青州乡里十余年，筑「归来堂」，以校勘金石、抄书斗茶为乐。李清照自述「甘心老是乡矣」，此为她一生最安定的时期，前期词多成于此。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "jinshilu-houxu",
+            "title": "金石录后序",
+            "author": "李清照",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "liqingzhao-e5",
+        "poetId": "liqingzhao",
+        "type": "war",
+        "title": "靖康之变，青州书册金石毁于兵火，仓皇南渡",
+        "placeId": "cn-shandong-qingzhou",
+        "date": {
+          "year": 1127,
+          "original": "靖康二年",
+          "certainty": "exact"
+        },
+        "description": "金兵南下，汴京陷。青州十余屋书册什物尽毁于兵火，李清照仅携少量书画金石南下。她自述「所谓岿然独存者，乃十去其七八」，十余年积藏一朝散尽，是其人生与词风的转折点。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "jinshilu-houxu",
+            "title": "金石录后序",
+            "author": "李清照",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "liqingzhao-e6",
+        "poetId": "liqingzhao",
+        "type": "office",
+        "title": "赵明诚知江宁府，随任居建康",
+        "placeId": "cn-jiangsu-jinling",
+        "date": {
+          "from": {
+            "year": 1128,
+            "original": "建炎二年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1129,
+            "original": "建炎三年",
+            "certainty": "exact"
+          }
+        },
+        "description": "建炎二年赵明诚起知江宁府，李清照随任。建炎三年春夫妇泛舟秦淮，此期她已深感「南来犹怯」，词中由明快转为低回。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "jinshilu-houxu",
+            "title": "金石录后序",
+            "author": "李清照",
+            "reliability": "A"
+          },
+          {
+            "id": "jianyan-yilai-xinian-yaolu",
+            "title": "建炎以来系年要录",
+            "author": "李心传",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "liqingzhao-e7",
+        "poetId": "liqingzhao",
+        "type": "death",
+        "title": "赵明诚卒于建康",
+        "placeId": "cn-jiangsu-jinling",
+        "date": {
+          "year": 1129,
+          "original": "建炎三年八月",
+          "certainty": "exact"
+        },
+        "description": "赵明诚罢知江宁府，移知湖州，未及赴任而病卒于建康，年四十九。李清照自此孤身一人，其词由相思之别转为生死之痛。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "jinshilu-houxu",
+            "title": "金石录后序",
+            "author": "李清照",
+            "reliability": "A"
+          },
+          {
+            "id": "jianyan-yilai-xinian-yaolu",
+            "title": "建炎以来系年要录",
+            "author": "李心传",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "liqingzhao-e8",
+        "poetId": "liqingzhao",
+        "type": "travel",
+        "title": "舟行南渡，过和州乌江，作《夏日绝句》",
+        "placeId": "cn-anhui-wujiang",
+        "date": {
+          "year": 1129,
+          "original": "建炎三年冬",
+          "certainty": "approximate",
+          "fuzziness": 1
+        },
+        "description": "赵明诚卒后，李清照携遗物自建康南奔，辗转避难。舟行经和州乌江（项羽自刎处，有项羽庙），作《乌江》一绝：「生当作人杰，死亦为鬼雄。至今思项羽，不肯过江东。」借项羽之不肯渡江，痛斥南渡君臣的苟安。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jinshilu-houxu",
+            "title": "金石录后序",
+            "author": "李清照",
+            "reliability": "A"
+          },
+          {
+            "id": "wang-zhongwen-jiaozhu",
+            "title": "李清照集校注",
+            "author": "王仲闻",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "liqingzhao-e9",
+        "poetId": "liqingzhao",
+        "type": "travel",
+        "title": "流寓越州、台州、温州、衢州，再至临安",
+        "placeId": "cn-zhejiang-hangzhou",
+        "date": {
+          "from": {
+            "year": 1130,
+            "original": "建炎四年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1132,
+            "original": "绍兴二年",
+            "certainty": "exact"
+          }
+        },
+        "description": "金兵南下追击，李清照随宋廷辗转越州、明州、台州、温州，又经衢州，绍兴二年（1132）始定居临安。此期她曾因「颁金通敌」之诬被迫投启自辩，颠沛中又多一重屈辱。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jianyan-yilai-xinian-yaolu",
+            "title": "建炎以来系年要录",
+            "author": "李心传",
+            "reliability": "A"
+          },
+          {
+            "id": "wang-zhongwen-jiaozhu",
+            "title": "李清照集校注",
+            "author": "王仲闻",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "liqingzhao-e10",
+        "poetId": "liqingzhao",
+        "type": "creation",
+        "title": "避乱金华，作《武陵春》与《金石录后序》",
+        "placeId": "cn-zhejiang-jinhua",
+        "date": {
+          "from": {
+            "year": 1134,
+            "original": "绍兴四年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 1135,
+            "original": "绍兴五年",
+            "certainty": "approximate"
+          }
+        },
+        "description": "绍兴四年避乱卜居金华，次年返临安。在金华期间作《武陵春》（「只恐双溪舴艋舟，载不动许多愁」，双溪即金华名胜），并写成《金石录后序》，为赵明诚遗著作序，兼述夫妇三十年间聚散与国破之痛。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "jinshilu-houxu",
+            "title": "金石录后序",
+            "author": "李清照",
+            "reliability": "A"
+          },
+          {
+            "id": "wang-zhongwen-jiaozhu",
+            "title": "李清照集校注",
+            "author": "王仲闻",
+            "reliability": "B"
+          }
+        ]
+      },
+      {
+        "id": "liqingzhao-e11",
+        "poetId": "liqingzhao",
+        "type": "death",
+        "title": "卒于临安，卒年无确考",
+        "placeId": "cn-zhejiang-hangzhou",
+        "date": {
+          "year": 1155,
+          "original": "约绍兴二十五年前后",
+          "certainty": "approximate",
+          "fuzziness": 4
+        },
+        "description": "晚年居临安，卒年无确考。可确定绍兴十三年（1143）尚在世（曾为宫人端午帖子撰词），此后行迹无载，通行推定卒于绍兴二十五年（1155）前后，上下浮动约四年，故 fuzziness 取 4。",
+        "confidence": "C",
+        "sources": [
+          {
+            "id": "wang-zhongwen-jiaozhu",
+            "title": "李清照集校注",
+            "author": "王仲闻",
+            "reliability": "B"
+          },
+          {
+            "id": "xu-peijun-jianzhu",
+            "title": "李清照集笺注",
+            "author": "徐培均",
+            "reliability": "B"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "jinshilu-houxu",
+        "title": "金石录后序",
+        "author": "李清照",
+        "reliability": "A"
+      },
+      {
+        "id": "ss-ligeifei",
+        "title": "宋史·李格非传",
+        "author": "脱脱等",
+        "locator": "卷444·文苑六",
+        "reliability": "A"
+      },
+      {
+        "id": "jianyan-yilai-xinian-yaolu",
+        "title": "建炎以来系年要录",
+        "author": "李心传",
+        "reliability": "A"
+      },
+      {
+        "id": "wang-zhongwen-jiaozhu",
+        "title": "李清照集校注",
+        "author": "王仲闻",
+        "reliability": "B"
+      }
+    ]
   }
 ]

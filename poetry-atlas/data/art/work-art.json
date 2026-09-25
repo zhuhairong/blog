@@ -2742,5 +2742,671 @@
     "artCredit": "John Stewart Kennedy Fund, 1913",
     "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153885.jpg",
     "artURL": "https://www.metmuseum.org/art/collection/search/36002"
+  },
+  {
+    "workId": "lishangyin-jinse",
+    "title": "锦瑟",
+    "poetId": "lishangyin",
+    "motifs": [
+      "感怀",
+      "追忆"
+    ],
+    "objectID": 41471,
+    "artTitle": "Autumn landscape with egrets and ducks",
+    "artArtist": "Lü Ji",
+    "artDate": "late 15th century",
+    "artCredit": "Purchase, Bequest of Dorothy Graham Bennett, 1980",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP328710.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/41471"
+  },
+  {
+    "workId": "lishangyin-yeyu-jibei",
+    "title": "夜雨寄北",
+    "poetId": "lishangyin",
+    "motifs": [
+      "思乡",
+      "寄内",
+      "夜雨"
+    ],
+    "objectID": 40088,
+    "artTitle": "Boats Moored in Wind and Rain",
+    "artArtist": "Unidentified artist",
+    "artDate": "13th century",
+    "artCredit": "Bequest of John M. Crawford Jr., 1988",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DT6287.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/40088"
+  },
+  {
+    "workId": "lishangyin-wuti-xiangjian",
+    "title": "无题·相见时难别亦难",
+    "poetId": "lishangyin",
+    "motifs": [
+      "爱情",
+      "相思"
+    ],
+    "objectID": 36059,
+    "artTitle": "Flowers and Butterflies",
+    "artArtist": "Ma Quan",
+    "artDate": "",
+    "artCredit": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DT241272.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36059"
+  },
+  {
+    "workId": "lishangyin-wuti-zuoye",
+    "title": "无题·昨夜星辰昨夜风",
+    "poetId": "lishangyin",
+    "motifs": [
+      "爱情",
+      "宴饮"
+    ],
+    "objectID": 36099,
+    "artTitle": "Vase of Flowers",
+    "artArtist": "Chen Hongshou",
+    "artDate": "",
+    "artCredit": "Gift of Mr. and Mrs. Earl Morse, 1972",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DT208245.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36099"
+  },
+  {
+    "workId": "lishangyin-deng-leyouyuan",
+    "title": "登乐游原",
+    "poetId": "lishangyin",
+    "motifs": [
+      "登临",
+      "迟暮"
+    ],
+    "objectID": 42260,
+    "artTitle": "Recluse Fisherman, Autumn Trees",
+    "artArtist": "Sheng Mao",
+    "artDate": "dated 1349",
+    "artCredit": "Ex coll.: C. C. Wang Family, Purchase, Florance Waterbury Bequest and Gift of Mr. and Mrs. Nathan Cummings, by exchange, 1973",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153532.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/42260"
+  },
+  {
+    "workId": "lishangyin-change",
+    "title": "嫦娥",
+    "poetId": "lishangyin",
+    "motifs": [
+      "咏史",
+      "孤寂"
+    ],
+    "objectID": 49549,
+    "artTitle": "Anchorage on a rainy night",
+    "artArtist": "Shen Zhou",
+    "artDate": "dated 1477",
+    "artCredit": "Gift of Marie-Hélène and Guy Weill, 2015",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP235605.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/49549"
+  },
+  {
+    "workId": "lishangyin-jiasheng",
+    "title": "贾生",
+    "poetId": "lishangyin",
+    "motifs": [
+      "咏史",
+      "讽喻"
+    ],
+    "objectID": 45664,
+    "artTitle": "Palaces among Autumn Mountains",
+    "artArtist": "Unidentified artist",
+    "artDate": "",
+    "artCredit": "Bequest of John M. Crawford Jr., 1988",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153536.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/45664"
+  },
+  {
+    "workId": "lishangyin-chan",
+    "title": "蝉",
+    "poetId": "lishangyin",
+    "motifs": [
+      "咏物",
+      "自伤"
+    ],
+    "objectID": 49468,
+    "artTitle": "Sailing in Autumn",
+    "artArtist": "Xugu (Zhu Huairen)",
+    "artDate": "dated 1893",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP162526.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/49468"
+  },
+  {
+    "workId": "lishangyin-wanqing",
+    "title": "晚晴",
+    "poetId": "lishangyin",
+    "motifs": [
+      "写景",
+      "自适"
+    ],
+    "objectID": 37396,
+    "artTitle": "Figures, flowers, and landscapes",
+    "artArtist": "Chen Hongshou",
+    "artDate": "one leaf dated 1627",
+    "artCredit": "Gift of Mr. and Mrs. Wan-go H. C. Weng, 1999",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP160529.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/37396"
+  },
+  {
+    "workId": "lishangyin-anding-chenglou",
+    "title": "安定城楼",
+    "poetId": "lishangyin",
+    "motifs": [
+      "登临",
+      "言志"
+    ],
+    "objectID": 51822,
+    "artTitle": "Landscape",
+    "artArtist": "Zhang Cining",
+    "artDate": "1807",
+    "artCredit": "Rogers Fund, 1957",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP203222_CRD.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/51822"
+  },
+  {
+    "workId": "dumu-bo-qinhuai",
+    "title": "泊秦淮",
+    "poetId": "dumu",
+    "motifs": [
+      "怀古",
+      "讽喻",
+      "夜泊"
+    ],
+    "objectID": 40092,
+    "artTitle": "Boating by a Willow Bank",
+    "artArtist": "Unidentified artist",
+    "artDate": "13th century",
+    "artCredit": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153512.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/40092"
+  },
+  {
+    "workId": "dumu-chibi",
+    "title": "赤壁",
+    "poetId": "dumu",
+    "motifs": [
+      "怀古",
+      "咏史"
+    ],
+    "objectID": 42261,
+    "artTitle": "Angling in the Autumn River",
+    "artArtist": "Sheng Zhu",
+    "artDate": "ca. 1370",
+    "artCredit": "Ex coll.: C. C. Wang Family, Purchase, Bequest of Martha T. Fiske Collord, in memory of her first husband, Josiah M. Fiske, Bequest of Mrs. Beekman Hoppin, and Gift of Herman Cooper, by exchange, 1973",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP235583.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/42261"
+  },
+  {
+    "workId": "dumu-ti-wujiangting",
+    "title": "题乌江亭",
+    "poetId": "dumu",
+    "motifs": [
+      "怀古",
+      "咏史"
+    ],
+    "objectID": 45683,
+    "artTitle": "Autumn Colors among Streams and Mountains",
+    "artArtist": "Shen Zhou",
+    "artDate": "ca. 1490–1500",
+    "artCredit": "Gift of Douglas Dillon, 1979",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP236590_CRD.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/45683"
+  },
+  {
+    "workId": "dumu-ji-yangzhou-hanchuo",
+    "title": "寄扬州韩绰判官",
+    "poetId": "dumu",
+    "motifs": [
+      "寄赠",
+      "怀人",
+      "江南"
+    ],
+    "objectID": 51858,
+    "artTitle": "Landscape with Autumn Foliage",
+    "artArtist": "Shen Zhou",
+    "artDate": "",
+    "artCredit": "Bequest of Walter Carlebach, 1969",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP156825.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/51858"
+  },
+  {
+    "workId": "dumu-qianhuai",
+    "title": "遣怀",
+    "poetId": "dumu",
+    "motifs": [
+      "感怀",
+      "追忆"
+    ],
+    "objectID": 45655,
+    "artTitle": "Flowers",
+    "artArtist": "Lü Jingfu",
+    "artDate": "14th century",
+    "artCredit": "Rogers Fund, 1912",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DT235402.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/45655"
+  },
+  {
+    "workId": "dumu-jiangnanchun",
+    "title": "江南春绝句",
+    "poetId": "dumu",
+    "motifs": [
+      "写景",
+      "江南",
+      "怀古"
+    ],
+    "objectID": 45665,
+    "artTitle": "Village and Temples in Jiangnan",
+    "artArtist": "Unidentified artist",
+    "artDate": "early 15th century",
+    "artCredit": "Bequest of John M. Crawford Jr., 1988",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153537.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/45665"
+  },
+  {
+    "workId": "dumu-jiuri-qishan",
+    "title": "九日齐山登高",
+    "poetId": "dumu",
+    "motifs": [
+      "登临",
+      "重阳",
+      "旷达"
+    ],
+    "objectID": 51872,
+    "artTitle": "Autumn Mountains",
+    "artArtist": "Dong Qichang",
+    "artDate": "",
+    "artCredit": "Bequest of John M. Crawford Jr., 1988",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-35743-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/51872"
+  },
+  {
+    "workId": "dumu-qian-jun-wanqiu",
+    "title": "齐安郡晚秋",
+    "poetId": "dumu",
+    "motifs": [
+      "贬谪",
+      "秋日",
+      "自适"
+    ],
+    "objectID": 49134,
+    "artTitle": "Landscape",
+    "artArtist": "Liu Yu",
+    "artDate": "1680",
+    "artCredit": "Bequest of John M. Crawford Jr., 1988",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP205858_CRD.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/49134"
+  },
+  {
+    "workId": "dumu-ti-xuanzhou-kaiyuansi",
+    "title": "题宣州开元寺水阁阁下宛溪夹溪居人",
+    "poetId": "dumu",
+    "motifs": [
+      "登临",
+      "怀古",
+      "江南"
+    ],
+    "objectID": 49150,
+    "artTitle": "Clearing after Rain over Streams and Mountains",
+    "artArtist": "Wang Hui",
+    "artDate": "dated 1662",
+    "artCredit": "Bequest of John M. Crawford Jr., 1988",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-36011-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/49150"
+  },
+  {
+    "workId": "dumu-zaoyan",
+    "title": "早雁",
+    "poetId": "dumu",
+    "motifs": [
+      "咏物",
+      "边塞",
+      "忧时"
+    ],
+    "objectID": 40422,
+    "artTitle": "Scholar Admiring Autumn Scenery",
+    "artArtist": "Unidentified artist",
+    "artDate": "ca. 1525",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/13_220_28_d1.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/40422"
+  },
+  {
+    "workId": "luyou-youshan-xicun",
+    "title": "游山西村",
+    "poetId": "luyou",
+    "motifs": [
+      "田园",
+      "纪游",
+      "哲理"
+    ],
+    "objectID": 73650,
+    "artTitle": "Peach Blossom Spring",
+    "artArtist": "Zhang Hong",
+    "artDate": "dated 1638",
+    "artCredit": "Gift of Julia and John Curtis, 2015",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/S_L_4_2007_1_1_sec02_crd.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/73650"
+  },
+  {
+    "workId": "luyou-shufen-qiyi",
+    "title": "书愤·其一",
+    "poetId": "luyou",
+    "motifs": [
+      "爱国",
+      "述志",
+      "追忆"
+    ],
+    "objectID": 53594,
+    "artTitle": "Eight Landscape Scenes and Calligraphy",
+    "artArtist": "Unidentified artist",
+    "artDate": "19th century",
+    "artCredit": "Seymour Fund, 1955",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP159732.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/53594"
+  },
+  {
+    "workId": "luyou-linan-chunyu",
+    "title": "临安春雨初霁",
+    "poetId": "luyou",
+    "motifs": [
+      "客居",
+      "春雨",
+      "倦游"
+    ],
+    "objectID": 49172,
+    "artTitle": "Bamboo in wind and rain",
+    "artArtist": "Shitao (Zhu Ruoji)",
+    "artDate": "ca. 1694",
+    "artCredit": "Edward Elliott Family Collection, Gift of Douglas Dillon, 1984",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-14071-003.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/49172"
+  },
+  {
+    "workId": "luyou-jianmen-daozhong",
+    "title": "剑门道中遇微雨",
+    "poetId": "luyou",
+    "motifs": [
+      "行旅",
+      "自嘲"
+    ],
+    "objectID": 49454,
+    "artTitle": "Landscape",
+    "artArtist": "Hu Yuan",
+    "artDate": "dated 1885",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP161403.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/49454"
+  },
+  {
+    "workId": "luyou-shier",
+    "title": "示儿",
+    "poetId": "luyou",
+    "motifs": [
+      "爱国",
+      "绝笔",
+      "遗愿"
+    ],
+    "objectID": 41481,
+    "artTitle": "Landscapes after old masters",
+    "artArtist": "Wang Hui",
+    "artDate": "dated 1674 and 1677",
+    "artCredit": "Purchase, The Dillon Fund Gift, 1989",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP154156_CRD.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/41481"
+  },
+  {
+    "workId": "luyou-shiyiyue-siri",
+    "title": "十一月四日风雨大作·其二",
+    "poetId": "luyou",
+    "motifs": [
+      "爱国",
+      "记梦",
+      "老病"
+    ],
+    "objectID": 45681,
+    "artTitle": "Misty Landscape",
+    "artArtist": "Unidentified artist",
+    "artDate": "15th–16th century",
+    "artCredit": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153554.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/45681"
+  },
+  {
+    "workId": "luyou-qiuye-jiangxiao",
+    "title": "秋夜将晓出篱门迎凉有感·其二",
+    "poetId": "luyou",
+    "motifs": [
+      "爱国",
+      "忧民",
+      "北望"
+    ],
+    "objectID": 49030,
+    "artTitle": "Lofty Recluse in Autumn Mountains",
+    "artArtist": "Wang Duo",
+    "artDate": "dated 1651",
+    "artCredit": "Gift of Ernest Erickson Foundation, 1985",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/LC-1985_214_149-02.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/49030"
+  },
+  {
+    "workId": "luyou-shenyuan-qiyi",
+    "title": "沈园·其一",
+    "poetId": "luyou",
+    "motifs": [
+      "悼亡",
+      "重游",
+      "感旧"
+    ],
+    "objectID": 74818,
+    "artTitle": "Discourse on Poetry",
+    "artArtist": "Gao Jian",
+    "artDate": "1698",
+    "artCredit": "Purchase, The Vincent Astor Foundation Gift and The Dillon Fund Gift, 2008",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP214835_CRD.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/74818"
+  },
+  {
+    "workId": "luyou-bingqi-shuhuai",
+    "title": "病起书怀",
+    "poetId": "luyou",
+    "motifs": [
+      "爱国",
+      "病中",
+      "述志"
+    ],
+    "objectID": 39557,
+    "artTitle": "Wooded Mountains at Dusk",
+    "artArtist": "Kuncan",
+    "artDate": "dated 1666",
+    "artCredit": "Bequest of John M. Crawford Jr., 1988",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-36007-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/39557"
+  },
+  {
+    "workId": "luyou-busuanzi-yongmei",
+    "title": "卜算子·咏梅",
+    "poetId": "luyou",
+    "motifs": [
+      "咏物",
+      "梅",
+      "孤高"
+    ],
+    "objectID": 36178,
+    "artTitle": "Hawk, pine, plum, and rock",
+    "artArtist": "Zhu Cheng",
+    "artDate": "dated 1873",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-24795-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36178"
+  },
+  {
+    "workId": "liqingzhao-rumengling-changji",
+    "title": "如梦令·常记溪亭日暮",
+    "poetId": "liqingzhao",
+    "motifs": [
+      "忆旧",
+      "少女",
+      "游赏"
+    ],
+    "objectID": 51742,
+    "artTitle": "Lotus",
+    "artArtist": "Unidentified artist",
+    "artDate": "",
+    "artCredit": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP154545.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/51742"
+  },
+  {
+    "workId": "liqingzhao-rumengling-zuoye",
+    "title": "如梦令·昨夜雨疏风骤",
+    "poetId": "liqingzhao",
+    "motifs": [
+      "惜春",
+      "闺情"
+    ],
+    "objectID": 36166,
+    "artTitle": "Flower and Bird",
+    "artArtist": "Zhang Xiong",
+    "artDate": "dated 1878",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-30283-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36166"
+  },
+  {
+    "workId": "liqingzhao-yijianmei",
+    "title": "一剪梅·红藕香残玉簟秋",
+    "poetId": "liqingzhao",
+    "motifs": [
+      "相思",
+      "别情",
+      "秋"
+    ],
+    "objectID": 49143,
+    "artTitle": "Birds in a lotus pond",
+    "artArtist": "Bada Shanren (Zhu Da)",
+    "artDate": "ca. 1690",
+    "artCredit": "Bequest of John M. Crawford Jr., 1988",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP205836_CRD.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/49143"
+  },
+  {
+    "workId": "liqingzhao-zuihuayin",
+    "title": "醉花阴·薄雾浓云愁永昼",
+    "poetId": "liqingzhao",
+    "motifs": [
+      "重阳",
+      "相思",
+      "闺情"
+    ],
+    "objectID": 36179,
+    "artTitle": "Birds and Narcissus",
+    "artArtist": "Xu Xiang",
+    "artDate": "dated 1883",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP161443.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36179"
+  },
+  {
+    "workId": "liqingzhao-shengshengman",
+    "title": "声声慢·寻寻觅觅",
+    "poetId": "liqingzhao",
+    "motifs": [
+      "悲秋",
+      "悼亡",
+      "飘零"
+    ],
+    "objectID": 49178,
+    "artTitle": "Drunk in Autumn Woods",
+    "artArtist": "Shitao (Zhu Ruoji)",
+    "artDate": "ca. 1702",
+    "artCredit": "Gift of John M. Crawford Jr., 1987",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-13954-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/49178"
+  },
+  {
+    "workId": "liqingzhao-wulingchun",
+    "title": "武陵春·风住尘香花已尽",
+    "poetId": "liqingzhao",
+    "motifs": [
+      "伤春",
+      "飘零",
+      "愁"
+    ],
+    "objectID": 49173,
+    "artTitle": "Returning Home",
+    "artArtist": "Shitao (Zhu Ruoji)",
+    "artDate": "ca. 1695",
+    "artCredit": "From the P. Y. and Kinmay W. Tang Family, Gift of Wen and Constance Fong, in honor of Mr. and Mrs. Douglas Dillon, 1976",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP143725_CRD.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/49173"
+  },
+  {
+    "workId": "liqingzhao-yongyule",
+    "title": "永遇乐·落日熔金",
+    "poetId": "liqingzhao",
+    "motifs": [
+      "元宵",
+      "怀旧",
+      "今昔"
+    ],
+    "objectID": 51416,
+    "artTitle": "Women and children in a garden",
+    "artArtist": "Unidentified artist",
+    "artDate": "",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP215053_CRD.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/51416"
+  },
+  {
+    "workId": "liqingzhao-yujiaao-jimeng",
+    "title": "渔家傲·天接云涛连晓雾",
+    "poetId": "liqingzhao",
+    "motifs": [
+      "记梦",
+      "述志",
+      "豪放"
+    ],
+    "objectID": 40054,
+    "artTitle": "Odes of the State of Bin",
+    "artArtist": "Ma Hezhi",
+    "artDate": "mid-12th century",
+    "artCredit": "Ex coll.: C. C. Wang Family, Purchase, Gift of J. Pierpont Morgan, by exchange, 1973",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP213064_CRD.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/40054"
+  },
+  {
+    "workId": "liqingzhao-wujiang",
+    "title": "乌江（夏日绝句）",
+    "poetId": "liqingzhao",
+    "motifs": [
+      "咏史",
+      "爱国",
+      "节烈"
+    ],
+    "objectID": 904732,
+    "artTitle": "Landscape",
+    "artArtist": "Li Kui",
+    "artDate": "dated 1867",
+    "artCredit": "Funds from various donors, 2024",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-35732-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/904732"
+  },
+  {
+    "workId": "liqingzhao-tianzi-caisangzi",
+    "title": "添字采桑子·窗前谁种芭蕉树",
+    "poetId": "liqingzhao",
+    "motifs": [
+      "听雨",
+      "乡愁",
+      "羁旅"
+    ],
+    "objectID": 36030,
+    "artTitle": "Lady in a Bamboo Grove after Qiu Ying",
+    "artArtist": "Shen Shuo",
+    "artDate": "",
+    "artCredit": "Gift of John C. Ferguson, 1916",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/16_151_d1.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36030"
   }
 ]

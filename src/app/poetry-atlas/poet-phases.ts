@@ -79,6 +79,41 @@ export const PHASES_BY_POET: Record<string, Phase[]> = {
     { key: 'huizhou', label: '惠州儋州', from: 1094, to: 1100 },
     { key: 'wan', label: '北归与卒', from: 1101, to: Infinity },
   ],
+  lishangyin: [
+    { key: 'guer', label: '幼孤力学', from: -Infinity, to: 828 },
+    { key: 'linghu', label: '令狐知遇与登第', from: 829, to: 837 },
+    { key: 'jingyuan', label: '入泾原幕·娶王氏', from: 838, to: 841 },
+    { key: 'dingyou', label: '丁忧与党争', from: 842, to: 846 },
+    { key: 'yuanmu', label: '远幕桂徐', from: 847, to: 850 },
+    { key: 'dongchuan', label: '东川五年', from: 851, to: 855 },
+    { key: 'wan', label: '还京与晚岁', from: 856, to: Infinity },
+  ],
+  dumu: [
+    { key: 'mendi', label: '长安门第', from: -Infinity, to: 827 },
+    { key: 'dengdi', label: '及第与幕游', from: 828, to: 832 },
+    { key: 'yangzhou', label: '宣幕与扬州', from: 833, to: 835 },
+    { key: 'dongdu', label: '东都分司', from: 836, to: 841 },
+    { key: 'huangzhou', label: '刺黄州', from: 842, to: 844 },
+    { key: 'chizhou', label: '刺池州', from: 845, to: 846 },
+    { key: 'muzhou', label: '刺睦州', from: 847, to: 849 },
+    { key: 'wan', label: '刺湖州与中书舍人', from: 850, to: Infinity },
+  ],
+  luyou: [
+    { key: 'luanli', label: '乱离与力学', from: -Infinity, to: 1154 },
+    { key: 'chushi', label: '初仕与罢黜', from: 1155, to: 1169 },
+    { key: 'rushu', label: '入蜀与南郑从军', from: 1170, to: 1173 },
+    { key: 'shuzhong', label: '宦游蜀中', from: 1174, to: 1178 },
+    { key: 'donggui', label: '东归起落', from: 1179, to: 1188 },
+    { key: 'yanzhou', label: '知严州与在朝', from: 1189, to: 1191 },
+    { key: 'shanyin', label: '山阴闲居二十年', from: 1192, to: Infinity },
+  ],
+  liqingzhao: [
+    { key: 'shaonv', label: '章丘少女', from: -Infinity, to: 1100 },
+    { key: 'bianjing', label: '汴京新婚', from: 1101, to: 1106 },
+    { key: 'qingzhou', label: '屏居青州', from: 1107, to: 1126 },
+    { key: 'nandu', label: '靖康南渡', from: 1127, to: 1131 },
+    { key: 'linan', label: '流寓临安', from: 1132, to: Infinity },
+  ],
 };
 
 /** 未收录诗人的兜底分期：按其自身生卒年三等分，避免一律归入「早年」 */

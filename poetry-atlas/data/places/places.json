@@ -3744,5 +3744,412 @@
         "reliability": "A"
       }
     ]
+  },
+  {
+    "id": "cn-henan-xingyang",
+    "historicalName": "郑州荥阳",
+    "historicalEra": "唐",
+    "modernName": "河南省郑州市荥阳市",
+    "modernHierarchy": {
+      "province": "河南省",
+      "city": "郑州市",
+      "district": "荥阳市"
+    },
+    "coordinates": [
+      113.3839,
+      34.7875
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "荥阳",
+      "郑州"
+    ],
+    "kind": "county",
+    "note": "李商隐生地（另有生于获嘉说）。唐属郑州，为其家长期居止之地，自署「郑州李商隐」本此。坐标为今荥阳市中心，非唐代县治精确位置。",
+    "sources": [
+      {
+        "id": "chgis-tang",
+        "title": "中国历史地理信息系统 CHGIS 唐代政区",
+        "author": "复旦大学历史地理研究所 / 哈佛大学",
+        "reliability": "A"
+      },
+      {
+        "id": "wikidata",
+        "title": "Wikidata 行政中心坐标",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-henan-huaizhou",
+    "historicalName": "怀州河内",
+    "historicalEra": "唐",
+    "modernName": "河南省焦作市沁阳市",
+    "modernHierarchy": {
+      "province": "河南省",
+      "city": "焦作市",
+      "district": "沁阳市"
+    },
+    "coordinates": [
+      112.93168,
+      35.09066
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "河内",
+      "怀州",
+      "野王"
+    ],
+    "kind": "county",
+    "note": "两《唐书·李商隐传》所称籍贯「怀州河内」，即今沁阳。自隋至清向称河内县。坐标为今沁阳市中心。",
+    "sources": [
+      {
+        "id": "chgis-tang",
+        "title": "中国历史地理信息系统 CHGIS 唐代政区",
+        "author": "复旦大学历史地理研究所 / 哈佛大学",
+        "reliability": "A"
+      },
+      {
+        "id": "wikidata",
+        "title": "Wikidata 行政中心坐标",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-shandong-yunzhou",
+    "historicalName": "郓州",
+    "historicalEra": "唐",
+    "modernName": "山东省泰安市东平县",
+    "modernHierarchy": {
+      "province": "山东省",
+      "city": "泰安市",
+      "district": "东平县"
+    },
+    "coordinates": [
+      116.4647,
+      35.9369
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "郓州",
+      "须昌",
+      "东平"
+    ],
+    "kind": "city",
+    "note": "唐天平军节度使治所，治须昌县（今东平县西北）。大和三年（829）令狐楚镇郓州，辟李商隐为巡官，是其一生知遇之始。坐标为今东平县城，非唐须昌故城精确位置。",
+    "sources": [
+      {
+        "id": "chgis-tang",
+        "title": "中国历史地理信息系统 CHGIS 唐代政区",
+        "author": "复旦大学历史地理研究所 / 哈佛大学",
+        "reliability": "A"
+      },
+      {
+        "id": "wikidata",
+        "title": "Wikidata 行政中心坐标",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-gansu-jingzhou",
+    "historicalName": "泾州安定",
+    "historicalEra": "唐",
+    "modernName": "甘肃省平凉市泾川县",
+    "modernHierarchy": {
+      "province": "甘肃省",
+      "city": "平凉市",
+      "district": "泾川县"
+    },
+    "coordinates": [
+      107.36113,
+      35.33264
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "泾州",
+      "安定",
+      "保定"
+    ],
+    "kind": "city",
+    "note": "唐泾原节度使治所。开成三年（838）李商隐入节度使王茂元幕并娶其女于此，作《安定城楼》。汉置安定县，唐改保定县，金以后为泾川县。坐标为今县城。",
+    "sources": [
+      {
+        "id": "chgis-tang",
+        "title": "中国历史地理信息系统 CHGIS 唐代政区",
+        "author": "复旦大学历史地理研究所 / 哈佛大学",
+        "reliability": "A"
+      },
+      {
+        "id": "wikidata",
+        "title": "Wikidata 行政中心坐标",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-guangxi-guilin",
+    "historicalName": "桂州桂林",
+    "historicalEra": "唐",
+    "modernName": "广西壮族自治区桂林市",
+    "modernHierarchy": {
+      "province": "广西壮族自治区",
+      "city": "桂林市"
+    },
+    "coordinates": [
+      110.2833,
+      25.2667
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "桂州",
+      "始安",
+      "临桂"
+    ],
+    "kind": "city",
+    "note": "唐桂管观察使治所。大中元年（847）郑亚出为桂管观察使，李商隐随幕至桂州，居约二年，为其一生行迹最南处。坐标为今桂林市区。",
+    "sources": [
+      {
+        "id": "chgis-tang",
+        "title": "中国历史地理信息系统 CHGIS 唐代政区",
+        "author": "复旦大学历史地理研究所 / 哈佛大学",
+        "reliability": "A"
+      },
+      {
+        "id": "wikidata",
+        "title": "Wikidata 行政中心坐标",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-anhui-wujiang",
+    "historicalName": "和州乌江",
+    "historicalEra": "唐",
+    "modernName": "安徽省马鞍山市和县乌江镇",
+    "modernHierarchy": {
+      "province": "安徽省",
+      "city": "马鞍山市",
+      "district": "和县",
+      "township": "乌江镇"
+    },
+    "coordinates": [
+      118.45842,
+      31.86097
+    ],
+    "precision": "township",
+    "isCentroid": true,
+    "aliases": [
+      "乌江",
+      "乌江亭",
+      "乌江浦"
+    ],
+    "kind": "site",
+    "note": "长江北岸渡口，相传项羽自刎处，有乌江亭与项羽庙。杜牧《题乌江亭》、李清照《乌江》皆系于此。坐标为今乌江镇中心。",
+    "sources": [
+      {
+        "id": "zhongguo-lishi-dituji",
+        "title": "中国历史地图集",
+        "author": "谭其骧主编",
+        "reliability": "A"
+      },
+      {
+        "id": "wikidata",
+        "title": "Wikidata 行政中心坐标",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-hubei-chibi",
+    "historicalName": "黄州赤壁",
+    "historicalEra": "唐",
+    "modernName": "湖北省黄冈市黄州区东坡赤壁",
+    "modernHierarchy": {
+      "province": "湖北省",
+      "city": "黄冈市",
+      "district": "黄州区"
+    },
+    "coordinates": [
+      114.86278,
+      30.45722
+    ],
+    "precision": "site",
+    "isCentroid": false,
+    "aliases": [
+      "赤壁",
+      "赤鼻矶",
+      "赤鼻山",
+      "东坡赤壁"
+    ],
+    "kind": "site",
+    "note": "黄州城西江边赤鼻矶，石呈红褐色，故名赤壁、赤岸，俗称赤鼻矶。杜牧刺黄州时曾游，作《赤壁》。⚠️ 此非蒲圻（今赤壁市）赤壁古战场——诗中所咏之战事在蒲圻，而本诗创作地在此，两者不可混为一谈。",
+    "sources": [
+      {
+        "id": "zhongguo-lishi-dituji",
+        "title": "中国历史地图集",
+        "author": "谭其骧主编",
+        "reliability": "A"
+      },
+      {
+        "id": "wikidata",
+        "title": "Wikidata 行政中心坐标",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-zhejiang-shanyin",
+    "historicalName": "越州山阴",
+    "historicalEra": "宋",
+    "modernName": "浙江省绍兴市越城区",
+    "modernHierarchy": {
+      "province": "浙江省",
+      "city": "绍兴市",
+      "district": "越城区"
+    },
+    "coordinates": [
+      120.586,
+      29.995
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "山阴",
+      "越州",
+      "绍兴",
+      "会稽"
+    ],
+    "kind": "city",
+    "note": "陆游生地与晚岁闲居所在（三山别业）。《宋史》本传称「越州山阴人」。沈园亦在山阴城东南隅（今绍兴市越城区鲁迅中路），与城同址，在地图比例尺下无法分辨，故不另立点。坐标为今绍兴市越城区中心。",
+    "sources": [
+      {
+        "id": "zhongguo-lishi-dituji",
+        "title": "中国历史地图集",
+        "author": "谭其骧主编",
+        "reliability": "A"
+      },
+      {
+        "id": "wikidata",
+        "title": "Wikidata 行政中心坐标",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-shaanxi-nanzheng",
+    "historicalName": "兴元府南郑",
+    "historicalEra": "宋",
+    "modernName": "陕西省汉中市南郑区",
+    "modernHierarchy": {
+      "province": "陕西省",
+      "city": "汉中市",
+      "district": "南郑区"
+    },
+    "coordinates": [
+      106.93905,
+      33.005
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "南郑",
+      "汉中",
+      "兴元府",
+      "梁州"
+    ],
+    "kind": "city",
+    "note": "唐宋兴元府治南郑（今汉中）。乾道八年（1172）陆游入四川宣抚使王炎幕驻此，往来陇蜀之间、亲临大散关前线，为其一生唯一亲历军旅之地。坐标为今南郑区中心。",
+    "sources": [
+      {
+        "id": "zhongguo-lishi-dituji",
+        "title": "中国历史地图集",
+        "author": "谭其骧主编",
+        "reliability": "A"
+      },
+      {
+        "id": "wikidata",
+        "title": "Wikidata 行政中心坐标",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-shandong-qingzhou",
+    "historicalName": "青州",
+    "historicalEra": "宋",
+    "modernName": "山东省潍坊市青州市",
+    "modernHierarchy": {
+      "province": "山东省",
+      "city": "潍坊市",
+      "district": "青州市"
+    },
+    "coordinates": [
+      118.4797,
+      36.6967
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "青州",
+      "益都"
+    ],
+    "kind": "city",
+    "note": "大观元年（1107）赵明诚罢官后，与李清照屏居青州十余年，筑「归来堂」校勘金石，为其一生最安定时期。靖康之变中青州书册金石毁于兵火。坐标为今青州市区。",
+    "sources": [
+      {
+        "id": "zhongguo-lishi-dituji",
+        "title": "中国历史地图集",
+        "author": "谭其骧主编",
+        "reliability": "A"
+      },
+      {
+        "id": "wikidata",
+        "title": "Wikidata 行政中心坐标",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-zhejiang-jinhua",
+    "historicalName": "婺州金华",
+    "historicalEra": "宋",
+    "modernName": "浙江省金华市",
+    "modernHierarchy": {
+      "province": "浙江省",
+      "city": "金华市"
+    },
+    "coordinates": [
+      119.6494,
+      29.1046
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "婺州",
+      "金华",
+      "双溪"
+    ],
+    "kind": "city",
+    "note": "绍兴四年（1134）李清照避乱卜居婺州金华，作《武陵春》，并于次年在此写成《金石录后序》。词中「双溪」即金华城南名胜。坐标为今金华市区。",
+    "sources": [
+      {
+        "id": "zhongguo-lishi-dituji",
+        "title": "中国历史地图集",
+        "author": "谭其骧主编",
+        "reliability": "A"
+      },
+      {
+        "id": "wikidata",
+        "title": "Wikidata 行政中心坐标",
+        "reliability": "B"
+      }
+    ]
   }
 ]
