@@ -94,6 +94,12 @@ git status --short                    # ⚠️ 必查：无意外 D（删除）�
 - **Assertion 考据断言**：不给作品直接挂 location/date；一条断言 = 一种说法，同一作品可挂多条互斥断言（groupId 归组、`isPrimary` 标主流）
 - 置信度 A 确定 / B 较可靠 / C 存疑 / D 传说；`rationale` + `sources` 必填，缺失则构建失败
 - **地理精度铁律**：史料到哪级标哪级，绝不虚标；`isCentroid: true` 的点前端弱化渲染
+- **行迹站点（`JourneyStop`）**：把「生平事件 ∪ 主流断言」按同地 + 年距 ≤2 聚类成站，按年编 `seq`。
+  站置信度取站内**最低**。作品分三级：`works`（创作地即本站）/ `nearbyWorks`（系年落窗口 ±1 但创作地另载，弱关联须单列）/ 未落站计入 `unplacedWorkCount`。
+- ⚠️ **`poet.nativePlace` 混着两类条目**：`type:'birth'` 是真生地、`type:'ancestral'` 是郡望/祖籍
+  （数据里的 note 自己写着「非实际生地」）。**按 placeId 一刀切会把寓居地/郡望标成出生地**
+  （曾致杜甫长安×3、李白安陆被标「出生地」）。判断出生地必须看 `type === 'birth'`；
+  郡望另设 `isAncestralPlace`，前端显示「祖籍／郡望」。
 
 ### 命令与分层
 ```bash
@@ -105,13 +111,22 @@ npm run atlas:check    # 新鲜度守卫
 ### 前端铁律
 - `src/lib/atlas.ts` **Server 专用**（含 `fs`）；`atlas-view.ts` **客户端安全**（禁止 import fs/path）
 - ⚠️ 客户端组件误引含 `fs` 的模块 → `Module not found` **tsc 查不出，只有 build 才暴露**
-- 页面：`/poetry-atlas`（地图）、`/poet/[id]`（生平时间线）、`/work/[id]`（异说并列）
+- 页面：`/poetry-atlas`（地图）、`/poet/[id]`（生平时间线 + **一生行迹**）、`/work/[id]`（异说并列）
+- `poetry-atlas/geo.tsx`（客户端安全）抽出投影与底图几何，**「创作地分布」与「一生行迹」共用一份底图**，
+  否则两张图的中国形状会对不上。`journeyBounds(stops)` 按行迹自动取景（`SAFE_W=0.62` 给右侧栏留位）
+- `poetry-atlas/poet-phases.ts`：分期数据唯一来源，`phasesOf()` 对未知诗人按生卒年三等分兜底
 - 地图双轨：`tiles.ts` 读 `NEXT_PUBLIC_TIANDITU_KEY`，有 key → `TileAtlasMap.tsx`（Leaflet + 天地图 WMTS）；
   无 key → `SvgFallbackMap.tsx`（自绘墨卡托，带 60KB 行政区划 JSON，独立 chunk）。
+  行迹图同理双轨：`journey/JourneyTileMap.tsx` / `journey/JourneySvgMap.tsx`，
+  两者必须共用 `journey/journey-util.ts` 的取色取径规则，否则切换密钥前后站点大小颜色会变。
   ⚠️ 投影陷阱：天地图 `_c` 是经纬度投影、`_w` 才是球面墨卡托。
   ⚠️ 国界/断续线等领土要素**不自绘**，一律交给天地图按国家标准渲染。
   底图提示条（`mapNoKey`）已于 `0476df5` 移除，不要再加回来。
 - 未配 key 时 `hasKey=false` 会隐藏「底图」切换器与深色反色按钮，属预期行为
+- ⚠️ **同址多次驻留必须按坐标归组**（`groupStopsByCoordinate`）：苏轼三还眉山、四入汴京，
+  坐标相同 → 逐个画会完全重合，只剩最上面那个编号（看图像「丢了站」）。
+  归组后一组一个标记、外圈加环表次数、点标记在几次驻留间循环。
+  **只归组、不做偏移**——为分辨而挪点就是虚标地理精度。
 
 ### 数据管线通用教训
 1. 路径基于文件位置推导，不用 `process.cwd()`
@@ -150,11 +165,25 @@ python preview_atlas.py 4355 &
 （媒体查询不生效、header 不折叠），看起来像"横向溢出"其实是截图裁切。
 判断响应式请对比同宽度的线上页面，别据此改 CSS。
 
+大窗口易触发 SIGTERM → 加 `--force-device-scale-factor=0.5`（1400×3400 可成功）。
+
+### ⭐ 交互验证：Node 内置 WebSocket 直连 CDP（无需 playwright）
+本项目没装 playwright/puppeteer，但 **Node 22 自带全局 `WebSocket` 与 `fetch`**，足够驱动 CDP：
+`spawn` Chrome 带 `--remote-debugging-port=N` → `fetch http://127.0.0.1:N/json/list` 取
+`webSocketDebuggerUrl` → `Runtime.evaluate` 里 `element.click()` / 读 `innerText`，
+`Page.captureScreenshot` 存图。脚本见历史 turn 的 `cdp_journey.mjs`（可重写）。
+用它做过 15 项断言：站序条 tick 数、工具栏/脚注口径、上/下一站、播放自动前进、
+播放态按钮文案、同址标记循环、侧栏同址提示。**比只截图可靠得多**。
+⚠️ 设计变更后**旧断言会过期**（如归组后「点最后一个标记=最后一站」不再成立）——
+先判断是代码错还是断言过期，再改。
+
 ### 数据源许可
 chinese-poetry MIT ✅；CBDB/CHGIS 学术开放；⚠️ 现代点校本的标点校勘**及注释**有版权，
 **诗词原文属公有领域**。
 
-### 当前规模（截至 `c96fac7`）
+### 当前规模（截至「一生行迹」上线）
 诗人 7（王维/李白/杜甫/苏轼/孟浩然/白居易/岑参）· 作品 165 · 地点 105 · 断言 187 ·
 生平事件 141 · 逐句译注 165 篇全覆盖 · 配图 109 幅 · 构建静态页 190
+行迹站点：李白 33 / 杜甫 35 / 苏轼 26 / 岑参 17 / 孟浩然 13 / 王维 12 / 白居易 11，共 147 站；
+地图标记（按坐标归组后）147 → 115；7 位诗人作品全部落站，`unplacedWorkCount` 均为 0。
 数据为单文件集合（`data/people/poets.json` 等），不是一首/一人一文件。
