@@ -6,104 +6,22 @@
  * 用墨卡托而不是等距圆柱，是为了让回落底图与天地图瓦片底图的形状观感一致，
  * 切换密钥前后不至于「换了张不像的图」。
  *
- * 绘制范围只到 17°N，南海诸岛另设角图 —— 这是中国地图的常规画法。
- * 本图只画中国境内行政区面，不画国界、不画海域断续线；需要严格国家标准
- * 画法（含断续线）时请配置 NEXT_PUBLIC_TIANDITU_KEY 走天地图瓦片。
+ * 投影与底图几何已抽到 `geo.tsx`，与「一生行迹」地图共用同一份，
+ * 保证两张图的中国形状不会各画各的。
  */
 
 import type { DerivedMapPoint } from '@/poetry-atlas/types';
 import styles from './atlas.module.css';
-import basemap from './china-basemap.json';
+import { MAIN_PROJECTION, BasemapDefs, BasemapLayers } from './geo';
+
+/** 全国视图：这张图表现的是「所有诗人加起来」的空间分布，全图才是对的 */
+const PROJ = MAIN_PROJECTION;
 
 interface Props {
   points: DerivedMapPoint[];
   selected: string | null;
   onSelect: (placeId: string | null) => void;
 }
-
-/* ── 投影 ──────────────────────────────────────────────── */
-
-/** 主图范围：不含南海诸岛，那部分走角图 */
-const MAIN = { minLng: 73, maxLng: 136, minLat: 17, maxLat: 54 };
-/** 南海诸岛角图范围 */
-const INSET_BOUNDS = { minLng: 108, maxLng: 119, minLat: 3, maxLat: 18.5 };
-
-/** 墨卡托纵坐标（纬度 → 无量纲 y），裁到 ±85° 避免极点发散 */
-function mercY(lat: number) {
-  const l = Math.max(-85, Math.min(85, lat));
-  return Math.log(Math.tan(Math.PI / 4 + (l * Math.PI) / 180 / 2));
-}
-
-const W = 1000;
-const Y_TOP = mercY(MAIN.maxLat);
-const Y_BOT = mercY(MAIN.minLat);
-const SPAN_X = ((MAIN.maxLng - MAIN.minLng) * Math.PI) / 180;
-const SPAN_Y = Y_TOP - Y_BOT;
-/** 高度按墨卡托的真实长宽比推导，避免地图被横向拉伸 */
-const H = Math.round((W * SPAN_Y) / SPAN_X);
-
-const projectMain = (lng: number, lat: number) => ({
-  x: ((lng - MAIN.minLng) / (MAIN.maxLng - MAIN.minLng)) * W,
-  y: ((Y_TOP - mercY(lat)) / SPAN_Y) * H,
-});
-
-/** 角图：尺寸同样按墨卡托比例推导 */
-const INSET_H = 150;
-const IY_TOP = mercY(INSET_BOUNDS.maxLat);
-const IY_BOT = mercY(INSET_BOUNDS.minLat);
-const ISPAN_X = ((INSET_BOUNDS.maxLng - INSET_BOUNDS.minLng) * Math.PI) / 180;
-const ISPAN_Y = IY_TOP - IY_BOT;
-const INSET_W = Math.round((INSET_H * ISPAN_X) / ISPAN_Y);
-const INSET = { x: W - INSET_W - 16, y: H - INSET_H - 22, w: INSET_W, h: INSET_H };
-
-const projectInset = (lng: number, lat: number) => ({
-  x: INSET.x + ((lng - INSET_BOUNDS.minLng) / (INSET_BOUNDS.maxLng - INSET_BOUNDS.minLng)) * INSET.w,
-  y: INSET.y + ((IY_TOP - mercY(lat)) / ISPAN_Y) * INSET.h,
-});
-
-/** 扁平数组 → SVG path */
-function toPath(flat: number[], proj: (lng: number, lat: number) => { x: number; y: number }) {
-  let d = '';
-  for (let i = 0; i < flat.length; i += 2) {
-    const { x, y } = proj(flat[i], flat[i + 1]);
-    d += `${i === 0 ? 'M' : 'L'}${x.toFixed(1)} ${y.toFixed(1)}`;
-  }
-  return `${d}Z`;
-}
-
-/** 小于此尺寸（度）的岛礁退化成点，否则在角图里只是看不见的碎线 */
-const DOT_MAX_DIAG = 0.4;
-
-/* ── 底图几何：只依赖静态导入的 JSON，提到模块作用域算一次 ────
- *
- * 早先这两块写在组件里用 useMemo 包起来，React Compiler 无法保留该
- * 手写记忆化（返回的是内部新建的对象），直接跳过整个组件的优化并报错。
- * 它们的输入全是模块级常量，本来就该在模块加载时算一次 —— 既省掉每次
- * 挂载的重复计算，也让编译器能正常工作。
- */
-const PROVINCE_PATHS = basemap.provinces.map((p) => ({
-  name: p.name,
-  d: p.rings.map((r) => toPath(r.p, projectMain)).join(' '),
-}));
-
-/** 南海诸岛：海南省要素里纬度低于 17.5° 的环（海南岛本体不进角图） */
-const ISLAND_GEOMETRY = (() => {
-  const hainan = basemap.provinces.find((p) => p.name === '海南省');
-  const paths: string[] = [];
-  const dots: { x: number; y: number }[] = [];
-  if (!hainan) return { paths, dots };
-  for (const r of hainan.rings) {
-    if (r.bbox[1] >= 17.5) continue;
-    const diag = Math.hypot(r.bbox[2] - r.bbox[0], r.bbox[3] - r.bbox[1]);
-    if (diag < DOT_MAX_DIAG) {
-      // 取包围盒中心当作岛礁位置
-      dots.push(projectInset((r.bbox[0] + r.bbox[2]) / 2, (r.bbox[1] + r.bbox[3]) / 2));
-    } else {
-      paths.push(toPath(r.p, projectInset));
-    }
-  }
-  return { paths, dots };
-})();
 
 /* ── 精度样式（与瓦片底图保持一致的语言）───────────────── */
 const PRECISION_STYLE: Record<
@@ -121,89 +39,18 @@ const PRECISION_STYLE: Record<
 export default function SvgFallbackMap({ points, selected, onSelect }: Props) {
   const projected = points.map((p) => ({
     ...p,
-    ...projectMain(p.coordinates[0], p.coordinates[1]),
+    ...PROJ.project(p.coordinates[0], p.coordinates[1]),
   }));
 
   return (
     <svg
       className={styles.mapSvg}
-      viewBox={`0 0 ${W} ${H}`}
+      viewBox={`0 0 ${PROJ.width} ${PROJ.height}`}
       role="img"
       aria-label="诗人创作地分布地图（行政区划底图，未配置天地图密钥）"
     >
-      <defs>
-        {/* 陆地阴影，让陆块从海面上浮起来 */}
-        <filter id="atlasLandGlow" x="-10%" y="-10%" width="120%" height="120%">
-          <feDropShadow dx="0" dy="2" stdDeviation="5" floodColor="#000" floodOpacity="0.45" />
-        </filter>
-        <clipPath id="atlasInsetClip">
-          <rect
-            x={INSET.x}
-            y={INSET.y}
-            width={INSET.w}
-            height={INSET.h}
-            rx="6"
-          />
-        </clipPath>
-      </defs>
-
-      {/* 省界：先描边后填充，边界线始终是连续的 */}
-      <g filter="url(#atlasLandGlow)">
-        {PROVINCE_PATHS.map((p) => (
-          <path key={`f-${p.name}`} d={p.d} fill="rgba(255,255,255,0.05)" stroke="none" />
-        ))}
-      </g>
-      <g fill="none" stroke="rgba(255,255,255,0.16)" strokeWidth="0.9" strokeLinejoin="round">
-        {PROVINCE_PATHS.map((p) => (
-          <path key={`s-${p.name}`} d={p.d} />
-        ))}
-      </g>
-
-      {/* 经纬网：淡到几乎看不见，只用于定位 */}
-      <g stroke="rgba(255,255,255,0.04)" strokeWidth="1">
-        {[80, 90, 100, 110, 120, 130].map((lng) => {
-          const { x } = projectMain(lng, MAIN.minLat);
-          return <line key={`m${lng}`} x1={x} y1="0" x2={x} y2={H} />;
-        })}
-        {[20, 30, 40, 50].map((lat) => {
-          const { y } = projectMain(MAIN.minLng, lat);
-          return <line key={`p${lat}`} x1="0" y1={y} x2={W} y2={y} />;
-        })}
-      </g>
-
-      {/* ── 南海诸岛角图 ── */}
-      <g>
-        <rect
-          x={INSET.x}
-          y={INSET.y}
-          width={INSET.w}
-          height={INSET.h}
-          rx="6"
-          fill="rgba(10,10,16,0.86)"
-          stroke="rgba(255,255,255,0.2)"
-          strokeWidth="1"
-        />
-        <g clipPath="url(#atlasInsetClip)">
-          <g fill="none" stroke="rgba(255,255,255,0.18)" strokeWidth="0.7">
-            {ISLAND_GEOMETRY.paths.map((d, i) => (
-              <path key={`ip${i}`} d={d} />
-            ))}
-          </g>
-          <g fill="rgba(255,255,255,0.22)">
-            {ISLAND_GEOMETRY.dots.map((d, i) => (
-              <circle key={`id${i}`} cx={d.x} cy={d.y} r="1.1" />
-            ))}
-          </g>
-          <text
-            x={INSET.x + 6}
-            y={INSET.y + 14}
-            fill="rgba(255,255,255,0.5)"
-            fontSize="10"
-          >
-            南海诸岛
-          </text>
-        </g>
-      </g>
+      <BasemapDefs proj={PROJ} />
+      <BasemapLayers proj={PROJ} />
 
       {/* ── 诗人创作地点 ── */}
       {projected.map((p) => {

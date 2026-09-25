@@ -18,47 +18,14 @@ import {
   getPoetDetail,
   groupAssertions,
 } from '@/lib/atlas';
+import { phasesOf, phaseLabelOf } from '../../poet-phases';
+import JourneyMap from '../../journey/JourneyMap';
 import type { LifeEvent } from '@/poetry-atlas/types';
 
 /**
- * 生平分期：把事件按人生阶段归拢，让轨迹有轮廓而非流水账。
- * 分期因诗人而异——李白「长安三年」而杜甫「困居长安十年」，
- * 套用同一套分期会把两人的生命形状都磨平，故按 poetId 分别定义。
+ * 生平分期已抽到 `../../poet-phases`，因为「一生行迹」地图（客户端组件）
+ * 也要用它按阶段着色与标注。数据源只有那一处，避免两边漂移。
  */
-type Phase = { key: string; label: string; from: number; to: number };
-
-const PHASES_BY_POET: Record<string, Phase[]> = {
-  libai: [
-    { key: 'shu', label: '蜀中成长', from: -Infinity, to: 723 },
-    { key: 'chu-you', label: '出蜀漫游', from: 724, to: 741 },
-    { key: 'changan', label: '长安三年', from: 742, to: 744 },
-    { key: 'donglu', label: '梁宋东鲁', from: 745, to: 754 },
-    { key: 'luanli', label: '安史乱中', from: 755, to: 759 },
-    { key: 'wan', label: '晚年漂泊', from: 760, to: Infinity },
-  ],
-  dufu: [
-    { key: 'shu', label: '早慧与吴越', from: -Infinity, to: 734 },
-    { key: 'qizhao', label: '齐赵壮游', from: 735, to: 745 },
-    { key: 'changan', label: '困居长安十年', from: 746, to: 755 },
-    { key: 'luanli', label: '安史乱中陷贼', from: 755, to: 759 },
-    { key: 'shu-zhong', label: '客蜀草堂', from: 760, to: 765 },
-    { key: 'kuizhou', label: '夔州巅峰', from: 766, to: 767 },
-    { key: 'wan', label: '湖湘漂泊', from: 768, to: Infinity },
-  ],
-};
-
-/** 未定义分期的诗人（如宋代）走兜底：按世纪粗分，保证作品仍能分组 */
-const DEFAULT_PHASES: Phase[] = [
-  { key: 'p1', label: '早年', from: -Infinity, to: 1099 },
-  { key: 'p2', label: '中年', from: 1100, to: 1150 },
-  { key: 'p3', label: '晚年', from: 1151, to: Infinity },
-];
-
-/** 取某年份所属分期标签 */
-function phaseLabelOf(poetId: string, year: number): string {
-  const phases = PHASES_BY_POET[poetId] ?? DEFAULT_PHASES;
-  return phases.find((p) => year >= p.from && year <= p.to)?.label ?? '';
-}
 
 /** 静态导出：预生成所有诗人页面 */
 export function generateStaticParams() {
@@ -104,6 +71,11 @@ export default async function PoetPage({
 
   const events = orderEvents(poet.events ?? []);
   const placeById = new Map(poet.places.map((p) => [p.id, p]));
+
+  /** 该诗人的人生分期与「年份 → 分期」查询（兜底分期按其自身生卒年推导） */
+  const phases = phasesOf(poet.id, poet.birth?.year, poet.death?.year);
+  const phaseOf = (year: number) =>
+    phaseLabelOf(poet.id, year, poet.birth?.year, poet.death?.year);
 
   /** 交游：从断言的 relatedPoetIds 中提取出「与谁有关」 */
   const companions = new Map<string, { name: string; years: number[]; notes: string[] }>();
@@ -223,6 +195,29 @@ export default async function PoetPage({
           </div>
         )}
 
+        {/* ── 一生行迹（地图）──
+            放在头图之后、文字之前：这是整页唯一的「一眼看完一生」的视图，
+            比任何一段概述都更快建立空间感。作品在图上按站归位，
+            点开站点即可看到此地所作，与下方的作品清单互为详略。 */}
+        <div className={styles.sectionHead} id="journey">
+          <h2 className={styles.sectionTitle}>一生行迹</h2>
+          <p className={styles.sectionNote}>
+            按年代连成一线 · 点站点看该地所作 · 可播放一生
+          </p>
+        </div>
+
+        <Reveal>
+          <JourneyMap
+            poetId={poet.id}
+            poetName={poet.name}
+            stops={poet.trajectory.stops ?? []}
+            events={events}
+            birthYear={poet.birth?.year ?? null}
+            deathYear={poet.death?.year ?? null}
+            unplacedWorkCount={poet.trajectory.unplacedWorkCount ?? 0}
+          />
+        </Reveal>
+
         {/* ── 传记背景 ── */}
         {poet.biography && (
           <>
@@ -257,9 +252,8 @@ export default async function PoetPage({
                   : prev.date.from.year
                 : null;
               const startPhase =
-                prevYear === null ||
-                phaseLabelOf(poet.id, prevYear) !== phaseLabelOf(poet.id, year);
-              const phaseLabel = phaseLabelOf(poet.id, year);
+                prevYear === null || phaseOf(prevYear) !== phaseOf(year);
+              const phaseLabel = phaseOf(year);
 
               // 事件插画：构型取自事件发生地的地类，天候取自事件描述里的实感线索
               const motive = motiveOfEvent(e.type, place ?? null);
@@ -327,15 +321,13 @@ export default async function PoetPage({
         </div>
 
         {(() => {
-          const phases = PHASES_BY_POET[poet.id] ?? DEFAULT_PHASES;
           // 按创作年归入人生阶段，让作品呈现出「人生轨迹」的形状
           const buckets = new Map<string, typeof poet.works>();
           for (const w of poet.works) {
             const as = assertionsByWork.get(w.id) ?? [];
             const primary = groupAssertions(as)[0]?.items[0];
             const y = primary?.date?.year ?? primary?.dateRange?.from.year;
-            const label =
-              typeof y === 'number' ? phaseLabelOf(poet.id, y) : 'unknown';
+            const label = typeof y === 'number' ? phaseOf(y) : 'unknown';
             buckets.set(label, [...(buckets.get(label) ?? []), w]);
           }
 

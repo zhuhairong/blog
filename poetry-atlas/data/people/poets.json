@@ -1080,7 +1080,7 @@
       {
         "id": "sushi-e2",
         "poetId": "sushi",
-        "type": "study",
+        "type": "mourning",
         "title": "母程氏卒，归葬眉山",
         "placeId": "cn-sichuan-meishan",
         "date": {
@@ -1889,10 +1889,10 @@
         "note": "《草堂集序》称「神龙之始，逃归于蜀」，李白生于绵州昌明县青莲乡，即今江油市青莲镇。另有碎叶说，两说并存，此处取蜀中说为主流"
       },
       {
-        "placeId": "cn-hubei-anlu",
+        "placeId": "cn-gansu-qinzhou",
         "type": "ancestral",
         "confidence": "C",
-        "note": "一说「陇西成纪人，凉武昭王暠九世孙」，为李白自述之郡望，非实际居地，故列异说"
+        "note": "一说「陇西成纪人，凉武昭王暠九世孙」，为李白自述之郡望。唐成纪县属秦州（今甘肃天水），故系于此。郡望非实际居地，故列异说"
       }
     ],
     "summary": "唐代浪漫主义诗人，被誉「诗仙」。想象奇诡、气势磅礴，与杜甫并称「李杜」，是唐诗最高峰的象征。",
@@ -2864,7 +2864,7 @@
       {
         "id": "wangwei-e3",
         "poetId": "wangwei",
-        "type": "exile",
+        "type": "demotion",
         "title": "坐累贬济州司仓参军，后隐于淇上、嵩山",
         "placeId": "cn-henan-songshan",
         "date": {
@@ -3621,6 +3621,29 @@
           }
         ]
       }
+    ],
+    "sources": [
+      {
+        "id": "jts-menghaoran",
+        "title": "旧唐书·孟浩然传",
+        "author": "刘昫等",
+        "locator": "卷190下·文苑下",
+        "reliability": "A"
+      },
+      {
+        "id": "xts-menghaoran",
+        "title": "新唐书·孟浩然传",
+        "author": "欧阳修等",
+        "locator": "卷203·文艺下",
+        "reliability": "A"
+      },
+      {
+        "id": "menghaoranji-xu",
+        "title": "孟浩然诗集序",
+        "author": "王士源",
+        "locator": "孟浩然集卷首",
+        "reliability": "A"
+      }
     ]
   },
   {
@@ -3635,8 +3658,18 @@
       "白太傅"
     ],
     "dynasty": "唐",
-    "birth": 772,
-    "death": 846,
+    "birth": {
+      "year": 772,
+      "original": "大历七年",
+      "certainty": "exact",
+      "fuzziness": 0
+    },
+    "death": {
+      "year": 846,
+      "original": "会昌六年",
+      "certainty": "exact",
+      "fuzziness": 0
+    },
     "nativePlace": [
       {
         "placeId": "cn-henan-xinzheng",
@@ -3706,7 +3739,7 @@
       {
         "id": "baijuyi-e3",
         "poetId": "baijuyi",
-        "type": "recognition",
+        "type": "meeting",
         "title": "以《赋得古原草送别》谒顾况于长安",
         "placeId": "cn-shaanxi-xian",
         "date": {
@@ -4101,6 +4134,22 @@
           }
         ]
       }
+    ],
+    "sources": [
+      {
+        "id": "jts-baijuyi",
+        "title": "旧唐书·白居易传",
+        "author": "刘昫等",
+        "locator": "卷166下",
+        "reliability": "A"
+      },
+      {
+        "id": "xts-baijuyi",
+        "title": "新唐书·白居易传",
+        "author": "欧阳修等",
+        "locator": "卷119",
+        "reliability": "A"
+      }
     ]
   },
   {
@@ -4112,8 +4161,18 @@
       "岑二十七"
     ],
     "dynasty": "唐",
-    "birth": 715,
-    "death": 770,
+    "birth": {
+      "year": 715,
+      "original": "约开元三年",
+      "certainty": "approximate",
+      "fuzziness": 3
+    },
+    "death": {
+      "year": 770,
+      "original": "大历五年",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
     "nativePlace": [
       {
         "placeId": "cn-hubei-jiangling",
@@ -4529,7 +4588,7 @@
       {
         "id": "censen-e15",
         "poetId": "censen",
-        "type": "exile",
+        "type": "demotion",
         "title": "罢官东归，阻于蜀中（768）",
         "placeId": "cn-sichuan-chengdu",
         "date": {
@@ -4583,6 +4642,20 @@
             "reliability": "B"
           }
         ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "cen-jiazhou-xinian-kaozheng",
+        "title": "岑嘉州系年考证",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "cen-jiazhou-shiji-xu",
+        "title": "岑嘉州诗集序",
+        "author": "杜确",
+        "reliability": "B"
       }
     ]
   }

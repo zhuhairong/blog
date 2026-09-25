@@ -15,12 +15,52 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import type {
   Assertion,
+  LifeEventType,
   Place,
   Poet,
   ValidationIssue,
   Work,
   LifeEvent,
 } from '../../types/index';
+
+/**
+ * 生平事件类型白名单。
+ *
+ * 为什么需要它：TypeScript 只约束**代码**，管不住 `people/poets.json` 里的
+ * 字面量——JSON 被 `as Poet[]` 强转，写错一个词编译器一声不吭。
+ * 曾因此让 `study` / `exile` / `mourning` / `creation` / `recognition`
+ * 五个词直接显示在诗人页上（`EVENT_LABEL[type]` 查不到就回退成英文原文）。
+ *
+ * 这里手工维护一份，与 `types/index.ts` 的 `LifeEventType` 同集合；
+ * 两边不一致时以本表为准并同步修改类型。
+ */
+const EVENT_TYPES: LifeEventType[] = [
+  'birth',
+  'death',
+  'exam',
+  'office',
+  'demotion',
+  'exile',
+  'travel',
+  'war',
+  'seclusion',
+  'marriage',
+  'meeting',
+  'study',
+  'mourning',
+  'creation',
+  'recognition',
+  'other',
+];
+
+/** 历史纪年必须是对象而非裸整数（曾把 772 写成数字，页面显示成「?–?」） */
+function isHistoricalDate(v: unknown): boolean {
+  return (
+    typeof v === 'object' &&
+    v !== null &&
+    typeof (v as { year?: unknown }).year === 'number'
+  );
+}
 
 /**
  * 数据根目录。基于本文件位置推导，而非 process.cwd()，
@@ -357,6 +397,57 @@ export function validate(ds: DatasetBundle): ValidationIssue[] {
         code: 'orphan-event-place',
         entity: { type: 'event', id: e.id },
         message: `生平事件引用了不存在的地点：${e.placeId}`,
+      });
+    }
+    if (!EVENT_TYPES.includes(e.type)) {
+      push({
+        severity: 'error',
+        code: 'unknown-event-type',
+        entity: { type: 'event', id: e.id },
+        message: `生平事件类型不在白名单内：'${e.type}'（${e.title}）`,
+        hint: `改用 ${EVENT_TYPES.join(' / ')} 之一；若确需新类型，须同时补 types/index.ts 的 LifeEventType 与 src/lib/atlas-view.ts 的 EVENT_LABEL`,
+      });
+    }
+    if (!e.sources?.length) {
+      push({
+        severity: 'error',
+        code: 'missing-source',
+        entity: { type: 'event', id: e.id },
+        message: `生平事件缺文献依据：${e.title}`,
+      });
+    }
+  }
+
+  // ── 诗人本体 ──
+  // 诗人级 sources 与 birth/death 的字段形态同样需要守。
+  // 这两项都曾被漏掉：三位诗人 sources 为 null，两位把生卒年写成裸整数。
+  for (const p of ds.poets) {
+    if (!p.sources?.length) {
+      push({
+        severity: 'error',
+        code: 'missing-source',
+        entity: { type: 'poet', id: p.id },
+        message: `诗人缺传记文献依据：${p.name}`,
+      });
+    }
+    for (const field of ['birth', 'death'] as const) {
+      const v = p[field];
+      if (v !== undefined && !isHistoricalDate(v)) {
+        push({
+          severity: 'error',
+          code: 'malformed-date',
+          entity: { type: 'poet', id: p.id },
+          message: `${p.name} 的 ${field} 不是 HistoricalDate 对象：${JSON.stringify(v)}`,
+          hint: '必须写成 { year, original, certainty }，裸整数会让页面显示成「?–?」',
+        });
+      }
+    }
+    if (p.birth && p.death && p.birth.year > p.death.year) {
+      push({
+        severity: 'error',
+        code: 'malformed-date',
+        entity: { type: 'poet', id: p.id },
+        message: `${p.name} 的生年晚于卒年`,
       });
     }
   }

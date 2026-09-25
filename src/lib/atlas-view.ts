@@ -68,19 +68,62 @@ export const PRECISION_LABEL: Record<Place['precision'], string> = {
   approximate: '大区域',
 };
 
-/** 生平事件类型标签 */
+/**
+ * 生平事件类型标签。
+ *
+ * ⚠️ 必须与 `poetry-atlas/src/types/index.ts` 的 `LifeEventType` 保持同集合，
+ * 且不能有遗漏：缺一个 key，页面上就会直接渲染出英文原文。
+ * `poetry-atlas` 的构建校验已把该集合设为白名单，新增类型时会强制提醒。
+ */
 export const EVENT_LABEL: Record<string, string> = {
   birth: '出生',
   death: '逝世',
   exam: '科举',
   office: '任职',
-  demotion: '贬谪',
+  demotion: '贬谪去职',
+  exile: '流放',
   travel: '漫游',
   war: '战乱',
   seclusion: '隐居',
   marriage: '婚配',
   meeting: '交游',
+  study: '读书',
+  mourning: '守制',
+  creation: '创作',
+  recognition: '身后荣典',
   other: '其他',
+};
+
+/** 事件类型的视觉分组：行迹地图据此着色，避免 16 种类型各给一色而无法分辨 */
+export type EventTone = 'life' | 'career' | 'upheaval' | 'wander' | 'honor' | 'other';
+
+export const EVENT_TONE: Record<string, EventTone> = {
+  birth: 'life',
+  death: 'life',
+  marriage: 'life',
+  exam: 'career',
+  office: 'career',
+  demotion: 'upheaval',
+  exile: 'upheaval',
+  war: 'upheaval',
+  mourning: 'upheaval',
+  travel: 'wander',
+  seclusion: 'wander',
+  meeting: 'wander',
+  study: 'wander',
+  creation: 'career',
+  recognition: 'honor',
+  other: 'other',
+};
+
+/** 视觉分组的中文名与配色（深色主题下可读） */
+export const TONE_UI: Record<EventTone, { label: string; color: string }> = {
+  life: { label: '生死婚配', color: '#f472b6' },
+  career: { label: '仕进与创作', color: '#34d399' },
+  upheaval: { label: '贬谪与战乱', color: '#f87171' },
+  wander: { label: '漫游与交游', color: '#38bdf8' },
+  honor: { label: '身后荣典', color: '#a78bfa' },
+  other: { label: '其他', color: '#8b8ba7' },
 };
 
 /** 格式化历史纪年 */

@@ -173,18 +173,30 @@ export interface Poet {
   sources: Source[];
 }
 
-/** 生平事件类型 */
+/**
+ * 生平事件类型。
+ *
+ * ⚠️ 本联合是**白名单**：`validate.ts` 会校验每条事件的 type 属于此处，
+ * 否则构建失败。新增类型时必须同步 `src/lib/atlas-view.ts` 的 EVENT_LABEL，
+ * 否则前端会退化成直接显示英文原文（曾因此让「study」「exile」等词
+ * 赤裸裸地出现在诗人页上）。
+ */
 export type LifeEventType =
   | 'birth'
   | 'death'
   | 'exam' // 科举及第
   | 'office' // 任职
-  | 'demotion' // 贬谪
+  | 'demotion' // 贬谪去职
+  | 'exile' // 流放（罪贬远州，如李白长流夜郎）
   | 'travel' // 漫游
   | 'war' // 战乱/兵燹
   | 'seclusion' // 隐居
   | 'marriage'
-  | 'meeting' // 交游、会面
+  | 'meeting' // 交游、会面、干谒
+  | 'study' // 读书求学
+  | 'mourning' // 丁忧守制
+  | 'creation' // 创作高峰：一次留下数篇代表作
+  | 'recognition' // 身后荣典（追谥、赠官、立碑、迁葬）
   | 'other';
 
 /**
@@ -341,6 +353,78 @@ export interface DerivedMapPoint {
   yearRange: [number, number];
 }
 
+/** 行迹站点上挂的作品引用（构建期烘焙，前端不必再查作品表） */
+export interface JourneyWorkRef {
+  workId: string;
+  title: string;
+  /** 系年，未知为 null */
+  year: number | null;
+  form?: string;
+  /** 名句，用于侧栏展示 */
+  famousLine?: string;
+  /**
+   * 创作地历史名。**仅弱关联作品有值**——用来如实说明
+   * 「这首诗系年落在此站，但创作地另载于某处」。
+   */
+  placeName?: string | null;
+}
+
+/**
+ * 行迹站点：把「同一地点、时间连续」的生平事件合并为一站。
+ *
+ * 为什么要合并：李白 742/743/744 三年都在长安，若原样铺成三个点，
+ * 地图上会叠成一坨，也看不出「长安三年」这个人生段落。
+ * 合并的边界是**同地且连续**——李白 730 年也到过长安，但中间隔了嵩山，
+ * 所以「一入长安」与「长安三年」是两个站，不会被错误地并成一段。
+ */
+export interface JourneyStop {
+  /** 顺序号，从 1 开始，即行迹上的第几站 */
+  seq: number;
+  placeId: string;
+  /** 历史地名与今地名（构建期查好，前端不再持有 places 表） */
+  historicalName: string;
+  modernName: string;
+  coordinates: [number, number];
+  precision: PlacePrecision;
+  isCentroid: boolean;
+  /** 本站的时间窗（取站内事件的年跨度） */
+  fromYear: number;
+  toYear: number;
+  /** 合并进本站的事件 id */
+  eventIds: string[];
+  /** 站点标题：单事件取事件标题，多事件取「首题 等 N 事」 */
+  title: string;
+  /** 站内涉及的事件类型（去重），用于着色 */
+  types: LifeEventType[];
+  /**
+   * 该站从何而来：
+   *  - `event` 纯由生平事件构成（年谱骨架）
+   *  - `work`  年谱无载，由作品系年补出（如李白 748 年在扬州作《闻王昌龄…》）
+   *  - `mixed` 两者兼有
+   * 前端须区分展示——「年谱有载」与「据作品推知」的可靠程度不同。
+   */
+  source: 'event' | 'work' | 'mixed';
+  /** 置信度取站内**最低**（最保守）——不拿一条 A 级事件给整站背书 */
+  confidence: Confidence;
+  /** 站内事件描述拼接 */
+  description: string;
+  isBirthplace: boolean;
+  /**
+   * 本站是诗人的郡望／祖籍所在（`nativePlace` 中 `type: 'ancestral'` 的条目）。
+   *
+   * 与 `isBirthplace` 严格分开：郡望是家族标榜的远祖地，诗人本人可能从未到过，
+   * 例如杜甫的京兆杜氏（长安）、李白的陇西成纪。混为一谈会把寓居地错标成出生地。
+   */
+  isAncestralPlace?: boolean;
+  isDeathPlace: boolean;
+  /** 身后事件（卒后迁葬、追谥等）。行迹折线在此断开，另行渲染 */
+  posthumous: boolean;
+  /** 创作地即本站的作品 */
+  works: JourneyWorkRef[];
+  /** 系年落在本站时间窗内、但创作地另载（或未系地）的作品。弱关联 */
+  nearbyWorks: JourneyWorkRef[];
+}
+
 /** 诗人轨迹线 */
 export interface DerivedTrajectory {
   poetId: string;
@@ -350,6 +434,10 @@ export interface DerivedTrajectory {
     date: HistoricalDate;
     eventId?: string;
   }[];
+  /** 合并后的行迹站点，前端地图直接消费 */
+  stops: JourneyStop[];
+  /** 未落到任何站点的作品数（既非本地创作、系年也不在任何时间窗内） */
+  unplacedWorkCount: number;
 }
 
 /** 构建产物清单 */
