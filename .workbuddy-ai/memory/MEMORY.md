@@ -41,7 +41,19 @@ npx tsc --noEmit && npx eslint src    # 须 0 error 0 warning
 CODEBUDDY_SAFE_DELETE_ENABLED=0 npm run build
 git status --short                    # ⚠️ 必查：无意外 D（删除）条目
 ```
-最近状态：全绿（提交 `26f208a`）。
+
+## ⭐ 用户要求：每次改完直接上传（2026-09-25 起）
+用户明确要求「每次改完上传」，**不要问、不要等确认**，改完即走完下面四步：
+1. 质量门禁全绿（见上）
+2. **显式路径** `git add <改动的文件>`（严禁 `git add -A`，见危险操作清单第 2 条）
+3. `git commit` + `git push origin master`
+4. 轮询 CI 至 completed，再 curl 线上页确认改动生效：
+   ```bash
+   curl -s "https://api.github.com/repos/zhuhairong/blog/actions/runs?per_page=1" | grep -E '"status"|"conclusion"'
+   curl -s "https://zhuhairong.github.io/blog/<path>/" -o /tmp/x.html -w "http=%{http_code}\n"
+   ```
+   线上 URL 用**带尾斜杠**形式；本地预览则相反（见「URL 行为」节）。
+最后状态：全绿（提交 `0476df5`）。
 
 ## ⚠️ 危险操作清单
 1. **禁止仓库根目录批量删除**。清理只用白名单 `.next`、`out`
@@ -51,7 +63,9 @@ git status --short                    # ⚠️ 必查：无意外 D（删除）�
 
 ### 未跟踪的用户资料（未经确认不得删除/入库）
 `初中单词/`（与 `public/vocabulary/` 逐字节一致）、`完型填空html/`（与 `public/cloze/` 一致）、
-`public/quadratic-structure.drawio`（无引用）。待用户选：① 入库 ② 加 .gitignore ③ 原样保留。
+`public/quadratic-structure.drawio`（无引用）、`.v/`（`全唐詩_卷539/540.txt`，80K）、
+`poetry-atlas/_add_lisangyin.py`、`_met/`、`.workbuddy-ai/memory/`。
+待用户选：① 入库 ② 加 .gitignore ③ 原样保留。
 
 ### Git 同步陷阱
 不要信 `git status -sb` 的 `[gone]`（可能只是缺远程跟踪引用）。以
@@ -80,16 +94,50 @@ npm run atlas:check    # 新鲜度守卫
 ### 前端铁律
 - `src/lib/atlas.ts` **Server 专用**（含 `fs`）；`atlas-view.ts` **客户端安全**（禁止 import fs/path）
 - ⚠️ 客户端组件误引含 `fs` 的模块 → `Module not found` **tsc 查不出，只有 build 才暴露**
-- 页面：`/poetry-atlas`（SVG 自绘地图）、`/poet/[id]`（生平时间线）、`/work/[id]`（异说并列）
-- 地图：原型用自绘 SVG 等距圆柱投影（零依赖、无合规风险）；正式版若需底图须先解决测绘资质
+- 页面：`/poetry-atlas`（地图）、`/poet/[id]`（生平时间线）、`/work/[id]`（异说并列）
+- 地图双轨：`tiles.ts` 读 `NEXT_PUBLIC_TIANDITU_KEY`，有 key → `TileAtlasMap.tsx`（Leaflet + 天地图 WMTS）；
+  无 key → `SvgFallbackMap.tsx`（自绘墨卡托，带 60KB 行政区划 JSON，独立 chunk）。
+  ⚠️ 投影陷阱：天地图 `_c` 是经纬度投影、`_w` 才是球面墨卡托。
+  ⚠️ 国界/断续线等领土要素**不自绘**，一律交给天地图按国家标准渲染。
+  底图提示条（`mapNoKey`）已于 `0476df5` 移除，不要再加回来。
+- 未配 key 时 `hasKey=false` 会隐藏「底图」切换器与深色反色按钮，属预期行为
 
 ### 数据管线通用教训
 1. 路径基于文件位置推导，不用 `process.cwd()`
 2. **空数据集必须报 error**（曾载入 0 条却"校验通过"——最危险的静默失败）
 3. `moduleResolution: bundler` 下 import 不写 `.js` 后缀
+4. **改单文件集合（如 `works.json`）前先验证 JSON 往返字节一致**：
+   该文件是 CRLF + `indent=2` + 结尾换行。用
+   `open(p, encoding='utf-8', newline='')` 读、`json.dumps(..., ensure_ascii=False, indent=2)+'\n'`
+   再 `.replace('\n','\r\n')` 写回，才能保证 diff 只有新增行。
+   用默认文本模式读会把 CRLF 折成 LF，diff 从几百行炸到几千行。
+
+### 逐句译注（lineNotes）
+- `Work.lineNotes[]` 与 `content` **等长同序**，第 i 条对第 i 行；`trans` 直译 + 可选 `note` 难点注
+- 空行豁免：组诗之间的空行 `trans: ""`，前端跳过，不塞占位文案
+- 译注**必须自撰**——现代点校本的标点/校勘/注释有版权
+- 现状：112 篇 / 646 行全覆盖，424 条难点注（提交 `1e47a2d`）
+
+### ⭐ 视觉验证：本地能截图并读图（别再以为"看不了图"）
+`poetry-atlas-add-poet` 技能里「本产品读不了图片」的说法**已过时**，实测可读。做法：
+```bash
+# 1) 起预览（out/ 需剥离 /blog 前缀），端口别用 4320
+python preview_atlas.py 4355 &
+# 2) headless 截图，再用 Read 工具直接看 PNG
+"C:/Users/86180/AppData/Local/ms-playwright/chromium-1208/chrome-win64/chrome.exe" \
+  --headless=new --disable-gpu --hide-scrollbars --window-size=1280,1400 \
+  --screenshot="C:/Users/86180/AppData/Local/Temp/x.png" \
+  "http://127.0.0.1:4355/blog/poetry-atlas/work/dufu-denggao/"
+```
+⚠️ 窄屏截图（如 `--window-size=430`）**不可信**：headless 下布局宽度并未真的收窄
+（媒体查询不生效、header 不折叠），看起来像"横向溢出"其实是截图裁切。
+判断响应式请对比同宽度的线上页面，别据此改 CSS。
 
 ### 数据源许可
-chinese-poetry MIT ✅；CBDB/CHGIS 学术开放；⚠️ 现代点校本的标点校勘有版权，**诗词原文属公有领域**。
+chinese-poetry MIT ✅；CBDB/CHGIS 学术开放；⚠️ 现代点校本的标点校勘**及注释**有版权，
+**诗词原文属公有领域**。
 
-### 当前规模（提交 26f208a）
-诗人 6（王维/李白/杜甫/苏轼/孟浩然/白居易）· 作品 100 · 地点 90 · 断言 110 · 静态页 113
+### 当前规模（截至 `1e47a2d`）
+诗人 7（王维/李白/杜甫/苏轼/孟浩然/白居易/岑参）· 作品 112 · 地点 96 · 断言 122 ·
+逐句译注 646 行 · 构建静态页 126
+数据为单文件集合（`data/people/poets.json` 等），不是一首/一人一文件。
