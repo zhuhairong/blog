@@ -1824,5 +1824,923 @@
     "artCredit": "John Stewart Kennedy Fund, 1913",
     "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153564.jpg",
     "artURL": "https://www.metmuseum.org/art/collection/search/35979"
+  },
+  {
+    "workId": "baijuyi-mujiangyin",
+    "title": "暮江吟",
+    "poetId": "baijuyi",
+    "motifs": [
+      "river",
+      "autumn",
+      "night",
+      "moon"
+    ],
+    "objectID": 35992,
+    "artTitle": "Setting Sun on the Autumn River",
+    "artArtist": "Pan Yunyu",
+    "artDate": "1604 or 1664",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153847.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/35992"
+  },
+  {
+    "workId": "baijuyi-chishang",
+    "title": "池上",
+    "poetId": "baijuyi",
+    "motifs": [
+      "water",
+      "lotus",
+      "spring"
+    ],
+    "objectID": 36026,
+    "artTitle": "Spring Ablutions at the Orchid Pavilion",
+    "artArtist": "Wang Wenzhi",
+    "artDate": "",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/13_220_118_O.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36026"
+  },
+  {
+    "workId": "baijuyi-wen-liushijiu",
+    "title": "问刘十九",
+    "poetId": "baijuyi",
+    "motifs": [
+      "winter",
+      "night",
+      "garden"
+    ],
+    "objectID": 36022,
+    "artTitle": "Enjoying the Moon: Landscape in the Manner of Wang Meng",
+    "artArtist": "Gu Yide",
+    "artDate": "dated 1628",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/146252.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36022"
+  },
+  {
+    "workId": "baijuyi-yi-jiangnan",
+    "title": "忆江南·其一",
+    "poetId": "baijuyi",
+    "motifs": [
+      "river",
+      "spring",
+      "flower"
+    ],
+    "objectID": 36048,
+    "artTitle": "Spring Festival on the River",
+    "artArtist": "Unidentified artist",
+    "artDate": "18th century?",
+    "artCredit": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP120039_CRD.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36048"
+  },
+  {
+    "workId": "baijuyi-maihua",
+    "title": "买花",
+    "poetId": "baijuyi",
+    "motifs": [
+      "flower",
+      "spring",
+      "building"
+    ],
+    "objectID": 36053,
+    "artTitle": "Landscape with Pavilions and Cranes",
+    "artArtist": "Unidentified artist",
+    "artDate": "",
+    "artCredit": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153529.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36053"
+  },
+  {
+    "workId": "baijuyi-shangyang-baifaren",
+    "title": "上阳白发人",
+    "poetId": "baijuyi",
+    "motifs": [
+      "building",
+      "autumn",
+      "night",
+      "moon"
+    ],
+    "objectID": 36037,
+    "artTitle": "Viewing the Moon under a Pine Tree",
+    "artArtist": "Ma Yuan",
+    "artDate": "early 13th century",
+    "artCredit": "Rogers Fund, 1923",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153498.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36037"
+  },
+  {
+    "workId": "baijuyi-qingfei",
+    "title": "轻肥",
+    "poetId": "baijuyi",
+    "motifs": [
+      "building",
+      "scholar"
+    ],
+    "objectID": 35989,
+    "artTitle": "Landscape with figure",
+    "artArtist": "Chen Jichun",
+    "artDate": "1635",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153844.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/35989"
+  },
+  {
+    "workId": "baijuyi-tong-li-shiyi-zui-yi-yuanjiu",
+    "title": "同李十一醉忆元九",
+    "poetId": "baijuyi",
+    "motifs": [
+      "scholar",
+      "spring",
+      "garden"
+    ],
+    "objectID": 36067,
+    "artTitle": "Spring Landscape with Plum Blossoms, Scholar and Deer",
+    "artArtist": "Xie Shichen",
+    "artDate": "dated 1548",
+    "artCredit": "Bequest of Katherine S. Dreier, 1952",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/52_177_20_O1_sf.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36067"
+  },
+  {
+    "workId": "censen-rehaixing-song-cui",
+    "title": "热海行送崔侍御还京",
+    "poetId": "censen",
+    "motifs": [
+      "border",
+      "mountain",
+      "snow"
+    ],
+    "objectID": 36064,
+    "artTitle": "Winter Landscape",
+    "artArtist": "Unidentified artist",
+    "artDate": "13th century",
+    "artCredit": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/47_18_136_O2_sf.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36064"
+  },
+  {
+    "workId": "censen-tianshan-xuege",
+    "title": "天山雪歌送萧治归京",
+    "poetId": "censen",
+    "motifs": [
+      "snow",
+      "border",
+      "mountain",
+      "winter"
+    ],
+    "objectID": 36005,
+    "artTitle": "Mountain Market, Clearing Mist",
+    "artArtist": "Xia Gui",
+    "artDate": "early 13th century",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP154073.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36005"
+  },
+  {
+    "workId": "censen-chunmeng",
+    "title": "春梦",
+    "poetId": "censen",
+    "motifs": [
+      "spring",
+      "night",
+      "water"
+    ],
+    "objectID": 36026,
+    "artTitle": "Spring Ablutions at the Orchid Pavilion",
+    "artArtist": "Wang Wenzhi",
+    "artDate": "",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/13_220_118_O.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36026"
+  },
+  {
+    "workId": "censen-ciensi-futu",
+    "title": "与高适薛据同登慈恩寺浮图",
+    "poetId": "censen",
+    "motifs": [
+      "building",
+      "mountain",
+      "mist"
+    ],
+    "objectID": 35989,
+    "artTitle": "Landscape with figure",
+    "artArtist": "Chen Jichun",
+    "artDate": "1635",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153844.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/35989"
+  },
+  {
+    "workId": "censen-song-li-fushi",
+    "title": "送李副使赴碛西官军",
+    "poetId": "censen",
+    "motifs": [
+      "border",
+      "horse",
+      "mountain"
+    ],
+    "objectID": 36188,
+    "artTitle": "Misty Rain on the River in Spring",
+    "artArtist": "Wu Shixian",
+    "artDate": "",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP162538.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36188"
+  },
+  {
+    "workId": "censen-zhao-jiangjun-ge",
+    "title": "赵将军歌",
+    "poetId": "censen",
+    "motifs": [
+      "border",
+      "horse",
+      "snow"
+    ],
+    "objectID": 39569,
+    "artTitle": "Eighteen Songs of a Nomad Flute: The Story of Lady Wenji",
+    "artArtist": "Unidentified artist",
+    "artDate": "early 15th century",
+    "artCredit": "Ex coll.: C. C. Wang Family, Gift of The Dillon Fund, 1973",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP213003_CRD.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/39569"
+  },
+  {
+    "workId": "censen-ji-zuosheng-du",
+    "title": "寄左省杜拾遗",
+    "poetId": "censen",
+    "motifs": [
+      "scholar",
+      "building",
+      "autumn"
+    ],
+    "objectID": 36012,
+    "artTitle": "Scholar Admiring Autumn Scenery",
+    "artArtist": "Unidentified artist",
+    "artDate": "late 15th–early 16th century",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/13_220_8_20108.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36012"
+  },
+  {
+    "workId": "dufu-bingchexing",
+    "title": "兵车行",
+    "poetId": "dufu",
+    "motifs": [
+      "horse",
+      "autumn",
+      "river"
+    ],
+    "objectID": 36039,
+    "artTitle": "Horse and willow tree",
+    "artArtist": "Unidentified artist",
+    "artDate": "early 15th century(?)",
+    "artCredit": "Gift of George D. Pratt, 1929",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153528.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36039"
+  },
+  {
+    "workId": "dufu-lirenxing",
+    "title": "丽人行",
+    "poetId": "dufu",
+    "motifs": [
+      "spring",
+      "flower",
+      "water"
+    ],
+    "objectID": 36093,
+    "artTitle": "Landscape for Zhao Yipeng",
+    "artArtist": "Tang Yin",
+    "artDate": "late 15th–early 16th century",
+    "artCredit": "Purchase, Bequest of Dorothy Graham Bennett, 1967",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP369002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36093"
+  },
+  {
+    "workId": "dufu-xinhunbie",
+    "title": "新婚别",
+    "poetId": "dufu",
+    "motifs": [
+      "spring",
+      "flower",
+      "scholar"
+    ],
+    "objectID": 36013,
+    "artTitle": "Lady in a bamboo grove",
+    "artArtist": "Qiu Ying",
+    "artDate": "",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-16966-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36013"
+  },
+  {
+    "workId": "dufu-kezhi",
+    "title": "客至",
+    "poetId": "dufu",
+    "motifs": [
+      "garden",
+      "spring",
+      "water",
+      "scholar"
+    ],
+    "objectID": 36130,
+    "artTitle": "Landscapes of the Twelve Months",
+    "artArtist": "Gong Xian",
+    "artDate": "ca. 1685",
+    "artCredit": "Gift of Douglas Dillon, 1980",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP161078_crd.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36130"
+  },
+  {
+    "workId": "dufu-jiangpan-dubu-xunhua-qiliu",
+    "title": "江畔独步寻花七绝句·其六",
+    "poetId": "dufu",
+    "motifs": [
+      "flower",
+      "spring",
+      "river"
+    ],
+    "objectID": 36181,
+    "artTitle": "Landscape",
+    "artArtist": "Wu Guxiang",
+    "artDate": "dated 1894",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP161444.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36181"
+  },
+  {
+    "workId": "dufu-jueju-liangge-huangli",
+    "title": "绝句·两个黄鹂鸣翠柳",
+    "poetId": "dufu",
+    "motifs": [
+      "bird",
+      "spring",
+      "snow",
+      "river"
+    ],
+    "objectID": 36064,
+    "artTitle": "Winter Landscape",
+    "artArtist": "Unidentified artist",
+    "artDate": "13th century",
+    "artCredit": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/47_18_136_O2_sf.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36064"
+  },
+  {
+    "workId": "dufu-denglou",
+    "title": "登楼",
+    "poetId": "dufu",
+    "motifs": [
+      "mountain",
+      "mist",
+      "building"
+    ],
+    "objectID": 45652,
+    "artTitle": "Cloudy Mountains",
+    "artArtist": "Fang Congyi",
+    "artDate": "ca. 1360–70",
+    "artCredit": "Ex coll.: C. C. Wang Family, Purchase, Gift of J. Pierpont Morgan, by exchange, 1973",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP213279_CRD.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/45652"
+  },
+  {
+    "workId": "dufu-zeng-huaqing",
+    "title": "赠花卿",
+    "poetId": "dufu",
+    "motifs": [
+      "flower",
+      "building",
+      "scholar"
+    ],
+    "objectID": 36188,
+    "artTitle": "Misty Rain on the River in Spring",
+    "artArtist": "Wu Shixian",
+    "artDate": "",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP162538.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36188"
+  },
+  {
+    "workId": "libai-wangtianmenshan",
+    "title": "望天门山",
+    "poetId": "libai",
+    "motifs": [
+      "mountain",
+      "river",
+      "water",
+      "mist"
+    ],
+    "objectID": 36056,
+    "artTitle": "Towing a Boat in a Rainstorm",
+    "artArtist": "Unidentified artist",
+    "artDate": "late 12th century",
+    "artCredit": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153500.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36056"
+  },
+  {
+    "workId": "libai-songyouren",
+    "title": "送友人",
+    "poetId": "libai",
+    "motifs": [
+      "water",
+      "mountain",
+      "scholar"
+    ],
+    "objectID": 36188,
+    "artTitle": "Misty Rain on the River in Spring",
+    "artArtist": "Wu Shixian",
+    "artDate": "",
+    "artCredit": "Gift of Robert Hatfield Ellsworth, in memory of La Ferne Hatfield Ellsworth, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP162538.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36188"
+  },
+  {
+    "workId": "libai-wenwangchangling",
+    "title": "闻王昌龄左迁龙标遥有此寄",
+    "poetId": "libai",
+    "motifs": [
+      "moon",
+      "night",
+      "mountain"
+    ],
+    "objectID": 36005,
+    "artTitle": "Mountain Market, Clearing Mist",
+    "artArtist": "Xia Gui",
+    "artDate": "early 13th century",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP154073.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36005"
+  },
+  {
+    "workId": "libai-chunyeluochengwendi",
+    "title": "春夜洛城闻笛",
+    "poetId": "libai",
+    "motifs": [
+      "spring",
+      "night",
+      "moon",
+      "flower"
+    ],
+    "objectID": 36026,
+    "artTitle": "Spring Ablutions at the Orchid Pavilion",
+    "artArtist": "Wang Wenzhi",
+    "artDate": "",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/13_220_118_O.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36026"
+  },
+  {
+    "workId": "libai-tifengdingsi",
+    "title": "题峰顶寺",
+    "poetId": "libai",
+    "motifs": [
+      "mountain",
+      "night",
+      "mist",
+      "building"
+    ],
+    "objectID": 35989,
+    "artTitle": "Landscape with figure",
+    "artArtist": "Chen Jichun",
+    "artDate": "1635",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153844.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/35989"
+  },
+  {
+    "workId": "libai-qingpingdiao-qiyi",
+    "title": "清平调（其一）",
+    "poetId": "libai",
+    "motifs": [
+      "flower",
+      "spring",
+      "building"
+    ],
+    "objectID": 36053,
+    "artTitle": "Landscape with Pavilions and Cranes",
+    "artArtist": "Unidentified artist",
+    "artDate": "",
+    "artCredit": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153529.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36053"
+  },
+  {
+    "workId": "libai-yiqine-xiaoshengyan",
+    "title": "忆秦娥·箫声咽",
+    "poetId": "libai",
+    "motifs": [
+      "moon",
+      "autumn",
+      "building"
+    ],
+    "objectID": 36037,
+    "artTitle": "Viewing the Moon under a Pine Tree",
+    "artArtist": "Ma Yuan",
+    "artDate": "early 13th century",
+    "artCredit": "Rogers Fund, 1923",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153498.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36037"
+  },
+  {
+    "workId": "libai-pusaman-pinglin",
+    "title": "菩萨蛮·平林漠漠烟如织",
+    "poetId": "libai",
+    "motifs": [
+      "mountain",
+      "mist",
+      "bird",
+      "night"
+    ],
+    "objectID": 36090,
+    "artTitle": "White Crane Mountain, leaf from Album for Zhou Lianggong",
+    "artArtist": "Ye Xin",
+    "artDate": "datable to 1654–55",
+    "artCredit": "Seymour Fund, 1964",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153914.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36090"
+  },
+  {
+    "workId": "menghaoran-qiudeng-lanshan",
+    "title": "秋登兰山寄张五",
+    "poetId": "menghaoran",
+    "motifs": [
+      "autumn",
+      "mountain",
+      "mist"
+    ],
+    "objectID": 35992,
+    "artTitle": "Setting Sun on the Autumn River",
+    "artArtist": "Pan Yunyu",
+    "artDate": "1604 or 1664",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153847.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/35992"
+  },
+  {
+    "workId": "menghaoran-zaohan-jiangshang",
+    "title": "早寒江上有怀",
+    "poetId": "menghaoran",
+    "motifs": [
+      "river",
+      "autumn",
+      "bird"
+    ],
+    "objectID": 36002,
+    "artTitle": "Riverscape with moored boats",
+    "artArtist": "Wu Shantao",
+    "artDate": "late 17th or early 18th century",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153885.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36002"
+  },
+  {
+    "workId": "menghaoran-luozhong-fang-yuan",
+    "title": "洛中访袁拾遗不遇",
+    "poetId": "menghaoran",
+    "motifs": [
+      "building",
+      "spring",
+      "scholar"
+    ],
+    "objectID": 36026,
+    "artTitle": "Spring Ablutions at the Orchid Pavilion",
+    "artArtist": "Wang Wenzhi",
+    "artDate": "",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/13_220_118_O.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36026"
+  },
+  {
+    "workId": "menghaoran-song-du-shisi",
+    "title": "送杜十四之江南",
+    "poetId": "menghaoran",
+    "motifs": [
+      "river",
+      "water",
+      "spring",
+      "scholar"
+    ],
+    "objectID": 36048,
+    "artTitle": "Spring Festival on the River",
+    "artArtist": "Unidentified artist",
+    "artDate": "18th century?",
+    "artCredit": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP120039_CRD.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36048"
+  },
+  {
+    "workId": "menghaoran-du-zhejiang",
+    "title": "渡浙江问舟中人",
+    "poetId": "menghaoran",
+    "motifs": [
+      "river",
+      "water",
+      "mist",
+      "mountain"
+    ],
+    "objectID": 36056,
+    "artTitle": "Towing a Boat in a Rainstorm",
+    "artArtist": "Unidentified artist",
+    "artDate": "late 12th century",
+    "artCredit": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153500.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36056"
+  },
+  {
+    "workId": "menghaoran-ti-yigong-chanfang",
+    "title": "题义公禅房",
+    "poetId": "menghaoran",
+    "motifs": [
+      "bamboo",
+      "mountain",
+      "building"
+    ],
+    "objectID": 35989,
+    "artTitle": "Landscape with figure",
+    "artArtist": "Chen Jichun",
+    "artDate": "1635",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153844.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/35989"
+  },
+  {
+    "workId": "menghaoran-wanshan-tan",
+    "title": "万山潭作",
+    "poetId": "menghaoran",
+    "motifs": [
+      "water",
+      "mountain",
+      "autumn",
+      "moon"
+    ],
+    "objectID": 36022,
+    "artTitle": "Enjoying the Moon: Landscape in the Manner of Wang Meng",
+    "artArtist": "Gu Yide",
+    "artDate": "dated 1628",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/146252.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36022"
+  },
+  {
+    "workId": "sushi-busuanzi-queyue",
+    "title": "卜算子·缺月挂疏桐",
+    "poetId": "sushi",
+    "motifs": [
+      "moon",
+      "night",
+      "pine",
+      "mist"
+    ],
+    "objectID": 36005,
+    "artTitle": "Mountain Market, Clearing Mist",
+    "artArtist": "Xia Gui",
+    "artDate": "early 13th century",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP154073.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36005"
+  },
+  {
+    "workId": "sushi-dielianhua-huatuicanghong",
+    "title": "蝶恋花·花褪残红青杏小",
+    "poetId": "sushi",
+    "motifs": [
+      "spring",
+      "flower",
+      "garden"
+    ],
+    "objectID": 36026,
+    "artTitle": "Spring Ablutions at the Orchid Pavilion",
+    "artArtist": "Wang Wenzhi",
+    "artDate": "",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/13_220_118_O.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36026"
+  },
+  {
+    "workId": "sushi-linjiangxian-yeyin",
+    "title": "临江仙·夜饮东坡醒复醉",
+    "poetId": "sushi",
+    "motifs": [
+      "night",
+      "river",
+      "mist"
+    ],
+    "objectID": 35992,
+    "artTitle": "Setting Sun on the Autumn River",
+    "artArtist": "Pan Yunyu",
+    "artDate": "1604 or 1664",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153847.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/35992"
+  },
+  {
+    "workId": "sushi-huanxisha-susu",
+    "title": "浣溪沙·簌簌衣巾落枣花",
+    "poetId": "sushi",
+    "motifs": [
+      "garden",
+      "spring",
+      "bird"
+    ],
+    "objectID": 36053,
+    "artTitle": "Landscape with Pavilions and Cranes",
+    "artArtist": "Unidentified artist",
+    "artDate": "",
+    "artCredit": "From the Collection of A. W. Bahr, Purchase, Fletcher Fund, 1947",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153529.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36053"
+  },
+  {
+    "workId": "sushi-zengliujingwen",
+    "title": "赠刘景文",
+    "poetId": "sushi",
+    "motifs": [
+      "autumn",
+      "flower",
+      "pine"
+    ],
+    "objectID": 36001,
+    "artTitle": "Plum Blossoms",
+    "artArtist": "Wen Zhi",
+    "artDate": "dated 1670",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153824.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36001"
+  },
+  {
+    "workId": "sushi-donglanlihua",
+    "title": "东栏梨花",
+    "poetId": "sushi",
+    "motifs": [
+      "flower",
+      "spring",
+      "moon"
+    ],
+    "objectID": 36067,
+    "artTitle": "Spring Landscape with Plum Blossoms, Scholar and Deer",
+    "artArtist": "Xie Shichen",
+    "artDate": "dated 1548",
+    "artCredit": "Bequest of Katherine S. Dreier, 1952",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/52_177_20_O1_sf.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36067"
+  },
+  {
+    "workId": "sushi-haitang",
+    "title": "海棠",
+    "poetId": "sushi",
+    "motifs": [
+      "flower",
+      "spring",
+      "night",
+      "rain"
+    ],
+    "objectID": 36084,
+    "artTitle": "Flowering Plum in Moonlight and Snow",
+    "artArtist": "Liu Shiru",
+    "artDate": "16th century",
+    "artCredit": "Gift of Alan Priest, 1959",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP-37469-002.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36084"
+  },
+  {
+    "workId": "sushi-youjinshansi",
+    "title": "游金山寺",
+    "poetId": "sushi",
+    "motifs": [
+      "river",
+      "mountain",
+      "mist",
+      "building"
+    ],
+    "objectID": 36002,
+    "artTitle": "Riverscape with moored boats",
+    "artArtist": "Wu Shantao",
+    "artDate": "late 17th or early 18th century",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153885.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36002"
+  },
+  {
+    "workId": "wangwei-xiangsi",
+    "title": "相思",
+    "poetId": "wangwei",
+    "motifs": [
+      "plum",
+      "spring",
+      "flower"
+    ],
+    "objectID": 36067,
+    "artTitle": "Spring Landscape with Plum Blossoms, Scholar and Deer",
+    "artArtist": "Xie Shichen",
+    "artDate": "dated 1548",
+    "artCredit": "Bequest of Katherine S. Dreier, 1952",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/52_177_20_O1_sf.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36067"
+  },
+  {
+    "workId": "wangwei-zashi-san-shou-qi-er",
+    "title": "杂诗三首·其二",
+    "poetId": "wangwei",
+    "motifs": [
+      "plum",
+      "winter",
+      "flower"
+    ],
+    "objectID": 36432,
+    "artTitle": "Plum blossoms",
+    "artArtist": "Jin Nong",
+    "artDate": "dated 1757",
+    "artCredit": "Edward Elliott Family Collection, Gift of Douglas Dillon, 1986",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP160540.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36432"
+  },
+  {
+    "workId": "wangwei-niaomingjian",
+    "title": "鸟鸣涧",
+    "poetId": "wangwei",
+    "motifs": [
+      "mountain",
+      "night",
+      "bird",
+      "moon"
+    ],
+    "objectID": 36022,
+    "artTitle": "Enjoying the Moon: Landscape in the Manner of Wang Meng",
+    "artArtist": "Gu Yide",
+    "artDate": "dated 1628",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/146252.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36022"
+  },
+  {
+    "workId": "wangwei-xinyiwu",
+    "title": "辛夷坞",
+    "poetId": "wangwei",
+    "motifs": [
+      "flower",
+      "mountain",
+      "spring"
+    ],
+    "objectID": 36026,
+    "artTitle": "Spring Ablutions at the Orchid Pavilion",
+    "artArtist": "Wang Wenzhi",
+    "artDate": "",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/13_220_118_O.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36026"
+  },
+  {
+    "workId": "wangwei-weichuan-tianjia",
+    "title": "渭川田家",
+    "poetId": "wangwei",
+    "motifs": [
+      "garden",
+      "autumn",
+      "scholar"
+    ],
+    "objectID": 36012,
+    "artTitle": "Scholar Admiring Autumn Scenery",
+    "artArtist": "Unidentified artist",
+    "artDate": "late 15th–early 16th century",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/13_220_8_20108.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36012"
+  },
+  {
+    "workId": "wangwei-qingxi",
+    "title": "青溪",
+    "poetId": "wangwei",
+    "motifs": [
+      "river",
+      "water",
+      "pine",
+      "mountain"
+    ],
+    "objectID": 35992,
+    "artTitle": "Setting Sun on the Autumn River",
+    "artArtist": "Pan Yunyu",
+    "artDate": "1604 or 1664",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153847.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/35992"
+  },
+  {
+    "workId": "wangwei-chou-zhangshaofu",
+    "title": "酬张少府",
+    "poetId": "wangwei",
+    "motifs": [
+      "pine",
+      "mountain",
+      "water",
+      "mist"
+    ],
+    "objectID": 36002,
+    "artTitle": "Riverscape with moored boats",
+    "artArtist": "Wu Shantao",
+    "artDate": "late 17th or early 18th century",
+    "artCredit": "John Stewart Kennedy Fund, 1913",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP153885.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36002"
   }
 ]

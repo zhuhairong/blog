@@ -3845,5 +3845,2370 @@
     "confidence": "C",
     "isPrimary": true,
     "triggerEventId": "censen-e13"
+  },
+  {
+    "id": "a-baijuyi-mujiangyin-1",
+    "workId": "baijuyi-mujiangyin",
+    "poetId": "baijuyi",
+    "placeId": "cn-zhejiang-hangzhou",
+    "date": {
+      "year": 822,
+      "month": 9,
+      "original": "长庆二年九月初三",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "长庆二年白居易自求外任杭州刺史，七月离京，取道汴河、淮水、长江南下，九月初三泊舟江上，见残阳铺水、半江红碧而作。离开朝堂是非，换来的是一段轻松畅快的江行。",
+    "setting": "秋日傍晚，江上舟行",
+    "rationale": "《全唐诗》卷442 为白居易长庆元、二年（821—822）由中书舍人外任杭州刺史前后的编次：卷中《初除主客郎中知制诰》《新昌新居书事》皆长庆元年长安作，本诗居卷末，与长庆二年七月出为杭州刺史、十月到任（卷443 诗题自述「予以长庆二年冬十月到杭州」）的行程相合，通行说法系于长庆二年赴杭州途中。⚠️ 本条标的是此行行程区间（江行），不是具体宿顿点，故 placeId 取此行目的地杭州、confidence 降为 C。诗题亦不涉具体地名，无法再细。",
+    "sources": [
+      {
+        "id": "quantangshi-442",
+        "title": "全唐诗",
+        "locator": "卷442",
+        "reliability": "B"
+      },
+      {
+        "id": "jts-baijuyi",
+        "title": "旧唐书·白居易传",
+        "author": "刘昫等",
+        "edition": "中华书局点校本",
+        "locator": "卷166",
+        "reliability": "A"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-baijuyi-chishang-1",
+    "workId": "baijuyi-chishang",
+    "poetId": "baijuyi",
+    "placeId": "cn-henan-luoyang",
+    "date": {
+      "year": 835,
+      "original": "大和九年",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "白居易晚年以太子少傅分司东都，居洛阳履道坊宅园。园中有池，他看见一个小孩撑船偷采白莲，被划开的浮萍暴露了行踪——二十个字，全是童趣。",
+    "setting": "洛阳履道坊宅园池畔",
+    "rationale": "谢思炜《白居易诗集校注》系《池上二绝》于大和九年（835），时白居易任太子少傅分司东都、居洛阳履道坊宅园，故系于洛阳。《全唐诗》卷455 题作《池上二绝》，其一为「山僧对棋坐」，本首为其二。诗无系年明文，本集校注所定属学界通行说法；履道坊在洛阳城中，本数据集洛阳点为府级中心，故只系到洛阳。综合两点，confidence 取 C。",
+    "sources": [
+      {
+        "id": "quantangshi-455",
+        "title": "全唐诗",
+        "locator": "卷455",
+        "reliability": "B"
+      },
+      {
+        "id": "baijuyi-shiji-jiaozhu",
+        "title": "白居易诗集校注",
+        "author": "谢思炜",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-baijuyi-wen-liushijiu-1",
+    "workId": "baijuyi-wen-liushijiu",
+    "poetId": "baijuyi",
+    "placeId": "cn-jiangxi-jiujiang",
+    "date": {
+      "year": 817,
+      "original": "元和十二年",
+      "certainty": "approximate",
+      "fuzziness": 2
+    },
+    "circumstance": "新酒初熟，炉火正红，天色将雪，白居易写下这张二十字的便条，邀刘十九来喝一杯。刘十九是他在江州时的友人，《刘十九同宿》说「唯共嵩阳刘处士，围棋赌酒到天明」。其名未详，后世有刘禹铜（刘禹锡堂兄）、刘轲等说，均无确证。",
+    "setting": "江州，冬日傍晚",
+    "rationale": "《全唐诗》卷440 为白居易江州司马任内（815—818）编次，同卷另有《刘十九同宿》（题下注「时淮寇初破」，即元和十二年平淮西）、《雨中赴刘十九二林之期及到寺刘已先去因以四韵寄之》《蔷薇正开春酒初熟因招刘十九张大夫崔二十四同饮》诸诗，二林即庐山东、西二林寺，可证刘十九元和末与白居易同在江州，故系于江州。⚠️ 通行读物另有「晚年洛阳」说，据刘十九为「嵩阳处士」（家在嵩洛）推之，然无直接文献，且与同卷诸诗不合，本条不立并列异说，仅此辨明。诗无系年明文，fuzziness 取 2、confidence 取 C。",
+    "sources": [
+      {
+        "id": "quantangshi-440",
+        "title": "全唐诗",
+        "locator": "卷440",
+        "reliability": "B"
+      },
+      {
+        "id": "baishi-changqing-ji",
+        "title": "白氏长庆集",
+        "author": "白居易",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-baijuyi-yi-jiangnan-1",
+    "workId": "baijuyi-yi-jiangnan",
+    "poetId": "baijuyi",
+    "placeId": "cn-henan-luoyang",
+    "date": {
+      "year": 838,
+      "original": "开成三年",
+      "certainty": "approximate",
+      "fuzziness": 2
+    },
+    "circumstance": "白居易少年避乱江南，后又任杭州、苏州刺史，江南的春水江花是他「旧曾谙」的实景。晚年退居洛阳，北方春来得迟、水也不够绿，他于是在词里一遍遍把江南写回来。",
+    "setting": "洛阳，追忆江南春景",
+    "rationale": "《全唐诗》卷457 收《忆江南词三首》，词中「风景旧曾谙」「能不忆江南」明为在北方追忆江南；白居易晚年定居洛阳（大和末年起以太子宾客分司东都），故系地于洛阳。系年诸说分歧：有离苏州之后、大和元年（827）、大和八九年间（王国维）、开成二年（837）、开成三年（838）诸说，均无确证；本条取通行的开成三年（838）说，并留 fuzziness 2。系地较可靠而系年存异说，confidence 取 B。",
+    "sources": [
+      {
+        "id": "quantangshi-457",
+        "title": "全唐诗",
+        "locator": "卷457",
+        "reliability": "B"
+      },
+      {
+        "id": "baishi-changqing-ji",
+        "title": "白氏长庆集",
+        "author": "白居易",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true
+  },
+  {
+    "id": "a-baijuyi-maihua-1",
+    "workId": "baijuyi-maihua",
+    "poetId": "baijuyi",
+    "placeId": "cn-shaanxi-xian",
+    "dateRange": {
+      "from": {
+        "year": 800,
+        "original": "贞元十六年",
+        "certainty": "approximate",
+        "fuzziness": 3
+      },
+      "to": {
+        "year": 809,
+        "original": "元和四年",
+        "certainty": "approximate",
+        "fuzziness": 3
+      }
+    },
+    "circumstance": "暮春的长安，满城为牡丹发狂：贵贱无常价，家家习为俗。白居易却让一个田舍翁站在花市里低头长叹——「一丛深色花，十户中人赋」。买花的钱，是从赋税里来的。",
+    "setting": "长安春日花市",
+    "rationale": "《秦中吟十首》组诗自序为作者自述：「贞元、元和之际，予在长安，闻见之间，有足悲者。因直歌其事，命为秦中吟。」据此系地于长安、系年于贞元、元和之际（约 800—809）。序只给出时间范围，且为组诗总序而非单篇系年，故用 dateRange 并留 fuzziness 3、confidence 取 B。本篇为《秦中吟十首》之十，一作《牡丹》；诗中「帝城」即长安。",
+    "sources": [
+      {
+        "id": "quantangshi-425",
+        "title": "全唐诗",
+        "locator": "卷425",
+        "reliability": "B"
+      },
+      {
+        "id": "baishi-changqing-ji",
+        "title": "白氏长庆集",
+        "author": "白居易",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true
+  },
+  {
+    "id": "a-baijuyi-shangyang-baifaren-1",
+    "workId": "baijuyi-shangyang-baifaren",
+    "poetId": "baijuyi",
+    "placeId": "cn-shaanxi-xian",
+    "date": {
+      "year": 809,
+      "original": "元和四年",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "元和四年白居易任左拾遗、翰林学士，作《新乐府》五十首，本篇题下自注「愍怨旷也」。同年三月他上《请拣放后宫内人》奏状，说宫人「离隔亲族，有幽闭怨旷之苦」——诗与奏状是同一个题目。",
+    "setting": "长安，任谏官时作讽谕诗",
+    "rationale": "《新乐府》五十首作于元和四年（809）白居易任左拾遗、翰林学士时，本篇为其中之一，题下自注「愍怨旷也」（《全唐诗》卷426 题作「上阳白发人－愍怨旷也」）。⚠️ 创作地在长安（时白居易在朝任谏官），上阳宫在唐东都洛阳，是诗中所咏之地而非创作地，二者不是异说、不作并列，仅此辨明。组诗整体系年有据而单篇无明文，故 date 取 809、fuzziness 1、confidence 取 B。",
+    "sources": [
+      {
+        "id": "quantangshi-426",
+        "title": "全唐诗",
+        "locator": "卷426",
+        "reliability": "B"
+      },
+      {
+        "id": "jts-baijuyi",
+        "title": "旧唐书·白居易传",
+        "author": "刘昫等",
+        "edition": "中华书局点校本",
+        "locator": "卷166",
+        "reliability": "A"
+      },
+      {
+        "id": "baishi-changqing-ji",
+        "title": "白氏长庆集",
+        "author": "白居易",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true
+  },
+  {
+    "id": "a-baijuyi-qingfei-1",
+    "workId": "baijuyi-qingfei",
+    "poetId": "baijuyi",
+    "placeId": "cn-shaanxi-xian",
+    "dateRange": {
+      "from": {
+        "year": 800,
+        "original": "贞元十六年",
+        "certainty": "approximate",
+        "fuzziness": 3
+      },
+      "to": {
+        "year": 809,
+        "original": "元和四年",
+        "certainty": "approximate",
+        "fuzziness": 3
+      }
+    },
+    "circumstance": "宦官内臣赴军中宴，鞍马光照尘，水陆罗八珍，吃饱了「心自若」；而这一年江南大旱，衢州人食人。白居易把两幅画并排放在一起，一个字也不评论。",
+    "setting": "长安，见内臣骄奢而作",
+    "rationale": "《秦中吟十首》组诗自序为作者自述：「贞元、元和之际，予在长安，闻见之间，有足悲者。因直歌其事，命为秦中吟。」据此系地于长安、系年于贞元、元和之际（约 800—809）。序只给出时间范围，且为组诗总序而非单篇系年，故用 dateRange 并留 fuzziness 3、confidence 取 B。本篇为《秦中吟十首》之七。",
+    "sources": [
+      {
+        "id": "quantangshi-425",
+        "title": "全唐诗",
+        "locator": "卷425",
+        "reliability": "B"
+      },
+      {
+        "id": "baishi-changqing-ji",
+        "title": "白氏长庆集",
+        "author": "白居易",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true
+  },
+  {
+    "id": "a-baijuyi-tong-li-shiyi-zui-yi-yuanjiu-1",
+    "workId": "baijuyi-tong-li-shiyi-zui-yi-yuanjiu",
+    "poetId": "baijuyi",
+    "placeId": "cn-shaanxi-xian",
+    "date": {
+      "year": 809,
+      "month": 3,
+      "day": 21,
+      "original": "元和四年三月二十一日",
+      "certainty": "exact",
+      "fuzziness": 0
+    },
+    "circumstance": "元和四年三月，元稹以监察御史出使东川。白居易与弟白行简、友人李建（字杓直，行十一）同游曲江、慈恩寺，傍晚到李建修行坊宅中饮酒。白居易停杯良久，说「微之当达梁矣」，就在墙上题下这首诗。同一天，元稹行至梁州，夜里梦见他们同游曲江，醒来身在古梁州。",
+    "setting": "长安修行坊李建宅，暮春，饮酒时",
+    "rationale": "白行简《三梦记》记此事最详：「元和四年，河南元微之为监察御史，奉使剑外。去逾旬，予与仲兄乐天、陇西李杓直同游曲江。诣慈恩佛舍，遍历僧院……日已晚，同诣杓直修行里第，命酒对酬……兄停杯久之曰：微之当达梁矣。命题一篇于屋壁……实二十一日也。」系年、系地（长安修行坊李建宅）与缘起皆有同时代人明文；唯《三梦记》本属传奇体，故 confidence 取 B。李十一即李建，字杓直，白居易为其撰《有唐善人墓碑铭》；元九即元稹——元稹不在本数据集诗人库中，故 relatedPoetIds 不填，于此说明。",
+    "sources": [
+      {
+        "id": "sanmengji",
+        "title": "三梦记",
+        "author": "白行简",
+        "reliability": "B"
+      },
+      {
+        "id": "quantangshi-437",
+        "title": "全唐诗",
+        "locator": "卷437",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true
+  },
+  {
+    "id": "a-censen-rehaixing-song-cui-1",
+    "workId": "censen-rehaixing-song-cui",
+    "poetId": "censen",
+    "placeId": "cn-xinjiang-beiting",
+    "date": {
+      "year": 754,
+      "original": "天宝十三载",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "北庭幕府里为一位回京的御史饯行。热海只是听胡人说的远方传说，诗人却把它写成天地间一座烧着的大炉：鸟不敢飞、鲤鱼肥美、沙石被蒸得发烫。末了又回到眼前——天山脚下的城郭、将落的夕阳，还有御史台那逼人的霜威。",
+    "setting": "北庭（庭州）军中，送京官崔侍御还京",
+    "triggerEventId": "censen-e9",
+    "rationale": "岑参于天宝十三载（754）随封常清赴北庭，充安西北庭节度使判官，至至德元载（756）离任，此为确考（杜确《岑嘉州诗集序》、闻一多《岑嘉州系年考证》）。此诗为在北庭送京官崔侍御还京之作，学界通行系于 754 年前后，故系北庭并留 fuzziness 1。⚠️ 诗中所咏「热海」（今吉尔吉斯斯坦伊塞克湖）是所咏之地，非创作地：诗云「侧闻阴山胡儿语」，明言得自传闻，岑参本人未必亲至，故不系于热海——热海是所咏之地而非创作地，按体例不另立地点断言。「送君一醉天山郭」之天山郭当即北庭、轮台一带，说者或谓作于交河郡或轮台县，皆不出北庭辖境。",
+    "sources": [
+      {
+        "id": "quantangshi-199",
+        "title": "全唐诗",
+        "locator": "卷199",
+        "reliability": "B"
+      },
+      {
+        "id": "cen-jiazhou-xinian-kaozheng",
+        "title": "岑嘉州系年考证",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "cen-jiazhou-shiji-xu",
+        "title": "岑嘉州诗集序",
+        "author": "杜确",
+        "reliability": "B"
+      },
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true
+  },
+  {
+    "id": "a-censen-tianshan-xuege-1",
+    "workId": "censen-tianshan-xuege",
+    "poetId": "censen",
+    "placeId": "cn-xinjiang-tang-luntai",
+    "date": {
+      "year": 754,
+      "original": "天宝十三载",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "北风卷过赤亭口，一夜之间天山的雪更厚了。交河城边飞鸟绝迹，轮台路上马蹄打滑，将军的狐裘不暖、都护的宝刀冻得要断。就在这样的大雪里，送萧治策马回京，赠别的只有一枝青青松枝。",
+    "setting": "轮台（唐庭州属县，今乌鲁木齐一带），大雪日送人归京",
+    "triggerEventId": "censen-e9",
+    "rationale": "岑参天宝十三载（754）至至德元载（756）充封常清判官驻北庭，轮台为其时驻军、往来之所，与《白雪歌送武判官归京》同属此一时期（《白雪歌》有「轮台东门送君去」，本数据集亦系于轮台）。诗中「轮台路上马蹄滑」点出轮台，故系于轮台并留 fuzziness 1。⚠️ 诗中「天山」「交河」「银山」「铁关」「赤亭口」皆为送别时所咏的雪景与行程所经，不是送别地点本身；说者或谓作于北庭或交河，均不出这一带，不另立异说。本数据集唐轮台点取乌拉泊古城说（另有昌吉、米泉诸说），故 confidence 取 B 而非 A。",
+    "sources": [
+      {
+        "id": "quantangshi-199",
+        "title": "全唐诗",
+        "locator": "卷199",
+        "reliability": "B"
+      },
+      {
+        "id": "cen-jiazhou-xinian-kaozheng",
+        "title": "岑嘉州系年考证",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true
+  },
+  {
+    "id": "a-censen-chunmeng-1",
+    "workId": "censen-chunmeng",
+    "poetId": "censen",
+    "placeId": null,
+    "date": {
+      "year": 755,
+      "original": "系年无考",
+      "certainty": "unknown",
+      "fuzziness": 10
+    },
+    "circumstance": "春风吹进深室，所思念的人却隔着湘江。枕上短短一场春梦，人已经在江南走了几千里——梦醒仍在原处。全诗是代拟的相思口吻，非实写某地某会。",
+    "setting": "无可考，诗中场景为闺中春夜",
+    "rationale": "此诗系年、系地均无确证。诗中「洞房」「湘江」「江南」皆为代言体的想象之词，不指诗人实际所在，故 placeId 留空。系年各家皆无定说，本数据集不妄断，取岑参中年 755 为示意值并给 fuzziness 10、certainty unknown，请读者勿据以引用。题材旧说为闺怨代言，亦有学者疑其为寄友之作（「故人尚隔」一作「遥忆美人」），故只标 C。",
+    "sources": [
+      {
+        "id": "quantangshi-201",
+        "title": "全唐诗",
+        "locator": "卷201",
+        "reliability": "B"
+      },
+      {
+        "id": "cen-jiazhou-xinian-kaozheng",
+        "title": "岑嘉州系年考证",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-censen-ciensi-futu-1",
+    "workId": "censen-ciensi-futu",
+    "poetId": "censen",
+    "placeId": "cn-shaanxi-xian-ciensi",
+    "date": {
+      "year": 752,
+      "original": "天宝十一载秋",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "秋日登大慈恩寺塔。塔势如从地涌出，孤高耸天；登到顶上，连山如波涛奔涌，宫槐夹道，秋色自西满关中，北原上五陵一片青苍。诗人俯瞰尘世，忽生「誓将挂冠去」之念。同时高适、薛据、杜甫各有同题之作。",
+    "setting": "长安大慈恩寺塔（今西安大雁塔），天宝十一载秋",
+    "relatedPoetIds": [
+      "dufu"
+    ],
+    "rationale": "此为唐诗史上一次著名的同题唱和：天宝十一载（752）秋，岑参与高适、薛据、杜甫同登长安大慈恩寺塔，各赋一篇（杜甫《同诸公登慈恩寺塔》、高适《同诸公登慈恩寺浮图》并存）。诸家年谱均系于 752 年秋，系年可靠，故标 B（岑参两《唐书》无传，依例不标 A）。系地即寺内之塔，塔今存于西安，故 precision 取 site。诗题点名的薛据、高适本数据集无诗人条目，故 relatedPoetIds 只列同在的杜甫。",
+    "sources": [
+      {
+        "id": "quantangshi-198",
+        "title": "全唐诗",
+        "locator": "卷198",
+        "reliability": "B"
+      },
+      {
+        "id": "cen-jiazhou-xinian-kaozheng",
+        "title": "岑嘉州系年考证",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "ciensi-sanzang-fashi-zhuan",
+        "title": "大慈恩寺三藏法师传",
+        "author": "慧立、彦悰",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true
+  },
+  {
+    "id": "a-censen-song-li-fushi-1",
+    "workId": "censen-song-li-fushi",
+    "poetId": "censen",
+    "placeId": "cn-gansu-liangzhou",
+    "date": {
+      "year": 751,
+      "original": "天宝十载前后",
+      "certainty": "approximate",
+      "fuzziness": 2
+    },
+    "circumstance": "六月的火焰山更热，赤亭道口行人断绝——那是李副使西行必经的苦路。诗人却不写离愁，只劝他下马进酒家痛饮一杯，然后一路西去击胡，末了掷下一句「功名祗向马上取，真是英雄一丈夫」。",
+    "setting": "凉州（武威）饯别，六月，送李副使赴碛西（安西）",
+    "rationale": "诗题「赴碛西」即赴安西都护府（治龟兹，今新疆库车）。通行说法谓此诗作于天宝十载（751）六月，时岑参在武威（凉州）一带（其《武威送刘判官赴碛西行军》与此同调），故系于凉州并留 fuzziness 2。但诗题并未明言武威，史料亦无直接记载，另有系于长安之说，故 confidence 降为 C。⚠️ 诗中「火山」「赤亭」「祁连城」「轮台」皆李副使西行所经、所往之地，属所咏行程，不是送别地点本身——本条标的是送别发生之地（武威），不是行程终点。",
+    "sources": [
+      {
+        "id": "quantangshi-199",
+        "title": "全唐诗",
+        "locator": "卷199",
+        "reliability": "B"
+      },
+      {
+        "id": "cen-jiazhou-xinian-kaozheng",
+        "title": "岑嘉州系年考证",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-censen-zhao-jiangjun-ge-1",
+    "workId": "censen-zhao-jiangjun-ge",
+    "poetId": "censen",
+    "placeId": "cn-xinjiang-beiting",
+    "date": {
+      "year": 754,
+      "original": "约天宝十三载",
+      "certainty": "unknown",
+      "fuzziness": 2
+    },
+    "circumstance": "九月天山的风像刀，城南出猎的马冻得缩起寒毛。赵将军在军中角力骑射场场得胜，赢来的彩头竟是单于的貂鼠皮袍——四句二十八字，写足了边将的雄豪。",
+    "setting": "庭州城南郊野，九月，军中较艺",
+    "triggerEventId": "censen-e9",
+    "rationale": "系年系地均无确证。闻一多《岑嘉州系年考证》以诗中「城南」为庭州（北庭）城南郊野，并疑赵将军为疏勒守捉使赵宗玼（后继封常清任北庭节度使），此为本条系于北庭之所据；诗又云天山的九月风寒，与北庭时节相合。但诗中并无地名明文，赵将军其人亦「未详」，故系年只作「约天宝十三载（754）」并给 fuzziness 2、certainty unknown，confidence 取 C。⚠️ 「天山」是所咏的边塞风物，不是创作地。",
+    "sources": [
+      {
+        "id": "quantangshi-201",
+        "title": "全唐诗",
+        "locator": "卷201",
+        "reliability": "B"
+      },
+      {
+        "id": "cen-jiazhou-xinian-kaozheng",
+        "title": "岑嘉州系年考证",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-censen-ji-zuosheng-du-1",
+    "workId": "censen-ji-zuosheng-du",
+    "poetId": "censen",
+    "placeId": "cn-shaanxi-xian",
+    "date": {
+      "year": 758,
+      "original": "乾元元年",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "两个谏官的日子：一同快步走上殿阶，分属门下、中书两省；清晨随天子仪仗入朝，傍晚沾着一身御炉香回家。白发人看落花而悲，仰头羡慕青云里的飞鸟。末了自嘲一句「圣朝无阙事，自觉谏书稀」——表面颂圣，底下是说不出的无力。",
+    "setting": "长安，门下省、中书省署，肃宗朝为谏官时",
+    "relatedPoetIds": [
+      "dufu"
+    ],
+    "triggerEventId": "censen-e11",
+    "rationale": "左省即门下省，杜拾遗即杜甫，时任左拾遗。至德二载（757）岑参由杜甫等荐为右补阙，杜甫任左拾遗（至德二载五月至乾元元年六月），二人同为肃宗朝谏官，在长安同朝共事，此为可考的同时代关系（《旧唐书·杜甫传》载杜甫拜左拾遗；岑参仕履据杜确《岑嘉州诗集序》及闻一多《岑嘉州系年考证》）。诗中「分曹限紫微」正写两省分署，与二人身份相合，故系于长安、系于 757—758 之间，取 758 并留 fuzziness 1。因岑参两《唐书》无传，依例不标 A，取 B。",
+    "sources": [
+      {
+        "id": "quantangshi-200",
+        "title": "全唐诗",
+        "locator": "卷200",
+        "reliability": "B"
+      },
+      {
+        "id": "jts-dufu",
+        "title": "旧唐书·杜甫传",
+        "author": "刘昫等",
+        "edition": "中华书局点校本",
+        "locator": "卷190下",
+        "reliability": "A"
+      },
+      {
+        "id": "cen-jiazhou-xinian-kaozheng",
+        "title": "岑嘉州系年考证",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "cen-jiazhou-shiji-xu",
+        "title": "岑嘉州诗集序",
+        "author": "杜确",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true
+  },
+  {
+    "id": "a-dufu-bingchexing-1",
+    "workId": "dufu-bingchexing",
+    "poetId": "dufu",
+    "placeId": "cn-shaanxi-xian",
+    "date": {
+      "year": 751,
+      "original": "天宝十载",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "天宝年间唐玄宗连年开边用兵，鲜于仲通征南诏大败、死者数万，朝廷于两京及河南北募兵不已。杜甫在长安亲见征人出发、父母妻儿拦道相送之状，作此诗。",
+    "setting": "长安城西送别征人的道旁",
+    "rationale": "此诗系年有异说。主流据鲜于仲通天宝十载（751）征南诏败绩、朝廷大募兵之事，定为天宝十载；另说系于天宝十一载（752），着眼于玄宗开边、西北用兵之持续。二说并列，此条取主流。创作地在长安；诗中「咸阳桥」是送行之地（长安西北渭水桥），非创作地，故不另立一说。",
+    "sources": [
+      {
+        "id": "jts-xuanzong",
+        "title": "旧唐书·玄宗本纪",
+        "author": "刘昫等",
+        "edition": "中华书局点校本",
+        "locator": "卷九",
+        "reliability": "A"
+      },
+      {
+        "id": "zzztj",
+        "title": "资治通鉴",
+        "author": "司马光",
+        "locator": "卷216",
+        "reliability": "A"
+      },
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "groupId": "bingchexing-year",
+    "isPrimary": true
+  },
+  {
+    "id": "a-dufu-bingchexing-2",
+    "workId": "dufu-bingchexing",
+    "poetId": "dufu",
+    "placeId": "cn-shaanxi-xian",
+    "date": {
+      "year": 752,
+      "original": "天宝十一载",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "一说此诗作于天宝十一载（752），时玄宗仍锐意开边、西北战事不息，杜甫在长安见征兵之状而作。",
+    "setting": "长安城西送别征人的道旁",
+    "rationale": "异说，与「天宝十载」说并列。主张十一载者多联系玄宗开边之持续与诗中「青海头」「君不见青海头，古来白骨无人收」的西北战地背景。两说学界未有定论，此条为次说。创作地同在长安。",
+    "sources": [
+      {
+        "id": "jts-xuanzong",
+        "title": "旧唐书·玄宗本纪",
+        "author": "刘昫等",
+        "edition": "中华书局点校本",
+        "locator": "卷九",
+        "reliability": "A"
+      },
+      {
+        "id": "zzztj",
+        "title": "资治通鉴",
+        "author": "司马光",
+        "locator": "卷216",
+        "reliability": "A"
+      },
+      {
+        "id": "dushi-xiangzhu",
+        "title": "杜诗详注",
+        "author": "仇兆鳌",
+        "edition": "清康熙刻本",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "groupId": "bingchexing-year",
+    "isPrimary": false
+  },
+  {
+    "id": "a-dufu-lirenxing-1",
+    "workId": "dufu-lirenxing",
+    "poetId": "dufu",
+    "placeId": "cn-shaanxi-changan-qujiang",
+    "date": {
+      "year": 753,
+      "month": 3,
+      "original": "天宝十二载三月",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "天宝十二载（753）上巳节，杨国忠及虢国、秦国夫人等外戚盛装游宴曲江，声势煊赫。杜甫在长安目睹其骄奢，作此诗以讥之。",
+    "setting": "三月三日上巳节，曲江池畔春游宴饮",
+    "rationale": "首句「三月三日天气新，长安水边多丽人」明标上巳与长安水边（曲江）；末联「炙手可热势绝伦，慎莫近前丞相嗔」直指杨国忠（天宝十一载起为右相）。史载杨氏兄妹天宝间盛游曲江，故系于天宝十二载（753）春。系年为学界通行说法，非杜甫自述，故标 B。曲江在长安城南，为诗中所写之地，亦杜甫身历之地。",
+    "sources": [
+      {
+        "id": "jts-yangguozhong",
+        "title": "旧唐书·杨国忠传",
+        "author": "刘昫等",
+        "edition": "中华书局点校本",
+        "locator": "卷106",
+        "reliability": "A"
+      },
+      {
+        "id": "xsts-yangguifei",
+        "title": "新唐书·杨贵妃传",
+        "author": "欧阳修等",
+        "edition": "中华书局点校本",
+        "locator": "卷76",
+        "reliability": "A"
+      },
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true
+  },
+  {
+    "id": "a-dufu-xinhunbie-1",
+    "workId": "dufu-xinhunbie",
+    "poetId": "dufu",
+    "placeId": "cn-shaanxi-huazhou",
+    "date": {
+      "year": 759,
+      "month": 3,
+      "original": "乾元二年春",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "乾元二年（759）春，九节度使兵溃邺城，唐廷急征丁壮。杜甫由洛阳返华州任所，沿途就所见所闻作「三吏三别」。此为代言体，杜甫代一位新婚次日即送夫从军的新妇立言，非其自身婚姻。",
+    "setting": "战乱征兵之际，新妇送夫赴河阳从军",
+    "rationale": "「三吏三别」作于乾元二年（759）春杜甫自洛阳返华州途中，系年据两《唐书》本传、年谱及注家可定。此诗为拟作代言，非纪实自身之事。诗中「守边赴河阳」是征夫所赴之地，非创作地；本条 placeId 标的是此行的目的地华州，属行程区间系地，非具体宿顿点，故降为 C。",
+    "sources": [
+      {
+        "id": "jts-dufu",
+        "title": "旧唐书·杜甫传",
+        "author": "刘昫等",
+        "edition": "中华书局点校本",
+        "locator": "卷190下",
+        "reliability": "A"
+      },
+      {
+        "id": "xsts-dufu",
+        "title": "新唐书·杜甫传",
+        "author": "欧阳修等",
+        "edition": "中华书局点校本",
+        "locator": "卷201",
+        "reliability": "A"
+      },
+      {
+        "id": "dushi-xiangzhu",
+        "title": "杜诗详注",
+        "author": "仇兆鳌",
+        "edition": "清康熙刻本",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-dufu-kezhi-1",
+    "workId": "dufu-kezhi",
+    "poetId": "dufu",
+    "placeId": "cn-sichuan-chengdu-caotang",
+    "date": {
+      "year": 761,
+      "month": 3,
+      "original": "上元二年春",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "上元二年（761）春，杜甫居成都草堂，生活稍安。县令崔明府来访，杜甫喜而作此诗，写草堂春景与待客之情。",
+    "setting": "春日，草堂，崔明府来访，隔篱呼邻翁共饮",
+    "rationale": "题下自注「喜崔明府相过」为杜甫自述，据此可定其事；诗「舍南舍北皆春水」写草堂所在浣花溪环境，地亦确凿。系年上元二年（761）春为年谱与注家一致之说，无异说，故整体标 A。",
+    "sources": [
+      {
+        "id": "dushi-xiangzhu",
+        "title": "杜诗详注",
+        "author": "仇兆鳌",
+        "edition": "清康熙刻本",
+        "reliability": "B"
+      },
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      },
+      {
+        "id": "jts-dufu",
+        "title": "旧唐书·杜甫传",
+        "author": "刘昫等",
+        "edition": "中华书局点校本",
+        "locator": "卷190下",
+        "reliability": "A"
+      }
+    ],
+    "confidence": "A",
+    "isPrimary": true
+  },
+  {
+    "id": "a-dufu-jiangpan-dubu-xunhua-1",
+    "workId": "dufu-jiangpan-dubu-xunhua-qiliu",
+    "poetId": "dufu",
+    "placeId": "cn-sichuan-chengdu-caotang",
+    "date": {
+      "year": 761,
+      "month": 3,
+      "original": "上元二年春",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "上元二年（761）春，杜甫居成都草堂，生活稍得安定。独步江畔赏花，作七绝句一组七首，此为其六，写黄四娘家花事之盛。",
+    "setting": "春日，浣花溪畔独步赏花",
+    "rationale": "组诗作于杜甫定居成都草堂之后。系年主流定为上元二年（761）春，另有宝应元年（762）春一说，此条取主流。诗写「江畔」寻花，即草堂所在的浣花溪畔，故系于成都草堂。系年非杜甫自述，属注家推定，故标 B。",
+    "sources": [
+      {
+        "id": "dushi-xiangzhu",
+        "title": "杜诗详注",
+        "author": "仇兆鳌",
+        "edition": "清康熙刻本",
+        "reliability": "B"
+      },
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true
+  },
+  {
+    "id": "a-dufu-jueju-liangge-huangli-1",
+    "workId": "dufu-jueju-liangge-huangli",
+    "poetId": "dufu",
+    "placeId": "cn-sichuan-chengdu-caotang",
+    "date": {
+      "year": 764,
+      "month": 3,
+      "original": "广德二年春",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "广德二年（764）春，杜甫自梓州、阆州返回成都草堂。时安史之乱已平而吐蕃仍为患，诗人暂得安居，写草堂春景四首，此为其三。",
+    "setting": "春日，成都草堂，窗前可见西岭积雪、门外停泊江船",
+    "rationale": "此诗为《绝句四首》之三，组诗作于广德二年（764）杜甫重返成都草堂之时，系年注家一致。诗中「窗含西岭」「门泊东吴」皆草堂所见之景，故系于成都草堂。系年非杜甫自述，标 B。",
+    "sources": [
+      {
+        "id": "dushi-xiangzhu",
+        "title": "杜诗详注",
+        "author": "仇兆鳌",
+        "edition": "清康熙刻本",
+        "reliability": "B"
+      },
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true
+  },
+  {
+    "id": "a-dufu-denglou-1",
+    "workId": "dufu-denglou",
+    "poetId": "dufu",
+    "placeId": "cn-sichuan-chengdu",
+    "date": {
+      "year": 764,
+      "month": 3,
+      "original": "广德二年春",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "广德元年（763）十月吐蕃攻陷长安、代宗出奔陕州，十二月又陷松、维、保等州。次年春杜甫重返成都，登高楼远望，感时局多难而作此诗。",
+    "setting": "春日登成都城楼，远眺锦江、玉垒",
+    "rationale": "诗「万方多难此登临」「北极朝廷终不改，西山寇盗莫相侵」与广德元年吐蕃陷京、代宗出奔及次年的西陲之患相合，故系于广德二年（764）春，作于成都。系年据史事与注家推定，标 B。诗中「锦江」「玉垒」为登楼所见，非另有一创作地说，不可与之并列。",
+    "sources": [
+      {
+        "id": "jts-daizong",
+        "title": "旧唐书·代宗本纪",
+        "author": "刘昫等",
+        "edition": "中华书局点校本",
+        "locator": "卷十一",
+        "reliability": "A"
+      },
+      {
+        "id": "zzztj",
+        "title": "资治通鉴",
+        "author": "司马光",
+        "locator": "卷223",
+        "reliability": "A"
+      },
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true
+  },
+  {
+    "id": "a-dufu-zeng-huaqing-1",
+    "workId": "dufu-zeng-huaqing",
+    "poetId": "dufu",
+    "placeId": "cn-sichuan-chengdu",
+    "date": {
+      "year": 761,
+      "original": "上元二年",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "上元二年（761）四月梓州刺史段子璋反，成都尹崔光远遣牙将花惊定（花敬定）讨平之。花惊定恃功骄纵、纵兵剽掠，且僭用天子礼乐。杜甫作此诗，表面赞乐曲之美，实含讥刺。",
+    "setting": "成都，花卿席上闻乐",
+    "rationale": "花卿即花惊定（一作花敬定），成都尹崔光远部将，上元二年平段子璋之乱，事见《旧唐书·崔光远传》。诗「此曲只应天上有」以「天上」双关天子，暗讥其僭用宫廷之乐，此为传统主流读法。系年据史事定为上元二年（761），作于成都，标 B。",
+    "sources": [
+      {
+        "id": "jts-cuiguangyuan",
+        "title": "旧唐书·崔光远传",
+        "author": "刘昫等",
+        "edition": "中华书局点校本",
+        "locator": "卷111",
+        "reliability": "A"
+      },
+      {
+        "id": "zzztj",
+        "title": "资治通鉴",
+        "author": "司马光",
+        "locator": "卷222",
+        "reliability": "A"
+      },
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "groupId": "zenghuaqing-fengci",
+    "isPrimary": true
+  },
+  {
+    "id": "a-dufu-zeng-huaqing-2",
+    "workId": "dufu-zeng-huaqing",
+    "poetId": "dufu",
+    "placeId": "cn-sichuan-chengdu",
+    "date": {
+      "year": 761,
+      "original": "上元二年",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "一说此诗并无讥刺，只是就花卿席上所闻乐曲而作，极赞其音乐之妙，谓非人间所常有。",
+    "setting": "成都，花卿席上闻乐",
+    "rationale": "异说，与「讥刺」说并列。主张无讥刺者以「天上」但为夸赞乐曲入云之妙，「人间能得几回闻」只是叹其难得，未必暗指天子。两说并存，学界未有定论；系年仍定上元二年（761）成都。",
+    "sources": [
+      {
+        "id": "dushi-xiangzhu",
+        "title": "杜诗详注",
+        "author": "仇兆鳌",
+        "edition": "清康熙刻本",
+        "reliability": "B"
+      },
+      {
+        "id": "dufu-nianpu-wen",
+        "title": "杜甫年谱",
+        "author": "闻一多",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "groupId": "zenghuaqing-fengci",
+    "isPrimary": false
+  },
+  {
+    "id": "a-libai-wangtianmenshan-1",
+    "workId": "libai-wangtianmenshan",
+    "poetId": "libai",
+    "placeId": "cn-anhui-tianmenshan",
+    "date": {
+      "year": 725,
+      "original": "开元十三年（725）前后",
+      "certainty": "approximate",
+      "fuzziness": 3
+    },
+    "circumstance": "李白「仗剑去国，辞亲远游」，自蜀出峡沿江东下。舟行至当涂天门山，两岸青山夹江对峙，一片孤帆顺流而来，遂有此作。",
+    "setting": "舟行长江，江阔山青",
+    "rationale": "地点明确：天门山即长江两岸东梁山与西梁山夹江对峙处，唐属宣州当涂县，非湖南张家界之天门山，故系于此。系年则无确证。主流说据李白出蜀东下的行程推定：开元十三年（725）前后自渝州出峡，沿江东下经荆门而至当涂，舟中初见天门山而作，安旗《李白全集编年注释》、郁贤皓《李白选集》、管士光《李白诗集新注》等即系于此年。惟诗题与唐人记载均未标明作年，此说属据行踪推定；另有学者因李白晚年寓居当涂、屡游天门山（有《天门山铭》《姑熟十咏》等），疑此诗或作于晚年，然亦无文献明证。两说均无硬证据，故系年标 C。",
+    "sources": [
+      {
+        "id": "litaibai-nianpu",
+        "title": "李太白年谱",
+        "author": "王琦",
+        "reliability": "B"
+      },
+      {
+        "id": "libai-xinian-zhan",
+        "title": "李白诗文系年",
+        "author": "詹锳",
+        "reliability": "B"
+      },
+      {
+        "id": "quantangshi-180",
+        "title": "全唐诗",
+        "locator": "卷180",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-libai-songyouren-1",
+    "workId": "libai-songyouren",
+    "poetId": "libai",
+    "date": {
+      "year": 745,
+      "original": "系年无确证（约盛唐中期）",
+      "certainty": "unknown",
+      "fuzziness": 15
+    },
+    "circumstance": "李白送别友人远行之作。诗中只写城郭、白水、孤蓬、浮云、落日与班马，全为泛写之景，未及任何可考的地名或人名。",
+    "setting": "城郊送别，落日马鸣",
+    "rationale": "此诗系年、系地均无确证。诗题作《送友人》而不著友人姓名；「青山横北郭，白水绕东城」为泛写城郊景象，不指实任何城邑；唐人记载及李白年谱亦无系年明文。历来注家或泛系于漫游时期，皆属推测。故本条不系地（无可据以系地），系年标 unknown，仅如实记录其创作时空不可考。",
+    "sources": [
+      {
+        "id": "litaibai-nianpu",
+        "title": "李太白年谱",
+        "author": "王琦",
+        "reliability": "B"
+      },
+      {
+        "id": "libai-jizhu-wangqi",
+        "title": "李太白全集",
+        "author": "王琦",
+        "reliability": "B"
+      },
+      {
+        "id": "quantangshi-177",
+        "title": "全唐诗",
+        "locator": "卷177",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-libai-wenwangchangling-1",
+    "workId": "libai-wenwangchangling",
+    "poetId": "libai",
+    "placeId": "cn-jiangsu-yangzhou",
+    "date": {
+      "year": 748,
+      "original": "天宝七载（748）前后",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "王昌龄因「不护细行」由江宁丞贬为龙标尉。李白闻讯，遥寄此诗相慰，「我寄愁心与明月」是对友人远谪荒州的深切系念。",
+    "relatedPoetIds": [
+      "wangchangling"
+    ],
+    "setting": "暮春，闻友人贬谪，独处异地",
+    "rationale": "系年较有依据：《新唐书·王昌龄传》明载其「不护细行，贬龙标尉」，学界多定此事于天宝七载（748）前后，诗题亦明言「闻王昌龄左迁龙标」。创作地则属推知：李白此际行止不定，学界多推定其在扬州闻讯而作，然无直接文献。本条标的是「扬州—金陵一带」这一活动区间，非确指某处宿顿点，故降为 C。另须辨明：诗中「夜郎」指龙标所在的湘西一带，是诗中所咏之地，与创作地扬州不是一回事，故不另立并列断言，仅在此说明。",
+    "sources": [
+      {
+        "id": "xsts-wangchangling",
+        "title": "新唐书·王昌龄传",
+        "author": "欧阳修等",
+        "locator": "卷203",
+        "reliability": "A"
+      },
+      {
+        "id": "litaibai-nianpu",
+        "title": "李太白年谱",
+        "author": "王琦",
+        "reliability": "B"
+      },
+      {
+        "id": "quantangshi-172",
+        "title": "全唐诗",
+        "locator": "卷172",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "groupId": "wenwangchangling-place",
+    "isPrimary": true
+  },
+  {
+    "id": "a-libai-wenwangchangling-2",
+    "workId": "libai-wenwangchangling",
+    "poetId": "libai",
+    "placeId": "cn-jiangsu-jinling",
+    "date": {
+      "year": 748,
+      "original": "天宝七载（748）前后",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "另一说以为李白此际正在金陵（江宁）。王昌龄贬前为江宁丞，二人本有交谊，李白闻讯于金陵寄诗，于事亦通。",
+    "relatedPoetIds": [
+      "wangchangling"
+    ],
+    "setting": "暮春，闻友人贬谪",
+    "rationale": "此条为系地异说（groupId: wenwangchangling-place）。持此说者以李白天宝年间多次往来金陵、且王昌龄贬前正为江宁丞为据。与扬州说同样缺乏直接文献，只能定于「扬州—金陵一带」这一活动区间，故标 C。系年（天宝七载前后）两说一致，并无分歧。",
+    "sources": [
+      {
+        "id": "xsts-wangchangling",
+        "title": "新唐书·王昌龄传",
+        "author": "欧阳修等",
+        "locator": "卷203",
+        "reliability": "A"
+      },
+      {
+        "id": "litaibai-nianpu",
+        "title": "李太白年谱",
+        "author": "王琦",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "groupId": "wenwangchangling-place",
+    "isPrimary": false
+  },
+  {
+    "id": "a-libai-chunyeluochengwendi-1",
+    "workId": "libai-chunyeluochengwendi",
+    "poetId": "libai",
+    "placeId": "cn-henan-luoyang",
+    "date": {
+      "year": 734,
+      "original": "开元二十二年前后",
+      "certainty": "approximate",
+      "fuzziness": 3
+    },
+    "circumstance": "李白客居东都洛阳，春夜闻笛声吹《折杨柳》，触动乡思而作。此时他出蜀未久，漫游未定，「故园情」当指蜀中旧家。",
+    "setting": "春夜，洛阳城中，闻笛",
+    "rationale": "诗题明标「洛城」，即唐东都洛阳，地点明确，故系于此。系年则无确证：诗序与唐人记载均未标作年，学界通行说法是开元二十二、二十三年（734—735）李白游洛阳时所作，亦有泛系于开元年间客游洛阳者，均无硬证据，故标 C。",
+    "sources": [
+      {
+        "id": "litaibai-nianpu",
+        "title": "李太白年谱",
+        "author": "王琦",
+        "reliability": "B"
+      },
+      {
+        "id": "libai-xinian-zhan",
+        "title": "李白诗文系年",
+        "author": "詹锳",
+        "reliability": "B"
+      },
+      {
+        "id": "quantangshi-184",
+        "title": "全唐诗",
+        "locator": "卷184",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-libai-tifengdingsi-1",
+    "workId": "libai-tifengdingsi",
+    "poetId": "libai",
+    "placeId": "cn-hubei-huangmei",
+    "date": {
+      "year": 745,
+      "original": "盛唐，约李白中年游蕲州时",
+      "certainty": "approximate",
+      "fuzziness": 5
+    },
+    "circumstance": "相传李白夜宿蕲州黄梅县山中峰顶寺，见寺宇高峻，遂题此诗于梁间。北宋曾阜为黄梅令，于寺中得诗牌，落款「布衣李白」。",
+    "setting": "夜宿山寺，峰顶高峻",
+    "rationale": "此诗为李白集外诗，传本《李白集》未收，最早见于北宋王得臣《麈史》；赵令畤《侯鲭录》录作《题峰顶寺》，清王琦据以收入《李太白全集》卷三十《诗文拾遗》，正文作「夜宿峰顶寺，举手扪星辰」，本条正文即据此。地点：宋人一致记为蕲州黄梅县山中佛寺（《侯鲭录》作峰顶寺，《麈史》作乌牙寺），故系于黄梅县，只取县治中心，精度标 county。系年无明文，仅据李白行踪泛系于中年，故标 C。作者归属另有异说，见同组断言。",
+    "sources": [
+      {
+        "id": "libai-jizhu-wangqi",
+        "title": "李太白全集",
+        "author": "王琦",
+        "locator": "卷30 诗文拾遗",
+        "reliability": "B"
+      },
+      {
+        "id": "houqinglu",
+        "title": "侯鲭录",
+        "author": "赵令畤",
+        "locator": "卷二",
+        "reliability": "B"
+      },
+      {
+        "id": "zhushi",
+        "title": "麈史",
+        "author": "王得臣",
+        "locator": "卷二",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "groupId": "tifengdingsi-author",
+    "isPrimary": true
+  },
+  {
+    "id": "a-libai-tifengdingsi-2",
+    "workId": "libai-tifengdingsi",
+    "poetId": "libai",
+    "date": {
+      "year": 980,
+      "original": "宋人异说（或谓北宋初人少作）",
+      "certainty": "unknown",
+      "fuzziness": 25
+    },
+    "circumstance": "宋人记载互异，此诗又被说成王禹偁或杨亿少年登楼之作，首句作「危楼高百尺，手可摘星辰」，即今通行本《夜宿山寺》。",
+    "setting": "待考",
+    "rationale": "此条为作者归属异说（groupId: tifengdingsi-author），非主流。宋人记载已纷纭：《侯鲭录》云「或曰王元之（王禹偁）少登楼诗云危楼高百尺手可摘星辰」；《苕溪渔隐丛话》引《西清诗话》云「世传杨大年（杨亿）幼时诗」；而《邵氏闻见后录》则谓「恐（李白）少作耳」。同一首诗在宋人笔下或属李白、或属王禹偁、或属杨亿，文献既晚出又互相矛盾，作者实难判定，故仅列此条以存异说，两条同标 C。又：「危楼高百尺」一系文字与李白集所收「夜宿峰顶寺」为同一诗之异传，非两首。",
+    "sources": [
+      {
+        "id": "houqinglu",
+        "title": "侯鲭录",
+        "author": "赵令畤",
+        "locator": "卷二",
+        "reliability": "B"
+      },
+      {
+        "id": "yuyin-conghua",
+        "title": "苕溪渔隐丛话",
+        "author": "胡仔",
+        "locator": "前集卷五",
+        "reliability": "B"
+      },
+      {
+        "id": "shaoshi-wenjian-houlu",
+        "title": "邵氏闻见后录",
+        "author": "邵博",
+        "locator": "卷十八",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "groupId": "tifengdingsi-author",
+    "isPrimary": false
+  },
+  {
+    "id": "a-libai-qingpingdiao-qiyi-1",
+    "workId": "libai-qingpingdiao-qiyi",
+    "poetId": "libai",
+    "placeId": "cn-shaanxi-xingqinggong",
+    "date": {
+      "year": 743,
+      "original": "天宝二年（743）前后",
+      "certainty": "approximate",
+      "fuzziness": 2
+    },
+    "circumstance": "李白供奉翰林，玄宗与杨贵妃在兴庆宫沉香亭赏牡丹，嫌旧乐词不称，召李白即席进《清平调》三章。此为其一，以云、花、群玉山、瑶台比拟贵妃之美。",
+    "setting": "春日，兴庆宫沉香亭，赏牡丹，应制",
+    "rationale": "地点明确：唐人笔记《松窗杂录》记玄宗与太真妃于兴庆池东沉香亭赏牡丹，命李白进《清平调》三章；《全唐诗》卷164题注亦引此事，故系于兴庆宫沉香亭。系年则无确证：通行说法系于天宝二年（743）春，另有天宝元年、天宝三载（744）之说，故 certainty 标 approximate、fuzziness 2，未敢定为确年。此为组诗三首，本条只收其一。",
+    "sources": [
+      {
+        "id": "songchuang-zalu",
+        "title": "松窗杂录",
+        "author": "李濬",
+        "reliability": "B"
+      },
+      {
+        "id": "litaibai-nianpu",
+        "title": "李太白年谱",
+        "author": "王琦",
+        "reliability": "B"
+      },
+      {
+        "id": "quantangshi-164",
+        "title": "全唐诗",
+        "locator": "卷164",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true
+  },
+  {
+    "id": "a-libai-yiqine-xiaoshengyan-1",
+    "workId": "libai-yiqine-xiaoshengyan",
+    "poetId": "libai",
+    "date": {
+      "year": 744,
+      "original": "系年无确证",
+      "certainty": "unknown",
+      "fuzziness": 25
+    },
+    "circumstance": "题为李白作。词写长安女子秋夜伤别、登原怀古，末以「西风残照，汉家陵阙」收束，气象悲壮。",
+    "setting": "长安秋日，伤别怀古",
+    "rationale": "本词作者归属为文学史上千年悬案，此条为「题为李白作」的主流断言（groupId: yiqine-author）。依据：两宋之交邵博《邵氏闻见后录》卷十九已录此词，称「李太白词也」，并记其秋日于咸阳宝钗楼闻歌此事；南宋黄升《唐宋诸贤绝妙词选》收之，题李白作，并与《菩萨蛮》并称「百代词曲之祖」；《全唐诗》卷890亦列于李白名下。然词不见于古本《太白集》，出现晚在李白身后三百余年，故仅标 C。系年系地均无确证：词中灞陵、乐游原、咸阳古道、汉家陵阙皆长安一带之地，但那是词中之地，创作地并无明文，故本条不系地。",
+    "sources": [
+      {
+        "id": "shaoshi-wenjian-houlu",
+        "title": "邵氏闻见后录",
+        "author": "邵博",
+        "locator": "卷十九",
+        "reliability": "B"
+      },
+      {
+        "id": "miaojue-cixuan",
+        "title": "唐宋诸贤绝妙词选",
+        "author": "黄升",
+        "reliability": "B"
+      },
+      {
+        "id": "quantangshi-890",
+        "title": "全唐诗",
+        "locator": "卷890",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "groupId": "yiqine-author",
+    "isPrimary": true
+  },
+  {
+    "id": "a-libai-yiqine-xiaoshengyan-2",
+    "workId": "libai-yiqine-xiaoshengyan",
+    "poetId": "libai",
+    "date": {
+      "year": 900,
+      "original": "异说：或晚唐五代人作",
+      "certainty": "unknown",
+      "fuzziness": 40
+    },
+    "circumstance": "此说以为《忆秦娥》非李白作，乃晚唐五代词人嫁名李白。",
+    "setting": "待考",
+    "rationale": "此条为作者归属异说（groupId: yiqine-author），非主流。明胡应麟《少室山房笔丛》谓「详其意调，绝类温方城辈，盖晚唐人词，嫁名太白」，理由是词气衰飒、与李白超然之致不类；胡震亨《唐音癸签》卷十三考《忆秦娥》调源出晚唐宫人阿翘《忆秦郎》，亦不以为盛唐之作。又此调不见于唐崔令钦《教坊记》所载曲名，亦不见于《花间集》，仅见于五代冯延巳《阳春集》（句法不同），出现甚晚。此说与「题为李白作」说相持不下，故并列存疑，两条同标 C。",
+    "sources": [
+      {
+        "id": "shaoshi-shanfang-bicong",
+        "title": "少室山房笔丛",
+        "author": "胡应麟",
+        "reliability": "B"
+      },
+      {
+        "id": "tangyin-guiqian",
+        "title": "唐音癸签",
+        "author": "胡震亨",
+        "locator": "卷十三",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "groupId": "yiqine-author",
+    "isPrimary": false
+  },
+  {
+    "id": "a-libai-pusaman-pinglin-1",
+    "workId": "libai-pusaman-pinglin",
+    "poetId": "libai",
+    "date": {
+      "year": 744,
+      "original": "系年无确证",
+      "certainty": "unknown",
+      "fuzziness": 25
+    },
+    "circumstance": "题为李白作。词写旅人日暮登楼，见平林寒山、暝色归鸟，生出「何处是归程」的羁旅之愁。",
+    "setting": "暮色高楼，羁旅思归",
+    "rationale": "本词作者归属与《忆秦娥》同为悬案，此条为「题为李白作」的主流断言（groupId: pusaman-author）。依据：今传本《尊前集》卷上录李白词十二首，此阕在其中；南宋黄升《唐宋诸贤绝妙词选》题李白作，与《忆秦娥》并称「百代词曲之祖」；《全唐诗》卷890亦列李白名下。然《尊前集》成书年代（或五代、或宋初）与编者均有争议，词又不见于古本《太白集》，故仅标 C。系地无考：词中「平林」「寒山」「高楼」「长亭短亭」皆泛写，未著地名，创作地无明文，故本条不系地。",
+    "sources": [
+      {
+        "id": "zunqianji",
+        "title": "尊前集",
+        "locator": "卷上",
+        "reliability": "B"
+      },
+      {
+        "id": "miaojue-cixuan",
+        "title": "唐宋诸贤绝妙词选",
+        "author": "黄升",
+        "reliability": "B"
+      },
+      {
+        "id": "quantangshi-890",
+        "title": "全唐诗",
+        "locator": "卷890",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "groupId": "pusaman-author",
+    "isPrimary": true
+  },
+  {
+    "id": "a-libai-pusaman-pinglin-2",
+    "workId": "libai-pusaman-pinglin",
+    "poetId": "libai",
+    "date": {
+      "year": 900,
+      "original": "异说：或晚唐五代人作",
+      "certainty": "unknown",
+      "fuzziness": 40
+    },
+    "circumstance": "此说以为《菩萨蛮》非李白作，盛唐不可能产生如此成熟的令词，或出晚唐五代人之手，假托李白。",
+    "setting": "待考",
+    "rationale": "此条为作者归属异说（groupId: pusaman-author），非主流。理由有二：一、词在初盛唐尚属草创，而此阕格律、意境已极成熟，出李白笔下可疑；二、此词未见于唐五代载籍，直到北宋《尊前集》及两宋之交《邵氏闻见后录》方见著录，距李白身后三百余年。然主李白说者亦有据：唐崔令钦《教坊记》所载曲名中已有《菩萨蛮》，且《尊前集》为较早之词总集。二说相持不下，故并列存疑，两条同标 C。",
+    "sources": [
+      {
+        "id": "shaoshi-wenjian-houlu",
+        "title": "邵氏闻见后录",
+        "author": "邵博",
+        "locator": "卷十九",
+        "reliability": "B"
+      },
+      {
+        "id": "zunqianji",
+        "title": "尊前集",
+        "locator": "卷上",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "groupId": "pusaman-author",
+    "isPrimary": false
+  },
+  {
+    "id": "a-menghaoran-qiudeng-lanshan-1",
+    "workId": "menghaoran-qiudeng-lanshan",
+    "poetId": "menghaoran",
+    "placeId": "cn-hubei-wanshan",
+    "date": {
+      "year": 730,
+      "certainty": "approximate",
+      "fuzziness": 10
+    },
+    "circumstance": "重阳登高，望友不至。诗从「隐者自怡悦」的闲适写到「心随雁飞灭」的怅望，结句「何当载酒来，共醉重阳节」把思念落成一次约会——这是孟浩然式的清淡深情。",
+    "setting": "襄阳万山（汉皋山），清秋薄暮登高",
+    "rationale": "诗题中的「兰山」，全唐诗卷159作「秋登兰山寄张五」，另有「秋登万山寄张五」「九月九日岘山寄张子容」「秋登万山寄张文儃」诸异文。通行注家（唐诗三百首旧注）以为「兰山」即襄阳汉皋山（万山），在襄阳县西；今未能考出襄阳另有一座独立的「兰山」，故系于万山，并特别存疑，未敢径断二山为一。张五其人亦有张諲、张子容、张文儃诸说，未有定论。系年无明文，只可笼统定于隐居襄阳期间，fuzziness 取大值，confidence 标 C。",
+    "sources": [
+      {
+        "id": "quantangshi-159",
+        "title": "全唐诗·孟浩然",
+        "locator": "卷159",
+        "reliability": "B"
+      },
+      {
+        "id": "yuanhe-junxian-tuzhi",
+        "title": "元和郡县图志",
+        "author": "李吉甫",
+        "locator": "卷二十一·襄州",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-menghaoran-zaohan-jiangshang-1",
+    "workId": "menghaoran-zaohan-jiangshang",
+    "poetId": "menghaoran",
+    "placeId": "",
+    "date": {
+      "year": 730,
+      "certainty": "approximate",
+      "fuzziness": 8
+    },
+    "circumstance": "木落雁南、北风江寒的时节，诗人独自在江上，回望襄阳的家远隔云外，客泪已尽，只剩一叶孤帆；末句「迷津欲有问，平海夕漫漫」把求仕无路的茫然写得极空阔。",
+    "setting": "秋日江上舟中，北风初起",
+    "rationale": "诗中除「我家襄水上」自述籍贯外，别无可以系地的确指地名，「平海夕漫漫」至多提示在长江下游近海一段，与孟浩然漫游吴越之行相合，然无明文可据。本诗无可据以系地，故 placeId 留空；系年亦只可笼统定于漫游时期，confidence 标 C。",
+    "sources": [
+      {
+        "id": "quantangshi-160",
+        "title": "全唐诗·孟浩然",
+        "locator": "卷160",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-menghaoran-luozhong-fang-yuan-1",
+    "workId": "menghaoran-luozhong-fang-yuan",
+    "poetId": "menghaoran",
+    "placeId": "cn-henan-luoyang",
+    "date": {
+      "year": 730,
+      "certainty": "approximate",
+      "fuzziness": 10
+    },
+    "circumstance": "专程到洛阳访友，才知友人已被贬岭南。「才子」与「流人」对举，二十字里全是不平；末句把岭外早梅与北地春光作比，是劝慰，也是替友人惋惜。",
+    "setting": "洛阳城中访人不遇",
+    "rationale": "诗题与首句「洛阳访才子」明指洛阳，地点无争议。袁拾遗其人无确考（今人有袁瓘、袁仁敬等推测，均无明文），系年亦无确证，只能笼统定于孟浩然往来两京、洛阳期间，故 fuzziness 取大值，confidence 标 C。",
+    "sources": [
+      {
+        "id": "quantangshi-160",
+        "title": "全唐诗·孟浩然",
+        "locator": "卷160",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-menghaoran-song-du-shisi-1",
+    "workId": "menghaoran-song-du-shisi",
+    "poetId": "menghaoran",
+    "placeId": "cn-hubei-xiangyang",
+    "date": {
+      "year": 730,
+      "certainty": "approximate",
+      "fuzziness": 10
+    },
+    "circumstance": "在春江水涨时送杜晃东下。「荆吴相接水为乡」先把千里说成比邻，是宽解；「日暮征帆何处泊」一问，把关切与依恋都托了出去；末句「天涯一望断人肠」收得极重。",
+    "setting": "荆襄一带江边，春日送别",
+    "rationale": "诗题一作「送杜晃进士之东吴」，知所送为杜晃。首句「荆吴相接水为乡」点明送别处属荆（今湖北一带）而友人往吴，孟浩然家居襄阳，学界通说此为荆襄一带送别之作，然具体送别地点无明文可考，故系于襄阳并标 C。",
+    "sources": [
+      {
+        "id": "quantangshi-160",
+        "title": "全唐诗·孟浩然",
+        "locator": "卷160",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-menghaoran-du-zhejiang-1",
+    "workId": "menghaoran-du-zhejiang",
+    "poetId": "menghaoran",
+    "placeId": "cn-zhejiang-qiantangjiang",
+    "date": {
+      "year": 730,
+      "certainty": "approximate",
+      "fuzziness": 8
+    },
+    "circumstance": "潮落风平，与舟人同船渡江。诗人一路伸长脖子遥望天边，忍不住问：哪一带青山才是越中？把初入越地的期待与一点茫然，都放进这一问里。",
+    "setting": "钱塘江上，渡江赴越中",
+    "rationale": "「浙江」即今钱塘江，孟浩然漫游吴越时渡此江赴越中，地点可定于浙江（钱塘江）。本条标的是渡江所经的河段，不是某个具体渡口——唐代渡浙江多在今杭州萧山西兴一带，然无明文确指，故降为 C。本诗一作崔国辅诗，全唐诗卷160归孟浩然，姑从之。",
+    "sources": [
+      {
+        "id": "quantangshi-160",
+        "title": "全唐诗·孟浩然",
+        "locator": "卷160",
+        "reliability": "B"
+      },
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-menghaoran-ti-yigong-chanfang-1",
+    "workId": "menghaoran-ti-yigong-chanfang",
+    "poetId": "menghaoran",
+    "placeId": "cn-zhejiang-kuaijishan",
+    "date": {
+      "year": 730,
+      "certainty": "approximate",
+      "fuzziness": 8
+    },
+    "circumstance": "题咏僧人义公的禅房。前两联写禅房所处之幽深：门外孤峰，阶前深壑；颈联「夕阳连雨足，空翠落庭阴」写雨霁的清气；末联以莲花为喻，赞义公一尘不染的心。",
+    "setting": "越州会稽山大禹寺，雨霁黄昏",
+    "rationale": "全唐诗卷160题作「题大禹寺义公禅房」，大禹寺据嘉泰《会稽志》在会稽县南十二里，约当今绍兴会稽山北麓，故系于越州会稽山，与孟浩然漫游吴越之行相合。义公其人及具体系年皆无确考，confidence 标 C。",
+    "sources": [
+      {
+        "id": "quantangshi-160",
+        "title": "全唐诗·孟浩然",
+        "locator": "卷160",
+        "reliability": "B"
+      },
+      {
+        "id": "jiatai-kuaijizhi",
+        "title": "嘉泰会稽志",
+        "author": "施宿等",
+        "reliability": "C"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-menghaoran-wanshan-tan-1",
+    "workId": "menghaoran-wanshan-tan",
+    "poetId": "menghaoran",
+    "placeId": "cn-hubei-wanshan",
+    "date": {
+      "year": 730,
+      "certainty": "approximate",
+      "fuzziness": 10
+    },
+    "circumstance": "坐在万山潭边的大石上垂钓，水清心闲，看鱼游树影、猿挂藤间。由眼前潭山想到汉皋神女解佩的传说，寻而不得，便趁月色棹歌而返——一首极闲适的襄阳山水诗。",
+    "setting": "襄阳万山潭畔，月夜泛舟",
+    "rationale": "诗题即「万山潭」，万山在襄阳县西（《元和郡县图志》卷二十一），潭在万山北麓汉水边，地点确凿。第三联「游女昔解佩」正用汉皋解佩传说，与万山（汉皋山）地理相合，可互证。系年无明文，笼统定于隐居襄阳期间，fuzziness 取大值，confidence 标 C。",
+    "sources": [
+      {
+        "id": "quantangshi-159",
+        "title": "全唐诗·孟浩然",
+        "locator": "卷159",
+        "reliability": "B"
+      },
+      {
+        "id": "yuanhe-junxian-tuzhi",
+        "title": "元和郡县图志",
+        "author": "李吉甫",
+        "locator": "卷二十一·襄州",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-sushi-busuanzi-queyue-1",
+    "workId": "sushi-busuanzi-queyue",
+    "poetId": "sushi",
+    "placeId": "cn-hubei-huanggang",
+    "date": {
+      "year": 1080,
+      "original": "元丰三年（1080）二月至五月寓居定慧院期间",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "元丰二年（1079）乌台诗案后，苏轼贬黄州团练副使，元丰三年二月抵黄州，初寓居城东南定慧院（一作定惠院），五月迁临皋亭。词借月夜孤鸿托物寓怀，写谪居之初无人可解的幽独与不肯依附的孤高。宋人吴曾《能改斋漫录》卷十六另记此词为王氏女子而作，属晚出传说，不取。",
+    "setting": "黄州定慧院深夜，缺月疏桐，孤鸿掠影",
+    "rationale": "词题「黄州定慧院寓居作」标明寓所。苏轼元丰三年二月至黄州即寓定慧院，五月迁临皋亭，寓居期与词题相合，故系于元丰三年。定慧院故址在今黄冈市黄州区，因无权威点坐标，本条只系于黄州州治，精度 county。另有系于元丰五年（1082）十二月或元丰六年（1083）初之说，见同组异说断言。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      },
+      {
+        "id": "tang-songci-jianshang",
+        "title": "唐宋词鉴赏辞典（唐·五代·北宋）",
+        "author": "唐圭璋等",
+        "edition": "上海辞书出版社，1988",
+        "locator": "页666-668",
+        "reliability": "B"
+      },
+      {
+        "id": "kongfanli-nianpu",
+        "title": "苏轼年谱",
+        "author": "孔凡礼",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true,
+    "groupId": "sushi-busuanzi-year"
+  },
+  {
+    "id": "a-sushi-busuanzi-queyue-2",
+    "workId": "sushi-busuanzi-queyue",
+    "poetId": "sushi",
+    "placeId": "cn-hubei-huanggang",
+    "date": {
+      "year": 1082,
+      "month": 12,
+      "original": "元丰五年（1082）十二月或元丰六年（1083）初",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "此说据词中「寒枝」「沙洲冷」所写节候，将系年推后至元丰五年岁末。若从此说，则词题所谓「定慧院寓居」与苏轼当时已迁临皋亭、筑雪堂于东坡的居止不合，词题或为后人所加。",
+    "setting": "黄州冬夜，江边沙洲寒枝",
+    "rationale": "**立此说以存系年争议。** 古文岛等通行注本系此词于元丰五年（1082）十二月或元丰六年（1083）初。然苏轼元丰三年五月已迁临皋亭，元丰四年得东坡、五年筑雪堂，与词题「定慧院寓居」不符，故降为 C，与元丰三年说并列，不代为裁定。",
+    "sources": [
+      {
+        "id": "kongfanli-nianpu",
+        "title": "苏轼年谱",
+        "author": "孔凡礼",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": false,
+    "groupId": "sushi-busuanzi-year"
+  },
+  {
+    "id": "a-sushi-dielianhua-huatuicanghong-1",
+    "workId": "sushi-dielianhua-huatuicanghong",
+    "poetId": "sushi",
+    "placeId": "cn-guangdong-huizhou",
+    "date": {
+      "year": 1095,
+      "month": 3,
+      "original": "绍圣二年（1095）春",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "绍圣元年（1094）苏轼贬惠州，绍圣二年春在惠州贬所。宋人惠洪《冷斋夜话》载：苏轼在惠州，命侍妾王朝云歌此词，朝云歌喉将啭已泪满衣襟，未几病卒。此说即据此事系年。",
+    "setting": "岭南暮春，燕子绿水，柳绵将尽",
+    "rationale": "朱祖谋本、龙榆生本未编年。薛瑞生本、邹同庆与王宗堂本据《冷斋夜话》所载王朝云在惠州唱此词，并据苏轼惠州诗文惯用「天涯」一词，系于绍圣二年春惠州。惟笔记所记「唱词之地」未必即「作词之地」，证据链有缺口，故只标 C。",
+    "sources": [
+      {
+        "id": "lenzhai-yehua",
+        "title": "冷斋夜话",
+        "author": "惠洪",
+        "reliability": "B"
+      },
+      {
+        "id": "zoutongqing-su-cibiannian",
+        "title": "苏轼词编年校注",
+        "author": "邹同庆、王宗堂",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "groupId": "sushi-dielianhua-year"
+  },
+  {
+    "id": "a-sushi-dielianhua-huatuicanghong-2",
+    "workId": "sushi-dielianhua-huatuicanghong",
+    "poetId": "sushi",
+    "placeId": "cn-shandong-zhucheng",
+    "date": {
+      "year": 1076,
+      "original": "熙宁九年（1076）密州任内",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "熙宁七年（1074）至熙宁九年（1076）苏轼知密州。曹树铭本疑此词亦作于密州任内，理由是其上片意境近于密州所作《满江红》、下片意境近于密州所作另一首《蝶恋花》。",
+    "setting": "密州暮春",
+    "rationale": "**立此说以存异说。** 曹树铭本《苏东坡词》以意境相近为据，疑此词系熙宁九年密州任内所作，原书即云「志以待考」，并无硬证据，故标 C。",
+    "sources": [
+      {
+        "id": "caoshuming-su-cibiannian",
+        "title": "苏东坡词（曹树铭校编）",
+        "author": "曹树铭",
+        "reliability": "B"
+      },
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": false,
+    "groupId": "sushi-dielianhua-year"
+  },
+  {
+    "id": "a-sushi-dielianhua-huatuicanghong-3",
+    "workId": "sushi-dielianhua-huatuicanghong",
+    "poetId": "sushi",
+    "placeId": "cn-hubei-huanggang",
+    "dateRange": {
+      "from": {
+        "year": 1080,
+        "original": "元丰三年",
+        "certainty": "approximate"
+      },
+      "to": {
+        "year": 1084,
+        "original": "元丰七年",
+        "certainty": "approximate"
+      }
+    },
+    "circumstance": "李世忠《苏轼〈蝶恋花·春景〉作时考》据词中「青杏」「燕子」「柳绵」等意象，断定此词必不作于贬惠州期间；又据其思想情感，谓当作于贬谪黄州时期，然未给出具体编年。",
+    "setting": "黄州暮春",
+    "rationale": "**立此说以存异说。** 此说只系于黄州贬所（元丰三年至七年在黄州），不作具体编年，故以 dateRange 表达区间，置信度 C。张志烈另主张作于绍圣元年（1094）闰四月罢定州、谪知英州南下途中，因只能系于一段行程、无确指地点，不另立断言，附记于此。",
+    "sources": [
+      {
+        "id": "lishizhong-dielianhua-kao",
+        "title": "苏轼《蝶恋花·春景》作时考",
+        "author": "李世忠",
+        "reliability": "B"
+      },
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": false,
+    "groupId": "sushi-dielianhua-year"
+  },
+  {
+    "id": "a-sushi-linjiangxian-yeyin-1",
+    "workId": "sushi-linjiangxian-yeyin",
+    "poetId": "sushi",
+    "placeId": "cn-hubei-huangzhou-dongpo",
+    "date": {
+      "year": 1082,
+      "month": 9,
+      "original": "元丰五年（1082）九月",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "元丰五年（1082）秋，苏轼谪黄州第三年。夜饮于东坡雪堂，醉归临皋亭，家童熟睡、敲门不应，遂倚杖听江声而作。叶梦得《避暑录话》卷二载：此词传出后，人传苏轼挂冠服于江边、拏舟长啸而去，郡守徐君猷惊惧往视，则苏轼鼻鼾如雷、犹未起身，其旷达可见。",
+    "setting": "黄州东坡雪堂夜饮，醉归临皋，江声月色",
+    "rationale": "清王文诰《苏诗总案》：「壬戌九月，雪堂夜饮，醉归临皋作。」壬戌即元丰五年（1082）。叶梦得《避暑录话》卷二记其在黄州作此词之事，为宋人近同时记载。词中「夜饮东坡」与「倚杖听江声」正合东坡雪堂、临皋亭临江之方位，故系于黄州东坡。",
+    "sources": [
+      {
+        "id": "wangwengao-sushizongan",
+        "title": "苏诗总案",
+        "author": "王文诰",
+        "reliability": "B"
+      },
+      {
+        "id": "bishu-luhua",
+        "title": "避暑录话",
+        "author": "叶梦得",
+        "locator": "卷二",
+        "reliability": "B"
+      },
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true,
+    "groupId": "sushi-linjiangxian-year"
+  },
+  {
+    "id": "a-sushi-linjiangxian-yeyin-2",
+    "workId": "sushi-linjiangxian-yeyin",
+    "poetId": "sushi",
+    "placeId": "cn-hubei-huangzhou-dongpo",
+    "date": {
+      "year": 1083,
+      "original": "元丰六年（1083）",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "此说亦系于黄州，惟年份后移一年。临皋亭在黄州城南门外江边、定惠院右侧水驿，与词中「倚杖听江声」之境相合。",
+    "setting": "黄州临皋亭，江畔夜归",
+    "rationale": "**立此说以存系年异说。** 孔凡礼《苏轼年谱》系于元丰六年（1083）。二说地点相同、仅差一年，无从判定，故并列，本条标 C。",
+    "sources": [
+      {
+        "id": "kongfanli-nianpu",
+        "title": "苏轼年谱",
+        "author": "孔凡礼",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": false,
+    "groupId": "sushi-linjiangxian-year"
+  },
+  {
+    "id": "a-sushi-huanxisha-susu-1",
+    "workId": "sushi-huanxisha-susu",
+    "poetId": "sushi",
+    "placeId": "cn-jiangsu-xuzhou",
+    "date": {
+      "year": 1078,
+      "original": "元丰元年（1078）",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "元丰元年（1078）徐州春旱，知州苏轼率众赴城东石潭祈雨，得雨后往谢，途中作《浣溪沙》五首，此为其四。词写村野见闻：枣花落衣、缫车声响、古柳卖瓜，日高口渴遂敲门向农家讨茶，一派淳朴太平的农村图景。",
+    "setting": "徐州城东乡野道上，枣花柳绵，日高天暖",
+    "rationale": "词序为苏轼自述：「徐门石潭谢雨，道上作五首。潭在城东二十里，常与泗水增减，清浊相应。」苏轼熙宁十年至元丰二年知徐州（《宋史》本传），元丰元年春祈雨、谢雨事见年谱。石潭在徐州城东二十里，具体遗址今无定论，故只系于徐州州治，精度 prefecture，不虚标到点。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      },
+      {
+        "id": "kongfanli-nianpu",
+        "title": "苏轼年谱",
+        "author": "孔凡礼",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "dongpo-nianpu",
+        "title": "东坡先生年谱",
+        "author": "王宗稷",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true
+  },
+  {
+    "id": "a-sushi-zengliujingwen-1",
+    "workId": "sushi-zengliujingwen",
+    "poetId": "sushi",
+    "placeId": "cn-zhejiang-hangzhou",
+    "date": {
+      "year": 1090,
+      "original": "元祐五年（1090）初冬",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "元祐四年至六年苏轼知杭州，刘景文即刘季孙，时任两浙兵马都监、驻杭州，二人为同事兼挚友。刘氏年高不遇，苏轼既上《乞擢用刘季孙状》荐之，又赠此诗，以「傲霜枝」称其晚节、以「橙黄橘绿」勉其晚成。",
+    "setting": "杭州初冬，荷尽菊残，橙橘方熟",
+    "rationale": "《宋史·苏轼传》载元祐四年苏轼出知杭州。刘季孙时任两浙兵马都监，与苏轼唱酬甚密，《东坡集》卷十八元祐杭州诗中另有《次韵答刘景文左藏》《与刘景文赏枇杷》等，可证二人交游。诗写初冬物候（荷尽、菊残、橙黄橘绿），故系于元祐五年初冬杭州。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      },
+      {
+        "id": "tiaoxi-yuyin",
+        "title": "苕溪渔隐丛话",
+        "author": "胡仔",
+        "reliability": "B"
+      },
+      {
+        "id": "kongfanli-nianpu",
+        "title": "苏轼年谱",
+        "author": "孔凡礼",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true
+  },
+  {
+    "id": "a-sushi-donglanlihua-1",
+    "workId": "sushi-donglanlihua",
+    "poetId": "sushi",
+    "placeId": "cn-jiangsu-xuzhou",
+    "date": {
+      "year": 1077,
+      "original": "熙宁十年（1077）",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "熙宁九年（1076）末苏轼离密州任，继任密州知州者为孔宗翰（孔密州）。次年熙宁十年，苏轼改知徐州，作《和孔密州五绝》五首寄之，《东栏梨花》为其三。其时苏轼已历母、妻、父之丧，又外放多年，「人生看得几清明」寄寓年华易逝、家国多故之感。",
+    "setting": "徐州春末，梨花盛开，柳絮纷飞",
+    "rationale": "诗为《和孔密州五绝》之三。孔密州即孔宗翰（字周翰），继苏轼知密州，二人交谊甚深、时相唱酬。组诗作于熙宁十年苏轼改知徐州之时，见《东坡集》卷八所收。因一说作于赴任途中、一说作于徐州任所，不能定到具体点位，故只系于徐州州治，精度 prefecture，置信度 B。",
+    "sources": [
+      {
+        "id": "dongpoji",
+        "title": "东坡集",
+        "author": "苏轼",
+        "locator": "卷8",
+        "reliability": "B"
+      },
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      },
+      {
+        "id": "kongfanli-nianpu",
+        "title": "苏轼年谱",
+        "author": "孔凡礼",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true
+  },
+  {
+    "id": "a-sushi-haitang-1",
+    "workId": "sushi-haitang",
+    "poetId": "sushi",
+    "placeId": "cn-hubei-huanggang",
+    "date": {
+      "year": 1084,
+      "original": "元丰七年（1084）",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "元丰七年（1084）春，苏轼谪居黄州已第五年，同年四月移汝州离黄。海棠夜放，香雾空蒙，月转过回廊，诗人恐夜深花睡，遂燃高烛相照。诗以美人喻花，写惜花之情，亦寄迟暮自惜之意。",
+    "setting": "黄州春夜，东风袅袅，月转回廊",
+    "rationale": "通行注本系于元丰七年（1084）黄州。《东坡集》卷十三收此七绝，与《南堂五首》《别黄州》等同卷，均为黄州后期之作，可作旁证。需辨析者：苏轼另有七古《寓居定惠院之东杂花满山有海棠一株土人不知贵也》，作于元丰三年，所咏为定惠院东一株海棠，与本篇七绝非一诗，不可混同。本篇诗中无地名，黄州具体寓所亦无确证，故只系于黄州州治，精度 county。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      },
+      {
+        "id": "dongpoji",
+        "title": "东坡集",
+        "author": "苏轼",
+        "locator": "卷13",
+        "reliability": "B"
+      },
+      {
+        "id": "kongfanli-nianpu",
+        "title": "苏轼年谱",
+        "author": "孔凡礼",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true,
+    "groupId": "sushi-haitang-year"
+  },
+  {
+    "id": "a-sushi-haitang-2",
+    "workId": "sushi-haitang",
+    "poetId": "sushi",
+    "placeId": "cn-hubei-huanggang",
+    "date": {
+      "year": 1080,
+      "original": "元丰三年（1080）",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "另一说系此七绝于元丰三年（1080）初贬黄州、寓居定惠院之时，即与苏轼七古《寓居定惠院之东杂花满山有海棠一株土人不知贵也》同一时期。",
+    "setting": "黄州定惠院东，海棠夜放",
+    "rationale": "**立此说以存系年异说。** 部分通行注本（如古文岛）系于元丰三年。此说疑因与元丰三年七古《寓居定惠院之东……》相混而成，证据较弱；且此条与元丰七年说之别在于系年，非「创作地」与「诗中所咏之地」之别，故以 groupId 并列，标 C。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      },
+      {
+        "id": "dongpoji",
+        "title": "东坡集",
+        "author": "苏轼",
+        "locator": "卷11",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": false,
+    "groupId": "sushi-haitang-year"
+  },
+  {
+    "id": "a-sushi-youjinshansi-1",
+    "workId": "sushi-youjinshansi",
+    "poetId": "sushi",
+    "placeId": "cn-jiangsu-zhenjiang-jinshansi",
+    "date": {
+      "year": 1071,
+      "month": 11,
+      "day": 3,
+      "original": "熙宁四年（1071）十一月初三",
+      "certainty": "approximate",
+      "fuzziness": 1
+    },
+    "circumstance": "熙宁四年（1071）苏轼因与王安石变法不合，自请外任，被命通判杭州。七月出京，十一月途经润州（今镇江），登金山访宝觉、圆通二长老，夜宿寺中而作。诗写金山形胜与江上落日、二更炬火之异，末以「有田不归如江水」自誓，思乡与厌宦之情溢于言表，为其七古名篇。",
+    "setting": "润州金山寺，冬日江上，落日断霞，二更月落",
+    "rationale": "苏轼熙宁四年通判杭州、七月出京、十一月过润州金山寺，见孔凡礼《苏轼年谱》，时任见《宋史》本传。诗末有苏轼自注「是夜所见如此」，诗云「是时江月初生魄」，月相正合农历初三，与年谱所记十一月初三相合，可作内证。因具体日期出自年谱推定而非自述，故标 approximate、置信度 B。金山寺今在江苏省镇江市润州区金山。",
+    "sources": [
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "locator": "卷338",
+        "reliability": "A"
+      },
+      {
+        "id": "kongfanli-nianpu",
+        "title": "苏轼年谱",
+        "author": "孔凡礼",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "dongpoji",
+        "title": "东坡集",
+        "author": "苏轼",
+        "locator": "卷3",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "B",
+    "isPrimary": true
+  },
+  {
+    "id": "a-wangwei-xiangsi-1",
+    "workId": "wangwei-xiangsi",
+    "poetId": "wangwei",
+    "date": {
+      "year": 757,
+      "original": "约安史之乱后（具体不详）",
+      "certainty": "unknown",
+      "fuzziness": 10
+    },
+    "circumstance": "赠别友人之作。诗题一作《江上赠李龟年》，受赠者为开元、天宝间宫廷乐师李龟年。全诗以红豆起兴，句句不离红豆而句句是相思，为唐人五绝中语浅情深的名篇。",
+    "setting": "江上赠别，南国红豆",
+    "rationale": "系年系地皆无确证。诗中「南国」泛指南方，无具体地点可系。据范摅《云溪友议》，安史之乱后李龟年流落江南，曾于湘中采访使筵上歌此诗，论者多据以推其作于乱后江南；然此事仅能证此诗之流传，不能定其创作地与创作年，故系年标 unknown、confidence 标 C，不虚系任何地点。",
+    "sources": [
+      {
+        "id": "yunxi-youyi",
+        "title": "云溪友议",
+        "author": "范摅",
+        "locator": "卷中·云中命",
+        "reliability": "B"
+      },
+      {
+        "id": "wangweiji-jiaozhu",
+        "title": "王维集校注",
+        "author": "陈铁民",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "quantangshi",
+        "title": "全唐诗",
+        "locator": "卷128",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-wangwei-zashi-san-shou-qi-er-1",
+    "workId": "wangwei-zashi-san-shou-qi-er",
+    "poetId": "wangwei",
+    "date": {
+      "year": 750,
+      "original": "系年不详",
+      "certainty": "unknown",
+      "fuzziness": 10
+    },
+    "circumstance": "客中遇故乡来人，不问家人近况、不问桑麻丰歉，只问窗前寒梅开花没有。二十字全是问句，而乡思之深尽在言外。",
+    "setting": "客居他乡，偶遇故人自故乡来",
+    "rationale": "《杂诗三首》为其集中不属《辋川集》的组诗，系年不确，诗中亦无地名，无可据以系地。此诗为客中思乡之词，学界一般视为其漫游或宦游在外时所作，然无确证，故系年标 unknown、confidence 标 C。",
+    "sources": [
+      {
+        "id": "wangyoucheng-jianzhu",
+        "title": "王右丞集笺注",
+        "author": "赵殿成",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "wangweiji-jiaozhu",
+        "title": "王维集校注",
+        "author": "陈铁民",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-wangwei-niaomingjian-1",
+    "workId": "wangwei-niaomingjian",
+    "poetId": "wangwei",
+    "date": {
+      "year": 730,
+      "original": "约开元年间（具体不详）",
+      "certainty": "unknown",
+      "fuzziness": 10
+    },
+    "circumstance": "题友人皇甫岳云溪别业之作。春夜空山，人闲而桂花自落；月出惊鸟，鸟鸣反衬出涧中的寂静。以声写静，是王维禅境的代表作。",
+    "setting": "春夜山涧，月出鸟鸣",
+    "rationale": "《鸟鸣涧》为《皇甫岳云溪杂题五首》之一，题咏友人皇甫岳的云溪别业，不属《辋川集》。皇甫岳事迹无考，「云溪」地望史料亦无确载：通行说法谓即越州若耶溪之别称五云溪（今浙江绍兴），本组诗或作于王维游历江南时；另有系于长安近畿之说。两说均无确证，无可据以系地，故本条不系地点，系年亦止标 unknown，confidence 标 C。",
+    "sources": [
+      {
+        "id": "wangyoucheng-jianzhu",
+        "title": "王右丞集笺注",
+        "author": "赵殿成",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "wangweiji-jiaozhu",
+        "title": "王维集校注",
+        "author": "陈铁民",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true
+  },
+  {
+    "id": "a-wangwei-xinyiwu-1",
+    "workId": "wangwei-xinyiwu",
+    "poetId": "wangwei",
+    "placeId": "cn-shaanxi-lantian",
+    "date": {
+      "year": 750,
+      "original": "约天宝年间隐居辋川时",
+      "certainty": "approximate",
+      "fuzziness": 8
+    },
+    "circumstance": "《辋川集》二十首之一。辛夷花开在枝梢，红萼自绽于空山；涧边人家寂无一人，花便这样纷纷开了又纷纷落了。无人赏而自开自落，正是王维对「空」与「自然」的注脚。",
+    "setting": "辋川辛夷坞，春山涧户，花开花落",
+    "rationale": "《辛夷坞》为《辋川集》二十首之一，所咏即辋川二十景中的辛夷坞，地在今陕西蓝田辋川。辋川集诸作系年多不可考，此为通行系于隐居辋川期间（约744—756），故 fuzziness 取大值，confidence 标 C——这是存疑，不是敷衍。",
+    "sources": [
+      {
+        "id": "wangchuan-ji",
+        "title": "辋川集",
+        "author": "王维",
+        "reliability": "A"
+      },
+      {
+        "id": "wangyoucheng-jianzhu",
+        "title": "王右丞集笺注",
+        "author": "赵殿成",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "wangweiji-jiaozhu",
+        "title": "王维集校注",
+        "author": "陈铁民",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "wangwei-e7"
+  },
+  {
+    "id": "a-wangwei-weichuan-tianjia-1",
+    "workId": "wangwei-weichuan-tianjia",
+    "poetId": "wangwei",
+    "placeId": "cn-shaanxi-lantian",
+    "date": {
+      "year": 740,
+      "original": "约开元后期",
+      "certainty": "approximate",
+      "fuzziness": 10
+    },
+    "circumstance": "黄昏的渭水村落：斜阳照着村墟，牛羊归巷，老人倚杖候牧童，麦苗吐秀、蚕眠桑稀，农夫荷锄归来相见絮语。诗人看万物皆有所归，独自己彷徨中路，故末联有「羡闲逸」「吟式微」之叹。",
+    "setting": "渭水两岸农村，初夏傍晚",
+    "rationale": "此诗未编年。通行说法为开元后期王维隐居蓝田（辋川）时游渭水两岸农村有感而作，渭川即渭水流域，属其游历所至；然无明文可确考，系年故标 approximate、fuzziness 取 10，confidence 标 C。系地取其隐居之蓝田辋川，非诗中「渭川」之点。",
+    "sources": [
+      {
+        "id": "wangyoucheng-jianzhu",
+        "title": "王右丞集笺注",
+        "author": "赵殿成",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "wangweiji-jiaozhu",
+        "title": "王维集校注",
+        "author": "陈铁民",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "wangwei-e7"
+  },
+  {
+    "id": "a-wangwei-qingxi-1",
+    "workId": "wangwei-qingxi",
+    "poetId": "wangwei",
+    "placeId": "cn-shaanxi-lantian",
+    "date": {
+      "year": 750,
+      "original": "一说初隐蓝田南山时",
+      "certainty": "approximate",
+      "fuzziness": 10
+    },
+    "circumstance": "循青溪入黄花川，溪随山势万转而行程不足百里；乱石中声喧，深松里色静，水草映苇，一派清幽。末四句以溪之澄淡自况，愿留盘石垂钓终老。",
+    "setting": "黄花川、青溪之上，山溪深松",
+    "rationale": "《青溪》系年系地诸说并存，本条为其中一说：谓作于王维初隐蓝田南山（辋川一带）时，故系于蓝田辋川。另一说谓作于开元十九、二十年（731—732）入蜀途中，见下一条（同组异说）。诗中「青溪」「黄花川」地望亦有异说，故本条置信度仅标 C。",
+    "sources": [
+      {
+        "id": "wangyoucheng-jianzhu",
+        "title": "王右丞集笺注",
+        "author": "赵殿成",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "wangweiji-jiaozhu",
+        "title": "王维集校注",
+        "author": "陈铁民",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "groupId": "qingxi-place",
+    "isPrimary": true
+  },
+  {
+    "id": "a-wangwei-qingxi-2",
+    "workId": "wangwei-qingxi",
+    "poetId": "wangwei",
+    "date": {
+      "year": 731,
+      "original": "一说开元十九、二十年间入蜀途中",
+      "certainty": "approximate",
+      "fuzziness": 10
+    },
+    "circumstance": "异说：谓此诗作于王维入蜀途中。王维曾不止一次循青溪入黄花川游历，行程不及百里而溪水盘曲万转，与其入蜀道中所见相合。",
+    "setting": "入蜀道中，山溪盘曲",
+    "rationale": "异说。此诗一说作于开元十九或二十年（731—732）王维入蜀途中：诗中所历「黄花川」在今陕西凤县东北、「青溪」为今陕西勉县东沮水支流，均在入蜀（陈仓道）沿线，王维另有《自大散以往深林密竹蹬道盘曲四五十里至黄牛岭见黄花川》可证其行经此路。然具体宿顿点无考，无可确指之地，故 placeId 留空，仅存此系年之说，confidence 标 C。",
+    "sources": [
+      {
+        "id": "wangyoucheng-jianzhu",
+        "title": "王右丞集笺注",
+        "author": "赵殿成",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "shuijingzhu",
+        "title": "水经注",
+        "author": "郦道元",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "groupId": "qingxi-place",
+    "isPrimary": false
+  },
+  {
+    "id": "a-wangwei-chou-zhangshaofu-1",
+    "workId": "wangwei-chou-zhangshaofu",
+    "poetId": "wangwei",
+    "placeId": "cn-shaanxi-lantian",
+    "date": {
+      "year": 760,
+      "original": "约上元年间",
+      "certainty": "approximate",
+      "fuzziness": 10
+    },
+    "circumstance": "酬答张少府之作。晚年唯好清静，自认无经世长策，只知退归旧林；松风解带、山月弹琴，写尽辋川闲居之趣。末联以「渔歌入浦深」答「穷通」之问——不答之答，正是禅意。",
+    "setting": "辋川别业，松风山月，弹琴自适",
+    "rationale": "此诗为晚年之作，据首联「晚年唯好静」及「返旧林」之语，通行系于王维晚岁亦官亦隐、居蓝田辋川时期（约上元年间），故系于蓝田辋川。具体年份无明文可考，fuzziness 取 10，confidence 标 C。",
+    "sources": [
+      {
+        "id": "wangyoucheng-jianzhu",
+        "title": "王右丞集笺注",
+        "author": "赵殿成",
+        "edition": "中华书局",
+        "reliability": "B"
+      },
+      {
+        "id": "wangweiji-jiaozhu",
+        "title": "王维集校注",
+        "author": "陈铁民",
+        "edition": "中华书局",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "C",
+    "isPrimary": true,
+    "triggerEventId": "wangwei-e11"
   }
 ]

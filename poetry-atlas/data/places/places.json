@@ -3396,5 +3396,353 @@
         "reliability": "B"
       }
     ]
+  },
+  {
+    "id": "cn-shaanxi-xian-ciensi",
+    "historicalName": "大慈恩寺",
+    "historicalEra": "唐",
+    "modernName": "陕西省西安市雁塔区大慈恩寺（大雁塔）",
+    "modernHierarchy": {
+      "province": "陕西省",
+      "city": "西安市",
+      "district": "雁塔区"
+    },
+    "coordinates": [
+      108.9593,
+      34.2198
+    ],
+    "precision": "site",
+    "isCentroid": false,
+    "aliases": [
+      "慈恩寺",
+      "慈恩寺浮图",
+      "大慈恩寺塔",
+      "大雁塔"
+    ],
+    "kind": "temple",
+    "note": "唐贞观二十二年（648）太子李治为母文德皇后所建，玄奘译经之所；永徽三年（652）玄奘于寺内建塔，即慈恩寺浮图（今大雁塔）。天宝十一载（752）秋，岑参与高适、薛据、杜甫同登此塔赋诗。塔今存于西安，位置确凿，故 precision 取 site。",
+    "sources": [
+      {
+        "id": "quantangshi-198",
+        "title": "全唐诗",
+        "locator": "卷198",
+        "reliability": "B"
+      },
+      {
+        "id": "ciensi-sanzang-fashi-zhuan",
+        "title": "大慈恩寺三藏法师传",
+        "author": "慧立、彦悰",
+        "reliability": "B"
+      },
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-shaanxi-changan-qujiang",
+    "historicalName": "曲江池",
+    "historicalEra": "唐",
+    "modernName": "陕西省西安市雁塔区曲江池遗址公园",
+    "modernHierarchy": {
+      "province": "陕西省",
+      "city": "西安市",
+      "district": "雁塔区"
+    },
+    "coordinates": [
+      108.97947,
+      34.20216
+    ],
+    "precision": "approximate",
+    "isCentroid": true,
+    "aliases": [
+      "曲江",
+      "曲江池"
+    ],
+    "kind": "lake",
+    "note": "唐长安城东南胜景，上巳、中和等节士女游宴于此，为唐诗常见题材。杜甫《丽人行》「长安水边多丽人」、《哀江头》皆咏此地。唐时池面远大于今，坐标为今曲江池遗址公园（建于唐曲江池遗址之上），故 precision 取 approximate、isCentroid 标 true。",
+    "sources": [
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      },
+      {
+        "id": "wikidata-q30944752",
+        "title": "Wikidata 曲江池遗址公园 (Q30944752) 坐标",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-anhui-tianmenshan",
+    "historicalName": "宣州当涂 天门山",
+    "historicalEra": "唐",
+    "modernName": "安徽省芜湖市鸠江区（东梁山）与马鞍山市和县（西梁山）夹长江对峙处",
+    "modernHierarchy": {
+      "province": "安徽省",
+      "city": "芜湖市",
+      "district": "鸠江区"
+    },
+    "coordinates": [
+      118.3683,
+      31.4956
+    ],
+    "precision": "site",
+    "isCentroid": false,
+    "aliases": [
+      "东梁山",
+      "博望山",
+      "西梁山",
+      "梁山"
+    ],
+    "kind": "mountain",
+    "note": "天门山是长江两岸夹江对峙两山的合称：东岸为东梁山（又名博望山），西岸为西梁山（又名梁山），两山相距约三公里，即李白「天门中断楚江开」之「天门」。唐时东梁山属宣州当涂县，西梁山属和州历阳县。此处坐标取东梁山（今芜湖市鸠江区，与今当涂县城西南约十五公里相符）；西梁山在今马鞍山市和县白桥镇一带（约 118.343/31.501）。此山与湖南张家界之天门山同名而异地。",
+    "sources": [
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "reliability": "B"
+      },
+      {
+        "id": "chgis-tang",
+        "title": "中国历史地理信息系统 CHGIS 唐代政区",
+        "author": "复旦大学历史地理研究所 / 哈佛大学",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-shaanxi-xingqinggong",
+    "historicalName": "长安兴庆宫沉香亭",
+    "historicalEra": "唐",
+    "modernName": "陕西省西安市碑林区兴庆宫公园（唐兴庆宫遗址）",
+    "modernHierarchy": {
+      "province": "陕西省",
+      "city": "西安市",
+      "district": "碑林区"
+    },
+    "coordinates": [
+      108.9789,
+      34.255
+    ],
+    "precision": "site",
+    "isCentroid": false,
+    "aliases": [
+      "兴庆宫",
+      "南内",
+      "沉香亭"
+    ],
+    "kind": "other",
+    "note": "唐长安「三内」之一，本为玄宗藩邸所在的兴庆坊，开元二年（714）升为宫。沉香亭在兴庆池东。唐人笔记记天宝中玄宗与太真妃于沉香亭赏牡丹，命李白即席进《清平调》三章。遗址今为兴庆宫公园，1958 年经考古发掘。",
+    "sources": [
+      {
+        "id": "songchuang-zalu",
+        "title": "松窗杂录",
+        "author": "李濬",
+        "reliability": "B"
+      },
+      {
+        "id": "chgis-tang",
+        "title": "中国历史地理信息系统 CHGIS 唐代政区",
+        "author": "复旦大学历史地理研究所 / 哈佛大学",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-hubei-huangmei",
+    "historicalName": "蕲州黄梅县",
+    "historicalEra": "唐",
+    "modernName": "湖北省黄冈市黄梅县",
+    "modernHierarchy": {
+      "province": "湖北省",
+      "city": "黄冈市",
+      "district": "黄梅县"
+    },
+    "coordinates": [
+      115.9442,
+      30.0705
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "黄梅"
+    ],
+    "kind": "city",
+    "note": "唐属蕲州。宋人记李白题诗之山寺在黄梅县山中，去城百余里：赵令畤《侯鲭录》作「峰顶寺」，王得臣《麈史》作「乌牙寺」，记载互异；今人多指为县西南蔡山之峰顶寺。因宋人所记寺名、位置即不一致，本条只取县治中心，精度标 county，不虚指某山某寺。",
+    "sources": [
+      {
+        "id": "houqinglu",
+        "title": "侯鲭录",
+        "author": "赵令畤",
+        "locator": "卷二",
+        "reliability": "B"
+      },
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-hubei-wanshan",
+    "historicalName": "襄州万山（汉皋山）",
+    "historicalEra": "唐",
+    "modernName": "湖北省襄阳市襄城区万山",
+    "modernHierarchy": {
+      "province": "湖北省",
+      "city": "襄阳市",
+      "district": "襄城区"
+    },
+    "coordinates": [
+      112.0886,
+      32.0099
+    ],
+    "precision": "site",
+    "isCentroid": false,
+    "aliases": [
+      "万山",
+      "汉皋山",
+      "方山",
+      "蔓山"
+    ],
+    "kind": "mountain",
+    "note": "《元和郡县图志》卷二十一载万山又名汉皋山，在襄阳县西十一里，为古襄阳县与南阳邓县分界（古谚「襄阳无西」）。《万山潭作》「游女昔解佩」用汉皋解佩传说，即此。孟浩然集中另有《陪独孤使君同与萧员外证登万山亭》《和张判官登万山亭》可互证。坐标取万山北麓万山梅园一带为近似点。",
+    "sources": [
+      {
+        "id": "yuanhe-junxian-tuzhi",
+        "title": "元和郡县图志",
+        "author": "李吉甫",
+        "locator": "卷二十一·襄州",
+        "reliability": "B"
+      },
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-zhejiang-kuaijishan",
+    "historicalName": "越州会稽山大禹寺",
+    "historicalEra": "唐",
+    "modernName": "浙江省绍兴市越城区会稽山（大禹陵一带）",
+    "modernHierarchy": {
+      "province": "浙江省",
+      "city": "绍兴市",
+      "district": "越城区"
+    },
+    "coordinates": [
+      120.6094,
+      29.9667
+    ],
+    "precision": "approximate",
+    "isCentroid": false,
+    "aliases": [
+      "会稽山",
+      "大禹寺",
+      "大禹陵"
+    ],
+    "kind": "temple",
+    "note": "嘉泰《会稽志》载大禹寺在会稽县南一十二里，梁大同十一年建，唐以来为名刹，约当今绍兴会稽山北麓大禹陵一带。孟浩然《题大禹寺义公禅房》作于漫游吴越时。坐标取大禹陵为近似点。",
+    "sources": [
+      {
+        "id": "jiatai-kuaijizhi",
+        "title": "嘉泰会稽志",
+        "author": "施宿等",
+        "reliability": "C"
+      },
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-zhejiang-qiantangjiang",
+    "historicalName": "浙江（钱塘江）",
+    "historicalEra": "唐",
+    "modernName": "浙江省杭州市钱塘江（杭州段）",
+    "modernHierarchy": {
+      "province": "浙江省",
+      "city": "杭州市"
+    },
+    "coordinates": [
+      120.1346,
+      30.1952
+    ],
+    "precision": "approximate",
+    "isCentroid": false,
+    "aliases": [
+      "浙江",
+      "钱塘江",
+      "之江"
+    ],
+    "kind": "river",
+    "note": "唐「浙江」即今钱塘江。孟浩然漫游吴越时渡浙江赴越中，《渡浙江问舟中人》「何处青山是越中」即渡江时望越地而问。唐代自杭州渡浙江多在今萧山西兴一带，具体渡口无确考，坐标取钱塘江杭州段（钱塘江大桥）为代表点。",
+    "sources": [
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-jiangsu-zhenjiang-jinshansi",
+    "historicalName": "润州金山寺",
+    "historicalEra": "宋",
+    "modernName": "江苏省镇江市润州区金山寺",
+    "modernHierarchy": {
+      "province": "江苏省",
+      "city": "镇江市",
+      "district": "润州区"
+    },
+    "coordinates": [
+      119.422056,
+      32.225545
+    ],
+    "precision": "site",
+    "isCentroid": false,
+    "aliases": [
+      "金山寺",
+      "江天禅寺",
+      "泽心寺",
+      "金山"
+    ],
+    "kind": "temple",
+    "note": "金山原为长江中一岛屿，清道光年间始与南岸相连。苏轼熙宁四年（1071）赴杭州通判任，途经润州（今镇江）登此山，夜宿寺中作《游金山寺》。寺内藏苏轼玉带，与周鼎、金山图、铜鼓并称「金山四宝」。坐标取自 Wikidata Q11134138（江天禅寺）P625。",
+    "sources": [
+      {
+        "id": "wikidata-q11134138",
+        "title": "Wikidata Q11134138 江天禅寺",
+        "url": "https://www.wikidata.org/wiki/Q11134138",
+        "reliability": "B"
+      },
+      {
+        "id": "songshi-sushi",
+        "title": "宋史·苏轼传",
+        "author": "脱脱等",
+        "edition": "中华书局点校本",
+        "locator": "卷338",
+        "reliability": "A"
+      }
+    ]
   }
 ]

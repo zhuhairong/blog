@@ -330,6 +330,24 @@
     "featured": ""
   },
   {
+    "objectID": 36001,
+    "src": "/poetry-atlas/art/36001.webp",
+    "srcSmall": "/poetry-atlas/art/36001-sm.webp",
+    "title": "Plum Blossoms",
+    "artist": "Wen Zhi",
+    "date": "dated 1670",
+    "dynasty": "",
+    "medium": "Folding fan mounted as an album leaf; ink and color on gold paper",
+    "creditLine": "John Stewart Kennedy Fund, 1913",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36001",
+    "motifs": [
+      "山",
+      "梅",
+      "花鸟"
+    ],
+    "featured": ""
+  },
+  {
     "objectID": 36002,
     "src": "/poetry-atlas/art/36002.webp",
     "srcSmall": "/poetry-atlas/art/36002-sm.webp",
@@ -417,6 +435,23 @@
       "秋",
       "文士",
       "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 36013,
+    "src": "/poetry-atlas/art/36013.webp",
+    "srcSmall": "/poetry-atlas/art/36013-sm.webp",
+    "title": "Lady in a bamboo grove",
+    "artist": "Qiu Ying",
+    "date": "",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink and color on silk",
+    "creditLine": "John Stewart Kennedy Fund, 1913",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36013",
+    "motifs": [
+      "竹",
+      "花鸟"
     ],
     "featured": ""
   },
@@ -1711,6 +1746,23 @@
     "objectURL": "https://www.metmuseum.org/art/collection/search/36192",
     "motifs": [
       "山水"
+    ],
+    "featured": ""
+  },
+  {
+    "objectID": 36432,
+    "src": "/poetry-atlas/art/36432.webp",
+    "srcSmall": "/poetry-atlas/art/36432-sm.webp",
+    "title": "Plum blossoms",
+    "artist": "Jin Nong",
+    "date": "dated 1757",
+    "dynasty": "",
+    "medium": "Album of twelve leaves; ink on paper",
+    "creditLine": "Edward Elliott Family Collection, Gift of Douglas Dillon, 1986",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36432",
+    "motifs": [
+      "梅",
+      "花鸟"
     ],
     "featured": ""
   },
