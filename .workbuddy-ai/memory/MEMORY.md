@@ -26,9 +26,12 @@ CODEBUDDY_SAFE_DELETE_ENABLED=0 npm run build   # 必须带此环境变量
 - 本地预览 `out/` 需剥离 `/blog` 前缀（见 `preview_atlas.py` 的 `translate_path`）。
   端口 `4320` 被沙箱拦截，用 `4310`/`4330`/`4353`
 
-## GitHub Pages URL 行为（勿误判为 bug）
-`output:'export'` 产出单文件 `out/c-utils.html`，Pages 不自动补 `index.html`。
-→ **全站链接统一不带尾斜杠**。`/blog/c-utils` 200、`/blog/c-utils/` 404（与本地 http.server **相反**）。
+## GitHub Pages URL 行为
+`output:'export'` 产出单文件 `out/c-utils.html`，Pages 本身**不**自动补 `index.html`。
+→ 构建链末端的 `npm run fix:trailing-slash`（`scripts/fix-trailing-slash.mjs`）
+会把每个 `<page>.html` 复制成 `<page>/index.html`，**所以带不带尾斜杠现在都能访问**。
+（2026-09-25 实测：`/blog/c-utils` 与 `/blog/c-utils/` 均 200。此前"带尾斜杠 404"的记录已作废。）
+本地预览仍是另一套规则，见 `preview_atlas.py` 的 `translate_path`。
 
 ## 内容资产
 - `public/`：`eng.html`、`cem.html`、`tang-poems.html`、`quadratic.html`、`english-grammar/`、`cloze/`、`vocabulary/`
@@ -52,8 +55,8 @@ git status --short                    # ⚠️ 必查：无意外 D（删除）�
    curl -s "https://api.github.com/repos/zhuhairong/blog/actions/runs?per_page=1" | grep -E '"status"|"conclusion"'
    curl -s "https://zhuhairong.github.io/blog/<path>/" -o /tmp/x.html -w "http=%{http_code}\n"
    ```
-   线上 URL 用**带尾斜杠**形式；本地预览则相反（见「URL 行为」节）。
-最后状态：全绿（提交 `0476df5`）。
+   两种 URL 形式现均可访问（见「URL 行为」节）。
+最后状态：全绿（提交 `c96fac7`，CI success，线上抽查 6 个页面全 200）。
 
 ## ⚠️ 危险操作清单
 1. **禁止仓库根目录批量删除**。清理只用白名单 `.next`、`out`
@@ -64,12 +67,20 @@ git status --short                    # ⚠️ 必查：无意外 D（删除）�
 ### 未跟踪的用户资料（未经确认不得删除/入库）
 `初中单词/`（与 `public/vocabulary/` 逐字节一致）、`完型填空html/`（与 `public/cloze/` 一致）、
 `public/quadratic-structure.drawio`（无引用）、`.v/`（`全唐詩_卷539/540.txt`，80K）、
-`poetry-atlas/_add_lisangyin.py`、`_met/`、`.workbuddy-ai/memory/`。
+`poetry-atlas/_add_lisangyin.py`、`_met/`。
 待用户选：① 入库 ② 加 .gitignore ③ 原样保留。
+
+⚠️ 注意：`.workbuddy-ai/memory/` **不在此列——它是被跟踪的**，记忆更新按惯例走
+`docs:` 提交入库（如 `ee2fe3f`、`32a035f`），用显式路径 add。
 
 ### Git 同步陷阱
 不要信 `git status -sb` 的 `[gone]`（可能只是缺远程跟踪引用）。以
 `git ls-remote origin refs/heads/master` 为准，对比 `git rev-parse HEAD` 再推。
+
+⚠️ `git ls-remote` 结果**可能是缓存的**：2026-09-25 推送 `c96fac7` 后，
+`git push` 报 "Everything up-to-date"，同时 `ls-remote` 返回旧 sha `ee2fe3f`，
+看着像推送失败；**重查一次即变为新 sha**。遇到「push 说没东西可推、但远程 sha 对不上」时，
+先重查一遍再判断，**不要**急着 `git reset --hard` 或强推。
 
 ---
 
