@@ -114,6 +114,13 @@ export const PHASES_BY_POET: Record<string, Phase[]> = {
     { key: 'nandu', label: '靖康南渡', from: 1127, to: 1131 },
     { key: 'linan', label: '流寓临安', from: 1132, to: Infinity },
   ],
+  zhugeliang: [
+    { key: 'zaogu', label: '早孤流离', from: -Infinity, to: 196 },
+    { key: 'longzhong', label: '隆中躬耕', from: 197, to: 206 },
+    { key: 'jingyi', label: '佐定荆益', from: 207, to: 222 },
+    { key: 'tuogu', label: '托孤治蜀', from: 223, to: 226 },
+    { key: 'beifa', label: '北伐与卒', from: 227, to: Infinity },
+  ],
 };
 
 /** 未收录诗人的兜底分期：按其自身生卒年三等分，避免一律归入「早年」 */

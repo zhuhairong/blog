@@ -4151,5 +4151,232 @@
         "reliability": "B"
       }
     ]
+  },
+  {
+    "id": "cn-shandong-yinan",
+    "historicalName": "琅琊阳都",
+    "historicalEra": "汉",
+    "modernName": "山东省临沂市沂南县",
+    "modernHierarchy": {
+      "province": "山东省",
+      "city": "临沂市",
+      "district": "沂南县"
+    },
+    "coordinates": [
+      118.467,
+      35.5493
+    ],
+    "precision": "county",
+    "isCentroid": true,
+    "aliases": [
+      "阳都",
+      "琅邪阳都"
+    ],
+    "kind": "city",
+    "note": "东汉琅琊国阳都县，诸葛亮生地。《三国志·诸葛亮传》：「诸葛亮字孔明，琅邪阳都人也。」阳都故城在今沂南县砖埠镇孙家黄疃村一带，此处坐标取今沂南县中心。",
+    "sources": [
+      {
+        "id": "sgz-zhugeliang",
+        "title": "三国志·蜀书·诸葛亮传",
+        "author": "陈寿",
+        "locator": "卷35",
+        "reliability": "A"
+      },
+      {
+        "id": "zhongguo-lishi-diming-cidian",
+        "title": "中国历史地名大辞典",
+        "author": "史为乐",
+        "edition": "中国社会科学出版社",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-hubei-longzhong",
+    "historicalName": "南阳郡邓县隆中",
+    "historicalEra": "汉",
+    "modernName": "湖北省襄阳市襄城区古隆中",
+    "modernHierarchy": {
+      "province": "湖北省",
+      "city": "襄阳市",
+      "district": "襄城区"
+    },
+    "coordinates": [
+      112.027,
+      31.994
+    ],
+    "precision": "site",
+    "isCentroid": false,
+    "aliases": [
+      "隆中",
+      "古隆中",
+      "诸葛草庐"
+    ],
+    "kind": "site",
+    "note": "东汉属南阳郡邓县，在襄阳城西二十里。裴松之注引《汉晋春秋》：「亮家于南阳之邓县，在襄阳城西二十里，号曰隆中。」诸葛亮隐居躬耕于此十年。《出师表》「臣本布衣，躬耕于南阳」所指即此，非今河南南阳市——古今同名异地，不可混淆。",
+    "sources": [
+      {
+        "id": "sgz-zhugeliang",
+        "title": "三国志·蜀书·诸葛亮传",
+        "author": "陈寿",
+        "locator": "卷35",
+        "reliability": "A"
+      },
+      {
+        "id": "wikidata",
+        "title": "Wikidata 坐标",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-hubei-chibi-puqi",
+    "historicalName": "赤壁（蒲圻）",
+    "historicalEra": "汉",
+    "modernName": "湖北省咸宁市赤壁市赤壁镇",
+    "modernHierarchy": {
+      "province": "湖北省",
+      "city": "咸宁市",
+      "district": "赤壁市",
+      "township": "赤壁镇"
+    },
+    "coordinates": [
+      113.6308,
+      29.8788
+    ],
+    "precision": "site",
+    "isCentroid": false,
+    "aliases": [
+      "赤壁",
+      "蒲圻赤壁",
+      "三国赤壁古战场"
+    ],
+    "kind": "site",
+    "note": "东汉建安十三年（208）赤壁之战战场，在今湖北赤壁市（原名蒲圻）西北长江南岸。⚠️ 与黄州「东坡赤壁」（cn-hubei-chibi）同名异地：后者是苏轼所游之赤鼻矶，非三国战地，二者不可混为一谈。",
+    "sources": [
+      {
+        "id": "sgz-zhugeliang",
+        "title": "三国志·蜀书·诸葛亮传",
+        "author": "陈寿",
+        "locator": "卷35",
+        "reliability": "A"
+      },
+      {
+        "id": "zhongguo-lishi-dituji",
+        "title": "中国历史地图集",
+        "author": "谭其骧主编",
+        "reliability": "A"
+      }
+    ]
+  },
+  {
+    "id": "cn-shaanxi-hanzhong",
+    "historicalName": "汉中郡南郑",
+    "historicalEra": "汉",
+    "modernName": "陕西省汉中市",
+    "modernHierarchy": {
+      "province": "陕西省",
+      "city": "汉中市"
+    },
+    "coordinates": [
+      107.0233,
+      33.0675
+    ],
+    "precision": "prefecture",
+    "isCentroid": true,
+    "aliases": [
+      "汉中",
+      "南郑"
+    ],
+    "kind": "city",
+    "note": "秦汉汉中郡治南郑（今汉中）。建兴五年（227）诸葛亮率诸军北驻于此，临发上《出师表》；建兴十二年（234）遗命葬汉中定军山。坐标为今汉中市中心。",
+    "sources": [
+      {
+        "id": "sgz-zhugeliang",
+        "title": "三国志·蜀书·诸葛亮传",
+        "author": "陈寿",
+        "locator": "卷35",
+        "reliability": "A"
+      },
+      {
+        "id": "wikidata",
+        "title": "Wikidata 坐标",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-shaanxi-wuzhangyuan",
+    "historicalName": "武功五丈原",
+    "historicalEra": "三国",
+    "modernName": "陕西省宝鸡市岐山县五丈原镇",
+    "modernHierarchy": {
+      "province": "陕西省",
+      "city": "宝鸡市",
+      "district": "岐山县",
+      "township": "五丈原镇"
+    },
+    "coordinates": [
+      107.6167,
+      34.2833
+    ],
+    "precision": "site",
+    "isCentroid": false,
+    "aliases": [
+      "五丈原"
+    ],
+    "kind": "mountain",
+    "note": "渭水南岸黄土台原，南倚秦岭、北临渭河，形势险要。建兴十二年（234）诸葛亮出斜谷据此，与司马懿相持百余日，八月病卒于军中。",
+    "sources": [
+      {
+        "id": "sgz-zhugeliang",
+        "title": "三国志·蜀书·诸葛亮传",
+        "author": "陈寿",
+        "locator": "卷35",
+        "reliability": "A"
+      },
+      {
+        "id": "wikidata",
+        "title": "Wikidata 坐标",
+        "reliability": "B"
+      }
+    ]
+  },
+  {
+    "id": "cn-shaanxi-dingjunshan",
+    "historicalName": "汉中定军山",
+    "historicalEra": "三国",
+    "modernName": "陕西省汉中市勉县定军山镇",
+    "modernHierarchy": {
+      "province": "陕西省",
+      "city": "汉中市",
+      "district": "勉县",
+      "township": "定军山镇"
+    },
+    "coordinates": [
+      106.6643,
+      33.1376
+    ],
+    "precision": "site",
+    "isCentroid": false,
+    "aliases": [
+      "定军山"
+    ],
+    "kind": "mountain",
+    "note": "在沔县（今勉县）东南，诸葛亮遗命葬此。《三国志·诸葛亮传》：「亮遗命葬汉中定军山，因山为坟，冢足容棺，敛以时服，不须器物。」今有武侯墓。",
+    "sources": [
+      {
+        "id": "sgz-zhugeliang",
+        "title": "三国志·蜀书·诸葛亮传",
+        "author": "陈寿",
+        "locator": "卷35",
+        "reliability": "A"
+      },
+      {
+        "id": "wikidata",
+        "title": "Wikidata 坐标",
+        "reliability": "B"
+      }
+    ]
   }
 ]

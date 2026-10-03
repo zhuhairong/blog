@@ -717,6 +717,22 @@
     "featured": ""
   },
   {
+    "objectID": 36042,
+    "src": "/poetry-atlas/art/36042.webp",
+    "srcSmall": "/poetry-atlas/art/36042-sm.webp",
+    "title": "Dragon and Landscape",
+    "artist": "Unidentified artist",
+    "date": "14th century; plus later addition",
+    "dynasty": "",
+    "medium": "Handscroll; ink on paper",
+    "creditLine": "H. O. Havemeyer Collection, Bequest of Mrs. H. O. Havemeyer, 1929",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36042",
+    "motifs": [
+      "山水"
+    ],
+    "featured": ""
+  },
+  {
     "objectID": 36047,
     "src": "/poetry-atlas/art/36047.webp",
     "srcSmall": "/poetry-atlas/art/36047-sm.webp",
@@ -1848,6 +1864,20 @@
       "山水"
     ],
     "featured": ""
+  },
+  {
+    "objectID": 36431,
+    "src": "/poetry-atlas/art/36431.webp",
+    "srcSmall": "/poetry-atlas/art/36431-sm.webp",
+    "title": "Dragon",
+    "artist": "Unidentified",
+    "date": "14th century",
+    "dynasty": "",
+    "medium": "Hanging scroll; ink on silk",
+    "creditLine": "Gift of Mr. and Mrs. Kwan S. Wong, 1986",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/36431",
+    "motifs": [],
+    "featured": "poet-zhugeliang"
   },
   {
     "objectID": 36432,

@@ -7585,5 +7585,45 @@
     ],
     "confidence": "C",
     "isPrimary": true
+  },
+  {
+    "id": "a-zhugeliang-chushibiao-1",
+    "workId": "zhugeliang-chushibiao",
+    "poetId": "zhugeliang",
+    "placeId": "cn-shaanxi-hanzhong",
+    "date": {
+      "year": 227,
+      "original": "建兴五年",
+      "certainty": "exact"
+    },
+    "circumstance": "建兴五年（227）诸葛亮率诸军北驻汉中，准备大举北伐。临出发前上此表于后主刘禅，劝其广开言路、赏罚公平、亲贤远佞，并自陈受先帝托孤之重、矢志北定中原以兴复汉室的心迹。",
+    "triggerEventId": "zhugeliang-e9",
+    "setting": "北伐出师之际，君臣远别，临表涕零",
+    "rationale": "《三国志·蜀书·诸葛亮传》：「五年，率诸军北驻汉中，临发，上疏曰：……」本传于建兴五年下载此表全文，时间与上疏场合均有明文，故系年置信度较高。地点系于汉中，系据「北驻汉中」而后「临发」上疏的行文次第推知；另有通俗说法谓作于成都临行之前，然本传叙次以汉中为近，表末「今当远离，临表涕零」亦合出师在途之语。又表中「尔来二十有一年矣」，裴松之谓「自倾覆至此整二十年」——盖一自建安十二年（207）三顾起算为二十一年，一自建安十三年（208）败于长坂、遣亮使吴起算为二十年，两说并存，然皆不碍系年于建兴五年。",
+    "sources": [
+      {
+        "id": "sgz-zhugeliang",
+        "title": "三国志·蜀书·诸葛亮传",
+        "author": "陈寿",
+        "locator": "卷35",
+        "reliability": "A"
+      },
+      {
+        "id": "zizhitongjian",
+        "title": "资治通鉴",
+        "author": "司马光",
+        "locator": "卷七十·魏纪二",
+        "reliability": "A"
+      },
+      {
+        "id": "wenxuan-37",
+        "title": "文选",
+        "author": "萧统编",
+        "locator": "卷37·表上",
+        "reliability": "B"
+      }
+    ],
+    "confidence": "A",
+    "isPrimary": true
   }
 ]

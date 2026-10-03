@@ -6495,5 +6495,353 @@
         "reliability": "B"
       }
     ]
+  },
+  {
+    "id": "zhugeliang",
+    "name": "诸葛亮",
+    "courtesyName": "孔明",
+    "pseudonym": "卧龙",
+    "aliases": [
+      "孔明",
+      "卧龙",
+      "诸葛武侯",
+      "武乡侯",
+      "忠武侯"
+    ],
+    "dynasty": "三国",
+    "birth": {
+      "year": 181,
+      "original": "光和四年",
+      "certainty": "exact"
+    },
+    "death": {
+      "year": 234,
+      "month": 8,
+      "original": "建兴十二年八月",
+      "certainty": "exact"
+    },
+    "nativePlace": [
+      {
+        "placeId": "cn-shandong-yinan",
+        "type": "birth",
+        "confidence": "A",
+        "note": "《三国志·诸葛亮传》：「诸葛亮字孔明，琅邪阳都人也。」阳都故城在今山东沂南县砖埠镇一带，坐标取今沂南县中心。"
+      }
+    ],
+    "summary": "三国蜀汉丞相，政治家、军事家。隐居隆中十年，刘备三顾而出，佐其取荆益、成鼎足之势；受白帝托孤之重，总揽蜀政，南征北伐，卒于五丈原军中。其《出师表》忠悃恳切，为千古传诵之名篇。",
+    "biography": "诸葛亮（181—234），字孔明，琅琊阳都（今山东沂南）人，汉司隶校尉诸葛丰之后。早孤，随从父诸葛玄南迁荆州，玄卒后躬耕于南阳邓县隆中（今湖北襄阳西），自比管仲、乐毅，人称「卧龙」。\n\n建安十二年（207），刘备屯新野，三顾草庐，诸葛亮为陈「隆中对」，定跨有荆益、联吴抗曹之策，遂出而佐之。次年受命使吴，促成孙刘联盟，破曹操于赤壁，三分之势始成。刘备入蜀，诸葛亮留镇荆州，后溯江定益州，为军师将军，署左将军府事，镇守成都，足食足兵。章武元年（221）刘备称帝，拜为丞相、录尚书事。\n\n章武三年（223）刘备病笃于永安，召诸葛亮托孤，嘱以后事，并诏后主「事之如父」。刘禅即位，封武乡侯，领益州牧，政事无巨细咸决于亮。建兴三年（225）南征，五月渡泸，平定南中。建兴五年（227）率诸军北驻汉中，临发上《出师表》；翌年出祁山北伐，街亭失利后还军。此后屡出祁山，与魏相持。建兴十二年（234）据武功五丈原，八月病卒于军中，年五十四，谥忠武侯。\n\n诸葛亮治蜀，「抚百姓，示仪轨，约官职，从权制，开诚心，布公道」，赏罚必信，吏不容奸。其「鞠躬尽力，死而后已」之节（语见旧题《后出师表》），为后世忠臣典范。今传《诸葛亮集》，而以《出师表》最为著称。",
+    "events": [
+      {
+        "id": "zhugeliang-e1",
+        "poetId": "zhugeliang",
+        "type": "birth",
+        "title": "生于琅琊阳都",
+        "placeId": "cn-shandong-yinan",
+        "date": {
+          "year": 181,
+          "original": "光和四年",
+          "certainty": "exact"
+        },
+        "description": "生于琅琊国阳都县（今山东沂南）。父诸葛珪，汉末为太山郡丞。生年由《三国志》本传「建兴十二年……卒于军，时年五十四」逆推，当在光和四年（181）。早孤，随从父诸葛玄南迁。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "sgz-zhugeliang",
+            "title": "三国志·蜀书·诸葛亮传",
+            "author": "陈寿",
+            "locator": "卷35",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "zhugeliang-e2",
+        "poetId": "zhugeliang",
+        "type": "seclusion",
+        "title": "隐居隆中，躬耕陇亩",
+        "placeId": "cn-hubei-longzhong",
+        "date": {
+          "from": {
+            "year": 197,
+            "original": "建安二年",
+            "certainty": "exact"
+          },
+          "to": {
+            "year": 207,
+            "original": "建安十二年",
+            "certainty": "approximate"
+          }
+        },
+        "description": "从父诸葛玄卒后，诸葛亮躬耕陇亩于南阳邓县隆中（襄阳城西二十里），好为《梁父吟》。身长八尺，每自比于管仲、乐毅，时人莫之许，惟博陵崔州平、颍川徐庶元直信之。此十年为诸葛亮积蓄学问与识见之期。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "sgz-zhugeliang",
+            "title": "三国志·蜀书·诸葛亮传",
+            "author": "陈寿",
+            "locator": "卷35",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "zhugeliang-e3",
+        "poetId": "zhugeliang",
+        "type": "meeting",
+        "title": "刘备三顾草庐，诸葛亮陈隆中对",
+        "placeId": "cn-hubei-longzhong",
+        "date": {
+          "year": 207,
+          "original": "建安十二年",
+          "certainty": "exact"
+        },
+        "description": "刘备屯新野，徐庶荐诸葛亮为「卧龙」。刘备三顾草庐乃见，诸葛亮陈跨有荆益、西和诸戎、南抚夷越、外结孙权、内修政理，待天下有变则两路北伐之方略，即后世所称「隆中对」。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "sgz-zhugeliang",
+            "title": "三国志·蜀书·诸葛亮传",
+            "author": "陈寿",
+            "locator": "卷35",
+            "reliability": "A"
+          },
+          {
+            "id": "zizhitongjian",
+            "title": "资治通鉴",
+            "author": "司马光",
+            "locator": "卷七十·魏纪二",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "zhugeliang-e4",
+        "poetId": "zhugeliang",
+        "type": "war",
+        "title": "出使东吴，促成孙刘联盟，赤壁破曹",
+        "placeId": "cn-hubei-chibi-puqi",
+        "date": {
+          "year": 208,
+          "original": "建安十三年",
+          "certainty": "exact"
+        },
+        "description": "曹操南征，刘备败于长坂。诸葛亮受命使吴，说孙权与刘备并力拒曹，孙刘联军大破曹操于赤壁，三分之势由此奠定。裴松之案：「刘备以建安十三年败，遣亮使吴。」",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "sgz-zhugeliang",
+            "title": "三国志·蜀书·诸葛亮传",
+            "author": "陈寿",
+            "locator": "卷35",
+            "reliability": "A"
+          },
+          {
+            "id": "zizhitongjian",
+            "title": "资治通鉴",
+            "author": "司马光",
+            "locator": "卷七十·魏纪二",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "zhugeliang-e5",
+        "poetId": "zhugeliang",
+        "type": "office",
+        "title": "益州平定，为军师将军镇守成都",
+        "placeId": "cn-sichuan-chengdu",
+        "date": {
+          "year": 214,
+          "original": "建安十九年",
+          "certainty": "exact"
+        },
+        "description": "刘备围成都，刘璋出降，益州平定。诸葛亮为军师将军，署左将军府事，镇守成都，足食足兵。此后刘备每外出征伐，诸葛亮常镇后方、供给军需。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "sgz-zhugeliang",
+            "title": "三国志·蜀书·诸葛亮传",
+            "author": "陈寿",
+            "locator": "卷35",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "zhugeliang-e6",
+        "poetId": "zhugeliang",
+        "type": "office",
+        "title": "刘备称帝，拜诸葛亮为丞相",
+        "placeId": "cn-sichuan-chengdu",
+        "date": {
+          "year": 221,
+          "original": "章武元年",
+          "certainty": "exact"
+        },
+        "description": "刘备即帝位于成都，国号汉，以诸葛亮为丞相、录尚书事、假节。蜀汉政制自此由诸葛亮总揽。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "sgz-zhugeliang",
+            "title": "三国志·蜀书·诸葛亮传",
+            "author": "陈寿",
+            "locator": "卷35",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "zhugeliang-e7",
+        "poetId": "zhugeliang",
+        "type": "meeting",
+        "title": "白帝城受遗诏，辅政托孤",
+        "placeId": "cn-sichuan-kuizhou-baidi",
+        "date": {
+          "year": 223,
+          "original": "章武三年",
+          "certainty": "exact"
+        },
+        "description": "刘备病笃于永安（白帝城），召诸葛亮自成都赴永安，托以后事，谓「若嗣子可辅，辅之；如其不才，君可自取」，并诏敕后主「汝与丞相从事，事之如父」。诸葛亮涕泣受命。刘禅即位，封武乡侯，领益州牧，政事无巨细咸决于亮。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "sgz-zhugeliang",
+            "title": "三国志·蜀书·诸葛亮传",
+            "author": "陈寿",
+            "locator": "卷35",
+            "reliability": "A"
+          },
+          {
+            "id": "zizhitongjian",
+            "title": "资治通鉴",
+            "author": "司马光",
+            "locator": "卷七十·魏纪二",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "zhugeliang-e8",
+        "poetId": "zhugeliang",
+        "type": "war",
+        "title": "南征，五月渡泸，深入不毛",
+        "date": {
+          "year": 225,
+          "original": "建兴三年",
+          "certainty": "exact"
+        },
+        "description": "诸葛亮率军南征，讨雍闿、高定、孟获等，五月渡泸水，深入不毛之地，其年秋悉平南中。此后「军资所出，国以富饶」。《出师表》「故五月渡泸，深入不毛」即指此役。南征为一次跨越数千里、历时数月的战役行军，非一地驻留，故不系于某一具体地点。",
+        "confidence": "B",
+        "sources": [
+          {
+            "id": "sgz-zhugeliang",
+            "title": "三国志·蜀书·诸葛亮传",
+            "author": "陈寿",
+            "locator": "卷35",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "zhugeliang-e9",
+        "poetId": "zhugeliang",
+        "type": "creation",
+        "title": "率诸军北驻汉中，上《出师表》",
+        "placeId": "cn-shaanxi-hanzhong",
+        "date": {
+          "year": 227,
+          "original": "建兴五年",
+          "certainty": "exact"
+        },
+        "description": "建兴五年，诸葛亮率诸军北驻汉中，准备大举北伐，临发上疏后主，即《出师表》。表劝后主广开言路、赏罚公平、亲贤远佞，并自陈受先帝托孤之重、当奖率三军北定中原以兴复汉室之志。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "sgz-zhugeliang",
+            "title": "三国志·蜀书·诸葛亮传",
+            "author": "陈寿",
+            "locator": "卷35",
+            "reliability": "A"
+          },
+          {
+            "id": "zizhitongjian",
+            "title": "资治通鉴",
+            "author": "司马光",
+            "locator": "卷七十·魏纪二",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "zhugeliang-e10",
+        "poetId": "zhugeliang",
+        "type": "death",
+        "title": "据五丈原，病卒于军中",
+        "placeId": "cn-shaanxi-wuzhangyuan",
+        "date": {
+          "year": 234,
+          "month": 8,
+          "original": "建兴十二年八月",
+          "certainty": "exact"
+        },
+        "description": "建兴十二年春，诸葛亮率大军出斜谷，据武功五丈原，与司马懿相持于渭南百余日，分兵屯田为久驻之基。八月病卒于军中，时年五十四。蜀军退，「死诸葛走生仲达」之谚传于时；司马懿案行其营垒，叹曰「天下奇才也」。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "sgz-zhugeliang",
+            "title": "三国志·蜀书·诸葛亮传",
+            "author": "陈寿",
+            "locator": "卷35",
+            "reliability": "A"
+          },
+          {
+            "id": "zizhitongjian",
+            "title": "资治通鉴",
+            "author": "司马光",
+            "locator": "卷七十·魏纪二",
+            "reliability": "A"
+          }
+        ]
+      },
+      {
+        "id": "zhugeliang-e11",
+        "poetId": "zhugeliang",
+        "type": "recognition",
+        "title": "遗命葬定军山，谥忠武侯",
+        "placeId": "cn-shaanxi-dingjunshan",
+        "date": {
+          "year": 234,
+          "original": "建兴十二年",
+          "certainty": "exact"
+        },
+        "description": "诸葛亮遗命葬汉中定军山，因山为坟，冢足容棺，敛以时服，不须器物。蜀汉赠丞相武乡侯印绶，谥曰忠武侯；后主诏为立庙于沔阳。",
+        "confidence": "A",
+        "sources": [
+          {
+            "id": "sgz-zhugeliang",
+            "title": "三国志·蜀书·诸葛亮传",
+            "author": "陈寿",
+            "locator": "卷35",
+            "reliability": "A"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "sgz-zhugeliang",
+        "title": "三国志·蜀书·诸葛亮传",
+        "author": "陈寿",
+        "locator": "卷35",
+        "reliability": "A"
+      },
+      {
+        "id": "zizhitongjian",
+        "title": "资治通鉴",
+        "author": "司马光",
+        "locator": "卷七十·魏纪二",
+        "reliability": "A"
+      }
+    ]
   }
 ]

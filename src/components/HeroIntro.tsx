@@ -96,7 +96,7 @@ export default function HeroIntro({ repo }: { repo: string }) {
                 </div>
                 <span className={styles.statDivider} aria-hidden="true" />
                 <div className={styles.stat}>
-                    <span className={styles.statNum}>3</span>
+                    <span className={styles.statNum}>12</span>
                     <span className={styles.statLabel}>位诗人入谱</span>
                 </div>
             </div>

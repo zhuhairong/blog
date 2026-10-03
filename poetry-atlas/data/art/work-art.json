@@ -3408,5 +3408,21 @@
     "artCredit": "Gift of John C. Ferguson, 1916",
     "artImage": "https://images.metmuseum.org/CRDImages/as/original/16_151_d1.jpg",
     "artURL": "https://www.metmuseum.org/art/collection/search/36030"
+  },
+  {
+    "workId": "zhugeliang-chushibiao",
+    "title": "出师表",
+    "poetId": "zhugeliang",
+    "motifs": [
+      "龙",
+      "山水"
+    ],
+    "objectID": 36042,
+    "artTitle": "Dragon and Landscape",
+    "artArtist": "Unidentified artist",
+    "artDate": "14th century",
+    "artCredit": "H. O. Havemeyer Collection, Bequest of Mrs. H. O. Havemeyer, 1929",
+    "artImage": "https://images.metmuseum.org/CRDImages/as/original/DP200858_CRD.jpg",
+    "artURL": "https://www.metmuseum.org/art/collection/search/36042"
   }
 ]
